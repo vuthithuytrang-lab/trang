@@ -73,3 +73,33 @@ _Cuối thư có phần hủy nhận thư (bắt buộc)._
 - Không dùng ảnh khách hàng
 - Mỗi nhóm một tiêu đề và một mở đầu riêng
 - Mọi thư đều có cách hủy nhận thư
+
+---
+
+## ⚠️ LỖI ĐÃ PHÁT HIỆN SAU KHI GỬI — cần sửa
+
+**Nút "Hủy nhận thư" trong 3 thư đã gửi KHÔNG hoạt động.**
+
+Nó trỏ tới `huy-nhan-thu@resend.dev` — địa chỉ này do Agent tự đặt ra, không có thật.
+Người nhận bấm vào sẽ soạn thư gửi tới một hòm thư không tồn tại, thư dội lại.
+
+### Vì sao chưa làm được nút hủy thật
+
+Cách đúng là dùng **Broadcasts** của Resend — Resend tự cấp một đường dẫn hủy thật,
+bấm vào là hệ thống tự đánh dấu người đó đã hủy trong tệp người nhận.
+
+Nhưng Resend từ chối:
+
+> "Broadcasts cannot be sent from resend.dev. Please use a verified domain owned by your team."
+
+Tức là **phải xác thực tên miền trước** mới dùng được Broadcasts và nút hủy thật.
+
+### Hai cách đi tiếp
+
+| Cách | Làm được ngay? | Nút hủy có thật? |
+|---|---|---|
+| **A. Xác thực tên miền → dùng Broadcasts** | Cần thêm 3 bản ghi DNS | ✅ Resend tự quản lý, một cú bấm là xong |
+| **B. Trỏ nút hủy về một hòm thư có thật của Trang** | ✅ Ngay lập tức | ✅ Chạy được, nhưng Trang phải tự gỡ người đó khỏi tệp |
+
+Cách A là đích đến. Cách B dùng tạm trong lúc chờ xác thực tên miền.
+**Chưa gửi cho khách thật cho tới khi nút hủy chạy được.**
