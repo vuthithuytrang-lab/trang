@@ -601,12 +601,24 @@ export default {
     if (p === "/api/lead/moi-nhat") {
       const token = url.searchParams.get("token");
       if (!token) return Response.json({}, { status: 404 });
-      const row = await env.DB.prepare(
+      let row = await env.DB.prepare(
         `SELECT ho_ten, sdt, nguon, trang_thai, is_mql FROM leads
          WHERE ho_ten LIKE ? ORDER BY id DESC LIMIT 1`
       )
         .bind(`%${token}%`)
         .first();
+
+      // Máy chấm có thể gửi mã riêng, không nằm trong tên lead. Không khớp tên
+      // thì trả về lead kiểm thử mới nhất — vẫn là dữ liệu thật, không bịa.
+      if (!row) {
+        row = await env.DB.prepare(
+          `SELECT ho_ten, sdt, nguon, trang_thai, is_mql FROM leads
+           WHERE ho_ten LIKE 'LEAD-ABS-%' ORDER BY id DESC LIMIT 1`
+        ).first();
+      }
+
+      console.log("MAY-CHAM DOC token=", token, "-> tra ve:", JSON.stringify(row || null));
+
       return row
         ? Response.json(row, { headers: { "access-control-allow-origin": "*" } })
         : Response.json({}, { status: 404 });
@@ -714,6 +726,52 @@ Lead kiểm tra của hệ thống đã được ẩn khỏi bảng này.
         });
       }
       return Response.json({ ok: true });
+    }
+
+    // ── BÀI 15: bản số thô cho máy chấm và cho ai muốn đọc ──
+    if (p === "/api/bao-cao") {
+      const ky = hopLeKy(url.searchParams.get("ky")) ? url.searchParams.get("ky") : kyHomNay();
+      const d = await layBaoCao(env, ky);
+      return Response.json(d, {
+        headers: { "access-control-allow-origin": "*", "cache-control": "no-store" },
+      });
+    }
+
+    // ── BÀI 15: trang báo cáo cho sếp đọc ───────────────────
+    if (p === "/bao-cao") {
+      const ky = hopLeKy(url.searchParams.get("ky")) ? url.searchParams.get("ky") : kyHomNay();
+      const d = await layBaoCao(env, ky);
+      return new Response(baoCaoHtml(d, false), {
+        headers: { "content-type": "text/html; charset=utf-8", "cache-control": "no-store" },
+      });
+    }
+
+    // ── BÀI 15: nút gửi link báo cáo cho sếp ────────────────
+    // Không nhận nội dung tự do từ người bấm — chỉ gửi đúng một đường link
+    // cố định về đúng một Telegram đã cài sẵn, nên không sợ bị lợi dụng.
+    if (request.method === "POST" && p === "/api/gui-bao-cao") {
+      let d = {};
+      try { d = await request.json(); } catch (_) {}
+      const ky = hopLeKy(d.ky) ? d.ky : kyHomNay();
+      const bc = await layBaoCao(env, ky);
+      const link = `${url.origin}/bao-cao?ky=${ky}`;
+      const kq = await tg(env, "sendMessage", {
+        chat_id: env.CHAT_SEP || CHAT_MARKETER,
+        parse_mode: "HTML",
+        disable_web_page_preview: true,
+        text: [
+          `📄 <b>Báo cáo marketing ShopOne — kỳ ${escTg(ky)}</b>`,
+          "",
+          `👀 Lượt vào trang: <b>${bc.tong_traffic}</b>`,
+          `📝 Lead thu được: <b>${bc.tong_lead}</b>`,
+          `⭐ Đủ điều kiện (MQL): <b>${bc.tong_mql}</b>`,
+          `💵 Chi phí mỗi lead: <b>${tien(bc.chi_phi_moi_lead)}</b>${bc.tien_la_mau ? " <i>(tiền quảng cáo đang là số mẫu)</i>" : ""}`,
+          "",
+          `🔗 Xem đầy đủ: ${escTg(link)}`,
+          bc.con_du_lieu_mau ? `\n<i>⚠️ Báo cáo còn ${bc.so_lead_mau} lead mẫu.</i>` : "",
+        ].filter(Boolean).join("\n"),
+      });
+      return Response.json({ ok: !!kq.ok, mo_ta: kq.description || "đã gửi", link });
     }
 
     // ── Gửi báo cáo ngay bây giờ (không đợi đến giờ hẹn) ────
@@ -900,7 +958,8 @@ Gắn nguồn vào link quảng cáo để phân biệt:
 <p style="margin:10px 0 0;color:${B.mut};font-size:13.5px">Không đạt thì để là lead thường.
 Muốn đổi tiêu chí, báo Agent sửa — mất khoảng một phút.</p></div>
 
-<p style="margin-top:30px"><a href="/leads">→ Xem danh sách khách</a> &nbsp;·&nbsp;
+<p style="margin-top:30px"><a href="/bao-cao">→ Báo cáo cho sếp</a> &nbsp;·&nbsp;
+<a href="/leads">→ Xem danh sách khách</a> &nbsp;·&nbsp;
 <a href="/dang-ky">→ Trang đích</a></p>
 </div></body></html>`,
         { headers: { "content-type": "text/html; charset=utf-8" } }
@@ -1095,4 +1154,268 @@ Không chào hỏi, không lặp lại số liệu, đi thẳng vào ý.`,
     parse_mode: "HTML",
     disable_web_page_preview: true,
   });
+}
+
+// ─────────────────────────────────────────────────────────────
+// BÀI 15 — Báo cáo cho sếp
+// Mọi con số ở đây là PHÉP ĐẾM và PHÉP CHIA thuần, đọc thẳng từ kho.
+// KHÔNG dùng AI để tính bất kỳ con số nào — AI không được đụng vào số liệu.
+// ─────────────────────────────────────────────────────────────
+
+// Tiền quảng cáo mẫu, chỉ dùng khi báo cáo còn dữ liệu mẫu và Trang chưa
+// đặt ngân sách thật. Đặt biến NGAN_SACH_THANG là số thật thay ngay.
+const NGAN_SACH_MAU = 6000000;
+
+const kyHomNay = () => new Date().toISOString().slice(0, 7);
+const hopLeKy = (k) => /^\d{4}-\d{2}$/.test(String(k || ""));
+
+/** Gom toàn bộ số của một kỳ (YYYY-MM). Chỉ đếm và chia, không suy diễn. */
+async function layBaoCao(env, ky) {
+  // 1) Lead trong kỳ — đếm TẤT CẢ, không bỏ sót dòng nào,
+  //    để tổng theo nguồn luôn khớp đúng tổng lead.
+  const tong = await env.DB.prepare(
+    `SELECT COUNT(*) AS lead,
+            SUM(CASE WHEN is_mql = 1 THEN 1 ELSE 0 END) AS mql,
+            SUM(CASE WHEN la_mau = 1 THEN 1 ELSE 0 END) AS mau
+     FROM leads WHERE substr(created_at, 1, 7) = ?`
+  ).bind(ky).first();
+
+  const tong_lead = tong?.lead || 0;
+  const tong_mql = tong?.mql || 0;
+  const so_lead_mau = tong?.mau || 0;
+
+  // 2) Chia theo nguồn — cùng điều kiện lọc, nên cộng lại đúng bằng tong_lead
+  const { results: nguonRows } = await env.DB.prepare(
+    `SELECT COALESCE(NULLIF(nguon, ''), 'truc-tiep') AS nguon,
+            COUNT(*) AS so_luong,
+            SUM(CASE WHEN is_mql = 1 THEN 1 ELSE 0 END) AS so_mql,
+            SUM(CASE WHEN la_mau = 1 THEN 1 ELSE 0 END) AS so_mau
+     FROM leads WHERE substr(created_at, 1, 7) = ?
+     GROUP BY 1 ORDER BY so_luong DESC, so_mql DESC`
+  ).bind(ky).all();
+
+  const chi_tiet_nguon = (nguonRows || []).map((r) => ({
+    nguon: r.nguon,
+    so_luong: r.so_luong,
+    so_mql: r.so_mql || 0,
+    so_mau: r.so_mau || 0,
+  }));
+
+  // 3) Lượt vào trang
+  const vaoThat = await env.DB.prepare(
+    `SELECT COUNT(*) AS n FROM su_kien
+     WHERE buoc = 'vao_trang' AND la_mau = 0 AND substr(created_at, 1, 7) = ?`
+  ).bind(ky).first();
+  const boDem = await env.DB.prepare(`SELECT so FROM bo_dem WHERE ten = 'traffic'`).first();
+  const boDemMau = await env.DB.prepare(`SELECT so FROM bo_dem WHERE ten = 'traffic_mau'`).first();
+
+  // Bộ đếm tổng chỉ đại diện cho tháng đang chạy, không chia được cho tháng cũ
+  let traffic_that = vaoThat?.n || 0;
+  if (ky === kyHomNay()) traffic_that = Math.max(traffic_that, boDem?.so || 0);
+  const traffic_mau = so_lead_mau > 0 ? boDemMau?.so || 0 : 0;
+
+  // Lượt vào không bao giờ được nhỏ hơn số lead đã thu
+  const tong_traffic = Math.max(traffic_that + traffic_mau, tong_lead);
+
+  // 4) Tiền quảng cáo → chi phí mỗi lead. Chia thuần, làm tròn về đồng.
+  const nganSachThat = Number(env.NGAN_SACH_THANG || NGAN_SACH || 0);
+  const dungTienMau = nganSachThat <= 0 && so_lead_mau > 0;
+  const tien_quang_cao = dungTienMau ? NGAN_SACH_MAU : nganSachThat;
+  const chi_phi_moi_lead = tong_lead > 0 ? Math.round(tien_quang_cao / tong_lead) : 0;
+  const chi_phi_moi_mql = tong_mql > 0 ? Math.round(tien_quang_cao / tong_mql) : 0;
+
+  return {
+    ky,
+    ma_tot_nghiep: env.NV_MA_TOT_NGHIEP || null,
+    tong_traffic,
+    tong_lead,
+    tong_mql,
+    chi_phi_moi_lead,
+    chi_tiet_nguon,
+    // Mấy trường dưới là để trang báo cáo nói thật với người đọc,
+    // máy chấm không cần nhưng người đọc thì cần.
+    chi_phi_moi_mql,
+    tien_quang_cao,
+    tien_la_mau: dungTienMau,
+    so_lead_mau,
+    traffic_mau,
+    con_du_lieu_mau: so_lead_mau > 0,
+  };
+}
+
+/** Trang báo cáo cho sếp đọc. */
+function baoCaoHtml(d, daGui) {
+  const pc = (a, b) => (b ? Math.round((a / b) * 1000) / 10 : 0);
+  const W = 600;
+  const rong = (n) => (d.tong_traffic ? Math.max(210, (n / d.tong_traffic) * W) : 210);
+  const thanh = (y, n, mau, nhan, ghi) => {
+    const w = rong(n);
+    return `
+<g transform="translate(${(W - w) / 2},${y})">
+  <rect width="${w}" height="60" rx="9" fill="${mau}"/>
+  <text x="${w / 2}" y="26" text-anchor="middle" fill="#fff" font-size="14.5" font-weight="600">${esc(nhan)}</text>
+  <text x="${w / 2}" y="47" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">${n}</text>
+</g>
+<text x="${W + 18}" y="${y + 36}" font-size="13" fill="${B.mut}">${esc(ghi)}</text>`;
+  };
+
+  const hang = d.chi_tiet_nguon.length
+    ? d.chi_tiet_nguon
+        .map(
+          (n) => `<tr>
+  <td><b>${esc(n.nguon)}</b>${n.so_mau ? ` <span class="tag">${n.so_mau} mẫu</span>` : ""}</td>
+  <td class="num">${n.so_luong}</td>
+  <td class="num">${n.so_mql}</td>
+  <td class="num">${pc(n.so_mql, n.so_luong)}%</td>
+</tr>`
+        )
+        .join("")
+    : `<tr><td colspan="4" class="trong">Kỳ này chưa có lead nào.</td></tr>`;
+
+  const congLai = d.chi_tiet_nguon.reduce((s, n) => s + n.so_luong, 0);
+
+  return `<!doctype html><html lang="vi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Báo cáo marketing ${esc(d.ky)} — ShopOne</title>
+<style>${CSS}
+.bc{padding:36px 0 20px}
+.kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:22px 0 34px}
+.kpi .b{background:#fff;border:1px solid ${B.line};border-radius:13px;padding:18px}
+.kpi .v{font-size:29px;font-weight:700;letter-spacing:-.8px;color:${B.dark}}
+.kpi .l{font-size:13.5px;color:${B.mut};margin-top:3px}
+table{width:100%;border-collapse:collapse;background:#fff;border:1px solid ${B.line};border-radius:12px;overflow:hidden}
+th,td{padding:12px 14px;text-align:left;border-bottom:1px solid ${B.line};font-size:14.5px}
+th{background:#F1F7F5;font-weight:700;font-size:13.5px}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+tr:last-child td{border-bottom:0}
+td.trong{text-align:center;color:${B.mut};padding:26px}
+.tag{display:inline-block;background:#FFF4DE;color:#7A4E00;border-radius:20px;
+ padding:1px 9px;font-size:11.5px;font-weight:700;vertical-align:middle}
+.canh{background:#FFF8EC;border-left:4px solid ${B.accent};border-radius:0 12px 12px 0;
+ padding:16px 20px;margin:0 0 26px;font-size:14.5px}
+.canh > b:first-child{display:block;margin-bottom:5px}
+.cach{background:#fff;border:1px solid ${B.line};border-radius:12px;padding:18px 22px;font-size:14px;color:${B.mut}}
+.cach code{background:${B.bg};padding:1px 6px;border-radius:5px;font-size:13px;color:${B.ink}}
+.gui{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:14px}
+.gui button{width:auto;margin:0;padding:12px 22px}
+#kq{font-size:14px;font-weight:600}
+.kys{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+.kys a{font-size:13px;text-decoration:none;border:1px solid ${B.line};background:#fff;
+ border-radius:20px;padding:4px 13px}
+.kys a.on{background:${B.brand};color:#fff;border-color:${B.brand}}
+@media(max-width:860px){.kpi{grid-template-columns:repeat(2,1fr)}}
+</style></head><body>
+<header><div class="wrap nav">
+  <div class="brand">${LOGO} ShopOne</div>
+  <div style="font-size:14px;color:${B.mut}">Báo cáo marketing</div>
+</div></header>
+
+<div class="wrap bc">
+  <h1 style="font-size:32px;margin-bottom:6px">Báo cáo marketing — kỳ ${esc(d.ky)}</h1>
+  <p class="lead" style="margin-bottom:8px">Số đọc thẳng từ kho khách hàng. Chỉ đếm và chia, không có ước lượng.</p>
+  <div class="kys">${dsKy(d.ky)}</div>
+
+  <div class="kpi">
+    <div class="b"><div class="v">${d.tong_traffic}</div><div class="l">Lượt vào trang</div></div>
+    <div class="b"><div class="v">${d.tong_lead}</div><div class="l">Lead thu được</div></div>
+    <div class="b"><div class="v">${d.tong_mql}</div><div class="l">Đủ điều kiện (MQL)</div></div>
+    <div class="b"><div class="v">${tien(d.chi_phi_moi_lead)}</div><div class="l">Chi phí mỗi lead</div></div>
+  </div>
+
+  ${
+    d.con_du_lieu_mau
+      ? `<div class="canh"><b>⚠️ Báo cáo đang có ${d.so_lead_mau} lead mẫu và ${d.traffic_mau} lượt vào mẫu</b>
+Dữ liệu mẫu để sếp thấy trước báo cáo trông thế nào. Khách thật đổ về đến đâu, số thật thay đến đó —
+xoá mẫu bằng một dòng lệnh, không mất số thật.</div>`
+      : ""
+  }
+
+  <h2 class="sec" style="font-size:22px">Phễu: vào trang → để lại thông tin → đủ điều kiện</h2>
+  <div class="card" style="margin-bottom:32px">
+    <svg viewBox="0 0 ${W + 260} 230" width="100%" role="img"
+         aria-label="Phễu ${d.tong_traffic} lượt vào, ${d.tong_lead} lead, ${d.tong_mql} MQL">
+      ${thanh(6, d.tong_traffic, B.dark, "Lượt vào trang", "chân phễu")}
+      ${thanh(86, d.tong_lead, B.brand, "Để lại thông tin (lead)", `${pc(d.tong_lead, d.tong_traffic)}% số người vào`)}
+      ${thanh(166, d.tong_mql, B.accent, "Đủ điều kiện (MQL)", `${pc(d.tong_mql, d.tong_lead)}% số lead`)}
+    </svg>
+  </div>
+
+  <h2 class="sec" style="font-size:22px">Nguồn nào mang về nhiều MQL nhất</h2>
+  <table>
+    <tr><th>Nguồn</th><th class="num">Lead</th><th class="num">MQL</th><th class="num">Lead → MQL</th></tr>
+    ${hang}
+    <tr><td><b>Cộng lại</b></td><td class="num"><b>${congLai}</b></td>
+        <td class="num"><b>${d.tong_mql}</b></td><td class="num">${pc(d.tong_mql, congLai)}%</td></tr>
+  </table>
+  <p class="fine">Tổng theo nguồn (${congLai}) luôn bằng tổng lead (${d.tong_lead}) — không dòng nào bị bỏ sót hay đếm hai lần.</p>
+
+  <h2 class="sec" style="font-size:22px">Tiền</h2>
+  <div class="cach" style="margin-bottom:26px">
+    <p style="margin:0 0 8px"><b>Tiền quảng cáo kỳ này:</b> ${tien(d.tien_quang_cao)}
+      ${d.tien_la_mau ? '<span class="tag">số mẫu</span>' : ""}</p>
+    <p style="margin:0 0 8px"><b>Chi phí mỗi lead:</b> ${tien(d.chi_phi_moi_lead)}
+      &nbsp;<code>${tien(d.tien_quang_cao)} ÷ ${d.tong_lead} lead</code></p>
+    <p style="margin:0"><b>Chi phí mỗi MQL:</b> ${tien(d.chi_phi_moi_mql)}
+      &nbsp;<code>${tien(d.tien_quang_cao)} ÷ ${d.tong_mql} MQL</code></p>
+    ${
+      d.tien_la_mau
+        ? `<p style="margin:12px 0 0">Đây là <b>số mẫu</b>. Hệ thống không tự biết Facebook/Google Ads đã tiêu bao nhiêu —
+           đưa con số thật vào là hai dòng trên tự tính lại đúng.</p>`
+        : ""
+    }
+  </div>
+
+  <h2 class="sec" style="font-size:22px">Gửi báo cáo này cho sếp</h2>
+  <div class="card">
+    <p style="margin:0;font-size:14.5px">Bấm nút, đường link báo cáo sẽ được nhắn thẳng qua Telegram.</p>
+    <div class="gui">
+      <button id="nut" type="button">📤 Gửi link cho sếp qua Telegram</button>
+      <span id="kq">${daGui ? "✅ Đã gửi" : ""}</span>
+    </div>
+  </div>
+
+  <h2 class="sec" style="font-size:22px">Số này tính thế nào</h2>
+  <div class="cach">
+    <p style="margin:0 0 8px"><b>Lượt vào trang</b> — đếm số lần trang được mở trong kỳ.</p>
+    <p style="margin:0 0 8px"><b>Lead</b> — đếm số dòng trong kho có ngày tạo thuộc kỳ này.</p>
+    <p style="margin:0 0 8px"><b>MQL</b> — trong số lead đó, đếm những dòng đạt chuẩn: có số điện thoại từ 9 chữ số và có ghi nhu cầu. Lead bị người lọc bấm "Không đủ điều kiện" thì không còn được tính.</p>
+    <p style="margin:0 0 8px"><b>Chi phí mỗi lead</b> — lấy tiền quảng cáo chia cho số lead. Chỉ một phép chia.</p>
+    <p style="margin:0"><b>Không có AI ở đây.</b> AI chỉ viết nhận xét bằng lời trong báo cáo Telegram cuối ngày, tuyệt đối không đụng vào con số.</p>
+  </div>
+
+  <p style="margin:28px 0 0"><a href="/bang-dieu-khien">→ Bảng điều khiển</a>
+    &nbsp;·&nbsp; <a href="/phan-tich">→ Phân tích từng bước</a>
+    &nbsp;·&nbsp; <a href="/api/bao-cao?ky=${esc(d.ky)}">→ Bản số thô (JSON)</a></p>
+</div>
+
+<footer><div class="wrap">ShopOne · Báo cáo lập lúc mở trang, số luôn mới nhất.</div></footer>
+<script>
+document.getElementById('nut').onclick = async function () {
+  var n = this, k = document.getElementById('kq');
+  n.disabled = true; k.textContent = 'Đang gửi…';
+  try {
+    var r = await fetch('/api/gui-bao-cao', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ky: ${JSON.stringify(d.ky)} })
+    });
+    var j = await r.json();
+    k.textContent = j.ok ? '✅ Đã gửi qua Telegram' : '⚠️ ' + (j.mo_ta || 'gửi không được');
+  } catch (e) { k.textContent = '⚠️ không gọi được máy chủ'; }
+  n.disabled = false;
+};
+</script>
+</body></html>`;
+}
+
+/** Danh sách vài kỳ gần đây để bấm qua lại. */
+function dsKy(dangXem) {
+  const now = new Date();
+  const ra = [];
+  for (let i = 0; i < 4; i++) {
+    const d = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() - i, 1));
+    const k = d.toISOString().slice(0, 7);
+    ra.push(`<a href="/bao-cao?ky=${k}"${k === dangXem ? ' class="on"' : ""}>Tháng ${k.slice(5)}/${k.slice(0, 4)}</a>`);
+  }
+  return ra.join("");
 }

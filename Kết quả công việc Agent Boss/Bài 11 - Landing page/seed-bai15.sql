@@ -1,0 +1,37 @@
+-- Bài 15: dữ liệu mẫu để báo cáo không trống.
+-- Mọi dòng mẫu đều có la_mau = 1 và tên bắt đầu bằng MAU- nên xoá lúc nào cũng được:
+--   DELETE FROM leads WHERE la_mau = 1;
+DELETE FROM leads WHERE la_mau = 1;
+INSERT INTO bo_dem (ten, so) VALUES ('traffic_mau', 412) ON CONFLICT(ten) DO UPDATE SET so = 412;
+INSERT INTO leads (ho_ten, sdt, email, nhu_cau, nguon, trang_thai, is_mql, la_mau, created_at) VALUES ('MAU-Khach-01', '0914855520', NULL, 'Can tu van phan mem ban hang', 'fb-ads', 'mql', 1, 1, '2026-09-04 08:33:00');
+INSERT INTO leads (ho_ten, sdt, email, nhu_cau, nguon, trang_thai, is_mql, la_mau, created_at) VALUES ('MAU-Khach-02', '0917375024', NULL, 'Can tu van phan mem ban hang', 'fb-ads', 'mql', 1, 1, '2026-09-03 11:01:00');
+INSERT INTO leads (ho_ten, sdt, email, nhu_cau, nguon, trang_thai, is_mql, la_mau, created_at) VALUES ('MAU-Khach-03', '0959297169', NULL, 'Can tu van phan mem ban hang', 'fb-ads', 'mql', 1, 1, '2026-09-03 21:44:00');
+INSERT INTO leads (ho_ten, sdt, email, nhu_cau, nguon, trang_thai, is_mql, la_mau, created_at) VALUES ('MAU-Khach-04', '0972589723', NULL, 'Can tu van phan mem ban hang', 'fb-ads', 'mql', 1, 1, '2026-09-04 09:21:00');
+INSERT INTO leads (ho_ten, sdt, email, nhu_cau, nguon, trang_thai, is_mql, la_mau, created_at) VALUES ('MAU-Khach-05', '0945341441', NULL, 'Can tu van phan mem ban hang', 'fb-ads', 'mql', 1, 1, '2026-09-06 12:25:00');
+INSERT INTO leads (ho_ten, sdt, email, nhu_cau, nguon, trang_thai, is_mql, la_mau, created_at) VALUES ('MAU-Khach-06', '0937698086', NULL, 'Can tu van phan mem ban hang', 'fb-ads', 'mql', 1, 1, '2026-09-06 11:59:00');
+INSERT INTO leads (ho_ten, sdt, email, nhu_cau, nguon, trang_thai, is_mql, la_mau, created_at) VALUES ('MAU-Khach-07', '0939983060', NULL, 'Can tu van phan mem ban hang', 'fb-ads', 'mql', 1, 1, '2026-09-06 20:20:00');
+INSERT INTO leads (ho_ten, sdt, email, nhu_cau, nguon, trang_thai, is_mql, la_mau, created_at) VALUES ('MAU-Khach-08', '0966434163', NULL, 'Can tu van phan mem ban hang', 'fb-ads', 'mql', 1, 1, '2026-09-05 19:32:00');
+INSERT INTO leads (ho_ten, sdt, email, nhu_cau, nguon, trang_thai, is_mql, la_mau, created_at) VALUES ('MAU-Khach-09', '0966354712', NULL, NULL, 'fb-ads', 'lead', 0, 1, '2026-09-04 17:29:00');
+INSERT INTO leads (ho_ten, sdt, email, nhu_cau, nguon, trang_thai, is_mql, la_mau, created_at) VALUES ('MAU-Khach-10', '0985791621', NULL, NULL, 'fb-ads', 'lead', 0, 1, '2026-09-08 09:29:00');
+INSERT INTO leads (ho_ten, sdt, email, nhu_cau, nguon, trang_thai, is_mql, la_mau, created_at) VALUES ('MAU-Khach-11', '0952299402', NULL, NULL, 'fb-ads', 'lead', 0, 1, '2026-09-06 15:36:00');
+INSERT INTO leads (ho_ten, sdt, email, nhu_cau, nguon, trang_thai, is_mql, la_mau, created_at) VALUES ('MAU-Khach-12', '0918836761', NULL, NULL, 'fb-ads', 'lead', 0, 1, '2026-09-08 14:49:00');
+INSERT INTO leads (ho_ten, sdt, email, nhu_cau, nguon, trang_thai, is_mql, la_mau, created_at) VALUES ('MAU-Khach-13', '0936267831', NULL, NULL, 'fb-ads', 'lead', 0, 1, '2026-09-08 21:01:00');
+INSERT INTO leads (ho_ten, sdt, email, nhu_cau, nguon, trang_thai, is_mql, la_mau, created_at) VALUES ('MAU-Khach-14', '0992416177', NULL, NULL, 'fb-ads', 'lead', 0, 1, '2026-09-03 16:11:00');
+INSERT INTO leads (ho_ten, sdt, email, nhu_cau, nguon, trang_thai, is_mql, la_mau, created_at) VALUES ('MAU-Khach-15', '0976435772', NULL, 'Can tu van phan mem ban hang', 'google', 'mql', 1, 1, '2026-09-01 12:33:00');
+INSERT INTO leads (ho_ten, sdt, email, nhu_cau, nguon, trang_thai, is_mql, la_mau, created_at) VALUES ('MAU-Khach-16', '0925599022', NULL, 'Can tu van phan mem ban hang', 'google', 'mql', 1, 1, '2026-09-03 21:06:00');
+INSERT INTO leads (ho_ten, sdt, email, nhu_cau, nguon, trang_thai, is_mql, la_mau, created_at) VALUES ('MAU-Khach-17', '0972902693', NULL, 'Can tu van phan mem ban hang', 'google', 'mql', 1, 1, '2026-09-07 08:04:00');
+INSERT INTO leads (ho_ten, sdt, email, nhu_cau, nguon, trang_thai, is_mql, la_mau, created_at) VALUES ('MAU-Khach-18', '0977384890', NULL, 'Can tu van phan mem ban hang', 'google', 'mql', 1, 1, '2026-09-05 14:59:00');
+INSERT INTO leads (ho_ten, sdt, email, nhu_cau, nguon, trang_thai, is_mql, la_mau, created_at) VALUES ('MAU-Khach-19', '0977118429', NULL, 'Can tu van phan mem ban hang', 'google', 'mql', 1, 1, '2026-09-04 10:34:00');
+INSERT INTO leads (ho_ten, sdt, email, nhu_cau, nguon, trang_thai, is_mql, la_mau, created_at) VALUES ('MAU-Khach-20', '0951623047', NULL, 'Can tu van phan mem ban hang', 'google', 'mql', 1, 1, '2026-09-06 09:15:00');
+INSERT INTO leads (ho_ten, sdt, email, nhu_cau, nguon, trang_thai, is_mql, la_mau, created_at) VALUES ('MAU-Khach-21', '0994041099', NULL, NULL, 'google', 'lead', 0, 1, '2026-09-05 10:52:00');
+INSERT INTO leads (ho_ten, sdt, email, nhu_cau, nguon, trang_thai, is_mql, la_mau, created_at) VALUES ('MAU-Khach-22', '0973960990', NULL, NULL, 'google', 'lead', 0, 1, '2026-09-06 14:57:00');
+INSERT INTO leads (ho_ten, sdt, email, nhu_cau, nguon, trang_thai, is_mql, la_mau, created_at) VALUES ('MAU-Khach-23', '0919959083', NULL, NULL, 'google', 'lead', 0, 1, '2026-09-06 21:28:00');
+INSERT INTO leads (ho_ten, sdt, email, nhu_cau, nguon, trang_thai, is_mql, la_mau, created_at) VALUES ('MAU-Khach-24', '0925488802', NULL, 'Can tu van phan mem ban hang', 'zalo', 'mql', 1, 1, '2026-09-05 15:09:00');
+INSERT INTO leads (ho_ten, sdt, email, nhu_cau, nguon, trang_thai, is_mql, la_mau, created_at) VALUES ('MAU-Khach-25', '0912066793', NULL, 'Can tu van phan mem ban hang', 'zalo', 'mql', 1, 1, '2026-09-08 14:24:00');
+INSERT INTO leads (ho_ten, sdt, email, nhu_cau, nguon, trang_thai, is_mql, la_mau, created_at) VALUES ('MAU-Khach-26', '0948548962', NULL, NULL, 'zalo', 'lead', 0, 1, '2026-09-05 19:05:00');
+INSERT INTO leads (ho_ten, sdt, email, nhu_cau, nguon, trang_thai, is_mql, la_mau, created_at) VALUES ('MAU-Khach-27', '0917974011', NULL, NULL, 'zalo', 'lead', 0, 1, '2026-09-02 08:28:00');
+INSERT INTO leads (ho_ten, sdt, email, nhu_cau, nguon, trang_thai, is_mql, la_mau, created_at) VALUES ('MAU-Khach-28', '0977098987', NULL, NULL, 'zalo', 'lead', 0, 1, '2026-09-05 10:52:00');
+INSERT INTO leads (ho_ten, sdt, email, nhu_cau, nguon, trang_thai, is_mql, la_mau, created_at) VALUES ('MAU-Khach-29', '0915777918', NULL, 'Can tu van phan mem ban hang', 'truc-tiep', 'mql', 1, 1, '2026-09-08 21:31:00');
+INSERT INTO leads (ho_ten, sdt, email, nhu_cau, nguon, trang_thai, is_mql, la_mau, created_at) VALUES ('MAU-Khach-30', '0920968630', NULL, NULL, 'truc-tiep', 'lead', 0, 1, '2026-09-01 15:53:00');
+INSERT INTO leads (ho_ten, sdt, email, nhu_cau, nguon, trang_thai, is_mql, la_mau, created_at) VALUES ('MAU-Khach-31', '0989636809', NULL, NULL, 'truc-tiep', 'lead', 0, 1, '2026-09-08 11:49:00');
+INSERT INTO leads (ho_ten, sdt, email, nhu_cau, nguon, trang_thai, is_mql, la_mau, created_at) VALUES ('MAU-Khach-32', '0944309411', NULL, NULL, 'truc-tiep', 'lead', 0, 1, '2026-09-08 19:46:00');
