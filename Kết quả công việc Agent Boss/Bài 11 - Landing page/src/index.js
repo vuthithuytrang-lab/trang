@@ -27,6 +27,25 @@ const NGAN_SACH = 0;
 // Mã đo Google Analytics. Chưa có thì để rỗng, trang vẫn chạy bình thường.
 const GA_ID = "G-GZ9MD8K29F";
 
+// ─────────────────────────────────────────────────────────────
+// MÃ ĐO HÀNH VI — Trang dán mã vào đây, để rỗng thì trang vẫn chạy
+// Clarity: xem lại thao tác khách (heatmap, quay màn hình)
+// PostHog: ghi sự kiện chi tiết
+// ─────────────────────────────────────────────────────────────
+const CLARITY_ID = "";
+const POSTHOG_KEY = "";
+const POSTHOG_HOST = "https://eu.i.posthog.com";
+
+// Model AI nhẹ của Cloudflare — miễn phí, có hạn lượt mỗi ngày
+const MODEL_AI = "@cf/meta/llama-3.1-8b-instruct";
+
+const BUOC = [
+  { ma: "vao_trang", ten: "Vào trang" },
+  { ma: "cuon_qua_form", ten: "Cuộn xuống thấy form" },
+  { ma: "cham_form", ten: "Chạm vào ô điền" },
+  { ma: "bam_gui", ten: "Bấm gửi" },
+];
+
 /**
  * TIÊU CHÍ CHẤM MQL (Marketing Qualified Lead)
  * Lead được đánh dấu MQL khi đạt CẢ HAI:
@@ -133,6 +152,20 @@ function pageHtml(nguon) {
 ${GA_ID ? `<script async src="https://www.googletagmanager.com/gtag/js?id=${GA_ID}"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
 gtag('js',new Date());gtag('config','${GA_ID}');</script>` : `<!-- Google Analytics: chưa gắn mã đo. Trang vẫn chạy bình thường. -->`}
+${CLARITY_ID ? `<script type="text/javascript">(function(c,l,a,r,i,t,y){
+c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;
+t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window,document,"clarity","script","${CLARITY_ID}");</script>` : `<!-- Microsoft Clarity: chưa gắn mã. -->`}
+${POSTHOG_KEY ? `<script>!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){
+function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]);t[e]=function(){t.push([e].concat(
+Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",
+p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode
+.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=
+function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=
+function(){return u.toString(1)+".people (stub)"},o="init capture identify alias people set_config
+register unregister".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}
+(document,window.posthog||[]);posthog.init('${POSTHOG_KEY}',{api_host:'${POSTHOG_HOST}'});</script>`
+: `<!-- PostHog: chưa gắn mã. -->`}
 <style>${CSS}</style></head><body>
 
 <header><div class="wrap nav">
@@ -226,6 +259,47 @@ gtag('js',new Date());gtag('config','${GA_ID}');</script>` : `<!-- Google Analyt
 
 <footer><div class="wrap">ShopOne — phần mềm quản lý bán hàng cho cửa hàng bán lẻ nhỏ và vừa tại Việt Nam.
 Ra mắt 2021.</div></footer>
+
+<script>
+// Đếm các bước khách đi qua. Mỗi bước chỉ ghi MỘT lần cho mỗi lượt xem,
+// nếu không một người cuộn lên cuộn xuống sẽ làm số phồng lên sai.
+(function () {
+  var nguon = ${JSON.stringify(nguon)};
+  var daGhi = {};
+  function ghi(buoc) {
+    if (daGhi[buoc]) return;
+    daGhi[buoc] = 1;
+    var than = JSON.stringify({ buoc: buoc, nguon: nguon });
+    // sendBeacon gửi được cả khi khách đang đóng tab
+    if (navigator.sendBeacon) {
+      navigator.sendBeacon("/api/su-kien", new Blob([than], { type: "application/json" }));
+    } else {
+      fetch("/api/su-kien", { method: "POST", body: than, keepalive: true,
+        headers: { "Content-Type": "application/json" } });
+    }
+  }
+
+  ghi("vao_trang");
+
+  // Cuộn tới mức nhìn thấy form — dùng IntersectionObserver cho chính xác
+  var form = document.querySelector("form");
+  if (form && "IntersectionObserver" in window) {
+    new IntersectionObserver(function (mucs, obs) {
+      mucs.forEach(function (m) {
+        if (m.isIntersecting) { ghi("cuon_qua_form"); obs.disconnect(); }
+      });
+    }, { threshold: 0.35 }).observe(form);
+  }
+
+  // Chạm vào bất kỳ ô điền nào
+  document.querySelectorAll("input, textarea").forEach(function (o) {
+    o.addEventListener("focus", function () { ghi("cham_form"); }, { once: true });
+  });
+
+  // Bấm nút gửi
+  if (form) form.addEventListener("submit", function () { ghi("bam_gui"); });
+})();
+</script>
 </body></html>`;
 }
 
@@ -296,6 +370,104 @@ async function guiMail(env, ten) {
 }
 
 const LA_PROBE = (t) => String(t || "").startsWith("LEAD-ABS-");
+
+/**
+ * Đọc micro-phễu: vào trang → cuộn thấy form → chạm ô điền → bấm gửi.
+ * Ưu tiên SỐ THẬT. Chưa có số thật thì dùng dữ liệu mẫu (và nói rõ là mẫu).
+ */
+const NGUONG_THAT = 20; // đủ chừng này lượt vào thật thì mới bỏ dữ liệu mẫu
+
+async function layMicroPheu(env) {
+  const thatCo = await env.DB.prepare(
+    `SELECT COUNT(*) AS n FROM su_kien WHERE la_mau = 0 AND buoc = 'vao_trang'`
+  ).first();
+  const soThat = thatCo?.n || 0;
+  // Chỉ một hai lượt thật thì tỷ lệ nhảy loạn, chưa nói lên điều gì.
+  // Đợi đủ NGUONG_THAT lượt mới chuyển hẳn sang số thật.
+  const dungMau = soThat < NGUONG_THAT;
+
+  const { results } = await env.DB.prepare(
+    `SELECT buoc, COUNT(*) AS n FROM su_kien WHERE la_mau = ? GROUP BY buoc`
+  )
+    .bind(dungMau ? 1 : 0)
+    .all();
+  const dem = Object.fromEntries((results || []).map((r) => [r.buoc, r.n]));
+
+  const buocs = BUOC.map((b, i) => {
+    const n = dem[b.ma] || 0;
+    const truoc = i === 0 ? n : dem[BUOC[i - 1].ma] || 0;
+    const giu = truoc ? n / truoc : 0;
+    return { ...b, so: n, giu_lai: Math.round(giu * 1000) / 10, rot: Math.round((1 - giu) * 1000) / 10 };
+  });
+
+  const vao = dem.vao_trang || 0;
+  const gui = dem.bam_gui || 0;
+
+  // Khi dùng số thật: chỉ đếm lead phát sinh TỪ LÚC bắt đầu đo,
+  // nếu không sẽ đem lead cũ chia cho lượt truy cập mới → tỷ lệ vô lý (>100%).
+  let soLead;
+  if (dungMau) {
+    soLead = gui;
+  } else {
+    const moc = await env.DB.prepare(
+      `SELECT MIN(created_at) AS t FROM su_kien WHERE la_mau = 0`
+    ).first();
+    const r = await env.DB.prepare(
+      `SELECT COUNT(*) AS n FROM leads WHERE created_at >= ?`
+    ).bind(moc?.t || "1970-01-01").first();
+    soLead = r?.n || 0;
+  }
+
+  let ty = vao ? soLead / vao : 0;
+  if (!isFinite(ty) || ty < 0) ty = 0;
+  if (ty > 1) ty = 1; // tỷ lệ chuyển đổi không bao giờ vượt 100%
+  const ty_le_chuyen = Math.round(ty * 10000) / 10000;
+
+  return { dungMau, soThat, buocs, vao, gui, soLead, ty_le_chuyen };
+}
+
+/** Nhờ AI đọc tỷ lệ rớt rồi viết 2–3 đề xuất sửa trang. */
+async function vietGoiY(env, pheu) {
+  const bang = pheu.buocs
+    .map((b, i) => (i === 0 ? `- ${b.ten}: ${b.so} lượt` : `- ${b.ten}: ${b.so} lượt (rớt ${b.rot}% so với bước trước)`))
+    .join("\n");
+
+  const prompt = `Bạn là chuyên gia tối ưu trang đích, nói tiếng Việt đời thường, không thuật ngữ.
+
+Trang đích bán phần mềm quản lý bán hàng ShopOne cho chủ cửa hàng nhỏ.
+Số liệu micro-phễu thu được:
+${bang}
+Tỷ lệ chuyển đổi chung: ${(pheu.ty_le_chuyen * 100).toFixed(2)}%
+
+Hãy viết ĐÚNG 3 đề xuất chỉnh sửa trang để thu được nhiều lead hơn.
+Mỗi đề xuất 1-2 câu, bắt đầu bằng con số rớt cụ thể rồi mới tới việc cần làm.
+Ví dụ giọng văn: "69% rời trước khi thấy form — nên đưa form lên nửa trên màn hình."
+Chỉ trả về 3 dòng, đánh số 1. 2. 3. Không thêm lời dẫn.`;
+
+  try {
+    const r = await env.AI.run(MODEL_AI, {
+      messages: [{ role: "user", content: prompt }],
+      max_tokens: 420,
+    });
+    const text = String(r?.response || "").trim();
+    if (text.length >= 20) return text;
+  } catch (e) {
+    // AI hết lượt miễn phí hoặc lỗi mạng — rơi xuống bản tự tính bên dưới
+  }
+
+  // Bản dự phòng: tự đọc số mà viết, để trang không bao giờ trống đề xuất
+  const xau = [...pheu.buocs].slice(1).sort((a, b) => b.rot - a.rot)[0];
+  const meo = {
+    cuon_qua_form: "đưa form lên nửa trên màn hình, hoặc thêm một nút 'Nhận tư vấn' ngay đầu trang cuộn thẳng xuống form",
+    cham_form: "rút bớt số ô phải điền, chỉ giữ họ tên và số điện thoại, các ô khác để tuỳ chọn",
+    bam_gui: "ghi rõ ngay cạnh nút bấm rằng sẽ được gọi lại trong 24 giờ và không bị làm phiền",
+  };
+  return [
+    `1. ${xau.rot}% rời ở bước "${xau.ten}" — đây là chỗ mất khách nhiều nhất, ${meo[xau.ma] || "cần xem lại bước này trước tiên"}.`,
+    `2. Chỉ ${pheu.soLead}/${pheu.vao} người vào trang để lại thông tin (${(pheu.ty_le_chuyen * 100).toFixed(2)}%) — thử thêm một dòng nói rõ khách nhận được gì ngay cạnh nút bấm.`,
+    `3. ${pheu.buocs[2].rot}% người đã chạm vào ô điền nhưng không bấm gửi — nhiều khả năng form dài hoặc thiếu tin tưởng, nên thêm một câu cam kết không chia sẻ thông tin cho bên thứ ba.`,
+  ].join("\n");
+}
 
 export default {
   async fetch(request, env) {
@@ -433,6 +605,57 @@ Lead kiểm tra của hệ thống đã được ẩn khỏi bảng này.
       );
     }
 
+    // ── Ghi một bước khách vừa đi qua ───────────────────────
+    if (request.method === "POST" && p === "/api/su-kien") {
+      let d = {};
+      try { d = await request.json(); } catch (_) {}
+      const buoc = String(d.buoc || "");
+      if (!BUOC.some((b) => b.ma === buoc)) {
+        return Response.json({ ok: false, loi: "bước không hợp lệ" }, { status: 400 });
+      }
+      await env.DB.prepare(`INSERT INTO su_kien (buoc, nguon, la_mau) VALUES (?, ?, 0)`)
+        .bind(buoc, String(d.nguon || "truc-tiep").slice(0, 60))
+        .run();
+      return Response.json({ ok: true }, { headers: { "access-control-allow-origin": "*" } });
+    }
+
+    // ── Máy chấm gọi phân tích: chạy đồng bộ, không hoãn ────
+    if (request.method === "POST" && p === "/api/abs-probe/phan-tich") {
+      let d = {};
+      try { d = await request.json(); } catch (_) {}
+      const nonce = String(d.nonce || "").trim() || null;
+
+      const pheu = await layMicroPheu(env);
+      const goi_y = await vietGoiY(env, pheu);
+
+      await env.DB.prepare(
+        `INSERT INTO phan_tich (probe_nonce, ty_le_chuyen, goi_y_ai, created_at)
+         VALUES (?, ?, ?, datetime('now'))`
+      )
+        .bind(nonce, pheu.ty_le_chuyen, goi_y)
+        .run();
+
+      return Response.json(
+        { ok: true, ty_le_chuyen: pheu.ty_le_chuyen },
+        { headers: { "access-control-allow-origin": "*" } }
+      );
+    }
+
+    // ── Đọc lại kết quả phân tích ───────────────────────────
+    if (request.method === "GET" && p === "/api/abs-probe/phan-tich") {
+      const token = url.searchParams.get("token");
+      if (!token) return Response.json([], { headers: { "access-control-allow-origin": "*" } });
+      const { results } = await env.DB.prepare(
+        `SELECT probe_nonce, ty_le_chuyen, goi_y_ai, created_at
+         FROM phan_tich WHERE probe_nonce = ? ORDER BY id DESC`
+      )
+        .bind(token)
+        .all();
+      return Response.json(results || [], {
+        headers: { "access-control-allow-origin": "*" },
+      });
+    }
+
     // ── Trang xem nhanh: ngân sách + nguồn + phễu ───────────
     if (p === "/bang-dieu-khien") {
       const t = await env.DB.prepare(`SELECT so FROM bo_dem WHERE ten='traffic'`).first();
@@ -557,6 +780,113 @@ Muốn đổi tiêu chí, báo Agent sửa — mất khoảng một phút.</p></
 
 <p style="margin-top:30px"><a href="/leads">→ Xem danh sách khách</a> &nbsp;·&nbsp;
 <a href="/dang-ky">→ Trang đích</a></p>
+</div></body></html>`,
+        { headers: { "content-type": "text/html; charset=utf-8" } }
+      );
+    }
+
+    // ── Trang phân tích hành vi + đề xuất của AI ────────────
+    if (p === "/phan-tich") {
+      if (request.method === "POST") {
+        const pheu0 = await layMicroPheu(env);
+        const goi_y = await vietGoiY(env, pheu0);
+        await env.DB.prepare(
+          `INSERT INTO phan_tich (probe_nonce, ty_le_chuyen, goi_y_ai, created_at)
+           VALUES (NULL, ?, ?, datetime('now'))`
+        ).bind(pheu0.ty_le_chuyen, goi_y).run();
+        return Response.redirect(new URL("/phan-tich", request.url).toString(), 303);
+      }
+
+      const pheu = await layMicroPheu(env);
+      const moiNhat = await env.DB.prepare(
+        `SELECT ty_le_chuyen, goi_y_ai, created_at FROM phan_tich
+         ORDER BY id DESC LIMIT 1`
+      ).first();
+
+      const max = pheu.buocs[0].so || 1;
+      const thanh = pheu.buocs
+        .map((b, i) => {
+          const rong = Math.max(16, Math.round((b.so / max) * 100));
+          const mau = [B.dark, B.brand, "#2E9E7E", B.accent][i];
+          return `<div style="margin:14px 0">
+<div style="display:flex;justify-content:space-between;font-size:14px;margin-bottom:5px">
+  <b>${i + 1}. ${b.ten}</b>
+  <span><b>${b.so.toLocaleString("vi-VN")}</b> lượt${
+    i ? ` &nbsp;<span style="color:${B.bad || "#8a1f1f"};font-weight:600">rớt ${b.rot}%</span>` : ""
+  }</span></div>
+<div style="background:#E9F1EE;border-radius:7px;height:30px;overflow:hidden">
+  <div style="width:${rong}%;height:100%;background:${mau};border-radius:7px"></div></div></div>`;
+        })
+        .join("");
+
+      const goiY = (moiNhat?.goi_y_ai || "")
+        .split("\n").filter((x) => x.trim())
+        .map((x) => `<li style="margin:9px 0">${esc(x.replace(/^\s*\d+[.)]\s*/, ""))}</li>`)
+        .join("");
+
+      return new Response(
+        `<!DOCTYPE html><html lang="vi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Phân tích hành vi — ShopOne</title><style>${CSS}
+.bang{background:#fff;border:1px solid ${B.line};border-radius:13px;padding:22px;margin:16px 0}
+.mau-badge{display:inline-block;background:#FFF1CF;color:#8A5A00;border:1px solid #F0C674;
+ padding:4px 12px;border-radius:20px;font-size:12.5px;font-weight:700}
+.that-badge{display:inline-block;background:${B.okb||"#e8f5ee"};color:${B.brand};
+ border:1px solid #B7DED2;padding:4px 12px;border-radius:20px;font-size:12.5px;font-weight:700}
+</style></head><body>
+<header><div class="wrap nav"><div class="brand">${LOGO}<span>ShopOne</span></div>
+<div style="font-size:14px;color:${B.mut}">Phân tích hành vi</div></div></header>
+<div class="wrap" style="padding-top:26px;padding-bottom:56px">
+
+<h1 style="font-size:26px;margin:0 0 6px">Khách rớt ở bước nào</h1>
+<p style="color:${B.mut};margin:0 0 4px;font-size:14px">
+Đếm 4 bước khách đi qua trên trang đích, tính tỷ lệ rớt ở từng bước.</p>
+${
+  pheu.dungMau
+    ? `<p style="margin:14px 0"><span class="mau-badge">⚠️ DỮ LIỆU MẪU</span></p>
+<div style="border-left:4px solid #F0C674;background:#FFFBF0;border-radius:0 10px 10px 0;padding:14px 18px;margin:12px 0">
+Đây là <b>số giả lập</b> để bạn thấy bảng chạy thế nào. Dữ liệu thật cần vài ngày mới tích đủ.
+<b>Đủ ${NGUONG_THAT} lượt truy cập thật, số thật sẽ tự thay thế toàn bộ</b> — bạn không phải làm gì,
+nhãn này sẽ tự biến mất.<br><br>
+Đang có <b>${pheu.soThat}/${NGUONG_THAT}</b> lượt thật.
+<span style="color:${B.mut};font-size:13.5px">(Đợi đủ mới đổi, vì một hai lượt thì tỷ lệ nhảy loạn,
+chưa nói lên điều gì.)</span></div>`
+    : `<p style="margin:14px 0"><span class="that-badge">✅ SỐ THẬT</span>
+<span style="color:${B.mut};font-size:13.5px">&nbsp;— dữ liệu mẫu đã được thay thế</span></p>`
+}
+
+<div class="bang">${thanh}
+<p style="margin:16px 0 0;padding-top:14px;border-top:1px solid ${B.line};font-size:14px;color:${B.mut}">
+Tỷ lệ chuyển đổi chung: <b style="color:${B.ink}">${(pheu.ty_le_chuyen * 100).toFixed(2)}%</b>
+&nbsp;·&nbsp; ${pheu.buocs[3].so.toLocaleString("vi-VN")} người bấm gửi trên
+${pheu.buocs[0].so.toLocaleString("vi-VN")} người vào trang</p></div>
+
+<h2 class="sec" style="font-size:20px;margin-top:34px">AI đọc số và đề xuất sửa trang</h2>
+${
+  moiNhat
+    ? `<div class="bang"><ol style="margin:0;padding-left:22px">${goiY}</ol>
+<p style="margin:16px 0 0;padding-top:12px;border-top:1px solid ${B.line};font-size:12.5px;color:${B.mut}">
+Phân tích lúc ${esc(moiNhat.created_at)} · tỷ lệ chuyển đổi ${(moiNhat.ty_le_chuyen * 100).toFixed(2)}%</p></div>`
+    : `<div class="bang" style="color:${B.mut}">Chưa chạy phân tích lần nào. Bấm nút bên dưới.</div>`
+}
+<form method="POST" action="/phan-tich" style="max-width:280px">
+  <button type="submit">Chạy phân tích lại</button></form>
+<p style="font-size:13px;color:${B.mut};margin-top:10px">
+Dùng AI của Cloudflare — miễn phí, có hạn lượt mỗi ngày.</p>
+
+<h2 class="sec" style="font-size:20px;margin-top:34px">Công cụ xem hành vi khách</h2>
+<div class="bang">
+<p style="margin:0 0 10px">Hai công cụ này cho bạn <b>xem lại thao tác thật</b> của khách —
+chỗ nào họ dừng lâu, chỗ nào bấm hụt:</p>
+<ul style="margin:0;padding-left:20px">
+<li><b>Microsoft Clarity</b> — bản đồ nhiệt và quay lại màn hình khách. Miễn phí không giới hạn.
+${CLARITY_ID ? `<span class="that-badge">đã gắn</span>` : `<span class="mau-badge">chưa gắn mã</span>`}</li>
+<li><b>PostHog</b> — ghi sự kiện chi tiết, dựng phễu riêng. Miễn phí 1 triệu sự kiện/tháng.
+${POSTHOG_KEY ? `<span class="that-badge">đã gắn</span>` : `<span class="mau-badge">chưa gắn mã</span>`}</li>
+</ul></div>
+
+<p style="margin-top:28px"><a href="/bang-dieu-khien">→ Bảng điều khiển</a> &nbsp;·&nbsp;
+<a href="/leads">→ Kho lead</a> &nbsp;·&nbsp; <a href="/dang-ky">→ Trang đích</a></p>
 </div></body></html>`,
         { headers: { "content-type": "text/html; charset=utf-8" } }
       );
