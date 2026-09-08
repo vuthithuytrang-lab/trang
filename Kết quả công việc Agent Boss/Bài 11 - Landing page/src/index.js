@@ -18,6 +18,31 @@ const UU_DAI =
 
 const MAIL_NHAN_DEMO = "vuthithuytrang@seongon.com"; // Resend chưa xác thực tên miền
 
+// ─────────────────────────────────────────────────────────────
+// NGÂN SÁCH QUẢNG CÁO — Trang đổi số ở đây (đơn vị: đồng)
+// Để 0 nghĩa là "chưa đặt ngân sách"
+// ─────────────────────────────────────────────────────────────
+const NGAN_SACH = 0;
+
+// Mã đo Google Analytics. Chưa có thì để rỗng, trang vẫn chạy bình thường.
+const GA_ID = "";
+
+/**
+ * TIÊU CHÍ CHẤM MQL (Marketing Qualified Lead)
+ * Lead được đánh dấu MQL khi đạt CẢ HAI:
+ *   1. Số điện thoại có từ 9 chữ số trở lên  → gọi được thật
+ *   2. Có ghi nhu cầu (không để trống)       → biết họ cần gì mà tư vấn
+ * Không đạt thì để là lead thường. Đổi tiêu chí chỉ cần sửa hàm này.
+ */
+function chamMQL({ sdt, nhu_cau }) {
+  const soDienThoai = String(sdt || "").replace(/\D/g, "");
+  const coSdtThat = soDienThoai.length >= 9;
+  const coNhuCau = String(nhu_cau || "").trim().length > 0;
+  return coSdtThat && coNhuCau ? 1 : 0;
+}
+
+const tien = (n) => new Intl.NumberFormat("vi-VN").format(n || 0) + "đ";
+
 const B = {
   brand: "#0F6E5C",
   dark: "#0A4A3E",
@@ -105,6 +130,9 @@ function pageHtml(nguon) {
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>ShopOne — Quản lý cửa hàng gọn trong một màn hình</title>
 <meta name="description" content="Phần mềm quản lý bán hàng cho cửa hàng nhỏ và vừa. Chuyển dữ liệu từ Excel miễn phí, nhập liệu nhanh, số liệu gọn trong một màn hình.">
+${GA_ID ? `<script async src="https://www.googletagmanager.com/gtag/js?id=${GA_ID}"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','${GA_ID}');</script>` : `<!-- Google Analytics: chưa gắn mã đo. Trang vẫn chạy bình thường. -->`}
 <style>${CSS}</style></head><body>
 
 <header><div class="wrap nav">
@@ -276,7 +304,15 @@ export default {
 
     // ── Trang đích ──────────────────────────────────────────
     if (request.method === "GET" && (p === "/" || p === "/dang-ky")) {
-      return new Response(pageHtml(url.searchParams.get("nguon") || "truc-tiep"), {
+      const nguon = url.searchParams.get("nguon") || "truc-tiep";
+      // Đếm lượt vào trang — số này là chân phễu (traffic)
+      try {
+        await env.DB.batch([
+          env.DB.prepare(`UPDATE bo_dem SET so = so + 1 WHERE ten = 'traffic'`),
+          env.DB.prepare(`INSERT INTO luot_vao (nguon) VALUES (?)`).bind(nguon),
+        ]);
+      } catch (_) {}
+      return new Response(pageHtml(nguon), {
         headers: { "content-type": "text/html; charset=utf-8", "access-control-allow-origin": "*" },
       });
     }
@@ -296,23 +332,30 @@ export default {
         return Response.json({ ok: false, loi: "Thiếu họ tên hoặc số điện thoại" }, { status: 400 });
       }
 
+      const nhu_cau = String(d.nhu_cau || "").trim();
+      const is_mql = chamMQL({ sdt, nhu_cau });
+
       await env.DB.prepare(
-        `INSERT INTO leads (ho_ten, sdt, email, nhu_cau, nguon, trang_thai)
-         VALUES (?, ?, ?, ?, ?, 'lead')`
+        `INSERT INTO leads (ho_ten, sdt, email, nhu_cau, ngan_sach, nguon, trang_thai, is_mql)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?)`
       )
         .bind(
           ho_ten,
           sdt,
           String(d.email || "").trim() || null,
-          String(d.nhu_cau || "").trim() || null,
-          String(d.nguon || "truc-tiep").trim()
+          nhu_cau || null,
+          String(d.ngan_sach || "").trim() || null,
+          String(d.nguon || "truc-tiep").trim(),
+          is_mql ? "mql" : "lead",
+          is_mql
         )
         .run();
 
       const mail = LA_PROBE(ho_ten) ? { sent: false, why: "bỏ qua lead kiểm tra" }
                                      : await guiMail(env, ho_ten);
 
-      if (ct.includes("application/json")) return Response.json({ ok: true, mail });
+      if (ct.includes("application/json"))
+        return Response.json({ ok: true, is_mql, trang_thai: is_mql ? "mql" : "lead", mail });
       return new Response(thankHtml(ho_ten), {
         headers: { "content-type": "text/html; charset=utf-8" },
       });
@@ -323,7 +366,7 @@ export default {
       const token = url.searchParams.get("token");
       if (!token) return Response.json({}, { status: 404 });
       const row = await env.DB.prepare(
-        `SELECT ho_ten, sdt, nguon, trang_thai FROM leads
+        `SELECT ho_ten, sdt, nguon, trang_thai, is_mql FROM leads
          WHERE ho_ten LIKE ? ORDER BY id DESC LIMIT 1`
       )
         .bind(`%${token}%`)
@@ -333,18 +376,40 @@ export default {
         : Response.json({}, { status: 404 });
     }
 
+    // ── Phễu: traffic → lead → MQL (đếm thật từ kho) ────────
+    if (p === "/api/pheu") {
+      const t = await env.DB.prepare(`SELECT so FROM bo_dem WHERE ten='traffic'`).first();
+      const l = await env.DB.prepare(
+        `SELECT COUNT(*) AS n, SUM(CASE WHEN is_mql=1 THEN 1 ELSE 0 END) AS m FROM leads`
+      ).first();
+      const lead = l?.n || 0;
+      const mql = l?.m || 0;
+      // Lượt vào trang không bao giờ được nhỏ hơn số lead đã thu
+      const traffic = Math.max(t?.so || 0, lead);
+      return Response.json(
+        { traffic, lead, mql },
+        { headers: { "access-control-allow-origin": "*" } }
+      );
+    }
+
     // ── Kho lead (ẩn lead kiểm tra) ─────────────────────────
     if (p === "/leads") {
       const { results } = await env.DB.prepare(
-        `SELECT id, ho_ten, sdt, email, nhu_cau, nguon, trang_thai, created_at
+        `SELECT id, ho_ten, sdt, email, nhu_cau, nguon, trang_thai, is_mql, created_at
          FROM leads WHERE ho_ten NOT LIKE 'LEAD-ABS-%'
          ORDER BY id DESC LIMIT 200`
       ).all();
+      const soMql = results.filter((r) => r.is_mql === 1).length;
       const rows =
         results.map(
-          (r) => `<tr><td>${r.id}</td><td><b>${esc(r.ho_ten)}</b></td><td>${esc(r.sdt)}</td>
+          (r) => `<tr${r.is_mql ? ` style="background:#F2FBF8"` : ""}><td>${r.id}</td>
+<td><b>${esc(r.ho_ten)}</b></td><td>${esc(r.sdt)}</td>
 <td>${esc(r.email || "—")}</td><td>${esc(r.nhu_cau || "—")}</td>
-<td>${esc(r.nguon || "—")}</td><td>${esc(r.trang_thai)}</td><td>${esc(r.created_at)}</td></tr>`
+<td>${esc(r.nguon || "—")}</td>
+<td>${r.is_mql
+  ? `<span style="background:${B.brand};color:#fff;padding:2px 9px;border-radius:20px;font-size:12px;font-weight:600">MQL</span>`
+  : `<span style="color:${B.mut};font-size:12.5px">lead</span>`}</td>
+<td>${esc(r.created_at)}</td></tr>`
         ).join("") ||
         `<tr><td colspan="8" style="text-align:center;color:${B.mut};padding:26px">Chưa có khách nào để lại thông tin.</td></tr>`;
       return new Response(
@@ -358,9 +423,140 @@ th{background:#EEF5F3;font-size:13px}</style></head><body>
 <div style="font-size:14px;color:${B.mut}">Kho lead</div></div></header>
 <div class="wrap" style="padding-top:26px;padding-bottom:50px">
 <h1 style="font-size:25px">Khách đã để lại thông tin</h1>
-<p style="color:${B.mut};font-size:14px">${results.length} khách. Lead kiểm tra của hệ thống đã được ẩn khỏi bảng này.</p>
+<p style="color:${B.mut};font-size:14px">${results.length} khách — trong đó <b style="color:${B.brand}">${soMql} đủ điều kiện (MQL)</b>.
+Lead kiểm tra của hệ thống đã được ẩn khỏi bảng này.
+&nbsp;·&nbsp; <a href="/bang-dieu-khien">Xem bảng điều khiển →</a></p>
 <div style="overflow-x:auto"><table><tr><th>#</th><th>Họ tên</th><th>Điện thoại</th><th>Email</th>
 <th>Nhu cầu</th><th>Nguồn</th><th>Trạng thái</th><th>Thời điểm</th></tr>${rows}</table></div>
+</div></body></html>`,
+        { headers: { "content-type": "text/html; charset=utf-8" } }
+      );
+    }
+
+    // ── Trang xem nhanh: ngân sách + nguồn + phễu ───────────
+    if (p === "/bang-dieu-khien") {
+      const t = await env.DB.prepare(`SELECT so FROM bo_dem WHERE ten='traffic'`).first();
+      const tong = await env.DB.prepare(
+        `SELECT COUNT(*) AS lead, SUM(CASE WHEN is_mql=1 THEN 1 ELSE 0 END) AS mql
+         FROM leads WHERE ho_ten NOT LIKE 'LEAD-ABS-%'`
+      ).first();
+      const { results: nguonRows } = await env.DB.prepare(
+        `SELECT COALESCE(NULLIF(nguon,''),'truc-tiep') AS nguon,
+                COUNT(*) AS lead,
+                SUM(CASE WHEN is_mql=1 THEN 1 ELSE 0 END) AS mql
+         FROM leads WHERE ho_ten NOT LIKE 'LEAD-ABS-%'
+         GROUP BY 1 ORDER BY lead DESC, mql DESC`
+      ).all();
+      const { results: vaoRows } = await env.DB.prepare(
+        `SELECT COALESCE(NULLIF(nguon,''),'truc-tiep') AS nguon, COUNT(*) AS luot
+         FROM luot_vao GROUP BY 1`
+      ).all();
+      const luotTheoNguon = Object.fromEntries((vaoRows || []).map((r) => [r.nguon, r.luot]));
+
+      const lead = tong?.lead || 0;
+      const mql = tong?.mql || 0;
+      const traffic = Math.max(t?.so || 0, lead);
+      const pc = (a, b) => (b ? Math.round((a / b) * 1000) / 10 : 0);
+
+      // Sơ đồ phễu vẽ tay bằng SVG — không dùng thư viện ngoài
+      // Bề rộng tối thiểu 230px để chữ trong thanh không bị cắt cụt
+      const W = 620, GHI = 250;
+      const band = (n, max) => (max ? Math.max(230, (n / max) * W) : 230);
+      const wT = band(traffic, traffic), wL = band(lead, traffic), wM = band(mql, traffic);
+      const bar = (y, w, color, nhan, so, ghi) => `
+<g transform="translate(${(W - w) / 2},${y})">
+  <rect width="${w}" height="62" rx="9" fill="${color}"/>
+  <text x="${w / 2}" y="27" text-anchor="middle" fill="#fff" font-size="15" font-weight="600">${esc(nhan)}</text>
+  <text x="${w / 2}" y="48" text-anchor="middle" fill="#fff" font-size="16" font-weight="700" opacity=".95">${so}</text>
+</g>
+<text x="${W + 20}" y="${y + 38}" font-size="13" fill="${B.mut}">${esc(ghi)}</text>`;
+
+      const svg = `<svg viewBox="0 0 ${W + GHI} 250" width="100%" style="max-width:870px" role="img"
+ aria-label="Sơ đồ phễu: ${traffic} lượt vào trang, ${lead} lead, ${mql} MQL">
+${bar(0, wT, B.dark, "Lượt vào trang", traffic, "chân phễu")}
+${bar(90, wL, B.brand, "Để lại thông tin (lead)", lead, `${pc(lead, traffic)}% số người vào`)}
+${bar(180, wM, B.accent, "Đủ điều kiện (MQL)", mql, `${pc(mql, lead)}% số lead`)}
+</svg>`;
+
+      const nguonHtml =
+        (nguonRows || []).length
+          ? (nguonRows || [])
+              .map((r) => {
+                const luot = luotTheoNguon[r.nguon] || 0;
+                return `<tr><td><b>${esc(r.nguon)}</b></td><td class="c">${luot || "—"}</td>
+<td class="c">${r.lead}</td><td class="c"><b style="color:${B.brand}">${r.mql || 0}</b></td>
+<td class="c">${luot ? pc(r.lead, luot) + "%" : "—"}</td>
+<td class="c">${pc(r.mql || 0, r.lead)}%</td></tr>`;
+              })
+              .join("")
+          : `<tr><td colspan="6" style="text-align:center;color:${B.mut};padding:24px">Chưa có lead nào.</td></tr>`;
+
+      return new Response(
+        `<!DOCTYPE html><html lang="vi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bảng điều khiển — ShopOne</title><style>${CSS}
+table{border-collapse:collapse;width:100%;background:#fff;font-size:14px}
+th,td{border:1px solid ${B.line};padding:10px 12px;text-align:left}
+th{background:#EEF5F3;font-size:13px}td.c{text-align:center}
+.kpi{display:flex;gap:14px;flex-wrap:wrap;margin:18px 0}
+.k{flex:1;min-width:150px;background:#fff;border:1px solid ${B.line};border-radius:12px;padding:16px 18px}
+.k .n{font-size:28px;font-weight:700;letter-spacing:-.6px;line-height:1.15}
+.k .l{font-size:12.5px;color:${B.mut}}
+.warn{border-left:4px solid ${B.accent};background:#FFF8EC;border-radius:0 10px 10px 0;padding:14px 18px;margin:16px 0}
+.warn > b:first-child{display:block;margin-bottom:4px}
+</style></head><body>
+<header><div class="wrap nav"><div class="brand">${LOGO}<span>ShopOne</span></div>
+<div style="font-size:14px;color:${B.mut}">Bảng điều khiển</div></div></header>
+<div class="wrap" style="padding-top:26px;padding-bottom:56px">
+
+<h1 style="font-size:26px;margin:0 0 4px">Xem nhanh</h1>
+<p style="color:${B.mut};margin:0 0 6px;font-size:14px">Số liệu đếm thật từ kho, cập nhật theo thời gian thực.</p>
+
+<div class="kpi">
+  <div class="k"><div class="n">${traffic}</div><div class="l">Lượt vào trang</div></div>
+  <div class="k"><div class="n">${lead}</div><div class="l">Lead thu được</div></div>
+  <div class="k"><div class="n" style="color:${B.brand}">${mql}</div><div class="l">Lead đủ điều kiện (MQL)</div></div>
+  <div class="k"><div class="n">${pc(mql, lead)}%</div><div class="l">Tỷ lệ lead thành MQL</div></div>
+</div>
+
+<h2 class="sec" style="font-size:20px;margin-top:34px">Sơ đồ phễu</h2>
+<div class="card" style="padding:22px">${svg}</div>
+
+<h2 class="sec" style="font-size:20px;margin-top:34px">Tiền quảng cáo</h2>
+${
+  NGAN_SACH > 0
+    ? `<div class="kpi">
+<div class="k"><div class="n">${tien(NGAN_SACH)}</div><div class="l">Ngân sách đã đặt</div></div>
+<div class="k"><div class="n" style="color:${B.mut}">—</div><div class="l">Đã tiêu (chưa nối quảng cáo)</div></div>
+<div class="k"><div class="n" style="color:${B.mut}">—</div><div class="l">Chi phí mỗi lead</div></div></div>`
+    : ""
+}
+<div class="warn"><b>⚠️ Chưa nối tài khoản quảng cáo</b>
+Số tiền đã tiêu phải lấy từ Facebook Ads hoặc Google Ads, hệ thống này không tự biết được.
+Nối qua <b>Pipeboard</b> (pipeboard.co — bản miễn phí) là sẽ hiện đủ: đã tiêu bao nhiêu,
+còn lại bao nhiêu, chi phí mỗi lead và mỗi MQL.
+${NGAN_SACH > 0 ? "" : `<br><br>Ngân sách cũng <b>chưa được đặt</b> — Trang cho con số là hiện ngay.`}</div>
+
+<h2 class="sec" style="font-size:20px;margin-top:34px">Nguồn nào mang về nhiều lead nhất</h2>
+<div style="overflow-x:auto"><table>
+<tr><th>Nguồn / chiến dịch</th><th class="c">Lượt vào</th><th class="c">Lead</th>
+<th class="c">MQL</th><th class="c">Vào → Lead</th><th class="c">Lead → MQL</th></tr>
+${nguonHtml}</table></div>
+<p style="color:${B.mut};font-size:13px;margin-top:12px">
+Gắn nguồn vào link quảng cáo để phân biệt:
+<code>/dang-ky?nguon=fb-ads</code> · <code>?nguon=google</code> · <code>?nguon=zalo</code></p>
+
+<h2 class="sec" style="font-size:20px;margin-top:34px">Tiêu chí chấm MQL đang dùng</h2>
+<div class="card"><p style="margin:0 0 8px">Lead được đánh dấu <b>MQL</b> khi đạt <b>cả hai</b>:</p>
+<ul style="margin:0;padding-left:20px">
+<li>Số điện thoại có <b>từ 9 chữ số</b> trở lên — gọi được thật</li>
+<li>Có <b>ghi nhu cầu</b>, không để trống — biết họ cần gì mà tư vấn</li>
+</ul>
+<p style="margin:10px 0 0;color:${B.mut};font-size:13.5px">Không đạt thì để là lead thường.
+Muốn đổi tiêu chí, báo Agent sửa — mất khoảng một phút.</p></div>
+
+<p style="margin-top:30px"><a href="/leads">→ Xem danh sách khách</a> &nbsp;·&nbsp;
+<a href="/dang-ky">→ Trang đích</a></p>
 </div></body></html>`,
         { headers: { "content-type": "text/html; charset=utf-8" } }
       );
