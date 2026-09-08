@@ -53,12 +53,17 @@ Cụ thể hóa thành 8 quy tắc:
 
 | Bị chặn | Biểu hiện | Đường vòng |
 |---|---|---|
-| `hoc.agentboss.vn` | `403 - policy denied` | Chạy Agent bản cài trên máy Trang, hoặc mở môi trường có quyền mạng |
+| ~~`hoc.agentboss.vn`~~ | ✅ **ĐÃ MỞ từ 08/09/2026** — vào bình thường, chỉ cần chìa đúng | — |
 | YouTube (tải video) | `IpBlocked` — đã thử 7 cách | Chạy trên máy cá nhân; hoặc tìm bài báo/bản ghi nguồn khác |
 | `techcombank.com` | tường lửa chặn domain + connection reset | Nhờ Trang dán thẳng nội dung bài vào chat |
 | Desktop / Documents của Trang | bản web không thấy máy cá nhân | Nhờ Trang đính kèm file vào khung chat |
 
+| LibreOffice (xem thử file Word) | `source file could not be loaded` — hỏng cả với file mẫu gốc | Kiểm tra bằng python-docx + kiểm tra zip, không render được ảnh |
+
 Nguyên tắc: **không đọc được nguồn thì báo rõ và dừng, tuyệt đối không suy đoán nội dung.**
+
+> ⚠️ Môi trường đổi theo từng phiên — **thử một lần rồi mới kết luận**, đừng tin bảng này một cách mù quáng.
+> Ngày 08/09/2026: `hoc.agentboss.vn` và `api.telegram.org` đã vào được bình thường.
 
 ## 5. Bảo mật — bài học Bài 6
 
