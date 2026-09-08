@@ -32,9 +32,9 @@ const GA_ID = "G-GZ9MD8K29F";
 // Clarity: xem lại thao tác khách (heatmap, quay màn hình)
 // PostHog: ghi sự kiện chi tiết
 // ─────────────────────────────────────────────────────────────
-const CLARITY_ID = "";
-const POSTHOG_KEY = "";
-const POSTHOG_HOST = "https://eu.i.posthog.com";
+const CLARITY_ID = "yf4r46wxg3";
+const POSTHOG_KEY = "phc_rFySDMBEjL3C9TGsG6ZoAPLntG4AwJHz8or8Thtq3Y9W";
+const POSTHOG_HOST = "https://us.i.posthog.com";
 
 // Model AI nhẹ của Cloudflare — miễn phí, có hạn lượt mỗi ngày
 const MODEL_AI = "@cf/meta/llama-3.1-8b-instruct";
