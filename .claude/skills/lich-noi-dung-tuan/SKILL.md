@@ -248,6 +248,23 @@ phải ghi trung thực bao nhiêu thư gửi được, bao nhiêu bị từ ch�
 
 ---
 
+## Bẫy đã mắc — đừng lặp lại
+
+**Chữ in đậm bị tách xuống dòng trong các khung màu.** Khi viết CSS cho khung cảnh báo,
+nếu đặt `.box b{display:block}` thì *mọi* chữ in đậm bên trong khung đều xuống dòng riêng,
+làm gãy câu giữa chừng. Chỉ dòng tiêu đề mới cần xuống dòng, nên viết:
+
+```css
+.box > b:first-child{display:block}   /* đúng — chỉ tiêu đề */
+.box b{display:block}                 /* sai — gãy hết câu bên trong */
+```
+
+Lỗi này đã mắc 2 lần (bảng định vị Bài 7, bảng theo dõi tuần). Nó chỉ lộ ra khi nhìn ảnh
+chụp trang — đọc mã HTML không thấy. Đó là lý do bước tự chụp ảnh soát lại là bắt buộc,
+không phải hình thức.
+
+---
+
 ## Báo cáo cuối mỗi lần chạy
 
 Kể lại bằng lời thường, đánh số, không thuật ngữ:
