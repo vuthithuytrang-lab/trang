@@ -5,4 +5,4 @@ compatibility_date = "2026-09-01"
 [[d1_databases]]
 binding = "DB"
 database_name = "shopone-leads"
-database_id = "PLACEHOLDER"
+database_id = "7aa290c3-3e7b-4f0e-bd53-d28b7f5415ac"
