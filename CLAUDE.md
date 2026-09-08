@@ -57,6 +57,22 @@ trang đích, brief gửi thiết kế, báo cáo cho sếp — vẫn giữ đú
 - Lưu file vào git và push, rồi mới báo xong.
 - Nhắc Trang tải lại trang (Cmd + R) nếu đang mở tab cũ trên máy Mac.
 
+## 3b. Nhận diện thương hiệu — ĐỌC TRƯỚC KHI THIẾT KẾ
+
+**Mọi ấn phẩm làm cho Trang phải theo `cong-cu/nhan-dien-thuong-hieu/CAM-NANG-THUONG-HIEU.md`.**
+Bắt tay vào thiết kế bất cứ thứ gì — trang web, landing page, email, báo cáo, slide, ảnh mạng xã hội,
+brief gửi thiết kế — thì **đọc lại file đó trước**, đừng làm theo trí nhớ.
+
+Ba luật cứng nhất:
+
+1. **Không bao giờ vẽ lại logo.** Nhúng đúng file gốc
+   `cong-cu/nhan-dien-thuong-hieu/logo-goc/SEONGON-logo-ngang.webp`. Vẽ giống 95% vẫn là sai.
+2. **Chỉ dùng màu trong bảng của cẩm nang.** Xanh `#004AEF` là chủ đạo, mint `#07EF9C` chỉ chấm phá.
+3. **Nền tối phải kê tấm nền trắng dưới logo** — chữ SEONGON cũng màu xanh, đặt thẳng lên navy là chìm.
+
+⚠️ Cẩm nang này là của **SEONGON — công ty Trang**. Sản phẩm bài học (ShopOne, v.v.) là thương hiệu
+giả lập của khóa học, có bộ màu riêng, đừng trộn hai bên vào nhau.
+
 ## 4. Giới hạn môi trường đã gặp (đừng mất công thử lại)
 
 | Bị chặn | Biểu hiện | Đường vòng |
