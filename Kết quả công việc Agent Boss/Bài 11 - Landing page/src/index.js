@@ -25,7 +25,7 @@ const MAIL_NHAN_DEMO = "vuthithuytrang@seongon.com"; // Resend chưa xác thực
 const NGAN_SACH = 0;
 
 // Mã đo Google Analytics. Chưa có thì để rỗng, trang vẫn chạy bình thường.
-const GA_ID = "";
+const GA_ID = "G-GZ9MD8K29F";
 
 /**
  * TIÊU CHÍ CHẤM MQL (Marketing Qualified Lead)
