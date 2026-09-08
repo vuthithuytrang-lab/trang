@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bảng định vị ShopOne — Bài 7</title>
+<style>
+  :root{
+    --ink:#1a1a1a; --muted:#5f6368; --line:#e3e3e0; --bg:#faf9f7; --card:#fff;
+    --ok:#0f7b4f; --okbg:#e8f5ee; --warn:#a8500a; --warnbg:#fdf1e3;
+    --gap:#8a1f1f; --gapbg:#fbeaea; --accent:#1a4d8f; --accentbg:#eaf1fa;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+       font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+  .wrap{max-width:1080px;margin:0 auto;padding:32px 20px 72px}
+  header{border-bottom:3px solid var(--ink);padding-bottom:18px;margin-bottom:8px}
+  h1{font-size:27px;margin:0 0 6px;letter-spacing:-.4px}
+  .sub{color:var(--muted);font-size:14px}
+  h2{font-size:19px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line)}
+  h3{font-size:15.5px;margin:22px 0 8px}
+  p{margin:9px 0}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:9px;padding:16px 18px;margin:14px 0}
+  .banner{border-left:5px solid var(--gap);background:var(--gapbg);border-radius:0 9px 9px 0;
+          padding:15px 18px;margin:18px 0}
+  .banner.warn{border-left-color:var(--warn);background:var(--warnbg)}
+  .banner > strong:first-child{display:block;margin-bottom:5px;font-size:15.5px}
+  .tablewrap{overflow-x:auto;margin:12px 0}
+  table{border-collapse:collapse;width:100%;background:var(--card);font-size:14px;min-width:560px}
+  th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+  th{background:#f2f1ee;font-weight:600;font-size:13.5px}
+  td.na{color:var(--gap);background:var(--gapbg);font-style:italic}
+  .src{display:block;margin-top:5px;font-size:12.2px;color:var(--muted);font-style:italic}
+  .tag{display:inline-block;padding:1.5px 8px;border-radius:20px;font-size:12px;font-weight:600;white-space:nowrap}
+  .t-ok{background:var(--okbg);color:var(--ok)}
+  .t-gap{background:var(--gapbg);color:var(--gap)}
+  .t-warn{background:var(--warnbg);color:var(--warn)}
+  .t-info{background:var(--accentbg);color:var(--accent)}
+  ul,ol{margin:8px 0;padding-left:22px}
+  li{margin:5px 0}
+  .qa{border:1px solid var(--line);border-radius:9px;background:var(--card);padding:15px 18px;margin:13px 0}
+  .q{font-weight:600;margin:0 0 8px}
+  .a{margin:0;padding-left:13px;border-left:3px solid var(--ok)}
+  footer{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);
+         color:var(--muted);font-size:12.5px}
+  @media print{body{background:#fff}.card,table,.qa{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Bảng định vị — ShopOne</h1>
+  <div class="sub">Bài 7 · Khóa Agent Boss · Lập ngày 08/09/2026 · Người dùng: Vũ Thị Thùy Trang</div>
+</header>
+
+<h2>Nguồn tài liệu đã đọc</h2>
+<div class="tablewrap">
+<table>
+  <tr><th style="width:32%">Tài liệu</th><th style="width:38%">Nội dung có gì</th><th>Dùng được không</th></tr>
+  <tr>
+    <td><code>gioi-thieu-thuong-hieu.docx</code></td>
+    <td>7 mục: Chúng tôi là ai · Khách hàng của chúng tôi · Thông điệp thương hiệu · Giọng thương hiệu · Điểm mạnh (nói được) · Điểm chưa mạnh (không giấu) · Điều tuyệt đối tránh khi truyền thông</td>
+    <td><span class="tag t-ok">Đầy đủ</span></td>
+  </tr>
+  <tr>
+    <td><code>bang-gia.xlsx</code></td>
+    <td>Sheet "Bảng giá ShopOne" — 4 gói, kèm giá/năm và đối tượng phù hợp</td>
+    <td><span class="tag t-ok">Đầy đủ</span></td>
+  </tr>
+  <tr>
+    <td><code>danh-sach-doi-thu-bai7-marketing.docx</code></td>
+    <td>Chỉ có dòng hướng dẫn và <strong>1 dòng ví dụ giả</strong> ("(Ví dụ) Đồ da ABC", link <code>vidu-doi-thu.vn</code>). 4 dòng còn lại để trống hoàn toàn.</td>
+    <td><span class="tag t-gap">TRỐNG</span></td>
+  </tr>
+</table>
+</div>
+
+<div class="banner">
+  <strong>⚠️ Điều quan trọng nhất bạn cần biết trước khi đọc tiếp</strong>
+  <p style="margin:6px 0 0"><strong>Bộ tài liệu KHÔNG có đối thủ nào cả.</strong> File danh sách đối thủ là bản mẫu trống — nó ghi rõ: <em>"thay các dòng dưới bằng 3–5 đối thủ thật của bạn"</em>. Dòng duy nhất có chữ là ví dụ minh họa của khóa học ("Đồ da ABC" — một cửa hàng đồ da, không liên quan gì tới phần mềm bán hàng), với đường link giả không tồn tại.</p>
+  <p style="margin:8px 0 0">Vì vậy <strong>toàn bộ phần so sánh đối thủ trong bảng này để trống</strong>. Tôi không điền tên đối thủ, không đoán giá của họ, không đánh giá họ mạnh yếu ra sao — vì tài liệu không nói, và bịa ra thì bạn mang đi họp sẽ sai.</p>
+  <p style="margin:8px 0 0">Phần <strong>về ShopOne thì đầy đủ</strong> và đã làm xong hết. Xem mục "Cần bổ sung gì" ở cuối để biết cần lấy thêm gì là bảng hoàn chỉnh.</p>
+</div>
+
+<h2>1. Mình là ai — theo đúng tài liệu</h2>
+<div class="tablewrap">
+<table>
+  <tr><th style="width:24%">Hạng mục</th><th>Nội dung</th></tr>
+  <tr><td>Sản phẩm</td><td>Phần mềm quản lý bán hàng cho cửa hàng bán lẻ nhỏ và vừa tại Việt Nam<span class="src">gioi-thieu-thuong-hieu.docx → mục "Chúng tôi là ai"</span></td></tr>
+  <tr><td>Ra mắt</td><td>Năm 2021<span class="src">gioi-thieu-thuong-hieu.docx → mục "Chúng tôi là ai"</span></td></tr>
+  <tr><td>Quy mô</td><td>Hơn 4.000 cửa hàng đang dùng<span class="src">gioi-thieu-thuong-hieu.docx → mục "Chúng tôi là ai"</span></td></tr>
+  <tr><td>Thông điệp lõi</td><td>“Quản lý cửa hàng gọn trong một màn hình.” — bán <strong>sự nhẹ đầu</strong>, không bán tính năng<span class="src">gioi-thieu-thuong-hieu.docx → mục "Thông điệp thương hiệu"</span></td></tr>
+  <tr><td>Giọng nói</td><td>Tiếng thường, không thuật ngữ. Xưng “chúng tôi”, gọi khách là “bạn”. Không phóng đại, không hứa con số doanh thu. Chưa làm được thì nói thẳng.<span class="src">gioi-thieu-thuong-hieu.docx → mục "Giọng thương hiệu"</span></td></tr>
+</table>
+</div>
+
+<h3>Bảng giá</h3>
+<div class="tablewrap">
+<table>
+  <tr><th>Gói</th><th>Giá/năm</th><th>Phù hợp với</th></tr>
+  <tr><td>Cơ bản</td><td>18.000.000 đ</td><td>1 cửa hàng, mới bắt đầu</td></tr>
+  <tr><td>Tiêu chuẩn</td><td>36.000.000 đ</td><td>2–3 cửa hàng, đã có nề nếp</td></tr>
+  <tr><td>Nâng cao</td><td>78.000.000 đ</td><td>chuỗi 5–10 cửa hàng, bán nhiều sàn</td></tr>
+  <tr><td>Doanh nghiệp</td><td>145.000.000 đ</td><td>chuỗi lớn, cần tùy chỉnh riêng</td></tr>
+</table>
+</div>
+<p class="src" style="font-style:italic">bang-gia.xlsx → sheet "Bảng giá ShopOne"</p>
+
+<div class="banner warn">
+  <strong>Một chỗ lệch giữa hai tài liệu — bạn nên kiểm lại</strong>
+  <p style="margin:6px 0 0">Tài liệu thương hiệu ghi nhóm khách là <strong>“chuỗi 5–15 cửa hàng”</strong>, nhưng bảng giá chỉ có gói Nâng cao cho <strong>“chuỗi 5–10”</strong>, rồi nhảy thẳng lên Doanh nghiệp <strong>“chuỗi lớn”</strong>. <strong>Chuỗi 11–15 cửa hàng rơi vào khoảng trống</strong> — không rõ nên bán gói nào.</p>
+  <p style="margin:7px 0 0"><em>Tài liệu không nêu — cần hỏi lại nội bộ.</em> Đây là câu sale sẽ vấp ngay khi gặp khách chuỗi 12 cửa hàng.</p>
+  <span class="src">Đối chiếu: gioi-thieu-thuong-hieu.docx → "Khách hàng của chúng tôi" &nbsp;vs&nbsp; bang-gia.xlsx → sheet "Bảng giá ShopOne"</span>
+</div>
+
+<h2>2. Từng đối thủ — họ mạnh ở đâu, giá ra sao</h2>
+<div class="tablewrap">
+<table>
+  <tr>
+    <th style="width:18%">Đối thủ</th>
+    <th style="width:30%">Họ tự nhận mạnh ở điểm gì</th>
+    <th style="width:22%">Giá</th>
+    <th>Nguồn</th>
+  </tr>
+  <tr>
+    <td class="na">tài liệu không nêu — cần khảo sát thêm</td>
+    <td class="na">tài liệu không nêu — cần khảo sát thêm</td>
+    <td class="na">tài liệu không nêu — cần khảo sát thêm</td>
+    <td class="na">danh-sach-doi-thu-bai7-marketing.docx → bảng đối thủ để trống</td>
+  </tr>
+</table>
+</div>
+<p>File danh sách đối thủ có 5 dòng: 1 dòng ví dụ giả của khóa học và 4 dòng trắng. <strong>Không có tên đối thủ thật nào.</strong> Tôi để trống đúng như tài liệu, không tự đi tìm và không tự suy ra.</p>
+
+<h2>3. Mình hơn ở đâu, kém ở đâu</h2>
+<p>Phần này lấy nguyên văn từ tài liệu thương hiệu — <strong>chính ShopOne tự nhận</strong>, chứ không phải kết quả so sánh với đối thủ (vì chưa có đối thủ để so).</p>
+
+<h3><span class="tag t-ok">Mạnh</span> &nbsp;Điểm mạnh — được phép nói ra</h3>
+<div class="card">
+<ul>
+  <li>Nhập liệu nhanh, thao tác bán hàng gọn</li>
+  <li>Hỗ trợ 24/7 <strong>từ gói Nâng cao trở lên</strong> (không phải mọi gói — đừng nói chung chung là "hỗ trợ 24/7")</li>
+  <li>Kết nối nhiều sàn thương mại điện tử</li>
+  <li>Chuyển dữ liệu từ Excel miễn phí</li>
+</ul>
+<span class="src">gioi-thieu-thuong-hieu.docx → mục "Điểm mạnh (nói được)"</span>
+</div>
+
+<h3><span class="tag t-gap">Yếu</span> &nbsp;Điểm chưa mạnh — nói thẳng, không giấu</h3>
+<div class="card">
+<ul>
+  <li>Chưa có ứng dụng dành cho khách hàng cuối</li>
+  <li>Chưa có phân hệ sản xuất</li>
+  <li>Giao diện báo cáo nâng cao còn cần làm quen</li>
+</ul>
+<span class="src">gioi-thieu-thuong-hieu.docx → mục "Điểm chưa mạnh (không giấu)"</span>
+</div>
+
+<div class="banner warn">
+  <strong>Nói thẳng, không tô hồng</strong>
+  <p style="margin:6px 0 0">Câu hỏi bạn đặt ra là <em>“mình hơn ở đâu, kém ở đâu”</em> — nhưng <strong>“hơn/kém” luôn là so với ai đó</strong>. Tài liệu chỉ nói ShopOne mạnh gì yếu gì <strong>tự thân</strong>, không có một dòng nào so với đối thủ. Nên bảng này <strong>chưa trả lời được câu “hơn ở đâu”</strong> theo đúng nghĩa. Muốn trả lời được thì phải có dữ liệu đối thủ trước.</p>
+</div>
+
+<h2>4. Theo từng nhóm khách — nói gì, tránh gì</h2>
+<p>Ba nhóm khách lấy đúng từ tài liệu. Cột “nên dùng” ghép từ điểm mạnh + gói giá hợp với nhóm đó.</p>
+
+<div class="tablewrap">
+<table>
+  <tr>
+    <th style="width:20%">Nhóm khách</th>
+    <th style="width:14%">Gói hợp</th>
+    <th style="width:33%">Thông điệp NÊN dùng</th>
+    <th>Thông điệp NÊN TRÁNH vì đối thủ đã chiếm</th>
+  </tr>
+  <tr>
+    <td><strong>Chủ cửa hàng 1–3 điểm bán</strong><br>đang quản lý bằng sổ tay hoặc Excel</td>
+    <td>Cơ bản 18tr<br>Tiêu chuẩn 36tr</td>
+    <td>Đánh thẳng vào nỗi sợ chuyển đổi: <strong>“Chuyển dữ liệu từ Excel miễn phí”</strong> — bỏ sổ tay không mất gì. Cộng với <strong>“nhập liệu nhanh, thao tác gọn”</strong> và câu lõi <strong>“gọn trong một màn hình”</strong>.
+      <span class="src">Điểm mạnh + Thông điệp thương hiệu + bang-gia.xlsx</span></td>
+    <td class="na">tài liệu không nêu — cần khảo sát thêm<br><span style="font-style:normal;font-size:12.5px">(không biết đối thủ nào đang chiếm thông điệp nào)</span></td>
+  </tr>
+  <tr>
+    <td><strong>Chuỗi 5–15 cửa hàng</strong><br>cần nhìn số liệu tập trung</td>
+    <td>Nâng cao 78tr<br><span class="tag t-warn">11–15 CH: chưa rõ</span></td>
+    <td>Nhấn <strong>“nhìn số liệu tập trung”</strong> + <strong>hỗ trợ 24/7</strong> (đúng gói này trở lên mới có) + <strong>kết nối nhiều sàn TMĐT</strong> — khớp đúng mô tả gói Nâng cao “bán nhiều sàn”.
+      <span class="src">Điểm mạnh + Khách hàng của chúng tôi + bang-gia.xlsx</span></td>
+    <td class="na">tài liệu không nêu — cần khảo sát thêm</td>
+  </tr>
+  <tr>
+    <td><strong>Hộ kinh doanh mới mở</strong><br>cần đơn giản, chi phí thấp</td>
+    <td>Cơ bản 18tr</td>
+    <td>Đúng hai chữ khách cần: <strong>đơn giản</strong> và <strong>chi phí thấp</strong>. Dùng câu lõi <strong>“bán sự nhẹ đầu, không bán tính năng”</strong> — đừng kể danh sách tính năng dài.
+      <span class="src">Khách hàng của chúng tôi + Thông điệp thương hiệu</span></td>
+    <td class="na">tài liệu không nêu — cần khảo sát thêm</td>
+  </tr>
+</table>
+</div>
+
+<h3>Nhưng có một danh sách “nên tránh” đã ghi sẵn — áp dụng cho MỌI nhóm khách</h3>
+<div class="card">
+<p style="margin-top:0">Đây không phải “tránh vì đối thủ chiếm”, mà là <strong>luật truyền thông nội bộ của ShopOne</strong> — tài liệu ghi rõ:</p>
+<ul>
+  <li><strong>Không cam kết mức tăng doanh thu</strong> — cấm mọi câu kiểu “tăng 30% doanh thu”</li>
+  <li><strong>Không so sánh trực tiếp bằng tên đối thủ</strong> — kể cả khi đã có dữ liệu đối thủ, cũng không được nêu đích danh trong truyền thông</li>
+  <li><strong>Không dùng ảnh khách hàng khi chưa xin phép</strong></li>
+</ul>
+<span class="src">gioi-thieu-thuong-hieu.docx → mục "Điều tuyệt đối tránh khi truyền thông"</span>
+<p style="margin-bottom:0"><strong>Lưu ý cho bảng định vị này:</strong> luật thứ hai có nghĩa là dù sau này khảo sát ra đối thủ, bảng định vị vẫn chỉ dùng <em>nội bộ</em> để chọn góc nói — không được bê tên đối thủ lên bài đăng.</p>
+</div>
+
+<h2>5. Ba câu khách hay so sánh — và cách trả lời trung thực</h2>
+<div class="banner warn" style="margin-top:10px">
+  <strong>Đọc kỹ chỗ này</strong>
+  <p style="margin:6px 0 0"><strong>Tài liệu không nêu</strong> khách hàng thực tế hay hỏi gì — không có ghi chép sale, không có FAQ, không có khảo sát. Ba câu dưới đây tôi <strong>suy ra từ đúng 3 điểm chưa mạnh mà tài liệu tự ghi</strong> — vì đó là chỗ khách sẽ chạm phải. <strong>Phần trả lời thì bám 100% vào tài liệu</strong>, không thêm gì.</p>
+  <p style="margin:7px 0 0">→ Muốn có câu hỏi thật, cần khảo sát đội sale/CSKH. <em>Cần khảo sát thêm.</em></p>
+</div>
+
+<div class="qa">
+  <p class="q">1. “Bên kia có app cho khách hàng của tôi, bên bạn có không?”</p>
+  <p class="a"><strong>Trả lời thẳng:</strong> “Hiện ShopOne <strong>chưa có ứng dụng dành cho khách hàng cuối</strong>. Chúng tôi tập trung vào phần bạn dùng để quản lý cửa hàng — nhập liệu nhanh, thao tác gọn, số liệu gom về một màn hình. Nếu app cho khách hàng cuối là thứ bạn cần ngay, hiện chúng tôi chưa đáp ứng được.”</p>
+  <span class="src">Câu hỏi suy ra từ: "Điểm chưa mạnh" gạch đầu dòng 1 · Câu trả lời lấy từ: "Điểm chưa mạnh" + "Điểm mạnh" + "Thông điệp thương hiệu" + "Giọng thương hiệu" (chưa làm được thì nói thẳng)</span>
+</div>
+
+<div class="qa">
+  <p class="q">2. “Xưởng tôi vừa sản xuất vừa bán, phần mềm có quản lý được sản xuất không?”</p>
+  <p class="a"><strong>Trả lời thẳng:</strong> “<strong>Chưa có phân hệ sản xuất.</strong> ShopOne làm phần bán lẻ — bán hàng, kho, số liệu nhiều điểm bán. Phần sản xuất bạn vẫn phải dùng công cụ khác.”</p>
+  <span class="src">Câu hỏi suy ra từ: "Điểm chưa mạnh" gạch đầu dòng 2 · Câu trả lời lấy từ: "Điểm chưa mạnh" + "Chúng tôi là ai"</span>
+</div>
+
+<div class="qa">
+  <p class="q">3. “Sao gói của bên bạn đắt hơn / tôi có được hỗ trợ 24/7 không?”</p>
+  <p class="a"><strong>Trả lời thẳng:</strong> “<strong>Hỗ trợ 24/7 có từ gói Nâng cao (78 triệu/năm) trở lên</strong>, gói Cơ bản và Tiêu chuẩn thì không. Nói trước để bạn khỏi hiểu nhầm. Còn về giá thì <strong>tài liệu không nêu giá đối thủ</strong> nên tôi chưa so được — bạn cho tôi biết bạn đang so với bên nào, tôi kiểm rồi trả lời đúng.”</p>
+  <span class="src">Câu hỏi suy ra từ: "Điểm mạnh" gạch đầu dòng 2 (điều kiện "từ gói Nâng cao") + bang-gia.xlsx · Phần giá đối thủ: tài liệu không nêu</span>
+</div>
+
+<h2>6. Cần bổ sung gì để bảng này hoàn chỉnh</h2>
+<div class="card">
+<ol>
+  <li><strong>Điền 3–5 đối thủ thật</strong> vào <code>danh-sach-doi-thu-bai7-marketing.docx</code> — mỗi đối thủ cần ít nhất 1 link công khai (website hoặc fanpage), đúng như hướng dẫn trong file. <span class="tag t-info">quan trọng nhất</span></li>
+  <li><strong>Chốt gói cho chuỗi 11–15 cửa hàng</strong> — hiện lệch giữa tài liệu thương hiệu và bảng giá.</li>
+  <li><strong>Hỏi đội sale/CSKH</strong>: khách thật hay so sánh những câu gì? Thay 3 câu suy luận ở mục 5 bằng câu thật.</li>
+  <li><strong>Xác nhận lại con số “hơn 4.000 cửa hàng”</strong> còn đúng tới thời điểm dùng không.</li>
+</ol>
+<p style="margin-bottom:0">Có đủ mục 1, tôi điền được toàn bộ phần đang trống trong khoảng 15 phút.</p>
+</div>
+
+<footer>
+  Lập từ 3 tài liệu mẫu trong thư mục Drive “Agent Boss — Tài liệu mẫu Marketing”:
+  <code>gioi-thieu-thuong-hieu.docx</code>, <code>bang-gia.xlsx</code>,
+  <code>danh-sach-doi-thu-bai7-marketing.docx</code>.<br>
+  Mọi ý đều ghi rõ tài liệu và mục nguồn. Chỗ tài liệu không nói được đánh dấu
+  “tài liệu không nêu — cần khảo sát thêm”. Không có số liệu thị phần hay đánh giá đối thủ nào được tạo ra.
+</footer>
+
+</div>
+</body>
+</html>
