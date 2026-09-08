@@ -1,0 +1,6 @@
+# Chìa khóa — KHÔNG BAO GIỜ commit
+cong-cu/telegram.env
+*.env
+*.key
+*.token
+chia-agent-boss.txt
