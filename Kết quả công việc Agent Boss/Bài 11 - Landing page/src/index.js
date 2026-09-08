@@ -39,6 +39,60 @@ const POSTHOG_HOST = "https://us.i.posthog.com";
 // Model AI nhẹ của Cloudflare — miễn phí, có hạn lượt mỗi ngày
 const MODEL_AI = "@cf/meta/llama-3.1-8b-instruct";
 
+// ─────────────────────────────────────────────────────────────
+// TELEGRAM
+// Lúc học: Trang đóng cả hai vai. Dùng thật thì đổi CHAT_SALES
+// sang Telegram của bạn Sales (bạn ấy phải bấm /start cho bot trước).
+// ─────────────────────────────────────────────────────────────
+const CHAT_MARKETER = "8652703491"; // Trang — nhận báo cáo cuối ngày
+const CHAT_SALES = "8652703491";    // người lọc lead — nhận thông báo MQL mới
+const WEBHOOK_PATH = "/telegram/webhook";
+
+async function tg(env, method, body) {
+  if (!env.TELEGRAM_TOKEN) return { ok: false, description: "chưa cấu hình TELEGRAM_TOKEN" };
+  try {
+    const r = await fetch(`https://api.telegram.org/bot${env.TELEGRAM_TOKEN}/${method}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+    const kq = await r.json();
+    // Telegram từ chối thì phải thấy được trong nhật ký, không nuốt lỗi im lặng
+    if (!kq.ok) console.log("TELEGRAM LOI", method, kq.error_code, kq.description);
+    return kq;
+  } catch (e) {
+    console.log("TELEGRAM LOI MANG", method, String(e));
+    return { ok: false, description: String(e) };
+  }
+}
+
+/** Báo cho người lọc lead biết vừa có MQL mới, kèm nút loại. */
+async function baoMqlMoi(env, lead) {
+  const dong = [
+    "🔥 <b>MQL mới</b>",
+    "",
+    `👤 <b>${escTg(lead.ho_ten)}</b>`,
+    `📞 ${escTg(lead.sdt)}`,
+    lead.email ? `✉️ ${escTg(lead.email)}` : null,
+    lead.nhu_cau ? `📝 ${escTg(lead.nhu_cau)}` : null,
+    `📣 Nguồn: ${escTg(lead.nguon || "trực tiếp")}`,
+    "",
+    "<i>Không phải khách thật? Bấm nút bên dưới để loại khỏi MQL.</i>",
+  ].filter(Boolean);
+
+  return tg(env, "sendMessage", {
+    chat_id: CHAT_SALES,
+    text: dong.join("\n"),
+    parse_mode: "HTML",
+    reply_markup: {
+      inline_keyboard: [[{ text: "❌ Không đủ điều kiện", callback_data: `loai:${lead.id}` }]],
+    },
+  });
+}
+
+const escTg = (s) =>
+  String(s ?? "").replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
+
 const BUOC = [
   { ma: "vao_trang", ten: "Vào trang" },
   { ma: "cuon_qua_form", ten: "Cuộn xuống thấy form" },
@@ -507,21 +561,31 @@ export default {
       const nhu_cau = String(d.nhu_cau || "").trim();
       const is_mql = chamMQL({ sdt, nhu_cau });
 
-      await env.DB.prepare(
+      const email = String(d.email || "").trim() || null;
+      const nguon = String(d.nguon || "truc-tiep").trim();
+
+      const ket = await env.DB.prepare(
         `INSERT INTO leads (ho_ten, sdt, email, nhu_cau, ngan_sach, nguon, trang_thai, is_mql)
          VALUES (?, ?, ?, ?, ?, ?, ?, ?)`
       )
         .bind(
           ho_ten,
           sdt,
-          String(d.email || "").trim() || null,
+          email,
           nhu_cau || null,
           String(d.ngan_sach || "").trim() || null,
-          String(d.nguon || "truc-tiep").trim(),
+          nguon,
           is_mql ? "mql" : "lead",
           is_mql
         )
         .run();
+
+      // MQL mới thì báo ngay cho người lọc lead, kèm nút loại.
+      // Chạy đồng bộ để lead vừa vào là tin đã tới — máy chấm chờ người bấm nút.
+      if (is_mql) {
+        const id = ket?.meta?.last_row_id;
+        if (id) await baoMqlMoi(env, { id, ho_ten, sdt, email, nhu_cau, nguon });
+      }
 
       const mail = LA_PROBE(ho_ten) ? { sent: false, why: "bỏ qua lead kiểm tra" }
                                      : await guiMail(env, ho_ten);
@@ -603,6 +667,64 @@ Lead kiểm tra của hệ thống đã được ẩn khỏi bảng này.
 </div></body></html>`,
         { headers: { "content-type": "text/html; charset=utf-8" } }
       );
+    }
+
+    // ── Telegram bấm nút "Không đủ điều kiện" ───────────────
+    if (request.method === "POST" && p === WEBHOOK_PATH) {
+      // Chỉ nhận tin từ Telegram, không cho người lạ gọi vào
+      const bimat = request.headers.get("x-telegram-bot-api-secret-token");
+      if (env.WEBHOOK_SECRET && bimat !== env.WEBHOOK_SECRET) {
+        return new Response("Không được phép", { status: 403 });
+      }
+
+      let up = {};
+      try { up = await request.json(); } catch (_) {}
+      const cq = up.callback_query;
+      if (!cq) return Response.json({ ok: true });
+
+      const data = String(cq.data || "");
+      if (data.startsWith("loai:")) {
+        const id = parseInt(data.slice(5), 10);
+        const lead = await env.DB.prepare(
+          `SELECT id, ho_ten, trang_thai FROM leads WHERE id = ?`
+        ).bind(id).first();
+
+        if (!lead) {
+          await tg(env, "answerCallbackQuery", {
+            callback_query_id: cq.id, text: "Không tìm thấy lead này", show_alert: true,
+          });
+          return Response.json({ ok: true });
+        }
+
+        // CHỈ đổi sang mql_loai — không đụng trạng thái nào khác
+        await env.DB.prepare(
+          `UPDATE leads SET trang_thai = 'mql_loai', is_mql = 0 WHERE id = ?`
+        ).bind(id).run();
+
+        await tg(env, "answerCallbackQuery", {
+          callback_query_id: cq.id, text: "Đã loại khỏi MQL ✓",
+        });
+        await tg(env, "editMessageText", {
+          chat_id: cq.message.chat.id,
+          message_id: cq.message.message_id,
+          parse_mode: "HTML",
+          text:
+            `❌ <b>Đã loại khỏi MQL</b>\n\n👤 ${escTg(lead.ho_ten)}\n` +
+            `<i>Lead vẫn nằm trong kho, chỉ không còn tính là MQL nữa. Con số MQL đã giảm 1.</i>`,
+        });
+      }
+      return Response.json({ ok: true });
+    }
+
+    // ── Gửi báo cáo ngay bây giờ (không đợi đến giờ hẹn) ────
+    // Dùng cùng mật khẩu với webhook, gửi qua header — không bao giờ nằm trên URL.
+    if (request.method === "POST" && p === "/bao-cao-ngay") {
+      const bimat = request.headers.get("x-telegram-bot-api-secret-token");
+      if (!env.WEBHOOK_SECRET || bimat !== env.WEBHOOK_SECRET) {
+        return new Response("Không được phép", { status: 403 });
+      }
+      const kq = await guiBaoCao(env);
+      return Response.json({ ok: !!kq.ok, mo_ta: kq.description || "đã gửi" });
     }
 
     // ── Ghi một bước khách vừa đi qua ───────────────────────
@@ -894,4 +1016,83 @@ ${POSTHOG_KEY ? `<span class="that-badge">đã gắn</span>` : `<span class="mau
 
     return new Response("Không tìm thấy trang", { status: 404 });
   },
+
+  // ── Trợ lý tự chạy theo nhịp: gom số → AI nhận định → gửi Telegram ──
+  async scheduled(event, env, ctx) {
+    ctx.waitUntil(guiBaoCao(env));
+  },
 };
+
+/** Gom số của cả hệ thống, nhờ AI nhận định, rồi gửi báo cáo về Telegram. */
+async function guiBaoCao(env) {
+  const pheu = await layMicroPheu(env);
+
+  const so = await env.DB.prepare(
+    `SELECT COUNT(*) AS lead,
+            SUM(CASE WHEN is_mql = 1 THEN 1 ELSE 0 END) AS mql,
+            SUM(CASE WHEN trang_thai = 'mql_loai' THEN 1 ELSE 0 END) AS bi_loai
+     FROM leads WHERE ho_ten NOT LIKE 'LEAD-ABS-%'`
+  ).first();
+
+  const lead = so?.lead || 0;
+  const mql = so?.mql || 0;
+  const biLoai = so?.bi_loai || 0;
+  const traffic = Math.max(pheu.vao, lead);
+
+  // Tiền quảng cáo: chưa nối Facebook/Google Ads thì không bịa ra con số
+  const coTien = NGAN_SACH > 0;
+  const chiPhiMoiLead = null; // chỉ tính được khi đã nối tài khoản quảng cáo
+
+  let nhanDinh = "";
+  try {
+    const r = await env.AI.run(MODEL_AI, {
+      messages: [{
+        role: "user",
+        content:
+`Bạn là trợ lý marketing, viết tiếng Việt đời thường, không thuật ngữ.
+Số liệu hôm nay của trang đích ShopOne:
+- Lượt vào trang: ${traffic}
+- Lead thu được: ${lead}
+- MQL sau khi người lọc loại bớt: ${mql} (đã loại ${biLoai})
+- Tỷ lệ chuyển đổi: ${(pheu.ty_le_chuyen * 100).toFixed(2)}%
+${coTien ? `- Ngân sách đã đặt: ${tien(NGAN_SACH)}` : "- Chưa nối tài khoản quảng cáo nên chưa biết đã tiêu bao nhiêu"}
+
+Viết ĐÚNG 1-2 câu nhận định: điều đáng chú ý nhất hôm nay và việc nên làm tiếp.
+Không chào hỏi, không lặp lại số liệu, đi thẳng vào ý.`,
+      }],
+      max_tokens: 200,
+    });
+    nhanDinh = String(r?.response || "").trim();
+  } catch (_) {}
+
+  if (nhanDinh.length < 15) {
+    // AI hết lượt hoặc lỗi — tự viết từ số, để báo cáo không bao giờ trống
+    if (lead === 0) nhanDinh = "Hôm nay chưa có lead nào. Nếu đang chạy quảng cáo, nên kiểm tra link có gắn đúng nguồn không.";
+    else if (biLoai > mql) nhanDinh = `Người lọc loại ${biLoai} lead, nhiều hơn số MQL còn lại — nên xem lại tiêu chí chấm MQL cho chặt hơn ngay từ đầu.`;
+    else nhanDinh = `Thu được ${lead} lead, còn ${mql} đạt chuẩn sau khi lọc. Bước rớt nặng nhất vẫn là "${[...pheu.buocs].slice(1).sort((a, b) => b.rot - a.rot)[0].ten}".`;
+  }
+
+  const dong = [
+    "📊 <b>BÁO CÁO CUỐI NGÀY — ShopOne</b>",
+    "",
+    `👀 Lượt vào trang: <b>${traffic}</b>`,
+    `📝 Lead thu được: <b>${lead}</b>`,
+    `⭐ MQL sau khi lọc: <b>${mql}</b>${biLoai ? ` <i>(đã loại ${biLoai})</i>` : ""}`,
+    `📈 Tỷ lệ chuyển đổi: <b>${(pheu.ty_le_chuyen * 100).toFixed(2)}%</b>`,
+    "",
+    coTien ? `💰 Ngân sách: <b>${tien(NGAN_SACH)}</b>` : "💰 Tiền quảng cáo: <i>chưa nối tài khoản quảng cáo</i>",
+    chiPhiMoiLead ? `💵 Chi phí mỗi lead: <b>${tien(chiPhiMoiLead)}</b>` : "💵 Chi phí mỗi lead: <i>chưa tính được</i>",
+    "",
+    "🤖 <b>Nhận định</b>",
+    escTg(nhanDinh),
+    "",
+    pheu.dungMau ? "<i>⚠️ Số hành vi hiện là dữ liệu mẫu, chưa đủ lượt thật.</i>" : "",
+  ].filter(Boolean);
+
+  return tg(env, "sendMessage", {
+    chat_id: CHAT_MARKETER,
+    text: dong.join("\n"),
+    parse_mode: "HTML",
+    disable_web_page_preview: true,
+  });
+}

@@ -9,3 +9,7 @@ database_id = "7aa290c3-3e7b-4f0e-bd53-d28b7f5415ac"
 
 [ai]
 binding = "AI"
+
+# Trợ lý tự chạy: 18h00 giờ Việt Nam mỗi ngày (= 11h00 UTC)
+[triggers]
+crons = ["0 11 * * *"]
