@@ -4,3 +4,13 @@ cong-cu/telegram.env
 *.key
 *.token
 chia-agent-boss.txt
+
+# Skill seo-analyst — chìa khóa Google + dữ liệu cá nhân, KHÔNG commit
+.claude/skills/seo-analyst/oauth_client.json
+.claude/skills/seo-analyst/accounts.json
+.claude/skills/seo-analyst/credentials/
+.claude/skills/seo-analyst/data/
+.claude/skills/seo-analyst/.venv/
+client_secret*.json
+__pycache__/
+*.pyc

@@ -37,3 +37,19 @@ Trong quá trình đọc lại bản chụp session cũ, phát hiện **3 chìa 
 
 > Lý do (bài học Bài 6): khung chat lưu lại lịch sử, chìa nằm ở đó có thể lộ ra ngoài mà bạn
 > không kiểm soát được. Ghi ra file chỉ là để **an toàn hơn** — hệ thống không bắt buộc phải đọc từ file.
+
+---
+
+## Skill `seo-analyst` — chìa Google để ở đâu
+
+Skill phân tích traffic (`.claude/skills/seo-analyst/`) cần đăng nhập Google. Các file chứa
+chìa đã được chặn commit sẵn trong `.gitignore` — **không có file nào trong số này lên repo public**:
+
+| File | Chứa gì |
+|---|---|
+| `oauth_client.json` | Chìa ứng dụng tải từ Google Cloud Console |
+| `credentials/*.json` | Token đăng nhập riêng của từng site |
+| `accounts.json` | Danh sách site, mã GA4, KPI |
+| `data/` | Dữ liệu traffic đã tải về |
+
+Khi cần đưa file `client_secret.json` cho Agent: **đính kèm file vào khung chat**, đừng dán nội dung.
