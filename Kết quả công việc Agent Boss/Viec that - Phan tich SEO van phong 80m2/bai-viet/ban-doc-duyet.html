@@ -1,0 +1,724 @@
+<!DOCTYPE html><html lang="vi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bài viết tối ưu — thiết kế văn phòng 80m2</title>
+<style>
+:root{--sg-xanh:#004AEF;--sg-navy:#002992;--sg-mint:#07EF9C;--sg-cyan:#0DD1FF;--sg-vang:#FFCE00;
+--sg-den:#151515;--sg-xam-nen:#F3F3F6;--sg-xam-vien:#DCDCDC;
+--sg-chu:Gilroy,"Montserrat",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+--sg-dai-mau:linear-gradient(135deg,#002992 0%,#004AEF 55%,#0DD1FF 100%);}
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--sg-chu);color:var(--sg-den);background:#fff;line-height:1.72;font-size:17px}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.hero{background:var(--sg-dai-mau);color:#fff;padding:34px 0 40px;margin-bottom:34px}
+.logo-nen{display:inline-block;background:#fff;border-radius:12px;padding:13px 17px;margin-bottom:18px}
+.logo-nen img{display:block;width:175px;height:auto}
+.hero h1{margin:0 0 8px;font-size:30px;font-weight:800;line-height:1.28}
+.hero p{margin:0;font-size:15.5px;color:#E3ECFF;max-width:640px}
+.hero .meta{margin-top:14px;font-size:13px;color:#BFD3FF}
+h2{font-size:26px;font-weight:800;color:var(--sg-navy);margin:38px 0 10px;line-height:1.3;
+   padding-top:14px;border-top:2px solid var(--sg-xam-vien)}
+h3{font-size:20px;font-weight:700;color:var(--sg-xanh);margin:28px 0 8px}
+p{margin:12px 0}
+ul{margin:12px 0;padding-left:22px}li{margin:7px 0}
+table{border-collapse:collapse;width:100%;margin:18px 0;font-size:15px}
+th,td{border:1px solid var(--sg-xam-vien);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--sg-navy);color:#fff;font-weight:700;font-size:14.5px}
+tbody tr:nth-child(even){background:var(--sg-xam-nen)}
+figure{margin:20px 0}
+figure img{width:100%;height:auto;border-radius:10px;display:block;background:var(--sg-xam-nen)}
+figcaption{font-size:13.5px;color:#5A6B66;margin-top:7px;text-align:center}
+mark.bosung{background:#FFF1F0;border:1px solid #F5A9A2;color:#B42318;border-radius:6px;
+  padding:2px 8px;font-size:14.5px;font-weight:700;display:inline-block}
+hr{border:0;border-top:1px solid var(--sg-xam-vien);margin:34px 0}
+em{color:#333}
+.bang-tt{background:var(--sg-xam-nen);border-radius:14px;padding:18px 22px;margin:0 0 10px;font-size:15px}
+.bang-tt b{color:var(--sg-navy)}
+footer{background:var(--sg-navy);color:#BFD3FF;margin-top:44px;padding:24px 0;font-size:13.5px}
+footer b{color:#fff}
+@media (max-width:600px){body{font-size:16px}.hero h1{font-size:24px}h2{font-size:22px}.wrap{padding:0 16px}
+ table{display:block;overflow-x:auto;white-space:normal}}
+</style></head><body>
+<div class="hero"><div class="wrap">
+<div class="logo-nen"><img src="data:image/webp;base64,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" alt="SEONGON"></div>
+<h1>Bài viết đã tối ưu — bản đọc duyệt</h1>
+<p>Từ khóa <b>&ldquo;thiết kế văn phòng 80m2&rdquo;</b>. Đây là bản để đọc và duyệt.
+Mã dán thẳng vào WordPress nằm ở file <b>ma-dan-vao-wordpress.html</b> cùng thư mục.</p>
+<div class="meta">Viết ngày 10/09/2026 · theo outline bản 2 đã duyệt</div>
+</div></div>
+<div class="wrap">
+<div class="bang-tt">
+<b>Tiêu đề đề xuất:</b> Thiết kế văn phòng 80m2 chuyên nghiệp cho 8&ndash;12 chỗ ngồi <i>(55 ký tự)</i><br>
+<b>Mô tả SEO:</b> 80m2 kê được 8&ndash;12 chỗ ngồi, phòng họp 6&ndash;8 người và pantry &mdash; nếu chia đúng tỷ lệ.
+Bảng phân bổ diện tích, 3 phương án mặt bằng, 30 mẫu và chi phí trọn gói. <i>(158 ký tự)</i><br>
+<b>Đường dẫn:</b> giữ nguyên /blog/thiet-ke-van-phong-80m2/<br>
+<b>Chỗ đánh dấu đỏ</b> là chỗ còn chờ dữ liệu thật &mdash; tôi không tự điền.
+</div>
+<p><em>Vừa ký xong hợp đồng thuê 80m2, việc đầu tiên hầu hết doanh nghiệp làm là mở bản vẽ mặt bằng ra và tự hỏi: chỗ này ngồi được bao nhiêu người?</em></p>
+
+<p><em>Câu trả lời là <strong>8 – 12 chỗ ngồi</strong>, kèm một phòng họp 6 – 8 người và một pantry nhỏ — nhưng chỉ khi chia đúng tỷ lệ ngay từ bản vẽ đầu tiên. Chia sai thì hoặc mất chỗ ngồi vào hành lang thừa, hoặc phòng họp chật đến mức không kê nổi màn hình trình chiếu, và sửa lại sau khi đã thi công luôn tốn hơn làm đúng từ đầu.</em></p>
+
+<p><em>Bài viết này đưa bảng phân bổ diện tích theo từng quy mô nhân sự, ba phương án mặt bằng, 30 mẫu <strong><a href="https://www.deco-crystal.com/blog/mau-thiet-ke-van-phong-hien-dai/" target="_blank" rel="noopener">thiết kế văn phòng làm việc hiện đại</a></strong> và mức chi phí thực tế cho 80m2 — theo đúng nguyên tắc chúng tôi áp dụng cho văn phòng ngân hàng và tập đoàn Hàn Quốc, thu gọn lại cho diện tích 80m2.</em></p>
+
+<h2>1. Văn phòng 80m2 bố trí được những gì?</h2>
+
+<p>Trước khi chọn phong cách hay chọn màu, câu hỏi cần trả lời trước là mặt bằng này chứa được gì. 80m2 không nhiều đến mức muốn gì cũng có, nhưng cũng không ít đến mức phải hy sinh. Mọi quyết định ở diện tích này đều là một sự đánh đổi — có phòng giám đốc riêng thì mất chỗ ngồi nhân viên, pantry rộng thì phòng họp co lại.</p>
+
+<h3>1.1. Bảng phân bổ diện tích chuẩn cho văn phòng 80m2</h3>
+
+<p>Đây là tỷ lệ chúng tôi áp dụng khi lên phương án cho mặt bằng khoảng 80m2:</p>
+
+<table border="1" style="width:100%">
+<thead>
+<tr><th>Khu vực</th><th>Tỷ lệ diện tích</th><th>Diện tích thực tế</th><th>Sức chứa</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Khu làm việc chung</strong></td><td>50 – 60%</td><td>40 – 48 m²</td><td>8 – 12 chỗ ngồi</td></tr>
+<tr><td><strong>Phòng họp và tiếp khách</strong></td><td>20 – 25%</td><td>16 – 20 m²</td><td>6 – 8 chỗ</td></tr>
+<tr><td><strong>Pantry và khu thư giãn</strong></td><td>10 – 15%</td><td>8 – 12 m²</td><td>4 – 6 chỗ</td></tr>
+<tr><td><strong>Lối đi, kho, tủ kỹ thuật</strong></td><td>10 – 15%</td><td>8 – 12 m²</td><td>—</td></tr>
+</tbody>
+</table>
+
+<p><strong>Khu làm việc chung</strong> luôn chiếm phần lớn nhất và nên được đặt gần nguồn sáng tự nhiên nhất. Với 40 – 48m², doanh nghiệp bố trí được 8 – 12 chỗ ngồi tùy cách sắp xếp bàn:</p>
+
+<ul>
+<li><strong>Bàn theo dãy song song:</strong> phù hợp mặt bằng hình chữ nhật dài, dễ quản lý, tận dụng tốt chiều dài phòng.</li>
+<li><strong>Bàn theo cụm nhóm:</strong> phù hợp khi các thành viên cần cộng tác nhiều trong cùng một dự án.</li>
+<li><strong>Bàn theo hình chữ L hoặc chữ U:</strong> tận dụng góc tường, tạo được nhiều chỗ ngồi hơn trong cùng diện tích.</li>
+</ul>
+
+<p><strong>Phòng họp và khu tiếp khách</strong> có hai cách xử lý, và đây là quyết định ảnh hưởng nhiều nhất đến số chỗ ngồi còn lại:</p>
+
+<ul>
+<li><strong>Phương án gộp chung:</strong> một phòng 12 – 15m² (6 – 8 chỗ) kiêm luôn chức năng tiếp khách. Tiết kiệm diện tích, nhưng nội thất phải chọn kỹ để vừa đủ nghiêm túc khi đón đối tác vừa tiện khi họp nội bộ.</li>
+<li><strong>Phương án tách bằng vách kính:</strong> khoảng 12m² cho phòng họp bên trong và 6 – 8m² phía trước làm khu chờ. Vách kính cường lực phân cách hai khu mà không chặn ánh sáng.</li>
+</ul>
+
+<p><strong>Pantry</strong> chỉ cần 8 – 12m² là đủ cho tủ đồ ăn, máy pha cà phê, lò vi sóng, bồn rửa và một bàn ăn 4 – 6 chỗ. Nếu mặt bằng không cho phép làm phòng riêng, một quầy bếp nhỏ dọc bức tường cuối kết hợp vài ghế bar cao là giải pháp tiết kiệm không gian nhất.</p>
+
+<h3>1.2. Ba phương án mặt bằng theo quy mô nhân sự</h3>
+
+<p>Cùng 80m2 nhưng công ty 8 người và công ty 12 người cần hai bản vẽ hoàn toàn khác nhau. Dưới đây là ba phương án phổ biến nhất, kèm cái được và cái mất của từng phương án.</p>
+
+<p><strong><mark class="bosung">[CẦN BỔ SUNG: 3 sơ đồ mặt bằng nhìn từ trên xuống cho ba phương án A, B, C — ghi kích thước từng khu lên hình]</mark></strong></p>
+
+<p><strong>Phương án A — 8 người, có phòng giám đốc riêng</strong></p>
+<ul>
+<li><strong>Được:</strong> giám đốc có không gian tiếp khách riêng tư; phù hợp công ty tư vấn, luật, tài chính — nơi các cuộc trao đổi cần kín đáo.</li>
+<li><strong>Mất:</strong> phòng giám đốc 10 – 12m² lấy đi khoảng 2 chỗ ngồi so với phương án mở.</li>
+<li><strong>Hợp với:</strong> doanh nghiệp ít người nhưng tiếp khách thường xuyên, hoặc công ty có nhiều cuộc họp một–một.</li>
+</ul>
+
+<p><strong>Phương án B — 12 người, mặt bằng mở hoàn toàn</strong></p>
+<ul>
+<li><strong>Được:</strong> tối đa số chỗ ngồi, dễ thay đổi bố cục khi nhân sự biến động, chi phí vách ngăn thấp nhất.</li>
+<li><strong>Mất:</strong> không có chỗ nào để nói chuyện riêng ngoài phòng họp; cần tính đến tiếng ồn ngay từ khâu chọn vật liệu trần và sàn.</li>
+<li><strong>Hợp với:</strong> công ty công nghệ, agency, startup — nơi cả đội làm việc cùng nhịp và trao đổi liên tục.</li>
+</ul>
+
+<p><strong>Phương án C — 10 người, có khu tiếp khách tách riêng</strong></p>
+<ul>
+<li><strong>Được:</strong> khách ngồi ở khu riêng ngay sau cửa, không phải đi xuyên qua khu làm việc; đây là phương án giữ được vẻ chuyên nghiệp tốt nhất trong ba phương án.</li>
+<li><strong>Mất:</strong> khu chờ 6 – 8m² lấy đi khoảng 1 – 2 chỗ ngồi.</li>
+<li><strong>Hợp với:</strong> doanh nghiệp có khách đến trực tiếp thường xuyên — showroom nhỏ, văn phòng đại diện, công ty dịch vụ.</li>
+</ul>
+
+<h3>1.3. Văn phòng 80m2 ngồi tối đa được bao nhiêu người?</h3>
+
+<p>Con số 8 – 12 chỗ không phải là con số cố định. Nó phụ thuộc vào mức diện tích bạn dành cho mỗi người:</p>
+
+<table border="1" style="width:100%">
+<thead>
+<tr><th>Mức bố trí</th><th>Diện tích mỗi người</th><th>Số chỗ trong khu làm việc 40 – 48m²</th></tr>
+</thead>
+<tbody>
+<tr><td>Tiết kiệm</td><td>3 – 4 m²/người</td><td>10 – 12 chỗ, bàn nhỏ, ít chỗ để tài liệu</td></tr>
+<tr><td><strong>Trung bình — phổ biến nhất</strong></td><td>5 – 6 m²/người</td><td>7 – 9 chỗ, thoải mái cho công việc giấy tờ</td></tr>
+<tr><td>Chuẩn</td><td>7 – 10 m²/người</td><td>4 – 6 chỗ, dành cho vị trí cần không gian riêng</td></tr>
+</tbody>
+</table>
+
+<p>Để đối chiếu, TCVN 4601:2012 — tiêu chuẩn thiết kế công sở cơ quan hành chính nhà nước — quy định định mức theo chức danh: nhân viên hỗ trợ 5 – 6 m², cán bộ hành chính và kỹ thuật 6 – 8 m², chuyên viên 8 – 10 m², trưởng và phó phòng 10 – 12 m².</p>
+
+<p>Nói cách khác, muốn kê 12 chỗ trong 80m2 là làm được, nhưng phải chấp nhận bàn nhỏ hơn và ít chỗ lưu trữ hơn. Điều <strong>không nên</strong> làm là giữ nguyên kích thước bàn rồi lấy phần diện tích của lối đi để nhét thêm người — chúng tôi sẽ nói kỹ về lỗi này ở mục 7.</p>
+
+
+<figure><img class="wp-image-48619 size-full" src="https://www.deco-crystal.com/wp-content/uploads/2026/05/thiet-ke-van-phong-80m2-04-3.webp" alt="Dãy bàn song song đặt vuông góc với cửa sổ trong văn phòng 80m2" width="800" height="533" /><figcaption>Các dãy bàn song song đặt vuông góc với cửa sổ để nhận đủ sáng mà không bị chói màn hình (Ảnh tham khảo)</figcaption></figure>
+
+<figure><img class="wp-image-48620 size-full" src="https://www.deco-crystal.com/wp-content/uploads/2026/05/thiet-ke-van-phong-80m2-05-3.webp" alt="Bố trí bàn theo cụm nhóm trong văn phòng 80m2" width="800" height="533" /><figcaption>Bố trí bàn theo cụm nhóm phù hợp với đội cần cộng tác nhiều (Ảnh tham khảo)</figcaption></figure>
+
+<figure><img class="wp-image-48622 size-full" src="https://www.deco-crystal.com/wp-content/uploads/2026/05/thiet-ke-van-phong-80m2-07-3.webp" alt="Hệ kệ gỗ mở vừa chia khu vừa lưu trữ trong văn phòng 80m2" width="800" height="530" /><figcaption>Hệ kệ gỗ mở vừa phân chia khu vực vừa tạo chỗ lưu trữ, thay cho vách ngăn cố định (Ảnh tham khảo)</figcaption></figure>
+
+<figure><img class="wp-image-48623 size-full" src="https://www.deco-crystal.com/wp-content/uploads/2026/05/thiet-ke-van-phong-80m2-08-3.webp" alt="Phòng họp nhỏ dùng vách kính cường lực trong văn phòng 80m2" width="800" height="534" /><figcaption>Phòng họp nhỏ dùng vách kính cường lực — kín tiếng mà không chặn sáng (Ảnh tham khảo)</figcaption></figure>
+
+<figure><img class="wp-image-48625 size-full" src="https://www.deco-crystal.com/wp-content/uploads/2026/05/thiet-ke-van-phong-80m2-10-3.webp" alt="Quầy bếp nhỏ dọc tường cuối văn phòng thay cho phòng pantry riêng" width="800" height="533" /><figcaption>Khi không đủ diện tích cho pantry riêng, một quầy bếp nhỏ dọc bức tường cuối kết hợp ghế bar cao là giải pháp tiết kiệm nhất (Ảnh tham khảo)</figcaption></figure>
+
+<h3>1.4. Bố cục là lớp "chuyên nghiệp" đầu tiên</h3>
+
+<p>Điều làm một văn phòng trông chuyên nghiệp trước mặt đối tác thường không phải đồ nội thất đắt tiền. Ở những dự án văn phòng ngân hàng và tập đoàn mà chúng tôi thực hiện, sự chuyên nghiệp đến từ bốn lớp — và cả bốn đều nhìn thấy được bằng mắt thường:</p>
+
+<table border="1" style="width:100%">
+<thead>
+<tr><th>Lớp</th><th>Biểu hiện cụ thể</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Bố cục</strong></td><td>Lối đi đủ rộng; khu tiếp khách tách khỏi khu làm việc; từ cửa vào không nhìn thẳng vào lưng nhân viên; phòng họp kín tiếng khi bàn việc với đối tác.</td></tr>
+<tr><td><strong>Hoàn thiện</strong></td><td>Đường ghép vật liệu thẳng; không lộ dây điện, dây mạng; trần và đèn thẳng hàng với trục bàn; tay nắm, bản lề đồng bộ.</td></tr>
+<tr><td><strong>Nhận diện</strong></td><td>Màu thương hiệu xuất hiện có chủ đích ở lễ tân; logo đúng tỷ lệ, đúng chất liệu; biển phòng đồng bộ.</td></tr>
+<tr><td><strong>Vận hành</strong></td><td>Có chỗ cho máy in, tủ điện, kho; pantry không nhìn thấy từ khu tiếp khách; đủ ổ cắm nên không phải kéo dây nối dài.</td></tr>
+</tbody>
+</table>
+
+<p>Bốn lớp này sẽ quay lại xuyên suốt bài viết — khi chọn phong cách, khi xem mẫu, khi tính chi phí và khi tránh sai lầm.</p>
+
+<h2>2. 5 nguyên tắc tối ưu diện tích văn phòng 80m2</h2>
+
+<p>Thiết kế văn phòng 80m2 là bài toán công năng, đòi hỏi tính toán kỹ từng mét vuông để vừa đảm bảo năng suất vừa tạo bầu không khí dễ chịu cho nhân viên.</p>
+
+<p><strong>Nguyên tắc 1: Xác định rõ nhu cầu sử dụng trước khi lên bản vẽ</strong></p>
+
+<p>Cần làm rõ trước ba câu: văn phòng phục vụ bao nhiêu nhân sự trong 1 – 2 năm tới, tần suất tiếp khách thế nào, và có bắt buộc phòng họp riêng biệt hay không. Đây là điều kiện tiên quyết để quyết định tỷ lệ phân bổ diện tích giữa các khu chức năng. Trong thực tế, phần lớn phương án phải sửa nhiều lần đều bắt nguồn từ việc bỏ qua bước này.</p>
+
+<p><strong>Nguyên tắc 2: Ưu tiên mặt bằng mở kết hợp vách ngăn linh hoạt</strong></p>
+
+<p>Thiết kế mặt bằng mở giúp tận dụng tối đa diện tích, tạo cảm giác rộng rãi và thuận tiện cho giao tiếp nội bộ. Để vẫn đảm bảo riêng tư khi cần, vách kính cường lực hoặc vách ngăn di động là giải pháp được nhiều văn phòng 80m2 lựa chọn — loại vách này gần như không chiếm diện tích sàn và dễ thay đổi bố cục khi quy mô nhân sự biến động.</p>
+
+<p><strong>Nguyên tắc 3: Tối ưu ánh sáng tự nhiên</strong></p>
+
+<p>Ánh sáng tự nhiên vừa tiết kiệm điện vừa tác động tích cực đến sức khỏe tinh thần và năng suất. Khu làm việc chính nên đặt gần nguồn sáng tự nhiên nhất; kho lưu trữ và phòng kỹ thuật đặt ở vị trí sâu hơn. Một lưu ý thực tế: bàn nên đặt vuông góc với cửa sổ, không quay màn hình thẳng ra cửa sổ, để tránh chói.</p>
+
+<p><strong>Nguyên tắc 4: Chọn nội thất đa năng, tiết kiệm diện tích</strong></p>
+
+<p>Nội thất đa năng như bàn tích hợp ngăn kéo, tủ hồ sơ kết hợp ghế chờ, kệ treo tường giúp giải phóng đáng kể diện tích sàn. Với doanh nghiệp thuê mặt bằng ngắn hạn, nên ưu tiên nội thất mô-đun — vừa dễ ghép thêm khi tăng người, vừa tháo ra mang đi được khi chuyển văn phòng.</p>
+
+<p><strong>Nguyên tắc 5: Giữ hành lang lưu thông thông thoáng</strong></p>
+
+<p>Lối đi chính cần rộng <strong>tối thiểu 1,2m</strong> — nếu mặt bằng cho phép, <strong>1,4 – 1,5m</strong> mới đủ để hai người tránh nhau mà không ai phải nghiêng người. Lối đi phụ giữa các bàn cần đạt <strong>tối thiểu 0,8m</strong>. Về kích thước bàn, mức tiêu chuẩn là rộng 1,0 – 1,2m, sâu 0,6 – 0,7m, khoảng cách giữa hai hàng bàn 0,9 – 1,2m. Đây là những con số nên chốt trước khi vẽ, vì mọi thứ còn lại đều phải xoay quanh chúng.</p>
+
+<figure><img class="wp-image-48616 size-full" src="https://www.deco-crystal.com/wp-content/uploads/2026/05/thiet-ke-van-phong-80m2-01-3.webp" alt="Vách ngăn kính trong văn phòng 80m2 giúp chia khu mà không chặn ánh sáng" width="800" height="450" /><figcaption>Vách ngăn kính được ưu tiên trong văn phòng vừa và nhỏ vì chia được khu mà không chặn ánh sáng (Ảnh tham khảo)</figcaption></figure>
+
+<figure><img class="wp-image-48617 size-full" src="https://www.deco-crystal.com/wp-content/uploads/2026/05/thiet-ke-van-phong-80m2-02-3.webp" alt="Nội thất mô-đun trong văn phòng 80m2 dễ ghép thêm khi tăng nhân sự" width="800" height="450" /><figcaption>Nội thất mô-đun dễ thay đổi, dễ sắp xếp lại khi tái cấu trúc văn phòng, không mất nhiều thời gian cải tạo (Ảnh tham khảo)</figcaption></figure>
+
+<figure><img class="wp-image-48618 size-full" src="https://www.deco-crystal.com/wp-content/uploads/2026/05/thiet-ke-van-phong-80m2-03-3.webp" alt="Nội thất đa năng giúp giải phóng diện tích sàn văn phòng 80m2" width="800" height="565" /><figcaption>Nội thất đa năng là lựa chọn thông minh để giải phóng diện tích sàn (Ảnh tham khảo)</figcaption></figure>
+
+<h2>3. 4 phong cách phù hợp với văn phòng 80m2 — phong cách nào "chịu" được khách</h2>
+
+<p>Sau khi đã chốt cách chia mặt bằng mới đến lượt chọn phong cách. Với 80m2, ngoài chuyện đẹp còn một câu hỏi ít người hỏi thẳng ra: <em>phong cách này có đủ nghiêm túc khi tôi đón đối tác không?</em> Bảng dưới đây trả lời câu đó trước, phần chi tiết nằm ngay sau.</p>
+
+<table border="1" style="width:100%">
+<thead>
+<tr><th>Phong cách</th><th>Chi phí</th><th>Hợp ngành nào</th><th>Độ trang trọng khi tiếp đối tác</th><th>Yêu cầu mặt bằng</th><th>Rủi ro riêng ở 80m2</th></tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tối giản</strong></td><td>Trung bình</td><td>Luật, tài chính, tư vấn, kế toán</td><td><strong>Cao</strong></td><td>Không đòi hỏi đặc biệt</td><td>Không có đồ trang trí che phủ nên mọi khiếm khuyết hoàn thiện đều lộ rõ</td>
+</tr>
+<tr>
+<td><strong>Hiện đại</strong></td><td>Trung bình – cao</td><td>Công nghệ, marketing, thương mại</td><td><strong>Vừa</strong></td><td>Không đòi hỏi đặc biệt</td><td>Dùng quá nhiều màu nhấn trong diện tích nhỏ dễ thành rối</td>
+</tr>
+<tr>
+<td><strong>Công nghiệp</strong></td><td>Trung bình</td><td>Sáng tạo, agency, studio</td><td><strong>Thấp đến vừa</strong></td><td><strong>Trần từ 3,5m trở lên</strong></td><td>Trần dưới 3m mà để mộc toàn bộ sẽ gây ngột ngạt và thiếu sáng</td>
+</tr>
+<tr>
+<td><strong>Xanh (Biophilic)</strong></td><td>Cao hơn mặt bằng chung</td><td>Y tế, giáo dục, tư vấn, doanh nghiệp chú trọng phúc lợi</td><td><strong>Vừa đến cao</strong></td><td>Cần nhiều ánh sáng tự nhiên</td><td>Cây cần chăm; tường cây không có hệ tưới sẽ xuống cấp nhanh</td>
+</tr>
+</tbody>
+</table>
+
+<h3>3.1. Phong cách tối giản (Minimalist)</h3>
+
+<p>Phong cách tối giản theo phương châm "càng ít càng tốt". Mọi chi tiết trang trí thừa đều được lược bỏ, chỉ giữ lại những vật dụng thực sự cần thiết và có công năng rõ ràng. Đây cũng là phong cách giữ được vẻ trang trọng tốt nhất trong bốn phong cách — lý do các công ty luật, tài chính và tư vấn thường chọn nó.</p>
+
+<p>Đặc trưng của phong cách tối giản trong thiết kế văn phòng:</p>
+
+<ul>
+<li><strong>Bảng màu trung tính:</strong> trắng, xám, be, đen làm màu chủ đạo. Một điểm nhấn màu duy nhất — thường là màu thương hiệu — xuất hiện trên một bức tường hoặc trong các chi tiết nội thất nhỏ.</li>
+<li><strong>Nội thất đường nét thẳng, hình học:</strong> bàn làm việc bề mặt phẳng, không chi tiết trang trí phức tạp; kệ tủ mặt tiền trơn, không tay nắm.</li>
+<li><strong>Hệ thống lưu trữ ẩn:</strong> tủ âm tường, hộc bàn tích hợp giúp bề mặt không gian luôn sạch và gọn.</li>
+</ul>
+
+<p>Chi phí thi công phong cách tối giản thường ở mức trung bình vì không đòi hỏi nhiều vật liệu trang trí cầu kỳ. Nhưng có một điều cần lưu ý trước khi chọn: <strong>chất lượng hoàn thiện bề mặt phải thật tốt</strong>. Khi không có đồ trang trí che phủ, một đường ghép lệch hay một mảng sơn không đều đều lộ ra ngay — và đó chính là thứ khách nhìn thấy.</p>
+
+<figure><img class="wp-image-48626 size-full" src="https://www.deco-crystal.com/wp-content/uploads/2026/05/thiet-ke-van-phong-80m2-11-3.webp" alt="Văn phòng 80m2 phong cách tối giản tông trắng xám điểm nhấn xanh navy" width="800" height="436" /><figcaption>Văn phòng 80m2 phong cách tối giản với tông trắng – xám chủ đạo, điểm nhấn màu xanh navy (Ảnh tham khảo)</figcaption></figure>
+
+<figure><img class="wp-image-48627 size-full" src="https://www.deco-crystal.com/wp-content/uploads/2026/05/thiet-ke-van-phong-80m2-12-3.webp" alt="Phòng họp tối giản 10m2 với vách kính mờ ngăn với khu làm việc chung" width="800" height="436" /><figcaption>Phòng họp tối giản 10m² với bàn dài màu trắng, ghế mảnh và vách kính mờ tạo ranh giới với khu làm việc chung (Ảnh tham khảo)</figcaption></figure>
+
+<h3>3.2. Phong cách hiện đại (Modern)</h3>
+
+<p>Nếu tối giản thiên về sự thuần túy và tĩnh lặng thì phong cách hiện đại mang lại cảm giác năng động và trẻ trung hơn. Đây là phong cách được ưa chuộng bởi công ty khởi nghiệp, công ty công nghệ, đơn vị sáng tạo — hoặc bất kỳ doanh nghiệp nào muốn truyền tải hình ảnh cởi mở và đổi mới.</p>
+
+<p>Đặc trưng của phong cách hiện đại trong văn phòng 80m2:</p>
+
+<ul>
+<li><strong>Vật liệu đa dạng:</strong> kính, thép, bê tông và gỗ kết hợp trong cùng một không gian tạo chiều sâu thị giác.</li>
+<li><strong>Màu sắc phong phú hơn:</strong> ngoài nền trung tính, phong cách này cho phép dùng các màu nhấn đậm như xanh coban, đỏ đô, vàng mù tạt.</li>
+<li><strong>Đồ họa và nghệ thuật tường:</strong> tranh tường, câu khẩu hiệu hoặc hình ảnh thương hiệu in trực tiếp lên tường.</li>
+<li><strong>Không gian mở kết hợp góc linh hoạt:</strong> ngoài khu làm việc cố định thường có một góc với ghế sofa và bàn cà phê thấp để đổi tư thế làm việc khi cần.</li>
+</ul>
+
+<p>Lưu ý khi áp dụng vào 80m2: màu nhấn nên giới hạn ở <strong>một mảng chính</strong>. Trong một diện tích nhỏ, ba bốn mảng màu mạnh đặt cạnh nhau sẽ làm không gian rối và trần trông thấp hơn thực tế.</p>
+
+<figure><img class="wp-image-48628 size-full" src="https://www.deco-crystal.com/wp-content/uploads/2026/05/thiet-ke-van-phong-80m2-13-3.webp" alt="Kính thép và gỗ kết hợp trong văn phòng hiện đại 80m2" width="800" height="450" /><figcaption>Kính, thép và gỗ kết hợp trong cùng một không gian tạo chiều sâu thị giác (Ảnh tham khảo)</figcaption></figure>
+
+<figure><img class="wp-image-48629 size-full" src="https://www.deco-crystal.com/wp-content/uploads/2026/05/thiet-ke-van-phong-80m2-14-3.webp" alt="Văn phòng hiện đại đường nét gọn gàng có điểm nhấn màu sắc" width="800" height="557" /><figcaption>Văn phòng hiện đại với đường nét gọn gàng và điểm nhấn màu sắc đặt đúng chỗ (Ảnh tham khảo)</figcaption></figure>
+
+<figure><img class="wp-image-48631 size-full" src="https://www.deco-crystal.com/wp-content/uploads/2026/05/thiet-ke-van-phong-80m2-16-3.webp" alt="Văn phòng 80m2 hiện đại với tường gạch trần và cây xanh điểm xuyết" width="800" height="436" /><figcaption>Văn phòng 80m2 hiện đại với tường gạch trần, nội thất thép sơn màu và cây xanh điểm xuyết (Ảnh tham khảo)</figcaption></figure>
+
+<figure><img class="wp-image-48632 size-full" src="https://www.deco-crystal.com/wp-content/uploads/2026/05/thiet-ke-van-phong-80m2-17-3.webp" alt="Góc làm việc linh hoạt với ghế sofa và bàn cà phê thấp trong văn phòng hiện đại" width="800" height="436" /><figcaption>Góc linh hoạt trong văn phòng hiện đại — ghế sofa, đèn đứng và bàn cà phê thấp tạo không gian làm việc thay thế (Ảnh tham khảo)</figcaption></figure>
+
+<h3>3.3. Phong cách công nghiệp (Industrial)</h3>
+
+<p>Phong cách công nghiệp bắt nguồn từ việc cải tạo nhà xưởng và kho bãi thành không gian làm việc sáng tạo tại các thành phố lớn phương Tây. Tại Việt Nam, phong cách này ngày càng được ưa chuộng nhờ nét thô ráp, chân thực và cá tính riêng.</p>
+
+<p>Dấu hiệu nhận diện:</p>
+
+<ul>
+<li><strong>Trần để mộc hoặc sơn đen:</strong> hệ thống ống, dầm thép, đường điện lộ ra ngoài thay vì bọc lại.</li>
+<li><strong>Sàn bê tông mài hoặc sàn gỗ đậm màu:</strong> tạo nền vững chắc cho tổng thể.</li>
+<li><strong>Nội thất gỗ tái chế và thép:</strong> bàn mặt gỗ chân thép, kệ thép ống kết hợp mặt gỗ.</li>
+<li><strong>Đèn Edison và đèn thả công nghiệp:</strong> bóng lộ dây, đèn ray kim loại.</li>
+</ul>
+
+<p><strong>Đây là phong cách kén mặt bằng nhất.</strong> Nó đặc biệt phù hợp với văn phòng có trần cao từ 3,5m trở lên. Với văn phòng 80m2 trần dưới 3m — trường hợp phổ biến ở các tòa nhà cho thuê, nhất là sau khi đã đi hệ thống điều hòa — việc để mộc toàn bộ trần dễ gây cảm giác ngột ngạt và thiếu sáng. Trong trường hợp đó, chúng tôi khuyên chỉ lấy <strong>một vài yếu tố</strong> của phong cách này: một mảng tường gạch, hệ đèn ray, chân bàn thép — thay vì áp dụng toàn bộ.</p>
+
+<p>Một lưu ý nữa về độ trang trọng: phong cách công nghiệp rất hợp với đội ngũ sáng tạo, nhưng nếu doanh nghiệp thường xuyên đón đối tác ngân hàng hoặc khách nước ngoài lớn tuổi, nên cân nhắc pha trộn với tối giản hoặc Scandinavian để giữ được sự nghiêm túc ở khu tiếp khách.</p>
+
+<figure><img class="wp-image-48634 size-full" src="https://www.deco-crystal.com/wp-content/uploads/2026/05/thiet-ke-van-phong-80m2-19-3.webp" alt="Văn phòng 80m2 phong cách công nghiệp trần để mộc" width="800" height="436" /><figcaption>Văn phòng 80m2 theo phong cách công nghiệp (Ảnh tham khảo)</figcaption></figure>
+
+<figure><img class="wp-image-48636 size-full" src="https://www.deco-crystal.com/wp-content/uploads/2026/05/thiet-ke-van-phong-80m2-21-3.webp" alt="Gỗ tái chế và nội thất khung thép đặc trưng văn phòng công nghiệp" width="800" height="436" /><figcaption>Gỗ tái chế và nội thất khung thép là đặc trưng của văn phòng công nghiệp (Ảnh tham khảo)</figcaption></figure>
+
+<h3>3.4. Thiết kế xanh (Biophilic design)</h3>
+
+<p>Biophilic design là xu hướng đang lan rộng trên thế giới. Triết lý cốt lõi là đưa thiên nhiên vào không gian làm việc để giảm căng thẳng, tăng tập trung và cải thiện chất lượng không khí nội thất.</p>
+
+<p>Cách ứng dụng trong văn phòng 80m2:</p>
+
+<ul>
+<li><strong>Tường cây xanh:</strong> một mảng 2 – 4m² tại khu tiếp khách hoặc phòng họp tạo điểm nhấn thị giác mạnh.</li>
+<li><strong>Bố trí chậu cây:</strong> cây nhỏ trên bàn, cây lớn ở góc phòng, cây treo tường hoặc treo từ trần.</li>
+<li><strong>Vật liệu tự nhiên:</strong> mặt bàn gỗ tự nhiên, sàn tre, tường đá kết hợp tông màu đất.</li>
+<li><strong>Ánh sáng tự nhiên tối đa:</strong> ưu tiên mở rộng cửa sổ, dùng vách kính để ánh sáng đi sâu vào trong.</li>
+</ul>
+
+<p>Chi phí triển khai thường cao hơn các phong cách khác, đặc biệt nếu lắp hệ thống tưới tự động cho tường cây. Một lưu ý thực tế: <strong>tường cây không có hệ tưới sẽ xuống cấp trong vài tháng</strong> và khi đó nó phản tác dụng — mảng tường héo úa ngay khu tiếp khách gây ấn tượng xấu hơn là không có gì. Nếu ngân sách không đủ cho hệ tưới, nên chọn phương án chậu cây rời để dễ chăm và dễ thay.</p>
+
+<figure><img class="wp-image-48637 size-full" src="https://www.deco-crystal.com/wp-content/uploads/2026/05/thiet-ke-van-phong-80m2-22-3.webp" alt="Mẫu văn phòng 80m2 phong cách Biophilic nhiều cây xanh" width="800" height="536" /><figcaption>Mẫu văn phòng 80m2 theo phong cách Biophilic (Ảnh tham khảo)</figcaption></figure>
+
+<figure><img class="wp-image-48638 size-full" src="https://www.deco-crystal.com/wp-content/uploads/2026/05/thiet-ke-van-phong-80m2-23-3.webp" alt="Văn phòng Biophilic với mảng cây xanh và vật liệu tự nhiên" width="800" height="533" /><figcaption>Văn phòng đậm chất Biophilic với những mảng cây xanh và vật liệu tự nhiên (Ảnh tham khảo)</figcaption></figure>
+
+<h2>4. 30 mẫu thiết kế văn phòng 80m2 đẹp 2026</h2>
+
+<p>Dưới đây là 30 mẫu văn phòng 80m2, chia theo năm nhóm phong cách. Mỗi mẫu được gắn thêm <strong>mức độ trang trọng</strong> để bạn lọc nhanh mẫu phù hợp với tần suất tiếp khách của doanh nghiệp mình:</p>
+
+<ul>
+<li><strong>Trang trọng cao</strong> — phù hợp khi thường xuyên đón đối tác, khách hàng doanh nghiệp, ngân hàng.</li>
+<li><strong>Trang trọng vừa</strong> — phù hợp với đa số doanh nghiệp, thỉnh thoảng tiếp khách.</li>
+<li><strong>Thiên nội bộ</strong> — ưu tiên trải nghiệm của nhân viên, ít tiếp khách bên ngoài.</li>
+</ul>
+
+<p>Đây là các mẫu tham khảo được chúng tôi chọn lọc theo ba đặc điểm phổ biến của mặt bằng văn phòng cho thuê tại Việt Nam: trần thấp, có cột giữa nhà, và cửa sổ chỉ ở một mặt. Các dự án thực tế do Crystal Design TPL thực hiện nằm ở mục 8.</p>
+
+<h3>4.1. Nhóm 1: Mẫu văn phòng 80m2 phong cách tối giản</h3>
+
+<p><strong>Mẫu 01 — Tối giản trắng và xanh navy</strong> <em>(Trang trọng cao)</em>: toàn bộ nội thất màu trắng, ngoại trừ một bức tường navy đậm phía sau khu lễ tân nơi đặt logo. Bàn làm việc dạng cụm 4 người hướng về phía cửa sổ. Phòng họp ngăn bằng vách kính cường lực trong suốt.</p>
+
+<figure><img class="wp-image-48640 size-full" src="https://www.deco-crystal.com/wp-content/uploads/2026/05/thiet-ke-van-phong-80m2-25-3.webp" alt="Mẫu văn phòng 80m2 tối giản trắng và navy" width="800" height="436" /><figcaption>Mẫu 01 — tối giản trắng và xanh navy (Ảnh tham khảo)</figcaption></figure>
+
+<p><strong>Mẫu 02 — Tối giản Scandinavian</strong> <em>(Trang trọng vừa)</em>: lấy cảm hứng từ thiết kế Bắc Âu với gỗ sáng màu và bảng màu trắng – be – xám nhạt. Hệ tủ hồ sơ âm tường chạy hết một mặt tường, giải phóng toàn bộ diện tích sàn cho chỗ ngồi.</p>
+
+<figure><img class="wp-image-48641 size-full" src="https://www.deco-crystal.com/wp-content/uploads/2026/05/thiet-ke-van-phong-80m2-26-3.webp" alt="Mẫu văn phòng 80m2 tối giản Scandinavian gỗ sáng màu" width="800" height="436" /><figcaption>Mẫu 02 — tối giản Scandinavian với hệ tủ âm tường (Ảnh tham khảo)</figcaption></figure>
+
+<p><strong>Mẫu 03 — Tối giản cho công ty luật</strong> <em>(Trang trọng cao)</em>: nội thất <strong>gỗ óc chó</strong> kết hợp <strong>đá marble nhân tạo</strong> tạo sự trang trọng, phù hợp doanh nghiệp trong lĩnh vực pháp lý, tài chính hoặc tư vấn cao cấp — nơi khách hàng đánh giá độ tin cậy ngay từ phòng chờ.</p>
+
+<figure><img class="wp-image-48642 size-full" src="https://www.deco-crystal.com/wp-content/uploads/2026/05/thiet-ke-van-phong-80m2-27-3.webp" alt="Văn phòng 80m2 tối giản sang trọng cho công ty luật" width="800" height="436" /><figcaption>Mẫu 03 — tối giản sang trọng với gỗ óc chó và đá marble nhân tạo (Ảnh tham khảo)</figcaption></figure>
+
+<p><strong>Mẫu 04 — Tối giản điểm nhấn vàng đồng</strong> <em>(Trang trọng cao)</em>: nền trắng xám được làm ấm bằng chi tiết tay nắm tủ, đèn bàn và khung ảnh màu vàng đồng. Cách làm ấm không gian mà không cần thêm màu lớn nào lên tường.</p>
+
+<figure><img class="wp-image-48643 size-full" src="https://www.deco-crystal.com/wp-content/uploads/2026/05/thiet-ke-van-phong-80m2-28-3.webp" alt="Mẫu văn phòng 80m2 tối giản điểm nhấn vàng đồng" width="800" height="436" /><figcaption>Mẫu 04 — tối giản với chi tiết kim loại vàng đồng (Ảnh tham khảo)</figcaption></figure>
+
+<p><strong>Mẫu 05 — Tối giản xanh pastel</strong> <em>(Trang trọng vừa)</em>: bảng màu xanh pastel dịu kết hợp hệ cửa sổ lớn và đèn thả hình cầu. Bố cục mở, không vách ngăn cố định — phù hợp nhóm nhân sự trẻ làm việc theo dự án.</p>
+
+<figure><img class="wp-image-48644 size-full" src="https://www.deco-crystal.com/wp-content/uploads/2026/05/thiet-ke-van-phong-80m2-29-3.webp" alt="Mẫu văn phòng 80m2 tối giản xanh pastel" width="800" height="546" /><figcaption>Mẫu 05 — tối giản với bảng màu xanh pastel (Ảnh tham khảo)</figcaption></figure>
+
+<h3>4.2. Nhóm 2: Mẫu văn phòng 80m2 phong cách hiện đại</h3>
+
+<p><strong>Mẫu 06 — Văn phòng startup mở hoàn toàn</strong> <em>(Thiên nội bộ)</em>: không phòng riêng, không vách ngăn — toàn bộ 80m2 là một không gian liền mạch, kết hợp nội thất trắng và các mảng tường màu. Đổi lại, cần xử lý tiếng ồn bằng trần tiêu âm và thảm.</p>
+
+<figure><img class="wp-image-48645 size-full" src="https://www.deco-crystal.com/wp-content/uploads/2026/05/thiet-ke-van-phong-80m2-30-3.webp" alt="Thiết kế văn phòng 80m2 startup mở hoàn toàn" width="800" height="533" /><figcaption>Mẫu 06 — văn phòng startup mở hoàn toàn (Ảnh tham khảo)</figcaption></figure>
+
+<p><strong>Mẫu 07 — Hiện đại pha công nghiệp, bàn dài dùng chung</strong> <em>(Thiên nội bộ)</em>: mảng tường ốp gỗ ấm kết hợp một hệ bàn dài dùng chung thay cho các bàn rời. Dãy bàn đặt sát cửa sổ để tận dụng ánh sáng tự nhiên cho toàn bộ chiều dài bàn.</p>
+
+<figure><img class="wp-image-48646 size-full" src="https://www.deco-crystal.com/wp-content/uploads/2026/05/thiet-ke-van-phong-80m2-31-3.webp" alt="Mẫu văn phòng 80m2 hiện đại với bàn dài dùng chung" width="800" height="533" /><figcaption>Mẫu 07 — hệ bàn dài dùng chung đặt dọc cửa sổ (Ảnh tham khảo)</figcaption></figure>
+
+<p><strong>Mẫu 08 — Hiện đại với hệ đèn trần dạng ziczac</strong> <em>(Trang trọng vừa)</em>: hệ đèn thả ziczac trên nền trần mở, đặt lệch so với trục bàn để tránh bóng đổ lên màn hình. Bàn bố trí đối xứng hai dãy, kệ lưu trữ chạy sát tường.</p>
+
+<figure><img class="wp-image-48647 size-full" src="https://www.deco-crystal.com/wp-content/uploads/2026/05/thiet-ke-van-phong-80m2-32-3.webp" alt="Mẫu văn phòng 80m2 hiện đại hệ đèn trần ziczac" width="800" height="533" /><figcaption>Mẫu 08 — hệ đèn thả ziczac đặt lệch trục bàn (Ảnh tham khảo)</figcaption></figure>
+
+<p><strong>Mẫu 09 — Văn phòng công ty truyền thông</strong> <em>(Trang trọng vừa)</em>: xanh coban và cam neon xuất hiện trong chi tiết nội thất và nghệ thuật tường, giữ ở mức điểm nhấn chứ không phủ diện rộng. Phù hợp doanh nghiệp quảng cáo, marketing.</p>
+
+<figure><img class="wp-image-48648 size-full" src="https://www.deco-crystal.com/wp-content/uploads/2026/05/thiet-ke-van-phong-80m2-33-3.webp" alt="Mẫu văn phòng 80m2 cho công ty truyền thông màu xanh coban và cam" width="800" height="436" /><figcaption>Mẫu 09 — văn phòng công ty truyền thông (Ảnh tham khảo)</figcaption></figure>
+
+<p><strong>Mẫu 10 — Văn phòng công ty thiết kế</strong> <em>(Thiên nội bộ)</em>: khu làm việc dùng đèn có <strong>nhiệt độ màu 5.000 – 6.500K</strong> (ánh sáng trắng trung tính đến trắng lạnh, gần với ánh sáng ban ngày) và <strong>độ rọi tối thiểu 500 lux</strong> trên mặt bàn, để màu trên màn hình khớp với màu khi in ra.</p>
+
+<figure><img class="wp-image-48649 size-full" src="https://www.deco-crystal.com/wp-content/uploads/2026/05/thiet-ke-van-phong-80m2-34-3.webp" alt="Mẫu văn phòng 80m2 cho công ty thiết kế với hệ chiếu sáng chuẩn màu" width="800" height="436" /><figcaption>Mẫu 10 — văn phòng công ty thiết kế với hệ chiếu sáng chuẩn màu (Ảnh tham khảo)</figcaption></figure>
+
+<p><strong>Mẫu 11 — Văn phòng cho đội ngũ trẻ</strong> <em>(Thiên nội bộ)</em>: đèn neon, tường tranh, ghế nhiều màu và bàn làm việc đứng. Thiết kế dành cho nhóm nhân sự trẻ, ưu tiên cá tính hơn là sự chuẩn mực.</p>
+
+<figure><img class="wp-image-48650 size-full" src="https://www.deco-crystal.com/wp-content/uploads/2026/05/thiet-ke-van-phong-80m2-35-3.webp" alt="Mẫu văn phòng 80m2 cho đội ngũ trẻ với đèn neon và bàn đứng" width="800" height="436" /><figcaption>Mẫu 11 — văn phòng cho đội ngũ trẻ (Ảnh tham khảo)</figcaption></figure>
+
+<h3>4.3. Nhóm 3: Mẫu văn phòng 80m2 phong cách công nghiệp</h3>
+
+<p><strong>Mẫu 12 — Công nghiệp hiện đại, chia khu không vách</strong> <em>(Trang trọng vừa)</em>: không gian chia thành khu làm việc tập trung, khu trưng bày và góc lounge mà không cần vách ngăn — dùng chính đồ nội thất làm ranh giới. Mảng pastel điểm xuyết trên nền xám trắng.</p>
+
+<figure><img class="wp-image-48651 size-full" src="https://www.deco-crystal.com/wp-content/uploads/2026/05/thiet-ke-van-phong-80m2-36-3.webp" alt="Mẫu văn phòng 80m2 công nghiệp hiện đại chia khu bằng nội thất" width="800" height="450" /><figcaption>Mẫu 12 — chia khu bằng nội thất thay cho vách ngăn (Ảnh tham khảo)</figcaption></figure>
+
+<p><strong>Mẫu 13 — Công nghiệp pha Scandinavian</strong> <em>(Trang trọng vừa)</em>: trần mở kiểu công nghiệp được cân bằng bằng mảng tường xanh pastel và nội thất gỗ sáng màu. Cách pha này giữ được nét cá tính mà vẫn đủ nhẹ nhàng cho không gian trần thấp.</p>
+
+<figure><img class="wp-image-48652 size-full" src="https://www.deco-crystal.com/wp-content/uploads/2026/05/thiet-ke-van-phong-80m2-37-3.webp" alt="Mẫu văn phòng 80m2 công nghiệp pha Scandinavian" width="800" height="449" /><figcaption>Mẫu 13 — công nghiệp pha Scandinavian (Ảnh tham khảo)</figcaption></figure>
+
+<p><strong>Mẫu 14 — Công nghiệp pha Japandi</strong> <em>(Trang trọng vừa)</em>: tường gạch và bê tông thô mộc kết hợp nội thất gỗ sáng màu tinh giản. Mảng xanh điểm xuyết làm dịu bớt sự thô cứng của bê tông và thép.</p>
+
+<figure><img class="wp-image-48653 size-full" src="https://www.deco-crystal.com/wp-content/uploads/2026/05/thiet-ke-van-phong-80m2-38-3.webp" alt="Mẫu văn phòng 80m2 công nghiệp pha Japandi" width="800" height="436" /><figcaption>Mẫu 14 — công nghiệp pha Japandi (Ảnh tham khảo)</figcaption></figure>
+
+<p><strong>Mẫu 15 — Công nghiệp với cửa sổ sàn–trần</strong> <em>(Trang trọng vừa)</em>: hệ cửa sổ chạy từ sàn lên trần đưa ánh sáng vào sâu, kết hợp nội thất gỗ sáng và tông trắng chủ đạo. Bố cục chạy dọc theo cửa sổ để mọi chỗ ngồi đều nhận được sáng tự nhiên.</p>
+
+<figure><img class="wp-image-48654 size-full" src="https://www.deco-crystal.com/wp-content/uploads/2026/05/thiet-ke-van-phong-80m2-39-3.webp" alt="Mẫu văn phòng 80m2 công nghiệp với cửa sổ sàn trần" width="800" height="436" /><figcaption>Mẫu 15 — bố cục chạy dọc hệ cửa sổ sàn–trần (Ảnh tham khảo)</figcaption></figure>
+
+<p><strong>Mẫu 16 — Công nghiệp với khung kim loại đen</strong> <em>(Trang trọng vừa)</em>: gỗ sáng màu kết hợp khung kim loại đen tạo môi trường mạnh mẽ nhưng vẫn ấm. <strong>Ánh sáng tự nhiên được tận dụng tối đa</strong>, giúp mở rộng tầm nhìn trong không gian có giới hạn diện tích.</p>
+
+<figure><img class="wp-image-48655 size-full" src="https://www.deco-crystal.com/wp-content/uploads/2026/05/thiet-ke-van-phong-80m2-40-3.webp" alt="Mẫu văn phòng 80m2 công nghiệp khung kim loại đen" width="800" height="538" /><figcaption>Mẫu 16 — gỗ sáng màu kết hợp khung kim loại đen (Ảnh tham khảo)</figcaption></figure>
+
+<p><strong>Mẫu 17 — Công nghiệp với vách kính khung thép</strong> <em>(Trang trọng cao)</em>: <strong>mẫu này</strong> dùng trần mở kết hợp vách kính khung thép lớn để phân khu mà vẫn giữ được tầm nhìn xuyên suốt. Vật liệu thô mộc được cân bằng bằng nội thất gỗ sáng màu; cây xanh làm ranh giới mềm giữa các khu.</p>
+
+<figure><img class="wp-image-48656 size-full" src="https://www.deco-crystal.com/wp-content/uploads/2026/05/thiet-ke-van-phong-80m2-41-3.webp" alt="Mẫu văn phòng 80m2 công nghiệp vách kính khung thép" width="800" height="436" /><figcaption>Mẫu 17 — vách kính khung thép phân khu mà không chặn tầm nhìn (Ảnh tham khảo)</figcaption></figure>
+
+<p><strong>Mẫu 18 — Công nghiệp sang trọng</strong> <em>(Trang trọng cao)</em>: vật liệu thô mộc kết hợp nội thất da và khu pantry hiện đại. Đây là hướng đi khi doanh nghiệp muốn nét cá tính của phong cách công nghiệp nhưng vẫn cần đủ trang trọng để tiếp khách.</p>
+
+<figure><img class="wp-image-48657 size-full" src="https://www.deco-crystal.com/wp-content/uploads/2026/05/thiet-ke-van-phong-80m2-42-3.webp" alt="Mẫu văn phòng 80m2 công nghiệp sang trọng với nội thất da" width="800" height="588" /><figcaption>Mẫu 18 — công nghiệp sang trọng với nội thất da (Ảnh tham khảo)</figcaption></figure>
+
+<h3>4.4. Nhóm 4: Mẫu văn phòng 80m2 phong cách xanh (Biophilic)</h3>
+
+<p><strong>Mẫu 19 — Tường cây tại khu lễ tân</strong> <em>(Trang trọng cao)</em>: cây xanh tập trung tại một mảng tường khu tiếp khách, phần còn lại giữ phong cách hiện đại. Đây là cách đưa thiết kế xanh vào với chi phí vừa phải mà vẫn tạo được ấn tượng ngay ở nơi khách nhìn thấy đầu tiên.</p>
+
+<figure><img class="wp-image-48658 size-full" src="https://www.deco-crystal.com/wp-content/uploads/2026/05/thiet-ke-van-phong-80m2-43-3.webp" alt="Mẫu văn phòng 80m2 Biophilic với tường cây tại khu lễ tân" width="800" height="450" /><figcaption>Mẫu 19 — tường cây đặt tại khu lễ tân (Ảnh tham khảo)</figcaption></figure>
+
+<p><strong>Mẫu 20 — Cây xanh rải khắp không gian</strong> <em>(Trang trọng vừa)</em>: thay vì tập trung một mảng, cây được rải đều ở mọi khu — trên bàn, góc phòng, treo trần. Cách này dễ chăm hơn tường cây và không cần hệ tưới.</p>
+
+<figure><img class="wp-image-48659 size-full" src="https://www.deco-crystal.com/wp-content/uploads/2026/05/thiet-ke-van-phong-80m2-44-3.webp" alt="Mẫu văn phòng 80m2 Biophilic cây xanh rải khắp không gian" width="800" height="533" /><figcaption>Mẫu 20 — cây xanh rải đều thay cho một mảng tập trung (Ảnh tham khảo)</figcaption></figure>
+
+<p><strong>Mẫu 21 — Kết hợp ánh sáng sinh học</strong> <em>(Trang trọng vừa)</em>: ngoài cây xanh, thiết kế tích hợp hệ đèn LED điều chỉnh được nhiệt độ màu và cường độ theo giờ trong ngày, mô phỏng chu kỳ ánh sáng tự nhiên để hỗ trợ nhịp sinh học của nhân viên.</p>
+
+<figure><img class="wp-image-48660 size-full" src="https://www.deco-crystal.com/wp-content/uploads/2026/05/thiet-ke-van-phong-80m2-45-3.webp" alt="Mẫu văn phòng 80m2 Biophilic kết hợp ánh sáng sinh học" width="800" height="436" /><figcaption>Mẫu 21 — hệ đèn thay đổi nhiệt độ màu theo giờ (Ảnh tham khảo)</figcaption></figure>
+
+<p><strong>Mẫu 22 — Vật liệu tự nhiên xuyên suốt</strong> <em>(Trang trọng vừa)</em>: sàn và mặt bàn gỗ, tường đất nung — mọi vật liệu đều có nguồn gốc tự nhiên hoặc tái chế. Hướng đi phù hợp doanh nghiệp có cam kết về môi trường và muốn thể hiện điều đó bằng không gian.</p>
+
+<figure><img class="wp-image-48661 size-full" src="https://www.deco-crystal.com/wp-content/uploads/2026/05/thiet-ke-van-phong-80m2-46-3.webp" alt="Mẫu văn phòng 80m2 Biophilic với vật liệu tự nhiên xuyên suốt" width="800" height="436" /><figcaption>Mẫu 22 — vật liệu tự nhiên và tái chế xuyên suốt (Ảnh tham khảo)</figcaption></figure>
+
+<p><strong>Mẫu 23 — Xanh kết hợp tối giản</strong> <em>(Trang trọng cao)</em>: giữ nguyên bố cục tối giản nhưng dùng cây xanh làm yếu tố trang trí chủ đạo thay cho tranh ảnh. Kết quả là không gian vừa gọn gàng vừa có sức sống.</p>
+
+<figure><img class="wp-image-48662 size-full" src="https://www.deco-crystal.com/wp-content/uploads/2026/05/thiet-ke-van-phong-80m2-47-3.webp" alt="Mẫu văn phòng 80m2 xanh kết hợp tối giản" width="800" height="436" /><figcaption>Mẫu 23 — cây xanh thay cho tranh ảnh trang trí (Ảnh tham khảo)</figcaption></figure>
+
+<p><strong>Mẫu 24 — Phòng họp wellness</strong> <em>(Thiên nội bộ)</em>: phòng họp thiết kế theo hướng giảm căng thẳng với cây xanh, ánh sáng ấm và nội thất mềm. Thay bàn họp dài truyền thống bằng bàn thấp và ghế thấp, phù hợp các buổi động não hơn là họp trang trọng.</p>
+
+<figure><img class="wp-image-48663 size-full" src="https://www.deco-crystal.com/wp-content/uploads/2026/05/thiet-ke-van-phong-80m2-48-3.webp" alt="Mẫu phòng họp wellness trong văn phòng 80m2" width="800" height="436" /><figcaption>Mẫu 24 — phòng họp wellness với bàn ghế thấp (Ảnh tham khảo)</figcaption></figure>
+
+<h3>4.5. Nhóm 5: Mẫu văn phòng 80m2 theo nhu cầu đặc thù</h3>
+
+<p><strong>Mẫu 25 — Văn phòng đa văn hóa</strong> <em>(Trang trọng cao)</em>: kết hợp yếu tố thiết kế Á và Âu, phù hợp công ty đa quốc gia hoặc doanh nghiệp có nhiều khách quốc tế. Chi tiết văn hóa được đưa vào ở mức tinh tế, tránh trang trí nặng tay.</p>
+
+<figure><img class="wp-image-48664 size-full" src="https://www.deco-crystal.com/wp-content/uploads/2026/05/thiet-ke-van-phong-80m2-49-3.webp" alt="Mẫu văn phòng 80m2 cho môi trường làm việc đa văn hóa" width="800" height="436" /><figcaption>Mẫu 25 — văn phòng đa văn hóa (Ảnh tham khảo)</figcaption></figure>
+
+<p><strong>Mẫu 26 — Văn phòng theo nhận diện thương hiệu</strong> <em>(Trang trọng cao)</em>: thiết kế xoay quanh bộ nhận diện của doanh nghiệp — màu sắc, kiểu chữ, biểu tượng xuất hiện nhất quán. Lưu ý quan trọng: màu thương hiệu nên giữ ở mức điểm nhấn tại lễ tân và phòng họp, không phủ kín toàn bộ văn phòng.</p>
+
+<figure><img class="wp-image-48666 size-full" src="https://www.deco-crystal.com/wp-content/uploads/2026/05/thiet-ke-van-phong-80m2-51-3.webp" alt="Mẫu văn phòng 80m2 thiết kế theo nhận diện thương hiệu" width="800" height="436" /><figcaption>Mẫu 26 — văn phòng theo nhận diện thương hiệu (Ảnh tham khảo)</figcaption></figure>
+
+<p><strong>Mẫu 27 — Văn phòng linh hoạt (hot-desking)</strong> <em>(Thiên nội bộ)</em>: không bàn cố định, nhân viên ngồi bất cứ chỗ nào còn trống. Mọi vị trí đều có ổ cắm và kết nối mạng; tủ khóa cá nhân thay cho ngăn kéo bàn. Phù hợp doanh nghiệp có nhiều người đi công tác hoặc làm việc kết hợp.</p>
+
+<figure><img class="wp-image-48668 size-full" src="https://www.deco-crystal.com/wp-content/uploads/2026/05/thiet-ke-van-phong-80m2-53-3.webp" alt="Mẫu văn phòng 80m2 linh hoạt theo mô hình hot-desking" width="800" height="436" /><figcaption>Mẫu 27 — mô hình hot-desking với tủ khóa cá nhân (Ảnh tham khảo)</figcaption></figure>
+
+<p><strong>Mẫu 28 — Văn phòng kết hợp showroom</strong> <em>(Trang trọng cao)</em>: dành cho doanh nghiệp vừa cần chỗ làm việc vừa cần khu trưng bày sản phẩm. Thách thức lớn nhất là tách được luồng di chuyển của khách khỏi luồng làm việc của nhân viên trong cùng 80m2.</p>
+
+<figure><img class="wp-image-48670 size-full" src="https://www.deco-crystal.com/wp-content/uploads/2026/05/thiet-ke-van-phong-80m2-55-3.webp" alt="Mẫu văn phòng 80m2 kết hợp showroom trưng bày" width="800" height="436" /><figcaption>Mẫu 28 — văn phòng kết hợp showroom (Ảnh tham khảo)</figcaption></figure>
+
+<p><strong>Mẫu 29 — Văn phòng ngành giáo dục và đào tạo</strong> <em>(Trang trọng vừa)</em>: phòng học nhỏ mở rộng được thành không gian lớn hơn, bảng viết và màn hình chiếu bố trí ở nhiều vị trí, chỗ ngồi đa dạng theo từng hình thức học.</p>
+
+<figure><img class="wp-image-48671 size-full" src="https://www.deco-crystal.com/wp-content/uploads/2026/05/thiet-ke-van-phong-80m2-56-3.webp" alt="Mẫu văn phòng 80m2 cho ngành giáo dục và đào tạo" width="800" height="436" /><figcaption>Mẫu 29 — văn phòng ngành giáo dục (Ảnh tham khảo)</figcaption></figure>
+
+<p><strong>Mẫu 30 — Co-working thu nhỏ</strong> <em>(Trang trọng vừa)</em>: không gian làm việc chung quy mô nhỏ với buồng gọi điện riêng, bàn hot-desk và khu lounge chia sẻ. Phù hợp xu hướng làm việc kết hợp ngày càng phổ biến.</p>
+
+<figure><img class="wp-image-48673 size-full" src="https://www.deco-crystal.com/wp-content/uploads/2026/05/thiet-ke-van-phong-80m2-58-3.webp" alt="Mẫu văn phòng co-working mini 80m2 với buồng gọi điện riêng" width="800" height="436" /><figcaption>Mẫu 30 — co-working thu nhỏ với buồng gọi điện riêng (Ảnh tham khảo)</figcaption></figure>
+
+<h2>5. Chi phí thiết kế và thi công văn phòng 80m2</h2>
+
+<p>Sau khi đã hình dung được cách bố trí và phong cách phù hợp, chi phí là câu hỏi tiếp theo cần trả lời để lập ngân sách.</p>
+
+<h3>5.1. Năm yếu tố ảnh hưởng đến chi phí</h3>
+
+<p>Chi phí thiết kế và thi công văn phòng 80m2 không cố định mà phụ thuộc vào năm yếu tố:</p>
+
+<ul>
+<li><strong>Hiện trạng mặt bằng:</strong> mặt bằng thô hay đã có sẵn hệ thống kỹ thuật cơ bản.</li>
+<li><strong>Phong cách thiết kế:</strong> càng nhiều chi tiết thi công thì mức đầu tư càng cao.</li>
+<li><strong>Chất lượng vật liệu:</strong> vật liệu cao cấp làm tăng đơn giá trên mỗi mét vuông.</li>
+<li><strong>Hệ thống kỹ thuật:</strong> điện, mạng, điều hòa càng phức tạp thì chi phí càng lớn.</li>
+<li><strong>Yêu cầu riêng của doanh nghiệp:</strong> số phòng chức năng và các hạng mục tùy chỉnh theo đặc thù ngành nghề.</li>
+</ul>
+
+<h3>5.2. Đơn giá tham khảo</h3>
+
+<table border="1" style="width:100%">
+<thead>
+<tr><th>Hạng mục</th><th>Đơn giá</th></tr>
+</thead>
+<tbody>
+<tr><td>Thiết kế — mặt bằng dưới 100m²</td><td>200.000 – 400.000 đ/m²</td></tr>
+<tr><td>Thi công trọn gói — gói Cơ bản</td><td>2.500.000 – 4.000.000 đ/m²</td></tr>
+<tr><td>Thi công trọn gói — gói Tiêu chuẩn</td><td>4.000.000 – 7.000.000 đ/m²</td></tr>
+<tr><td>Thi công trọn gói — gói Cao cấp</td><td>trên 7.000.000 đ/m²</td></tr>
+<tr><td>Khảo sát mặt bằng và tư vấn ban đầu</td><td>Miễn phí</td></tr>
+</tbody>
+</table>
+
+<p>Chi tiết từng hạng mục có trong <strong><a href="https://www.deco-crystal.com/bao-gia-thiet-ke-noi-that-van-phong/" target="_blank" rel="noopener">bảng báo giá thiết kế nội thất văn phòng</a></strong>.</p>
+
+<h3>5.3. Tổng chi phí cho một văn phòng 80m2</h3>
+
+<p>Nhân đơn giá với 80m2, mức đầu tư thực tế rơi vào các khoảng sau:</p>
+
+<table border="1" style="width:100%">
+<thead>
+<tr><th>Mức đầu tư</th><th>Thi công (80m²)</th><th>Thiết kế (80m²)</th><th>Bao gồm những gì</th></tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cơ bản</strong></td><td>200 – 320 triệu</td><td rowspan="3">16 – 32 triệu</td>
+<td>Trần, sàn, sơn, hệ bàn ghế cơ bản, vách kính phòng họp, hệ điện – mạng</td>
+</tr>
+<tr>
+<td><strong>Tiêu chuẩn</strong></td><td>320 – 560 triệu</td>
+<td>Thêm hệ tủ âm tường, trần trang trí, khu lễ tân hoàn thiện, pantry đầy đủ</td>
+</tr>
+<tr>
+<td><strong>Cao cấp</strong></td><td>trên 560 triệu</td>
+<td>Vật liệu cao cấp, hạng mục đặt riêng, hệ thống chiếu sáng và âm thanh chuyên biệt</td>
+</tr>
+</tbody>
+</table>
+
+<p>Bảng trên mang tính tham khảo để doanh nghiệp lập ngân sách sơ bộ. Mức đầu tư thực tế được chốt sau khi khảo sát hiện trạng mặt bằng.</p>
+
+<h3>5.4. Tiết kiệm ở đâu mà không mất vẻ chuyên nghiệp</h3>
+
+<p>Không phải mét vuông nào cũng nên đầu tư ngang nhau. Với 80m2, nguyên tắc phân bổ ngân sách chúng tôi thường tư vấn là:</p>
+
+<ul>
+<li><strong>Không nên cắt:</strong> khu lễ tân và phòng họp. Đây là hai nơi duy nhất khách nhìn thấy, và cũng là hai nơi quyết định ấn tượng về doanh nghiệp. Chất lượng hoàn thiện ở hai khu này nên ở mức cao nhất trong ngân sách cho phép.</li>
+<li><strong>Tiết kiệm được:</strong> khu làm việc nội bộ và kho. Bàn ghế bền và đúng kích thước quan trọng hơn bàn ghế đắt tiền.</li>
+<li><strong>Với doanh nghiệp thuê 3 năm:</strong> nên dồn ngân sách vào hạng mục <strong>tháo ra mang đi được</strong> — bàn ghế, tủ rời, vách di động, đèn — thay vì hạng mục cố định phải để lại khi trả mặt bằng.</li>
+</ul>
+
+<h2>6. Thiết kế và thi công văn phòng 80m2 mất bao lâu?</h2>
+
+<p>Với doanh nghiệp đã ký hợp đồng thuê mặt bằng, tiến độ quan trọng ngang chi phí — vì ngày chuyển văn phòng thường đã được ấn định. Dưới đây là lộ trình đầy đủ theo quy trình bảy bước, kèm khoảng thời gian tham khảo cho mặt bằng khoảng 80m2:</p>
+
+<table border="1" style="width:100%">
+<thead>
+<tr><th>Bước</th><th>Nội dung</th><th>Thời gian tham khảo</th></tr>
+</thead>
+<tbody>
+<tr><td>1</td><td>Khảo sát mặt bằng, ghi nhận hiện trạng và ràng buộc của tòa nhà</td><td>1 – 2 ngày</td></tr>
+<tr><td>2</td><td>Ký hợp đồng, triển khai thiết kế mặt bằng 2D</td><td>3 – 5 ngày</td></tr>
+<tr><td>3</td><td>Thiết kế phối cảnh 3D, chỉnh sửa theo góp ý</td><td>5 – 7 ngày</td></tr>
+<tr><td>4</td><td>Hồ sơ kỹ thuật và dự toán chi phí</td><td>3 – 5 ngày</td></tr>
+<tr><td>5</td><td>Sản xuất tại xưởng và thi công tại công trình</td><td>15 – 20 ngày</td></tr>
+<tr><td>6</td><td>Nghiệm thu và bàn giao</td><td>1 – 2 ngày</td></tr>
+<tr><td>7</td><td>Bảo trì, bảo dưỡng sau bàn giao</td><td>Theo chính sách bảo hành</td></tr>
+<tr><td colspan="2"><strong>Tổng thời gian tham khảo</strong></td><td><strong>khoảng 28 – 40 ngày</strong></td></tr>
+</tbody>
+</table>
+
+<p><em>Đây là khoảng thời gian tham khảo cho mặt bằng khoảng 80m2. Tiến độ chính xác được chốt sau khi khảo sát hiện trạng.</em></p>
+
+<p><strong>Ba yếu tố thường làm chậm tiến độ</strong> mà doanh nghiệp thuê văn phòng lần đầu ít lường trước:</p>
+
+<ul>
+<li><strong>Quy định thi công của tòa nhà:</strong> nhiều tòa văn phòng chỉ cho thi công ngoài giờ hành chính hoặc cuối tuần, và phải đăng ký trước với ban quản lý. Riêng điều này có thể kéo dài thời gian thi công thêm đáng kể.</li>
+<li><strong>Vận chuyển vật tư:</strong> chỉ được dùng thang hàng, có khung giờ cố định. Nội thất khổ lớn cần tính trước kích thước thang.</li>
+<li><strong>Duyệt bản vẽ chậm:</strong> mỗi vòng chỉnh sửa phối cảnh kéo dài thêm vài ngày. Chốt sớm nhu cầu sử dụng ở bước 1 là cách rút ngắn tiến độ hiệu quả nhất.</li>
+</ul>
+
+<h2>7. 5 lỗi thường gặp khi thiết kế văn phòng 80m2</h2>
+
+<p>Ở diện tích 80m2, mỗi mét vuông bố trí sai đều lấy đi một thứ đo được: một chỗ ngồi, một chỗ đặt tủ hồ sơ, hoặc ấn tượng của khách trong mười giây đầu bước vào. Năm lỗi dưới đây là những lỗi được nhắc tới nhiều nhất trong các tài liệu thiết kế văn phòng — và cũng là những lỗi tốn kém nhất để sửa sau khi đã thi công xong.</p>
+
+<h3>Lỗi 1: Thêm bàn bằng cách bóp lối đi</h3>
+
+<p><strong>Hiện tượng:</strong> cần thêm hai chỗ ngồi, cách nhanh nhất là kéo hai dãy bàn sát vào nhau.</p>
+
+<p><strong>Hậu quả:</strong> lối đi chính nên rộng tối thiểu 1,2m — lý tưởng là 1,4 – 1,5m để hai người tránh nhau; lối đi phụ giữa các bàn tối thiểu 0,8m. Bóp xuống dưới ngưỡng này thì người ngồi phía trong phải đứng dậy nhường đường mỗi lần có người đi qua. Với văn phòng trong tòa nhà cho thuê, lối thoát hiểm quá hẹp còn có thể vướng khi nghiệm thu với ban quản lý.</p>
+
+<p><strong>Cách tránh:</strong> chốt số chỗ ngồi <strong>từ diện tích</strong>, không chốt từ mong muốn. Với 40 – 48m² khu làm việc, mức 5 – 6 m²/người cho 7 – 9 chỗ thoải mái; muốn lên 10 – 12 chỗ thì phải chấp nhận bàn nhỏ hơn, chứ không phải lấy phần diện tích của lối đi.</p>
+
+<h3>Lỗi 2: Đặt khu lộn xộn ngay tầm nhìn từ cửa</h3>
+
+<p><strong>Hiện tượng:</strong> pantry, máy in, tủ hồ sơ được đẩy vào chỗ còn thừa — và chỗ còn thừa thường lại là chỗ nhìn thấy đầu tiên từ cửa chính.</p>
+
+<p><strong>Hậu quả:</strong> khách bước vào nhìn thấy máy in và bồn rửa trước khi nhìn thấy logo công ty. Đây là lỗi làm mất vẻ chuyên nghiệp nhanh nhất, trong khi tránh nó <strong>không tốn thêm một đồng nào</strong> — chỉ tốn công nghĩ sớm hơn một bước.</p>
+
+<p><strong>Cách tránh:</strong> ngay trên bản vẽ mặt bằng, kẻ một đường thẳng từ cửa chính vào trong. Những gì nằm trên đường đó là những gì khách nhìn thấy đầu tiên — dành chỗ đó cho lễ tân, logo hoặc mảng xanh, đẩy pantry và thiết bị ra khỏi trục nhìn.</p>
+
+<h3>Lỗi 3: Chia quá nhiều phòng kín — hoặc mở toang hoàn toàn</h3>
+
+<p><strong>Hiện tượng:</strong> hoặc muốn đủ cả phòng giám đốc, phòng họp, phòng kế toán riêng; hoặc ngược lại, bỏ hết vách cho rộng.</p>
+
+<p><strong>Hậu quả:</strong> mỗi vách ngăn không chỉ ăn diện tích của chính nó mà còn cắt vụn phần còn lại, khiến 80m2 mất thêm chỗ ngồi. Nhưng mở toang hoàn toàn cũng có giá của nó: các nghiên cứu về không gian mở đều ghi nhận tiếng ồn và việc bị ngắt quãng làm giảm khả năng tập trung, và không có chỗ nào để nói chuyện riêng với khách hay với nhân viên.</p>
+
+<p><strong>Cách tránh:</strong> với 80m2, phương án cân bằng là <strong>một phòng kín tiếng duy nhất</strong> — phòng họp kiêm tiếp khách, dùng vách kính để không chặn ánh sáng — còn lại để mở. Một phòng kín đủ cho cả việc họp, phỏng vấn và những cuộc gọi cần riêng tư.</p>
+
+<h3>Lỗi 4: Lấy màu thương hiệu phủ kín văn phòng</h3>
+
+<p><strong>Hiện tượng:</strong> logo màu đỏ nên tường đỏ, ghế đỏ, vách đỏ.</p>
+
+<p><strong>Hậu quả:</strong> màu logo được thiết kế để nổi bật trên một diện tích nhỏ, không phải để nhìn tám tiếng mỗi ngày. Phủ kín gây mỏi mắt, và trớ trêu là làm văn phòng trông <strong>kém chuyên nghiệp hơn</strong> so với khi dùng tiết chế.</p>
+
+<p><strong>Cách tránh:</strong> nền trung tính, màu thương hiệu chỉ xuất hiện ở nơi có chủ đích — mảng tường sau quầy lễ tân, một mặt vách phòng họp, chi tiết nhỏ trên nội thất. Đó là cách các văn phòng ngân hàng và tập đoàn vẫn làm: nhận ra thương hiệu ngay, nhưng không bị màu sắc át đi.</p>
+
+<h3>Lỗi 5: Thiết kế vừa khít số người hiện tại</h3>
+
+<p><strong>Hiện tượng:</strong> công ty 10 người thì kê đúng 10 bàn, không dư một chỗ nào.</p>
+
+<p><strong>Hậu quả:</strong> tuyển thêm hai người là hết chỗ, và sửa lại mặt bằng đang sử dụng luôn tốn hơn làm đúng ngay từ đầu — cả tiền lẫn thời gian gián đoạn công việc.</p>
+
+<p><strong>Cách tránh:</strong> ước lượng nhân sự cho 1 – 2 năm tới ngay từ khi vẽ, ưu tiên bàn dạng mô-đun ghép thêm được. Với doanh nghiệp thuê mặt bằng 3 năm, nên dồn ngân sách vào những hạng mục tháo ra mang đi được khi chuyển văn phòng.</p>
+
+<p><strong><mark class="bosung">[CẦN BỔ SUNG: 2 ca thực tế từ đội kỹ thuật — thêm vào cuối Lỗi 1 và Lỗi 2 theo mẫu "Trong một dự án cải tạo tại [tòa nhà/quận]</mark>, chúng tôi gặp đúng tình huống này: [chuyện gì] — khách phải [hậu quả cụ thể]."]</strong></p>
+
+<h2>8. Dự án thực tế — "chuyên nghiệp" trông như thế nào</h2>
+
+<p>Những nguyên tắc ở trên không đến từ lý thuyết. Chúng đến từ các dự án văn phòng mà chúng tôi đã thiết kế và thi công cho ngân hàng, tập đoàn nước ngoài và doanh nghiệp trong nước — nơi yêu cầu về chuẩn mực và nhận diện thương hiệu khắt khe nhất.</p>
+
+<table border="1" style="width:100%">
+<thead>
+<tr><th>Nhóm dự án</th><th>Dự án tiêu biểu</th><th>Yêu cầu đặc thù</th></tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Văn phòng ngân hàng và tài chính</strong></td>
+<td>IBK Bank – Keangnam Hà Nội · Shinhan Bank chi nhánh Đông Sài Gòn · Woori Bank Head Office · Woori Bank Tây Sài Gòn · Shinhan Life Insurance The Mett · Shinhan Finance The Mett</td>
+<td>Tuân thủ nghiêm ngặt bộ nhận diện thương hiệu; khu giao dịch và khu nội bộ tách bạch; chuẩn hoàn thiện cao</td>
+</tr>
+<tr>
+<td><strong>Văn phòng tập đoàn nước ngoài</strong></td>
+<td>TOA Electronics Việt Nam · Style Korean 2 – Viettel Tower · EGIS Vietnam · CJ Logistics</td>
+<td>Thi công trong tòa nhà hạng A với ràng buộc về giờ giấc và quy định của ban quản lý</td>
+</tr>
+<tr>
+<td><strong>Showroom và không gian trưng bày</strong></td>
+<td>Showroom Fursys – The Mett Tower</td>
+<td>Tách luồng di chuyển của khách khỏi luồng vận hành nội bộ</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong><mark class="bosung">[CẦN BỔ SUNG: chèn 3 – 5 ảnh chụp thật tại công trình từ kho dự án, hoặc nhúng khối hiển thị dự án của website. Chú thích theo mẫu: "Woori Bank Head Office — văn phòng ngân hàng do Crystal Design TPL thiết kế và thi công. Ảnh chụp tại công trình."]</mark></strong></p>
+
+<p>Các dự án trên đều có quy mô lớn hơn 80m2. Điều mang sang được cho một văn phòng 80m2 không phải là quy mô, mà là <strong>nguyên tắc</strong>: bố cục tách bạch khu khách và khu làm việc, chuẩn hoàn thiện không lộ mối nối và dây điện, nhận diện thương hiệu đặt đúng chỗ chứ không phủ tràn. Đó chính là bốn lớp chúng tôi đã nêu ở mục 1 — và chúng áp dụng được cho mọi diện tích.</p>
+
+<p>Xem thêm các công trình đã thực hiện tại <strong><a href="https://www.deco-crystal.com/du-an/" target="_blank" rel="noopener">trang dự án</a></strong>.</p>
+
+<h2>9. Vì sao chọn Deco Crystal cho văn phòng 80m2 của bạn</h2>
+
+<p><strong>Deco Crystal</strong> là thương hiệu thiết kế và thi công nội thất của <strong>Crystal Design TPL</strong> — Công ty TNHH TM-DV-SX T.P.L, hoạt động trong lĩnh vực thiết kế, sản xuất và thi công nội thất trọn gói <strong>hơn 25 năm</strong>.</p>
+
+<ul>
+<li><strong>Kinh nghiệm với nhóm khách khắt khe nhất.</strong> Danh sách khách hàng của chúng tôi gồm IBK Bank, Shinhan Bank, Woori Bank, TOA Electronics, Fursys, Style Korean, CJ Logistics, EGIS Vietnam. Ngân hàng và tập đoàn nước ngoài là nhóm khách đòi hỏi cao nhất về chuẩn hoàn thiện và tuân thủ nhận diện — những yêu cầu đó trở thành mặc định trong cách chúng tôi làm mọi dự án, kể cả dự án nhỏ.</li>
+<li><strong>Tự sản xuất nội thất.</strong> Thiết kế, sản xuất và thi công đều do chúng tôi thực hiện, không qua đơn vị trung gian. Nhờ đó chủ động được tiến độ và xử lý nhanh khi cần điều chỉnh trong quá trình thi công. <strong><mark class="bosung">[CẦN BỔ SUNG: diện tích xưởng, địa điểm, năng lực sản xuất mỗi tháng]</mark></strong></li>
+<li><strong>Đội ngũ làm việc được bằng tiếng Hàn và tiếng Anh.</strong> Với các dự án cho doanh nghiệp Hàn Quốc, chúng tôi có đầu mối trao đổi trực tiếp bằng tiếng Hàn — tránh được phần lớn sai sót phát sinh từ khâu phiên dịch bản vẽ.</li>
+<li><strong>Hai văn phòng tại Hà Nội và TP. Hồ Chí Minh</strong>, thi công trên toàn quốc.</li>
+<li><strong>Khảo sát mặt bằng và tư vấn ban đầu miễn phí.</strong></li>
+</ul>
+
+<h2>10. Câu hỏi thường gặp về thiết kế văn phòng 80m2</h2>
+
+<p><strong>Văn phòng 80m2 ngồi tối đa được bao nhiêu người?</strong><br />
+8 – 12 chỗ ngồi ở khu làm việc chung. Mức 5 – 6 m²/người cho khoảng 7 – 9 chỗ thoải mái; muốn lên 10 – 12 chỗ thì cần chấp nhận mức 3 – 4 m²/người với bàn nhỏ hơn và ít chỗ lưu trữ hơn.</p>
+
+<p><strong>80m2 có bắt buộc phải làm phòng giám đốc riêng không?</strong><br />
+Không bắt buộc. Một phòng giám đốc 10 – 12m² lấy đi khoảng 2 chỗ ngồi. Nếu giám đốc không tiếp khách riêng thường xuyên, phương án hợp lý hơn là dùng chung phòng họp kiêm tiếp khách và giữ lại chỗ ngồi cho nhân sự.</p>
+
+<p><strong>Trần văn phòng chỉ 2,7m thì làm được phong cách công nghiệp không?</strong><br />
+Không nên áp dụng toàn bộ. Để mộc toàn bộ trần ở độ cao dưới 3m sẽ gây cảm giác ngột ngạt và thiếu sáng. Nên lấy một vài yếu tố của phong cách này — mảng tường gạch, hệ đèn ray, chân bàn thép — kết hợp trần phẳng sơn sáng màu.</p>
+
+<p><strong>Văn phòng 80m2 có làm trông chuyên nghiệp như văn phòng tập đoàn được không?</strong><br />
+Được, vì sự chuyên nghiệp đến từ bố cục và chất lượng hoàn thiện chứ không đến từ diện tích. Bốn yếu tố quyết định: khu tiếp khách tách khỏi khu làm việc, không lộ dây điện, đường ghép vật liệu thẳng, và nhận diện thương hiệu đặt đúng chỗ. Cả bốn đều làm được trong 80m2.</p>
+
+<p><strong>Có nên đưa màu thương hiệu vào văn phòng không, bao nhiêu là vừa?</strong><br />
+Nên, nhưng ở mức điểm nhấn. Một mảng tường sau quầy lễ tân, một mặt vách phòng họp, cùng vài chi tiết nhỏ trên nội thất là đủ để nhận ra thương hiệu. Phủ màu thương hiệu lên diện rộng gây mỏi mắt và làm không gian trông kém chuyên nghiệp hơn.</p>
+
+<p><strong>Thuê mặt bằng 3 năm thì nên đầu tư đến mức nào?</strong><br />
+Nên dồn ngân sách vào hạng mục tháo ra mang đi được — bàn ghế, tủ rời, vách di động, đèn — và giữ ở mức vừa đủ với hạng mục cố định phải để lại khi trả mặt bằng. Riêng khu lễ tân và phòng họp vẫn nên đầu tư đúng mức vì đó là nơi khách nhìn thấy.</p>
+
+<p><strong>Thi công có làm ngoài giờ và cuối tuần được không?</strong><br />
+Được, và với nhiều tòa nhà văn phòng thì đây là yêu cầu bắt buộc của ban quản lý chứ không phải lựa chọn. Việc này cần đăng ký trước và ảnh hưởng đến tiến độ, nên phải đưa vào kế hoạch ngay từ bước khảo sát.</p>
+
+<p><strong>Chi phí thiết kế có được trừ vào tiền thi công không?</strong><br />
+<strong><mark class="bosung">[CẦN BỔ SUNG: chính sách khấu trừ phí thiết kế khi ký hợp đồng thi công trọn gói]</mark></strong></p>
+
+<p><strong>Bảo hành bao lâu và bảo hành những gì?</strong><br />
+<strong><mark class="bosung">[CẦN BỔ SUNG: thời hạn và phạm vi bảo hành]</mark></strong></p>
+
+<h2>Kết luận</h2>
+
+<p>Một văn phòng 80m2 làm tốt là văn phòng chia đúng tỷ lệ ngay từ bản vẽ đầu tiên: <strong>40 – 48m² cho 8 – 12 chỗ ngồi</strong>, 16 – 20m² cho phòng họp và tiếp khách, 8 – 12m² cho pantry. Mức đầu tư thực tế dao động <strong>từ khoảng 200 triệu</strong> với gói cơ bản, và thời gian từ khảo sát đến bàn giao thường trong khoảng <strong>28 – 40 ngày</strong>.</p>
+
+<p>Phần còn lại — phong cách, màu sắc, vật liệu — là lựa chọn theo ngành nghề và tần suất tiếp khách của từng doanh nghiệp. Nhưng bốn lớp tạo nên sự chuyên nghiệp thì giống nhau ở mọi diện tích: bố cục, hoàn thiện, nhận diện và vận hành.</p>
+
+<p>Nếu doanh nghiệp của bạn đang cần tư vấn thiết kế và thi công nội thất văn phòng 80m2, <strong>Deco Crystal</strong> đồng hành từ khâu khảo sát mặt bằng, lên ý tưởng, dựng phối cảnh 3D đến thi công hoàn thiện và bàn giao. Khảo sát mặt bằng và tư vấn ban đầu miễn phí.</p>
+
+<hr />
+
+<h3>Về tác giả</h3>
+
+<p><strong>Đặng Trường Minh</strong> — Giám đốc Thiết kế (Chief Design Officer), Crystal Design TPL. Phụ trách thiết kế các dự án văn phòng ngân hàng và tập đoàn nước ngoài tại Việt Nam. <strong><mark class="bosung">[CẦN BỔ SUNG: số năm trong nghề, link trang hồ sơ tác giả]</mark></strong></p>
+
+<h3>Nguồn tham khảo</h3>
+
+<ul>
+<li>TCVN 4601:2012 — Công sở cơ quan hành chính nhà nước, yêu cầu thiết kế (định mức diện tích làm việc theo chức danh).</li>
+<li>Tài liệu tiêu chuẩn diện tích văn phòng tại Việt Nam — ba mức bố trí 3 – 4 / 5 – 6 / 7 – 10 m² mỗi người.</li>
+<li>Tài liệu kỹ thuật về kích thước lối đi và nội thất văn phòng — lối đi chính tối thiểu 1,2m, lối phụ 0,8 – 1,0m, bàn làm việc 1,0 – 1,2m × 0,6 – 0,7m.</li>
+<li>Tài liệu ngành về tiến độ thi công nội thất văn phòng — mặt bằng 150m² thi công trọn gói 35 – 45 ngày.</li>
+<li>Nghiên cứu quốc tế về không gian làm việc mở và ảnh hưởng của tiếng ồn đến khả năng tập trung.</li>
+</ul>
+
+<table border="1" style="width:100%">
+<tbody>
+<tr>
+<td>
+<p><strong>Liên hệ Crystal Design TPL</strong></p>
+<ul>
+<li><strong>Trụ sở và chi nhánh:</strong>
+<ul>
+<li><strong>TP. Hồ Chí Minh:</strong> 231A Dương Đình Hội, Khu phố 3, Tăng Nhơn Phú, TP. Hồ Chí Minh</li>
+<li><strong>Hà Nội:</strong> 210 Nguyễn Văn Giáp, Từ Liêm, Hà Nội</li>
+</ul>
+</li>
+<li><strong>Hotline:</strong>
+<ul>
+<li><strong>Tiếng Việt – Tiếng Anh:</strong> +84 90 631 7386</li>
+<li><strong>Tiếng Hàn – Tiếng Anh:</strong> +84 90 799 9660</li>
+</ul>
+</li>
+<li><strong>Email:</strong> quangsgvn@deco-crystal.com | montykim@deco-crystal.com</li>
+<li><strong>Website:</strong> <a href="https://www.deco-crystal.com/" target="_blank" rel="noopener">www.deco-crystal.com</a></li>
+<li><strong>Fax:</strong> 028 3728 1917</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div><footer><div class="wrap">
+<b>Bài viết tối ưu &mdash; thiết kế văn phòng 80m2</b> · viết ngày 10/09/2026 theo quy trình 7 chặng.<br>
+Ảnh minh họa giữ từ bài gốc (ảnh tham khảo). Ảnh dự án thật chờ bổ sung ở mục 8.<br>
+SEONGON &mdash; Search Marketing Growth Partner
+</div></footer></body></html>
