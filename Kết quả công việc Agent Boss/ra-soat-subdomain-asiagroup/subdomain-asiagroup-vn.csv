@@ -1,0 +1,14 @@
+﻿STT,Subdomain,Địa chỉ IP,Chức năng (dự đoán),Mức lưu ý,Ghi chú
+1,asiagroup-vn.com,103.57.221.211,Tên miền gốc / trang chủ,Bình thường,"Trang chính, công khai bình thường."
+2,www.asiagroup-vn.com,103.57.221.211,Trang chủ (bản www),Bình thường,Trỏ cùng máy chủ với tên miền gốc.
+3,portal.asiagroup-vn.com,112.78.2.114,Cổng thông tin,Trung bình,Cần kiểm tra đăng nhập & bản vá bảo mật.
+4,projects.asiagroup-vn.com,115.78.11.189,Quản lý dự án,Trung bình,Có thể chứa dữ liệu công việc — nên yêu cầu đăng nhập.
+5,internal.asiagroup-vn.com,103.110.128.71,Hệ thống nội bộ,Cao,Tên 'internal' nhưng đang có IP CÔNG KHAI — nên đưa vào VPN/tường lửa.
+6,itsupport.asiagroup-vn.com,172.16.16.114,Hỗ trợ IT,Cao,IP nội bộ (172.16.x.x) bị lộ ra DNS công khai — rò rỉ sơ đồ mạng.
+7,task.asiagroup-vn.com,172.16.16.116,Quản lý công việc,Cao,IP nội bộ (172.16.x.x) bị lộ ra DNS công khai — rò rỉ sơ đồ mạng.
+8,elearning.asiagroup-vn.com,42.96.59.254,Đào tạo trực tuyến (e-learning),Trung bình,"Nền tảng học tập hay bị bỏ quên, không cập nhật — dễ thủng lỗ hổng."
+9,autodiscover.asiagroup-vn.com,52.96.x (Microsoft 365),Tự dò cấu hình email Outlook,Bình thường,"Bản ghi chuẩn của Microsoft 365 — bình thường, không phải máy chủ riêng."
+10,enterpriseenrollment.asiagroup-vn.com,20.189.x (Microsoft),Đăng ký thiết bị (Intune),Bình thường,Bản ghi chuẩn của Microsoft — bình thường.
+11,enterpriseregistration.asiagroup-vn.com,20.190.x (Microsoft),Đăng ký thiết bị (Azure AD),Bình thường,Bản ghi chuẩn của Microsoft — bình thường.
+12,2024.asiagroup-vn.com,112.78.2.114,Website chiến dịch/sự kiện,Trung bình,Trỏ cùng máy chủ với portal — nếu là trang cũ nên gỡ bỏ.
+13,22years.asiagroup-vn.com,172.236.131.108,Website kỷ niệm 22 năm,Trung bình,"Trang chiến dịch — kiểm tra còn dùng không, tránh 'bỏ quên'."
