@@ -1,0 +1,154 @@
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://www.deco-crystal.com/thiet-ke-thi-cong-noi-that-van-phong/#service",
+    "url": "https://www.deco-crystal.com/thiet-ke-thi-cong-noi-that-van-phong/",
+    "serviceType": "Thiết kế thi công nội thất văn phòng",
+    "name": "Dịch vụ thiết kế thi công nội thất văn phòng trọn gói",
+    "image": "https://www.deco-crystal.com/wp-content/uploads/2021/11/thiet-ke-thi-cong-noi-that-van-phong.jpg",
+    "description": "Dịch vụ thiết kế thi công nội thất văn phòng trọn gói giúp tiết kiệm thời gian, tối ưu chi phí. Liên hệ ngay để nhận báo giá chi tiết nhất.",
+    "provider": {
+      "@type": "LocalBusiness",
+      "@id": "https://www.deco-crystal.com/#localbusiness",
+      "name": "Deco Crystal",
+      "url": "https://www.deco-crystal.com/",
+      "image": "https://www.deco-crystal.com/wp-content/uploads/2021/09/Logo-Crystal-02-1.png",
+      "telephone": "+84906317386",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "231A Dương Đình Hội, Khu phố 3",
+        "addressLocality": "Phường Tăng Nhơn Phú",
+        "addressRegion": "TP. Hồ Chí Minh",
+        "addressCountry": "VN"
+      }
+    },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "TP. Hồ Chí Minh"
+      },
+      {
+        "@type": "City",
+        "name": "Hà Nội"
+      },
+      {
+        "@type": "Country",
+        "name": "Việt Nam"
+      }
+    ],
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "VND",
+      "lowPrice": "1200000",
+      "highPrice": "1800000",
+      "availability": "https://schema.org/InStock",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "priceCurrency": "VND",
+        "referenceQuantity": {
+          "@type": "QuantitativeValue",
+          "value": "1",
+          "unitCode": "MTK",
+          "unitText": "m²"
+        }
+      }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "156",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://www.deco-crystal.com/thiet-ke-thi-cong-noi-that-van-phong/#faq",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Thời gian thiết kế và thi công hoàn thiện mất bao lâu?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Thời gian thiết kế từ 5 – 7 ngày làm việc. Thời gian thi công thực tế từ 15 – 25 ngày tùy thuộc vào diện tích và độ phức tạp của công trình."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Chi phí thiết kế nội thất văn phòng được tính thế nào?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Chi phí thiết kế được tính theo đơn giá/m2. Đặc biệt, Crystal Design TPL miễn phí 100% chi phí thiết kế khi ký hợp đồng thi công trọn gói."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Công ty có cam kết vật liệu thi công đúng chuẩn không?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Chúng tôi cam kết sử dụng 100% vật liệu chính hãng theo đúng hợp đồng, phạt đền gấp đôi nếu phát hiện vật liệu giả/kém chất lượng."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quy trình thanh toán hợp đồng được chia làm mấy đợt?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Quy trình thanh toán linh hoạt từ 3 – 4 đợt theo từng giai đoạn nghiệm thu công trình thực tế."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Có hỗ trợ xin giấy phép thi công tòa nhà &amp; PCCC không?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Chúng tôi hỗ trợ trọn gói thủ tục đăng ký thi công với Ban quản lý tòa nhà và tư vấn phương án PCCC đạt chuẩn."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Chính sách bảo hành và bảo trì sản phẩm như thế nào?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bảo hành toàn bộ nội thất 24 tháng và bảo trì định kỳ trọn đời cho mọi công trình do Crystal Design TPL thực hiện."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Có nhận thiết kế thi công công trình ngoài TPHCM không?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Có. Chúng tôi nhận thiết kế và thi công văn phòng tại Bình Dương, Đồng Nai, Long An và các tỉnh thành toàn quốc."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Nên chọn phong cách thiết kế nào cho văn phòng nhỏ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Đối với văn phòng nhỏ (<100m2), nên ưu tiên phong cách Tối giản (Minimalist) hoặc Hiện đại Mở để tối đa khoảng trống và ánh sáng."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Công ty có cung cấp mẫu phối cảnh 3D trước khi làm không?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Có. Khách hàng sẽ nhận được bản vẽ phối cảnh 3D chi tiết để duyệt và chỉnh sửa trước khi bắt đầu sản xuất/thi công."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Cần chuẩn bị những gì trước khi liên hệ tư vấn?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bạn chỉ cần chuẩn bị diện tích mặt bằng (hoặc bản vẽ sơ đồ), số lượng nhân sự dự kiến và ngân sách mong muốn."
+        }
+      }
+    ]
+  }
+]
+</script>

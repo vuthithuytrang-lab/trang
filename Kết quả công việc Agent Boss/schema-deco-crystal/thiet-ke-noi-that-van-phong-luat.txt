@@ -1,0 +1,81 @@
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://www.deco-crystal.com/thiet-ke-noi-that-van-phong-luat/#service",
+    "url": "https://www.deco-crystal.com/thiet-ke-noi-that-van-phong-luat/",
+    "serviceType": "Thiết kế nội thất văn phòng luật",
+    "name": "Dịch vụ thiết kế nội thất văn phòng luật",
+    "image": "https://www.deco-crystal.com/wp-content/uploads/2024/07/mau-thiet-ke-van-phong-luat.jpg",
+    "description": "Khám phá 26+ mẫu thiết kế văn phòng luật đẹp, chuyên nghiệp nhất, từ thiết kế sang trọng đến tiện nghi. Liên hệ Deco Crystal ngay để nhận tư vấn chi tiết.",
+    "provider": {
+      "@type": "LocalBusiness",
+      "@id": "https://www.deco-crystal.com/#localbusiness",
+      "name": "Deco Crystal",
+      "url": "https://www.deco-crystal.com/",
+      "image": "https://www.deco-crystal.com/wp-content/uploads/2021/09/Logo-Crystal-02-1.png",
+      "telephone": "+84906317386",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "231A Dương Đình Hội, Khu phố 3",
+        "addressLocality": "Phường Tăng Nhơn Phú",
+        "addressRegion": "TP. Hồ Chí Minh",
+        "addressCountry": "VN"
+      }
+    },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "TP. Hồ Chí Minh"
+      },
+      {
+        "@type": "City",
+        "name": "Hà Nội"
+      },
+      {
+        "@type": "Country",
+        "name": "Việt Nam"
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "156",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://www.deco-crystal.com/thiet-ke-noi-that-van-phong-luat/#faq",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Chi phí thiết kế nội thất văn phòng luật được tính như thế nào?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Chi phí được tính theo đơn giá trên mỗi m². Đặc biệt, Crystal Design TPL (Deco Crystal) miễn phí 100% chi phí thiết kế khi khách hàng ký hợp đồng thi công trọn gói."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Thời gian thiết kế và thi công thiết kế nội thất văn phòng luật mất bao lâu?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Thời gian thiết kế từ 5 – 7 ngày làm việc; thời gian thi công thực tế từ 15 – 25 ngày tùy diện tích và độ phức tạp của công trình."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Chính sách bảo hành và phối cảnh 3D như thế nào?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Khách hàng nhận bản vẽ phối cảnh 3D để duyệt trước khi thi công. Công trình được bảo hành nội thất 24 tháng và bảo trì định kỳ trọn đời."
+        }
+      }
+    ]
+  }
+]
+</script>

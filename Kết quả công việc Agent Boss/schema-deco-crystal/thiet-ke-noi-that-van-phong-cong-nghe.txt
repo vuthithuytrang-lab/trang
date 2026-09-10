@@ -1,0 +1,81 @@
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://www.deco-crystal.com/thiet-ke-noi-that-van-phong-cong-nghe/#service",
+    "url": "https://www.deco-crystal.com/thiet-ke-noi-that-van-phong-cong-nghe/",
+    "serviceType": "Thiết kế nội thất văn phòng công nghệ",
+    "name": "Dịch vụ thiết kế nội thất văn phòng công nghệ",
+    "image": "https://www.deco-crystal.com/wp-content/uploads/2026/05/xu-huong-thiet-ke-noi-that-van-phong-28-3.webp",
+    "description": "Khám phá 10+ mẫu thiết kế nội thất văn phòng công ty công nghệ đẹp lấy cảm hứng từ FPT, VNG và nhiều doanh nghiệp hàng đầu hiện nay",
+    "provider": {
+      "@type": "LocalBusiness",
+      "@id": "https://www.deco-crystal.com/#localbusiness",
+      "name": "Deco Crystal",
+      "url": "https://www.deco-crystal.com/",
+      "image": "https://www.deco-crystal.com/wp-content/uploads/2021/09/Logo-Crystal-02-1.png",
+      "telephone": "+84906317386",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "231A Dương Đình Hội, Khu phố 3",
+        "addressLocality": "Phường Tăng Nhơn Phú",
+        "addressRegion": "TP. Hồ Chí Minh",
+        "addressCountry": "VN"
+      }
+    },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "TP. Hồ Chí Minh"
+      },
+      {
+        "@type": "City",
+        "name": "Hà Nội"
+      },
+      {
+        "@type": "Country",
+        "name": "Việt Nam"
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "156",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://www.deco-crystal.com/thiet-ke-noi-that-van-phong-cong-nghe/#faq",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Chi phí thiết kế nội thất văn phòng công nghệ được tính như thế nào?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Chi phí được tính theo đơn giá trên mỗi m². Đặc biệt, Crystal Design TPL (Deco Crystal) miễn phí 100% chi phí thiết kế khi khách hàng ký hợp đồng thi công trọn gói."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Thời gian thiết kế và thi công thiết kế nội thất văn phòng công nghệ mất bao lâu?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Thời gian thiết kế từ 5 – 7 ngày làm việc; thời gian thi công thực tế từ 15 – 25 ngày tùy diện tích và độ phức tạp của công trình."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Chính sách bảo hành và phối cảnh 3D như thế nào?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Khách hàng nhận bản vẽ phối cảnh 3D để duyệt trước khi thi công. Công trình được bảo hành nội thất 24 tháng và bảo trì định kỳ trọn đời."
+        }
+      }
+    ]
+  }
+]
+</script>

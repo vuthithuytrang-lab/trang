@@ -1,0 +1,91 @@
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://www.deco-crystal.com/thiet-ke-noi-that-showroom/#service",
+    "url": "https://www.deco-crystal.com/thiet-ke-noi-that-showroom/",
+    "serviceType": "Thiết kế nội thất showroom",
+    "name": "Dịch vụ thiết kế nội thất showroom",
+    "image": "https://www.deco-crystal.com/wp-content/uploads/2021/10/thiet-ke-noi-that-showroom-crystal-design-tpl.jpg",
+    "description": "Dịch vụ thiết kế nội thất showroom trưng bày sản phẩm, tối ưu ánh sáng, lối đi và điểm nhấn thương hiệu để tăng khả năng giữ chân khách hàng tại điểm bán.",
+    "provider": {
+      "@type": "LocalBusiness",
+      "@id": "https://www.deco-crystal.com/#localbusiness",
+      "name": "Deco Crystal",
+      "url": "https://www.deco-crystal.com/",
+      "image": "https://www.deco-crystal.com/wp-content/uploads/2021/09/Logo-Crystal-02-1.png",
+      "telephone": "+84906317386",
+      "priceRange": "3.000.000₫ - 8.000.000₫+/m²",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "231A Dương Đình Hội, Khu phố 3",
+        "addressLocality": "Phường Tăng Nhơn Phú",
+        "addressRegion": "TP. Hồ Chí Minh",
+        "addressCountry": "VN"
+      }
+    },
+    "areaServed": [
+      { "@type": "AdministrativeArea", "name": "TP. Hồ Chí Minh" },
+      { "@type": "Country", "name": "Việt Nam" }
+    ],
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "VND",
+      "lowPrice": "3000000",
+      "highPrice": "8000000",
+      "availability": "https://schema.org/InStock",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "priceCurrency": "VND",
+        "referenceQuantity": {
+          "@type": "QuantitativeValue",
+          "value": "1",
+          "unitCode": "MTK",
+          "unitText": "m²"
+        }
+      }
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Danh mục dịch vụ thiết kế showroom",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Thiết kế showroom điện máy" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Thiết kế showroom xe mô-tô" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Thiết kế showroom gốm sứ" } }
+      ]
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "156",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://www.deco-crystal.com/thiet-ke-noi-that-showroom/#faq",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Chi phí thiết kế thi công nội thất showroom trọn gói là bao nhiêu?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Đơn giá thi công trọn gói tại Deco Crystal tính theo m²: Gói Cơ bản 3.000.000 – 5.000.000đ/m², Gói Tiêu chuẩn 5.000.000 – 8.000.000đ/m², Gói Cao cấp (Luxury) trên 8.000.000đ/m², tùy vật liệu và độ phức tạp. Nên dự trù thêm 10–15% cho các hạng mục phát sinh."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Đơn vị có nhận thiết kế không gian trưng bày theo yêu cầu riêng không?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Có, chúng tôi chuyên cung cấp dịch vụ tư vấn, thiết kế và thi công nội thất showroom bám sát theo nhận diện thương hiệu nhằm tối ưu hóa trải nghiệm mua sắm của khách hàng."
+        }
+      }
+    ]
+  }
+]
+
+</script>
