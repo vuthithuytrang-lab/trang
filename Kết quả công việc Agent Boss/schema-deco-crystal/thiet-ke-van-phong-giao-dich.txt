@@ -61,7 +61,7 @@
       },
       {
         "@type": "Question",
-        "name": "Thời gian thiết kế và thi công thiết kế văn phòng giao dịch mất bao lâu?",
+        "name": "Thời gian thiết kế và thi công một dự án mất bao lâu?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Thời gian thiết kế từ 5 – 7 ngày làm việc; thời gian thi công thực tế từ 15 – 25 ngày tùy diện tích và độ phức tạp của công trình."

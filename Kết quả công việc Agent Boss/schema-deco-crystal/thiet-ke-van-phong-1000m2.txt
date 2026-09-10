@@ -53,7 +53,7 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Chi phí thiết kế văn phòng diện tích lớn được tính như thế nào?",
+        "name": "Chi phí thiết kế văn phòng 1000m² được tính như thế nào?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Chi phí được tính theo đơn giá trên mỗi m². Đặc biệt, Crystal Design TPL (Deco Crystal) miễn phí 100% chi phí thiết kế khi khách hàng ký hợp đồng thi công trọn gói."
@@ -61,7 +61,7 @@
       },
       {
         "@type": "Question",
-        "name": "Thời gian thiết kế và thi công thiết kế văn phòng diện tích lớn mất bao lâu?",
+        "name": "Thời gian thiết kế và thi công một dự án mất bao lâu?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Thời gian thiết kế từ 5 – 7 ngày làm việc; thời gian thi công thực tế từ 15 – 25 ngày tùy diện tích và độ phức tạp của công trình."
