@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phân tích &amp; đề xuất tối ưu — thiết kế văn phòng 80m2</title>
+<style>
+:root{
+  --sg-xanh:#004AEF; --sg-xanh-sang:#0D53F0; --sg-navy:#002992;
+  --sg-mint:#07EF9C; --sg-cyan:#0DD1FF; --sg-vang:#FFCE00; --sg-cam:#F68B1F;
+  --sg-den:#151515; --sg-xam-nen:#F3F3F6; --sg-xam-vien:#DCDCDC;
+  --sg-chu: Gilroy,"Montserrat",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --sg-dai-mau: linear-gradient(135deg,#002992 0%,#004AEF 55%,#0DD1FF 100%);
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--sg-chu);color:var(--sg-den);background:#fff;line-height:1.65;font-size:16px}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+.hero{background:var(--sg-dai-mau);color:#fff;padding:36px 0 44px}
+.logo-nen{display:inline-block;background:#fff;border-radius:12px;padding:14px 18px;margin-bottom:20px}
+.logo-nen img{display:block;width:180px;height:auto}
+.hero h1{margin:0 0 10px;font-size:32px;font-weight:800;line-height:1.25}
+.hero p{margin:0;font-size:16px;max-width:700px;color:#E3ECFF}
+.hero .meta{margin-top:16px;font-size:13px;color:#BFD3FF}
+.chip{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);
+  border-radius:999px;padding:5px 13px;font-size:13px;margin:10px 6px 0 0}
+.chip b{color:var(--sg-mint);font-weight:700}
+section{padding:32px 0 4px;border-top:1px solid var(--sg-xam-vien);margin-top:30px}
+section:first-of-type{border-top:0;margin-top:0}
+h2{font-size:25px;font-weight:800;color:var(--sg-navy);margin:0 0 6px;line-height:1.3}
+h3{font-size:19px;font-weight:700;color:var(--sg-xanh);margin:26px 0 8px}
+h4{font-size:16.5px;font-weight:700;margin:20px 0 6px}
+p{margin:8px 0}
+.sub{color:#5A6B66;font-size:14px;margin:0 0 14px}
+.bang-cuon{overflow-x:auto;margin:14px 0}
+table{border-collapse:collapse;width:100%;min-width:540px;font-size:14.5px}
+th,td{border:1px solid var(--sg-xam-vien);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--sg-navy);color:#fff;font-weight:700;font-size:14px}
+tbody tr:nth-child(even){background:var(--sg-xam-nen)}
+td.giua,th.giua{text-align:center}
+.hop{background:var(--sg-xam-nen);border-radius:14px;padding:20px 22px;margin:16px 0}
+.vang{border-left:4px solid var(--sg-mint);background:#E9FFF6;border-radius:0 10px 10px 0;padding:12px 16px;margin:14px 0;font-size:15px}
+.canh-bao{border-left:4px solid var(--sg-cam);background:#FFF4E8;border-radius:0 10px 10px 0;padding:12px 16px;margin:14px 0;font-size:15px}
+.do{border-left:4px solid #D92D20;background:#FFF1F0;border-radius:0 10px 10px 0;padding:12px 16px;margin:14px 0;font-size:15px}
+ul.gon{margin:8px 0;padding-left:20px} ul.gon li{margin:6px 0}
+.nho{font-size:13.5px;color:#5A6B66}
+.dat{display:inline-block;background:#E9FFF6;border:1px solid var(--sg-mint);color:#046B47;border-radius:6px;padding:1px 8px;font-size:13px;font-weight:700}
+.chua{display:inline-block;background:#FFF1F0;border:1px solid #F5A9A2;color:#B42318;border-radius:6px;padding:1px 8px;font-size:13px;font-weight:700}
+.mot-phan{display:inline-block;background:#FFF6D6;border:1px solid var(--sg-vang);color:#7A5B00;border-radius:6px;padding:1px 8px;font-size:13px;font-weight:700}
+.dt{border:1px solid var(--sg-xam-vien);border-radius:14px;margin:16px 0;overflow:hidden}
+.dt-dau{background:var(--sg-xam-nen);padding:12px 18px;border-bottom:1px solid var(--sg-xam-vien)}
+.dt-dau h4{margin:0;font-size:17px;color:var(--sg-navy)}
+.dt-dau .url{font-size:12.5px;color:#5A6B66;word-break:break-all}
+.dt-than{padding:14px 18px 18px}
+.dt-than p{margin:6px 0;font-size:15px}
+.fix{border:1px solid var(--sg-xam-vien);border-left:4px solid var(--sg-xanh);border-radius:0 12px 12px 0;padding:14px 18px;margin:16px 0}
+.fix .vt{font-size:12.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--sg-xanh);font-weight:700}
+.fix .goc{background:#FFF1F0;border-radius:8px;padding:9px 12px;margin:8px 0;font-size:14.5px}
+.fix .moi{background:#E9FFF6;border-radius:8px;padding:9px 12px;margin:8px 0;font-size:14.5px}
+.fix b.nhan{color:var(--sg-navy)}
+.bosung{background:#0B1B3A;color:#E6ECFF;border-radius:12px;padding:16px 20px;margin:16px 0;font-size:15px;line-height:1.9}
+.bosung b{color:var(--sg-mint)}
+footer{background:var(--sg-navy);color:#BFD3FF;margin-top:40px;padding:24px 0;font-size:13.5px}
+footer b{color:#fff}
+@media (max-width:600px){.hero h1{font-size:25px}h2{font-size:21px}.wrap{padding:0 16px}body{font-size:15px}}
+</style>
+</head>
+<body>
+<div class="hero"><div class="wrap">
+  <div class="logo-nen"><img src="data:image/webp;base64,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" alt="SEONGON"></div>
+  <h1>Phân tích &amp; đề xuất tối ưu bài viết</h1>
+  <p>Từ khóa <b>“thiết kế văn phòng 80m2”</b> · Bài phân tích: deco-crystal.com/blog/thiet-ke-van-phong-80m2/ ·
+     Đối chiếu với 6 bài đối thủ đã đọc trực tiếp.</p>
+  <div>
+    <span class="chip"><b>6/6</b> bài đối thủ đọc được</span>
+    <span class="chip"><b>4</b> khoảng trống vàng</span>
+    <span class="chip"><b>16</b> đề xuất sửa câu</span>
+    <span class="chip"><b>9</b> lỗi cần sửa gấp</span>
+  </div>
+  <div class="meta">Lập ngày 10/09/2026 · Theo quy trình 7 chặng đã chốt</div>
+</div></div>
+
+<div class="wrap">
+
+<section>
+<h2>Kết luận trong một phút</h2>
+<div class="vang">
+<b>Bài của bạn đang có thứ mà không đối thủ nào có — nhưng đang giấu nó ở giữa bài.</b><br>
+Câu hỏi thật sự đứng sau từ khóa “thiết kế văn phòng 80m2” là: <i>80m2 thì ngồi được bao nhiêu người,
+chia mỗi khu bao nhiêu mét, hết bao nhiêu tiền, mất bao lâu.</i>
+Tôi đã đọc cả 6 bài đối thủ: <b>không bài nào trả lời được câu “bao nhiêu chỗ ngồi”</b>,
+<b>không bài nào có bảng phân bổ mét vuông từng khu</b>. Bài của bạn có cả hai — nằm ở mục 4,
+sau khi người đọc đã phải cuộn qua 30 mẫu ảnh.
+</div>
+<p><b>Ba việc đổi được thứ hạng, xếp theo mức quan trọng:</b></p>
+<ol>
+  <li><b>Đưa con số lên đầu bài.</b> Trả lời “8–12 chỗ ngồi, chia làm 3 khu” ngay trong 100 chữ đầu,
+      thay vì mở bài bằng câu ai viết cũng được.</li>
+  <li><b>Bù phần tiền.</b> Bài đang chỉ có <i>phí thiết kế</i> 300.000–500.000đ/m². Đối thủ timioffice.vn
+      đưa hẳn giá thi công trọn gói 2–4,5 triệu/m² — tức người đọc tính ra ngay 160–360 triệu cho 80m2.
+      Bài của bạn không cho họ tính được tổng tiền.</li>
+  <li><b>Thay ảnh sưu tầm bằng ảnh dự án thật.</b> Gần 60 ảnh trong bài đều ghi “(Nguồn: Internet)”.
+      Một công ty 25 năm nghề mà không có ảnh công trình của mình trong bài là điểm trừ nặng nhất về E-E-A-T.</li>
+</ol>
+<div class="do"><b>Có 3 lỗi phải sửa ngay dù chưa tối ưu gì:</b> mục 5 viết nhầm “văn phòng <b>70m2</b>”;
+bài ghi “<b>25 năm</b>” ở mục 6 nhưng “<b>28 năm</b>” ở kết bài; và bài nhảy từ Mẫu 05 sang Mẫu 07 (thiếu Mẫu 06),
+trong khi số 19 bị dùng cho hai mẫu khác nhau.</div>
+</section>
+
+<section>
+<h2>Chặng 1 · Hiểu người tìm</h2>
+
+<h3>Bước 1 — Phân tách từ khóa</h3>
+<div class="bang-cuon"><table>
+<thead><tr><th style="width:20%">Thành tố</th><th>Người tìm muốn gì ở thành tố này</th></tr></thead>
+<tbody>
+<tr><td><b>Thiết kế</b></td><td>Họ đang ở giai đoạn <b>trước khi làm</b>. Gói ba nhu cầu chồng nhau: xem mẫu để hình dung · hiểu nguyên tắc để không làm sai · ngầm hỏi “ai làm giúp tôi”. Không phải sửa chữa, không phải thuê văn phòng, không phải mua bàn ghế lẻ.</td></tr>
+<tr><td><b>Văn phòng</b></td><td>Không gian của <b>doanh nghiệp</b>, không phải nhà ở. Kéo theo ràng buộc riêng: số chỗ ngồi · phòng họp · lễ tân đón khách · pantry · điện–mạng · lối đi đạt chuẩn · bộ mặt thương hiệu trước đối tác.</td></tr>
+<tr><td><b>80m2</b></td><td><b>Thành tố quan trọng nhất và dễ viết trượt nhất.</b> Họ không hỏi “thế nào cho đẹp”, họ hỏi <b>“80m2 làm được đến đâu”</b>: ngồi được mấy người · chia mấy khu · mỗi khu mấy mét · có nhét nổi phòng giám đốc riêng không · hết bao nhiêu tiền. Nội dung nào thay 80m2 bằng 120m2 vẫn đúng nguyên là trượt intent.</td></tr>
+</tbody></table></div>
+
+<h3>Bước 2 — Năm câu hỏi tổng quan</h3>
+<div class="bang-cuon"><table>
+<thead><tr><th style="width:30%">Câu hỏi</th><th>Trả lời</th></tr></thead>
+<tbody>
+<tr><td>Nhu cầu chính họ muốn giải quyết</td><td>Biết <b>80m2 chia được thành gì</b> và <b>đủ cho bao nhiêu người</b>, để không làm xong mới phát hiện thiếu chỗ hoặc thừa hành lang.</td></tr>
+<tr><td>Hoàn cảnh nào cần thông tin này</td><td>Vừa thuê được mặt bằng hoặc sắp ký hợp đồng thuê · công ty sắp tăng người · văn phòng cũ hết hạn phải chuyển · đang phải trình phương án cho sếp duyệt ngân sách.</td></tr>
+<tr><td>Sau khi tìm được, họ làm gì tiếp</td><td>Chốt phương án bố trí → dự trù ngân sách → <b>liên hệ 2–3 đơn vị xin báo giá</b>. Đây là từ khóa rất gần tiền, không phải từ khóa đọc chơi.</td></tr>
+<tr><td>Thông tin họ ưu tiên</td><td>① Số chỗ ngồi ② Diện tích từng khu ③ Tổng chi phí ④ Thời gian làm ⑤ Ảnh để hình dung ⑥ Sai lầm cần tránh.</td></tr>
+<tr><td>Dạng nội dung họ mong đợi</td><td>Bài tổng hợp <b>vừa có ảnh vừa có bảng số</b>. Ảnh để hình dung, bảng để tính. Thiếu vế nào cũng chưa đủ.</td></tr>
+</tbody></table></div>
+
+<h3>Bước 3 — Dữ liệu trang kết quả Google</h3>
+<div class="canh-bao"><b>Đây là chỗ tôi không tự làm được.</b> Tôi không nhìn được trang kết quả Google tại Việt Nam,
+và tôi không đoán bừa. Cần bạn gõ “thiết kế văn phòng 80m2” trên Google rồi chụp màn hình gửi tôi —
+để xem Google đang ưu tiên loại nội dung nào, có tab hình ảnh, featured snippet hay knowledge panel không.
+<br><br>
+<b>Suy ra được gì từ chính danh sách đối thủ bạn gửi:</b> 5 trên 6 tiêu đề đối thủ có dạng
+“<b>20+ mẫu</b>”, “<b>21 mẫu</b>”, “<b>Top 10 mẫu</b>”, “<b>99+ mẫu</b>”. Một thị trường mà cả sáu đối thủ
+đều đặt tiêu đề theo kiểu đếm mẫu là dấu hiệu rất mạnh rằng <b>nhu cầu thị giác đang dẫn dắt</b> —
+người dùng muốn xem ảnh trước, đọc chữ sau. Nhưng đây là suy luận từ đối thủ, <b>không thay được ảnh chụp Google thật</b>.</div>
+
+<h3>Bước 4 — Điểm chung của các bài top và khoảng trống thông tin</h3>
+<p><b>Điểm chung của cả 6 bài:</b></p>
+<ul class="gon">
+<li>Đều là bài <b>tổng hợp mẫu ảnh</b> chia theo phong cách (hiện đại, tối giản, công nghiệp, xanh).</li>
+<li>Đều có mục cuối <b>giới thiệu chính công ty mình</b> làm phần chốt bán hàng.</li>
+<li>Đều dùng ảnh minh họa, <b>không bài nào có bản vẽ mặt bằng</b>.</li>
+<li>Đều nói những lưu ý giống hệt nhau: tận dụng ánh sáng tự nhiên · nội thất đa năng · không gian mở · tránh màu tối.</li>
+</ul>
+<p><b>Khoảng trống thông tin — điều cả 6 bài đều bỏ trống:</b></p>
+<ul class="gon">
+<li><b>Không bài nào nói 80m2 ngồi được bao nhiêu người.</b> Tôi đã hỏi thẳng vào từng bài, cả 6 đều không có con số.</li>
+<li><b>Không bài nào có bảng phân bổ mét vuông từng khu.</b> Bài gần nhất chỉ nói chung “đủ để bố trí khu làm việc, tiếp khách, phòng họp nhỏ”.</li>
+<li><b>Không bài nào nói mất bao lâu để làm xong.</b></li>
+<li><b>Không bài nào có mục hỏi đáp.</b></li>
+</ul>
+
+<h3>Bước 5 — Đúc kết 3W</h3>
+<div class="bang-cuon"><table>
+<thead><tr><th class="giua" style="width:12%">3W</th><th>Nội dung</th></tr></thead>
+<tbody>
+<tr><td class="giua"><b>Who</b></td><td>Chủ doanh nghiệp nhỏ và vừa, hoặc <b>trưởng phòng hành chính – nhân sự</b> được giao việc setup văn phòng. Công ty quy mô khoảng <b>8–15 người</b> — đúng tầm mà 80m2 phục vụ được. Người này thường <b>không có chuyên môn thiết kế</b> và phải trình phương án cho cấp trên duyệt.</td></tr>
+<tr><td class="giua"><b>What</b></td><td>Muốn thấy <b>80m2 trông ra sao</b> (ảnh) và <b>chia thế nào cho đủ</b> (số), kèm <b>tổng tiền</b> để lập ngân sách, rồi tìm được <b>một đơn vị đáng tin</b> để giao việc.</td></tr>
+<tr><td class="giua"><b>Why</b></td><td>Vì <b>mặt bằng đã có trong tay</b> và đồng hồ đang chạy — hợp đồng thuê đã ký, ngày chuyển văn phòng đã định. Nỗi sợ lớn nhất là <b>làm xong mới thấy sai</b>: thiếu chỗ ngồi, phòng họp chật, hành lang thừa — sửa lại thì mất cả tiền lẫn thời gian.</td></tr>
+</tbody></table></div>
+
+<h3>Bước 6 — Kết luận Search Intent</h3>
+<div class="hop">
+<p style="font-size:17px;margin:0"><b>Người tìm là chủ doanh nghiệp hoặc trưởng phòng hành chính của một công ty 8–15 người</b> (who),
+<b>vừa thuê được mặt bằng 80m2 và đang phải lên phương án trước ngày chuyển văn phòng</b> (when),
+muốn biết <b>80m2 chia được thành những khu nào, ngồi đủ bao nhiêu người, hết bao nhiêu tiền và mất bao lâu</b> (what),
+để <b>chốt được một phương án đủ căn cứ trình sếp duyệt ngân sách, rồi giao cho một đơn vị làm mà không sợ làm hỏng</b> (why).</p>
+</div>
+<p class="nho">Lưu ý bối cảnh: đây <b>không phải</b> người đi tìm cảm hứng thiết kế. Đây là người đang phải <b>ra quyết định có ràng buộc tiền và thời gian</b>.</p>
+
+<h3>Bước 7 — Suy luận ngược kiểm tra</h3>
+<div class="bang-cuon"><table>
+<thead><tr><th style="width:18%">Chiều</th><th>Kiểm tra</th></tr></thead>
+<tbody>
+<tr><td><b>Chiều nghịch</b><br><span class="nho">từ khóa → intent</span></td><td>Nếu người dùng search “thiết kế văn phòng 80m2” thì search intent của họ là <b>“cho tôi xem 80m2 trông thế nào, chia ra sao cho đủ người, và tốn khoảng bao nhiêu”</b> — chứ không phải “dạy tôi lý thuyết thiết kế nội thất”.</td></tr>
+<tr><td><b>Chiều thuận</b><br><span class="nho">intent → từ khóa</span></td><td>Nếu ai đó có intent trên, họ sẽ gõ đúng cụm <b>“thiết kế văn phòng 80m2”</b> hoặc “bố trí văn phòng 80m2”, “văn phòng 80m2 ngồi được bao nhiêu người”, “chi phí thi công văn phòng 80m2”.</td></tr>
+<tr><td colspan="2"><b>Đối chiếu ngược lại:</b> nếu chỉ muốn xem ảnh đẹp, họ đã gõ “mẫu văn phòng đẹp” — <b>không cần gắn con số</b>.
+Nếu muốn thuê chỗ, họ gõ “cho thuê văn phòng 80m2”. Việc họ ghép <b>chữ “thiết kế”</b> với <b>con số “80m2”</b>
+chứng minh: mặt bằng đã có, và họ đang ở khâu lên phương án. <b>Hai chiều khớp nhau → kết luận ở Bước 6 đứng vững.</b></td></tr>
+</tbody></table></div>
+
+<h3>Bước 8 — Nội dung bắt buộc phải có</h3>
+<div class="bang-cuon"><table>
+<thead><tr><th class="giua" style="width:7%">#</th><th style="width:38%">Phần bắt buộc</th><th>Vì sao bắt buộc</th></tr></thead>
+<tbody>
+<tr><td class="giua">1</td><td>Trả lời số chỗ ngồi ngay 100 chữ đầu</td><td>Câu hỏi ngầm số một của từ khóa. Không đối thủ nào trả lời.</td></tr>
+<tr><td class="giua">2</td><td>Bảng phân bổ diện tích từng khu (m²)</td><td>Bài đang có sẵn — chỉ cần đưa lên và làm thành bảng.</td></tr>
+<tr><td class="giua">3</td><td>2–3 phương án mặt bằng theo quy mô nhân sự</td><td>Người đọc cần chọn giữa các đánh đổi, không cần thêm ảnh đẹp.</td></tr>
+<tr><td class="giua">4</td><td>Sơ đồ mặt bằng đơn giản (ảnh vẽ)</td><td>Không đối thủ nào có. Khoảng trống vàng.</td></tr>
+<tr><td class="giua">5</td><td>Tổng chi phí cho 80m2 — cả thiết kế lẫn thi công</td><td>Bài đang thiếu vế thi công, đối thủ đã có.</td></tr>
+<tr><td class="giua">6</td><td>Thời gian từ khảo sát đến bàn giao</td><td>Không đối thủ nào có. Khoảng trống vàng.</td></tr>
+<tr><td class="giua">7</td><td>Bộ mẫu ảnh theo phong cách</td><td>Đã có và đang là điểm mạnh — giữ nguyên, chỉ dọn lại.</td></tr>
+<tr><td class="giua">8</td><td>Sai lầm hay gặp ở đúng diện tích 80m2</td><td>Không ai có. Đây là chỗ thể hiện kinh nghiệm thật.</td></tr>
+<tr><td class="giua">9</td><td>Dự án thật của công ty: ảnh thật, quy mô, năm</td><td>Điểm E-E-A-T yếu nhất hiện nay của bài.</td></tr>
+<tr><td class="giua">10</td><td>Mục hỏi đáp</td><td>Không đối thủ nào có.</td></tr>
+</tbody></table></div>
+</section>
+<section>
+<h2>Chặng 2 · Soi từng bài đối thủ</h2>
+<p class="sub">Cả 6 link đều mở được, tôi đọc trực tiếp từng bài. Không bài nào bị chặn.</p>
+
+<div class="dt"><div class="dt-dau"><h4>1 · Hòa Phát Giá Sỉ — “Thiết kế văn phòng 80m2 chuyên nghiệp thể hiện văn hoá công ty”</h4>
+<div class="url">hoaphatgiasi.vn · ~1.800–2.000 chữ · Top 10 mẫu</div></div><div class="dt-than">
+<p><b>Dàn ý:</b> 3 mục lớn — Yếu tố tạo tính chuyên nghiệp (Layout · Branding · Comfort) → Top 10 mẫu → Giới thiệu công ty.</p>
+<p><b>Điểm mạnh:</b> Cách chia <i>Layout – Branding – Comfort</i> là một góc nhìn gọn và dễ nhớ, khác hẳn lối liệt kê phong cách của số đông. Bài ngắn, đọc nhanh.</p>
+<p><b>Điểm yếu:</b> Bài ngắn nhất nhóm, <b>không một con số nào</b> — không giá, không diện tích, không chỗ ngồi. Không tên tác giả. Mở bài “Thiết kế nội thất văn phòng hiện đại bên cạnh mặt thẩm mỹ… là một xu hướng đang được quan tâm” là câu ai viết cũng được.</p>
+<p><b>Nỗi đau đã gỡ:</b> “văn phòng của tôi trông có chuyên nghiệp không” — qua bộ ba Layout/Branding/Comfort.</p>
+<p><b>Nỗi đau chưa gỡ:</b> đủ chỗ cho bao nhiêu người · chia mét thế nào · tốn bao nhiêu · làm mất bao lâu.</p>
+</div></div>
+
+<div class="dt"><div class="dt-dau"><h4>2 · KLUX — “20+ Mẫu thiết kế văn phòng 80m2 đẹp hiện đại, chuyên nghiệp”</h4>
+<div class="url">klux.com.vn · ~2.500–3.000 chữ · tác giả: Marketing KLUX</div></div><div class="dt-than">
+<p><b>Dàn ý:</b> Đặc điểm văn phòng 80m2 → 20+ mẫu → 4 lưu ý (phong cách · phân chia không gian · ánh sáng · nội thất đa năng).</p>
+<p><b>Điểm mạnh:</b> Là bài <b>duy nhất mở đầu bằng mục “đặc điểm riêng của diện tích 80m2”</b> — bám sát con số ngay từ mục 1. Có ghi rõ nguồn ảnh “(Nguồn ảnh: Sưu tầm)”, tức trung thực về xuất xứ.</p>
+<p><b>Điểm yếu:</b> Nói đặc điểm nhưng <b>vẫn không có con số nào</b>: không chỗ ngồi, không mét vuông từng khu, không giá. Câu “đủ để bố trí các khu vực làm việc, tiếp khách, phòng họp nhỏ và khu vực thư giãn” là đúng nhưng rỗng — không nói được <i>mỗi khu mấy mét</i>. Tác giả ghi là “Marketing KLUX”, tức <b>bút danh phòng ban, không phải người thật</b> — trái thẳng mục Chuyên môn số 1 của checklist E-E-A-T.</p>
+<p><b>Nỗi đau đã gỡ:</b> “80m2 có phải diện tích hợp lý không” — trả lời được.</p>
+<p><b>Nỗi đau chưa gỡ:</b> toàn bộ phần số liệu và tiền.</p>
+</div></div>
+
+<div class="dt"><div class="dt-dau"><h4>3 · TIMI Office — “21 Mẫu Thiết Kế Văn Phòng 80m2 Đẹp, Hiện Đại, Sang Trọng”</h4>
+<div class="url">timioffice.vn · ~3.500–4.000 chữ · tác giả: Hồ Đăng Thắng · đăng 25/08/2024</div></div><div class="dt-than">
+<p><b>Dàn ý:</b> Đặc điểm → Mẫu <b>theo không gian</b> (tiền sảnh · chỗ nhân viên · phòng giám đốc · phòng họp · pantry) → Mẫu theo phong cách (6 loại) → 8 lưu ý → Chi phí → Đơn vị thi công.</p>
+<p><b>Đây là đối thủ mạnh nhất.</b></p>
+<p><b>Điểm mạnh:</b> ① <b>Có bảng giá thật</b> — thiết kế “Dưới 80m2: Miễn phí”, thi công trọn gói gói cơ bản “Từ 2.000.000đ–3.000.000đ/m2”, gói tiêu chuẩn “Từ 3.500.000–4.500.000đ/m2”. Người đọc nhân ra ngay tổng tiền. ② <b>Có tên tác giả người thật</b> và ngày đăng. ③ Chia mẫu <b>theo khu chức năng</b> — hợp với cách người đọc thật sự nghĩ (“phòng họp của tôi trông thế nào”), không chỉ theo phong cách.</p>
+<p><b>Điểm yếu:</b> Mục lưu ý bị lặp ý lộ liễu — có cả “Tận dụng ánh sáng tự nhiên” lẫn “Tối ưu được ánh sáng” là hai mục riêng. Vẫn <b>không có số chỗ ngồi, không có phân bổ mét vuông</b>. Không có dự án thật kèm tên khách hàng.</p>
+<p><b>Nỗi đau đã gỡ:</b> tốn bao nhiêu tiền · mỗi khu chức năng trông ra sao.</p>
+<p><b>Nỗi đau chưa gỡ:</b> đủ cho bao nhiêu người · chia mét thế nào · mất bao lâu.</p>
+<div class="canh-bao"><b>Điều bạn cần biết ngay:</b> đối thủ này ghi <b>miễn phí thiết kế cho mặt bằng dưới 80m2</b>.
+Bài của bạn đang báo phí thiết kế văn phòng <b>300.000–500.000đ/m²</b> — với 80m2 là 24–40 triệu.
+Người đọc so hai bài cạnh nhau sẽ thấy ngay chênh lệch này. Đây là chuyện chính sách giá, không phải chuyện viết lách,
+nên tôi chỉ nêu ra để bạn cân nhắc, không tự sửa.</div>
+</div></div>
+
+<div class="dt"><div class="dt-dau"><h4>4 · DOCHI Office — “21+ Mẫu Thiết Kế Nội Thất Văn Phòng 80m2”</h4>
+<div class="url">dochioffice.vn · ~2.500–3.000 chữ · không tên tác giả</div></div><div class="dt-than">
+<p><b>Dàn ý:</b> Xu hướng → Mẫu theo phong cách (6 loại) → Thiết kế theo khu công năng (tiếp tân · làm việc · họp) → Kinh nghiệm → Giới thiệu DOCHI.</p>
+<p><b>Điểm mạnh:</b> <b>Mở bài hay nhất trong cả 6 bài</b>, và là bài duy nhất chạm thẳng nỗi đau ngay câu đầu:
+<i>“Thiết kế nội thất văn phòng 80m2 là bài toán vừa phải đủ rộng để làm cho đẹp, vừa phải đủ gọn để bố trí hợp lý.
+Nếu bố trí thiếu tinh tế, không gian dễ rơi vào cảm giác chật, bừa và thiếu điểm nhấn.”</i>
+Đây chính là kiểu mở bài bài của bạn đang thiếu.</p>
+<p><b>Điểm yếu:</b> Sau mở bài tốt thì phần thân quay lại lối mô tả chung. Không giá, không số chỗ ngồi, không mét vuông. Không tên tác giả. <b>Không ghi nguồn ảnh</b> — không nói rõ là ảnh dự án thật hay ảnh sưu tầm, tức mập mờ hơn cả KLUX.</p>
+<p><b>Nỗi đau đã gỡ:</b> “sợ làm xong bị chật và bừa” — nêu đúng, nhưng chỉ nêu chứ chưa giải.</p>
+<p><b>Nỗi đau chưa gỡ:</b> toàn bộ phần số và tiền.</p>
+</div></div>
+
+<div class="dt"><div class="dt-dau"><h4>5 · Levin Decor — “Thiết kế nội thất văn phòng 80m2 tối ưu”</h4>
+<div class="url">levindecor.com · ~2.800–3.200 chữ · tác giả: “Contentlevin”</div></div><div class="dt-than">
+<p><b>Dàn ý:</b> Tổng quan (thiết kế nội thất là gì · vì sao chọn 80m2 · yếu tố đặc thù) → Nguyên tắc thiết kế → Các phong cách phù hợp.</p>
+<p><b>Điểm mạnh:</b> Có mục <i>“Vì sao diện tích 80m2 được nhiều doanh nghiệp lựa chọn”</i> — bám con số. Bố cục mạch lạc.</p>
+<p><b>Điểm yếu:</b> Bài <b>yếu nhất về bằng chứng</b>: không giá, không số liệu, không dự án, không nguồn, <b>ảnh chỉ là ảnh chỗ trống chưa có nội dung</b>. Có mục “Thiết kế nội thất văn phòng là gì?” — người đã gõ “thiết kế văn phòng 80m2” <b>không cần được giải nghĩa</b> điều đó nữa; đây là dấu hiệu bài viết lệch khỏi ý định tìm kiếm. Tác giả “Contentlevin” là bút danh, không phải người thật.</p>
+<p><b>Nỗi đau đã gỡ:</b> gần như không — bài dừng ở mức giải thích khái niệm.</p>
+<p><b>Nỗi đau chưa gỡ:</b> tất cả.</p>
+</div></div>
+
+<div class="dt"><div class="dt-dau"><h4>6 · CaniHome — “TOP 99+ mẫu thiết kế nội thất văn phòng đẹp, chuyên nghiệp”</h4>
+<div class="url">canihome.vn · ~8.000–10.000 chữ · tác giả: Nguyễn Hiếu (CEO Nội thất CaniHome) · đăng 05/06/2025</div></div><div class="dt-than">
+<p><b>Lưu ý:</b> đây <b>không phải bài về 80m2</b> — là bài tổng về thiết kế nội thất văn phòng, trong đó 80m2 chỉ là <b>một mục nhỏ 3.3</b>. Nhưng nó vẫn cạnh tranh được nhờ độ phủ rất rộng.</p>
+<p><b>Điểm mạnh:</b> ① <b>Tác giả là CEO công ty, ghi rõ chức danh</b> — mạnh nhất nhóm về mặt uy tín tác giả. ② <b>Bảng giá chi tiết đến từng hạng mục</b>: ốp tường PVC vân đá 480.000đ/m², vách kính thủy 5mm 1.800.000đ/m², bàn làm việc full MDF 2.500.000–2.900.000đ/cái. ③ <b>Có hẳn một mục “Các dự án CaniHome đã thực hiện”</b>. ④ Có quy trình tư vấn – thiết kế.</p>
+<p><b>Điểm yếu:</b> Bài quá rộng nên <b>phần 80m2 rất mỏng</b> — người tìm đúng từ khóa 80m2 sẽ thấy loãng. Mục dự án <b>không ghi tên khách hàng cụ thể</b>, chỉ đánh số “Mẫu thiết kế nội thất văn phòng -1, -2…”, nên vẫn chưa thành bằng chứng đầy đủ.</p>
+<p><b>Nỗi đau đã gỡ:</b> giá từng hạng mục · quy trình làm việc · công ty này đã làm gì.</p>
+<p><b>Nỗi đau chưa gỡ:</b> mọi thứ riêng của diện tích 80m2.</p>
+</div></div>
+</section>
+
+<section>
+<h2>Chặng 3 · Soi bài của bạn</h2>
+
+<h3>3.1 · Dàn ý hiện tại</h3>
+<p>6 mục lớn: ① 4 xu hướng thiết kế (4 phong cách) → ② 30+ mẫu (5 nhóm) → ③ 5 nguyên tắc tối ưu diện tích →
+④ Hướng dẫn phân bổ không gian (khu làm việc · phòng họp · pantry) → ⑤ Chi phí → ⑥ Giới thiệu công ty.
+Khoảng 58 ảnh. Có tác giả <b>Đặng Trường Minh</b>, ngày đăng 28/05/2026, có mục lục, có form liên hệ, có bài liên quan.
+<b>Không có mục hỏi đáp.</b></p>
+
+<h3>3.2 · Điểm mạnh — có bằng chứng</h3>
+<ul class="gon">
+<li><b>Là bài duy nhất trong cả 7 bài trả lời được câu “bao nhiêu chỗ ngồi”.</b> Mục 4.1:
+<i>“doanh nghiệp có thể bố trí từ 8 - 12 chỗ ngồi làm việc”</i>. Không đối thủ nào có câu này.</li>
+<li><b>Là bài duy nhất có phân bổ mét vuông từng khu.</b> Khu làm việc <i>“50 - 60% tổng diện tích sàn, tức khoảng 40 - 48m2”</i>;
+phòng họp và tiếp khách <i>“20 - 25% diện tích (tương đương 16 - 20m2)”</i>; pantry <i>“chỉ cần 8 - 12m2”</i>.
+Đây là tài sản quý nhất của bài.</li>
+<li><b>Có hai phương án bố trí phòng họp thay vì một</b> — phương án gộp chung và phương án tách bằng vách kính, kèm mét vuông cụ thể. Đúng kiểu nội dung giúp người đọc <b>chọn giữa các đánh đổi</b>.</li>
+<li><b>Có con số kỹ thuật chuẩn</b>: <i>“hành lang chính cần có chiều rộng tối thiểu 1,2m, còn các lối đi phụ giữa các bàn làm việc cần đạt ít nhất 80cm”</i>.</li>
+<li><b>Có cảnh báo ngược chiều bán hàng</b> — mục 1.3 khuyên <i>“Với văn phòng 80m2 có trần từ dưới 3m, việc để mộc toàn bộ trần dễ gây cảm giác ngột ngạt”</i>. Đây là dấu hiệu tư vấn thật, rất đáng giữ và nên nhân rộng.</li>
+<li><b>Bộ mẫu 30 cái chia 5 nhóm</b> — nhiều và có tổ chức hơn phần lớn đối thủ.</li>
+</ul>
+
+<h3>3.3 · Điểm yếu — có bằng chứng</h3>
+<div class="do"><b>Nhóm A — Lỗi sự thật, phải sửa ngay</b>
+<ul class="gon">
+<li><b>Sai diện tích:</b> mục 5.1 viết <i>“Chi phí thiết kế thi công văn phòng <b>70m2</b> không cố định…”</i> — trong bài về 80m2.</li>
+<li><b>Mâu thuẫn số liệu về chính công ty:</b> mục 6 ghi <i>“hơn <b>25 năm</b> kinh nghiệm”</i>, kết bài ghi <i>“hơn <b>28 năm</b> kinh nghiệm”</i>.</li>
+<li><b>Hai tên thương hiệu lẫn lộn:</b> thân bài xưng <b>Deco Crystal</b>, mục 6 lại đặt tiêu đề <b>Crystal Design TPL</b>. Người đọc không biết đây là một hay hai công ty.</li>
+<li><b>Đánh số mẫu lỗi:</b> nhảy từ Mẫu 05 sang <b>Mẫu 07</b> (thiếu Mẫu 06), và <b>số 19 dùng cho hai mẫu khác nhau</b> (Công nghiệp sang trọng và Tường cây khu lễ tân). Đếm thực tế đúng 30 mẫu, trong khi tiêu đề ghi “30+”.</li>
+<li><b>Sai kiến thức chuyên môn:</b> Mẫu 11 viết <i>“Ánh sáng chiếu sáng rất mạnh (6000K)”</i>. 6000K là <b>nhiệt độ màu</b> (ánh sáng trắng lạnh), <b>không phải độ mạnh</b>. Độ mạnh đo bằng lux. Đây là lỗi nặng vì nằm đúng trong chuyên môn của công ty.</li>
+</ul></div>
+
+<div class="canh-bao"><b>Nhóm B — Khẳng định không có bằng chứng (vi phạm luật “nói gì chứng minh nấy”)</b>
+<ul class="gon">
+<li><i>“tự hào là đối tác uy tín của nhiều thương hiệu lớn như Samsung, Sony, Lotte, LG, Emart, Hyundai…”</i>
+— <b>không một ảnh, một tên dự án, một năm, một đường dẫn nào đi kèm</b>. Đây là khẳng định mạnh nhất trong bài và cũng là khẳng định trống nhất.</li>
+<li><i>“Công nghệ hiện đại: hệ thống máy móc sản xuất tiên tiến”</i> — máy gì, xưởng ở đâu, rộng bao nhiêu, làm được bao nhiêu m² mỗi tháng? Không có gì.</li>
+<li><i>“đội ngũ chuyên gia đến từ Việt Nam và Hàn Quốc”</i> — bao nhiêu người, ai, làm dự án nào?</li>
+<li><i>“Theo tiêu chuẩn thiết kế nội thất văn phòng, hành lang chính cần…”</i> — số liệu tốt nhưng <b>không nói tiêu chuẩn nào</b>, số hiệu bao nhiêu.</li>
+<li>Mục 5 tiêu đề là <b>“Chi phí thiết kế văn phòng 80m2”</b> nhưng bảng chỉ có <b>phí thiết kế</b>, không có phí thi công — <b>người đọc không tính ra được tổng tiền</b>. Trong khi ngay dòng cuối bảng lại ghi <i>“Tư vấn thiết kế: Miễn phí”</i>, mâu thuẫn với dòng đầu 300.000–500.000đ/m².</li>
+</ul></div>
+
+<div class="canh-bao"><b>Nhóm C — Trải nghiệm thật gần như vắng mặt</b>
+<ul class="gon">
+<li><b>Gần 60 ảnh, hầu hết ghi “(Nguồn: Internet)”</b>, một số không ghi nguồn gì. <b>Không có một ảnh công trình thật nào của công ty.</b></li>
+<li>Mục 2 tự nói: <i>“bộ sưu tập… mà Deco Crystal đã <b>nghiên cứu và tổng hợp</b> từ các xu hướng trong nước và quốc tế”</i> — tức thừa nhận đi sưu tầm. Trung thực, nhưng làm mất vị thế chuyên gia.</li>
+<li><b>Cả bài gần như không có ngôi thứ nhất.</b> Không có câu nào kiểu “khi triển khai cho khách, chúng tôi thấy…”. Checklist E-E-A-T đặt đây là mục Trải nghiệm số 1 đến số 5.</li>
+</ul></div>
+
+<div class="canh-bao"><b>Nhóm D — Câu chữ và trình bày</b>
+<ul class="gon">
+<li><b>Câu vỡ:</b> Mẫu 18 mở đầu bằng <i>“<b>y</b> tận dụng tối đa hệ trần mở…”</i> — mất đầu câu. Mẫu 17: <i>“Ánh sáng tự nhiên được <b>tối giúp</b> mở rộng tầm nhìn”</i> — thiếu chữ.</li>
+<li><b>Lỗi chính tả:</b> <i>“gỗ <b>góc chó</b>”</i> (đúng: óc chó) · <i>“đá <b>marbel</b>”</i> (đúng: marble) · chú thích ảnh <i>“tông màu xanh <b>kêt shợp</b>”</i>.</li>
+<li><b>Sai ngữ cảnh:</b> mục 4.1 liệt kê <i>“Tủ hồ sơ cá nhân, <b>thanh tản nhiệt máy tính</b>”</i> trong danh sách nội thất văn phòng.</li>
+<li><b>Lặp cụm từ:</b> “tạo cảm giác rộng mở/thoáng đạt hơn diện tích thực tế” xuất hiện ở các Mẫu 08, 09, 13, 14, 15, 16, 17, 18 — <b>tám lần</b>. Đọc liền nhau thành ra rỗng.</li>
+<li><b>Mã lạ trong mã nguồn:</b> bảng liên hệ cuối bài có <code>[www.deco-crystal.com](https://www.deco-crystal.com)</code> — cú pháp Markdown lọt vào HTML. Cần bạn nhìn trên trang thật xem có hiện ra dấu ngoặc vuông không.</li>
+<li><b>Trộn khái niệm:</b> tiêu đề mục 1 là <i>“4 Xu hướng thiết kế”</i> nhưng nội dung là <b>4 phong cách</b>. Xu hướng và phong cách là hai chuyện khác nhau.</li>
+<li><b>Rác định dạng:</b> nhiều thẻ còn dính lớp CSS lạ dạng <code>font-claude-response-body</code>, <code>[li_&amp;]:mb-0</code> — dấu vết dán từ chỗ khác sang, nên dọn.</li>
+</ul></div>
+
+<h3>3.4 · Nỗi đau bài ĐÃ đáp ứng</h3>
+<ul class="gon">
+<li><b>“80m2 ngồi được bao nhiêu người”</b> → mục 4.1, 8–12 chỗ. <span class="dat">mạnh nhất</span></li>
+<li><b>“Chia mỗi khu bao nhiêu mét”</b> → mục 4.1, 4.2, 4.3 với đủ ba khu. <span class="dat">mạnh nhất</span></li>
+<li><b>“Nên chọn phong cách nào”</b> → mục 1, bốn phong cách kèm chi phí tương đối.</li>
+<li><b>“Cho tôi xem trông thế nào”</b> → mục 2, 30 mẫu.</li>
+<li><b>“Có nên gộp phòng họp với tiếp khách không”</b> → mục 4.2, hai phương án kèm mét vuông.</li>
+</ul>
+
+<h3>3.5 · Nỗi đau bài CHƯA đáp ứng</h3>
+<ul class="gon">
+<li><b>“Rốt cuộc làm hết bao nhiêu tiền?”</b> — chỉ có phí thiết kế, không có phí thi công, không có tổng.</li>
+<li><b>“Mất bao lâu?”</b> — không nhắc một chữ nào về thời gian.</li>
+<li><b>“Công ty này đã làm thật chưa?”</b> — không ảnh dự án thật, không tên công trình.</li>
+<li><b>“Nhìn mặt bằng ra sao?”</b> — không có sơ đồ, chỉ có ảnh phối cảnh sưu tầm.</li>
+<li><b>“Tôi 12 người thì bố trí kiểu gì, 8 người thì kiểu gì?”</b> — chưa có phương án theo quy mô nhân sự.</li>
+<li><b>“Người khác hay làm sai chỗ nào?”</b> — chưa có mục sai lầm thường gặp.</li>
+</ul>
+
+<h3>3.6 · Bảng bốn luật</h3>
+<div class="bang-cuon"><table>
+<thead><tr><th style="width:22%">Luật</th><th class="giua" style="width:12%">Kết quả</th><th style="width:36%">Bằng chứng trong bài</th><th>Phải sửa gì</th></tr></thead>
+<tbody>
+<tr><td><b>1 · Bám nỗi đau khách hàng</b></td><td class="giua"><span class="mot-phan">Một phần</span></td>
+<td>Có gỡ đau thật ở mục 4 (8–12 chỗ ngồi, 40–48m²) nhưng <b>mở bài không chạm đau</b>: <i>“Văn phòng 80m2 là diện tích phổ biến được các doanh nghiệp vừa và nhỏ lựa chọn…”</i></td>
+<td>Đưa con số lên 100 chữ đầu. Chuyển mục 4 lên trước mục mẫu ảnh.</td></tr>
+<tr><td><b>2 · E-E-A-T</b></td><td class="giua"><span class="chua">Chưa đạt</span></td>
+<td>Không ngôi thứ nhất · không trải nghiệm thật · gần 60 ảnh “(Nguồn: Internet)” · “25 năm” chọi “28 năm” · Samsung/Sony không bằng chứng · sai 6000K.</td>
+<td>Thêm ảnh dự án thật, thống nhất số năm, chứng minh danh sách khách hàng, sửa lỗi chuyên môn.</td></tr>
+<tr><td><b>3 · Độc nhất cả bài</b></td><td class="giua"><span class="mot-phan">Một phần</span></td>
+<td>Mục 4 là độc nhất thật (không đối thủ nào có). Nhưng mục 1 và mục 2 mô tả phong cách <b>trùng ý với cả 6 đối thủ</b>, cộng cụm “rộng hơn diện tích thực tế” lặp 8 lần.</td>
+<td>Giữ và khuếch đại mục 4. Viết lại phần mẫu bằng thông tin thật của từng mẫu.</td></tr>
+<tr><td><b>4 · Nói gì chứng minh nấy</b></td><td class="giua"><span class="chua">Chưa đạt</span></td>
+<td>Toàn bộ Nhóm B ở trên: khách hàng lớn, công nghệ hiện đại, chuyên gia Hàn Quốc, tiêu chuẩn hành lang — <b>không mục nào có chứng cứ đi kèm</b>.</td>
+<td>Mỗi khẳng định gắn một bằng chứng, hoặc bỏ khẳng định đó đi.</td></tr>
+</tbody></table></div>
+
+<h3>3.7 · Bảng E-E-A-T — phần sửa được trong bài</h3>
+<div class="bang-cuon"><table>
+<thead><tr><th style="width:8%" class="giua">Mục</th><th style="width:34%">Tiêu chí</th><th class="giua" style="width:14%">Kết quả</th><th>Bằng chứng</th></tr></thead>
+<tbody>
+<tr><td class="giua">TN 1</td><td>Dùng ngôi thứ nhất “tôi / chúng tôi”</td><td class="giua"><span class="chua">Chưa đạt</span></td><td>Cả bài viết giọng khách quan, không có câu nào xưng “chúng tôi” khi kể việc đã làm.</td></tr>
+<tr><td class="giua">TN 2</td><td>Có đoạn nêu trải nghiệm thực tế</td><td class="giua"><span class="chua">Chưa đạt</span></td><td>Không có ca thực tế nào được kể.</td></tr>
+<tr><td class="giua">TN 3–5</td><td>Ngôn ngữ trải nghiệm thay cho thông tin khách quan</td><td class="giua"><span class="chua">Chưa đạt</span></td><td>Toàn bộ mô tả mẫu ở dạng “thiết kế này tạo cảm giác…”, không có “khi làm cho khách, chúng tôi thấy…”.</td></tr>
+<tr><td class="giua">TN 6</td><td>Tiêu đề không phóng đại</td><td class="giua"><span class="mot-phan">Một phần</span></td><td>“30+ mẫu” trong khi đếm được đúng 30.</td></tr>
+<tr><td class="giua">TN 7</td><td>Không cam kết điều không làm được</td><td class="giua"><span class="dat">Đạt</span></td><td>Không có cam kết quá đà kiểu “rẻ nhất thị trường”.</td></tr>
+<tr><td class="giua">TN 8–9</td><td>Không nhồi banner, không link đánh lừa</td><td class="giua"><span class="dat">Đạt</span></td><td>Chỉ 2 link nội bộ, đều đúng chủ đề.</td></tr>
+<tr><td class="giua">CM 1</td><td>Tác giả thật, có hồ sơ</td><td class="giua"><span class="mot-phan">Một phần</span></td><td>Có tên <b>Đặng Trường Minh</b> và ngày đăng — hơn 3 trên 6 đối thủ. Nhưng bài <b>không nói ông là ai</b>, làm nghề gì, bao nhiêu năm trong ngành.</td></tr>
+<tr><td class="giua">CM 3</td><td>Chi tiết, có số liệu, độc quyền, gắn nguồn rõ ràng</td><td class="giua"><span class="mot-phan">Một phần</span></td><td>Có số liệu tốt ở mục 4 nhưng <b>không gắn nguồn</b>; số liệu về công ty thì mâu thuẫn.</td></tr>
+<tr><td class="giua">TC 3</td><td>Có nguồn tham khảo</td><td class="giua"><span class="chua">Chưa đạt</span></td><td>Không có mục nguồn tham khảo nào.</td></tr>
+<tr><td class="giua">TC 4</td><td>Ảnh tham khảo ghi rõ ở đâu</td><td class="giua"><span class="mot-phan">Một phần</span></td><td>Phần lớn ghi “(Nguồn: Internet)” — có ghi còn hơn không, nhưng vài ảnh bỏ trống, và “Internet” chưa phải một nguồn cụ thể.</td></tr>
+</tbody></table></div>
+<p class="nho"><b>Việc cần làm ở cấp website — không sửa được bằng một bài viết, tôi tách riêng để bạn chuyển cho bên kỹ thuật:</b>
+trang hồ sơ tác giả riêng cho Đặng Trường Minh · schema tác giả · hộp tác giả cuối bài ·
+liên kết mạng xã hội của tác giả · trang giới thiệu công ty chi tiết · mục giải thưởng và chứng nhận ·
+trang chính sách bảo mật và điều khoản. <b>Tôi chưa kiểm tra những mục này nên không chấm — không được ghi bừa là đạt.</b></p>
+</section>
+<section>
+<h2>Chặng 4 · Bảng khoảng trống</h2>
+<p class="sub">Nỗi đau của khách xếp theo hàng, 7 bài xếp theo cột. ✅ là có trả lời, ❌ là bỏ trống.</p>
+<div class="bang-cuon"><table>
+<thead><tr><th style="width:30%">Nỗi đau của khách</th><th class="giua">Bài của bạn</th><th class="giua">Hòa Phát</th><th class="giua">KLUX</th><th class="giua">TIMI</th><th class="giua">DOCHI</th><th class="giua">Levin</th><th class="giua">Cani</th></tr></thead>
+<tbody>
+<tr><td><b>80m2 ngồi được bao nhiêu người</b></td><td class="giua">✅</td><td class="giua">❌</td><td class="giua">❌</td><td class="giua">❌</td><td class="giua">❌</td><td class="giua">❌</td><td class="giua">❌</td></tr>
+<tr><td><b>Phân bổ mét vuông từng khu</b></td><td class="giua">✅</td><td class="giua">❌</td><td class="giua">❌</td><td class="giua">❌</td><td class="giua">❌</td><td class="giua">❌</td><td class="giua">❌</td></tr>
+<tr><td>Mẫu ảnh để hình dung</td><td class="giua">✅</td><td class="giua">✅</td><td class="giua">✅</td><td class="giua">✅</td><td class="giua">✅</td><td class="giua">❌</td><td class="giua">✅</td></tr>
+<tr><td>Nguyên tắc bố trí, lưu ý</td><td class="giua">✅</td><td class="giua">✅</td><td class="giua">✅</td><td class="giua">✅</td><td class="giua">✅</td><td class="giua">✅</td><td class="giua">✅</td></tr>
+<tr><td><b>Tổng chi phí làm 80m2</b></td><td class="giua">❌</td><td class="giua">❌</td><td class="giua">❌</td><td class="giua">✅</td><td class="giua">❌</td><td class="giua">❌</td><td class="giua">✅</td></tr>
+<tr><td><b>Thời gian từ khảo sát đến bàn giao</b></td><td class="giua">❌</td><td class="giua">❌</td><td class="giua">❌</td><td class="giua">❌</td><td class="giua">❌</td><td class="giua">❌</td><td class="giua">❌</td></tr>
+<tr><td><b>Sơ đồ mặt bằng nhìn từ trên</b></td><td class="giua">❌</td><td class="giua">❌</td><td class="giua">❌</td><td class="giua">❌</td><td class="giua">❌</td><td class="giua">❌</td><td class="giua">❌</td></tr>
+<tr><td><b>Dự án thật, ảnh thật, tên thật</b></td><td class="giua">❌</td><td class="giua">❌</td><td class="giua">❌</td><td class="giua">❌</td><td class="giua">❌</td><td class="giua">❌</td><td class="giua">⚠️</td></tr>
+<tr><td><b>Mục hỏi đáp</b></td><td class="giua">❌</td><td class="giua">❌</td><td class="giua">❌</td><td class="giua">❌</td><td class="giua">❌</td><td class="giua">❌</td><td class="giua">❌</td></tr>
+<tr><td><b>Sai lầm hay gặp ở 80m2</b></td><td class="giua">❌</td><td class="giua">❌</td><td class="giua">❌</td><td class="giua">❌</td><td class="giua">❌</td><td class="giua">❌</td><td class="giua">❌</td></tr>
+<tr><td>Phương án bố trí theo quy mô nhân sự</td><td class="giua">⚠️</td><td class="giua">❌</td><td class="giua">❌</td><td class="giua">❌</td><td class="giua">❌</td><td class="giua">❌</td><td class="giua">❌</td></tr>
+<tr><td>Tác giả là người thật</td><td class="giua">✅</td><td class="giua">❌</td><td class="giua">❌</td><td class="giua">✅</td><td class="giua">❌</td><td class="giua">❌</td><td class="giua">✅</td></tr>
+</tbody></table></div>
+<p class="nho">⚠️ = có chạm tới nhưng chưa thành phần nội dung hoàn chỉnh.</p>
+
+<div class="vang"><b>Đọc bảng ra ba nhóm việc:</b>
+<ul class="gon">
+<li><b>Hai hàng đầu — bạn đang thắng cả 6 đối thủ.</b> Nhưng nội dung thắng lại nằm ở mục 4, sau 30 mẫu ảnh.
+<b>Việc cần làm không phải viết thêm, mà là đưa lên trước.</b></li>
+<li><b>Bốn hàng cả bảng đều ❌ — khoảng trống vàng:</b> thời gian thi công · sơ đồ mặt bằng ·
+mục hỏi đáp · sai lầm hay gặp. Ai làm trước, người đó có phần nội dung mà cả thị trường không ai có.</li>
+<li><b>Hai hàng bạn đang thua:</b> tổng chi phí (TIMI và CaniHome đã có) và dự án thật.
+Đây là hai chỗ mất khách trực tiếp — người đọc không tính được tiền thì họ sang trang khác tính.</li>
+</ul></div>
+</section>
+
+<section>
+<h2>Chặng 5 · Đề xuất tối ưu chi tiết</h2>
+
+<h3>Lớp 1 — Cấu trúc: dàn ý mới</h3>
+<p>Nguyên tắc sắp lại: <b>trả lời câu hỏi tiền trước, khoe ảnh sau</b>. Người đọc đang cần quyết định, không cần cảm hứng.</p>
+<div class="bang-cuon"><table>
+<thead><tr><th class="giua" style="width:7%">#</th><th style="width:34%">Mục trong dàn ý mới</th><th style="width:18%">Lấy từ đâu</th><th>Vì sao</th></tr></thead>
+<tbody>
+<tr><td class="giua">1</td><td><b>80m2 bố trí được những gì?</b> — 8–12 chỗ ngồi · bảng phân bổ mét vuông · 3 phương án theo quy mô (8 người · 12 người · có phòng giám đốc riêng) · sơ đồ mặt bằng</td><td>Nâng mục 4 cũ lên đầu, thêm sơ đồ</td><td>Đây là thứ duy nhất bạn hơn cả 6 đối thủ. Để ở giữa bài là phí.</td></tr>
+<tr><td class="giua">2</td><td>5 nguyên tắc tối ưu diện tích</td><td>Mục 3 cũ, thêm nguồn tiêu chuẩn</td><td>Nối tiếp mạch “chia thế nào cho đúng”.</td></tr>
+<tr><td class="giua">3</td><td>4 phong cách phù hợp với 80m2</td><td>Mục 1 cũ, đổi tên</td><td>Sau khi biết chia thế nào mới đến chọn kiểu.</td></tr>
+<tr><td class="giua">4</td><td>30 mẫu thiết kế theo phong cách</td><td>Mục 2 cũ, đánh số lại</td><td>Giữ nguyên sức mạnh thị giác.</td></tr>
+<tr><td class="giua">5</td><td><b>Chi phí trọn gói cho 80m2</b> — thiết kế + thi công + tổng theo 3 mức đầu tư</td><td>Mục 5 cũ, bổ sung vế thi công</td><td>Đang thua TIMI và CaniHome ở đúng chỗ này.</td></tr>
+<tr><td class="giua">6</td><td><b>Mất bao lâu — lộ trình từ khảo sát đến bàn giao</b></td><td>Viết mới</td><td>Khoảng trống vàng, không ai có.</td></tr>
+<tr><td class="giua">7</td><td><b>5 sai lầm hay gặp khi làm văn phòng 80m2</b></td><td>Viết mới từ kinh nghiệm thật</td><td>Khoảng trống vàng + là chỗ tự nhiên nhất để dùng ngôi thứ nhất.</td></tr>
+<tr><td class="giua">8</td><td><b>Dự án 80m2 chúng tôi đã làm</b> — ảnh thật</td><td>Viết mới</td><td>Chữa điểm E-E-A-T yếu nhất.</td></tr>
+<tr><td class="giua">9</td><td>Vì sao chọn chúng tôi</td><td>Mục 6 cũ, viết lại có bằng chứng</td><td>Giữ phần bán hàng nhưng phải chứng minh.</td></tr>
+<tr><td class="giua">10</td><td><b>Hỏi đáp</b></td><td>Viết mới</td><td>Khoảng trống vàng, không ai có.</td></tr>
+</tbody></table></div>
+
+<h3>Lớp 2 — Câu từ: sửa từng câu cụ thể</h3>
+
+<div class="fix"><div class="vt">01 · Mở bài</div>
+<div class="goc"><b class="nhan">Câu gốc:</b> “Văn phòng 80m2 là diện tích phổ biến được các doanh nghiệp vừa và nhỏ lựa chọn khi bắt đầu xây dựng không gian làm việc chuyên nghiệp. Để tối ưu hóa công năng, việc thiết kế văn phòng 80m2 đòi hỏi tư duy phân bổ không gian phù hợp, tránh tình trạng chật chội hoặc lãng phí diện tích.”</div>
+<p><b class="nhan">Vấn đề:</b> Hai câu đầu <b>không trả lời gì cả</b>. “Diện tích phổ biến”, “tư duy phân bổ không gian phù hợp” là những câu đối thủ nào cũng viết được — vi phạm luật độc nhất. Người đọc đang cần con số ngay lập tức — vi phạm luật bám nỗi đau.</p>
+<div class="moi"><b class="nhan">Viết lại thành:</b> “Một mặt bằng 80m2 kê được <b>8–12 chỗ ngồi</b>, một phòng họp 6–8 người và một pantry nhỏ — với điều kiện chia đúng tỷ lệ ngay từ bản vẽ đầu tiên. Chia sai thì hoặc mất chỗ ngồi vào hành lang thừa, hoặc phòng họp chật đến mức không kê nổi màn hình trình chiếu, và sửa lại sau khi đã thi công luôn tốn hơn làm đúng từ đầu. Bài viết này đưa bảng phân bổ diện tích cho từng quy mô nhân sự, tổng chi phí thực tế cho 80m2, 30 mẫu thiết kế và những lỗi bố trí chúng tôi gặp nhiều nhất khi được gọi đến sửa lại văn phòng do đơn vị khác làm.”</div>
+<p><b class="nhan">Vì sao tốt hơn:</b> Câu đầu tiên đã có con số 8–12 — người đọc nhận được thứ họ cần ngay giây thứ nhất. Câu hai gọi tên nỗi sợ cụ thể thay vì nói “chật chội” chung chung. Câu ba hứa đúng những gì đối thủ không có.</p></div>
+
+<div class="fix"><div class="vt">02 · Tiêu đề mục 1</div>
+<div class="goc"><b class="nhan">Câu gốc:</b> “1. 4 Xu hướng thiết kế nội thất văn phòng 80m2”</div>
+<p><b class="nhan">Vấn đề:</b> Nội dung bên dưới là <b>4 phong cách</b> (tối giản, hiện đại, công nghiệp, xanh) — đây là phong cách, không phải xu hướng. Xu hướng là thứ thay đổi theo năm; phong cách thì không.</p>
+<div class="moi"><b class="nhan">Viết lại thành:</b> “4 phong cách thiết kế phù hợp với văn phòng 80m2 — và phong cách nào hợp với ngành nào”</div>
+<p><b class="nhan">Vì sao tốt hơn:</b> Gọi đúng tên khái niệm, và vế sau hứa một thứ hữu ích hơn: giúp người đọc <b>chọn</b>, không chỉ <b>xem</b>.</p></div>
+
+<div class="fix"><div class="vt">03 · Mục 5.1 — lỗi sự thật</div>
+<div class="goc"><b class="nhan">Câu gốc:</b> “Chi phí thiết kế thi công văn phòng <b>70m2</b> không cố định mà phụ thuộc vào nhiều yếu tố…”</div>
+<p><b class="nhan">Vấn đề:</b> Sai diện tích trong chính bài viết về 80m2. Đây là dấu vết copy từ bài khác. Người đọc tinh ý sẽ mất tin tưởng ngay tại đây, và Google cũng đọc được sự không khớp này.</p>
+<div class="moi"><b class="nhan">Viết lại thành:</b> “Chi phí thiết kế và thi công văn phòng <b>80m2</b> không cố định mà phụ thuộc vào năm yếu tố sau…”</div>
+<p><b class="nhan">Vì sao tốt hơn:</b> Đúng sự thật. Thêm chữ “năm yếu tố” để người đọc biết trước độ dài đoạn.</p></div>
+
+<div class="fix"><div class="vt">04 · Bảng giá mục 5.2 — chỗ mất khách trực tiếp</div>
+<div class="goc"><b class="nhan">Hiện trạng:</b> Bảng chỉ có đơn giá <b>thiết kế</b>: Văn phòng 300.000–500.000đ/m². Dòng cuối lại ghi “Tư vấn thiết kế: Miễn phí”.</div>
+<p><b class="nhan">Vấn đề:</b> ① Tiêu đề mục hứa “chi phí thiết kế văn phòng 80m2” nhưng <b>người đọc không tính ra được tổng tiền phải bỏ</b> — thứ họ thật sự cần. ② Hai dòng trong cùng một bảng mâu thuẫn nhau: một dòng tính tiền thiết kế, một dòng bảo miễn phí. ③ Đối thủ TIMI đã ghi rõ thi công 2–4,5 triệu/m² và miễn phí thiết kế dưới 80m2.</p>
+<div class="moi"><b class="nhan">Viết lại thành:</b> giữ bảng đơn giá, <b>thêm ngay dưới đó một bảng tổng tiền</b> dạng:
+“Với mặt bằng 80m2 — Mức cơ bản: [đơn giá] × 80 = <b>… triệu</b> · Mức tiêu chuẩn: … · Mức cao cấp: …”,
+kèm một dòng làm rõ: “Phí tư vấn ban đầu và khảo sát mặt bằng miễn phí; phí thiết kế được khấu trừ toàn bộ/một phần khi khách hàng ký hợp đồng thi công trọn gói.”</div>
+<p><b class="nhan">Vì sao tốt hơn:</b> Người đọc có ngay con số để trình sếp — đúng việc họ đang phải làm. Đồng thời gỡ được mâu thuẫn trong bảng.</p>
+<p class="nho"><b>[CẦN TRANG BỔ SUNG]</b> Đơn giá thi công trọn gói theo từng mức, và chính sách phí thiết kế thật sự là gì. Tôi không tự điền số tiền.</p></div>
+
+<div class="fix"><div class="vt">05 · Mục 6 và kết bài — mâu thuẫn số năm</div>
+<div class="goc"><b class="nhan">Câu gốc:</b> Mục 6: “Với hơn <b>25 năm</b> kinh nghiệm…” · Kết bài: “Với hơn <b>28 năm</b> kinh nghiệm và hàng nghìn dự án…”</div>
+<p><b class="nhan">Vấn đề:</b> Sai số liệu <b>về chính mình</b>, trong cùng một bài. Checklist E-E-A-T đặt kinh nghiệm tác giả và doanh nghiệp làm thước đo uy tín — mà con số này lại không thống nhất nổi.</p>
+<div class="moi"><b class="nhan">Viết lại thành:</b> chọn một con số đúng và dùng thống nhất cả bài, kèm mốc năm để kiểm chứng được: “Thành lập năm [năm], đến nay <b>[N] năm</b> trong lĩnh vực thiết kế và thi công nội thất.”</div>
+<p><b class="nhan">Vì sao tốt hơn:</b> Có mốc năm thì người đọc tự cộng được, con số trở nên kiểm chứng được thay vì chỉ là lời khoe.</p>
+<p class="nho"><b>[CẦN TRANG BỔ SUNG]</b> Năm thành lập chính xác và số năm đúng.</p></div>
+
+<div class="fix"><div class="vt">06 · Hai tên thương hiệu lẫn lộn</div>
+<div class="goc"><b class="nhan">Hiện trạng:</b> Thân bài xưng <b>Deco Crystal</b>. Mục 6 đặt tiêu đề “<b>Crystal Design TPL</b> – Đơn vị thiết kế văn phòng uy tín”. Bảng liên hệ cuối bài ghi “Liên hệ Crystal Design TPL”.</div>
+<p><b class="nhan">Vấn đề:</b> Người đọc không biết đây là một công ty hay hai. Điều này làm loãng nhận diện và làm Google khó nối bài viết về đúng một thực thể doanh nghiệp.</p>
+<div class="moi"><b class="nhan">Viết lại thành:</b> nêu rõ quan hệ ngay lần đầu nhắc tên, ví dụ: “<b>Deco Crystal</b> — thương hiệu thiết kế và thi công nội thất thuộc <b>Crystal Design TPL</b>”, rồi từ đó về sau <b>chỉ dùng một tên duy nhất</b> xuyên suốt bài.</p></div>
+<p class="nho"><b>[CẦN TRANG BỔ SUNG]</b> Quan hệ chính xác giữa hai tên, và tên nào là tên muốn dùng chính.</p></div>
+
+<div class="fix"><div class="vt">07 · Danh sách khách hàng lớn — khẳng định trống nhất bài</div>
+<div class="goc"><b class="nhan">Câu gốc:</b> “Crystal Design TPL tự hào là đối tác uy tín của nhiều thương hiệu lớn như Samsung, Sony, Lotte, LG, Emart, Hyundai...”</div>
+<p><b class="nhan">Vấn đề:</b> Đây là câu <b>mạnh nhất</b> trong bài và cũng là câu <b>không có gì đỡ nhất</b> — không ảnh, không tên dự án, không năm, không quy mô. Đúng vào luật “nói gì chứng minh nấy”. Người đọc khó tính sẽ nghĩ đây là câu tô vẽ; người dễ tính thì đọc lướt qua — cả hai đều không giúp bán được hàng.</p>
+<div class="moi"><b class="nhan">Viết lại thành:</b> “Trong [N] năm qua, chúng tôi đã thực hiện [số] công trình cho các doanh nghiệp trong và ngoài nước, trong đó có [tên 2–3 dự án được phép công bố] — [loại công trình], [diện tích], hoàn thành [năm].” Kèm 2–3 ảnh thật của chính các công trình đó.</div>
+<p><b class="nhan">Vì sao tốt hơn:</b> Một dự án có tên, có ảnh, có năm thuyết phục hơn sáu thương hiệu lớn được liệt kê suông.</p>
+<p class="nho"><b>[CẦN TRANG BỔ SUNG]</b> Dự án nào được phép công bố tên, kèm ảnh thật và năm hoàn thành. Nếu hợp đồng có điều khoản bảo mật thì ghi ẩn danh có kiểm chứng: “một nhà máy điện tử Hàn Quốc tại Bắc Ninh, 2024”.</p></div>
+
+<div class="fix"><div class="vt">08 · “Công nghệ hiện đại” nói suông</div>
+<div class="goc"><b class="nhan">Câu gốc:</b> “Công nghệ hiện đại: hệ thống máy móc sản xuất tiên tiến, phương tiện vận chuyển linh hoạt, đáp ứng thi công trên toàn quốc, đảm bảo tiến độ và chất lượng.”</div>
+<p><b class="nhan">Vấn đề:</b> Toàn tính từ, không một danh từ cụ thể nào. “Tiên tiến”, “linh hoạt”, “đảm bảo” — người đọc không kiểm chứng được gì. Đây đúng là kiểu câu mà yêu cầu của bạn nhắm tới: nhắc tới năng lực thì phải chứng minh năng lực đó là gì và độc nhất ở đâu.</p>
+<div class="moi"><b class="nhan">Viết lại thành:</b> “Chúng tôi tự vận hành xưởng sản xuất riêng rộng [số] m² tại [địa điểm], với [tên loại máy chính, ví dụ: máy cắt CNC, máy dán cạnh tự động], năng lực [số] m² nội thất mỗi tháng. Nhờ tự sản xuất, phần lớn hạng mục gỗ không phải đặt ngoài — đây là lý do chúng tôi giữ được tiến độ [số] ngày cho một văn phòng 80m2.”</div>
+<p><b class="nhan">Vì sao tốt hơn:</b> Biến một lời quảng cáo thành một lợi thế kiểm chứng được, và nối thẳng nó với thứ khách quan tâm là <b>tiến độ</b>.</p>
+<p class="nho"><b>[CẦN TRANG BỔ SUNG]</b> Diện tích xưởng, địa chỉ, các máy chính, năng lực sản xuất hằng tháng.</p></div>
+
+<div class="fix"><div class="vt">09 · Mẫu 11 — lỗi kiến thức chuyên môn</div>
+<div class="goc"><b class="nhan">Câu gốc:</b> “Mẫu 11 - Văn phòng thiết kế: Ánh sáng chiếu sáng rất mạnh (6000K) để đảm bảo màu sắc chính xác khi làm việc với ấn phẩm in.”</div>
+<p><b class="nhan">Vấn đề:</b> <b>6000K là nhiệt độ màu, không phải độ mạnh.</b> Độ mạnh của ánh sáng đo bằng lux. Lỗi này nằm đúng trong chuyên môn công ty đang bán — người trong nghề đọc là nhận ra ngay, và nó kéo tụt toàn bộ độ tin cậy của 29 mẫu còn lại.</p>
+<div class="moi"><b class="nhan">Viết lại thành:</b> “Khu vực làm việc dùng đèn có <b>nhiệt độ màu 5.000–6.500K</b> (ánh sáng trắng trung tính đến trắng lạnh, gần với ánh sáng ban ngày) và <b>độ rọi tối thiểu 500 lux</b> trên mặt bàn, để màu sắc trên màn hình khớp với màu khi in ra.”</div>
+<p><b class="nhan">Vì sao tốt hơn:</b> Đúng chuyên môn, và đưa được hai con số mà người thiết kế thật sự dùng — thể hiện đây là bài của người làm nghề.</p>
+<p class="nho">Đề nghị dẫn kèm nguồn tiêu chuẩn chiếu sáng nơi làm việc để đạt luôn mục “có nguồn tham khảo”.</p></div>
+
+<div class="fix"><div class="vt">10 · Mẫu 17 và 18 — câu vỡ</div>
+<div class="goc"><b class="nhan">Câu gốc:</b> Mẫu 18: “<b>y</b> tận dụng tối đa hệ trần mở và vách kính khung thép lớn…” · Mẫu 17: “Ánh sáng tự nhiên được <b>tối giúp</b> mở rộng tầm nhìn…”</div>
+<p><b class="nhan">Vấn đề:</b> Mẫu 18 mất hẳn chủ ngữ, bắt đầu bằng một chữ “y” lạc. Mẫu 17 thiếu chữ khiến câu không có nghĩa. Hai lỗi này đập vào mắt người đọc, và với một công ty bán dịch vụ <b>thiết kế</b> thì sự cẩu thả trong trình bày là tín hiệu rất xấu.</p>
+<div class="moi"><b class="nhan">Viết lại thành:</b> Mẫu 18: “<b>Mẫu này</b> tận dụng tối đa hệ trần mở và vách kính khung thép lớn…” · Mẫu 17: “Ánh sáng tự nhiên được <b>tận dụng tối đa, giúp</b> mở rộng tầm nhìn…”</div>
+<p><b class="nhan">Vì sao tốt hơn:</b> Câu đọc được. Đây là loại lỗi phải rà lại toàn bài, không chỉ hai chỗ này.</p></div>
+
+<div class="fix"><div class="vt">11 · Lỗi chính tả trong nội dung chuyên môn</div>
+<div class="goc"><b class="nhan">Câu gốc:</b> Mẫu 03: “Nội thất gỗ <b>góc chó</b> và đá <b>marbel</b> nhân tạo…” · Chú thích ảnh khu nghỉ: “tông màu xanh <b>kêt shợp</b> với chất liệu gỗ”</div>
+<p><b class="nhan">Vấn đề:</b> “Gỗ óc chó” bị viết thành “gỗ góc chó” — đây là một trong những loại gỗ đắt tiền nhất mà công ty nội thất nào cũng phải viết đúng. “Marbel” đúng ra là “marble”. Chú thích ảnh sai chính tả nặng.</p>
+<div class="moi"><b class="nhan">Viết lại thành:</b> “Nội thất <b>gỗ óc chó</b> và <b>đá marble nhân tạo</b> tạo nên sự trang trọng…” · “tông màu xanh <b>kết hợp</b> với chất liệu gỗ”</div>
+<p><b class="nhan">Vì sao tốt hơn:</b> Viết sai tên vật liệu trong bài của công ty nội thất là lỗi làm mất uy tín chuyên môn nhanh nhất.</p></div>
+
+<div class="fix"><div class="vt">12 · Nguyên tắc 5 — số liệu tốt nhưng không nguồn</div>
+<div class="goc"><b class="nhan">Câu gốc:</b> “Theo tiêu chuẩn thiết kế nội thất văn phòng, hành lang chính cần có chiều rộng tối thiểu 1,2m, còn các lối đi phụ giữa các bàn làm việc cần đạt ít nhất 80cm.”</div>
+<p><b class="nhan">Vấn đề:</b> Đây là <b>một trong những câu giá trị nhất bài</b> — nhưng “theo tiêu chuẩn thiết kế nội thất văn phòng” là một nguồn không tồn tại. Tiêu chuẩn nào? Số hiệu bao nhiêu? Không dẫn được thì con số dù đúng vẫn chỉ là lời nói.</p>
+<div class="moi"><b class="nhan">Viết lại thành:</b> “Theo <b>[tên và số hiệu tiêu chuẩn]</b>, hành lang chính cần rộng tối thiểu 1,2m và lối đi phụ giữa các bàn tối thiểu 80cm. Trong thực tế thi công, chúng tôi luôn giữ hành lang chính ở mức [số] m vì [lý do thực tế từ công trường].”</div>
+<p><b class="nhan">Vì sao tốt hơn:</b> Vế đầu đạt mục “có nguồn tham khảo”, vế sau đạt mục “trải nghiệm thực tế” — một câu ăn hai điểm E-E-A-T.</p>
+<p class="nho"><b>[CẦN TRANG BỔ SUNG]</b> Tên và số hiệu tiêu chuẩn mà đội kỹ thuật đang áp dụng.</p></div>
+
+<div class="fix"><div class="vt">13 · Cụm từ lặp 8 lần</div>
+<div class="goc"><b class="nhan">Câu gốc:</b> “…tạo cảm giác không gian rộng mở và thoáng đãng hơn diện tích thực tế” — xuất hiện ở Mẫu 08, 09, 13, 14, 15, 16, 17, 18.</div>
+<p><b class="nhan">Vấn đề:</b> Đọc liền tám lần thì câu này mất hết trọng lượng, và cả khối mẫu trở nên na ná nhau — vi phạm thẳng luật “độc nhất cả bài”. Người đọc lướt qua vì thấy mẫu nào cũng như mẫu nào.</p>
+<div class="moi"><b class="nhan">Viết lại thành:</b> mỗi mẫu nêu <b>một chi tiết chỉ mẫu đó có</b>, kèm con số nếu được. Ví dụ thay cho Mẫu 09: “Hệ đèn thả ziczac chạy dọc trần mở, đặt lệch so với trục bàn để tránh bóng đổ lên màn hình. Bố cục bàn đối xứng hai dãy, mỗi dãy 4 chỗ, kệ lưu trữ chạy sát tường dài [số] m.”</div>
+<p><b class="nhan">Vì sao tốt hơn:</b> Người đọc phân biệt được các mẫu, và mỗi mô tả trở thành bằng chứng cho thấy người viết hiểu nghề.</p></div>
+
+<div class="fix"><div class="vt">14 · Mục 2 — tự hạ vị thế</div>
+<div class="goc"><b class="nhan">Câu gốc:</b> “Dưới đây là bộ sưu tập hơn 30 mẫu thiết kế văn phòng 80m2 tiêu biểu mà Deco Crystal đã <b>nghiên cứu và tổng hợp</b> từ các xu hướng trong nước và quốc tế.”</div>
+<p><b class="nhan">Vấn đề:</b> Câu này trung thực nhưng tự đặt công ty vào vai <b>người đi sưu tầm</b>, không phải người làm ra. Với một đơn vị 25 năm nghề thì đây là sự tự hạ vị thế không cần thiết.</p>
+<div class="moi"><b class="nhan">Viết lại thành:</b> “Dưới đây là 30 mẫu văn phòng 80m2, gồm [số] công trình do chính chúng tôi thiết kế và thi công (có ghi chú riêng ở mỗi ảnh) và các mẫu tham khảo quốc tế mà chúng tôi chọn lọc vì phù hợp với đặc điểm mặt bằng cho thuê tại Việt Nam — trần thấp, cột giữa nhà, cửa sổ chỉ ở một mặt.”</div>
+<p><b class="nhan">Vì sao tốt hơn:</b> Vừa trung thực về nguồn ảnh, vừa cho thấy <b>tiêu chí chọn lọc</b> — mà tiêu chí chọn lọc chính là chuyên môn. Ba đặc điểm mặt bằng nêu ra là thứ chỉ người làm nghề tại Việt Nam mới nói được.</p></div>
+
+<div class="fix"><div class="vt">15 · Mục 4.1 — sai ngữ cảnh</div>
+<div class="goc"><b class="nhan">Câu gốc:</b> “Tủ hồ sơ cá nhân, <b>thanh tản nhiệt máy tính</b> và các thiết bị văn phòng dùng chung như máy in, máy photo…”</div>
+<p><b class="nhan">Vấn đề:</b> “Thanh tản nhiệt máy tính” là linh kiện điện tử, không phải hạng mục nội thất văn phòng. Nằm giữa danh sách tủ hồ sơ và máy in thì đọc rất lạ.</p>
+<div class="moi"><b class="nhan">Viết lại thành:</b> “Tủ hồ sơ cá nhân, <b>hộp kỹ thuật đi dây dưới bàn</b> và các thiết bị dùng chung như máy in, máy photo…”</div>
+<p><b class="nhan">Vì sao tốt hơn:</b> Đúng hạng mục, và nối được sang ý “đi dây gọn” ở gạch đầu dòng ngay bên dưới.</p></div>
+
+<div class="fix"><div class="vt">16 · Đánh số mẫu</div>
+<div class="goc"><b class="nhan">Hiện trạng:</b> Nhảy từ Mẫu 05 sang Mẫu 07 · số 19 dùng cho hai mẫu · tiêu đề ghi “30+” trong khi đếm được đúng 30.</div>
+<p><b class="nhan">Vấn đề:</b> Người đọc đang đếm theo sẽ khựng lại. “30+” khi thực tế là 30 là phóng đại nhẹ — checklist E-E-A-T có riêng một mục “tiêu đề không phóng đại”.</p>
+<div class="moi"><b class="nhan">Viết lại thành:</b> đánh lại liên tục 01 → 30, và để tiêu đề là “<b>30 mẫu</b>” — hoặc bổ sung thêm mẫu thật cho đủ trên 30 rồi mới dùng “30+”.</div>
+<p><b class="nhan">Vì sao tốt hơn:</b> Con số khớp với nội dung. Nếu bổ sung thêm mẫu thì nên là <b>ảnh dự án thật</b> — vừa tăng số, vừa chữa điểm yếu lớn nhất.</p></div>
+
+<h3>Lớp 3 — Trình bày</h3>
+<div class="bang-cuon"><table>
+<thead><tr><th style="width:26%">Việc</th><th>Làm cụ thể thế nào</th></tr></thead>
+<tbody>
+<tr><td><b>Thay ảnh sưu tầm bằng ảnh thật</b></td><td>Đây là việc quan trọng nhất của cả Chặng 5. Không cần thay hết gần 60 ảnh — chỉ cần <b>5–8 ảnh dự án thật</b> đặt ở các vị trí đắt: mở bài, mục phân bổ diện tích, mục dự án đã làm. Mỗi ảnh chú thích theo mẫu: “Văn phòng [tên/ngành], [diện tích] m², [số] chỗ ngồi, hoàn thành [tháng/năm] — ảnh chụp tại công trình.”</td></tr>
+<tr><td><b>Thêm sơ đồ mặt bằng</b></td><td>Hai đến ba sơ đồ nhìn từ trên xuống cho ba phương án: 8 người · 12 người · có phòng giám đốc riêng. Ghi kích thước từng khu lên hình. <b>Không đối thủ nào có thứ này</b> — chỉ riêng nó đã đủ làm bài khác biệt.</td></tr>
+<tr><td><b>Bảng tổng chi phí</b></td><td>Đặt ngay dưới bảng đơn giá. Ba cột: mức đầu tư · đơn giá/m² · <b>thành tiền cho 80m2</b>. Người đọc không phải tự nhân.</td></tr>
+<tr><td><b>Bảng lộ trình thời gian</b></td><td>Khảo sát → concept → bản vẽ kỹ thuật → sản xuất → thi công → bàn giao, mỗi bước bao nhiêu ngày, tổng bao nhiêu ngày cho 80m2.</td></tr>
+<tr><td><b>Mục hỏi đáp</b></td><td>6–8 câu lấy đúng từ câu khách hay hỏi. Gợi ý: 80m2 ngồi tối đa bao nhiêu người · có bắt buộc làm phòng giám đốc riêng không · trần 2,8m có làm được phong cách công nghiệp không · thuê 3 năm thì nên đầu tư đến mức nào · làm vào cuối tuần được không · bảo hành bao lâu.</td></tr>
+<tr><td><b>Hộp tác giả</b></td><td>Bài đã có tên <b>Đặng Trường Minh</b> — hơn 3 trên 6 đối thủ. Nhưng cần thêm hộp giới thiệu: chức danh, số năm trong nghề, đã làm những loại công trình nào.</td></tr>
+<tr><td><b>Mục nguồn tham khảo</b></td><td>Cuối bài, liệt kê tiêu chuẩn kỹ thuật đã dẫn. Đây là mục Tin cậy số 3 trong checklist, hiện đang trống.</td></tr>
+<tr><td><b>Dọn mã nguồn</b></td><td>Xóa các lớp định dạng lạ còn sót (<code>font-claude-response-body</code>, <code>[li_&amp;]:mb-0</code>) và sửa dòng website ở bảng liên hệ đang lẫn cú pháp Markdown.</td></tr>
+<tr><td><b>Bổ sung chú thích cho ảnh trống</b></td><td>Ảnh ở Mẫu 11 hiện không có chú thích và không có mô tả thay thế — cần bổ sung để đồng nhất với các ảnh còn lại.</td></tr>
+</tbody></table></div>
+
+<h3>Những dữ liệu tôi cần bạn cung cấp — tôi không tự nghĩ hộ</h3>
+<div class="bosung">
+<b>1.</b> Ảnh thật 3–5 dự án văn phòng đã làm: tên hoặc ngành nghề, diện tích, số chỗ ngồi, năm hoàn thành.<br>
+<b>2.</b> Số năm kinh nghiệm đúng — 25 hay 28 — và năm thành lập.<br>
+<b>3.</b> Quan hệ giữa <b>Deco Crystal</b> và <b>Crystal Design TPL</b>, tên nào dùng chính.<br>
+<b>4.</b> Trong danh sách Samsung, Sony, Lotte, LG, Emart, Hyundai — dự án nào được phép công bố, năm nào.<br>
+<b>5.</b> Đơn giá <b>thi công</b> trọn gói theo từng mức đầu tư, và chính sách phí thiết kế thật sự.<br>
+<b>6.</b> Thời gian trung bình từ khảo sát đến bàn giao cho một văn phòng khoảng 80m2.<br>
+<b>7.</b> Xưởng sản xuất: địa chỉ, diện tích, máy móc chính, năng lực mỗi tháng.<br>
+<b>8.</b> Hồ sơ tác giả Đặng Trường Minh: chức danh, số năm trong nghề.<br>
+<b>9.</b> Tên và số hiệu tiêu chuẩn kỹ thuật mà đội đang áp dụng cho lối đi và chiếu sáng.<br>
+<b>10.</b> Ba đến năm <b>sai lầm thực tế</b> đội ngũ hay gặp khi được gọi đến sửa lại văn phòng do đơn vị khác làm — đây là chất liệu quý nhất để viết mục 7, và là thứ không ai chép được của bạn.
+</div>
+<div class="canh-bao">Thiếu mục nào tôi sẽ để trống và ghi rõ <b>“cần bổ sung”</b> ngay trong bản viết lại,
+tuyệt đối không điền số liệu tự nghĩ.</div>
+</section>
+
+<section>
+<h2>Việc còn lại</h2>
+<ol>
+<li><b>Ảnh chụp trang kết quả Google</b> cho từ khóa “thiết kế văn phòng 80m2” — để chốt Bước 3 mà tôi đang phải bỏ trống.</li>
+<li><b>Duyệt bản đề xuất này</b> — bạn gật thì tôi vào vai chuyên gia content viết lại toàn bộ bài theo dàn ý mới.</li>
+<li><b>Mười dữ liệu ở trên</b> — gửi được đến đâu tôi viết chắc đến đó; phần chưa có tôi để trống chờ bạn.</li>
+</ol>
+</section>
+
+</div>
+<footer><div class="wrap">
+<b>Phân tích &amp; đề xuất tối ưu bài viết “thiết kế văn phòng 80m2”</b> — lập ngày 10/09/2026.<br>
+Nguồn: bài viết và 6 URL đối thủ do Vũ Thị Thùy Trang cung cấp, đọc trực tiếp ngày 10/09/2026.<br>
+Theo quy trình 7 chặng lưu tại <b>cong-cu/toi-uu-content-seo/</b> · SEONGON — Search Marketing Growth Partner
+</div></footer>
+</body>
+</html>
