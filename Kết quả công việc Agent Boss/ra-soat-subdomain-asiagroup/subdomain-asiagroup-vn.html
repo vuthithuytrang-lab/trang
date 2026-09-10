@@ -70,6 +70,24 @@
   @media (max-width:520px){
     header h1{font-size:24px;} .tile .num{font-size:28px;}
   }
+  @media print{
+    @page{size:A4 landscape; margin:10mm;}
+    body{background:#fff;}
+    .wrap{max-width:none; padding:0;}
+    header{box-shadow:none; -webkit-print-color-adjust:exact; print-color-adjust:exact;}
+    .tile, .card, .note-box, th, .badge{-webkit-print-color-adjust:exact; print-color-adjust:exact;}
+    .card{overflow:visible;}
+    table{min-width:0; width:100%; font-size:11.5px; table-layout:fixed;}
+    th, td{padding:6px 8px;}
+    th{position:static;}
+    .sub{white-space:normal; word-break:break-all;}
+    .ip{white-space:normal; word-break:break-all; font-size:11px;}
+    .note{font-size:10.5px;}
+    tr{break-inside:avoid;}
+    .note-box{break-inside:avoid;}
+    col.c-stt{width:4%;} col.c-sub{width:26%;} col.c-ip{width:16%;}
+    col.c-fn{width:18%;} col.c-muc{width:11%;} col.c-note{width:25%;}
+  }
 </style>
 </head>
 <body>
@@ -91,6 +109,9 @@
   <h2>Bảng chi tiết</h2>
   <div class="card">
     <table>
+      <colgroup>
+        <col class="c-stt"><col class="c-sub"><col class="c-ip"><col class="c-fn"><col class="c-muc"><col class="c-note">
+      </colgroup>
       <thead>
         <tr><th>STT</th><th>Subdomain (trang con)</th><th>Địa chỉ IP</th><th>Chức năng (dự đoán)</th><th>Mức lưu ý</th><th>Ghi chú</th></tr>
       </thead>
