@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dữ liệu thị trường và bản thảo mục 7</title>
+<style>
+:root{--sg-xanh:#004AEF;--sg-navy:#002992;--sg-mint:#07EF9C;--sg-cyan:#0DD1FF;--sg-vang:#FFCE00;--sg-cam:#F68B1F;
+--sg-den:#151515;--sg-xam-nen:#F3F3F6;--sg-xam-vien:#DCDCDC;
+--sg-chu:Gilroy,"Montserrat",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+--sg-dai-mau:linear-gradient(135deg,#002992 0%,#004AEF 55%,#0DD1FF 100%);}
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--sg-chu);color:var(--sg-den);background:#fff;line-height:1.65;font-size:16px}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+.hero{background:var(--sg-dai-mau);color:#fff;padding:36px 0 42px}
+.logo-nen{display:inline-block;background:#fff;border-radius:12px;padding:14px 18px;margin-bottom:20px}
+.logo-nen img{display:block;width:180px;height:auto}
+.hero h1{margin:0 0 10px;font-size:32px;font-weight:800;line-height:1.25}
+.hero p{margin:0;font-size:16px;max-width:700px;color:#E3ECFF}
+.hero .meta{margin-top:16px;font-size:13px;color:#BFD3FF}
+.chip{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:5px 13px;font-size:13px;margin:10px 6px 0 0}
+.chip b{color:var(--sg-mint);font-weight:700}
+section{padding:30px 0 4px;border-top:1px solid var(--sg-xam-vien);margin-top:28px}
+section:first-of-type{border-top:0;margin-top:0}
+h2{font-size:24px;font-weight:800;color:var(--sg-navy);margin:0 0 6px;line-height:1.3}
+h3{font-size:18px;font-weight:700;color:var(--sg-xanh);margin:24px 0 8px}
+p{margin:8px 0}
+.sub{color:#5A6B66;font-size:14px;margin:0 0 14px}
+.bang-cuon{overflow-x:auto;margin:14px 0}
+table{border-collapse:collapse;width:100%;min-width:540px;font-size:14.5px}
+th,td{border:1px solid var(--sg-xam-vien);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--sg-navy);color:#fff;font-weight:700;font-size:14px}
+tbody tr:nth-child(even){background:var(--sg-xam-nen)}
+td.giua,th.giua{text-align:center}
+.vang{border-left:4px solid var(--sg-mint);background:#E9FFF6;border-radius:0 10px 10px 0;padding:12px 16px;margin:14px 0;font-size:15px}
+.canh-bao{border-left:4px solid var(--sg-cam);background:#FFF4E8;border-radius:0 10px 10px 0;padding:12px 16px;margin:14px 0;font-size:15px}
+ul.gon{margin:8px 0;padding-left:20px}ul.gon li{margin:5px 0}
+.nho{font-size:13.5px;color:#5A6B66}
+/* Thẻ mục outline */
+.muc{border:1px solid var(--sg-xam-vien);border-radius:14px;margin:18px 0;overflow:hidden}
+.muc-dau{display:flex;align-items:flex-start;gap:14px;background:var(--sg-xam-nen);padding:14px 18px;border-bottom:1px solid var(--sg-xam-vien)}
+.so{flex:0 0 auto;width:38px;height:38px;border-radius:10px;background:var(--sg-xanh);color:#fff;font-weight:800;font-size:17px;display:flex;align-items:center;justify-content:center}
+.so.moi{background:#046B47}
+.muc-dau h4{margin:0;font-size:17.5px;color:var(--sg-navy);line-height:1.35}
+.muc-dau .nhan-line{margin-top:5px}
+.muc-than{padding:14px 18px 18px}
+.muc-than p{margin:7px 0;font-size:15px}
+.nhan{display:inline-block;border-radius:6px;padding:1px 9px;font-size:12.5px;font-weight:700;margin-right:6px}
+.n-moi{background:#E9FFF6;border:1px solid var(--sg-mint);color:#046B47}
+.n-giu{background:#EEF3FF;border:1px solid #9CB8FF;color:#0033A8}
+.n-sua{background:#FFF6D6;border:1px solid var(--sg-vang);color:#7A5B00}
+.n-vang{background:#FFEFC7;border:1px solid var(--sg-cam);color:#8A4B00}
+.h3l{background:#fff;border:1px solid var(--sg-xam-vien);border-left:3px solid var(--sg-cyan);border-radius:0 10px 10px 0;padding:10px 14px;margin:10px 0;font-size:14.8px}
+.h3l b.t{color:var(--sg-navy)}
+footer{background:var(--sg-navy);color:#BFD3FF;margin-top:40px;padding:24px 0;font-size:13.5px}
+footer b{color:#fff}
+@media (max-width:600px){.hero h1{font-size:25px}h2{font-size:21px}.wrap{padding:0 16px}body{font-size:15px}}
+</style>
+</head>
+<body>
+<div class="hero"><div class="wrap">
+<div class="logo-nen"><img src="data:image/webp;base64,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" alt="SEONGON"></div>
+<h1>Dữ liệu thị trường đã quét &amp; bản thảo mục 7</h1>
+<p>Bạn đúng — quét web có dẫn nguồn thì không phải bịa. Tôi đã đi tìm và lấy được số thật
+   cho <b>ba chỗ đang để trống</b>, cộng bản thảo mục 7 viết sẵn để bạn duyệt.</p>
+<div>
+  <span class="chip"><b>3</b> chỗ trống đã lấp</span>
+  <span class="chip"><b>5</b> lỗi có nguồn dẫn</span>
+  <span class="chip"><b>1</b> mâu thuẫn số liệu được gỡ</span>
+  <span class="chip"><b>2</b> ô chờ ca thật</span>
+</div>
+<div class="meta">10/09/2026 · Nguồn ghi rõ ở cuối từng phần</div>
+</div></div>
+
+<div class="wrap">
+
+<section>
+<h2>Tôi phân biệt lại cho rõ ranh giới</h2>
+<div class="vang"><b>Bạn nói đúng, và tôi nói lại cho chính xác hơn lần trước.</b><br>
+Quét web rồi <b>dẫn nguồn</b> — đó là nghiên cứu, hoàn toàn dùng được, và checklist E-E-A-T còn khuyến khích
+(mục Tin cậy số 3: “có nguồn tham khảo”).<br>
+Thứ tôi từ chối là <b>lấy dữ liệu ngoài rồi gán thành “chúng tôi đã gặp”</b> — đó mới là bịa trải nghiệm.<br><br>
+<b>Nên bản thảo dưới đây viết theo đúng ranh giới đó:</b> mọi con số đều có nguồn, giọng viết là
+<b>khuyến nghị nghề nghiệp</b> chứ không phải hồi ký, và tôi chừa sẵn hai ô để đội kỹ thuật điền ca thật sau.</div>
+</section>
+
+<section>
+<h2>Ba chỗ trống nay đã có số</h2>
+
+<h3>① Bao nhiêu mét vuông cho một người — dùng cho mục 1.3</h3>
+<div class="bang-cuon"><table>
+<thead><tr><th style="width:34%">Mức</th><th class="giua" style="width:22%">m²/người</th><th>Với 80m2 thì ra bao nhiêu chỗ</th></tr></thead>
+<tbody>
+<tr><td>Tiết kiệm</td><td class="giua">3 – 4 m²</td><td>Khu làm việc 40–48m² → <b>10–16 chỗ</b>, nhưng chật, chỉ hợp nhóm ít giấy tờ</td></tr>
+<tr><td><b>Trung bình</b> — phổ biến nhất</td><td class="giua">5 – 6 m²</td><td>Khu làm việc 40–48m² → <b>7–9 chỗ</b> thoải mái</td></tr>
+<tr><td>Chuẩn</td><td class="giua">7 – 10 m²</td><td>→ <b>4–6 chỗ</b>, dành cho vị trí cần không gian riêng</td></tr>
+</tbody></table></div>
+<p><b>Chuẩn nhà nước để đối chiếu — TCVN 4601:2012</b> (áp dụng cho cơ quan hành chính, nhưng là mốc tham chiếu tốt):
+nhân viên hỗ trợ 5–6 m² · hành chính, kỹ thuật 6–8 m² · chuyên viên 8–10 m² ·
+trưởng và phó phòng 10–12 m² · cấp giám đốc 12–25 m².</p>
+<div class="vang"><b>Kết quả kiểm chứng: con số “8–12 chỗ ngồi” trong bài của bạn là đúng.</b>
+Nó nằm gọn giữa mức tiết kiệm và mức trung bình. Nhưng bây giờ bài <b>giải thích được vì sao</b> —
+và đó là khác biệt giữa một con số nói suông và một con số có căn cứ.<br>
+Cách viết đề xuất cho mục 1.3: “80m2 kê được 8–12 chỗ. Con số phụ thuộc vào mức diện tích mỗi người bạn chọn:
+5–6 m²/người là mức phổ biến và thoải mái, 3–4 m²/người là mức tiết kiệm — kê được nhiều hơn nhưng
+nhân viên sẽ thấy chật khi phải làm việc với nhiều giấy tờ.”</div>
+<p class="nho"><b>Nguồn:</b> tổng hợp các tài liệu tiêu chuẩn diện tích văn phòng tại Việt Nam
+(saigonoffice.com.vn · maisonoffice.vn · heli.com.vn · 20sfvn.com) và TCVN 4601:2012.</p>
+
+<h3>② Kích thước lối đi và bàn làm việc — dùng cho mục 2</h3>
+<div class="bang-cuon"><table>
+<thead><tr><th style="width:40%">Hạng mục</th><th>Con số theo tài liệu ngành</th></tr></thead>
+<tbody>
+<tr><td>Lối đi chính</td><td><b>Tối thiểu 1,2m</b> · khuyến nghị <b>1,4–1,5m</b> để hai người tránh nhau thoải mái</td></tr>
+<tr><td>Lối đi phụ giữa các bàn</td><td><b>0,8–1,0m</b>, một số tài liệu khuyến nghị tối thiểu <b>0,9m</b></td></tr>
+<tr><td>Lối thoát hiểm</td><td>Tối thiểu <b>1,0m</b>; trên 50 người thì tối thiểu <b>1,2m</b></td></tr>
+<tr><td>Bàn làm việc</td><td>Rộng <b>1,0–1,2m</b> · sâu <b>0,6–0,7m</b></td></tr>
+<tr><td>Khoảng cách giữa hai hàng bàn</td><td><b>0,9–1,2m</b></td></tr>
+</tbody></table></div>
+<div class="canh-bao"><b>Gỡ được một chỗ vênh trong bài của bạn.</b>
+Bài đang viết “hành lang chính tối thiểu 1,2m, lối đi phụ ít nhất 80cm”.
+Có tài liệu ghi đúng như vậy, nhưng cũng có tài liệu khuyến nghị 1,4–1,5m cho lối chính.<br>
+<b>Cách viết vừa đúng vừa mạnh:</b> “Lối đi chính tối thiểu 1,2m — nhưng nếu mặt bằng cho phép,
+1,4–1,5m mới đủ để hai người tránh nhau mà không ai phải nghiêng người.
+Lối đi phụ giữa các bàn tối thiểu 0,8m.”<br>
+Viết kiểu này bài <b>vừa nêu ngưỡng tối thiểu vừa nêu ngưỡng nên có</b> — đó chính là giọng của người làm nghề,
+khác hẳn giọng chép tiêu chuẩn.</div>
+<p class="nho"><b>Nguồn:</b> idesko.com.vn · maisoninterior.vn · saigonoffice.com.vn.</p>
+
+<h3>③ Thời gian thi công — dùng cho mục 6</h3>
+<div class="bang-cuon"><table>
+<thead><tr><th style="width:44%">Số liệu tìm được</th><th>Nguồn nói gì</th></tr></thead>
+<tbody>
+<tr><td>Thi công nội thất trung bình</td><td><b>15–20 ngày</b></td></tr>
+<tr><td>Văn phòng 150m² trọn gói</td><td><b>35–45 ngày</b> tùy độ phức tạp</td></tr>
+<tr><td>Gói tiêu chuẩn</td><td><b>4–6 tuần</b></td></tr>
+<tr><td>Riêng công đoạn lắp đặt tại công trình</td><td><b>4–10 ngày</b></td></tr>
+</tbody></table></div>
+<div class="canh-bao"><b>Chỗ này tôi phải cẩn thận và nói thẳng:</b> không nguồn nào nói riêng cho <b>80m2</b>.
+Số gần nhất là 150m² mất 35–45 ngày. Suy ra cho 80m2 thì hợp lý là <b>khoảng 25–35 ngày</b>,
+nhưng <b>đó là suy luận của tôi, không phải số ai công bố</b>.<br><br>
+<b>Cách viết an toàn mà vẫn hữu ích:</b> đưa bảng lộ trình theo 7 bước quy trình đã đăng trên trang báo giá của công ty,
+ghi khoảng ngày cho từng bước, và <b>một dòng nói rõ</b>: “Đây là khoảng thời gian tham khảo cho mặt bằng khoảng 80m2;
+tiến độ chính xác được chốt sau khi khảo sát hiện trạng.”<br>
+<b>Vẫn nên hỏi bộ phận kinh doanh một câu</b> — số thật thì thành lợi thế, số tham khảo thì chỉ là không thua.</div>
+<p class="nho"><b>Nguồn:</b> noithattugia.com · office.sukavina.com · giaphongdesign.vn · phedecor.com.</p>
+</section>
+
+<section>
+<h2>Bản thảo mục 7 — viết sẵn, chờ bạn duyệt</h2>
+<p class="sub">Đây là chữ dùng được luôn trong bài, viết bằng giọng thương hiệu (không phải giọng nói chuyện với bạn).
+Khoảng 620 chữ.</p>
+
+<div class="hop">
+<h3 style="margin-top:0">5 lỗi thường gặp khi thiết kế văn phòng 80m2</h3>
+<p>Ở diện tích 80m2, mỗi mét vuông bố trí sai đều lấy đi một thứ đo được: một chỗ ngồi, một chỗ đặt tủ hồ sơ,
+hoặc ấn tượng của khách trong mười giây đầu bước vào. Năm lỗi dưới đây là những lỗi được nhắc tới nhiều nhất
+trong các tài liệu thiết kế văn phòng — và cũng là những lỗi tốn kém nhất để sửa sau khi đã thi công xong.</p>
+
+<h4>Lỗi 1 · Thêm bàn bằng cách bóp lối đi</h4>
+<p><b>Hiện tượng:</b> cần thêm hai chỗ ngồi, cách nhanh nhất là kéo hai dãy bàn sát vào nhau.</p>
+<p><b>Hậu quả:</b> lối đi chính nên rộng tối thiểu 1,2m — lý tưởng là 1,4–1,5m để hai người tránh nhau;
+lối đi phụ giữa các bàn tối thiểu 0,8m. Bóp xuống dưới ngưỡng này thì người ngồi phía trong phải
+đứng dậy nhường đường mỗi lần có người đi qua. Với văn phòng trong tòa nhà cho thuê, lối thoát hiểm quá hẹp
+còn có thể vướng khi nghiệm thu với ban quản lý.</p>
+<p><b>Cách tránh:</b> chốt số chỗ ngồi <b>từ diện tích</b>, không chốt từ mong muốn. Với 40–48m² khu làm việc,
+mức 5–6 m²/người cho 7–9 chỗ thoải mái; muốn lên 10–12 chỗ thì phải chấp nhận mức 3–4 m²/người và
+bàn nhỏ hơn, chứ không phải lấy phần diện tích của lối đi.</p>
+
+<h4>Lỗi 2 · Đặt khu lộn xộn ngay tầm nhìn từ cửa</h4>
+<p><b>Hiện tượng:</b> pantry, máy in, tủ hồ sơ được đẩy vào chỗ còn thừa — và chỗ còn thừa thường lại là
+chỗ nhìn thấy đầu tiên từ cửa chính.</p>
+<p><b>Hậu quả:</b> khách bước vào nhìn thấy máy in và bồn rửa trước khi nhìn thấy logo công ty.
+Đây là lỗi làm mất vẻ chuyên nghiệp nhanh nhất, trong khi tránh nó <b>không tốn thêm một đồng nào</b> —
+chỉ tốn công nghĩ sớm hơn một bước.</p>
+<p><b>Cách tránh:</b> ngay trên bản vẽ mặt bằng, kẻ một đường thẳng từ cửa chính vào trong.
+Những gì nằm trên đường đó là những gì khách nhìn thấy đầu tiên — dành chỗ đó cho lễ tân, logo hoặc mảng xanh,
+đẩy pantry và thiết bị ra khỏi trục nhìn.</p>
+
+<h4>Lỗi 3 · Chia quá nhiều phòng kín — hoặc mở toang hoàn toàn</h4>
+<p><b>Hiện tượng:</b> hoặc muốn đủ cả phòng giám đốc, phòng họp, phòng kế toán riêng;
+hoặc ngược lại, bỏ hết vách cho rộng.</p>
+<p><b>Hậu quả:</b> mỗi vách ngăn không chỉ ăn diện tích của chính nó mà còn cắt vụn phần còn lại,
+khiến 80m2 mất thêm chỗ ngồi. Nhưng mở toang hoàn toàn cũng có giá của nó: các nghiên cứu về không gian mở
+đều ghi nhận tiếng ồn và việc bị ngắt quãng làm giảm khả năng tập trung, và không có chỗ nào để nói chuyện riêng
+với khách hay với nhân viên.</p>
+<p><b>Cách tránh:</b> với 80m2, phương án cân bằng là <b>một phòng kín tiếng duy nhất</b> — phòng họp kiêm tiếp khách,
+dùng vách kính để không chặn ánh sáng — còn lại để mở. Một phòng kín đủ cho cả việc họp, phỏng vấn và
+những cuộc gọi cần riêng tư.</p>
+
+<h4>Lỗi 4 · Lấy màu thương hiệu phủ kín văn phòng</h4>
+<p><b>Hiện tượng:</b> logo màu đỏ nên tường đỏ, ghế đỏ, vách đỏ.</p>
+<p><b>Hậu quả:</b> màu logo được thiết kế để nổi bật trên một diện tích nhỏ, không phải để nhìn tám tiếng mỗi ngày.
+Phủ kín gây mỏi mắt, và trớ trêu là làm văn phòng trông <b>kém chuyên nghiệp hơn</b> so với khi dùng tiết chế.</p>
+<p><b>Cách tránh:</b> nền trung tính, màu thương hiệu chỉ xuất hiện ở nơi có chủ đích —
+mảng tường sau quầy lễ tân, một mặt vách phòng họp, chi tiết nhỏ trên nội thất. Đó là cách các văn phòng
+ngân hàng và tập đoàn vẫn làm: nhận ra thương hiệu ngay, nhưng không bị màu sắc át đi.</p>
+
+<h4>Lỗi 5 · Thiết kế vừa khít số người hiện tại</h4>
+<p><b>Hiện tượng:</b> công ty 10 người thì kê đúng 10 bàn, không dư một chỗ nào.</p>
+<p><b>Hậu quả:</b> tuyển thêm hai người là hết chỗ, và sửa lại mặt bằng đang sử dụng luôn tốn hơn
+làm đúng ngay từ đầu — cả tiền lẫn thời gian gián đoạn công việc.</p>
+<p><b>Cách tránh:</b> ước lượng nhân sự cho 1–2 năm tới ngay từ khi vẽ, ưu tiên bàn dạng mô-đun ghép thêm được.
+Với doanh nghiệp thuê mặt bằng 3 năm, nên dồn ngân sách vào những hạng mục
+<b>tháo ra mang đi được</b> khi chuyển văn phòng, thay vì hạng mục cố định phải bỏ lại.</p>
+</div>
+
+<div class="canh-bao"><b>Hai ô chừa sẵn cho đội kỹ thuật:</b> khi nào bạn xin được ca thật, chỉ cần thêm vào cuối
+mỗi lỗi một đoạn ngắn dạng: <i>“Trong một dự án cải tạo tại [tòa nhà/quận], chúng tôi gặp đúng tình huống này:
+[chuyện gì] — khách phải [hậu quả cụ thể].”</i>
+Mỗi ca thật thêm vào là mục này mạnh thêm một bậc, và đó là phần đối thủ không chép được.</div>
+</section>
+
+<section>
+<h2>Nguồn đã quét</h2>
+<div class="bang-cuon"><table>
+<thead><tr><th style="width:34%">Nguồn</th><th>Lấy được gì</th></tr></thead>
+<tbody>
+<tr><td>idesko.com.vn — “Top 6 sai lầm khi thiết kế văn phòng”</td><td>Lối đi chính 1.200mm, phụ 800–1.000mm · bàn 1.000–1.200 × 600–700mm · khoảng cách hàng 900–1.200mm · lỗi lạm dụng màu thương hiệu · lỗi không tính khả năng mở rộng 1–2 năm</td></tr>
+<tr><td>maisoninterior.vn — “10 lỗi cần tránh khi thiết kế văn phòng”</td><td>Danh sách lỗi phổ biến: ánh sáng, màu sắc, sắp xếp thiếu khoa học, thừa vật dụng, ồn</td></tr>
+<tr><td>vinamoves.vn · ngoisaoplaswood.com</td><td>Lỗi bố trí thiếu khoa học · thừa nội thất · quên lối đi và không gian sinh hoạt chung</td></tr>
+<tr><td>Tài liệu tiêu chuẩn diện tích văn phòng Việt Nam · TCVN 4601:2012</td><td>Ba mức 3–4 / 5–6 / 7–10 m² mỗi người · định mức theo chức danh</td></tr>
+<tr><td>noithattugia.com · office.sukavina.com · giaphongdesign.vn · phedecor.com</td><td>Thời gian thi công: trung bình 15–20 ngày · 150m² mất 35–45 ngày · gói tiêu chuẩn 4–6 tuần · lắp đặt 4–10 ngày</td></tr>
+<tr><td>Tài liệu quốc tế về thiết kế văn phòng (interaction.uk.com · bluespaceinteriors.com · sjpinteriors.com)</td><td>Không gian mở gây ồn và giảm tập trung · thiếu chỗ riêng tư · nhồi bàn quá dày</td></tr>
+</tbody></table></div>
+<p class="nho">Trong bài đăng thật, phần nguồn nên đặt ở cuối bài dưới tiêu đề “Nguồn tham khảo”.
+Đây chính là mục Tin cậy số 3 trong checklist E-E-A-T mà bài hiện tại đang bỏ trống —
+và cũng là thứ <b>không đối thủ nào trong 6 bài có</b>.</p>
+</section>
+
+<section>
+<h2>Ba câu hỏi cho bạn</h2>
+<ol>
+<li>Bản thảo mục 7 này bạn đọc thấy <b>đúng giọng thương hiệu</b> chưa, hay muốn nói ngắn gọn hơn?</li>
+<li><b>Lỗi 4 về màu thương hiệu</b> — tôi có nhắc tới cách các văn phòng ngân hàng làm.
+Bạn có muốn nói thẳng tên dự án ngân hàng của công ty ở chỗ này không, hay để chung chung rồi dồn tên vào mục 8?</li>
+<li>Thời gian thi công — bạn hỏi bộ phận kinh doanh lấy số thật, hay dùng khoảng tham khảo tôi ghi ở trên?</li>
+</ol>
+</section>
+
+</div>
+<footer><div class="wrap">
+<b>Dữ liệu thị trường và bản thảo mục 7</b> · 10/09/2026 · đi kèm outline bản 2 cùng thư mục.<br>
+Mọi số liệu đều dẫn nguồn. Phần trải nghiệm của công ty được chừa trống chờ dữ liệu thật.<br>
+SEONGON — Search Marketing Growth Partner
+</div></footer>
+</body>
+</html>
