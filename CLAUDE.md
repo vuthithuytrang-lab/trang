@@ -73,6 +73,20 @@ Ba luật cứng nhất:
 ⚠️ Cẩm nang này là của **SEONGON — công ty Trang**. Sản phẩm bài học (ShopOne, v.v.) là thương hiệu
 giả lập của khóa học, có bộ màu riêng, đừng trộn hai bên vào nhau.
 
+## 3c. Nghiên cứu Search Intent & tối ưu content — bật quy trình, đừng làm tay
+
+Trang đưa **từ khóa + bài viết + URL bài viết + URL đối thủ** (đủ bốn hoặc chỉ một phần),
+hoặc nhắc tới *phân tích search intent, phân tích đối thủ, tối ưu content, soát E-E-A-T*
+⇒ **dùng skill `toi-uu-content-seo`**, chạy đúng quy trình 7 chặng đã chốt ngày 10/09/2026.
+
+Ba điều không được quên:
+1. **Dừng hỏi sau mỗi chặng.** Trang gật mới đi tiếp. Không chạy một mạch 7 chặng rồi mới đưa.
+2. **Tự mở từng URL đối thủ mà đọc.** Không bắt Trang copy nội dung ra. Mở không được thì
+   báo rõ bị chặn ở đâu, không đoán nội dung.
+3. **Không bịa số liệu, tên khách, giải thưởng, trích dẫn.** Thiếu thì ghi `[CẦN TRANG BỔ SUNG: …]`.
+
+Quy trình đầy đủ: `cong-cu/toi-uu-content-seo/QUY-TRINH-NGHIEN-CUU.md`
+
 ## 4. Giới hạn môi trường đã gặp (đừng mất công thử lại)
 
 | Bị chặn | Biểu hiện | Đường vòng |
