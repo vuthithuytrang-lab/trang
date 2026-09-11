@@ -1,0 +1,32 @@
+Theo dõi click hotline -> GA4 (Crystal Design)
+==============================================
+
+Chèn đoạn dưới đây vào NGAY TRƯỚC thẻ đóng </body>, trên mọi trang
+(thường là file footer dùng chung). Phải đặt SAU đoạn mã Thẻ Google
+GT-K46RXHK đã có sẵn trên web.
+
+--- BẮT ĐẦU COPY TỪ ĐÂY ---
+
+<!-- Theo dõi click hotline -> GA4 (Crystal Design) -->
+<script>
+document.addEventListener('click', function (e) {
+  var nut = e.target && e.target.closest ? e.target.closest('a[href^="tel:"]') : null;
+  if (!nut) return;
+  if (typeof gtag !== 'function') return;
+  gtag('event', 'click_hotline', {
+    so_dien_thoai: nut.getAttribute('href').replace(/^tel:/, ''),
+    vi_tri_nut: (nut.textContent || '').trim().slice(0, 100)
+  });
+});
+</script>
+
+--- KẾT THÚC COPY ---
+
+Ghi chú kỹ thuật:
+- Đoạn mã bắt mọi thẻ <a> có href bắt đầu bằng "tel:", nên không phụ thuộc
+  vào định dạng số (tel:+8490..., tel:0906..., đều bắt được).
+- Dùng event delegation nên nút hotline được nạp động sau (popup, widget)
+  vẫn bắt được.
+- Có kiểm tra typeof gtag !== 'function' nên nếu Thẻ Google chưa nạp xong
+  thì lặng lẽ bỏ qua, không sinh lỗi JavaScript trên trang.
+- Không can thiệp hành vi mặc định của link: khách vẫn gọi được bình thường.

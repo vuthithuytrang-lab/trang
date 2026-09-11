@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Theo dõi click hotline trong GA4 — Crystal Design</title>
+<style>
+  :root{
+    --xanh:#004AEF; --xanh-sang:#0D53F0; --navy:#002992;
+    --mint:#07EF9C; --cyan:#0DD1FF; --vang:#FFCE00; --cam:#F68B1F;
+    --den:#151515; --xam-nen:#F3F3F6; --xam-vien:#DCDCDC; --xam-chu:#5A6B66;
+    --font: Gilroy, "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
+            Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--xam-nen);color:var(--den);
+       font-family:var(--font);font-size:16px;line-height:1.7}
+  .trang{max-width:860px;margin:0 auto;background:#fff}
+
+  /* ---- Đầu trang ---- */
+  header{background:linear-gradient(135deg,var(--navy) 0%,var(--xanh) 55%,var(--cyan) 130%);
+         color:#fff;padding:36px 44px 40px}
+  .khay-logo{display:inline-block;background:#fff;border-radius:10px;padding:12px 18px}
+  .khay-logo img{display:block;width:190px;height:auto}
+  header h1{font-size:36px;font-weight:800;line-height:1.25;margin:26px 0 10px}
+  header p{margin:0;font-size:16px;opacity:.92;max-width:620px}
+  .nhan{display:inline-block;background:var(--mint);color:var(--navy);
+        font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+        padding:5px 12px;border-radius:999px;margin-top:22px}
+
+  /* ---- Thân ---- */
+  main{padding:8px 44px 48px}
+  h2{font-size:24px;font-weight:700;color:var(--navy);margin:40px 0 12px;
+     padding-top:20px;border-top:2px solid var(--xam-vien)}
+  h2:first-of-type{border-top:none;padding-top:0}
+  h3{font-size:18px;font-weight:700;color:var(--den);margin:26px 0 8px}
+  p{margin:0 0 14px}
+  ul,ol{margin:0 0 16px;padding-left:22px}
+  li{margin-bottom:8px}
+  b,strong{font-weight:700}
+  a{color:var(--xanh)}
+  .chu-thich{font-size:13px;color:var(--xam-chu)}
+
+  table{width:100%;border-collapse:collapse;margin:0 0 18px;font-size:15px}
+  th,td{border:1px solid var(--xam-vien);padding:10px 12px;text-align:left;vertical-align:top}
+  th{background:var(--xam-nen);font-weight:700;color:var(--navy)}
+
+  .khoi{background:var(--xam-nen);border-radius:10px;padding:18px 20px;margin:0 0 18px}
+  .khoi p:last-child{margin-bottom:0}
+  .canh-bao{background:#FFF8E6;border-left:4px solid var(--vang);
+            border-radius:0 8px 8px 0;padding:14px 18px;margin:0 0 18px}
+  .canh-bao p:last-child{margin-bottom:0}
+  .nhan-manh{background:#F0FFF9;border-left:4px solid var(--mint);
+             border-radius:0 8px 8px 0;padding:14px 18px;margin:0 0 18px}
+  .nhan-manh p:last-child{margin-bottom:0}
+
+  pre{background:#0E1B33;color:#E8EDF7;border-radius:10px;padding:18px 20px;
+      overflow-x:auto;font-size:13.5px;line-height:1.6;margin:0 0 8px;
+      font-family:"SF Mono",Menlo,Consolas,"Courier New",monospace}
+  code{font-family:"SF Mono",Menlo,Consolas,"Courier New",monospace;
+       background:var(--xam-nen);padding:2px 6px;border-radius:4px;font-size:14px}
+  pre code{background:none;padding:0;font-size:inherit;color:inherit}
+  .thu{background:#fff;border:1px solid var(--xam-vien);border-radius:10px;
+       padding:18px 20px;margin:0 0 18px;font-size:15px}
+  .thu p{margin:0 0 10px}
+  .thu p:last-child{margin-bottom:0}
+
+  /* ---- Các bước ---- */
+  .buoc{display:flex;gap:16px;margin:0 0 20px}
+  .so{flex:0 0 34px;height:34px;border-radius:50%;background:var(--xanh);color:#fff;
+      font-weight:700;font-size:16px;display:flex;align-items:center;justify-content:center}
+  .noi-dung-buoc{flex:1;padding-top:2px}
+  .noi-dung-buoc h3{margin-top:0}
+  .noi-dung-buoc > :last-child{margin-bottom:0}
+
+  footer{background:var(--navy);color:#fff;padding:24px 44px;font-size:13.5px}
+  footer p{margin:0 0 6px;opacity:.85}
+  footer p:last-child{margin-bottom:0}
+
+  @media (max-width:640px){
+    header,main,footer{padding-left:22px;padding-right:22px}
+    header h1{font-size:27px}
+    h2{font-size:21px}
+  }
+</style>
+</head>
+<body>
+<div class="trang">
+
+<header>
+  <div class="khay-logo">
+    <img src="../nhan-dien-thuong-hieu/logo-goc/SEONGON-logo-ngang.webp" alt="SEONGON">
+  </div>
+  <h1>Vì sao GA4 không ghi nhận click hotline —<br>và cách sửa</h1>
+  <p>Tài sản: Crystal Design · Thẻ Google <code style="background:rgba(255,255,255,.18);color:#fff">GT-K46RXHK</code> · GA4 <code style="background:rgba(255,255,255,.18);color:#fff">G-40FF4E8NNC</code></p>
+  <span class="nhan">Bản hướng dẫn nội bộ · 11/09/2026</span>
+</header>
+
+<main>
+
+<h2>1. Lỗi nằm ở đâu</h2>
+
+<p>Sự kiện tuỳ chỉnh hiện tại đang đặt điều kiện:</p>
+
+<table>
+  <tr><th>Tham số</th><th>Điều kiện</th><th>Giá trị</th></tr>
+  <tr><td><code>event_name</code></td><td>bằng</td><td><code>click</code></td></tr>
+  <tr><td><code>link_url</code></td><td>chứa</td><td><code>tel:+84906317386</code></td></tr>
+</table>
+
+<div class="canh-bao">
+  <p><b>Điều kiện viết đúng cú pháp, nhưng sự kiện <code>click</code> đó không bao giờ xảy ra với nút gọi điện.</b></p>
+</div>
+
+<p>GA4 có tính năng tự bắt click sẵn (gọi là <i>Đo lường nâng cao</i>), nhưng nó chỉ bắt
+những link <b>dẫn sang một website khác</b>. Link <code>tel:</code> không dẫn sang website
+nào cả — nó ra lệnh cho điện thoại mở app gọi. Vì thế GA4 không sinh ra sự kiện
+<code>click</code>, và tham số <code>link_url</code> cũng không tồn tại để đem ra so sánh.</p>
+
+<table>
+  <tr><th>Nút trên web</th><th>Link đi tới</th><th>GA4 tự bắt?</th></tr>
+  <tr><td>Zalo</td><td><code>https://zalo.me/…</code></td><td>✅ Có — nên <code>click_zalo</code> chạy được</td></tr>
+  <tr><td>Messenger</td><td><code>https://m.me/…</code></td><td>✅ Có — nên <code>click_messenger_fb</code> chạy được</td></tr>
+  <tr><td><b>Hotline</b></td><td><code>tel:+84906317386</code></td><td>❌ <b>Không</b> — đây là lý do</td></tr>
+</table>
+
+<p class="chu-thich">Kết luận: không phải nút hotline bị hỏng, mà là GA4 không nhìn thấy loại link này.
+Phải chủ động báo cho GA4 bằng một đoạn mã nhỏ.</p>
+
+<h2>2. Cách sửa — chèn một đoạn mã vào website</h2>
+
+<div class="nhan-manh">
+  <p><b>Tin tốt:</b> website đã có sẵn Thẻ Google (<code>GT-K46RXHK</code>) chạy trên mọi trang.
+  Nghĩa là <b>không cần cài thêm Google Tag Manager</b>, không cần tạo tài khoản mới.
+  Chỉ cần chèn thêm một đoạn mã ngắn là xong.</p>
+</div>
+
+<p>Đoạn mã này canh mọi cú click trên trang. Hễ ai bấm vào bất cứ link gọi điện nào
+(<code>tel:</code> — kể cả số viết ở định dạng khác, kể cả nút mới thêm sau này),
+nó gửi thẳng về GA4 một sự kiện tên <code>click_hotline</code>.</p>
+
+<h3>Đoạn mã cần chèn</h3>
+
+<pre><code>&lt;!-- Theo dõi click hotline -&gt; GA4 (Crystal Design) --&gt;
+&lt;script&gt;
+document.addEventListener('click', function (e) {
+  var nut = e.target &amp;&amp; e.target.closest ? e.target.closest('a[href^="tel:"]') : null;
+  if (!nut) return;
+  if (typeof gtag !== 'function') return;
+  gtag('event', 'click_hotline', {
+    so_dien_thoai: nut.getAttribute('href').replace(/^tel:/, ''),
+    vi_tri_nut: (nut.textContent || '').trim().slice(0, 100)
+  });
+});
+&lt;/script&gt;</code></pre>
+
+<p class="chu-thich"><b>Chèn ở đâu:</b> ngay trước thẻ đóng <code>&lt;/body&gt;</code>, trên mọi trang
+(thường là file footer dùng chung). Phải nằm <b>sau</b> đoạn mã Thẻ Google đã có sẵn.</p>
+
+<h3>Tin nhắn gửi bạn phụ trách website</h3>
+
+<div class="thu">
+  <p>Chào bạn,</p>
+  <p>Bên mình cần đo số lượt khách bấm nút gọi hotline trên web Crystal Design.
+  Web đã có sẵn Thẻ Google <code>GT-K46RXHK</code> rồi, nên chỉ cần chèn thêm đoạn script
+  bên dưới vào <b>ngay trước thẻ <code>&lt;/body&gt;</code></b>, áp dụng cho toàn bộ trang
+  (đặt sau đoạn Thẻ Google hiện có).</p>
+  <p>Đoạn mã chỉ gửi sự kiện về Google Analytics, không đụng gì tới giao diện hay
+  chức năng khác của web.</p>
+  <p>[dán đoạn mã ở trên vào đây]</p>
+  <p>Chèn xong bạn báo lại giúp mình để mình kiểm tra nhé. Cảm ơn bạn!</p>
+</div>
+
+<h2>3. Sau khi web đã chèn xong — kiểm tra</h2>
+
+<div class="buoc">
+  <div class="so">1</div>
+  <div class="noi-dung-buoc">
+    <h3>Mở GA4 tài sản Crystal Design</h3>
+    <p>Vào <b>Báo cáo</b> (cột trái) → <b>Thời gian thực</b>.</p>
+  </div>
+</div>
+
+<div class="buoc">
+  <div class="so">2</div>
+  <div class="noi-dung-buoc">
+    <h3>Tự bấm thử nút hotline</h3>
+    <p>Mở website Crystal Design trên điện thoại (hoặc máy tính), bấm vào nút gọi hotline
+    một lần. Trên điện thoại sẽ hiện màn hình gọi — bấm huỷ, không cần gọi thật.</p>
+  </div>
+</div>
+
+<div class="buoc">
+  <div class="so">3</div>
+  <div class="noi-dung-buoc">
+    <h3>Quay lại màn hình Thời gian thực</h3>
+    <p>Chờ khoảng 10–30 giây, kéo xuống ô <b>“Số lượt sự kiện theo Tên sự kiện”</b>.
+    Nếu thấy dòng <code>click_hotline</code> hiện ra là <b>đã chạy</b>.</p>
+    <p class="chu-thich">Nếu không thấy: báo lại để kiểm tra xem nút hotline trên web có thật sự là
+    link <code>tel:</code> hay không — một số web dùng ảnh hoặc nút bấm mở popup, cần cách bắt khác.</p>
+  </div>
+</div>
+
+<h2>4. Dọn dẹp và hoàn thiện</h2>
+
+<div class="buoc">
+  <div class="so">4</div>
+  <div class="noi-dung-buoc">
+    <h3>Xoá sự kiện tuỳ chỉnh cũ</h3>
+    <p>Vào <b>Quản trị</b> → <b>Sự kiện</b> → tab <b>Sự kiện tuỳ chỉnh</b>, xoá mục
+    <code>click_hotline</code> đang có (cái đặt điều kiện <code>link_url</code>).</p>
+    <div class="canh-bao">
+      <p>Phải xoá, vì giờ website đã gửi thẳng sự kiện tên <code>click_hotline</code> rồi.
+      Để cả hai sẽ dễ đếm trùng hoặc gây rối về sau.</p>
+    </div>
+  </div>
+</div>
+
+<div class="buoc">
+  <div class="so">5</div>
+  <div class="noi-dung-buoc">
+    <h3>Đánh dấu là sự kiện chính</h3>
+    <p>Vẫn ở <b>Quản trị</b> → <b>Sự kiện</b>, tìm dòng <code>click_hotline</code> trong danh sách
+    sự kiện đang có, gạt công tắc <b>“Đánh dấu là sự kiện chính”</b> sang bật.</p>
+    <p class="chu-thich">“Sự kiện chính” là tên gọi mới của “chuyển đổi”. Bật lên thì mới đưa được
+    số liệu này sang Google Ads để tính hiệu quả quảng cáo.</p>
+  </div>
+</div>
+
+<div class="buoc">
+  <div class="so">6</div>
+  <div class="noi-dung-buoc">
+    <h3>Khai báo tham số để xem được số điện thoại</h3>
+    <p>Nếu muốn xem <b>khách bấm số nào</b> (trường hợp web có nhiều số hotline):
+    vào <b>Quản trị</b> → <b>Định nghĩa tuỳ chỉnh</b> → <b>Tạo phương diện tuỳ chỉnh</b>:</p>
+    <table>
+      <tr><th>Ô</th><th>Điền</th></tr>
+      <tr><td>Tên phương diện</td><td>Số hotline</td></tr>
+      <tr><td>Phạm vi</td><td>Sự kiện</td></tr>
+      <tr><td>Tham số sự kiện</td><td><code>so_dien_thoai</code></td></tr>
+    </table>
+    <p class="chu-thich">Bước này không bắt buộc. Bỏ qua vẫn đếm được tổng số lượt bấm.</p>
+  </div>
+</div>
+
+<div class="nhan-manh">
+  <p><b>Lưu ý về dữ liệu:</b> GA4 chỉ đếm từ lúc chèn mã trở đi. Không có cách nào lấy lại
+  số liệu những ngày trước.</p>
+</div>
+
+<h2>5. Phương án dự phòng — nếu bên web không chèn mã được</h2>
+
+<p>Nếu vì lý do nào đó bên kỹ thuật không chèn được đoạn mã trên, phương án thay thế là
+cài <b>Google Tag Manager</b> (miễn phí). Nhưng lưu ý: cách này <b>vẫn phải chèn mã vào web</b>
+một lần (mã của GTM), nên thường tốn công hơn chứ không ít hơn.</p>
+
+<p>Chỉ nên chọn GTM nếu về sau còn cần theo dõi thêm nhiều hành vi khác (bấm nút form,
+cuộn trang, xem video…) — lúc đó có GTM sẽ tự cấu hình được mà không phải nhờ web mỗi lần.</p>
+
+<table>
+  <tr><th></th><th>Chèn mã trực tiếp</th><th>Cài Google Tag Manager</th></tr>
+  <tr><td>Nhờ web chèn mã</td><td>1 lần</td><td>1 lần</td></tr>
+  <tr><td>Công sức lần này</td><td>Ít nhất</td><td>Nhiều hơn</td></tr>
+  <tr><td>Thêm sự kiện mới sau này</td><td>Lại nhờ web</td><td>Tự làm được</td></tr>
+  <tr><td>Chi phí</td><td>Miễn phí</td><td>Miễn phí</td></tr>
+</table>
+
+<h2>6. Việc còn treo</h2>
+
+<ul>
+  <li><b>Chất lượng Thẻ Google đang báo “Cần chú ý”</b> — màn hình quản lý thẻ hiện 1 vấn đề
+  chưa xem. Không liên quan tới hotline nhưng nên soi, vì có thể đang ảnh hưởng số liệu chỗ khác.</li>
+  <li><b>Chưa xác minh nút hotline trên web là dạng gì</b> — cần địa chỉ website để kiểm tra.
+  Nếu nút là ảnh hoặc nút mở popup chứ không phải link <code>tel:</code>, đoạn mã trên cần sửa lại.</li>
+</ul>
+
+</main>
+
+<footer>
+  <p><b>SEONGON</b> — Search Marketing Growth Partner</p>
+  <p>Người thực hiện: Vũ Thị Thùy Trang · Kỹ thuật SEO · Dựng ngày 11/09/2026</p>
+</footer>
+
+</div>
+</body>
+</html>
