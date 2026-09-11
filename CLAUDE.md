@@ -50,6 +50,13 @@ trang đích, brief gửi thiết kế, báo cáo cho sếp — vẫn giữ đú
 
 ## 3. Chuẩn sản phẩm bàn giao
 
+> ⛔ **CHỈ XUẤT FILE KHI TRANG YÊU CẦU.** (Trang chốt ngày 11/09/2026)
+> Mặc định là **trả lời thẳng trong chat**. Không tự ý dựng HTML, xuất PDF, tạo thư mục
+> hay commit sản phẩm khi Trang chưa nói. Câu hỏi — kể cả câu hỏi dài, nhiều bước —
+> vẫn chỉ là câu hỏi: trả lời bằng chữ trong chat.
+> Nếu thấy một bản HTML sẽ hữu ích, **hỏi trước một câu**, Trang đồng ý rồi mới làm.
+> Các mục bên dưới chỉ áp dụng **sau khi** Trang đã yêu cầu xuất file.
+
 - Sản phẩm xem được là **file HTML tự viết** (không phụ thuộc thư viện ngoài), tiếng Việt đủ dấu.
 - Xuất PDF khi cần bản đọc/gửi đi — dùng Chromium có sẵn.
 - **Tự soát trước khi gửi**: chụp ảnh trang, đọc lại ảnh, kiểm tra dấu tiếng Việt + layout không vỡ.
