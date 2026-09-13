@@ -11,5 +11,7 @@ Các file trong thư mục này đi cùng nhau. Khi Trang nhờ **phân tích se
 | `quy-trinh-nghien-cuu-search-intent.md` | Trang hỏi "phân tích search intent" — chạy 8 bước, **dừng hỏi sau mỗi bước** |
 | `checklist-eeat.md` | Soát bài / soát website theo E-E-A-T |
 | `quy-trinh-toi-uu-bai-viet.md` | Trang gửi bài viết cũ nhờ tối ưu — 4 luật bắt buộc |
+| **`luat-viet-content.md`** | **14 luật viết rút từ góp ý thật của Trang — đọc trước khi viết bài** |
+| **`ky-thuat-ban-giao.md`** | **Đọc bình luận Google Docs, xuất file, chuẩn bộ file bàn giao** |
 
 Nguồn: file PDF checklist E-E-A-T và câu lệnh nghiên cứu search intent Trang gửi ngày 10/09/2026.

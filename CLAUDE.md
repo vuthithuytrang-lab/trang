@@ -85,6 +85,11 @@ Ba điều không được quên:
    báo rõ bị chặn ở đâu, không đoán nội dung.
 3. **Không bịa số liệu, tên khách, giải thưởng, trích dẫn.** Thiếu thì ghi `[CẦN TRANG BỔ SUNG: …]`.
 
+4. **Trước khi viết bài**, đọc `cong-cu/toi-uu-content-seo/luat-viet-content.md` — 14 luật rút từ
+   góp ý thật của Trang, và tự chấm theo bảng ở cuối file trước khi giao.
+5. **Trang góp ý bằng bình luận trên Google Docs** ⇒ tải bản `.docx` để đọc đúng vị trí neo bình luận,
+   **cấm suy đoán theo mốc thời gian**. Xem `cong-cu/toi-uu-content-seo/ky-thuat-ban-giao.md`.
+
 Quy trình đầy đủ: `cong-cu/toi-uu-content-seo/QUY-TRINH-NGHIEN-CUU.md`
 
 ## 4. Giới hạn môi trường đã gặp (đừng mất công thử lại)

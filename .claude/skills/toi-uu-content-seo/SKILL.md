@@ -1,9 +1,9 @@
 ---
 name: toi-uu-content-seo
-description: Chạy trọn quy trình 7 chặng nghiên cứu Search Intent và tối ưu bài viết SEO cho Trang — phân tách từ khóa, chốt search intent có bối cảnh, mở từng URL đối thủ đọc và chấm điểm mạnh/yếu/nỗi đau đã và chưa đáp ứng, chấm bài của Trang theo 4 luật (bám nỗi đau, E-E-A-T, độc nhất, nói gì chứng minh nấy), dựng bảng khoảng trống, rồi đề xuất tối ưu chi tiết đến từng câu. Dùng skill này bất cứ khi nào Trang đưa từ khóa kèm bài viết hoặc link đối thủ, nhờ phân tích search intent, nhờ phân tích đối thủ, nhờ tối ưu content, soát E-E-A-T, hay hỏi "bài này yếu chỗ nào" — kể cả khi chị không gọi đúng tên skill. Nếu chị chỉ nhờ một chặng (chỉ phân tích intent, chỉ soi đối thủ, chỉ soát E-E-A-T) thì vẫn dùng skill này và làm đúng chặng đó.
+description: Chạy trọn quy trình 9 chặng nghiên cứu Search Intent, tối ưu và viết lại bài SEO cho Trang — phân tách từ khóa, chốt search intent có bối cảnh, mở từng URL đối thủ đọc và chấm điểm mạnh/yếu/nỗi đau đã và chưa đáp ứng, chấm bài của Trang theo 4 luật (bám nỗi đau, E-E-A-T, độc nhất, nói gì chứng minh nấy), dựng bảng khoảng trống, đề xuất tối ưu chi tiết đến từng câu, viết lại bài theo 14 luật content của Trang, bàn giao bộ file Word và WordPress, rồi tiếp thu góp ý Trang để lại trên Google Docs. Dùng skill này bất cứ khi nào Trang đưa từ khóa kèm bài viết hoặc link đối thủ, nhờ phân tích search intent, nhờ phân tích đối thủ, nhờ tối ưu content, soát E-E-A-T, hay hỏi "bài này yếu chỗ nào" — kể cả khi chị không gọi đúng tên skill. Nếu chị chỉ nhờ một chặng (chỉ phân tích intent, chỉ soi đối thủ, chỉ soát E-E-A-T) thì vẫn dùng skill này và làm đúng chặng đó.
 ---
 
-# Nghiên cứu Search Intent & tối ưu content — quy trình 7 chặng
+# Nghiên cứu Search Intent & tối ưu content — quy trình 9 chặng
 
 Quy trình này do chính Trang giao (checklist E-E-A-T dạng file PDF + câu lệnh nghiên cứu
 Search Intent chị tự viết + 3 quy tắc tối ưu). Chốt ngày 10/09/2026.
@@ -20,6 +20,8 @@ số liệu thật của công ty, quyết định chốt.
 | `cong-cu/toi-uu-content-seo/quy-trinh-nghien-cuu-search-intent.md` | Nguyên văn 8 bước của chặng 1 |
 | `cong-cu/toi-uu-content-seo/checklist-eeat.md` | Toàn bộ checklist E-E-A-T |
 | `cong-cu/toi-uu-content-seo/khung-phan-tich-doi-thu.md` | Bảng chấm chi tiết chặng 2–5 |
+| `cong-cu/toi-uu-content-seo/luat-viet-content.md` | **14 luật viết rút từ góp ý thật của Trang — đọc trước khi đặt bút viết bài** |
+| `cong-cu/toi-uu-content-seo/ky-thuat-ban-giao.md` | **Cách đọc bình luận Google Docs, cách xuất file, chuẩn bộ file bàn giao** |
 | `cong-cu/nhan-dien-thuong-hieu/CAM-NANG-THUONG-HIEU.md` | Bắt buộc đọc trước khi dựng file bàn giao |
 
 ---
@@ -120,7 +122,17 @@ Ba lớp: **cấu trúc** (dàn ý mới) · **câu từ** (viết lại từng 
 
 Kèm bắt buộc: danh sách `[CẦN TRANG BỔ SUNG: …]`. ⏸ Trang duyệt xong mới viết lại bài.
 
-## Chặng 6 — Bàn giao
+## Chặng 6 — Viết bài
+
+Đọc `luat-viet-content.md` **trước khi đặt bút**, và tự chấm bằng bảng 14 luật ở cuối file đó
+**trước khi giao**. Bốn luật hay bị quên nhất:
+
+- **Mọi mô tả phải phục vụ cụm từ khóa** — không tả thứ nhìn ảnh là thấy.
+- **Bài dài là lỗi** — gói đoạn dài thành bảng, không tách mục lý thuyết đứng riêng.
+- **Không đi sâu quá giai đoạn người đọc** — nội dung vượt mức thì nén thành một câu trong hỏi đáp.
+- **Case study phải cùng cỡ với từ khóa** — dự án vài nghìn m² không dùng cho bài 80m².
+
+## Chặng 7 — Bàn giao
 
 File HTML tự viết, tiếng Việt đủ dấu, đọc được trên điện thoại, theo cẩm nang nhận diện
 (nhúng file logo gốc, không vẽ lại; nền tối phải kê tấm nền trắng dưới logo; mint chỉ chấm phá).
@@ -129,3 +141,17 @@ Tự soát bằng ảnh chụp (Chromium ở `/opt/pw-browsers/chromium-1194/chr
 
 Báo cáo bằng lời thường, đánh số các bước. **Luôn hỏi hai câu:** (a) nhìn có lỗi hiển thị gì không,
 (b) có ưng không, muốn chỉnh gì. Nhắc chị tải lại trang (Cmd + R) nếu đang mở tab cũ.
+
+## Chặng 8 — Tiếp thu góp ý
+
+Trang góp ý bằng cách **bình luận thẳng trên Google Docs**. Quy trình bắt buộc:
+
+1. **Tải bản `.docx` qua Google Drive** (`exportMimeType` là định dạng Word), đọc `word/comments.xml`
+   ghép với `<w:commentRangeStart>` / `<w:commentRangeEnd>` trong `word/document.xml`
+   để biết **chính xác** bình luận nào gắn với đoạn nào.
+   **Cấm suy đoán vị trí bình luận theo mốc thời gian** — đã sai hai lần vì cách đó.
+2. **Xuất bảng đối chiếu** *(đoạn được comment → comment → đã xử lý thế nào)*, gửi kèm cho Trang soát.
+3. Đoạn nào Trang **không comment** thì **giữ nguyên** — không tự ý bỏ.
+4. Sửa xong chạy lại bảng kiểm tự động: còn chỗ trống không, còn phần đã bị bỏ không, phần cần giữ còn không.
+
+Chi tiết kỹ thuật: `cong-cu/toi-uu-content-seo/ky-thuat-ban-giao.md`.

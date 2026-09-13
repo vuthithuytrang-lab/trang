@@ -168,7 +168,20 @@ ca khách hàng thật, thông tin tác giả thật mà Agent không được p
 
 ---
 
-# CHẶNG 6 — Bàn giao
+# CHẶNG 6 — Viết bài
+
+Đọc `luat-viet-content.md` **trước khi đặt bút** — 14 luật rút từ góp ý thật của Trang,
+mỗi luật kèm nguyên văn câu chị nói và ví dụ đúng/sai.
+
+Tự chấm bằng bảng 14 luật ở cuối file đó **trước khi giao bản nháp**. Bốn luật hay quên nhất:
+bám cụm từ khóa trong từng mô tả · co gọn hết mức · không đi sâu quá giai đoạn người đọc ·
+case study phải cùng cỡ với từ khóa.
+
+⏸ **Dừng — đưa bản nháp cho Trang góp ý.**
+
+---
+
+# CHẶNG 7 — Bàn giao
 
 1. Xuất báo cáo thành **file HTML tự viết**, tiếng Việt đủ dấu, đọc được trên điện thoại.
 2. Theo cẩm nang `cong-cu/nhan-dien-thuong-hieu/CAM-NANG-THUONG-HIEU.md`:
@@ -192,3 +205,35 @@ ca khách hàng thật, thông tin tác giả thật mà Agent không được p
 | 4 | Tìm khoảng trống | Bảng nỗi đau × các bài, chỉ ra khoảng trống vàng | ⏸ |
 | 5 | Đề xuất tối ưu | Mẫu 5 dòng, 3 lớp + danh sách cần bổ sung | ⏸ |
 | 6 | Bàn giao | HTML đã tự soát, đã push, kèm 2 câu hỏi | — |
+
+---
+
+# CHẶNG 8 — Tiếp thu góp ý
+
+Trang góp ý bằng cách bình luận thẳng trên Google Docs.
+
+1. **Tải bản `.docx`** qua Google Drive rồi đọc dữ liệu neo bình luận để biết chính xác
+   bình luận nào gắn với đoạn nào. **Cấm suy đoán theo mốc thời gian** — đã sai hai lần vì cách đó.
+2. **Xuất bảng đối chiếu** *(đoạn được comment → comment → đã xử lý thế nào)* gửi Trang soát.
+3. Đoạn nào **không có bình luận** thì **giữ nguyên**, không tự ý bỏ.
+4. Chạy lại bảng kiểm tự động sau khi sửa.
+
+Chi tiết: `ky-thuat-ban-giao.md`.
+
+⏸ **Dừng — hỏi Trang đã ưng chưa.**
+
+---
+
+## Bảng tóm tắt sau khi bổ sung
+
+| Chặng | Tên | Đầu ra |
+|---|---|---|
+| 0 | Nhận nguyên liệu | Từ khóa + bài + link đối thủ |
+| 1 | Hiểu người tìm (8 bước) | Search Intent có bối cảnh |
+| 2 | Soi đối thủ | Mạnh, yếu, nỗi đau đã và chưa gỡ |
+| 3 | Soi bài của Trang | Bảng 4 luật + bảng E-E-A-T |
+| 4 | Tìm khoảng trống | Bảng nỗi đau × các bài |
+| 5 | Đề xuất tối ưu | Mẫu 5 dòng, 3 lớp |
+| **6** | **Viết bài** | **Bản nháp đã tự chấm theo 14 luật** |
+| **7** | **Bàn giao** | **Bộ file: docx · WordPress · bản đọc · ảnh rời** |
+| **8** | **Tiếp thu góp ý** | **Bảng đối chiếu bình luận + bản hoàn thiện** |
