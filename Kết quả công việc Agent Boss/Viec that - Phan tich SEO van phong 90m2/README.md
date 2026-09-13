@@ -42,3 +42,37 @@ Không đối thủ nào trong 7 bài trả lời được:
 
 Thêm một cơ hội lớn: **giá thiết kế giữa các đối thủ vênh nhau tới 13 lần** (115.000đ/m²
 so với 1.500.000đ/m²) mà không ai giải thích vì sao.
+
+---
+
+## Cập nhật 13/09/2026 — đã viết xong bài
+
+| Chặng | Trạng thái |
+|---|---|
+| 6 · Viết bài | ✅ Xong — 6.772 chữ, 50 ảnh, 9 bảng, 3 sơ đồ |
+| 7 · Bàn giao | ✅ Xong — Google Docs + Word + mã WordPress |
+| 8 · Tiếp thu góp ý | ⏸ Chờ Trang bình luận |
+
+**Link bài viết:** https://docs.google.com/document/d/1667hQENuON7_ms_5azlcXh54H2mBWUFMDyzzQpMrgWQ/edit
+
+### Ba sơ đồ mặt bằng 90m2 tự vẽ
+
+| Sơ đồ | Hình dạng | Kích thước | Chỗ ngồi | Luồng khách |
+|---|---|---|---|---|
+| 1 | Hẹp và dài | 18m × 5m | 15 chỗ | Buộc đi dọc qua khu làm việc |
+| 2 | Vuông cân xứng | 9,5m × 9,5m | 17 chỗ | Dừng gọn ở lễ tân |
+| 3 | Lô góc | 12m × 7,5m | 16 chỗ | Không bước vào khu làm việc lần nào |
+
+Cả ba sơ đồ đều vẽ thêm **luồng khách** (nét xanh) và **luồng nhân viên** (nét lục) —
+thứ không đối thủ nào trong 7 bài có.
+
+### Nguồn ảnh — đã ghi rõ trong bài
+
+Website chưa có bài 90m² nên chưa có kho ảnh riêng. Bài dùng lại kho ảnh của bài 70m² và 80m²:
+
+| Nhóm | Số ảnh | Ghi chú dưới ảnh |
+|---|---|---|
+| Ảnh mượn từ kho 70m² / 80m² | 44 | **(Ảnh tham khảo)** |
+| Ảnh gốc website đã ghi nguồn Internet | 2 | **(Nguồn: Internet)** |
+| Ảnh dự án Crystal Design TPL | 1 | Không ghi nguồn |
+| Sơ đồ mặt bằng tự vẽ | 3 | Không ghi nguồn |
