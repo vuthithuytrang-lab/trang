@@ -61,7 +61,7 @@ SUB='Đơn vị đo: mét. Vạch xanh nhạt là cửa sổ, cung tròn là c�
 
 # ---------- 1. HEP DAI 18 x 5 = 90m2 — 15 cho ----------
 W,H=18,5
-a=head(W,H,'Sơ đồ 1 — Mặt bằng hẹp và dài (18m × 5m = 90m²) · 15 chỗ ngồi',SUB)
+a=head(W,H,'Sơ đồ 1: Mặt bằng hẹp và dài (18m × 5m = 90m²) · 15 chỗ ngồi',SUB)
 a+=rect(0,0,2.2,5,'#E8EEF7'); a+=label(1.1,2.2,'LỄ TÂN'); a+=label(1.1,2.6,'& KHU CHỜ'); a+=label(1.1,3.05,'11 m²',11.5,False,'#5B6478')
 a+=rect(12.6,0,2.8,5,'#E8EEF7'); a+=label(14.0,2.2,'PHÒNG HỌP'); a+=label(14.0,2.6,'8 chỗ'); a+=label(14.0,3.05,'14 m²',11.5,False,'#5B6478')
 a+=rect(15.4,0,2.6,3.2,'#DDE7F5'); a+=label(16.7,1.4,'PHÒNG'); a+=label(16.7,1.8,'GIÁM ĐỐC'); a+=label(16.7,2.25,'8,3 m²',11.5,False,'#5B6478')
@@ -77,7 +77,7 @@ a+=door(2.05,0.05)+'</svg>'
 
 # ---------- 2. VUONG 9.5 x 9.5 = 90m2 — 17 cho ----------
 W,H=9.5,9.5
-b=head(W,H,'Sơ đồ 2 — Mặt bằng vuông cân xứng (9,5m × 9,5m ≈ 90m²) · 17 chỗ ngồi',SUB)
+b=head(W,H,'Sơ đồ 2: Mặt bằng vuông cân xứng (9,5m × 9,5m ≈ 90m²) · 17 chỗ ngồi',SUB)
 b+=rect(0,0,5.4,2.0,'#E8EEF7'); b+=label(3.5,1.35,'LỄ TÂN & KHU CHỜ'); b+=label(3.5,1.78,'10,8 m²',11.5,False,'#5B6478')
 b+=rect(6.7,0,2.8,3.2,'#DDE7F5'); b+=label(8.1,1.3,'PHÒNG'); b+=label(8.1,1.7,'GIÁM ĐỐC'); b+=label(8.1,2.15,'9 m²',11.5,False,'#5B6478')
 b+=rect(6.7,3.4,2.8,1.8,'#EFF3E8'); b+=label(8.1,4.15,'PANTRY',12); b+=label(8.1,4.6,'5 m²',11.5,False,'#5B6478')
@@ -94,7 +94,7 @@ b+=door(5.05,0.05,0.85,flip=True)+'</svg>'
 
 # ---------- 3. LO GOC 12 x 7.5 = 90m2 — 16 cho ----------
 W,H=12,7.5
-c=head(W,H,'Sơ đồ 3 — Mặt bằng lô góc (12m × 7,5m = 90m²) · 16 chỗ ngồi',SUB)
+c=head(W,H,'Sơ đồ 3: Mặt bằng lô góc (12m × 7,5m = 90m²) · 16 chỗ ngồi',SUB)
 c+=rect(9.2,0,2.8,2.9,'#DDE7F5','#0D9BE0',2.2); c+=label(10.6,1.1,'PHÒNG GIÁM ĐỐC',12); c+=label(10.6,1.52,'ở góc hai mặt kính',11.5,False,'#5B6478'); c+=label(10.6,1.98,'8,1 m²',11.5,False,'#5B6478')
 c+=rect(9.2,3.1,2.8,2.9,'#E8EEF7'); c+=label(10.6,4.25,'PHÒNG HỌP'); c+=label(10.6,4.65,'6 chỗ'); c+=label(10.6,5.1,'8,1 m²',11.5,False,'#5B6478')
 c+=rect(9.2,6.2,2.8,1.3,'#EFF3E8'); c+=label(10.6,6.75,'PANTRY',12); c+=label(10.6,7.15,'3,6 m²',11.5,False,'#5B6478')
