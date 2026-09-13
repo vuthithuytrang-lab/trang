@@ -1,24 +1,45 @@
-# Link file Google Docs — outline chỉnh sửa bài 70m2
+# Link file Google Docs — bài 70m2
+
+## 1. Bài viết hoàn chỉnh (bản giao cuối)
 
 **Mở thẳng tại đây:**
-https://docs.google.com/document/d/1I1JxtpHBgkolRkpQD12F7Jlo-jeLln8U8560eABONEA/edit
+https://docs.google.com/document/d/1afBnIvJ3Ip2yNWdybjvMzpnPJBW9IS2tMJyS5l2MRfc/edit
 
 - Tạo ngày 13/09/2026, nằm trong Drive của Trang (vuthithuytrang@seongon.com), thư mục gốc "My Drive"
-- Mã file: `1I1JxtpHBgkolRkpQD12F7Jlo-jeLln8U8560eABONEA`
+- 5.938 chữ · 49 ảnh · 6 bảng · 3 sơ đồ mặt bằng tự vẽ
+- Dung lượng 1,79 MB — trong đó 1,69 MB là ảnh, tức **ảnh đã vào đủ trong file**
 
-## Cách dùng
+## 2. Outline (các vòng trước)
 
-Bình luận thẳng vào từng đoạn trong file. Khi Trang báo đã comment xong, Agent sẽ:
+- Outline hoàn chỉnh, đã có 4 bình luận của Trang:
+  https://docs.google.com/document/d/16Ii6yHZvkKTvx4mnIDr5BgRiLwpFKnoSkeZfEn8XwV0/edit
+- Outline vòng 1, đã có 2 bình luận:
+  https://docs.google.com/document/d/1I1JxtpHBgkolRkpQD12F7Jlo-jeLln8U8560eABONEA/edit
 
-1. Tải bản `.docx` của file này qua Google Drive
-2. Đọc `word/comments.xml` ghép với thẻ neo trong `word/document.xml` để biết **chính xác**
-   bình luận nào gắn với đoạn nào — **cấm suy đoán theo mốc thời gian**
-3. Xuất bảng đối chiếu *(đoạn được comment → comment → đã xử lý thế nào)* gửi Trang soát
-4. Đoạn nào không có bình luận thì giữ nguyên
+## 3. Bản dự phòng trong kho
 
-Chi tiết: `cong-cu/toi-uu-content-seo/ky-thuat-ban-giao.md`
+| File | Dùng khi nào |
+|---|---|
+| `bai-viet/bai-viet-thiet-ke-van-phong-70m2.docx` | Bản Word, 49 ảnh nhúng sẵn chất lượng cao |
+| `bai-viet/ma-dan-vao-wordpress.html` | Mã dán thẳng vào WordPress, ảnh trỏ về link trên website |
+| `bai-viet/ban-doc-duyet.html` | Mở bằng trình duyệt để đọc duyệt, ảnh nhúng sẵn |
+| `bai-viet/anh-bai-viet/` | 49 ảnh bản nhẹ (JPG) |
+| `bai-viet/so-do-mat-bang/` | 3 sơ đồ mặt bằng bản gốc PNG + mã vẽ |
 
-## Bản dự phòng trong kho
+## 4. Bài học kỹ thuật rút được lần này
 
-- `outline-chinh-sua-70m2.docx` — bản Word cùng nội dung
-- `phan-tich-va-outline-70m2.html` — báo cáo phân tích đầy đủ (dài hơn, có phần soi 7 đối thủ)
+**Google Docs bỏ qua ảnh nặng khi nhập file HTML.**
+
+Đã đo bằng thực nghiệm:
+
+| Thử nghiệm | Kết quả |
+|---|---|
+| 2 ảnh webp gốc trên website (~200KB/ảnh) | Vào đủ 2/2 |
+| 10 ảnh webp gốc trên website | **Vào 0/10** |
+| 10 ảnh đã làm nhẹ (~50KB/ảnh) | Vào đủ 10/10 |
+| 49 ảnh làm nhẹ còn ~35KB/ảnh | **Vào đủ 49/49** |
+
+Cách làm đúng từ nay: trước khi nhập bài vào Google Docs, **nén ảnh xuống khoảng 30–40KB**
+(ảnh chụp 640px chất lượng 58; bản vẽ, sơ đồ giữ 1040px chất lượng 80 để chữ còn đọc được),
+đưa lên một địa chỉ công khai rồi mới nhập. Đây chính là nguyên nhân của lỗi mất ảnh
+Trang gặp ở bài 80m2.

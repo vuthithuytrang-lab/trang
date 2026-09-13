@@ -100,3 +100,48 @@ Và **nói thật với Trang** là chưa mở được file Word ra nhìn tận
 | `anh-png/` | Ảnh rời, đặt tên theo thứ tự trong bài |
 | `DOI-CHIEU-BINH-LUAN.md` | Bảng đối chiếu góp ý (khi có vòng sửa) |
 | `README.md` | Nói rõ file nào dùng khi nào, bản nào mới nhất |
+
+---
+
+## 7. Đưa bài lên Google Docs mà không mất ảnh
+
+*(Rút ra ngày 13/09/2026, bài 70m2 — đây chính là gốc rễ của lỗi mất ảnh ở bài 80m2.)*
+
+**Cách làm đúng:** tạo file Google Docs bằng cách **nhập nội dung HTML**
+(`create_file` với `contentMimeType: text/html`), ảnh để ở dạng link công khai.
+Google sẽ tự tải ảnh về và nhúng hẳn vào file.
+
+### Luật cứng: ảnh phải nhẹ, nếu không Google bỏ qua âm thầm
+
+Google có hạn mức dung lượng khi tải ảnh về. Vượt mức thì **bỏ qua toàn bộ ảnh
+mà không báo lỗi gì** — file vẫn tạo thành công, chữ vẫn đủ, chỉ mất sạch ảnh.
+
+Số liệu đo thật:
+
+| Thử | Kết quả |
+|---|---|
+| 2 ảnh webp gốc trên website (~200KB/ảnh) | vào đủ 2/2 |
+| 10 ảnh webp gốc trên website | **vào 0/10** |
+| 10 ảnh nén còn ~50KB | vào đủ 10/10 |
+| 49 ảnh nén còn ~35KB | **vào đủ 49/49** |
+
+**Làm thế này:**
+
+1. Nén ảnh: ảnh chụp về **640px, JPEG chất lượng 58** (~25–35KB).
+   Bản vẽ và sơ đồ giữ **1040px, chất lượng 80** để chữ ghi kích thước còn đọc được.
+2. Đưa bộ ảnh nén lên một địa chỉ công khai. Repo này là public nên dùng được luôn:
+   `https://raw.githubusercontent.com/<chủ repo>/<repo>/<nhánh>/<đường dẫn>`
+   — nhớ mã hóa dấu tiếng Việt và dấu cách trong đường dẫn (`%20`, `%E1%BA%BF`…).
+3. Kiểm từng link bằng `curl` xem có trả về `200` không, **trước khi** nhập vào Docs.
+4. Nhập file, rồi **kiểm chứng bằng dung lượng file**: lấy `get_file_metadata`,
+   `fileSize` phải xấp xỉ *dung lượng chữ + tổng dung lượng ảnh*.
+   Nếu chỉ nhỉnh hơn phần chữ một chút ⇒ ảnh đã rơi, phải làm lại.
+
+### Không đẩy được file Word thẳng lên Drive
+
+Công cụ chỉ nhận nội dung dán trực tiếp, mà file Word có ảnh thường nặng 3MB —
+mã hóa ra chữ thì thành hơn 4 triệu ký tự, không dán nổi. Đã thử chép tay base64
+một lần và **hỏng** (mất chữ giữa chừng, file không mở được).
+
+⇒ Tuyệt đối không chép tay base64. Đường đi duy nhất là nhập HTML kèm link ảnh nhẹ ở trên.
+File Word vẫn dựng và lưu vào kho làm bản dự phòng, nhưng không phải đường giao chính.
