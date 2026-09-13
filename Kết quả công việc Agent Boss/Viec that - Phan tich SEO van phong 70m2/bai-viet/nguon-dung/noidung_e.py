@@ -28,7 +28,7 @@ P(('table',
     ['Thi công gói cao cấp','trên 7 triệu/m²','trên 490 triệu']]))
 P(('note','Gói cơ bản: sơn, sàn, trần, hệ điện cơ bản, nội thất rời phổ thông. Gói tiêu chuẩn: thêm vách kính, tủ âm tường, hệ chiếu sáng thiết kế riêng, nội thất đặt sản xuất. Gói cao cấp: vật liệu nhập khẩu, hệ thống thông minh, gia công đặc thù. Đây là khoảng giá tham khảo — báo giá thực tế phụ thuộc hiện trạng mặt bằng và yêu cầu riêng.'))
 
-P(('h3','7.1. Năm yếu tố quyết định con số cuối cùng'))
+P(('h3','7.1. Năm yếu tố quyết định chi phí thiết kế văn phòng 70m2'))
 P(('ul',[
   '**Hiện trạng mặt bằng.** Mặt bằng thô phải làm lại toàn bộ hệ kỹ thuật; mặt bằng đã có trần, sàn, điều hòa thì tiết kiệm được một phần đáng kể.',
   '**Số phòng kín.** Mỗi phòng kín thêm chi phí vách, cửa, hệ điện và chiếu sáng riêng.',
@@ -36,7 +36,7 @@ P(('ul',[
   '**Mức độ phức tạp của hệ kỹ thuật.** Điện, mạng, điều hòa, phòng cháy — càng nhiều điểm chờ thì chi phí càng tăng.',
   '**Yêu cầu riêng theo ngành.** Khu trưng bày sản phẩm, phòng tư vấn cách âm, kho hồ sơ đều là hạng mục cộng thêm.']))
 
-P(('h3','7.2. Tiết kiệm ở đâu mà không mất vẻ chuyên nghiệp'))
+P(('h3','7.2. Tiết kiệm chi phí ở đâu mà văn phòng 70m2 vẫn chuyên nghiệp'))
 P(('p','Nguyên tắc chung: **giữ tiền cho khu khách nhìn thấy, cắt ở khu nội bộ.** Lễ tân và phòng họp là hai nơi quyết định ấn tượng của đối tác — nên đầu tư đúng mức. Khu làm việc chung, pantry và kho có thể dùng vật liệu phổ thông mà không ai nhận ra sự khác biệt.'))
 P(('ul',[
   '**Bỏ trần giật cấp nhiều lớp**, giữ trần phẳng hoặc để mộc — tiết kiệm 15 – 25 triệu cho 70m².',
@@ -69,13 +69,7 @@ P(('h3','9.4. Văn phòng 70m2 có nên thiết kế không gian mở không?'))
 P(('p','Nên, nếu ưu tiên số chỗ ngồi. Không gian mở cho ra nhiều hơn 2 – 3 chỗ so với phương án chia phòng, và dễ đổi bố cục khi nhân sự thay đổi. Tuy nhiên vẫn nên giữ ít nhất một phòng họp vách kính để có chỗ tiếp khách và gọi điện quan trọng. Kèm theo đó là trần tiêu âm hoặc tấm tiêu âm treo — ở mật độ trên 12 người trong 70m², tiếng ồn là vấn đề có thật.'))
 
 # ---------- KET BAI ----------
-P(('h2','Kết lại: ba con số cần nhớ về thiết kế văn phòng 70m2'))
-P(('ul',[
-  '**Chỗ ngồi:** 10 – 15 chỗ, tùy vào việc giữ hay bỏ phòng kín. Hình dạng mặt bằng làm chênh thêm khoảng 2 chỗ.',
-  '**Chi phí:** phí thiết kế 10,5 – 28 triệu; thi công 175 – 490 triệu tùy gói.',
-  '**Thời gian:** khoảng 28 – 38 ngày từ khảo sát đến bàn giao.']))
-P(('p','Điều quyết định không phải là 70m² rộng hay hẹp, mà là doanh nghiệp chọn bỏ đúng thứ ngay từ bản vẽ đầu tiên. **Thiết kế văn phòng 70m2** làm tốt là khi mỗi mét vuông bỏ đi đều đổi lại được một thứ doanh nghiệp thực sự cần.'))
-P(('p','Crystal Design TPL khảo sát mặt bằng và dựng phương án 3D miễn phí — doanh nghiệp sẽ thấy rõ mặt bằng của mình bố trí được bao nhiêu chỗ ngồi trước khi quyết định ngân sách.'))
+P(('p','Tóm lại, một mặt bằng 70m² bố trí được 10 – 15 chỗ ngồi tùy vào việc doanh nghiệp giữ hay bỏ các phòng kín, và riêng hình dạng mặt bằng đã làm con số này chênh nhau khoảng 2 chỗ. Về ngân sách, phí thiết kế rơi vào 10,5 – 28 triệu, còn chi phí thi công là 175 – 490 triệu tùy gói vật liệu; toàn bộ quá trình từ khảo sát đến bàn giao mất khoảng 28 – 38 ngày. Điều quyết định không phải là 70m² rộng hay hẹp, mà là doanh nghiệp chọn bỏ đúng thứ ngay từ bản vẽ đầu tiên — **thiết kế văn phòng 70m2** làm tốt là khi mỗi mét vuông bỏ đi đều đổi lại được một thứ doanh nghiệp thực sự cần. Crystal Design TPL khảo sát mặt bằng và dựng phương án 3D miễn phí, để doanh nghiệp thấy rõ mặt bằng của mình bố trí được bao nhiêu chỗ ngồi trước khi quyết định ngân sách.'))
 
 P(('box_tacgia','Đặng Trường Minh — Giám đốc Thiết kế, Crystal Design TPL','Hơn 25 năm trong ngành thiết kế và thi công nội thất văn phòng. Trực tiếp phụ trách các phương án bố trí mặt bằng cho doanh nghiệp vừa và nhỏ tại Hà Nội và TP.HCM.'))
 

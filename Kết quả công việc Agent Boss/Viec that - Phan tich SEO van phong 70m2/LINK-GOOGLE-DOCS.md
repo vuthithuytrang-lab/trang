@@ -1,13 +1,17 @@
 # Link file Google Docs — bài 70m2
 
-## 1. Bài viết hoàn chỉnh (bản giao cuối)
+## 1. Bài viết hoàn chỉnh — BẢN 2 (bản giao cuối)
 
 **Mở thẳng tại đây:**
-https://docs.google.com/document/d/1afBnIvJ3Ip2yNWdybjvMzpnPJBW9IS2tMJyS5l2MRfc/edit
+https://docs.google.com/document/d/1yQeEOskkSrbI2ea3pRH6Mnzgr1KQXkI82JYJENgqPdI/edit
 
 - Tạo ngày 13/09/2026, nằm trong Drive của Trang (vuthithuytrang@seongon.com), thư mục gốc "My Drive"
-- 5.938 chữ · 49 ảnh · 6 bảng · 3 sơ đồ mặt bằng tự vẽ
+- 5.959 chữ · 49 ảnh · 6 bảng · 3 sơ đồ mặt bằng tự vẽ
 - Dung lượng 1,79 MB — trong đó 1,69 MB là ảnh, tức **ảnh đã vào đủ trong file**
+- Đã sửa theo 6 bình luận của Trang trên bản 1
+
+**Bản 1 (đã có 6 bình luận, giữ lại để đối chiếu):**
+https://docs.google.com/document/d/1afBnIvJ3Ip2yNWdybjvMzpnPJBW9IS2tMJyS5l2MRfc/edit
 
 ## 2. Outline (các vòng trước)
 

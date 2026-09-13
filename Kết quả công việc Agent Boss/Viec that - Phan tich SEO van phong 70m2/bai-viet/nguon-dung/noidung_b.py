@@ -3,10 +3,10 @@
 B = []
 P = B.append
 
-P(('h2','3. Chia 70m2 thành những khu nào? Bảng phân bổ và 3 sơ đồ mặt bằng'))
+P(('h2','3. Bố trí văn phòng 70m2: bảng phân bổ diện tích và 3 sơ đồ mặt bằng'))
 P(('p','Sau khi đã chốt giữ gì bỏ gì, bước tiếp theo là chia diện tích. Tỷ lệ dưới đây là khung phân bổ dùng được cho phần lớn văn phòng 70m² của doanh nghiệp vừa và nhỏ.'))
 
-P(('h3','3.1. Bảng phân bổ diện tích chuẩn cho 70m²'))
+P(('h3','3.1. Bảng phân bổ diện tích chuẩn cho văn phòng 70m2'))
 P(('table',
    ['Khu vực','Tỷ lệ','Diện tích','Sức chứa'],
    [['Khu làm việc chung','50 – 60%','35 – 42 m²','10 – 15 chỗ'],
@@ -15,7 +15,7 @@ P(('table',
     ['Lối đi, kho, tủ kỹ thuật','12 – 18%','8 – 12 m²','—']]))
 P(('p','Nếu khu làm việc chung tụt xuống dưới 50%, gần như chắc chắn mặt bằng đang bị chia quá vụn — đây là lỗi phổ biến nhất ở diện tích 70m².'))
 
-P(('h3','3.2. Ba sơ đồ mặt bằng — cùng 70m2, chênh nhau 2 chỗ ngồi'))
+P(('h3','3.2. Ba sơ đồ mặt bằng văn phòng 70m2 — cùng diện tích, chênh nhau 2 chỗ ngồi'))
 P(('p','Ba sơ đồ dưới đây do đội thiết kế vẽ riêng cho bài viết này, theo ba hình dạng mặt bằng 70m² hay gặp nhất khi thuê văn phòng tại Hà Nội và TP.HCM. Cả ba đều cùng một diện tích, cùng giữ đủ phòng giám đốc, phòng họp 6 chỗ và pantry — chỉ khác hình dạng. Kết quả là số chỗ ngồi chênh nhau tới 2 chỗ.'))
 P(('p','Cụ thể ba sơ đồ đó là:'))
 P(('table',
