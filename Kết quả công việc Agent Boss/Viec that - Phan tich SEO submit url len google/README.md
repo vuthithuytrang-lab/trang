@@ -12,25 +12,30 @@ Trang chưa có bài. Đây là bài viết mới.
    Mọi nhận xét đều có câu trích từ chính bài đó.
 3. Đối chiếu với **tài liệu chính thức của Google** — tìm ra 4 điểm đối thủ dạy sai hoặc dạy thứ đã chết.
 4. Bảng khoảng trống 15 dòng → 6 khoảng trống vàng.
-5. Đề xuất chủ đề xuyên suốt + outline chi tiết 10 mục.
+5. Đề xuất outline chi tiết 10 mục.
+6. Dựng **file outline content theo đúng mẫu của Trang** (chốt 16/09/2026):
+   tiêu đề → sapo → các mục đánh số, mỗi mục có nội dung định hướng + link tham khảo +
+   dòng `Yêu cầu:` nói rõ cách trình bày.
+   **Không dùng mục "chủ đề xuyên suốt"** — cái đó chỉ dành cho nhóm bài nội thất (deco).
 
 ## Đang chờ Trang
 
-- **Chốt chủ đề xuyên suốt ở mục F** — chưa chốt thì chưa viết bài.
-- Ảnh chụp màn hình Google Search Console (8–10 ảnh) — bắt buộc cho bài hướng dẫn thao tác.
-- Ảnh chụp trang kết quả Google cho từ khóa.
+- **Ảnh chụp màn hình Google Search Console (8–10 ảnh, giao diện tiếng Việt)** — bắt buộc,
+  bài hướng dẫn thao tác thiếu ảnh là hỏng.
 - Tên + chức danh người đứng tên bài.
 - Một ca thật của SEONGON về submit / gỡ lỗi không được index.
+- Bài đăng ở đâu, có bài nào để trỏ link nội bộ không.
 
 ## Cấu trúc thư mục
 
 | Đường dẫn | Nội dung |
 |---|---|
-| `phan-tich-va-outline-submit-url.html` | Bản đọc được trên máy — giống hệt bản Google Docs |
+| `outline-content-submit-url.html` | **File outline content** — bản chính để viết bài |
+| `phan-tich-va-outline-submit-url.html` | Bản phân tích 7 đối thủ — tài liệu nền, để tra cứu bằng chứng |
 | `nguon-dung/` | Mã dựng file: `phan_a.py` … `phan_h.py`, `dung.py` |
 | `LINK-GOOGLE-DOCS.md` | Link tài liệu trên Drive |
 
-Dựng lại file: `python3 nguon-dung/dung.py`
+Dựng lại bản phân tích: `python3 nguon-dung/dung.py`
 
 ## Nguồn tài liệu Google đã dùng làm bằng
 
