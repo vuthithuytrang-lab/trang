@@ -1,0 +1,333 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Phân tích search intent &amp; đề xuất outline — cách submit URL lên Google</title><style>
+:root{--nav:#0B3D91;--ink:#1F2A44;--mute:#5B6478;--line:#DDE3EC;--bg:#F7F9FC;--vang:#B4690E;--tot:#0D6E4F;--xau:#B42318}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif;line-height:1.72;font-size:16px}
+.wrap{max-width:940px;margin:0 auto;background:#fff;padding:36px 32px 56px;min-width:0}
+h1{font-size:29px;line-height:1.3;margin:0 0 6px}
+.meta{color:var(--mute);font-size:13.5px;font-style:italic;margin:0 0 24px}
+h2{font-size:22px;color:var(--nav);margin:36px 0 12px;padding-top:14px;border-top:2px solid var(--line)}
+h3{font-size:17.5px;margin:24px 0 8px}
+h4{font-size:15.5px;margin:16px 0 6px;color:var(--nav)}
+p{margin:0 0 12px}
+ul,ol{margin:0 0 14px;padding-left:22px}li{margin:0 0 6px}
+.note{background:#FFF8E8;border-left:4px solid var(--vang);padding:11px 14px;font-size:14.5px;margin:0 0 16px;border-radius:0 6px 6px 0}
+.canh{background:#FDF0EE;border-left:4px solid var(--xau);padding:11px 14px;font-size:14.5px;margin:0 0 16px;border-radius:0 6px 6px 0}
+.quote{background:#F2F5FA;border-left:4px solid var(--nav);padding:14px 16px;margin:0 0 16px;font-size:16px;border-radius:0 6px 6px 0}
+.big{background:var(--nav);color:#fff;padding:16px 18px;border-radius:8px;font-size:19px;margin:0 0 16px;text-align:center}
+.big b{color:#7FE3BC}
+.bang-cuon{overflow-x:auto;margin:0 0 20px;min-width:0}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th{background:var(--nav);color:#fff;text-align:left;padding:8px 10px;border:1px solid var(--nav)}
+td{padding:8px 10px;border:1px solid var(--line);vertical-align:top}
+tr:nth-child(even) td{background:#F7F9FC}
+.vang{color:var(--vang)}.tot{color:var(--tot)}.xau{color:var(--xau)}
+@media(max-width:640px){.wrap{padding:22px 16px 40px}h1{font-size:24px}h2{font-size:19px}.big{font-size:17px}}
+</style></head><body><div class="wrap"><h1>Phân tích search intent &amp; đề xuất outline — “cách submit URL lên Google”</h1>
+<p class="meta">Lập ngày 16/09/2026 · 7 URL đối thủ Trang đưa · mở đọc trực tiếp được 6/7, 1 bài bị chặn · Trang chưa có bài — đây là bài viết mới</p>
+
+<div class="note"><b>Đọc nhanh 30 giây.</b> Cả 6 bài đối thủ tôi đọc được đều mở đầu bằng “Submit URL là gì?” — trong khi người gõ chữ <b>“cách”</b> là người đã biết nó là gì và chỉ muốn biết bấm ở đâu. Nghiêm trọng hơn: <b>3 trong 6 bài đang hướng dẫn những cách mà tài liệu chính thức của Google nói là không được dùng hoặc đã chết</b> (chi tiết ở mục D). Đó là chỗ bài của mình chen lên được.</div>
+
+<h2>A. Người tìm “cách submit URL lên Google” là ai, muốn gì</h2>
+
+<h3>A1. Phân tách từ khóa</h3>
+<div class="bang-cuon"><table><thead><tr><th>Thành tố</th><th>Người tìm đang nói gì</th></tr></thead><tbody>
+<tr><td><b>cách</b></td><td>Đứng đầu từ khóa — người này muốn <b>thao tác</b>, không muốn định nghĩa. Họ đang tìm nút để bấm, không tìm bài giảng.</td></tr>
+<tr><td><b>submit URL</b></td><td>Là tiếng lóng trong nghề. Gõ được cụm này nghĩa là <b>đã biết việc này tồn tại</b> — người quản trị web, nhân viên SEO/content, chủ shop tự làm web. Không phải người ngoài ngành.</td></tr>
+<tr><td><b>lên Google</b></td><td>Chỉ riêng Google. Không phải Bing, không phải Cốc Cốc. Phạm vi hẹp và rõ.</td></tr>
+</tbody></table></div>
+<p>Ghép lại: <b>người đọc vừa đăng xong một bài hoặc một trang mới và muốn Google nhìn thấy nó ngay</b> — họ cần biết bấm ở đâu, chờ bao lâu, và làm gì nếu làm rồi mà vẫn không thấy.</p>
+
+<h3>A2. Năm câu hỏi tổng quan</h3>
+<div class="bang-cuon"><table><thead><tr><th>Câu hỏi</th><th>Trả lời</th></tr></thead><tbody>
+<tr><td>Nhu cầu chính</td><td>Biết chính xác các bước để báo cho Google rằng có bài mới, và để bài đó được lập chỉ mục sớm.</td></tr>
+<tr><td>Hoàn cảnh cần</td><td>Hai hoàn cảnh rất khác nhau: <b>(1)</b> vừa bấm Đăng bài, muốn lên nhanh — tâm lý háo hức; <b>(2)</b> đã đăng mấy ngày, tìm trên Google không thấy — tâm lý lo lắng. Hai người này cần hai câu trả lời khác hẳn nhau.</td></tr>
+<tr><td>Làm gì tiếp theo</td><td>Mở Google Search Console làm theo ngay trong vài phút, rồi quay lại kiểm tra sau vài giờ.</td></tr>
+<tr><td>Thông tin ưu tiên</td><td>Các bước có ảnh chụp màn hình · mất bao lâu thì có kết quả · làm rồi mà không được thì vì sao.</td></tr>
+<tr><td>Dạng nội dung mong đợi</td><td>Bài hướng dẫn từng bước, nhiều ảnh chụp màn hình thật, có mục xử lý sự cố. Không phải bài lý thuyết về crawl và index.</td></tr>
+</tbody></table></div>
+<div class="note"><b>Cần Trang bổ sung:</b> ảnh chụp trang kết quả Google cho từ khóa này (có tab Hình ảnh không, có hộp trả lời nhanh không, có video không). Tôi không tự mở được trang kết quả Google từ máy chạy, nên mục này tôi để trống chứ không đoán.</div>
+
+<h3>A3. Đúc kết 3W</h3>
+<div class="bang-cuon"><table><thead><tr><th></th><th>Nội dung</th></tr></thead><tbody>
+<tr><td><b>Who</b> — Ai</td><td>Người trực tiếp đăng bài lên website: nhân viên SEO/content mới vào nghề, người quản trị web của doanh nghiệp nhỏ, chủ shop tự làm web WordPress. Biết thuật ngữ nhưng <b>chưa biết giới hạn thật của công cụ</b>.</td></tr>
+<tr><td><b>What</b> — Muốn gì</td><td>Một quy trình bấm theo được ngay, cộng với một mốc thời gian thật để biết khi nào nên lo, cộng một danh sách việc cần kiểm tra khi không được index.</td></tr>
+<tr><td><b>Why</b> — Vì sao</td><td>Bài không được index thì coi như chưa tồn tại — công viết bằng 0. Với nội dung có hạn dùng (khuyến mãi, tin tức, sản phẩm mới ra), chậm một ngày là mất gần hết giá trị.</td></tr>
+</tbody></table></div>
+
+<h3>A4. Kết luận Search Intent — có bối cảnh</h3>
+<p class="quote">Một người quản trị website vừa bấm Đăng bài lúc 9 giờ sáng. Đến chiều họ gõ tên bài lên Google và không thấy đâu. Họ mở tab mới gõ “cách submit url lên google” để tìm đúng nút cần bấm — và sâu hơn, để yên tâm rằng bài của mình không bị Google bỏ quên. Họ cần ba thứ, theo đúng thứ tự này: <b>(1)</b> thao tác đúng, <b>(2)</b> mốc thời gian thật để biết khi nào mới đáng lo, <b>(3)</b> danh sách việc phải kiểm tra khi submit rồi mà vẫn không thấy.</p>
+<p>Phân loại: đây là intent <b>hướng dẫn thao tác</b> (how-to), không phải intent tra khái niệm. Chữ “cách” nằm ngay đầu từ khóa đã nói hết.</p>
+<div class="canh"><b>Phát hiện lớn nhất của cả đợt phân tích:</b> 6/6 bài đối thủ tôi đọc được đều mở màn bằng mục “Submit URL là gì?”. Tức là cả hàng đang trả lời cho từ khóa <i>“submit URL là gì”</i> chứ không phải <i>“cách submit URL lên Google”</i>. Người đang vội phải cuộn qua 300–600 chữ lý thuyết mới tới được bước đầu tiên.</div>
+
+<h3>A5. Suy luận ngược kiểm tra</h3>
+<div class="bang-cuon"><table><thead><tr><th>Chiều</th><th>Kiểm tra</th></tr></thead><tbody>
+<tr><td>Từ khóa → intent</td><td>“cách” ⇒ muốn các bước; “submit URL” ⇒ đã trong nghề, không cần giảng lại; “lên Google” ⇒ chỉ Google Search Console và các cách chính thức. ✔</td></tr>
+<tr><td>Intent → từ khóa</td><td>Người vừa đăng bài muốn Google thấy sớm sẽ gõ gì? “cách submit url lên google”, “cach index bai viet nhanh”, “yêu cầu lập chỉ mục google”, “bài viết không được google index”, “gửi sitemap cho google”. ✔ Khớp — và ba cụm sau cho thấy bài phải ôm cả phần <b>xử lý khi không được index</b> mới đủ.</td></tr>
+</tbody></table></div>
+
+<h3>A6. Nội dung bắt buộc phải có mới thỏa mãn intent</h3>
+<ul>
+<li>Các bước submit <b>đặt ngay đầu bài</b>, kèm ảnh chụp màn hình giao diện Search Console hiện tại.</li>
+<li>Phân biệt rõ <b>gửi 1 URL</b> và <b>gửi sitemap</b> — dùng khi nào, khác nhau chỗ nào.</li>
+<li>Mốc thời gian thật, <b>dẫn từ tài liệu Google</b>, không hứa “60 giây”.</li>
+<li>Giới hạn của công cụ: submit không đảm bảo được index, submit lại nhiều lần không nhanh hơn.</li>
+<li>Danh sách kiểm tra khi <b>submit rồi mà vẫn không được index</b>.</li>
+<li>Cảnh báo về những cách đã chết hoặc bị Google cấm — vì đối thủ đang dạy chúng.</li>
+</ul>
+<h2>B. Soi 7 bài đối thủ — và intent mỗi bài đang nhắm vào</h2>
+<p>Tôi mở trực tiếp từng URL Trang đưa, đọc hết bài rồi bóc dàn ý. <b>6/7 bài mở được. Bài Brands Vietnam bị chặn</b> — chi tiết ở mục J cuối bài, tôi không đoán nội dung bài đó.</p>
+
+<h3>B1. Bảng tổng quan 7 bài</h3>
+<div class="bang-cuon"><table><thead><tr><th>#</th><th>Trang</th><th>Tiêu đề</th><th>Chữ</th><th>Đăng / cập nhật</th><th>Tác giả</th><th>Hỏi đáp</th><th>Bảng</th></tr></thead><tbody>
+<tr><td>1</td><td>mona.media</td><td>Hướng dẫn chi tiết cách submit URL lên Google nhanh nhất</td><td>~2.900</td><td>18/3/2023 · 15/9/2026</td><td class="tot">Võ Khắc Nhân, có hộp tác giả</td><td class="tot">Có (4 câu)</td><td>0</td></tr>
+<tr><td>2</td><td>vietnix.vn</td><td>Submit URL là gì? Cách submit URL Google index hiệu quả, nhanh chóng 2026</td><td class="tot">~4.400</td><td>13/6/2025 · 23/6/2026</td><td class="tot">Hoàng Vui</td><td class="tot">Có (6 câu)</td><td>0</td></tr>
+<tr><td>3</td><td>ematicsolutions.com</td><td>Hướng dẫn Submit URL Lên Google Chuẩn và Nhanh Chóng</td><td class="xau">~1.500</td><td>24/11/2023 · 1/8/2024</td><td>Minh Le</td><td class="xau">Không</td><td>0</td></tr>
+<tr><td>4</td><td>brandsvietnam.com</td><td colspan="6" class="xau"><b>Không mở được</b> — tường lửa Cloudflare trả về lỗi 403. Đã thử 6 cách. Xem mục J.</td></tr>
+<tr><td>5</td><td>imta.edu.vn</td><td>Hướng dẫn chi tiết cách Submit URL lên Google nhanh chóng (2026)</td><td>~2.600</td><td>cập nhật 5/1/2026</td><td class="tot">Nguyễn Minh Hiếu</td><td class="tot">Có (3 câu)</td><td>0</td></tr>
+<tr><td>6</td><td>toponseek.com</td><td>Google Url: Cách Submit Add mới Url tới Google 60 giây</td><td>~2.300</td><td class="xau">21/2/2020 · 31/7/2026</td><td>TOS Editor <i>(bút danh toà soạn)</i></td><td class="xau">Không</td><td>0</td></tr>
+<tr><td>7</td><td>sites.google.com</td><td>Hướng dẫn submit URL lên Google nhanh chóng 2022</td><td>~2.400</td><td class="xau">ghi 2022 trên tiêu đề</td><td class="xau">Không — ghi “Nguồn: Đỗ Anh Việt GTV”</td><td class="xau">Không</td><td>0</td></tr>
+</tbody></table></div>
+<div class="note"><b>Ba điểm đập vào mắt ngay từ bảng này:</b>
+<ul style="margin:8px 0 0"><li><b>Không bài nào có bảng.</b> 0/6. Toàn bộ là chữ chạy dài — trong khi đây là chủ đề cực kỳ hợp bảng (cách nào × dùng khi nào × mất bao lâu).</li>
+<li><b>Hai bài đang ở trên top với nội dung từ 2020 và 2022.</b> Chủ đề này Google đã đổi luật chơi mấy lần từ đó.</li>
+<li><b>Chỉ 3/6 bài có mục hỏi đáp</b>, dù đây là chủ đề người đọc có rất nhiều câu hỏi phụ.</li></ul></div>
+
+<h3>B2. Phân tích search intent — từng bài một</h3>
+<p>Đây là phần Trang yêu cầu riêng. Với mỗi bài tôi chấm: bài đó <b>thật sự đang phục vụ intent nào</b>, có khớp với từ khóa “cách submit URL lên Google” không, mạnh yếu ở đâu — mọi nhận xét đều có câu trích từ chính bài đó làm bằng.</p>
+
+<h4>▶ Bài 1 — mona.media</h4>
+<div class="bang-cuon"><table><tbody>
+<tr><th style="width:170px">Dàn ý</th><td>Là gì → Tại sao → Khi nào → Mất bao lâu → <b>4 cách submit</b> → Các cách khác → Hỏi đáp → Về MONA</td></tr>
+<tr><th>Intent bài này thật sự phục vụ</th><td><b>Tra khái niệm trước, hướng dẫn sau.</b> Phải cuộn qua 4 mục lý thuyết mới tới bước đầu tiên. Phần cuối chuyển hẳn sang intent <b>bán dịch vụ SEO</b>.</td></tr>
+<tr><th>Khớp với từ khóa?</th><td class="vang">Một nửa. Có đủ các bước, nhưng đặt sai chỗ và trộn quảng cáo.</td></tr>
+<tr><th class="tot">Mạnh</th><td>• Bài duy nhất nêu đúng mốc lịch sử quan trọng: <i>“Từ 25/7/2018, Google đã chính thức khai tử tính năng Submit URL Google”</i> — giải thích được vì sao người đọc tìm mãi không ra công cụ cũ.<br>• Có hộp tác giả thật, ghi rõ chức danh.<br>• Hỏi đáp có <b>1 câu đắt nhất trong cả 7 bài</b>: <i>“Vì sao đã submit website rồi nhưng vẫn chưa lên top?”</i> — chạm đúng hiểu nhầm phổ biến nhất.</td></tr>
+<tr><th class="xau">Yếu</th><td>• Chèn một video <b>hoàn toàn lạc đề</b> giữa bài: <i>“Anh em muốn biết khách truy cập website click ở đâu, vì sao họ rời đi…”</i> — không liên quan gì đến submit URL.<br>• Bán hàng thẳng giữa bài: <i>“Nhanh tay LIÊN HỆ NGAY với MONA qua hotline 1900 636 648”</i>.<br>• Số liệu <i>“trung bình Google tốn khoảng 23 tiếng… giảm xuống còn khoảng 15 phút”</i> ghi “Theo HubSpot” nhưng <b>không dẫn link nguồn</b>.<br>• Dạy “Cách 3: Gửi URL cho Google hàng loạt bằng Blogger” — mẹo lách, không phải cách chính thức.</td></tr>
+<tr><th>Nỗi đau đã gỡ</th><td>“Bấm ở đâu?” · “Tôi submit rồi sao chưa lên top?” · “Sitemap báo không thể tìm nạp thì làm sao?”</td></tr>
+<tr><th>Nỗi đau <b>chưa</b> gỡ</th><td>“Submit rồi mà vẫn không được index thì kiểm tra gì?” · “Mỗi ngày submit được bao nhiêu URL?” · “Khi nào thì mới đáng lo?”</td></tr>
+</tbody></table></div>
+
+<h4>▶ Bài 2 — vietnix.vn</h4>
+<div class="bang-cuon"><table><tbody>
+<tr><th style="width:170px">Dàn ý</th><td>Điểm chính cần nắm → Là gì → Lý do → Mất bao lâu → <b>5 cách submit</b> → 8 yếu tố tác động tốc độ index → Cách kiểm tra → Khắc phục khi không index → Mẹo tăng tốc → Hosting Vietnix → Hỏi đáp</td></tr>
+<tr><th>Intent bài này thật sự phục vụ</th><td><b>Bài tổng hợp “all-in-one”.</b> Ôm tất cả mọi intent quanh chữ index. Đây là bài đầy đủ nhất về phạm vi — nhưng cũng là bài <b>loãng nhất so với ý định “cách”</b>.</td></tr>
+<tr><th>Khớp với từ khóa?</th><td class="vang">Rộng hơn từ khóa rất nhiều. Người chỉ cần biết bấm ở đâu phải bơi qua ~4.400 chữ.</td></tr>
+<tr><th class="tot">Mạnh</th><td>• <b>Bài duy nhất có hộp “Điểm chính cần nắm” đầu bài</b> — tóm tắt 11 mục cho người đọc vội.<br>• Hỏi đáp 6 câu, <b>có hai câu chính xác và đáng giá nhất trong cả đợt khảo sát</b>: <i>“Google có còn hỗ trợ công cụ Submit URL trực tiếp như trước không? — Không, Google đã ngừng công cụ submit URL công khai”</i> và <i>“việc submit URL không đảm bảo rằng trang web của bạn sẽ được lập chỉ mục hoặc xếp hạng cao hơn”</i>.<br>• Có hẳn một mục “Khắc phục tình trạng URL không được Google index” — 1/2 bài có.</td></tr>
+<tr><th class="xau">Yếu</th><td>• <b>Hướng dẫn 7 bước cài Google Indexing API cho bài blog thường</b> — trái với tài liệu chính thức của Google. Xem mục D1.<br>• Khẳng định <i>“Dùng Google Publisher Center được đánh giá là cách để Google index nhanh nhất hiện nay… chỉ trong khoảng 5 phút”</i> — <b>“được đánh giá” bởi ai không nói</b>, và Publisher Center là công cụ dành cho báo chí đăng ký Google News, không phải cho website thường.<br>• Tiêu đề ghi “5 cách” nhưng <b>mở đầu mục lại viết “dưới đây là 4 cách”</b> — lỗi đếm ngay trong bài.<br>• Chèn bán hosting/VPS <b>3 lần</b>, trong đó có một lần cắt ngang giữa hai mục kiến thức.</td></tr>
+<tr><th>Nỗi đau đã gỡ</th><td>Gần như tất cả — trừ “làm sao biết cách nào hợp với tôi”.</td></tr>
+<tr><th>Nỗi đau <b>chưa</b> gỡ</th><td>“5 cách này cách nào dành cho tôi?” — bài liệt kê ngang hàng, không xếp ưu tiên, không nói cách nào là chính thức và cách nào là mẹo.</td></tr>
+</tbody></table></div>
+
+<h4>▶ Bài 3 — ematicsolutions.com</h4>
+<div class="bang-cuon"><table><tbody>
+<tr><th style="width:170px">Dàn ý</th><td>Là gì → Tại sao quan trọng → <b>Index là gì</b> → Khi nào cần → Mất bao lâu → 8 mục ngắn (GSC, sitemap, robots.txt, tốc độ, liên kết, Fetch as Google, mạng xã hội, di động) → Kết luận</td></tr>
+<tr><th>Intent bài này thật sự phục vụ</th><td><b>Giới thiệu khái niệm để dẫn vào dịch vụ.</b> Toàn bộ 8 mục “cách” chỉ dài 2–4 câu mỗi mục, không mục nào có bước bấm cụ thể.</td></tr>
+<tr><th>Khớp với từ khóa?</th><td class="xau">Không khớp. Tiêu đề hứa “Hướng dẫn… Chuẩn và Nhanh Chóng” nhưng bài không có một bước nào để làm theo.</td></tr>
+<tr><th class="tot">Mạnh</th><td>• Câu mở bài chạm đúng cảm giác của người đọc: <i>“Một công việc tưởng chừng là nhỏ trong SEO, tuy nhiên sẽ mang đến lợi ích lớn cho website”</i>.<br>• Nêu được một trường hợp các bài khác bỏ qua: <i>“Đặc biệt với trường hợp tối ưu hoá nội dung SEO, tức là làm mới nội dung cũ trên cùng 1 URL”</i>.</td></tr>
+<tr><th class="xau">Yếu</th><td>• <b>Hướng dẫn dùng công cụ đã bị Google bỏ từ năm 2019</b>: <i>“Google cung cấp công cụ ‘Fetch as Google’ trong Google Search Console”</i> — tính năng này thuộc Search Console bản cũ, đã được thay bằng URL Inspection.<br>• Dàn ý lộn xộn: giải thích <b>“Index là gì” sau khi đã dùng từ “index” suốt 4 mục đầu</b>, và tự thú nhận: <i>“Nãy giờ chúng ta cũng đã đi qua khá nhiều từ Index, vậy Index là gì?”</i>.<br>• Bài mỏng nhất nhóm (~1.500 chữ phần thân), kết bằng chào bán dịch vụ.<br>• Số HubSpot ghi <i>“trung bình 1375 phút ~ 23 tiếng… giảm xuống chỉ còn 14 phút”</i> — <b>vênh với con số 15 phút của bài Mona</b>, cả hai đều không dẫn link.</td></tr>
+<tr><th>Nỗi đau đã gỡ</th><td>“Submit URL là gì” · “Sửa bài cũ có cần submit lại không”.</td></tr>
+<tr><th>Nỗi đau <b>chưa</b> gỡ</th><td>Toàn bộ phần thao tác. Không một ảnh chụp màn hình bước nào.</td></tr>
+</tbody></table></div>
+
+<h4>▶ Bài 4 — brandsvietnam.com <span class="xau">(không đọc được)</span></h4>
+<p class="canh">Tôi không mở được bài này nên <b>không chấm, không đoán nội dung</b>. Đã thử 6 cách, đều bị tường lửa Cloudflare trả lỗi 403. Chi tiết ở mục J — có cách để Trang giúp tôi lấy nội dung bài này trong 1 phút nếu cần.</p>
+
+<h4>▶ Bài 5 — imta.edu.vn</h4>
+<div class="bang-cuon"><table><tbody>
+<tr><th style="width:170px">Dàn ý</th><td>Là gì → Cơ chế hoạt động → <b>Còn hiệu quả không?</b> → Tại sao nên submit → Mất bao lâu → Hướng dẫn bằng GSC → Mẹo tăng tốc → Hỏi đáp → Kết luận</td></tr>
+<tr><th>Intent bài này thật sự phục vụ</th><td><b>Trấn an người đang hoài nghi.</b> Đây là bài duy nhất nhận ra người đọc có một câu hỏi ẩn — <i>“làm cái này có ích gì không hay mất công”</i> — và dành hẳn một mục trả lời.</td></tr>
+<tr><th>Khớp với từ khóa?</th><td class="vang">Khớp về góc nhìn, nhưng <b>phần “cách” quá mỏng</b> — chỉ khoảng 2 đoạn cho cả hai thao tác.</td></tr>
+<tr><th class="tot">Mạnh</th><td>• <b>Bài thật thà nhất trong 6 bài.</b> Nói thẳng: <i>“submit URL không phải là ‘phép màu’ đảm bảo trang của bạn sẽ ngay lập tức lên top”</i>.<br>• Bài duy nhất nêu <b>giới hạn số lượng mỗi ngày</b>: <i>“Google giới hạn 10-15 yêu cầu index/ngày qua Search Console”</i> — thông tin rất thực dụng mà 5 bài kia bỏ qua.<br>• Bài duy nhất nói rõ <b>ai cần và ai không cần</b>: <i>“với các website lớn… việc index tự nhiên đã đủ nhanh, nên submit URL không tạo ra khác biệt lớn”</i>.<br>• Bài duy nhất nêu lý do <b>chống sao chép nội dung</b>: <i>“nếu nội dung website của bạn chất lượng thì dễ bị đối thủ copy và submit trước bạn”</i>.</td></tr>
+<tr><th class="xau">Yếu</th><td>• Trích John Mueller — người phát ngôn của Google — nhưng <b>không dẫn link, không ghi nói ở đâu, nói khi nào</b>: <i>“John Mueller từng chia sẻ rằng thời gian index dao động từ vài giờ đến vài tuần”</i>.<br>• Con số <i>“website có Sitemap tốt… chỉ mất trung bình 14 phút… submit URL có thể đẩy nhanh còn 5-10 phút”</i> ghi “Theo các thống kê” — <b>không nói thống kê nào</b>.<br>• Chèn 3 dòng bán khóa học ngay sau mục đầu tiên.<br>• Không có mục xử lý khi không được index.<br>• Có lỗi chính tả ngay trong phần kết: <i>“sớm xuất hiện trên nGoogl”</i>.</td></tr>
+<tr><th>Nỗi đau đã gỡ</th><td>“Làm cái này có đáng không?” · “Một ngày được bao nhiêu URL?” · “Không submit thì Google có tự index không?”</td></tr>
+<tr><th>Nỗi đau <b>chưa</b> gỡ</th><td>“Bấm cụ thể chỗ nào” (thiếu ảnh) · “Submit rồi vẫn không được thì kiểm tra gì”.</td></tr>
+</tbody></table></div>
+
+<h4>▶ Bài 6 — toponseek.com</h4>
+<div class="bang-cuon"><table><tbody>
+<tr><th style="width:170px">Dàn ý</th><td>Cách gửi trang web → 2 cách có thể dùng → Submit bằng sitemap (3 bước) → Submit bằng yêu cầu thu thập dữ liệu (3 bước) → Submit rồi mà vẫn không xếp hạng?</td></tr>
+<tr><th>Intent bài này thật sự phục vụ</th><td><b>Hướng dẫn thao tác thuần túy.</b> Về cấu trúc, đây là bài <b>bám intent “cách” sát nhất</b>: không giảng khái niệm, vào thẳng thao tác từ mục đầu tiên.</td></tr>
+<tr><th>Khớp với từ khóa?</th><td class="tot">Cấu trúc khớp nhất nhóm — <span class="xau">nhưng chất lượng câu chữ phá hỏng.</span></td></tr>
+<tr><th class="tot">Mạnh</th><td>• <b>Bài duy nhất chỉ dạy hai cách chính thức của Google</b> (sitemap và yêu cầu lập chỉ mục), không dạy mẹo lách, không giới thiệu công cụ bên thứ ba.<br>• Có lời khuyên tốt về website lớn: <i>“Nếu bạn có một trang web lớn hơn, cách tốt nhất là tạo một số sơ đồ trang web khác nhau”</i>.<br>• Nói thật về thời gian: <i>“Dự kiến sẽ mất vài ngày đến vài tuần để trang web của bạn xuất hiện trong chỉ mục của Google”</i>.</td></tr>
+<tr><th class="xau">Yếu</th><td>• <b>Tiêu đề tự đá chính mình.</b> Tiêu đề hứa “60 giây”, mô tả hứa <i>“Xem ngay 3 cách kết quả trong 60 giây!”</i> — nhưng trong bài lại viết <i>“vài ngày đến vài tuần”</i>. Mô tả nói “3 cách”, bài chỉ có 2.<br>• <b>Bài dịch máy, chưa biên tập lại.</b> Đọc không ra tiếng Việt: <i>“Một sitemap là phổ biến cách mà hầu hết để thêm nhiều URL cho Google”</i> · <i>“một số người dùng sẽ đề cập đến yêu cầu thu thập dữ liệu như thực hiện mang lại”</i> · gọi ngày gửi sitemap là <i>“Ngày nộp hồ sơ”</i>.<br>• Chèn một liên kết hoàn toàn lạc đề ngay đầu bài: <i>“&gt;&gt;Xem thêm: OOP là gì? Lý giải đơn giản về lập trình hướng đối tượng”</i>.<br>• Tác giả là “TOS Editor” — bút danh toà soạn, không phải người thật.</td></tr>
+<tr><th>Nỗi đau đã gỡ</th><td>“Bấm ở đâu” · “Website lớn thì chia sitemap sao” · “Submit rồi sao chưa lên trang nhất”.</td></tr>
+<tr><th>Nỗi đau <b>chưa</b> gỡ</th><td>“Không được index thì làm gì” · “Một ngày submit được bao nhiêu” · và — trớ trêu — <b>chính lời hứa “60 giây” ở tiêu đề</b>.</td></tr>
+</tbody></table></div>
+
+<h4>▶ Bài 7 — sites.google.com/view/dichvusocialentitysonha</h4>
+<div class="bang-cuon"><table><tbody>
+<tr><th style="width:170px">Dàn ý</th><td>I. Là gì / khi nào / 3 lý do / <b>4 cách submit</b> → II. Khắc phục không được index + cách kiểm tra → III. <b>6 “thủ thuật” tăng tốc</b></td></tr>
+<tr><th>Intent bài này thật sự phục vụ</th><td><b>Trang vệ tinh bán dịch vụ.</b> Trang Google Sites miễn phí, hai lần chèn quảng cáo viết hoa giữa bài: <i>“THAM KHẢO: DỊCH VỤ GOOGLE NEW INDEX TỰ ĐỘNG BÀI VIẾT”</i>, <i>“THAM KHẢO: Dịch vụ Entity tăng trust tổng thể website”</i>.</td></tr>
+<tr><th>Khớp với từ khóa?</th><td class="vang">Có đủ các bước, nhưng <b>phần III dẫn người đọc đi sai đường.</b></td></tr>
+<tr><th class="tot">Mạnh</th><td>• <b>Mở bài mạnh nhất trong 6 bài</b>, viết ở ngôi thứ nhất và chạm thẳng nỗi lo: <i>“Nếu công cụ tìm kiếm không biết đến Website bạn, cơ hội xếp hạng sẽ bằng 0”</i> và <i>“Nếu bạn tiếp tục đọc bài viết này, mình đoán bạn là một trong số những doanh nghiệp gặp vấn đề tương tự”</i>.<br>• Bài duy nhất <b>đưa đoạn mã cụ thể cần tìm và xóa</b> khi bị chặn: <i>“&lt;meta name = ‘robots’ content = ‘noindex’&gt;”</i>.<br>• Có giải thích ưu và nhược cho từng cách, kèm mốc thời gian: <i>“Nhược điểm… sẽ là mất tầm 2-3 tuần cho mỗi lượt cào tổng thể”</i>.</td></tr>
+<tr><th class="xau">Yếu</th><td>• <b>Khuyên mua backlink</b> — trái thẳng chính sách chống spam của Google: <i>“#3: Mua các backlink dofollow chất lượng”</i>. Xem mục D3.<br>• <b>Bịa một con số không tồn tại</b>: <i>“Ví dụ website của bạn có lượng crawl hàng tháng là 70 URLs, thì trong tháng đó khi bạn dùng hết 70 URLs, URL thứ 71 trở đi phải chờ đến tháng sau”</i> — Google không công bố hạn mức nào như vậy, và ngân sách thu thập dữ liệu không hoạt động theo tháng.<br>• Khẳng định <i>“Submit URL giúp quá trình index nhanh chóng gấp trăm lần”</i> — không căn cứ.<br>• Tiêu đề ghi <b>2022</b>, chỉ đường tới công cụ <i>robots-testing-tool</i> mà Google đã ngừng.<br>• Không có tác giả — cuối bài ghi <i>“Nguồn: Đỗ Anh Việt GTV”</i>, tức là <b>chép lại từ nơi khác</b>.</td></tr>
+<tr><th>Nỗi đau đã gỡ</th><td>“Không được index thì làm gì” (tốt nhất nhóm) · “Kiểm tra đã index chưa” · “Website nhiều trang con thì sao”.</td></tr>
+<tr><th>Nỗi đau <b>chưa</b> gỡ</th><td>“Cách nào an toàn, cách nào rủi ro” — bài xếp mua backlink ngang hàng với dùng Search Console.</td></tr>
+</tbody></table></div>
+
+<h3>B3. Bảng đối chiếu intent — ai đang phục vụ ai</h3>
+<div class="bang-cuon"><table><thead><tr><th>Bài</th><th>Mục đầu tiên của bài</th><th>Intent thật sự phục vụ</th><th>Khớp “cách submit”?</th></tr></thead><tbody>
+<tr><td>1 · Mona</td><td>Submit URL Google là gì?</td><td>Tra khái niệm → bán dịch vụ SEO</td><td class="vang">Một nửa</td></tr>
+<tr><td>2 · Vietnix</td><td>Submit URL là gì?</td><td>Tổng hợp mọi thứ về index → bán hosting</td><td class="vang">Rộng quá mức</td></tr>
+<tr><td>3 · Ematic</td><td>Submit URL là gì?</td><td>Giới thiệu khái niệm → bán dịch vụ</td><td class="xau">Không</td></tr>
+<tr><td>4 · Brands Vietnam</td><td colspan="3" class="xau">Không đọc được — không chấm</td></tr>
+<tr><td>5 · IMTA</td><td>Submit URL Google là gì?</td><td>Trấn an người hoài nghi → bán khóa học</td><td class="vang">Đúng góc, thiếu thao tác</td></tr>
+<tr><td>6 · TopOnSeek</td><td>Cách gửi trang web của bạn đến Google</td><td class="tot">Hướng dẫn thao tác thuần túy</td><td class="tot">Có — nhưng văn dịch máy</td></tr>
+<tr><td>7 · Google Sites</td><td>Submit URL là gì?</td><td>Trang vệ tinh bán dịch vụ index</td><td class="vang">Có bước, nhưng dẫn sai đường</td></tr>
+</tbody></table></div>
+<p><b>Đọc ra từ bảng này:</b> 5/6 bài mở màn bằng định nghĩa. Bài duy nhất vào thẳng thao tác là TopOnSeek — và bài đó lại là bản dịch máy từ 2020. <b>Tức là chỗ trống rõ ràng nhất: một bài tiếng Việt sạch, vào thẳng thao tác ngay từ màn hình đầu tiên.</b></p>
+<h2>C. Bảng khoảng trống — chỗ nào chen lên được</h2>
+<p>Mỗi dòng là một câu hỏi thật trong đầu người vừa đăng bài xong. ✅ là bài có trả lời tử tế, ◐ là có nhưng sơ sài, ❌ là không có. Cột 4 bỏ trống vì không đọc được bài đó.</p>
+<div class="bang-cuon"><table><thead><tr><th>Câu hỏi trong đầu người đọc</th><th>1</th><th>2</th><th>3</th><th>5</th><th>6</th><th>7</th><th>Kết luận</th></tr></thead><tbody>
+<tr><td>“Bấm ở đâu để gửi 1 bài?”</td><td>✅</td><td>✅</td><td>❌</td><td>◐</td><td>✅</td><td>✅</td><td>Cả hàng đều có — bắt buộc phải có, phải viết khác đi</td></tr>
+<tr><td>“Gửi sitemap khác gì gửi 1 URL?”</td><td>◐</td><td>◐</td><td>❌</td><td>◐</td><td>✅</td><td>✅</td><td>Có nhưng rời rạc, <b>không bài nào đặt cạnh nhau cho dễ so</b></td></tr>
+<tr><td>“Mất bao lâu thì được index?”</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td class="xau">Cả hàng đều trả lời — <b>nhưng 6 con số khác nhau và không ai dẫn nguồn Google</b></td></tr>
+<tr><td>“Submit rồi có chắc được index không?”</td><td>❌</td><td>✅</td><td>❌</td><td>✅</td><td>◐</td><td>❌</td><td>2/6 nói thật</td></tr>
+<tr><td>“Submit đi submit lại có nhanh hơn không?”</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><b class="vang">KHOẢNG TRỐNG VÀNG</b> — Google đã trả lời thẳng, không ai dẫn</td></tr>
+<tr><td>“Một ngày submit được bao nhiêu URL?”</td><td>◐</td><td>❌</td><td>❌</td><td>✅</td><td>❌</td><td>◐</td><td>Chỉ 1/6 đưa số, nhưng không dẫn nguồn</td></tr>
+<tr><td>“Submit rồi vẫn không được index thì kiểm tra gì?”</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td><td>2/6 — đây là nửa sau của intent, phần lớn bỏ qua</td></tr>
+<tr><td>“Cách nào là chính thức, cách nào là mẹo?”</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>◐</td><td>❌</td><td><b class="vang">KHOẢNG TRỐNG VÀNG</b> — mẹo và cách chính thức bị xếp ngang hàng</td></tr>
+<tr><td>“Cách nào làm tôi bị phạt?”</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td class="xau">❌⚠</td><td><b class="vang">KHOẢNG TRỐNG VÀNG</b> — bài 7 còn <i>khuyên</i> làm việc bị cấm</td></tr>
+<tr><td>“Website mới và website cũ có làm giống nhau không?”</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>Chỉ IMTA nói — và nói rất đúng</td></tr>
+<tr><td>“Tôi không dùng WordPress thì sao?”</td><td>❌</td><td>❌</td><td>❌</td><td>◐</td><td>❌</td><td>❌</td><td><b class="vang">KHOẢNG TRỐNG VÀNG</b></td></tr>
+<tr><td>“Tôi đặt backlink ở trang người khác, submit sao?”</td><td>❌</td><td>◐</td><td>❌</td><td>❌</td><td>❌</td><td>◐</td><td>Chỉ nhắc thoáng, không hướng dẫn</td></tr>
+<tr><td>Có bảng so sánh các cách</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><b class="vang">KHOẢNG TRỐNG VÀNG</b> — 0/6 bài có bảng</td></tr>
+<tr><td>Có dẫn link tài liệu chính thức của Google</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><b class="vang">KHOẢNG TRỐNG VÀNG</b> — trắng cả hàng</td></tr>
+<tr><td>Có hộp tác giả là người trong nghề</td><td>✅</td><td>◐</td><td>◐</td><td>◐</td><td>❌</td><td>❌</td><td>Chỉ Mona có hộp tác giả đầy đủ</td></tr>
+</tbody></table></div>
+
+<h2>D. Đối chiếu với tài liệu chính thức của Google — chỗ đối thủ đang sai</h2>
+<p>Đây là phần tôi tự đi xa hơn yêu cầu một chút. Sau khi đọc hết 6 bài, tôi mở thẳng tài liệu chính thức của Google để đối chiếu. Kết quả: <b>có bốn điểm đối thủ đang dạy sai hoặc dạy thứ đã chết.</b> Đây là vốn liếng lớn nhất của bài mình — không bài nào trong 6 bài dẫn một dòng nào từ tài liệu Google.</p>
+
+<h3>D1. Indexing API — Vietnix dạy 7 bước cho việc Google nói là không được dùng</h3>
+<div class="bang-cuon"><table><tbody>
+<tr><th style="width:150px">Đối thủ nói</th><td>Vietnix dành <b>7 bước, chiếm gần 1/4 bài</b>, hướng dẫn cài Google Indexing API cho website WordPress thông thường: <i>“5. Cách index bằng Google Index API cho website… Bước 6: Cấu hình instant indexing trong Plugin Rank Math”</i>.</td></tr>
+<tr><th>Google nói</th><td class="quote" style="border:0">“The Indexing API can only be used to crawl pages with either <b>JobPosting</b> or <b>BroadcastEvent</b> embedded in a VideoObject.”<br><span style="font-size:13px">— Tạm dịch: Indexing API <b>chỉ dùng được</b> cho trang tin tuyển dụng hoặc trang sự kiện phát trực tiếp. <i>Nguồn: developers.google.com/search/apis/indexing-api/v3/quickstart</i></span></td></tr>
+<tr><th class="xau">Hệ quả</th><td>Người đọc bỏ ra nửa buổi làm theo 7 bước — <b>phải đăng ký Google Cloud và cần thẻ Visa</b> (chính bài ghi: <i>“Bạn cần có thẻ Visa để có thể add vào mục thanh toán”</i>) — cho một việc không dành cho họ.</td></tr>
+<tr><th class="tot">Bài mình làm gì</th><td>Nói thật trong một bảng: Indexing API dành cho ai, không dành cho ai, kèm link tài liệu Google. <b>Một ô bảng thay cho 7 bước sai.</b></td></tr>
+</tbody></table></div>
+
+<h3>D2. Các “công cụ index” — cổng ping của Google đã chết từ cuối 2023</h3>
+<div class="bang-cuon"><table><tbody>
+<tr><th style="width:150px">Đối thủ nói</th><td>Mona: <i>“Cách 4: Submit URL Google bằng công cụ index — có rất nhiều công cụ… như My Pagerank, Indexking”</i>. Vietnix: <i>“Lar Index, Indexking… có thể giúp bạn submit hàng nghìn URL”</i>. Bài 7: <i>“Elite Link Indexer, Instant Link Indexer, Express Indexer”</i>.</td></tr>
+<tr><th>Google nói</th><td class="quote" style="border:0">“<b>we’re deprecating our support for sitemaps ping and the endpoint will stop functioning in 6 months</b>… the HTTP requests (‘pings’) to the deprecated REST endpoint will result in a <b>404</b> error.”<br><span style="font-size:13px">— Thông báo ngày 26/6/2023, tức cổng này ngừng chạy từ khoảng cuối 2023. <i>Nguồn: developers.google.com/search/blog/2023/06/sitemaps-lastmod-ping</i></span></td></tr>
+<tr><th class="xau">Hệ quả</th><td>Phần lớn các “công cụ index” đời cũ hoạt động bằng cách gọi đúng cái cổng này. Google còn nói thẳng lý do bỏ: <i>“the vast majority of the submissions lead to spam”</i> — phần lớn các lượt gửi qua cổng đó là spam. <b>Ba bài đối thủ đang giới thiệu đích danh 6 công cụ mà không kiểm tra lại.</b></td></tr>
+<tr><th class="tot">Bài mình làm gì</th><td>Một ô cảnh báo ngắn, kèm cách thay thế đúng: khai báo sitemap trong <b>robots.txt</b> — cách Google đang khuyến nghị và không bài nào trong 6 bài nhắc tới.</td></tr>
+</tbody></table></div>
+
+<h3>D3. Mua backlink để được index — bài 7 khuyên làm việc Google cấm</h3>
+<div class="bang-cuon"><table><tbody>
+<tr><th style="width:150px">Đối thủ nói</th><td>Bài 7 đặt hẳn một đề mục: <i>“#3: Mua các backlink dofollow chất lượng… không những được index nhanh mà còn gia tăng sức mạnh web”</i>.</td></tr>
+<tr><th>Google nói</th><td class="quote" style="border:0">“<b>Buying or selling links for ranking purposes.</b> This includes: Exchanging money for links, or posts that contain links” — nằm trong mục <b>Link spam</b> của chính sách chống spam. Liên kết trả tiền chỉ hợp lệ khi gắn <i>rel=“nofollow”</i> hoặc <i>rel=“sponsored”</i> — mà gắn như vậy thì không còn là dofollow nữa.<br><span style="font-size:13px"><i>Nguồn: developers.google.com/search/docs/essentials/spam-policies</i></span></td></tr>
+<tr><th class="xau">Hệ quả</th><td>Bài này đang khuyên người đọc <b>bỏ tiền ra để làm một việc có thể bị Google phạt</b> — và trớ trêu là, phạt thì chính là bị gỡ khỏi chỉ mục, đúng thứ người đọc đang muốn tránh.</td></tr>
+<tr><th class="tot">Bài mình làm gì</th><td>Một mục <b>“Ba cách đừng làm”</b> — nói rõ cách nào rủi ro, vì sao, dẫn chính sách Google. Không bài nào có mục này.</td></tr>
+</tbody></table></div>
+
+<h3>D4. Mốc thời gian — sáu bài sáu con số, không ai dẫn Google</h3>
+<div class="bang-cuon"><table><thead><tr><th>Bài</th><th>Hứa bao lâu</th><th>Dẫn nguồn?</th></tr></thead><tbody>
+<tr><td>1 · Mona</td><td>“khoảng 15 phút nếu bạn bỏ ra một chút thời gian để submit”</td><td class="xau">Ghi “Theo HubSpot”, không có link</td></tr>
+<tr><td>2 · Vietnix</td><td>“vài phút đến vài ngày” · Publisher Center “chỉ trong khoảng 5 phút”</td><td class="xau">Không</td></tr>
+<tr><td>3 · Ematic</td><td>“1375 phút ~ 23 tiếng… giảm xuống chỉ còn 14 phút”</td><td class="xau">Ghi “Theo nghiên cứu của HubSpot”, không có link</td></tr>
+<tr><td>5 · IMTA</td><td>“trung bình 14 phút… đẩy nhanh còn 5-10 phút”</td><td class="xau">Ghi “Theo các thống kê”</td></tr>
+<tr><td>6 · TopOnSeek</td><td>Tiêu đề: <b>“60 giây”</b> · Trong bài: “vài ngày đến vài tuần”</td><td class="xau">Không — và tự mâu thuẫn</td></tr>
+<tr><td>7 · Google Sites</td><td>“nhanh chóng gấp trăm lần” · sitemap “2-3 tuần”</td><td class="xau">Không</td></tr>
+<tr style="background:#EAF6F0"><td><b>Tài liệu Google</b></td><td><b>“Crawling can take anywhere from a few days to a few weeks.”</b><br>— việc thu thập dữ liệu có thể mất từ vài ngày đến vài tuần</td><td class="tot">Có — trang “Ask Google to recrawl your URLs”</td></tr>
+</tbody></table></div>
+<p>Và hai câu nữa từ cùng trang tài liệu đó, <b>không bài nào trong 6 bài nhắc tới</b>:</p>
+<p class="quote">“<b>Requesting a crawl does not guarantee that inclusion in search results will happen instantly or even at all.</b>” — yêu cầu thu thập dữ liệu không đảm bảo trang sẽ xuất hiện, kể cả về sau.<br><br>“<b>requesting a recrawl multiple times for the same URL won’t get it crawled any faster</b>” — bấm yêu cầu nhiều lần cho cùng một URL <b>không làm nó nhanh hơn</b>.</p>
+<div class="note">Câu thứ hai rất đáng giá. Thói quen phổ biến của người mới làm SEO là <b>bấm “Yêu cầu lập chỉ mục” liên tục vì sốt ruột</b> — vừa tốn lượt trong hạn mức ngày, vừa không được gì. <b>Không bài nào trong 6 bài nói điều này.</b> Đây là thứ bài mình nên đưa lên một hộp nổi bật.</div>
+<h2>E. Sáu khoảng trống vàng — chỗ bài mình thắng được</h2>
+<div class="bang-cuon"><table><thead><tr><th style="width:30px">#</th><th>Khoảng trống</th><th>Vì sao đây là cơ hội</th></tr></thead><tbody>
+<tr><td>1</td><td><b>Thao tác đặt đầu bài, không phải định nghĩa</b></td><td>5/6 bài mở bằng “Submit URL là gì?”. Người gõ chữ “cách” đang vội. Một hộp <b>“Làm ngay trong 2 phút”</b> đặt trước mọi lý thuyết là khác biệt thấy ngay từ màn hình đầu tiên.</td></tr>
+<tr><td>2</td><td><b>Dẫn tài liệu chính thức của Google</b></td><td>0/6 bài dẫn một dòng nào. Các con số thời gian thì sáu bài sáu kiểu. Bài trích thẳng ba câu từ trang tài liệu Google, có link, là bài đáng tin nhất trong cả nhóm.</td></tr>
+<tr><td>3</td><td><b>Mục “Ba việc đừng làm”</b></td><td>Không bài nào cảnh báo. Ngược lại, ba bài đang <i>dạy</i> những cách đã chết hoặc bị cấm. Đây là mục có giá trị thực dụng cao nhất và <b>chỉ bài mình có</b>.</td></tr>
+<tr><td>4</td><td><b>Bảng so sánh các cách</b></td><td>0/6 bài có bảng. Một bảng “cách nào × dùng khi nào × mất bao lâu × giới hạn” là thứ Google hay trích lên hộp trả lời nhanh.</td></tr>
+<tr><td>5</td><td><b>Bảng chẩn đoán “submit rồi vẫn không được index”</b></td><td>Chỉ 2/6 bài đụng tới, và đều viết dạng đoạn văn. Đây là <b>nửa sau của intent</b> — người lo lắng cần nó hơn cả phần hướng dẫn.</td></tr>
+<tr><td>6</td><td><b>“Trường hợp của bạn là gì”</b></td><td>Website mới tinh, website cũ đăng bài mới, bài cũ vừa sửa, backlink đặt ở trang người khác, web không dùng WordPress — năm hoàn cảnh, năm cách làm khác nhau. Không bài nào tách ra.</td></tr>
+</tbody></table></div>
+
+<h2>F. Chủ đề xuyên suốt — đề xuất để Trang chốt</h2>
+<p>Một bài chỉ lên top bền khi có một góc riêng xuyên từ đầu đến cuối. Sau khi đọc 6 bài, đây là góc tôi đề nghị:</p>
+<p class="big">Bài này xuyên suốt là: <b>cách chính thức, mốc thời gian thật, và những cách đừng làm</b></p>
+<p>Lý do chọn trục này: cả 6 bài đối thủ đều đi theo hướng <i>“càng nhiều cách càng tốt”</i> — 4 cách, 5 cách, 6 thủ thuật — và xếp cách chính thức ngang hàng với mẹo lách, công cụ đã chết, thậm chí việc bị Google cấm. Người đọc đóng bốn tab lại vẫn không biết nên làm cái nào.</p>
+<p><b>Bài của mình đi ngược: ít cách hơn, nhưng mỗi câu đều chỉ ra được lấy từ đâu.</b> Hai cách chính thức — hướng dẫn đến nơi đến chốn. Ba cách đừng làm — nói rõ vì sao, dẫn chính sách Google. Một mốc thời gian duy nhất — của Google, không phải của ai khác.</p>
+<div class="note"><b>Cần Trang chốt trước khi tôi viết:</b> chọn trục này, hay Trang muốn trục khác? Tôi sẽ không đặt bút cho đến khi Trang gật — lần trước ở bài 90m² tôi đã viết trước khi Trang chốt, và đó là lỗi của tôi.</div>
+
+<h2>G. Outline đề xuất</h2>
+<p><b>Tiêu đề đề xuất:</b> Cách submit URL lên Google 2026: 2 cách chính thức và 3 cách đừng làm<br>
+<b>Mô tả đề xuất:</b> Hướng dẫn submit URL lên Google bằng Search Console, kèm mốc thời gian lấy từ tài liệu Google và bảng chẩn đoán khi submit rồi vẫn không được index.<br>
+<b>Độ dài mục tiêu:</b> 2.200 – 2.600 chữ — <b>ngắn hơn Vietnix gần một nửa</b>, vì đây là bài thao tác, dài là lỗi.<br>
+<b>Phải có:</b> 6 – 8 bảng · 8 – 10 ảnh chụp màn hình Search Console · hộp tác giả · mục nguồn tham khảo có link Google.</p>
+
+<div class="bang-cuon"><table><thead><tr><th style="width:44px">Mục</th><th>Nội dung</th><th>Dạng trình bày</th><th>Vì sao có mục này</th></tr></thead><tbody>
+<tr><td><b>Mở</b></td><td>3 câu. Chạm thẳng: đăng bài từ sáng, chiều tìm trên Google không thấy. Nói luôn bài này cho ai và có gì.</td><td>Đoạn ngắn</td><td>Không bài nào mở bằng hoàn cảnh cụ thể trừ bài 7</td></tr>
+<tr><td class="tot"><b>0</b></td><td><b>Hộp “Làm ngay trong 2 phút”</b> — 4 bước bấm, không giải thích gì thêm. Ai cần hiểu sâu đọc tiếp bên dưới.</td><td class="tot">Hộp nổi bật, đặt <b>trước</b> mục 1</td><td class="vang">Khoảng trống vàng 1 — khác biệt lớn nhất so với 6 bài</td></tr>
+<tr><td><b>1</b></td><td>Google đang hỗ trợ những cách nào — và cách nào dành cho bạn</td><td><b>Bảng</b>: cách × dùng khi nào × làm mất mấy phút × giới hạn × index nhanh hay chậm</td><td class="vang">Khoảng trống vàng 4 — 0/6 bài có bảng</td></tr>
+<tr><td><b>2</b></td><td>Cách 1: Gửi từng URL bằng công cụ Kiểm tra URL — 4 bước</td><td>4 bước đánh số, mỗi bước 1 ảnh chụp màn hình</td><td>Bắt buộc phải có. Viết ngắn hơn đối thủ, ảnh rõ hơn.</td></tr>
+<tr><td><b>3</b></td><td>Cách 2: Gửi sitemap — 3 bước. <b>Kèm cách khai báo sitemap trong robots.txt</b></td><td>3 bước có ảnh + 1 dòng mã mẫu</td><td class="vang">Phần robots.txt: <b>0/6 bài nhắc</b>, dù Google đang khuyến nghị</td></tr>
+<tr><td><b>4</b></td><td>Bao lâu thì được index?</td><td><b>Bảng mốc thời gian</b> + 3 câu trích nguyên văn từ tài liệu Google, có link</td><td class="vang">Khoảng trống vàng 2. Đối thủ hứa từ “60 giây” đến “2-3 tuần”, không ai dẫn nguồn</td></tr>
+<tr><td class="tot"><b>5</b></td><td><b>Ba cách đừng làm</b>: (a) mua backlink dofollow để được index — trái chính sách Google; (b) công cụ index đời cũ — cổng ping đã chết từ cuối 2023; (c) Indexing API cho bài blog thường — Google chỉ cho dùng với tin tuyển dụng và sự kiện trực tiếp</td><td><b>Bảng</b>: việc × vì sao đừng × làm gì thay thế, mỗi dòng có link tài liệu Google</td><td class="vang">Khoảng trống vàng 3 — mục độc nhất của bài</td></tr>
+<tr><td class="tot"><b>6</b></td><td><b>Submit rồi mà vẫn không được index — kiểm tra theo thứ tự này</b>: thẻ noindex · robots.txt chặn · canonical trỏ sang trang khác · trang trùng nội dung · nội dung quá mỏng · trang mồ côi không có liên kết nào trỏ tới · lỗi máy chủ khi bot ghé · bị phạt thủ công</td><td><b>Bảng chẩn đoán</b>: dấu hiệu trong Search Console × nguyên nhân × cách sửa</td><td class="vang">Khoảng trống vàng 5 — nửa sau của intent mà 4/6 bài bỏ qua</td></tr>
+<tr><td><b>7</b></td><td><b>Trường hợp của bạn là gì</b>: website mới tinh · website cũ đăng bài mới · bài cũ vừa sửa lại · đổi tên miền · backlink đặt ở trang người khác · web không dùng WordPress</td><td><b>Bảng</b>: hoàn cảnh × nên làm gì × không nên làm gì</td><td class="vang">Khoảng trống vàng 6</td></tr>
+<tr><td><b>8</b></td><td>Hỏi đáp — 8 câu, mỗi câu trả lời 2 – 3 dòng</td><td>Danh sách hỏi đáp</td><td>Chỉ 3/6 bài có mục này</td></tr>
+<tr><td><b>Cuối</b></td><td>Hộp tác giả (người thật, có chức danh) + mục nguồn tham khảo dẫn 4 link tài liệu Google đã dùng</td><td>Hộp + danh sách link</td><td>Chỉ 1/6 bài có hộp tác giả. 0/6 có mục nguồn.</td></tr>
+</tbody></table></div>
+
+<h3>G1. Tám câu hỏi đáp đề xuất</h3>
+<p>Tám câu này lấy từ chính những chỗ đối thủ bỏ trống hoặc trả lời sai:</p>
+<ol>
+<li>Submit URL có giúp bài lên top không? <i>(câu hiểu nhầm phổ biến nhất — chỉ Mona chạm tới)</i></li>
+<li>Bấm “Yêu cầu lập chỉ mục” nhiều lần có nhanh hơn không? <i>(Google trả lời thẳng — 0/6 bài dẫn)</i></li>
+<li>Một ngày submit được bao nhiêu URL?</li>
+<li>Không submit thì Google có tự tìm ra không?</li>
+<li>Sửa bài cũ có cần submit lại không?</li>
+<li>Google còn công cụ submit URL công khai như ngày xưa không?</li>
+<li>Các dịch vụ “index nhanh” trả phí có dùng được không?</li>
+<li>Website mới tinh thì làm gì trước?</li>
+</ol>
+
+<h3>G2. Ba điều phải giữ khi viết</h3>
+<ul>
+<li><b>Mọi con số đều phải có nguồn.</b> Đây là trục của cả bài. Không có nguồn thì bỏ con số đi, không được ghi “theo các thống kê” như đối thủ.</li>
+<li><b>Không hứa mốc thời gian ngoài tài liệu Google.</b> Không “60 giây”, không “nhanh gấp trăm lần”.</li>
+<li><b>Bài này là bài thao tác — dài là lỗi.</b> Đoạn nào dài quá bốn dòng thì gói thành bảng.</li>
+</ul>
+<h2>H. Những thứ tôi cần Trang bổ sung</h2>
+<p>Tôi không tự điền những thứ này. Thiếu thì tôi để trống trong bài và ghi rõ.</p>
+<div class="bang-cuon"><table><thead><tr><th style="width:30px">#</th><th>Cần gì</th><th>Để làm gì</th><th>Bắt buộc?</th></tr></thead><tbody>
+<tr><td>1</td><td><b>Ảnh chụp trang kết quả Google</b> cho từ khóa “cách submit url lên google”</td><td>Xem Google đang ưu tiên loại nội dung nào, có hộp trả lời nhanh không, có video không. Tôi không tự mở được trang kết quả Google.</td><td class="tot">Nên có</td></tr>
+<tr><td>2</td><td><b>Chốt chủ đề xuyên suốt ở mục F</b></td><td>Tôi không đặt bút cho đến khi Trang gật.</td><td class="xau">Bắt buộc</td></tr>
+<tr><td>3</td><td><b>Ảnh chụp màn hình Google Search Console</b> của một website thật — 8 – 10 ảnh, giao diện tiếng Việt</td><td>Đây là bài hướng dẫn thao tác, thiếu ảnh là hỏng. Tôi không đăng nhập được Search Console của công ty.</td><td class="xau">Bắt buộc</td></tr>
+<tr><td>4</td><td><b>Tên và chức danh người đứng tên bài</b></td><td>Hộp tác giả là điểm E-E-A-T 5/6 đối thủ đang trống. Tôi không tự đặt tên người.</td><td class="tot">Nên có</td></tr>
+<tr><td>5</td><td><b>Một ca thật của SEONGON</b>: một bài đã submit và mất bao lâu thì index, hoặc một lần gỡ lỗi không được index</td><td>Kinh nghiệm thật là thứ <b>không đối thủ nào có</b>. Một ca thật ăn đứt 6 bài kề.</td><td class="tot">Rất nên có</td></tr>
+<tr><td>6</td><td><b>Bài này đăng ở đâu</b> — blog SEONGON hay nơi khác</td><td>Để biết có trỏ link nội bộ sang bài nào được không, và giọng viết theo chuẩn nào.</td><td class="tot">Nên có</td></tr>
+</tbody></table></div>
+
+<h2>J. Việc tôi chưa làm được — nói thật</h2>
+<h3>J1. Bài Brands Vietnam không mở được</h3>
+<p>URL: <i>brandsvietnam.com/congdong/topic/338164-submit-url-la-gi-cach-submit-url-len-google-nhanh-2023</i></p>
+<p>Tường lửa Cloudflare của trang đó chặn máy chạy của tôi, trả về lỗi 403 (tức là “không cho vào”). Tôi đã thử <b>6 cách</b>:</p>
+<ol>
+<li>Mở bình thường như trình duyệt → 403</li>
+<li>Giả lập trình duyệt Chrome trên Windows với đầy đủ thông tin nhận dạng → 403</li>
+<li>Giả lập điện thoại Android, mở bản rút gọn cho di động → 403</li>
+<li>Giả lập bot của Bing → 403</li>
+<li>Giả lập đi từ Google sang (referer) → 403</li>
+<li>Mở bằng trình duyệt thật không giao diện → báo lỗi chứng chỉ bảo mật của máy chạy</li>
+</ol>
+<p><b>Nên tôi không chấm bài đó, và không đoán nội dung nó.</b> Cột số 4 trong mọi bảng đều để trống.</p>
+<div class="note"><b>Cách gỡ nếu Trang muốn có bài này:</b> Trang mở link đó trên máy mình, bôi đen toàn bộ bài, copy rồi dán vào khung chat cho tôi. Tôi sẽ chấm bổ sung và cập nhật lại các bảng. Mất của Trang khoảng một phút.<br><br>Nhưng tôi cũng nói thật: đây là bài đăng trên diễn đàn cộng đồng của Brands Vietnam, tiêu đề ghi <b>2023</b>. <b>Nó không ảnh hưởng tới kết luận của cả đợt phân tích</b> — sáu khoảng trống vàng ở mục E đều là những chỗ <i>không bài nào trong 6 bài có</i>, và ba điểm sai ở mục D đều đối chiếu trực tiếp với tài liệu Google chứ không phụ thuộc vào bài nào.</div>
+
+<h3>J2. Chưa có dữ liệu trang kết quả Google</h3>
+<p>Tôi không tự mở được trang kết quả Google từ máy chạy, nên bước 3 của quy trình (xem Google đang ưu tiên dạng nội dung nào) tôi để trống thay vì đoán. Mục A2 đã ghi rõ.</p>
+
+<h2>K. Tóm tắt — đọc mỗi mục này cũng đủ</h2>
+<ol>
+<li><b>Intent thật:</b> người vừa đăng bài, đang vội, muốn biết bấm ở đâu — chứ không muốn đọc định nghĩa.</li>
+<li><b>5/6 bài đối thủ mở màn bằng “Submit URL là gì?”</b> — cả hàng đang trả lời chệch trọng tâm.</li>
+<li><b>Ba bài đang dạy thứ đã chết hoặc bị Google cấm</b>: Indexing API cho bài thường, công cụ index đời cũ, mua backlink dofollow.</li>
+<li><b>0/6 bài có bảng. 0/6 bài dẫn tài liệu Google.</b> Mốc thời gian thì sáu bài sáu con số, từ “60 giây” đến “2-3 tuần”.</li>
+<li><b>Trục đề xuất:</b> cách chính thức — mốc thời gian thật — những cách đừng làm. Ít cách hơn đối thủ, nhưng câu nào cũng chỉ được nguồn.</li>
+<li><b>Bài dài 2.200 – 2.600 chữ</b>, 6–8 bảng, 8–10 ảnh chụp màn hình — ngắn hơn đối thủ dài nhất gần một nửa.</li>
+<li><b>Chờ Trang chốt trục ở mục F rồi tôi mới viết.</b></li>
+</ol>
+</div></body></html>
