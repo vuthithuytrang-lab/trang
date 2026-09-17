@@ -35,7 +35,7 @@ code{background:var(--sg-xam-nen);padding:2px 7px;border-radius:5px;font-size:13
 .buoc .n{flex:0 0 38px;height:38px;border-radius:50%;background:var(--sg-xanh);color:#fff;
  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px}
 .buoc .t{flex:1}
-.buoc .t b{display:block;font-size:16.5px;color:var(--sg-navy);margin-bottom:3px}
+.buoc .t > b:first-child{display:block;font-size:16.5px;color:var(--sg-navy);margin-bottom:3px}
 .buoc .t p{margin:0;font-size:15px}
 .cau{border:1px solid var(--sg-xam-vien);border-radius:12px;padding:16px 18px;margin:12px 0}
 .cau .h{font-weight:800;color:var(--sg-navy);font-size:16px;margin-bottom:6px}
@@ -183,9 +183,36 @@ footer a{color:var(--sg-xanh)}
 
   <div class="buoc"><div class="n">5</div><div class="t">
     <b>Tải file lên Google</b>
-    <p>Mở <code>search.google.com/search-console/disavow-links</code> → chọn đúng trang web →
+    <p>Mở <code>search.google.com/search-console/disavow-links</code> → chọn đúng tài sản →
     <b>Tải tệp danh sách lên</b> → chọn file vừa tạo → xác nhận.
     Sau đó chờ. Google cần vài tuần đến vài tháng để đọc lại các liên kết đó, không có hiệu lực ngay.</p>
+    <div class="hop cam" style="margin-top:12px">
+      <b class="tieu">Chọn tài sản nào trong danh sách?</b>
+      Ô chọn thường hiện hai dòng cho cùng một website. Chọn sai là không tải lên được.
+      <table style="margin-top:10px">
+        <thead><tr><th>Dòng trông như thế này</th><th>Dùng được không</th></tr></thead>
+        <tbody>
+          <tr>
+            <td data-th="Dòng"><code>example.com</code><br><span style="font-size:13px;color:#5A6B66">có nhãn nhỏ "Domain property" / "Tài sản miền"</span></td>
+            <td data-th="Dùng được"><b style="color:#B3261E">Không.</b> Google ghi rõ trong tài liệu chính thức:
+            <i>"Công cụ từ chối đường liên kết không hỗ trợ Tài sản miền."</i> Chọn vào sẽ hiện thông báo
+            không hỗ trợ, không cho tải file.</td>
+          </tr>
+          <tr>
+            <td data-th="Dòng"><code>https://example.com/</code><br><span style="font-size:13px;color:#5A6B66">có đủ https:// ở đầu và dấu / ở cuối</span></td>
+            <td data-th="Dùng được"><b style="color:#0F9D58">Có.</b> Đây là "tài sản tiền tố URL" — loại duy nhất công cụ disavow nhận.</td>
+          </tr>
+        </tbody>
+      </table>
+      <b style="display:block;margin-top:14px">Hai điều cần nhớ thêm</b>
+      <ul class="ds lam" style="margin-top:6px">
+        <li>File tải lên <b>chỉ áp dụng cho đúng tài sản đó và các tài sản con</b> của nó. Tải lên
+        <code>https://example.com/</code> thì phủ luôn <code>m.example.com</code>, nhưng <b>không phủ</b> bản <code>http://</code>.
+        Nếu có cả tài sản <code>http</code> lẫn <code>https</code> thì phải tải file cho từng cái.</li>
+        <li>Kéo xem hết danh sách. Nếu có thêm <code>https://www.example.com/</code> thì đó là
+        <b>tài sản riêng, danh sách disavow riêng</b>, không dùng chung với cái không có www.</li>
+      </ul>
+    </div>
   </div></div>
 
   <div class="hop do" style="margin-top:24px">
