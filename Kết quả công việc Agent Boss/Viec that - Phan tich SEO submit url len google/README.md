@@ -18,6 +18,11 @@ Trang chưa có bài. Đây là bài viết mới.
    dòng `Yêu cầu:` nói rõ cách trình bày.
    **Không dùng mục "chủ đề xuyên suốt"** — cái đó chỉ dành cho nhóm bài nội thất (deco).
 
+7. **Dựng lại bản 2 (17/09/2026)** sau góp ý của Trang: bản 1 đi xa search intent.
+   Bỏ 2 mục lạc đề, thêm 2 mục đúng intent ("kiểm tra đã index chưa" 4/6 bài có,
+   "mẹo index nhanh hơn" 5/6 bài có), từ 10 mục xuống 9 mục, độ dài giảm còn 1.800–2.200 chữ.
+   Bài học ghi ở `LINK-GOOGLE-DOCS.md`.
+
 ## Đang chờ Trang
 
 - **Ảnh chụp màn hình Google Search Console (8–10 ảnh, giao diện tiếng Việt)** — bắt buộc,
@@ -30,7 +35,8 @@ Trang chưa có bài. Đây là bài viết mới.
 
 | Đường dẫn | Nội dung |
 |---|---|
-| `outline-content-submit-url.html` | **File outline content** — bản chính để viết bài |
+| `outline-content-submit-url-ban2.html` | **File outline content bản 2** — bản chính để viết bài |
+| `outline-content-submit-url.html` | Bản 1 — giữ để đối chiếu, đã bị thay |
 | `phan-tich-va-outline-submit-url.html` | Bản phân tích 7 đối thủ — tài liệu nền, để tra cứu bằng chứng |
 | `nguon-dung/` | Mã dựng file: `phan_a.py` … `phan_h.py`, `dung.py` |
 | `LINK-GOOGLE-DOCS.md` | Link tài liệu trên Drive |
