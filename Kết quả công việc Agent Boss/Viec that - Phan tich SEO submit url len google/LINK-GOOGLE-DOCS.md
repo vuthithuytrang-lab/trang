@@ -2,7 +2,8 @@
 
 | Tài liệu | Link | Ngày |
 |---|---|---|
-| **Outline content bản 3** ⟵ bản đang dùng | https://docs.google.com/document/d/128w6uXt8Gvcz1wy2mWD3Iq3VBM_R468sIFY7MZauEq4/edit | 17/09/2026 |
+| **Outline content bản 4** ⟵ bản đang dùng | https://docs.google.com/document/d/1V9Hc0rXtdkgfyMmB46fsIn2g__JrFXsDkshjYD-iH7Q/edit | 17/09/2026 |
+| Outline content bản 3 (giữ để đối chiếu) | https://docs.google.com/document/d/128w6uXt8Gvcz1wy2mWD3Iq3VBM_R468sIFY7MZauEq4/edit | 17/09/2026 |
 | Outline content bản 2 (giữ để đối chiếu) | https://docs.google.com/document/d/1j16vNZYFZB5tqXUf1iBpdWFx2UD5Yl9wna7EhWrxWcc/edit | 17/09/2026 |
 | Outline content bản 1 (giữ để đối chiếu) | https://docs.google.com/document/d/1hjrpPMyeqeYEXpe-i1bNPSR6PefL1oqgHjLrk3sNa8c/edit | 16/09/2026 |
 | Phân tích search intent 7 đối thủ (tài liệu nền) | https://docs.google.com/document/d/10asq9PEeDL6JIlUSFYzVNra9VOsJIPzVVhIAZo4SSyg/edit | 16/09/2026 |
@@ -91,3 +92,25 @@ File outline chỉ chứa chỉ dẫn viết bài, không chứa ghi chú phân 
 
 Trang chốt thêm: **bỏ mục "mẹo giúp index nhanh hơn"** (nội dung đã nằm trong nhóm B
 của mục 4), và **"bao lâu thì index" đặt trước "cách kiểm tra"**.
+
+## Chỉnh bản 4 (17/09/2026)
+
+Trang chốt: phần hướng dẫn **bỏ cách gom theo nhóm A/B/C**, chuyển thành
+**list phẳng 4.1 → 4.9, xếp theo mức độ phổ biến và dễ thực hiện**.
+
+Thứ tự đã chốt:
+
+| | Cách | Độ khó |
+|---|---|---|
+| 4.1 | Công cụ Kiểm tra URL trong Search Console | Dễ · 1 phút · dùng nhiều nhất |
+| 4.2 | Sitemap trong Search Console | Dễ · 3 phút · làm 1 lần |
+| 4.3 | Liên kết nội bộ từ bài đã index | Dễ · 1 phút · không cần công cụ |
+| 4.4 | Chia sẻ lên kênh có sẵn người đọc | Dễ · vài phút |
+| 4.5 | Khai báo sitemap trong robots.txt | Trung bình · cần vào được file |
+| 4.6 | Backlink tự nhiên | Khó · không chủ động được |
+| 4.7 | Search Console API | Cần lập trình viên |
+| 4.8 | WebSub cho feed RSS/Atom | Cần lập trình viên |
+| 4.9 | Google Indexing API | Cần lập trình viên · phạm vi hẹp |
+
+Mỗi cách mở đầu bằng một dòng chữ nghiêng ghi **độ khó · thời gian**, để người đọc
+quyết định có đọc tiếp không mà không phải đọc hết.
