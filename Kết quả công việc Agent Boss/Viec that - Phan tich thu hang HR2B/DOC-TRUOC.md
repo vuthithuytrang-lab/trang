@@ -37,6 +37,22 @@ lên nhẹ 13 · lên mạnh 3 · mới có 7 · cả hai mốc ngoài bảng 17
 
 Chưa đưa được vào file gộp 6 tab vì file đó đã chạm trần dung lượng mỗi lần tải lên.
 
+## File bổ sung — URL bài viết của đối thủ vào / ra top 10
+
+So 21/08 với 18/09. Mỗi dòng một bài, có URL đầy đủ để mở ra đọc và so nội dung.
+
+| File | Nội dung | Link |
+|---|---|---|
+| 5A | 237 bài **MỚI lọt vào** top 10 | https://docs.google.com/spreadsheets/d/1_nS79kHY2afrXA97dWa_4ZEqQe2rYaPOOix6kEn8o9s/edit |
+| 5B | 230 bài **bị bật khỏi** top 10 | https://docs.google.com/spreadsheets/d/1uetKxUNefQ1WyjIbFoyOl1vlbTZWSO2dbHv4w3a1u_w/edit |
+
+Bản gốc: `5a-doi-thu-len-top-kem-url.csv`, `5b-doi-thu-out-top-kem-url.csv`.
+URL đã bỏ tiền tố `https://www.` cho gọn; dán vào trình duyệt vẫn mở được.
+
+Trong số 230 bài bị bật ra, **22 bài là của hr2b.com**. Phần lớn là trang dịch vụ
+`/vi/dich-vu/...` — đúng nhóm trang không nằm trong sitemap mà bản kiểm tra kỹ thuật
+đã chỉ ra.
+
 ## Các file lẻ trước đây (vẫn giữ để đối chiếu)
 
 | File | Nội dung | Link |
