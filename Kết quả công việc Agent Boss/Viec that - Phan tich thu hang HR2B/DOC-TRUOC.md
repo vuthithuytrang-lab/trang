@@ -1,5 +1,22 @@
 # Báo cáo phân tích thứ hạng HR2B — mốc 18/09/2026
 
+## 📌 ĐỌC CÁI NÀY TRƯỚC — BẢN CHỐT VẤN ĐỀ VÀ GIẢI PHÁP
+
+`BAO-CAO-CHOT-va-GIAI-PHAP.html` · `BAO-CAO-CHOT-va-GIAI-PHAP.pdf`
+
+Bản rút gọn 6 trang, theo nhận diện SEONGON, gửi đi được. Gồm: chốt vấn đề (4 điểm đã
+xác minh), ba nguyên nhân kèm bằng chứng, giải pháp chia 3 tầng theo thứ tự làm,
+chốt phương án, và ba thứ còn thiếu cần bổ sung.
+
+**Chốt gọn:** cú tụt xảy ra 29/8–11/9 (không phải 18/9) · do mình chứ không phải thị trường
+(HR2B ròng −17 ô, nặng nhất bảng, bên thứ nhì chỉ −5) · ba nguyên nhân: sitemap bỏ sót
+toàn bộ trang dịch vụ, nội dung lệch kiểu bài đang được ưu tiên, mất theo cụm trang ·
+website không bị tấn công · **phương án: sửa, không đợi**.
+
+Các file bên dưới là dữ liệu chi tiết đứng sau bản chốt này.
+
+---
+
 ## 👉 FILE CHÍNH — MỘT FILE, SÁU TAB (xem và sửa được)
 
 **https://docs.google.com/spreadsheets/d/1oxOXGI1zX3MUNEhjt2JrcxtGlnnzbsuXtpM-2fkTV_M/edit**
