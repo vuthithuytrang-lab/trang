@@ -1,15 +1,28 @@
 # Báo cáo phân tích thứ hạng HR2B — mốc 18/09/2026
 
-## Ba file Google Sheet (xem và sửa được)
+## Năm file Google Sheet (xem và sửa được)
 
 | File | Nội dung | Link |
 |---|---|---|
 | **1/3** | Tổng quan, chủ đề, nhóm từ khóa, kết luận, phương án | https://docs.google.com/spreadsheets/d/1VQ1ljsEgSFMu8DRg2LniQB7aXKkmuLw0DG585Eo1BBE/edit |
 | **2/3** | Chi tiết 109 từ khóa | https://docs.google.com/spreadsheets/d/1vbQsgPquF5epriZlg9s0Ls1iJEaRrI5JSjEyOyO3JbM/edit |
-| **3/3** | Biến động đối thủ top 10 | https://docs.google.com/spreadsheets/d/1Rp8JfBDvEOzdP8TYGuJkini0Y-6r_CysMvlmF4J5YME/edit |
+| **3B** | Đối thủ: tỷ lệ vào top, chủ đề mạnh nhất, ai lên ai xuống, top 10 hiện tại | https://docs.google.com/spreadsheets/d/1LnHjyo6r1nRqCkQ1EuOJWQPcvMCyAVA4_RiS51tg3Og/edit |
+| **3C** | Ai vào / ai ra top 10 từng từ khóa · 01/08 → 29/08 | https://docs.google.com/spreadsheets/d/1zNR_HJxJw3Rx6OvZSTPn8l66gBLfT6x8fPClxoOwf2E/edit |
+| **3D** | Ai vào / ai ra top 10 từng từ khóa · 29/08 → 18/09 (cửa sổ tụt) | https://docs.google.com/spreadsheets/d/1gUZyCeRav2qbVoscZ7LXgALGYGSTtLR0Sfc5i9wawjU/edit |
 
-Bản gộp 1 file cũ (ngày 18/09, trước khi tách): 
-https://docs.google.com/spreadsheets/d/1lvi3EtYzpnu2JdxfJ6G5GZJt5kssedJDYiu_ws9z60E/edit
+Hai bản cũ vẫn giữ lại để đối chiếu, không dùng nữa:
+- Bản đối thủ cũ (3/3): https://docs.google.com/spreadsheets/d/1Rp8JfBDvEOzdP8TYGuJkini0Y-6r_CysMvlmF4J5YME/edit
+- Bản gộp 1 file (trước khi tách): https://docs.google.com/spreadsheets/d/1lvi3EtYzpnu2JdxfJ6G5GZJt5kssedJDYiu_ws9z60E/edit
+
+## ⚠️ Đổi cách đếm ở phần đối thủ (từ FILE 3B trở đi)
+
+Bản đối thủ **cũ** đếm theo **số ô** trên trang kết quả: một tên miền chiếm 2 vị trí
+trong cùng một top 10 thì tính là 2. Vì vậy HR2B ngày 18/9 hiện lên là **59**.
+
+Bản **mới** đếm theo **số từ khóa**: một tên miền có mặt trong top 10 của một từ khóa
+tính là **1**, dù chiếm mấy ô. Vì vậy HR2B ngày 18/9 là **43** — khớp đúng với dòng
+"Top 10" ở FILE 1. Con số khác nhau nhưng không mâu thuẫn, chỉ là hai thước đo khác nhau;
+từ nay dùng thước "số từ khóa" cho thống nhất.
 
 Các file `.csv` trong thư mục này là bản gốc đã dùng để tạo Google Sheet.
 
@@ -21,7 +34,28 @@ Thêm ngày 18/09 theo yêu cầu. Nghĩa là **mức tốt nhất đạt đư�
 - File 1: đỉnh của từng chỉ số tổng (Top 3/5/10/20/30, vị trí TB) và của từng chủ đề, từng nhóm.
 - File 2: vị trí tốt nhất từng từ khóa từng đạt + ngày đạt + số bậc đã mất so với lúc đó.
   Ô ghi `MẤT HẲN` = từ khóa từng có thứ hạng nhưng ngày 18/9 không còn.
-- File 3: số ô top 10 cao nhất từng đối thủ từng chiếm + ngày đạt + % còn lại so với đỉnh.
+- File 3B: số từ khóa top 10 cao nhất từng đối thủ từng đạt + ngày đạt + % còn lại so với đỉnh.
+
+## Phần đối thủ có thêm gì (FILE 3B / 3C / 3D)
+
+**FILE 3B — Bảng A:** với bộ 109 từ khóa, mỗi đối thủ có tỷ lệ vào top là bao nhiêu,
+chủ đề nào họ mạnh nhất, và chiếm bao nhiêu phần trăm cụm chủ đề đó.
+- talentnetgroup.com 90/109 = **82,6%** — mạnh nhất ở **Nhân sự** (67 key = 84,8% cụm)
+- hr2b.com 76/109 = **69,7%** — mạnh nhất ở **Nhân sự** (60 key = 75,9% cụm)
+- hrchannels.com chỉ 48/109 nhưng ôm **96% cụm Headhunter** (24/25 từ khóa)
+- careerviet.vn 76% cụm Headhunter · glints.com 72% cụm Headhunter dù tổng chỉ 21 key
+
+**FILE 3B — Bảng B:** số từ khóa trong top 10 và vị trí trung bình của từng đối thủ
+qua cả 11 ngày check, kèm cột xu hướng (Đang lên / Đi ngang / Đang xuống).
+Cộng dồn 10 chặng: **hr2b.com vào 53 lượt, rời 65 lượt → ròng −12, xấu nhất bảng.**
+topcv.vn −10, talentnetgroup −8, careerviet −5. Ngược lại aniday +9, easyhrm +6,
+glints +5, steco +5, ckhrconsulting +5.
+
+**FILE 3B — Bảng C:** top 10 hiện tại (18/09) của từng từ khóa, xếp theo thứ tự 1→10.
+
+**FILE 3C và 3D:** ai vào / ai ra top 10 ở **từng từ khóa, từng chặng ngày**.
+3C là giai đoạn 01/08 → 29/08 (trước khi tụt), 3D là 29/08 → 18/09 (cửa sổ tụt).
+Tách hai file vì mỗi file đã hơn 400 dòng.
 
 ## Nguồn dữ liệu
 - `lịch sử top.csv` — 109 từ khóa × 13 mốc ngày (01/08 → 18/09/2026)
