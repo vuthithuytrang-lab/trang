@@ -1,6 +1,28 @@
 # Báo cáo phân tích thứ hạng HR2B — mốc 18/09/2026
 
-## Năm file Google Sheet (xem và sửa được)
+## 👉 FILE CHÍNH — MỘT FILE, SÁU TAB (xem và sửa được)
+
+**https://docs.google.com/spreadsheets/d/1oxOXGI1zX3MUNEhjt2JrcxtGlnnzbsuXtpM-2fkTV_M/edit**
+
+Toàn bộ báo cáo nằm trong một file duy nhất, mỗi phần là một tab ở đáy màn hình:
+
+| Tab | Nội dung |
+|---|---|
+| 0. Đọc trước | Hướng dẫn đọc, 4 kết luận nhanh, lưu ý độ tin cậy, phần còn thiếu |
+| 1. Tổng quan | Số key vào top theo chủ đề và nhóm từ khóa, tỷ lệ, top 3/5/10, cột LÚC CAO NHẤT, kết luận, 2 phương án |
+| 2. Chi tiết 109 từ khóa | Vị trí từng ngày, vị trí TB, thời gian giữ top, khả năng giữ top, URL hay bắt, URL bắt top cao nhất |
+| 3. Đối thủ | Bảng A tỷ lệ vào top + chủ đề mạnh nhất · Bảng B biến động qua 11 ngày check · Bảng C top 10 hiện tại từng key |
+| 4. Vào-ra top 01.08 → 29.08 | Ai vào / ai ra top 10 ở từng từ khóa, từng chặng ngày — giai đoạn trước khi tụt |
+| 5. Vào-ra top 29.08 → 18.09 | Như trên, đúng cửa sổ mình tụt |
+
+Bản gốc nằm trong thư mục này: `HR2B-bao-cao-gop-tat-ca.xlsx`.
+Đã tải file trên Drive về và đối chiếu từng ô với bản gốc — khớp 100%.
+
+Vì file gộp phải nén rất mạnh mới gửi lên được, các số thập phân đã làm tròn
+về 1 chữ số (ví dụ vị trí trung bình 4.76 thành 4.8). Muốn xem số đầy đủ thì
+mở các file lẻ bên dưới.
+
+## Các file lẻ trước đây (vẫn giữ để đối chiếu)
 
 | File | Nội dung | Link |
 |---|---|---|
