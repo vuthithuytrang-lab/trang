@@ -22,6 +22,21 @@ Vì file gộp phải nén rất mạnh mới gửi lên được, các số th�
 về 1 chữ số (ví dụ vị trí trung bình 4.76 thành 4.8). Muốn xem số đầy đủ thì
 mở các file lẻ bên dưới.
 
+## File bổ sung — lọc từng key theo ngày
+
+**https://docs.google.com/spreadsheets/d/1rj5UXn6SpO0h1QH5BCmq6FNE0u4CiaPf4zr7QtPdjKE/edit**
+
+109 từ khóa, mỗi dòng một key: vị trí ngày 21/8, 14/9, 16/9, 17/9, 18/9; chênh lệch
+của 18/9 so với từng mốc; và hai cặp cột đối thủ nào lên top 10 / ai bật khỏi top 10
+(so với 21/8, và so với ngày liền trước 17/9). Bản gốc: `4-loc-tung-key-18-09-vs-21-08.csv`.
+
+Quy ước dấu: **+ là lên hạng** (số vị trí nhỏ đi), **- là tụt hạng**.
+
+Kết quả so với 21/8: mất hẳn 15 key · tụt mạnh 10 · tụt nhẹ 22 · đứng yên 22 ·
+lên nhẹ 13 · lên mạnh 3 · mới có 7 · cả hai mốc ngoài bảng 17.
+
+Chưa đưa được vào file gộp 6 tab vì file đó đã chạm trần dung lượng mỗi lần tải lên.
+
 ## Các file lẻ trước đây (vẫn giữ để đối chiếu)
 
 | File | Nội dung | Link |
