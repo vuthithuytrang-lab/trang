@@ -1,0 +1,354 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kiểm tra kỹ thuật website hr2b.com</title>
+<style>
+:root{
+  --sg-xanh:#004AEF; --sg-xanh-sang:#0D53F0; --sg-navy:#002992;
+  --sg-mint:#07EF9C; --sg-ngoc:#00EFB0; --sg-cyan:#0DD1FF;
+  --sg-vang:#FFCE00; --sg-cam:#F68B1F;
+  --sg-den:#151515; --sg-xam-nen:#F3F3F6; --sg-xam-vien:#DCDCDC;
+  --sg-xam-chu:#5A6B66;
+  --sg-chu:Gilroy,"Montserrat",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--sg-den);font:16px/1.7 var(--sg-chu)}
+.wrap{max-width:1000px;margin:0 auto;padding:0 22px}
+
+/* ---------- Đầu trang ---------- */
+.hero{background:linear-gradient(135deg,#002992 0%,#004AEF 55%,#0DD1FF 100%);color:#fff;padding:44px 0 40px}
+.hero .logo{background:#fff;display:inline-block;padding:15px 21px;border-radius:12px}
+.hero .logo img{display:block;width:250px}
+.hero h1{font-size:38px;margin:26px 0 10px;letter-spacing:-.8px;font-weight:800;line-height:1.2}
+.hero .lead{margin:0;opacity:.93;font-size:17px;max-width:700px}
+.hero .meta{margin:20px 0 0;font-size:13px;opacity:.8}
+.mint{color:var(--sg-mint);font-weight:800}
+
+/* ---------- Khối kết luận ---------- */
+.ketluan{background:var(--sg-xam-nen);border-left:5px solid var(--sg-xanh);border-radius:0 12px 12px 0;padding:24px 26px;margin:34px 0 0}
+.ketluan h2{margin-top:0}
+.ketluan p{margin:0 0 12px}
+.ketluan p:last-child{margin-bottom:0}
+
+/* ---------- Ô số ---------- */
+.so-hang{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:26px 0 0}
+.o-so{background:#fff;border:1px solid var(--sg-xam-vien);border-radius:12px;padding:18px 16px;text-align:center}
+.o-so .n{font-size:34px;font-weight:800;color:var(--sg-xanh);line-height:1.15;display:block}
+.o-so .n.mn{color:var(--sg-mint)}
+.o-so .l{font-size:13px;color:var(--sg-xam-chu);margin-top:4px;display:block;line-height:1.45}
+
+section{padding:40px 0;border-bottom:1px solid var(--sg-xam-vien)}
+section:last-of-type{border-bottom:none}
+h2{font-size:25px;margin:0 0 6px;letter-spacing:-.4px;color:var(--sg-navy);line-height:1.3}
+h2 .so{color:var(--sg-mint);margin-right:10px}
+h3{font-size:18px;margin:26px 0 8px;color:var(--sg-navy)}
+.sub{color:var(--sg-xam-chu);margin:0 0 22px;max-width:760px}
+
+/* ---------- Bảng ---------- */
+table{border-collapse:collapse;width:100%;font-size:15px;margin:10px 0 0}
+th{background:var(--sg-navy);color:#fff;text-align:left;padding:11px 13px;font-weight:700;font-size:14px}
+td{border-bottom:1px solid var(--sg-xam-vien);padding:11px 13px;vertical-align:top}
+tr:nth-child(even) td{background:#FAFAFC}
+td code,p code,li code{background:var(--sg-xam-nen);border:1px solid var(--sg-xam-vien);border-radius:4px;padding:1px 5px;font-size:13px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;word-break:break-all}
+
+.ok{color:#0a8f5c;font-weight:700;white-space:nowrap}
+.xau{color:#C23B22;font-weight:700;white-space:nowrap}
+
+/* ---------- Thẻ lỗi ---------- */
+.loi{border:1px solid var(--sg-xam-vien);border-radius:12px;padding:20px 22px;margin:16px 0;background:#fff}
+.loi.nang{border-left:5px solid #C23B22}
+.loi.vua{border-left:5px solid var(--sg-cam)}
+.loi.nhe{border-left:5px solid var(--sg-vang)}
+.loi h4{margin:0 0 4px;font-size:17.5px;color:var(--sg-navy);line-height:1.35}
+.nhan{display:inline-block;font-size:11.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;padding:3px 10px;border-radius:99px;margin-bottom:9px}
+.nhan.nang{background:#FBE9E6;color:#C23B22}
+.nhan.vua{background:#FEF0E0;color:#B8650C}
+.nhan.nhe{background:#FFF8DC;color:#8A6D00}
+.loi p{margin:8px 0 0}
+.loi .nhan-dinh{margin-top:12px;padding-top:12px;border-top:1px dashed var(--sg-xam-vien);font-size:14.5px;color:var(--sg-xam-chu)}
+.loi .nhan-dinh b{color:var(--sg-den)}
+
+ul,ol{margin:10px 0;padding-left:22px}
+li{margin:6px 0}
+
+/* ---------- Việc cần Trang làm ---------- */
+.buoc{background:var(--sg-xam-nen);border-radius:12px;padding:20px 24px;margin:14px 0;border:1px solid var(--sg-xam-vien)}
+.buoc .stt{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:99px;background:var(--sg-xanh);color:#fff;font-weight:800;font-size:14px;margin-right:10px}
+.buoc h4{display:inline;font-size:17px;color:var(--sg-navy)}
+.buoc p{margin:10px 0 0}
+
+.canh-bao{background:#FFF8DC;border:1px solid var(--sg-vang);border-radius:12px;padding:18px 22px;margin:22px 0}
+.canh-bao p{margin:0}
+
+footer{background:var(--sg-navy);color:#fff;padding:30px 0;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+footer .logo-ft{background:#fff;padding:10px 14px;border-radius:9px;display:inline-block}
+footer .logo-ft img{display:block;width:160px}
+footer .ghi{opacity:.85;max-width:560px}
+
+@media (max-width:760px){
+  .hero h1{font-size:29px}
+  .so-hang{grid-template-columns:repeat(2,1fr)}
+  table{font-size:14px}
+  th,td{padding:9px 10px}
+}
+@media print{
+  section{break-inside:auto}
+  .loi,.buoc,.o-so{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap">
+    <span class="logo"><img src="../../cong-cu/nhan-dien-thuong-hieu/logo-goc/SEONGON-logo-ngang.webp" alt="SEONGON"></span>
+    <h1>Kiểm tra kỹ thuật website <span class="mint">hr2b.com</span></h1>
+    <p class="lead">Rà soát toàn bộ phần kỹ thuật và truy tìm dấu vết bị tấn công, sau khi website tụt thứ hạng bất thường.</p>
+    <p class="meta">Ngày kiểm tra: 18/09/2026 · Phạm vi: 158 đường dẫn trong sitemap + 284 liên kết nội bộ · Người thực hiện: Vũ Thị Thùy Trang (SEONGON)</p>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="ketluan">
+    <h2>Kết luận trong một đoạn</h2>
+    <p><b>Website không có dấu hiệu bị hack, không bị chèn nội dung rác, không bị cài bẫy kỹ thuật.</b> Đã soi toàn bộ 158 trang: không có một từ khóa cờ bạc — thuốc — lậu nào, không có link ẩn, không có chữ giấu, không có chuyện hiện một đằng cho Google một nẻo. Toàn bộ liên kết ra ngoài chỉ trỏ tới 12 tên miền quen thuộc (Facebook, LinkedIn, YouTube, Zalo, Google Fonts…). Khu vực quản trị đã khóa đúng cách.</p>
+    <p><b>Nhưng tìm được 11 lỗi kỹ thuật</b>, trong đó 3 lỗi ảnh hưởng trực tiếp tới thứ hạng — đáng chú ý nhất là <b>tiêu đề trang chủ chỉ có 11 ký tự và không chứa một từ khóa nào</b>.</p>
+    <p><b>Riêng câu hỏi “có bị bắn backlink bẩn không” thì chưa trả lời được từ bên ngoài.</b> Dữ liệu ai đang trỏ link về website nằm trong Google Search Console — cần mở tài khoản mới xem được. Phần việc đó ghi rõ ở mục 4.</p>
+  </div>
+
+  <div class="so-hang">
+    <div class="o-so"><span class="n mn">0</span><span class="l">dấu hiệu bị hack hay chèn link rác</span></div>
+    <div class="o-so"><span class="n mn">0</span><span class="l">trang bị chặn Google (noindex)</span></div>
+    <div class="o-so"><span class="n">11</span><span class="l">lỗi kỹ thuật cần sửa</span></div>
+    <div class="o-so"><span class="n">3</span><span class="l">lỗi ảnh hưởng thứ hạng ngay</span></div>
+  </div>
+
+  <!-- ====================== 1 ====================== -->
+  <section>
+    <h2><span class="so">1</span>Đã kiểm tra những gì — và sạch ở đâu</h2>
+    <p class="sub">Đây là phần trả lời thẳng câu hỏi “website có bị gì không”. Mỗi dòng dưới đây là một phép thử đã chạy thật, không phải phỏng đoán.</p>
+
+    <table>
+      <thead><tr><th style="width:31%">Hạng mục</th><th style="width:15%">Kết quả</th><th>Chi tiết</th></tr></thead>
+      <tbody>
+        <tr><td>Nội dung bị chèn rác<br>(cờ bạc, thuốc, lậu)</td><td class="ok">Sạch</td><td>Quét 158 trang bằng danh sách 40 từ khóa spam thường gặp. Không có trang nào dính. Vài chữ bị máy báo nhầm là do nằm trong từ khác — ví dụ “spe<b>cialis</b>t”, “pre<b>judi</b>ce” — đã kiểm lại từng chỗ.</td></tr>
+        <tr><td>Chữ ẩn, link ẩn</td><td class="ok">Sạch</td><td>Tìm thấy 94 khối bị ẩn bằng CSS, nhưng tất cả đều thuộc plugin mục lục bài viết (nút “Toggle”) — hoàn toàn bình thường.</td></tr>
+        <tr><td>Hiện một đằng cho Google<br>một nẻo (cloaking)</td><td class="ok">Sạch</td><td>Tải trang chủ hai lần: một lần giả làm Googlebot, một lần làm trình duyệt thường. Hai bản giống nhau <b>từng byte một</b> (163.875 byte).</td></tr>
+        <tr><td>Link ra ngoài</td><td class="ok">Sạch</td><td>Chỉ 12 tên miền, đều là kênh chính thức: zalo.me, facebook.com, linkedin.com, youtube.com, tiktok.com, m.me, kestria.com, thuvienphapluat.vn, fonts.googleapis.com, fonts.gstatic.com, cdn.jsdelivr.net, youtu.be.</td></tr>
+        <tr><td>Trang rác trong sitemap</td><td class="ok">Sạch</td><td>158 đường dẫn, không có URL lạ, không có ký tự tiếng Nhật/Trung (dấu hiệu hack kinh điển).</td></tr>
+        <tr><td>Trang bị chặn Google</td><td class="ok">Sạch</td><td>Không trang nào có thẻ <code>noindex</code>. Máy chủ cũng không gắn header chặn ngầm <code>X-Robots-Tag</code>.</td></tr>
+        <tr><td>Mã trạng thái toàn site</td><td class="ok">Tốt</td><td>156/158 trang trả về mã 200 (bình thường). 2 trang còn lại là chuyển hướng — xem lỗi số 7.</td></tr>
+        <tr><td>Bảo mật khu quản trị</td><td class="ok">Tốt</td><td><code>/wp-login.php</code>, <code>/xmlrpc.php</code>, <code>/.env</code>, <code>/readme.html</code>, thư mục tải lên → đều trả 403 (cấm). Danh sách tài khoản <code>/wp-json/wp/v2/users</code> → 401 (phải đăng nhập). Đây là cấu hình tốt hơn mặt bằng chung.</td></tr>
+        <tr><td>HTTPS &amp; chuyển hướng</td><td class="ok">Tốt</td><td>Cả 3 biến thể (<code>http://hr2b.com</code>, <code>http://www…</code>, <code>https://hr2b.com</code>) đều dồn về đúng một địa chỉ <code>https://www.hr2b.com</code> bằng chuyển hướng 301. Có bật HSTS, chống kẹp khung, chống dò kiểu file.</td></tr>
+        <tr><td>Google có chặn bot không</td><td class="ok">Tốt</td><td>Thử với Googlebot, Bingbot, AhrefsBot, điện thoại Android — cả 4 đều vào được (mã 200). Tường lửa không chặn nhầm Google.</td></tr>
+        <tr><td>Song ngữ Anh – Việt<br>(thẻ hreflang)</td><td class="ok">Tốt</td><td>154/158 trang khai báo đủ 3 thẻ <code>en</code>, <code>vi</code>, <code>x-default</code> và trỏ qua lại đúng nhau. Không có thẻ nào trỏ vào URL chết.</td></tr>
+        <tr><td>Dữ liệu có cấu trúc</td><td class="ok">Tốt</td><td>Trang chủ khai báo đủ Organization, WebSite, WebPage, LocalBusiness — Google đọc được thông tin doanh nghiệp.</td></tr>
+        <tr><td>Công cụ đo lường</td><td class="ok">Có</td><td>Google Tag Manager đang chạy (<code>GTM-PV8BD6SK</code>). Website <b>đã xác minh Search Console</b> — thấy thẻ xác minh ngay trong mã nguồn. Đây là tin tốt: nghĩa là chỉ cần mở tài khoản là xem được dữ liệu backlink.</td></tr>
+        <tr><td>Nén dữ liệu</td><td class="ok">Có</td><td>Máy chủ bật nén gzip.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====================== 2 ====================== -->
+  <section>
+    <h2><span class="so">2</span>11 lỗi tìm được, xếp theo mức độ</h2>
+    <p class="sub">Xếp từ nặng xuống nhẹ. Mỗi lỗi ghi rõ: lỗi là gì, vì sao hại, và có phải thủ phạm khiến tụt top hay không — vì hai chuyện đó không phải lúc nào cũng trùng nhau.</p>
+
+    <div class="loi nang">
+      <span class="nhan nang">Nặng · sửa trước</span>
+      <h4>1. Tiêu đề trang chủ chỉ có 11 ký tự: “Home - HR2B”</h4>
+      <p>Tiêu đề trang là dòng chữ xanh người ta bấm vào trên Google, và là một trong những thứ Google cân nhắc nặng nhất khi xếp hạng. Trang chủ — trang mạnh nhất website — đang để nguyên chữ mặc định “Home”, <b>không chứa một từ khóa dịch vụ nào</b>: không “cho thuê nhân sự”, không “tính lương”, không “tuyển dụng nhân sự cấp cao”, không “Việt Nam”.</p>
+      <p>Mô tả bên dưới thì viết rất tốt (“HR2B is a leading HR outsourcing and executive search firm in Vietnam…”) — nghĩa là người viết biết phải nói gì, chỉ là ô tiêu đề bị bỏ quên.</p>
+      <p>Không riêng trang chủ: <b>21 trang</b> có tiêu đề ngắn dưới 25 ký tự, gần như chỉ có tên trang + “- HR2B”.</p>
+      <p class="nhan-dinh"><b>Có phải thủ phạm tụt top không?</b> Chỉ khi tiêu đề này mới bị đổi gần đây. Nếu nó vốn vậy từ lâu thì đây không phải nguyên nhân tụt, nhưng vẫn là cơ hội lớn nhất đang bỏ phí trên toàn website.</p>
+    </div>
+
+    <div class="loi nang">
+      <span class="nhan nang">Nặng · sửa trước</span>
+      <h4>2. File <code>robots.txt</code> đang chặn 6 file mã lệnh mà Google cần để dựng trang</h4>
+      <p>Trong <code>robots.txt</code> có dòng <code>Disallow: /*/plugins/</code>. Dòng này vô tình chặn luôn thư mục <code>/wp-content/plugins/</code> — nơi chứa mã lệnh của các tiện ích đang chạy trên web.</p>
+      <p>Đã đếm được <b>6 file đang bị chặn</b>: form liên hệ (2 file), thông báo cookie, tải file đính kèm, chuyển đổi ngôn ngữ, lịch sự kiện.</p>
+      <p>Google dựng lại trang giống như trình duyệt. Thiếu mã lệnh thì Google nhìn thấy một trang không đầy đủ — đặc biệt ảnh hưởng tới form liên hệ và phần chuyển ngôn ngữ Anh/Việt.</p>
+      <p class="nhan-dinh"><b>Cách sửa:</b> đổi <code>Disallow: /*/plugins/</code> thành <code>Allow: /wp-content/plugins/</code>, hoặc bỏ hẳn dòng đó. Google từ 2015 đã nói rõ: đừng chặn CSS và JavaScript.</p>
+    </div>
+
+    <div class="loi nang">
+      <span class="nhan nang">Nặng · liên quan trực tiếp tới câu hỏi backlink bẩn</span>
+      <h4>3. Website đẻ ra URL vô hạn từ tham số — và cách chặn hiện tại đang phản tác dụng</h4>
+      <p>Đã thử gõ những địa chỉ bịa ra: <code>hr2b.com/?gov=casino</code>, <code>hr2b.com/?edu=slot</code>, <code>hr2b.com/?utm_source=spam&amp;keyword=judi</code>. <b>Cả ba đều trả về mã 200 kèm toàn bộ trang chủ và thẻ cho phép lập chỉ mục.</b></p>
+      <p>Nghĩa là bất kỳ ai cũng tự chế ra được vô số địa chỉ khác nhau nhưng nội dung y hệt trang chủ, rồi bắn link về những địa chỉ đó. Đây đúng là chiêu bắn link bẩn phổ biến nhất hiện nay.</p>
+      <p><b>Điểm đáng chú ý nhất của cả bản kiểm tra này:</b> trong <code>robots.txt</code> có sẵn hai dòng <code>Disallow: /*?gov=*</code> và <code>Disallow: /*?edu=*</code>. Hai luật rất lạ, rất cụ thể — không ai tự nhiên viết ra. <b>Gần như chắc chắn website đã từng bị bắn spam bằng đúng hai tham số này, và ai đó đã thêm luật để chặn.</b></p>
+      <p>Nhưng chặn bằng <code>robots.txt</code> lại chính là cách sai. Khi bị chặn, Google <b>không vào đọc được</b> trang đó, nên cũng không đọc được thẻ canonical đang trỏ về trang chủ sạch. Kết quả: Google biết có link trỏ tới, biết địa chỉ tồn tại, mà không biết đó thật ra chỉ là trang chủ — nên có thể đưa cái địa chỉ rác đó vào kết quả tìm kiếm.</p>
+      <p class="nhan-dinh"><b>Cách sửa đúng:</b> bỏ hai dòng chặn trong <code>robots.txt</code> (để Google vào đọc và thấy thẻ canonical), rồi cấu hình máy chủ chuyển hướng 301 mọi địa chỉ có tham số lạ về địa chỉ sạch. <b>Việc này nên làm sớm</b> — và nên hỏi lại đội quản trị web xem hai luật đó thêm vào ngày nào, vì mốc thời gian đó rất có thể trùng với đợt tụt hạng.</p>
+    </div>
+
+    <div class="loi vua">
+      <span class="nhan vua">Vừa</span>
+      <h4>4. Hai trang <code>e-brochure</code> bị hỏng nhưng vẫn nằm trong sitemap</h4>
+      <p><code>/e-brochure/</code> và <code>/vi/e-brochure/</code> chỉ nặng 1,6 KB và <b>không phải một trang web hoàn chỉnh</b>: không có thẻ <code>&lt;html&gt;</code>, không có <code>&lt;head&gt;</code>, không tiêu đề, không mô tả, không canonical. Chỉ là một mẩu mã lệnh gọi phần mềm lật sách điện tử.</p>
+      <p>Hai trang này đang được khai báo trong sitemap, tức là đang mời Google vào xem. Google vào rồi thấy trang rỗng — bị tính là trang chất lượng thấp.</p>
+      <p class="nhan-dinh"><b>Cách sửa:</b> hoặc bọc lại thành trang hoàn chỉnh có tiêu đề và mô tả, hoặc gỡ khỏi sitemap và gắn <code>noindex</code>.</p>
+    </div>
+
+    <div class="loi vua">
+      <span class="nhan vua">Vừa</span>
+      <h4>5. 13 trang thiếu thẻ mô tả, 4 trang thiếu thẻ canonical</h4>
+      <p>Thiếu mô tả thì Google tự nhặt đại một đoạn trong bài để hiện lên — thường nhặt trúng đoạn vô nghĩa, làm ít người bấm vào. Trong 13 trang thiếu có cả những trang quan trọng: <code>/vi/co-hoi-viec-lam/</code>, <code>/vi/viec-lam-hr2b/</code>, <code>/category/news/</code>, và một bài tin tiếng Anh về tuyển dụng.</p>
+      <p>Đáng để ý: có trang <code>/category/uncategorized/</code> (“chưa phân loại”) đang mở cho Google — đây là chuyên mục mặc định của WordPress, thường không có nội dung gì.</p>
+    </div>
+
+    <div class="loi vua">
+      <span class="nhan vua">Vừa</span>
+      <h4>6. 49 trong 158 tiêu đề dài quá mức, bị Google cắt cụt</h4>
+      <p>Gần một phần ba số trang có tiêu đề dài hơn 65 ký tự. Dài nhất là 118 ký tự. Google chỉ hiện khoảng 60 ký tự đầu rồi cắt bằng dấu “…”, nên phần đuôi — thường là chỗ đặt từ khóa — không ai nhìn thấy.</p>
+      <p>Ví dụ: <i>“HR2B kết hợp cùng The Executive Centre (TEC) tổ chức sự kiện Open House đặc biệt: Khám Phá - Kế…”</i></p>
+    </div>
+
+    <div class="loi vua">
+      <span class="nhan vua">Vừa</span>
+      <h4>7. Máy chủ phản hồi chậm: 1,3 – 1,5 giây mới trả byte đầu tiên</h4>
+      <p>Đo 5 lần liên tiếp, thời gian tới byte đầu tiên luôn nằm trong khoảng 1,28 – 1,50 giây; tải xong trang mất 1,97 – 2,35 giây. Mức nên hướng tới là dưới 0,8 giây.</p>
+      <p>Trang chủ nặng 164 KB mã HTML và gọi 59 tấm ảnh — khá nặng cho một trang chủ.</p>
+      <p class="nhan-dinh"><b>Lưu ý về độ chính xác:</b> số này đo từ máy chủ nước ngoài qua một lớp trung gian, nên có cộng thêm độ trễ đường truyền. Con số thật đo từ Việt Nam sẽ tốt hơn — cần đo lại bằng PageSpeed Insights (xem mục 5).</p>
+    </div>
+
+    <div class="loi vua">
+      <span class="nhan vua">Vừa</span>
+      <h4>8. Hai địa chỉ trong sitemap là chuyển hướng, không phải trang thật</h4>
+      <p><code>/vi/trang-chu/</code> → chuyển sang <code>/vi/</code> · <code>/vi/category/tin-tuc/tuyen-dung-nhan-tai/</code> → chuyển sang <code>/vi/category/</code></p>
+      <p>Sitemap là danh sách “đây là các trang chính thức của tôi”. Đưa địa chỉ chuyển hướng vào đó là gửi tín hiệu lẫn lộn, và làm Google tốn công vào ngõ cụt.</p>
+    </div>
+
+    <div class="loi nhe">
+      <span class="nhan nhe">Nhẹ</span>
+      <h4>9. Hai liên kết hỏng trong website</h4>
+      <p><code>/en/contact-us/</code> → lỗi 404 · <code>/e-profile/files/basic-html/index.html</code> → lỗi 404 (đường dẫn dự phòng của trang e-brochure hỏng ở lỗi số 4).</p>
+      <p>Đã kiểm tra toàn bộ 441 liên kết nội bộ khác nhau, chỉ 2 cái hỏng. Tỉ lệ này rất tốt.</p>
+    </div>
+
+    <div class="loi nhe">
+      <span class="nhan nhe">Nhẹ</span>
+      <h4>10. Bảy liên kết nội bộ trỏ vào địa chỉ chuyển hướng, trong đó hai địa chỉ viết sai</h4>
+      <p>Hai địa chỉ bị viết hỏng: <code>https://www.hr2b.com//cdn.jsdelivr.net</code> và <code>https://www.hr2b.com//www.hr2b.com</code> — lỗi thiếu <code>https:</code> ở đầu khi viết mã, làm sinh ra địa chỉ vô nghĩa.</p>
+      <p>Năm cái còn lại là link cũ chưa cập nhật: <code>/lien-he/</code>, <code>/our-event/</code>, <code>/headhunter-and-recruiter/</code>, <code>/vi/service/dich-vu-tinh-luong/</code> và một link ảnh đính kèm.</p>
+    </div>
+
+    <div class="loi nhe">
+      <span class="nhan nhe">Nhẹ</span>
+      <h4>11. Ba cặp tiêu đề trùng nhau</h4>
+      <p>“Kestria executive search in 40+ countries worldwide”, “Form Testimonial - HR2B”, và “HR2B Company Trip 2026: Quy Nhơn – On Top But Never Stop” — mỗi tiêu đề đang dùng cho 2 trang khác nhau. Google phải tự chọn hiện trang nào, và thường chọn không đúng ý mình.</p>
+      <p>Phần mô tả thì <b>không có cặp nào trùng</b> — chỗ này làm tốt.</p>
+    </div>
+  </section>
+
+  <!-- ====================== 3 ====================== -->
+  <section>
+    <h2><span class="so">3</span>Khoanh vùng nguyên nhân tụt top</h2>
+    <p class="sub">Đây là phần quan trọng nhất. Từ bên ngoài mình loại trừ được một số nguyên nhân, còn lại phải mở Search Console mới biết.</p>
+
+    <table>
+      <thead><tr><th style="width:30%">Nguyên nhân có thể</th><th style="width:18%">Tình trạng</th><th>Căn cứ</th></tr></thead>
+      <tbody>
+        <tr><td>Website bị hack, bị chèn nội dung rác</td><td class="ok">Đã loại trừ</td><td>Quét sạch 158 trang, không tìm thấy gì. Khu quản trị khóa tốt.</td></tr>
+        <tr><td>Bị chặn Google do cấu hình sai<br>(noindex, robots.txt, tường lửa)</td><td class="ok">Đã loại trừ</td><td>Không trang nào bị chặn. Googlebot vào được bình thường.</td></tr>
+        <tr><td>Hỏng kỹ thuật diện rộng<br>(hàng loạt trang 404, mất sitemap, mất HTTPS)</td><td class="ok">Đã loại trừ</td><td>156/158 trang chạy tốt, sitemap đầy đủ, HTTPS chuẩn.</td></tr>
+        <tr><td>Bị bắn backlink bẩn</td><td class="xau">Chưa kiểm được</td><td><b>Không nhìn thấy được từ bên ngoài.</b> Nhưng có manh mối: hai luật chặn tham số <code>?gov=</code> và <code>?edu=</code> trong robots.txt cho thấy website đã từng bị spam kiểu này. Cần mở Search Console.</td></tr>
+        <tr><td>Bị Google phạt thủ công</td><td class="xau">Chưa kiểm được</td><td>Chỉ hiện trong Search Console, mục “Tác vụ thủ công”.</td></tr>
+        <tr><td>Google đổi thuật toán</td><td class="xau">Chưa kiểm được</td><td>Cần đối chiếu ngày bắt đầu tụt với lịch cập nhật của Google.</td></tr>
+        <tr><td>Ai đó vừa sửa website<br>làm hỏng thứ gì đó</td><td class="xau">Chưa kiểm được</td><td>Đã thử tra lịch sử website trên Wayback Machine để so sánh, <b>nhưng bị tường lửa của môi trường này chặn</b>. Cần hỏi thẳng đội quản trị web.</td></tr>
+        <tr><td>Đối thủ làm tốt lên</td><td class="xau">Chưa kiểm được</td><td>Cần so sánh trên Ahrefs/Semrush.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="canh-bao">
+      <p><b>Nhận định thẳng thắn:</b> không có lỗi nào trong 11 lỗi ở mục 2 đủ sức gây tụt hạng <i>đột ngột</i>. Chúng là những lỗi âm ỉ — kìm website không lên được, chứ không đạp website xuống trong một tuần. Tụt đột ngột thường đến từ ba thứ: bị phạt, bị bắn link bẩn, hoặc Google đổi thuật toán. <b>Cả ba đều chỉ nhìn thấy trong Search Console.</b> Vì vậy việc ở mục 4 quan trọng hơn việc sửa 11 lỗi trên.</p>
+    </div>
+  </section>
+
+  <!-- ====================== 4 ====================== -->
+  <section>
+    <h2><span class="so">4</span>Ba việc cần bạn mở giúp — làm xong là trả lời được câu hỏi backlink</h2>
+    <p class="sub">Những việc này cần đăng nhập bằng tài khoản của công ty nên mình không tự làm được. Làm lần lượt, xong bước nào gửi lại bước đó, mình phân tích tiếp.</p>
+
+    <div class="buoc">
+      <span class="stt">1</span><h4>Chụp màn hình mục “Tác vụ thủ công” và “Vấn đề bảo mật”</h4>
+      <p>Vào <b>search.google.com/search-console</b> → chọn website hr2b.com → menu bên trái kéo xuống cuối, mục <b>Bảo mật và tác vụ thủ công</b> → bấm vào cả hai mục con, chụp màn hình gửi lại.</p>
+      <p>Đây là thứ cần xem <b>đầu tiên</b>. Nếu ở đây báo đỏ thì đã tìm ra nguyên nhân, không cần làm gì thêm.</p>
+    </div>
+
+    <div class="buoc">
+      <span class="stt">2</span><h4>Tải file danh sách backlink về rồi đính kèm vào khung chat</h4>
+      <p>Vẫn trong Search Console → menu bên trái, mục <b>Liên kết</b> (Links) → bảng <b>Trang web liên kết hàng đầu</b> → góc trên bên phải bấm nút <b>Xuất</b> (Export) → chọn <b>Tải xuống CSV</b>.</p>
+      <p>Làm thêm một lần nữa với bảng <b>Văn bản liên kết hàng đầu</b> (Top linking text) — bảng này quan trọng không kém, vì nếu có ai bắn link bẩn thì chữ dùng để đặt link sẽ lộ ra ngay (kiểu “casino”, “cá cược”, chữ tiếng Trung, tiếng Nga).</p>
+      <p><b>Đính kèm hai file đó vào khung chat</b>, mình sẽ lọc ra danh sách tên miền độc hại và viết sẵn file từ chối liên kết (disavow) để bạn nộp lên Google.</p>
+    </div>
+
+    <div class="buoc">
+      <span class="stt">3</span><h4>Chụp biểu đồ hiệu suất 6 tháng gần nhất</h4>
+      <p>Search Console → mục <b>Hiệu suất</b> (Performance) → đổi khoảng thời gian thành <b>6 tháng gần nhất</b> → bật cả 4 ô: Số lần nhấp, Số lần hiển thị, CTR, Vị trí trung bình → chụp màn hình.</p>
+      <p>Mình cần <b>ngày bắt đầu tụt</b>. Biết chính xác ngày đó là khoanh được ngay: trùng với đợt cập nhật thuật toán của Google, hay trùng với lần ai đó sửa website, hay trùng với lúc bị bắn link.</p>
+    </div>
+
+    <div class="canh-bao">
+      <p><b>Nếu công ty có tài khoản Ahrefs hoặc Semrush</b> thì bảo mình biết — dữ liệu backlink ở đó đầy đủ hơn Search Console nhiều, xem được cả link mới xuất hiện theo từng ngày. Không có cũng không sao, Search Console là đủ để bắt đầu.</p>
+    </div>
+  </section>
+
+  <!-- ====================== 5 ====================== -->
+  <section>
+    <h2><span class="so">5</span>Thứ tự nên làm</h2>
+
+    <table>
+      <thead><tr><th style="width:8%">Ưu tiên</th><th style="width:42%">Việc</th><th style="width:22%">Ai làm</th><th>Vì sao xếp ở đây</th></tr></thead>
+      <tbody>
+        <tr><td><b>1</b></td><td>Mở Search Console, làm 3 việc ở mục 4</td><td>Bạn mở, mình phân tích</td><td>Chưa có dữ liệu này thì mọi phán đoán về nguyên nhân tụt top đều là đoán mò.</td></tr>
+        <tr><td><b>2</b></td><td>Hỏi đội quản trị web: gần đây sửa gì, và hai luật <code>?gov=</code> <code>?edu=</code> trong robots.txt thêm vào ngày nào</td><td>Bạn hỏi</td><td>Mốc thời gian đó là manh mối mạnh nhất tìm được trong cả bản kiểm tra này.</td></tr>
+        <tr><td><b>3</b></td><td>Sửa lỗi số 3 — chặn URL tham số cho đúng cách</td><td>Đội quản trị web</td><td>Đây là cánh cửa đang mở cho người bắn link bẩn. Bịt trước khi bị bắn tiếp.</td></tr>
+        <tr><td><b>4</b></td><td>Sửa lỗi số 2 — bỏ chặn mã lệnh trong robots.txt</td><td>Đội quản trị web</td><td>Sửa một dòng, có hiệu lực ngay lần Google ghé tiếp theo.</td></tr>
+        <tr><td><b>5</b></td><td>Viết lại tiêu đề trang chủ và 21 trang có tiêu đề ngắn</td><td>Mình viết, bạn duyệt</td><td>Cần bạn chốt từ khóa muốn nhắm trước khi mình viết.</td></tr>
+        <tr><td><b>6</b></td><td>Bổ sung mô tả cho 13 trang, rút gọn 49 tiêu đề dài</td><td>Mình viết, bạn duyệt</td><td>Làm gộp một đợt cho đỡ mất công.</td></tr>
+        <tr><td><b>7</b></td><td>Xử lý 2 trang e-brochure hỏng, 2 link 404, 7 link trỏ sai</td><td>Đội quản trị web</td><td>Nhặt gọn, làm sau cùng.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====================== 6 ====================== -->
+  <section>
+    <h2><span class="so">6</span>Đã kiểm tra bằng cách nào — và chỗ nào chưa kiểm được</h2>
+    <p class="sub">Ghi rõ để bạn biết con số nào đáng tin tới đâu.</p>
+
+    <h3>Cách làm</h3>
+    <ul>
+      <li>Tải về và bóc tách toàn bộ <b>158 trang</b> trong sitemap, giả danh Googlebot để thấy đúng thứ Google thấy.</li>
+      <li>Kiểm tra mã trạng thái của <b>158 đường dẫn sitemap</b> và <b>284 liên kết nội bộ</b> khác (tổng 441 liên kết nội bộ khác nhau tìm được trong mã nguồn).</li>
+      <li>Quét nội dung bằng danh sách 40 từ khóa spam, rồi <b>đọc lại từng chỗ dính</b> để loại bỏ báo nhầm.</li>
+      <li>Tải trang chủ hai lần với hai danh tính khác nhau và so sánh từng byte để phát hiện chiêu che giấu nội dung.</li>
+      <li>Thử bịa ra các địa chỉ tham số kiểu spam để xem website phản ứng thế nào.</li>
+      <li>Gõ thử 8 đường dẫn nhạy cảm thường bị khai thác trên WordPress.</li>
+      <li>Đo thời gian phản hồi 5 lần liên tiếp.</li>
+    </ul>
+
+    <h3>Chỗ chưa kiểm được — nói thật</h3>
+    <table>
+      <thead><tr><th style="width:32%">Thứ chưa kiểm được</th><th>Vì sao</th></tr></thead>
+      <tbody>
+        <tr><td><b>Hồ sơ backlink</b></td><td>Không có công cụ nào nhìn được từ bên ngoài. Bắt buộc phải lấy từ Search Console hoặc Ahrefs/Semrush. Đây là lý do có mục 4.</td></tr>
+        <tr><td><b>Điểm tốc độ chính thức của Google</b></td><td>Đã gọi hai lần vào công cụ PageSpeed Insights của Google, cả hai lần đều báo <i>hết lượt dùng trong ngày</i>. Số đo tốc độ trong báo cáo là mình tự đo, chỉ mang tính tham khảo.</td></tr>
+        <tr><td><b>Lịch sử website</b></td><td>Wayback Machine bị tường lửa của môi trường này chặn, nên không so sánh được website hôm nay với vài tháng trước.</td></tr>
+        <tr><td><b>Bản ghi tên miền (DNS) và chứng chỉ bảo mật thật</b></td><td>Môi trường này không có công cụ tra DNS, và mọi kết nối đi qua một lớp trung gian nên chứng chỉ nhìn thấy không phải chứng chỉ thật của hr2b.com. Không kết luận gì về hai mục này.</td></tr>
+        <tr><td><b>Trang web hiển thị thế nào trên trình duyệt thật</b></td><td>Mới đọc mã nguồn, chưa mở bằng trình duyệt để xem bố cục có vỡ không. Nếu cần, nói mình một tiếng.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <span class="logo-ft"><img src="../../cong-cu/nhan-dien-thuong-hieu/logo-goc/SEONGON-logo-ngang.webp" alt="SEONGON"></span>
+    <span class="ghi">Báo cáo kiểm tra kỹ thuật website hr2b.com · Thực hiện ngày 18/09/2026 · Dữ liệu đọc trực tiếp từ website, không suy đoán. Những chỗ chưa kiểm được đã ghi rõ ở mục 6.</span>
+  </div>
+</footer>
+
+</body></html>
