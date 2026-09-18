@@ -15,6 +15,25 @@ website không bị tấn công · **phương án: sửa, không đợi**.
 
 Các file bên dưới là dữ liệu chi tiết đứng sau bản chốt này.
 
+## 🔧 HƯỚNG DẪN SỬA LỖI SITEMAP
+
+`HUONG-DAN-SUA-SITEMAP.html` · `HUONG-DAN-SUA-SITEMAP.pdf`
+
+Hướng dẫn từng bước cho 3 lỗi, kèm brief chép thẳng gửi đội website.
+Đã kiểm chứng trực tiếp trên hr2b.com ngày 18/09/2026.
+
+Nền tảng xác định được: **WordPress + Rank Math SEO + WPML**, theme `canhcamtheme`.
+
+| Lỗi | Hiện trạng đã kiểm | Ai sửa |
+|---|---|---|
+| Loại nội dung `service` không có sitemap | `sitemap_index.xml` chỉ có post/page/category; `service-sitemap.xml` trả 404 | Bấm nút trong Rank Math |
+| Sitemap khai `/vi/trang-chu/` | Địa chỉ này trả 301 về `/vi/`; còn `/vi/` không có trong sitemap | Đội website (cấu hình WPML) |
+| robots.txt chặn `/*?gov=*`, `/*?edu=*` | Vẫn còn nguyên trong robots.txt | Đội website |
+
+4 trang dịch vụ tiếng Việt đang thiếu (đều trả 200, đều `index`, canonical đã đúng):
+`/vi/dich-vu/dich-vu-tu-van-nhan-su/` · `/vi/dich-vu/dich-vu-tinh-luong/` ·
+`/vi/dich-vu/dich-vu-tuyen-dung-cap-cao/` · `/vi/dich-vu/dich-vu-thue-ngoai-tuyen-dung/`
+
 ---
 
 ## 👉 FILE CHÍNH — MỘT FILE, SÁU TAB (xem và sửa được)
