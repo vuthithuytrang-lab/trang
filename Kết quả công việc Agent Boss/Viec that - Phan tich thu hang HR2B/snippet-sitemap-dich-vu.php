@@ -12,6 +12,7 @@ function hr2b_danh_sach_sitemap_bo_sung() {
 		array( 'https://www.hr2b.com/vi/dich-vu/dich-vu-tinh-luong/', 'monthly', '0.9' ),
 		array( 'https://www.hr2b.com/vi/dich-vu/dich-vu-tuyen-dung-cap-cao/', 'monthly', '0.9' ),
 		array( 'https://www.hr2b.com/vi/dich-vu/dich-vu-thue-ngoai-tuyen-dung/', 'monthly', '0.9' ),
+		array( 'https://www.hr2b.com/danh-muc-dich-vu/', 'monthly', '0.9' ),
 		array( 'https://www.hr2b.com/service/hr-consulting/', 'monthly', '0.8' ),
 		array( 'https://www.hr2b.com/service/payroll-outsourcing/', 'monthly', '0.8' ),
 		array( 'https://www.hr2b.com/service/staffing-outsourcing/', 'monthly', '0.8' ),
