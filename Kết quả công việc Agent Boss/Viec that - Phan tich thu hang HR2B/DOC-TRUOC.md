@@ -55,10 +55,20 @@ Trong số 230 bài bị bật ra, **22 bài là của hr2b.com**. Phần lớn 
 
 ## File bổ sung — định hướng nội dung theo nhóm từ khóa
 
-**https://docs.google.com/spreadsheets/d/1DBm1AAJEWNCs9RS8Lkwia-powV2hlQSFLr_9xB2jFDc/edit**
+**https://docs.google.com/spreadsheets/d/1VXtwhrW44ee0KzNBaZNWBYCgb4jD6NuK4PsTZEMHEbc/edit**
 
 41 nhóm từ khóa, mỗi nhóm ba cột nội dung: **bài nào lên top · bài của mình · bài nào rớt**,
-kèm kiểu nội dung và ví dụ tiêu đề thật.
+kèm kiểu nội dung và ví dụ tiêu đề thật. Cuối mỗi dòng có phần **CHỐT**: nhóm đó HR2B
+lên mấy key, tụt mấy key, đứng yên mấy key, kèm tên key cụ thể.
+
+Cộng cả 41 nhóm: **23 key lên · 47 key tụt · 22 key đứng yên · 17 key ngoài bảng = 109 key**
+(khớp đúng với file lọc từng key).
+
+Xếp loại 41 nhóm: **16 nhóm MẤT ĐẤT · 7 nhóm GIỮ ĐƯỢC · 6 nhóm GIẰNG CO · 8 nhóm ĐỨNG YÊN ·
+4 nhóm chưa đánh giá được**.
+
+Bản cũ chưa có phần chốt (vẫn giữ để đối chiếu):
+https://docs.google.com/spreadsheets/d/1DBm1AAJEWNCs9RS8Lkwia-powV2hlQSFLr_9xB2jFDc/edit
 
 Cách làm: mở trực tiếp 359 trang để lấy tiêu đề thật (336 lấy được, 23 trang chặn bot).
 Kiểu nội dung do máy xếp từ tiêu đề + đường dẫn — dùng để nhìn xu hướng, không phải
