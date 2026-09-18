@@ -53,6 +53,43 @@ Trong số 230 bài bị bật ra, **22 bài là của hr2b.com**. Phần lớn 
 `/vi/dich-vu/...` — đúng nhóm trang không nằm trong sitemap mà bản kiểm tra kỹ thuật
 đã chỉ ra.
 
+## File bổ sung — định hướng nội dung theo nhóm từ khóa
+
+**https://docs.google.com/spreadsheets/d/1DBm1AAJEWNCs9RS8Lkwia-powV2hlQSFLr_9xB2jFDc/edit**
+
+41 nhóm từ khóa, mỗi nhóm ba cột nội dung: **bài nào lên top · bài của mình · bài nào rớt**,
+kèm kiểu nội dung và ví dụ tiêu đề thật.
+
+Cách làm: mở trực tiếp 359 trang để lấy tiêu đề thật (336 lấy được, 23 trang chặn bot).
+Kiểu nội dung do máy xếp từ tiêu đề + đường dẫn — dùng để nhìn xu hướng, không phải
+kết luận tuyệt đối. Bản gốc: `6-dinh-huong-noi-dung-theo-nhom.csv`,
+tiêu đề thô: `6-tieu-de-trang-da-lay.tsv`.
+
+### Xu hướng kiểu nội dung (ròng = số bài lên top trừ số bài rớt)
+
+| Kiểu nội dung | Lên | Rớt | Ròng |
+|---|---|---|---|
+| Trang việc làm / hồ sơ công ty | 17 | 4 | **+13** |
+| Giải nghĩa khái niệm "… là gì" | 28 | 22 | +6 |
+| Bài blog kiến thức | 9 | 5 | +4 |
+| Trang dịch vụ (chào bán) | 42 | 42 | 0 |
+| Hướng dẫn / mẫu biểu / công thức | 20 | 24 | −4 |
+| Báo giá / chi phí | 4 | 12 | −8 |
+| **Tổng hợp / xếp hạng "top công ty"** | 35 | 45 | **−10** |
+
+### Content hiện tại của HR2B (109 key đang nhắm tới)
+
+| Kiểu nội dung | Số key |
+|---|---|
+| Tổng hợp / xếp hạng "top công ty" | **42 (39%)** |
+| Trang dịch vụ (chào bán) | 25 |
+| Giải nghĩa khái niệm "… là gì" | 19 |
+| Hướng dẫn / mẫu biểu / công thức | 8 |
+| Bài blog kiến thức | 4 |
+| Báo giá / chi phí | 3 |
+
+Gần 40% nội dung của HR2B nằm ở đúng kiểu đang mất chỗ nhiều nhất trên SERP.
+
 ## Các file lẻ trước đây (vẫn giữ để đối chiếu)
 
 | File | Nội dung | Link |
