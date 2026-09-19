@@ -42,10 +42,18 @@ Mỗi ô một việc khác nhau, **không dán cùng một câu vào cả 4 ô*
 | Ô | Việc của nó | Cách viết |
 |---|---|---|
 | **Alt Text** | máy đọc màn hình + Google Ảnh | Tả ảnh, có key, dưới 120 ký tự |
-| **Title** | tên trong thư viện ảnh | Ngắn gọn, có key |
-| **Image Caption** | dòng chữ hiện dưới ảnh | Câu giới thiệu cho người đọc |
+| **Title** | tên trong thư viện ảnh | **Viết y như alt** — không để cụt vài chữ |
+| **Image Caption** | dòng chữ hiện dưới ảnh | Câu giới thiệu cho người đọc, có key |
 | **Description** | nội dung trang đính kèm | **Viết y như alt**: một câu tả ảnh, có key, dưới 120 ký tự |
 | **File URL** | — | Giữ nguyên nếu tên file đã có key, không dấu |
+
+**Luật chung cho cả 4 ô (chốt 19/09/2026):** cả bốn đều viết theo luật của alt —
+một câu có nghĩa, tả đúng cái ảnh, có key, dưới 120 ký tự. **Bốn câu phải khác nhau**:
+cùng một ảnh nhưng mỗi ô tả một góc khác, đổi cấu trúc câu, đổi thứ tự chi tiết.
+
+⛔ **Title không viết cụt** kiểu `Nguyên liệu cho ngành sữa - AIG` hay
+`Nhà máy trái cây đông lạnh MDG - AIG`. Viết thành câu đủ, ví dụ
+*"Bàn gỗ xanh bày đủ sữa tươi, phô mai và bơ — nhóm nguyên liệu cho ngành sữa của AIG"*.
 
 ### ⛔ Những điều Trang cấm
 
