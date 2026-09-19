@@ -1,7 +1,7 @@
 # Công cụ viết alt ảnh chuẩn SEO
 
 > Bộ quy tắc Trang đã chốt dần qua các bài thực tế. Mở bài mới thì đọc file này trước.
-> Cập nhật lần cuối: 18/09/2026.
+> Cập nhật lần cuối: 19/09/2026.
 
 ## 1. Trang đưa gì, tôi trả gì
 
@@ -44,16 +44,23 @@ Mỗi ô một việc khác nhau, **không dán cùng một câu vào cả 4 ô*
 | **Alt Text** | máy đọc màn hình + Google Ảnh | Tả ảnh, có key, dưới 120 ký tự |
 | **Title** | tên trong thư viện ảnh | Ngắn gọn, có key |
 | **Image Caption** | dòng chữ hiện dưới ảnh | Câu giới thiệu cho người đọc |
-| **Description** | nội dung trang đính kèm | Dài hơn được, thêm nguồn |
+| **Description** | nội dung trang đính kèm | **Viết y như alt**: một câu tả ảnh, có key, dưới 120 ký tự |
 | **File URL** | — | Giữ nguyên nếu tên file đã có key, không dấu |
 
-### ⛔ Hai từ Trang cấm (chốt 18/09/2026)
+### ⛔ Những điều Trang cấm
 
 1. **Alt Text của thumb: bỏ chữ "banner"** — và bỏ cả "ảnh bìa" ở bài tiếng Việt.
    Thay bằng cách tả thẳng nội dung ảnh, rồi nối bằng *"minh họa…"* /
    *"introducing…"* / *"illustrating…"*.
-2. **Description: không mở đầu bằng "Cover image for the…"** — vào thẳng nội dung,
-   ví dụ *"HR2B guide to…"* / *"Bài viết của HR2B về…"*.
+2. **Description: không mở đầu bằng "Cover image for the…"**.
+3. **Description: không tóm tắt bài viết** (chốt 19/09/2026). Cấm các kiểu mở đầu
+   *"Bài viết của … giới thiệu…"*, *"Trang dịch vụ … của…"*, *"HR2B guide to…"*.
+   Ô này viết **đúng luật của alt**: một câu tả chính cái ảnh, có key, dưới 120 ký tự,
+   và **khác câu** đã dùng ở ô Alt Text (cùng ảnh nhưng đổi góc tả, đổi cấu trúc câu).
+
+   | | Sai | Đúng |
+   |---|---|---|
+   | Description | Bài viết của AIG giới thiệu Mekong Delta Gourmet (MDG) - công ty sản xuất trái cây đông lạnh IQF với nhà máy hơn 33.000 m²… | Xoài, thơm, chuối và thanh long cắt khối xếp trong tô gỗ tại công ty sản xuất trái cây đông lạnh MDG |
 
 Đừng bấm nút **"Generate Alt"** của WordPress: nó sinh alt tiếng Anh chung chung,
 không có key, không đúng ngữ cảnh bài.
