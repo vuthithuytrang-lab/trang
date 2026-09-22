@@ -3,28 +3,27 @@
   "@context": "https://schema.org",
   "@type": "Organization",
   "@id": "https://goodcert.vn/#organization",
-  "name": "GOODCERT",
-  "legalName": "CÔNG TY CỔ PHẦN CHỨNG NHẬN QUỐC GIA",
+  "name": "GOODCERT - Công ty Cổ phần Chứng nhận Quốc gia GOODCERT",
+  "legalName": "Công ty Cổ phần Chứng nhận Quốc gia GOODCERT",
   "alternateName": [
-    "GOOD VIỆT NAM – VĂN PHÒNG CHỨNG NHẬN QUỐC GIA",
-    "GOOD VIỆT NAM",
-    "Văn phòng Chứng nhận Quốc gia GOODCERT",
-    "Goodcert",
+    "GOODCERT",
     "Chứng nhận ISO GOODCERT"
   ],
   "url": "https://goodcert.vn/",
   "logo": "https://goodcert.vn/wp-content/uploads/2026/04/goodcert-logo-1024x267.png",
-  "description": "GOODCERT là tổ chức chứng nhận và giám định độc lập được Bộ Khoa học và Công nghệ chỉ định, hoạt động theo quy định của pháp luật Việt Nam và tiêu chuẩn, thông lệ quốc tế. Năng lực của GOODCERT được công nhận bởi Văn phòng Công nhận Chất lượng (BoA) – thành viên ký kết Thoả thuận thừa nhận lẫn nhau (MLA) của Diễn đàn Công nhận Quốc tế IAF. Dịch vụ gồm chứng nhận hệ thống quản lý (ISO 9001, ISO 14001, ISO 22000, HACCP, ISO 13485, ISO 45001, VietGAP), chứng nhận chất lượng sản phẩm hàng hoá, thử nghiệm – kiểm tra chất lượng, kiểm định – giám định, công bố thực phẩm, FDA và CE Marking.",
+  "description": "GOODCERT là tổ chức chứng nhận đã đăng ký hoạt động tại Bộ Khoa học và Công nghệ, hoạt động theo quy định của pháp luật Việt Nam và tiêu chuẩn, thông lệ quốc tế.",
   "foundingLocation": {
     "@type": "Place",
     "name": "Hà Nội",
-    "address": "Số 51E, Phố Mai Hắc Đế, Phường Hai Bà Trưng, Thành phố Hà Nội",
+    "address": "Số 51E, Phố Mai Hắc Đế, Phường Hai Bà Trưng, Thành phố Hà Nội, 11314",
     "url": "https://vi.wikipedia.org/wiki/Hà_Nội"
   },
   "sameAs": [
-    "https://www.facebook.com/goodvietnam",
-    "https://www.youtube.com/@cnqggoodvn/",
-    "https://www.boa.gov.vn/vi/cong-ty-co-phan-chung-nhan-quoc-gia-good-viet-nam"
+    "https://www.facebook.com/goodvietnam/",
+    "https://www.youtube.com/@cnqggoodcert",
+    "https://www.tiktok.com/@chungnhanquocgia",
+    "https://www.instagram.com/goodcert_official/",
+    "https://www.threads.com/@goodcert_official"
   ],
   "contactPoint": [
     {
@@ -35,12 +34,6 @@
       "areaServed": "VN",
       "availableLanguage": "Vietnamese"
     }
-  ],
-  "additionalType": [
-    "https://en.wikipedia.org/wiki/Certification_body",
-    "https://en.wikipedia.org/wiki/Conformity_assessment",
-    "https://en.wikipedia.org/wiki/Certification",
-    "https://en.wikipedia.org/wiki/Inspection"
   ]
 }
 </script>
