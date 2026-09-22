@@ -27,9 +27,8 @@ từng cái một, không thiếu, không thêm, không đổi.
 — người đọc bấm vào sẽ không có gì xảy ra. Tôi đổi về dòng chữ mô tả bình thường.
 Không mất link nào vì chúng vốn không có link.
 
-**Một thứ tôi không sửa được từ đây:** phần chân trang (Hội sở chính / Hỗ trợ tại quầy / Liên hệ) không
-nằm trong đoạn mã này — nó là phần dùng chung của giao diện. Muốn chỉnh phải vào mục sửa chân trang riêng.
-Trang bảo tôi một tiếng là tôi làm tiếp.
+**Chân trang đã làm xong** (ngày 22/09/2026, theo yêu cầu bổ sung) — xem file `chan-trang-vib.html`
+và mục 4 bên dưới. Nó nằm ở chỗ khác nên phải dán riêng.
 
 ---
 
@@ -55,3 +54,51 @@ Trang bảo tôi một tiếng là tôi làm tiếp.
 
 Tôi chưa xem được trang thật sau khi dán (máy chủ ở đây không vào được wordpress.com để tải ảnh),
 nên tôi mới chỉ soát được trên bản dựng thử. Trang chụp màn hình gửi tôi là tôi soát tiếp.
+
+---
+
+## 4. Chân trang mới + dải số liệu (bổ sung ngày 22/09/2026)
+
+### 4.1 Đã thêm gì
+
+**Trên trang chủ** — thêm dải **"VIB trong những con số"** ngay dưới mục Giới thiệu:
+1996 (năm thành lập) · 34.000+ tỷ (vốn điều lệ) · 202 (điểm giao dịch) · 33 (tỉnh, thành phố) ·
+10.000+ (nhân viên), kèm dòng ghi nguồn.
+
+**Chân trang** — dựng lại thành 4 cột: thông tin liên hệ bên trái, rồi ba cột đường dẫn
+(Sản phẩm / Về VIB / Hỗ trợ), dưới cùng là dòng website chính thức và ba liên kết mạng xã hội.
+Nền đen chữ trắng cho khác biệt với thân trang.
+
+### 4.2 Số liệu và đường link lấy từ đâu
+
+Tôi **không tự nghĩ ra con số nào**. Tất cả đọc thẳng từ `vib.com.vn`:
+
+| Thứ | Đọc từ |
+|---|---|
+| Vốn điều lệ, số chi nhánh, số tỉnh thành, số nhân viên, năm thành lập, tên pháp lý | `vib.com.vn/vn/about-vib` |
+| 18 đường link trong chân trang | Chân trang thật của `vib.com.vn`, đối chiếu lại với `vib.com.vn/vn/sitemap` |
+| 3 liên kết mạng xã hội | Chân trang `vib.com.vn`, đã mở từng cái kiểm tra tên hiển thị đúng là VIB |
+
+Địa chỉ hội sở, giờ làm việc, tổng đài, email thì giữ nguyên như chân trang cũ của Trang.
+
+### 4.3 Cách dán chân trang — khác chỗ với trang chủ
+
+Chân trang là phần dùng chung, sửa một lần là **mọi trang đều đổi theo**.
+
+1. Trong trang quản trị WordPress, vào **Giao diện** (Appearance) → **Trình chỉnh sửa** (Editor).
+2. Ở cột trái chọn **Mẫu** (Patterns) → **Phần mẫu** (Template parts) → bấm vào **Chân trang** (Footer).
+3. Bấm dấu **⋮** góc trên bên phải → **Trình chỉnh sửa mã** (Code editor).
+4. Xóa hết nội dung cũ, dán toàn bộ `chan-trang-vib.html` vào.
+5. Bấm **⋮** → **Trình chỉnh sửa trực quan** để xem lại.
+6. Bấm **Lưu** (Save).
+
+### 4.4 Một điều tôi cần Trang quyết
+
+Trang web này đặt ở `nganhangquoctevib.wordpress.com`, **không phải tên miền chính thức của VIB**.
+Vì vậy tôi **cố ý không ghi dòng "Bản quyền © VIB"** hay số giấy phép vào chân trang — ghi như thế là
+nhận trang này là tài sản của ngân hàng, dễ thành mạo danh nếu chưa được VIB cho phép.
+
+Thay vào đó tôi ghi dòng trung tính: *"Website chính thức của VIB: www.vib.com.vn"*.
+
+👉 Nếu trang này làm cho VIB và đã được họ đồng ý, Trang bảo tôi một tiếng là tôi đổi lại thành dòng
+bản quyền đầy đủ.
