@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Schema Organization cho goodcert.vn</title>
+<style>
+:root {
+  --xanh: #004AEF; --xanh-sang: #0D53F0; --navy: #002992;
+  --mint: #07EF9C; --den: #151515; --xam-nen: #F3F3F6; --xam-vien: #DCDCDC; --xam-chu: #5A6B66;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--xam-nen); color: var(--den);
+  font-family: Gilroy, "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px; line-height: 1.7;
+}
+.wrap { max-width: 980px; margin: 0 auto; padding: 0 20px 64px; }
+header.hero {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--xanh) 55%, #0DD1FF 140%);
+  color: #fff; padding: 36px 0 44px; margin-bottom: 36px;
+}
+.logo-plate {
+  display: inline-block; background: #fff; border-radius: 12px;
+  padding: 14px 20px; margin-bottom: 22px;
+}
+.logo-plate img { display: block; width: 180px; height: auto; }
+header.hero h1 { font-size: 38px; font-weight: 800; margin: 0 0 8px; line-height: 1.25; }
+header.hero p { margin: 0; font-size: 17px; opacity: .93; max-width: 760px; }
+.meta { margin-top: 18px; font-size: 13px; opacity: .85; }
+.meta b { color: var(--mint); font-weight: 700; }
+h2 { font-size: 24px; font-weight: 700; color: var(--navy); margin: 40px 0 6px; }
+h2 .num { color: var(--mint); margin-right: 8px; }
+.sub { color: var(--xam-chu); font-size: 14px; margin: 0 0 16px; }
+.card { background: #fff; border: 1px solid var(--xam-vien); border-radius: 12px; padding: 22px 24px; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; background: #fff; }
+th { background: var(--navy); color: #fff; text-align: left; padding: 11px 12px; font-weight: 700; font-size: 13px; }
+td { padding: 10px 12px; border-bottom: 1px solid var(--xam-vien); vertical-align: top; }
+tr:last-child td { border-bottom: none; }
+td.field { font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; color: var(--xanh); font-weight: 600; white-space: nowrap; }
+td.src { color: var(--xam-chu); }
+td.st { white-space: nowrap; font-size: 13px; }
+.tablewrap { overflow-x: auto; border: 1px solid var(--xam-vien); border-radius: 12px; }
+pre {
+  background: #0d1b33; color: #e8eefc; border-radius: 12px; padding: 20px;
+  overflow-x: auto; font-size: 12.5px; line-height: 1.6;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  white-space: pre; margin: 0;
+}
+ol, ul { padding-left: 22px; }
+li { margin-bottom: 9px; }
+.note { border-left: 4px solid var(--mint); background: #fff; padding: 16px 20px; border-radius: 0 10px 10px 0; margin: 18px 0; }
+.warn { border-left: 4px solid #F68B1F; background: #fff; padding: 16px 20px; border-radius: 0 10px 10px 0; margin: 18px 0; }
+.stat-row { display: flex; gap: 14px; flex-wrap: wrap; margin: 18px 0 0; }
+.stat { background: #fff; border: 1px solid var(--xam-vien); border-radius: 12px; padding: 16px 20px; flex: 1 1 170px; }
+.stat .n { font-size: 30px; font-weight: 800; color: var(--xanh); line-height: 1.2; }
+.stat .l { font-size: 13px; color: var(--xam-chu); }
+footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--xam-vien); font-size: 13px; color: var(--xam-chu); }
+a { color: var(--xanh); }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="logo-plate">
+      <img src="../../nhan-dien-thuong-hieu/logo-goc/SEONGON-logo-ngang.webp" alt="SEONGON">
+    </div>
+    <h1>Schema Organization cho goodcert.vn</h1>
+    <p>Đoạn mã đánh dấu dữ liệu để Google hiểu goodcert.vn là doanh nghiệp nào — toàn bộ thông tin đọc trực tiếp từ website, không suy đoán.</p>
+    <div class="meta">Website: <b>https://goodcert.vn/</b> &nbsp;·&nbsp; Trang đã đọc: <b>trang chủ, /gioi-thieu, /lien-he</b> &nbsp;·&nbsp; Ngày làm: <b>22/09/2026</b></div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="stat-row">
+    <div class="stat"><div class="n">13</div><div class="l">trường thông tin đã điền</div></div>
+    <div class="stat"><div class="n">3</div><div class="l">trang website đã đọc</div></div>
+    <div class="stat"><div class="n">2</div><div class="l">trường còn thiếu, cần bổ sung</div></div>
+  </div>
+
+  <h2><span class="num">1</span>Đoạn mã chính — dán vào website</h2>
+  <p class="sub">Bám sát đúng khuôn mẫu bạn gửi. Dán vào phần &lt;head&gt; của <b>trang chủ</b> goodcert.vn, chỉ dán một lần duy nhất cho cả site.</p>
+  <pre>&lt;script type=&quot;application/ld+json&quot;&gt;
+{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;Organization&quot;,
+  &quot;@id&quot;: &quot;https://goodcert.vn/#organization&quot;,
+  &quot;name&quot;: &quot;GOODCERT&quot;,
+  &quot;legalName&quot;: &quot;CÔNG TY CỔ PHẦN CHỨNG NHẬN QUỐC GIA&quot;,
+  &quot;alternateName&quot;: [
+    &quot;GOOD VIỆT NAM – VĂN PHÒNG CHỨNG NHẬN QUỐC GIA&quot;,
+    &quot;GOOD VIỆT NAM&quot;,
+    &quot;Văn phòng Chứng nhận Quốc gia GOODCERT&quot;,
+    &quot;Goodcert&quot;,
+    &quot;Chứng nhận ISO GOODCERT&quot;
+  ],
+  &quot;url&quot;: &quot;https://goodcert.vn/&quot;,
+  &quot;logo&quot;: &quot;https://goodcert.vn/wp-content/uploads/2026/04/goodcert-logo-1024x267.png&quot;,
+  &quot;description&quot;: &quot;GOODCERT là tổ chức chứng nhận và giám định độc lập được Bộ Khoa học và Công nghệ chỉ định, hoạt động theo quy định của pháp luật Việt Nam và tiêu chuẩn, thông lệ quốc tế. Năng lực của GOODCERT được công nhận bởi Văn phòng Công nhận Chất lượng (BoA) – thành viên ký kết Thoả thuận thừa nhận lẫn nhau (MLA) của Diễn đàn Công nhận Quốc tế IAF. Dịch vụ gồm chứng nhận hệ thống quản lý (ISO 9001, ISO 14001, ISO 22000, HACCP, ISO 13485, ISO 45001, VietGAP), chứng nhận chất lượng sản phẩm hàng hoá, thử nghiệm – kiểm tra chất lượng, kiểm định – giám định, công bố thực phẩm, FDA và CE Marking.&quot;,
+  &quot;foundingLocation&quot;: {
+    &quot;@type&quot;: &quot;Place&quot;,
+    &quot;name&quot;: &quot;Hà Nội&quot;,
+    &quot;address&quot;: &quot;Số 51E, Phố Mai Hắc Đế, Phường Hai Bà Trưng, Thành phố Hà Nội&quot;,
+    &quot;url&quot;: &quot;https://vi.wikipedia.org/wiki/Hà_Nội&quot;
+  },
+  &quot;sameAs&quot;: [
+    &quot;https://www.facebook.com/goodvietnam&quot;,
+    &quot;https://www.youtube.com/@cnqggoodvn/&quot;,
+    &quot;https://www.boa.gov.vn/vi/cong-ty-co-phan-chung-nhan-quoc-gia-good-viet-nam&quot;
+  ],
+  &quot;contactPoint&quot;: [
+    {
+      &quot;@type&quot;: &quot;ContactPoint&quot;,
+      &quot;telephone&quot;: &quot;+84945001005&quot;,
+      &quot;email&quot;: &quot;info@chungnhanquocgia.com&quot;,
+      &quot;contactType&quot;: &quot;customer service&quot;,
+      &quot;areaServed&quot;: &quot;VN&quot;,
+      &quot;availableLanguage&quot;: &quot;Vietnamese&quot;
+    }
+  ],
+  &quot;additionalType&quot;: [
+    &quot;https://en.wikipedia.org/wiki/Certification_body&quot;,
+    &quot;https://en.wikipedia.org/wiki/Conformity_assessment&quot;,
+    &quot;https://en.wikipedia.org/wiki/Certification&quot;,
+    &quot;https://en.wikipedia.org/wiki/Inspection&quot;
+  ]
+}
+&lt;/script&gt;</pre>
+
+  <h2><span class="num">2</span>Lấy thông tin ở đâu ra</h2>
+  <p class="sub">Từng dòng trong đoạn mã trên đối chiếu với đúng chỗ trên website.</p>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>Trường</th><th>Nội dung đã điền</th><th>Đọc được ở đâu trên web</th><th>Tình trạng</th></tr></thead>
+    <tbody>
+<tr><td class="field">name</td><td>GOODCERT</td><td class="src">Tên thương hiệu in trên logo và nhắc khắp trang chủ</td><td class="st">✅ Lấy từ web</td></tr>
+<tr><td class="field">legalName</td><td>CÔNG TY CỔ PHẦN CHỨNG NHẬN QUỐC GIA</td><td class="src">Tiêu đề lớn ở trang Giới thiệu (trên web viết nhầm “CỔ PHẨN” – đã sửa lại chính tả)</td><td class="st">⚠️ Cần bạn xác nhận</td></tr>
+<tr><td class="field">alternateName</td><td>5 tên gọi khác</td><td class="src">Thẻ tiêu đề trang, chân trang, trang Liên hệ. Riêng “Chứng nhận ISO GOODCERT” là tên ghép từ khoá chính + thương hiệu theo đúng yêu cầu trong mẫu</td><td class="st">✅ Lấy từ web</td></tr>
+<tr><td class="field">url</td><td>https://goodcert.vn/</td><td class="src">Thẻ canonical trong mã nguồn trang chủ</td><td class="st">✅ Lấy từ web</td></tr>
+<tr><td class="field">logo</td><td>goodcert-logo-1024x267.png</td><td class="src">File logo thật đang hiển thị ở đầu trang</td><td class="st">✅ Lấy từ web</td></tr>
+<tr><td class="field">description</td><td>Đoạn mô tả dài</td><td class="src">Ghép từ khối “Về Goodcert” ở chân trang + phần công nhận BoA/IAF + danh sách dịch vụ ở trang Giới thiệu</td><td class="st">✅ Lấy từ web</td></tr>
+<tr><td class="field">foundingLocation</td><td>Hà Nội</td><td class="src">“GOODCERT có trụ sở chính tại Hà Nội – Việt Nam” + địa chỉ trụ sở ở chân trang</td><td class="st">✅ Lấy từ web</td></tr>
+<tr><td class="field">sameAs</td><td>Facebook, YouTube, trang BoA</td><td class="src">Hai biểu tượng mạng xã hội ở chân trang; link BoA đặt trong bài Giới thiệu</td><td class="st">✅ Lấy từ web</td></tr>
+<tr><td class="field">contactPoint</td><td>+84 945 001 005 · info@chungnhanquocgia.com</td><td class="src">Thanh liên hệ trên cùng và chân trang (0945.001.005)</td><td class="st">✅ Lấy từ web</td></tr>
+<tr><td class="field">additionalType</td><td>4 đường dẫn Wikipedia</td><td class="src">Chọn đúng loại hình của doanh nghiệp: tổ chức chứng nhận, đánh giá sự phù hợp, chứng nhận, giám định</td><td class="st">✅ Đã kiểm tra link sống</td></tr>
+<tr><td class="field">founder</td><td>— để trống —</td><td class="src">Website không ghi tên người sáng lập ở bất kỳ trang nào đã đọc</td><td class="st">🟡 Cần bổ sung</td></tr>
+<tr><td class="field">numberOfEmployees</td><td>— để trống —</td><td class="src">Website không công bố số lượng nhân sự (chỉ có “12 năm kinh nghiệm”, “05 chi nhánh”)</td><td class="st">🟡 Cần bổ sung</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2><span class="num">3</span>Ba chỗ cần bạn chốt trước khi dán</h2>
+  <div class="warn">
+    <ol>
+      <li><b>Tên công ty trên giấy phép.</b> Trang Giới thiệu đang viết “CÔNG TY CỔ <i>PHẨN</i> CHỨNG NHẬN QUỐC GIA” — sai chính tả. Trang của Văn phòng Công nhận BoA ghi là “Công ty Cổ phần Chứng nhận Quốc gia – GOOD Việt Nam”. Mình đã điền <b>CÔNG TY CỔ PHẦN CHỨNG NHẬN QUỐC GIA</b>; bạn hỏi khách xem trên đăng ký kinh doanh có đuôi “– GOOD VIỆT NAM” không, có thì thêm vào.</li>
+      <li><b>Tên người sáng lập</b> (<code>founder</code>) — website không ghi ở đâu cả, mình <b>để trống</b> chứ không bịa. Xin được tên thì thêm vào là xong.</li>
+      <li><b>Số lượng nhân sự</b> (<code>numberOfEmployees</code>) — website chỉ có “12 năm kinh nghiệm”, “05 chi nhánh”, không có số người. Cũng <b>để trống</b>.</li>
+    </ol>
+  </div>
+
+  <div class="note">
+    <b>Hai điểm mình chủ động sửa khác mẫu, vì mẫu không khớp thực tế website:</b>
+    <ul>
+      <li>Mẫu có <b>2 số điện thoại</b>, trong đó số <code>0938 249 246</code> là của doanh nghiệp khác trong file mẫu. Goodcert chỉ công bố <b>một</b> số là <b>0945.001.005</b> nên mình để một mục liên hệ, kèm thêm email.</li>
+      <li>Mẫu ghi <code>"contactOption": "TollFree"</code> — nghĩa là “số gọi miễn phí” (kiểu đầu số 1800). Số của Goodcert là số di động thường, khai TollFree là khai sai nên mình bỏ dòng đó.</li>
+    </ul>
+  </div>
+
+  <h2><span class="num">4</span>Bản mở rộng — không bắt buộc, nhưng nên dùng</h2>
+  <p class="sub">Vẫn là thông tin thật trên website, chỉ khai thêm cho đầy đủ: địa chỉ trụ sở dạng chuẩn, 5 văn phòng trên toàn quốc, email và phạm vi phục vụ. Google hiểu rõ hơn, dễ hiện thông tin doanh nghiệp bên phải kết quả tìm kiếm. Nếu dùng bản này thì <b>không dán bản ở mục 1 nữa</b>, chỉ chọn một.</p>
+  <pre>&lt;script type=&quot;application/ld+json&quot;&gt;
+{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;Organization&quot;,
+  &quot;@id&quot;: &quot;https://goodcert.vn/#organization&quot;,
+  &quot;name&quot;: &quot;GOODCERT&quot;,
+  &quot;legalName&quot;: &quot;CÔNG TY CỔ PHẦN CHỨNG NHẬN QUỐC GIA&quot;,
+  &quot;alternateName&quot;: [
+    &quot;GOOD VIỆT NAM – VĂN PHÒNG CHỨNG NHẬN QUỐC GIA&quot;,
+    &quot;GOOD VIỆT NAM&quot;,
+    &quot;Văn phòng Chứng nhận Quốc gia GOODCERT&quot;,
+    &quot;Goodcert&quot;,
+    &quot;Chứng nhận ISO GOODCERT&quot;
+  ],
+  &quot;url&quot;: &quot;https://goodcert.vn/&quot;,
+  &quot;logo&quot;: &quot;https://goodcert.vn/wp-content/uploads/2026/04/goodcert-logo-1024x267.png&quot;,
+  &quot;image&quot;: &quot;https://goodcert.vn/wp-content/uploads/2026/04/goodcert-logo-1024x267.png&quot;,
+  &quot;description&quot;: &quot;GOODCERT là tổ chức chứng nhận và giám định độc lập được Bộ Khoa học và Công nghệ chỉ định, hoạt động theo quy định của pháp luật Việt Nam và tiêu chuẩn, thông lệ quốc tế. Năng lực của GOODCERT được công nhận bởi Văn phòng Công nhận Chất lượng (BoA) – thành viên ký kết Thoả thuận thừa nhận lẫn nhau (MLA) của Diễn đàn Công nhận Quốc tế IAF. Dịch vụ gồm chứng nhận hệ thống quản lý (ISO 9001, ISO 14001, ISO 22000, HACCP, ISO 13485, ISO 45001, VietGAP), chứng nhận chất lượng sản phẩm hàng hoá, thử nghiệm – kiểm tra chất lượng, kiểm định – giám định, công bố thực phẩm, FDA và CE Marking.&quot;,
+  &quot;email&quot;: &quot;info@chungnhanquocgia.com&quot;,
+  &quot;telephone&quot;: &quot;+84945001005&quot;,
+  &quot;address&quot;: {
+    &quot;@type&quot;: &quot;PostalAddress&quot;,
+    &quot;streetAddress&quot;: &quot;Số 51E, Phố Mai Hắc Đế, Phường Hai Bà Trưng&quot;,
+    &quot;addressLocality&quot;: &quot;Thành phố Hà Nội&quot;,
+    &quot;addressCountry&quot;: &quot;VN&quot;
+  },
+  &quot;foundingLocation&quot;: {
+    &quot;@type&quot;: &quot;Place&quot;,
+    &quot;name&quot;: &quot;Hà Nội&quot;,
+    &quot;address&quot;: &quot;Số 51E, Phố Mai Hắc Đế, Phường Hai Bà Trưng, Thành phố Hà Nội&quot;,
+    &quot;url&quot;: &quot;https://vi.wikipedia.org/wiki/Hà_Nội&quot;
+  },
+  &quot;areaServed&quot;: {
+    &quot;@type&quot;: &quot;Country&quot;,
+    &quot;name&quot;: &quot;Việt Nam&quot;
+  },
+  &quot;location&quot;: [
+    {
+      &quot;@type&quot;: &quot;Place&quot;,
+      &quot;name&quot;: &quot;GOODCERT – Văn phòng Hà Nội&quot;,
+      &quot;address&quot;: {
+        &quot;@type&quot;: &quot;PostalAddress&quot;,
+        &quot;streetAddress&quot;: &quot;Tầng 7, Tòa nhà HLT, Số 23 ngõ 37/2 phố Dịch Vọng, Phường Cầu Giấy&quot;,
+        &quot;addressLocality&quot;: &quot;Thành phố Hà Nội&quot;,
+        &quot;addressCountry&quot;: &quot;VN&quot;
+      }
+    },
+    {
+      &quot;@type&quot;: &quot;Place&quot;,
+      &quot;name&quot;: &quot;GOODCERT – Văn phòng Đà Nẵng&quot;,
+      &quot;address&quot;: {
+        &quot;@type&quot;: &quot;PostalAddress&quot;,
+        &quot;streetAddress&quot;: &quot;73 Lý Thái Tông, Phường Thanh Khê Tây&quot;,
+        &quot;addressLocality&quot;: &quot;Thành phố Đà Nẵng&quot;,
+        &quot;addressCountry&quot;: &quot;VN&quot;
+      }
+    },
+    {
+      &quot;@type&quot;: &quot;Place&quot;,
+      &quot;name&quot;: &quot;GOODCERT – Văn phòng TP. Hồ Chí Minh&quot;,
+      &quot;address&quot;: {
+        &quot;@type&quot;: &quot;PostalAddress&quot;,
+        &quot;streetAddress&quot;: &quot;Tòa nhà PLS, 282 Chu Văn An, Phường Bình Thạnh&quot;,
+        &quot;addressLocality&quot;: &quot;Thành phố Hồ Chí Minh&quot;,
+        &quot;addressCountry&quot;: &quot;VN&quot;
+      }
+    },
+    {
+      &quot;@type&quot;: &quot;Place&quot;,
+      &quot;name&quot;: &quot;GOODCERT – Văn phòng Hải Phòng&quot;,
+      &quot;address&quot;: {
+        &quot;@type&quot;: &quot;PostalAddress&quot;,
+        &quot;streetAddress&quot;: &quot;11/21/178 Nguyễn Văn Linh, Phường Dư Hàng Kênh&quot;,
+        &quot;addressLocality&quot;: &quot;Thành phố Hải Phòng&quot;,
+        &quot;addressCountry&quot;: &quot;VN&quot;
+      }
+    },
+    {
+      &quot;@type&quot;: &quot;Place&quot;,
+      &quot;name&quot;: &quot;GOODCERT – Văn phòng Tây Nguyên&quot;,
+      &quot;address&quot;: {
+        &quot;@type&quot;: &quot;PostalAddress&quot;,
+        &quot;streetAddress&quot;: &quot;33 Nguyễn Công Trứ, Phường Tự An, Thành phố Buôn Ma Thuột&quot;,
+        &quot;addressLocality&quot;: &quot;Tỉnh Đắk Lắk&quot;,
+        &quot;addressCountry&quot;: &quot;VN&quot;
+      }
+    }
+  ],
+  &quot;sameAs&quot;: [
+    &quot;https://www.facebook.com/goodvietnam&quot;,
+    &quot;https://www.youtube.com/@cnqggoodvn/&quot;,
+    &quot;https://www.boa.gov.vn/vi/cong-ty-co-phan-chung-nhan-quoc-gia-good-viet-nam&quot;
+  ],
+  &quot;contactPoint&quot;: [
+    {
+      &quot;@type&quot;: &quot;ContactPoint&quot;,
+      &quot;telephone&quot;: &quot;+84945001005&quot;,
+      &quot;email&quot;: &quot;info@chungnhanquocgia.com&quot;,
+      &quot;contactType&quot;: &quot;customer service&quot;,
+      &quot;areaServed&quot;: &quot;VN&quot;,
+      &quot;availableLanguage&quot;: &quot;Vietnamese&quot;
+    }
+  ],
+  &quot;additionalType&quot;: [
+    &quot;https://en.wikipedia.org/wiki/Certification_body&quot;,
+    &quot;https://en.wikipedia.org/wiki/Conformity_assessment&quot;,
+    &quot;https://en.wikipedia.org/wiki/Certification&quot;,
+    &quot;https://en.wikipedia.org/wiki/Inspection&quot;
+  ]
+}
+&lt;/script&gt;</pre>
+
+  <h2><span class="num">5</span>Dán vào web thế nào</h2>
+  <div class="card">
+    <ol>
+      <li>Chọn <b>một</b> trong hai đoạn mã: mục 1 (bám sát mẫu) hoặc mục 4 (đầy đủ hơn).</li>
+      <li>Website goodcert.vn chạy WordPress. Người quản trị web vào <b>Giao diện → Sửa đầu trang</b>, hoặc dùng plugin chèn mã như “Insert Headers and Footers”.</li>
+      <li>Dán nguyên cả đoạn (gồm cả dòng <code>&lt;script&gt;</code> mở và đóng) vào khu vực <b>Header</b>, đặt phạm vi áp dụng là <b>toàn site</b> hoặc riêng trang chủ.</li>
+      <li>Lưu lại, rồi kiểm tra bằng công cụ miễn phí của Google: <a href="https://search.google.com/test/rich-results">search.google.com/test/rich-results</a> — dán địa chỉ goodcert.vn vào, thấy hiện “Organization” là chạy đúng.</li>
+      <li>Nếu website đã có sẵn một đoạn Organization khác (một số plugin SEO tự sinh), <b>phải xoá cái cũ đi</b>, tránh hai đoạn đá nhau.</li>
+    </ol>
+  </div>
+
+  <footer>
+    Hồ sơ lưu tại <code>cong-cu/schema/goodcert-vn/</code> · Nguồn dữ liệu: goodcert.vn (trang chủ, /gioi-thieu, /lien-he), đọc ngày 22/09/2026.
+  </footer>
+
+</div>
+</body>
+</html>
