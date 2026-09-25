@@ -103,3 +103,52 @@ Trích từ bài `osakar.com.vn/tin-tuc/xe-dien-vespa-gia-bao-nhieu/`:
 - ⚠️ Bản nháp ghi mốc **01/01/2026** — sai, mốc đúng là **01/01/2025**.
 
 Nguồn: baochinhphu.vn, luatvietnam.vn (tra ngày 25/09/2026).
+
+---
+
+# Phần 2 — Năm đối thủ, đọc ngày 25/09/2026
+
+| # | Đối thủ | Dạng trang | Đọc được? |
+|---|---|---|---|
+| 1 | dibao.com.vn/top-mau-xe-may-dien-giong-vespa-dep-gia-tot.html | **Bài viết** — Top 7 mẫu, một hãng | ✅ (Trang dán nội dung) |
+| 2 | xedienxanhsaigon.com/collections/xe-may-dien-vespa | **Trang danh mục** có phần bài — bảng giá 7 hãng, bảng ưu/nhược | ✅ (Trang dán nội dung) |
+| 3 | thegioixedien.com.vn/avd41_xe-dien-vespa | **Trang danh mục** — "Vespa (19+ sản phẩm)" | ✅ tự mở |
+| 4 | vtbike.com/vespa.html | **Trang danh mục** mỏng — chủ yếu bài cũ 2015–2020 | ✅ tự mở |
+| 5 | xedienvietthanh.com/vespa/ | ? | ❌ **403 Forbidden** — thử 3 cách (curl máy tính, curl điện thoại, WebFetch) đều bị chặn. Không đoán nội dung. |
+
+## Ghi chú quan trọng về dạng trang
+
+**3 trên 5 đối thủ là trang danh mục sản phẩm, không phải bài viết.** Google đang trộn
+trang bán hàng vào kết quả của từ khóa này ⇒ xác nhận đây là truy vấn mua hàng.
+Hệ quả: bài viết muốn thắng thì phải **nhìn giống trang bán hàng ở nửa trên**
+(thấy xe, thấy giá ngay) nhưng **làm được thứ trang danh mục không làm được là TƯ VẤN**.
+
+## Bộ lọc của thegioixedien — cho biết người mua thật sự quan tâm gì
+
+Nguyên văn danh sách bộ lọc trên trang danh mục Vespa của họ:
+
+> Giá tiền · Xuất xứ · **Bảo hành Khung xe** · **Bảo hành Ác quy** · **Bảo hành Pin** ·
+> Động cơ · Quãng đường di chuyển · Vận tốc · Tải trọng · **Trọng lượng xe** ·
+> **Thời gian sạc** · Phanh trước/sau · Vành xe · Lốp · Giảm xóc ·
+> **Phụ kiện đi kèm theo xe**
+
+Năm tiêu chí in đậm **không có trong bản nháp của Trang và cũng không có trong
+hai bài đối thủ dạng bài viết**. Đây là bằng chứng người mua cần mà chưa ai đáp ứng.
+
+Cam kết thương mại họ ghi ngay ở thẻ mô tả: *"Bảo hành 3 năm, Bảo hành giá,
+Cứu hộ tận nơi miễn phí, Vận chuyển miễn phí, Trả góp trả trước 20%,
+Khuyến mãi lớn lên đến 3 triệu đồng."*
+
+## Bảng khoảng trống — thứ NGƯỜI ĐỌC CẦN mà KHÔNG đối thủ nào có
+
+| Nội dung người đọc cần | dibao | xedienxanhsaigon | thegioixedien | vtbike |
+|---|:---:|:---:|:---:|:---:|
+| Giống Vespa thật ở điểm nào, giống đến đâu | ❌ | ❌ | ❌ | ❌ |
+| Bằng lái / độ tuổi được đi | ❌ | ❌ | ❌ | ❌ |
+| Tư vấn chọn mẫu theo nhu cầu người dùng | ❌ | ❌ | ❌ (chỉ có bộ lọc máy) | ❌ |
+| Chi phí nuôi xe (tiền điện, tiền thay ắc quy) | ❌ | ❌ | ❌ | ❌ |
+| Bảng so sánh nhiều mẫu — nhiều hãng — đủ cột | ❌ (1 hãng) | ❌ (chỉ có giá) | ❌ | ❌ |
+| Bảo hành khung / ắc quy | ❌ | ❌ | ⚠️ chỉ là bộ lọc | ❌ |
+| Trọng lượng xe (dắt, quay đầu) | ❌ | ❌ | ⚠️ chỉ là bộ lọc | ❌ |
+| Danh sách mẫu + giá | ✅ | ✅ | ✅ | ⚠️ mỏng |
+| Bảng ưu điểm – nhược điểm | ❌ | ✅ | ❌ | ❌ |
