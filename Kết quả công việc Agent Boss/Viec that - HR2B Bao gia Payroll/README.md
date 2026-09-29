@@ -6,7 +6,7 @@ Bản minh họa đề xuất gửi sếp, ngày 29/09/2026.
 |---|---|
 | `1-bao-gia-khong-CTA` | Chèn phần báo giá, chưa có nút kêu gọi |
 | `2-bao-gia-co-nut-CTA` | Báo giá + 1 khung kêu gọi "Register now / Contact us" dưới bảng giá (kéo xuống form) |
-| `3-bao-gia-co-popup` | Báo giá + 1 nút "Get my free quote" dưới bảng giá → mở pop-up 5 ô |
+| `3-bao-gia-co-popup` | Báo giá + 1 nút "Get my free quote" dưới bảng giá → mở pop-up 5 ô, pop-up nổi ngay trên phần báo giá |
 
 **Đã chốt với Trang**
 - Vị trí: Tìm hiểu → Công dụng → Quy trình → **Báo giá** → Vì sao chọn HR2B → Câu hỏi thường gặp.
