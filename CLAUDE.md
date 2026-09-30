@@ -108,3 +108,10 @@ Agent đọc chìa từ file, gửi qua header `Authorization: Bearer <chìa>`, 
 | `khoa-hoc/` | Tiến độ khóa Agent Boss, mã nộp từng bài, sản phẩm đã làm |
 | `cong-cu/` | Công cụ dùng lại được — prompt SEO, bản tin tự động |
 | `BAO-MAT.md` | Danh sách chìa khóa đã lộ cần thu hồi |
+| `khach-hang/` | Web vệ tinh WordPress.com cho khách (AIG, VIB) — mã dán + script sinh mã |
+
+## 7. Web vệ tinh WordPress.com — làm theo skill
+
+Khi Trang gửi link `*.wordpress.com` + website chính thức, hoặc nói "làm trang chủ / tin tức như AIG, VIB":
+**đọc `.claude/skills/web-ve-tinh-wordpress/SKILL.md` và làm đúng từng bước**, đưa luôn 2 mã hoàn chỉnh
+(Trang chủ + Tin tức) + 3 dòng mẫu Pages, dán thẳng trong chat. Không hỏi lại những điều đã ghi trong đó.
