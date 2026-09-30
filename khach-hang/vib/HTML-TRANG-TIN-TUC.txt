@@ -1,0 +1,95 @@
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"},"blockGap":"0"}},"layout":{"type":"default"}} -->
+<div class="wp-block-group alignfull" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0"><!-- wp:html -->
+<div style="background:#ffffff;border-bottom:3px solid #F27C24;padding:12px 20px;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;">
+<div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 28px;">
+<a href="https://nganhangquoctevib.wordpress.com/" style="display:flex;align-items:center;gap:12px;text-decoration:none;"><img src="https://nganhangquoctevib.wordpress.com/wp-content/uploads/2026/09/cropped-avatar-vib.jpg?w=96" alt="Logo VIB – Ngân hàng TMCP Quốc Tế Việt Nam" width="46" height="46" style="width:46px;height:46px;border-radius:10px;display:block;" /><span style="color:#005BAA;font-size:18px;font-weight:800;line-height:1.2;">Ngân hàng Quốc tế VIB</span></a>
+<div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-start;gap:6px 24px;font-size:15px;font-weight:600;">
+<a href="https://nganhangquoctevib.wordpress.com/#gioi-thieu" style="color:#005BAA;text-decoration:none;padding:4px 0;">Giới thiệu</a>
+<a href="https://nganhangquoctevib.wordpress.com/#the-tin-dung" style="color:#005BAA;text-decoration:none;padding:4px 0;">Thẻ tín dụng</a>
+<a href="https://nganhangquoctevib.wordpress.com/#dich-vu" style="color:#005BAA;text-decoration:none;padding:4px 0;">Dịch vụ</a>
+<a href="https://nganhangquoctevib.wordpress.com/#uu-dai" style="color:#005BAA;text-decoration:none;padding:4px 0;">Ưu đãi</a>
+<a href="https://nganhangquoctevib.wordpress.com/tin-tuc/" style="color:#005BAA;text-decoration:none;padding:4px 0;">Tin tức</a>
+<a href="https://www.vib.com.vn/" target="_blank" rel="noopener" style="background:#005BAA;color:#ffffff;text-decoration:none;padding:9px 18px;border-radius:999px;">Website chính thức</a>
+</div>
+</div>
+</div>
+<div style="background:#005BAA;color:#ffffff;padding:clamp(44px,7vw,80px) 20px;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;">
+<div style="max-width:1200px;margin:0 auto;">
+<p style="margin:0 0 10px;color:#F9B812;font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;">Tin tức &amp; Ưu đãi</p>
+<h1 style="margin:0 0 12px;color:#ffffff;font-size:clamp(30px,4.4vw,46px);line-height:1.15;font-weight:800;">Tin tức VIB</h1>
+<p style="margin:0;color:#ffffffd9;font-size:17px;max-width:640px;">Cập nhật tin tức, ưu đãi và kiến thức tài chính từ Ngân hàng Thương mại Cổ phần Quốc tế Việt&nbsp;Nam&nbsp;(VIB).</p>
+</div>
+</div>
+<!-- /wp:html -->
+
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"56px","bottom":"72px","left":"20px","right":"20px"}},"color":{"background":"#f6f7f9"}},"layout":{"type":"constrained","contentSize":"1200px"}} -->
+<div class="wp-block-group alignfull has-background" style="background-color:#f6f7f9;padding-top:56px;padding-right:20px;padding-bottom:72px;padding-left:20px"><!-- wp:query {"queryId":7,"query":{"perPage":20,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false}} -->
+<div class="wp-block-query"><!-- wp:post-template {"style":{"spacing":{"blockGap":"28px"}},"layout":{"type":"grid","columnCount":4}} -->
+<!-- wp:post-featured-image {"isLink":true,"aspectRatio":"16/9","style":{"border":{"radius":"14px"}}} /-->
+
+<!-- wp:post-date {"style":{"color":{"text":"#F27C24"},"typography":{"fontSize":"14px","fontWeight":"700"},"spacing":{"margin":{"top":"14px"}}}} /-->
+
+<!-- wp:post-title {"level":3,"isLink":true,"style":{"typography":{"fontSize":"20px","fontWeight":"800","lineHeight":"1.35"},"elements":{"link":{"color":{"text":"#005BAA"}}},"color":{"text":"#005BAA"},"spacing":{"margin":{"top":"6px","bottom":"8px"}}}} /-->
+
+<!-- wp:post-excerpt {"moreText":"Đọc tiếp →","excerptLength":28,"style":{"typography":{"fontSize":"15px"},"elements":{"link":{"color":{"text":"#F27C24"}}}}} /-->
+<!-- /wp:post-template -->
+
+<!-- wp:query-no-results -->
+<!-- wp:paragraph -->
+<p>Chưa có bài viết nào. Bài bạn đăng sẽ tự hiện ở đây.</p>
+<!-- /wp:paragraph -->
+<!-- /wp:query-no-results -->
+
+<!-- wp:query-pagination {"paginationArrow":"arrow","layout":{"type":"flex","justifyContent":"center"}} -->
+<!-- wp:query-pagination-previous {"label":"Trang trước"} /-->
+
+<!-- wp:query-pagination-numbers /-->
+
+<!-- wp:query-pagination-next {"label":"Trang sau"} /-->
+<!-- /wp:query-pagination --></div>
+<!-- /wp:query --></div>
+<!-- /wp:group -->
+
+<!-- wp:html -->
+<div style="background:#005BAA;border-top:4px solid #F27C24;color:#ffffffcc;padding:52px 20px 0;font-size:15px;line-height:1.65;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;">
+<div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:32px 44px;padding-bottom:36px;">
+<div style="flex:1.6 1 300px;min-width:0;">
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;"><img src="https://nganhangquoctevib.wordpress.com/wp-content/uploads/2026/09/cropped-avatar-vib.jpg?w=96" alt="Logo VIB" width="48" height="48" style="width:48px;height:48px;border-radius:10px;border:2px solid #ffffff;display:block;" /><p style="margin:0;color:#ffffff;font-weight:800;font-size:17px;line-height:1.3;">Ngân hàng TMCP Quốc Tế Việt Nam (VIB)</p></div>
+<p style="margin:0 0 10px;"><strong style="color:#ffffff;">Hội sở chính:</strong> Tầng 1 (tầng trệt) và tầng 2 Tòa nhà Sailing Tower, 111A Pasteur, P. Sài Gòn, TP.HCM (trước là P. Bến Nghé, Q.1, TP.HCM)</p>
+<p style="margin:0 0 10px;"><strong style="color:#ffffff;">Hỗ trợ tại quầy:</strong> Thứ 2 đến Thứ 6 (08:00 – 12:00 &amp; 13:00 – 17:00), Thứ 7 (08:00 – 12:00)</p>
+<p style="margin:0;"><strong style="color:#ffffff;">Liên hệ:</strong> Tổng đài 1900 2200 (1.000 đ/phút) · <a href="mailto:dvkh247@vib.com.vn" style="color:#ffffffcc;text-decoration:none;">dvkh247@vib.com.vn</a></p>
+</div>
+<div style="flex:1 1 160px;min-width:0;">
+<p style="margin:0 0 14px;color:#F9B812;font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;">Sản phẩm</p>
+<p style="margin:0 0 8px;"><a href="https://www.vib.com.vn/vn/the-tin-dung" target="_blank" rel="noopener" style="color:#ffffffcc;text-decoration:none;">Thẻ tín dụng</a></p>
+<p style="margin:0 0 8px;"><a href="https://www.vib.com.vn/vn/tai-khoan" target="_blank" rel="noopener" style="color:#ffffffcc;text-decoration:none;">Tài khoản</a></p>
+<p style="margin:0 0 8px;"><a href="https://www.vib.com.vn/vn/tiet-kiem" target="_blank" rel="noopener" style="color:#ffffffcc;text-decoration:none;">Tiết kiệm</a></p>
+<p style="margin:0 0 8px;"><a href="https://www.vib.com.vn/vn/san-pham-vay" target="_blank" rel="noopener" style="color:#ffffffcc;text-decoration:none;">Vay</a></p>
+<p style="margin:0 0 8px;"><a href="https://www.vib.com.vn/vn/bao-hiem" target="_blank" rel="noopener" style="color:#ffffffcc;text-decoration:none;">Bảo hiểm</a></p>
+<p style="margin:0 0 8px;"><a href="https://www.vib.com.vn/vn/ngan-hang-so/myvib" target="_blank" rel="noopener" style="color:#ffffffcc;text-decoration:none;">Ngân hàng số MyVIB</a></p>
+</div>
+<div style="flex:1 1 160px;min-width:0;">
+<p style="margin:0 0 14px;color:#F9B812;font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;">Về VIB</p>
+<p style="margin:0 0 8px;"><a href="https://www.vib.com.vn/vn/about-vib" target="_blank" rel="noopener" style="color:#ffffffcc;text-decoration:none;">Về chúng tôi</a></p>
+<p style="margin:0 0 8px;"><a href="https://www.vib.com.vn/vn/nha-dau-tu" target="_blank" rel="noopener" style="color:#ffffffcc;text-decoration:none;">Nhà đầu tư</a></p>
+<p style="margin:0 0 8px;"><a href="https://www.vib.com.vn/vn/tuyen-dung" target="_blank" rel="noopener" style="color:#ffffffcc;text-decoration:none;">Tuyển dụng</a></p>
+<p style="margin:0 0 8px;"><a href="https://www.vib.com.vn/vn/news" target="_blank" rel="noopener" style="color:#ffffffcc;text-decoration:none;">Tin tức</a></p>
+<p style="margin:0 0 8px;"><a href="https://www.vib.com.vn/vn/promotion" target="_blank" rel="noopener" style="color:#ffffffcc;text-decoration:none;">Ưu đãi</a></p>
+</div>
+<div style="flex:1 1 160px;min-width:0;">
+<p style="margin:0 0 14px;color:#F9B812;font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;">Hỗ trợ</p>
+<p style="margin:0 0 8px;"><a href="https://www.vib.com.vn/vn/lien-he" target="_blank" rel="noopener" style="color:#ffffffcc;text-decoration:none;">Liên hệ</a></p>
+<p style="margin:0 0 8px;"><a href="https://www.vib.com.vn/vn/atm-chinhanh" target="_blank" rel="noopener" style="color:#ffffffcc;text-decoration:none;">ATM &amp; Chi nhánh</a></p>
+<p style="margin:0 0 8px;"><a href="https://www.vib.com.vn/vn/ty-gia" target="_blank" rel="noopener" style="color:#ffffffcc;text-decoration:none;">Tỷ giá</a></p>
+<p style="margin:0 0 8px;"><a href="https://www.vib.com.vn/vn/dieu-khoan-su-dung" target="_blank" rel="noopener" style="color:#ffffffcc;text-decoration:none;">Điều khoản sử dụng</a></p>
+<p style="margin:0 0 8px;"><a href="https://www.vib.com.vn/vn/an-toan-bao-mat" target="_blank" rel="noopener" style="color:#ffffffcc;text-decoration:none;">An toàn bảo mật</a></p>
+</div>
+</div>
+<div style="max-width:1200px;margin:0 auto;border-top:1px solid #ffffff33;padding:18px 0 22px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;font-size:14px;color:#ffffffb3;">
+<p style="margin:0;">Website chính thức của VIB: <a href="https://www.vib.com.vn/" target="_blank" rel="noopener" style="color:#F9B812;text-decoration:none;">www.vib.com.vn</a> · Tổng đài 1900 2200</p>
+<p style="margin:0;"><a href="https://www.facebook.com/VIB.NHQT" target="_blank" rel="noopener" style="color:#ffffffcc;text-decoration:none;">Facebook</a> · <a href="https://www.linkedin.com/company/vietnam-international-bank/" target="_blank" rel="noopener" style="color:#ffffffcc;text-decoration:none;">LinkedIn</a> · <a href="https://www.youtube.com/channel/UCGs80MaxY_sKvgiWLOmjEbQ" target="_blank" rel="noopener" style="color:#ffffffcc;text-decoration:none;">YouTube</a></p>
+</div>
+</div>
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->
