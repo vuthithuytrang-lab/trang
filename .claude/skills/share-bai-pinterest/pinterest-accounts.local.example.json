@@ -1,0 +1,13 @@
+{
+  "pinterest.com/tentaikhoan": {
+    "app_id": "APP_ID_SO",
+    "app_secret": "APP_SECRET_KEY",
+    "redirect_uri": "https://localhost/",
+    "env": "sandbox",
+    "board_id": "ID_BOARD",
+    "access_token": "TU_DONG_DIEN",
+    "refresh_token": "TU_DONG_DIEN",
+    "expires_in_seconds": 2592000,
+    "obtained_at": "TU_DONG_DIEN"
+  }
+}

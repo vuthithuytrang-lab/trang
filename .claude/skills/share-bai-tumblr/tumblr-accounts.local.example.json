@@ -1,0 +1,12 @@
+{
+  "tenblog.tumblr.com": {
+    "client_id": "OAUTH_CONSUMER_KEY",
+    "client_secret": "OAUTH_CONSUMER_SECRET",
+    "blog_identifier": "tenblog.tumblr.com",
+    "refresh_token": "TU_DONG_DIEN",
+    "access_token": "TU_DONG_DIEN",
+    "token_type": "bearer",
+    "expires_in_seconds": 2520,
+    "obtained_at": "TU_DONG_DIEN"
+  }
+}

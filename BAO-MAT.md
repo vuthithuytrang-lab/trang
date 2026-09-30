@@ -10,6 +10,10 @@ Trong quá trình đọc lại bản chụp session cũ, phát hiện **3 chìa 
 | 1 | Chìa Agent Boss (bản 1) | Đã bị hệ thống Agent Boss tự khóa vì phát hiện lộ | Không dùng lại |
 | 2 | Chìa Agent Boss (bản 2) | Trang gửi lại nhưng **vẫn là chìa cũ** — chưa từng tạo chìa mới | **Phải tạo chìa mới** |
 | 3 | Token bot Telegram `ban_tin_marketing_trang_bot` | Đã dán vào chat, vẫn còn hiệu lực | **Thu hồi và cấp lại** |
+| 4 | Client Secret app WordPress "Nippon Paint Share Social" (Client ID 149315, dự án NIPPON PAINT) | Lộ trong ảnh chụp + dán vào chat 29/09/2026. Rủi ro thấp — muốn đăng bài vẫn phải có người đăng nhập WordPress bấm Approve | Khi rảnh: developer.wordpress.com/apps → Nippon Paint Share Social → **Reset Key**, rồi gửi chìa mới cho Agent **bằng file** |
+| 5 | Client Secret Google "Sheet - Nippon Paint" đuôi `…q2QY` | Lộ trong ảnh chụp 29/09/2026 — **đã thay bằng chìa mới, chìa cũ đã xóa** | ✅ Xong |
+| 6 | Phiên đăng nhập (cookie) Google `nipponpaint.seo2026@gmail.com` | Trang gửi file cookie 29/09/2026 để thử tự động Google Site — thử thất bại, file đã xóa khỏi máy, nhưng nội dung đã đi qua lịch sử chat | **Vào myaccount.google.com → Bảo mật → Thiết bị của bạn → Đăng xuất khỏi các thiết bị lạ** (hoặc đổi mật khẩu) để vô hiệu phiên cũ |
+| 7 | Consumer Key + Secret app Tumblr "Nippon Paint Share Social" (dự án NIPPON PAINT) | Trang dán vào chat 29/09/2026. Rủi ro thấp — muốn đăng bài vẫn phải có người đăng nhập Tumblr bấm Allow | Khi rảnh: tumblr.com/oauth/apps → app → tạo lại secret, gửi Agent **bằng file** |
 
 ## Việc 1 — Tạo chìa Agent Boss mới
 

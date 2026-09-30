@@ -1,0 +1,12 @@
+{
+  "ten-nhom@googlegroups.com": {
+    "client_id": "XXXX.apps.googleusercontent.com",
+    "client_secret": "DIEN_SAU_KHI_TAO_OAUTH_CLIENT",
+    "group_email": "ten-nhom@googlegroups.com",
+    "refresh_token": "TU_DONG_DIEN_SAU_KHI_AUTHORIZE",
+    "access_token": "TU_DONG_DIEN",
+    "token_type": "Bearer",
+    "expires_in_seconds": 3599,
+    "obtained_at": "TU_DONG_DIEN"
+  }
+}
