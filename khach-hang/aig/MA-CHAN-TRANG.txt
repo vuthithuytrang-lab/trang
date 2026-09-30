@@ -11,7 +11,7 @@
 <p style="margin:0 0 10px;"><a href="https://asiaingredientsgroup.wordpress.com/#gioi-thieu" style="color:#ffffffcc;text-decoration:none;">Về chúng tôi</a></p>
 <p style="margin:0 0 10px;"><a href="https://asiaingredientsgroup.wordpress.com/#giai-phap" style="color:#ffffffcc;text-decoration:none;">Giải pháp</a></p>
 <p style="margin:0 0 10px;"><a href="https://asiaingredientsgroup.wordpress.com/#cong-nghe" style="color:#ffffffcc;text-decoration:none;">Ứng dụng &amp; Đổi mới</a></p>
-<p style="margin:0 0 10px;"><a href="https://asiaingredientsgroup.wordpress.com/blog/" style="color:#ffffffcc;text-decoration:none;">Tin tức</a></p>
+<p style="margin:0 0 10px;"><a href="https://asiaingredientsgroup.wordpress.com/tin-tuc/" style="color:#ffffffcc;text-decoration:none;">Tin tức</a></p>
 <p style="margin:0 0 10px;"><a href="https://asiagroup-vn.com" style="color:#ffffffcc;text-decoration:none;">Website chính thức</a></p>
 </div>
 <div style="flex:1.4 1 280px;min-width:0;">

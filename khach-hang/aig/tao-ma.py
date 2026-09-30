@@ -17,7 +17,7 @@ def header(home):
 {link(pre + "#gioi-thieu", "Giới thiệu")}
 {link(pre + "#giai-phap", "Giải pháp")}
 {link(pre + "#cong-nghe", "Công nghệ")}
-{link(SITE + "/blog/", "Tin tức")}
+{link(SITE + "/tin-tuc/", "Tin tức")}
 {link(pre + "#lien-he", "Liên hệ")}
 <a href="{MAIN}" style="background:#DDA727;color:#0A2360;text-decoration:none;padding:9px 18px;border-radius:999px;">Website chính thức</a>
 </div>
@@ -41,7 +41,7 @@ def footer(home):
 {li(pre + "#gioi-thieu", "Về chúng tôi")}
 {li(pre + "#giai-phap", "Giải pháp")}
 {li(pre + "#cong-nghe", "Ứng dụng &amp; Đổi mới")}
-{li(SITE + "/blog/", "Tin tức")}
+{li(SITE + "/tin-tuc/", "Tin tức")}
 {li(MAIN, "Website chính thức")}
 </div>
 <div style="flex:1.4 1 280px;min-width:0;">
