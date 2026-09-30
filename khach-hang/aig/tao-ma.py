@@ -108,25 +108,11 @@ news_query = '''<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"to
 <!-- /wp:query --></div>
 <!-- /wp:group -->
 '''
-# Trang Tin tức: chỉ phần giữa — đầu/chân trang lấy từ template part của theme (MA-DAU-TRANG / MA-CHAN-TRANG)
-news = html_block(news_top) + "\n" + news_query
-(D / "MA-TRANG-TIN-TUC.txt").write_text(full_group(news), encoding="utf-8")
-(D / "MA-DAU-TRANG.txt").write_text(html_block(header(False)), encoding="utf-8")
-(D / "MA-CHAN-TRANG.txt").write_text(html_block(footer(False)), encoding="utf-8")
+# Trang Tin tức: dán vào nội dung trang (đầu trang + danh sách bài + chân trang)
+full_news = html_block(header(False) + news_top) + "\n" + news_query + "\n" + html_block(footer(False))
+(D / "MA-TRANG-TIN-TUC.txt").write_text(full_group(full_news), encoding="utf-8")
 
 prev = ('<!doctype html>\n<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
         '<title>Tập đoàn Nguyên liệu Á Châu AIG – Xem trước</title></head>\n<body style="margin:0;">\n' + home_inner + '</body></html>\n')
 (D / "xem-truoc.html").write_text(prev, encoding="utf-8")
 print("xong")
-
-# Mẫu "Pages" của theme: đầu trang AIG + nội dung trang + chân trang AIG (dán 1 lần, áp cho mọi trang con)
-page_tpl = (html_block(header(False)) + "\n"
-            + '<!-- wp:group {"tagName":"main","style":{"spacing":{"blockGap":"0","margin":{"top":"0"}}},"layout":{"type":"default"}} -->\n'
-            + '<main class="wp-block-group" style="margin-top:0"><!-- wp:post-content {"layout":{"type":"constrained"}} /--></main>\n'
-            + '<!-- /wp:group -->\n\n'
-            + html_block(footer(False)))
-(D / "MA-MAU-TRANG-CON.txt").write_text(full_group(page_tpl), encoding="utf-8")
-
-# Mẫu riêng cho trang Tin tức (page-tin-tuc): tất cả trong 1 lần dán
-full_news = html_block(header(False) + news_top) + "\n" + news_query + "\n" + html_block(footer(False))
-(D / "MA-MAU-RIENG-TIN-TUC.txt").write_text(full_group(full_news), encoding="utf-8")
