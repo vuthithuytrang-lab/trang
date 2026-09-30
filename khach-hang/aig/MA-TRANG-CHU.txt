@@ -1,6 +1,5 @@
-<!doctype html>
-<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Tập đoàn Nguyên liệu Á Châu AIG – Xem trước</title></head>
-<body style="margin:0;">
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"},"blockGap":"0"}},"layout":{"type":"default"}} -->
+<div class="wp-block-group alignfull" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0"><!-- wp:html -->
 <div style="font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:#0A2360;line-height:1.65;background:#ffffff;margin:0;">
 <div style="background:#ffffff;border-bottom:1px solid #0A23601a;padding:14px 20px;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;">
 <div style="max-width:1160px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 28px;">
@@ -192,4 +191,6 @@
 </div>
 </div>
 </div>
-</body></html>
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->
