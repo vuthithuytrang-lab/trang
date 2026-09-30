@@ -119,6 +119,8 @@ Within a run, skip (not stop) a single (row, platform) pair when its account isn
 
 ## Constraints
 
+- **Pace publishing (hard rule, learned 30/09/2026 when WordPress.com suspended a blog and Tumblr restricted an account after burst posting):** at most 2 posts per platform per day, at least 2 hours apart (1/day for a platform's first week). Never publish a whole batch of rows in one run — publish what the pacing allows and list the rest under a "Chờ lượt (giãn cách)" section in the report.
+
 - Never publish to a platform column whose domain you could not confidently resolve — an unverified guess risks posting to the wrong account (e.g. the wrong Mastodon instance).
 - Never re-publish into a cell that already has a URL.
 - Never attempt interactive OAuth/setup yourself — you run in the background and cannot complete a browser-based authorize step or ask the user a question mid-task. Setup happens separately, in the main conversation, before this agent is invoked.
