@@ -6,7 +6,7 @@
 <a href="https://asiaingredientsgroup.wordpress.com/#gioi-thieu" style="color:#0A2360;text-decoration:none;padding:4px 0;">Giới thiệu</a>
 <a href="https://asiaingredientsgroup.wordpress.com/#giai-phap" style="color:#0A2360;text-decoration:none;padding:4px 0;">Giải pháp</a>
 <a href="https://asiaingredientsgroup.wordpress.com/#cong-nghe" style="color:#0A2360;text-decoration:none;padding:4px 0;">Công nghệ</a>
-<a href="https://asiaingredientsgroup.wordpress.com/tin-tuc/" style="color:#0A2360;text-decoration:none;padding:4px 0;">Tin tức</a>
+<a href="https://asiaingredientsgroup.wordpress.com/blog/" style="color:#0A2360;text-decoration:none;padding:4px 0;">Tin tức</a>
 <a href="https://asiaingredientsgroup.wordpress.com/#lien-he" style="color:#0A2360;text-decoration:none;padding:4px 0;">Liên hệ</a>
 <a href="https://asiagroup-vn.com" style="background:#DDA727;color:#0A2360;text-decoration:none;padding:9px 18px;border-radius:999px;">Website chính thức</a>
 </div>
