@@ -118,3 +118,11 @@ prev = ('<!doctype html>\n<html lang="vi"><head><meta charset="utf-8"><meta name
         '<title>Tập đoàn Nguyên liệu Á Châu AIG – Xem trước</title></head>\n<body style="margin:0;">\n' + home_inner + '</body></html>\n')
 (D / "xem-truoc.html").write_text(prev, encoding="utf-8")
 print("xong")
+
+# Mẫu "Pages" của theme: đầu trang AIG + nội dung trang + chân trang AIG (dán 1 lần, áp cho mọi trang con)
+page_tpl = (html_block(header(False)) + "\n"
+            + '<!-- wp:group {"tagName":"main","style":{"spacing":{"blockGap":"0","margin":{"top":"0"}}},"layout":{"type":"default"}} -->\n'
+            + '<main class="wp-block-group" style="margin-top:0"><!-- wp:post-content {"layout":{"type":"constrained"}} /--></main>\n'
+            + '<!-- /wp:group -->\n\n'
+            + html_block(footer(False)))
+(D / "MA-MAU-TRANG-CON.txt").write_text(full_group(page_tpl), encoding="utf-8")
