@@ -39,10 +39,10 @@ Tiêu đề cột G, H, I không gắn hyperlink, nên agent dùng bảng này t
 | Cột | Nền tảng | Skill | Account key | Trạng thái |
 |---|---|---|---|---|
 | G | Blogger Page | `share-bai-blogger` | `nipponpaint-vietnam.blogspot.com` | ✅ Đã kết nối |
-| H | Wordpress | `share-bai-wp` | `nipponpaintvietnam0.wordpress.com` | ⛔ **Blog bị WordPress.com tạm ngưng 30/09/2026** (sau 7 bài trong ~35 phút) — H6–H12 là link chết (410). Chờ Trang kháng nghị |
+| H | Wordpress | `share-bai-wp` | `nipponpaintvietnam0.wordpress.com` | ⛔ **Blog bị WordPress.com tạm ngưng 30/09/2026** (sau 7 bài trong ~35 phút) — H6–H12 là link chết (410). **Đã gửi khiếu nại 30/09/2026** qua form Error Report, chờ trả lời về nipponpaint.seo2026@gmail.com |
 | I | Google Site | — không có API cho Google Site mới | `sites.google.com/view/nipponpaintvn/homepage-sites` | ⏸ **TẠM DỪNG** (29/09/2026) — xem mục "Việc còn dở — Google Site" |
 | L | X | — chưa có skill | `x.com/nipponpaint_vn` | ⏸ Tạm dừng — X bỏ gói miễn phí từ 02/2026 (~0,20 USD/bài có link); Trang chọn Tumblr thay thế (29/09/2026) |
-| O | Tumblr | `share-bai-tumblr` | `nipponpaint-vn.tumblr.com` | ⚠️ Nghi bị hạn chế 30/09/2026 — sau 3 bài trong ~10 phút, API báo 401 (code 1017), trang blog báo 429. O6–O8 đã đăng |
+| O | Tumblr | `share-bai-tumblr` | `nipponpaint-vn.tumblr.com` | ⛔ **Tài khoản bị Tumblr hủy 30/09/2026** (Trang xác nhận) — sau 3 bài trong ~10 phút. O6–O8 là link chết |
 | (cột mới) | Threads | `share-bai-threads` (sẽ tự viết) | `threads.com/@nipponpaintvn` | ⏳ Đang kết nối (29/09/2026) — sheet cần thêm cột "Threads" |
 | — | Twitch, GETTR | — | `twitch.tv/nipponpaintvn`, `gettr.com/user/e12216658745704448` | ❌ Không tự động được: Twitch không có chức năng đăng bài (Channel Feed bị xóa 2018); GETTR không có API chính thức |
 | U | Pinterest | `share-bai-pinterest` (skill tự viết 29/09/2026) | `pinterest.com/nipponpaintvn` | ⏳ App "Nippon Paint Share Social" (App ID 1617333) đang chờ Pinterest duyệt Trial access. Trial = Pin chỉ chủ tài khoản thấy; cần xin Standard access (nộp video) để Pin công khai |
