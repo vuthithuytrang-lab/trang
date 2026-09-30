@@ -126,3 +126,7 @@ page_tpl = (html_block(header(False)) + "\n"
             + '<!-- /wp:group -->\n\n'
             + html_block(footer(False)))
 (D / "MA-MAU-TRANG-CON.txt").write_text(full_group(page_tpl), encoding="utf-8")
+
+# Mẫu riêng cho trang Tin tức (page-tin-tuc): tất cả trong 1 lần dán
+full_news = html_block(header(False) + news_top) + "\n" + news_query + "\n" + html_block(footer(False))
+(D / "MA-MAU-RIENG-TIN-TUC.txt").write_text(full_group(full_news), encoding="utf-8")
