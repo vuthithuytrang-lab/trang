@@ -138,3 +138,5 @@ sau 3 bài/~10 phút; Blogger đăng 10 bài/~45 phút, tạm thời vẫn sốn
 
 **Quy tắc từ nay:** mỗi nền tảng **tối đa 2 bài/ngày**, **cách nhau ít nhất 2 tiếng**; blog mới lập tuần đầu **1 bài/ngày**.
 Không bao giờ chạy lại hàng loạt dòng một lúc. Muốn đăng nhiều dòng → xếp lịch rải nhiều ngày.
+
+> **Ngoại lệ Trang duyệt 01/10/2026:** Blogger dòng 16–25 phải xong trước **12:00 thứ Sáu 02/10/2026**, nên Trang đồng ý đăng **1 bài mỗi ~2 tiếng 20 phút** (vượt giới hạn 2 bài/ngày) cho đợt này. Vẫn giữ: mỗi lượt chỉ 1 bài, cách bài trước ≥2 tiếng, kiểm tra blog còn sống trước khi đăng. Hết đợt này quay lại quy tắc 2 bài/ngày.
