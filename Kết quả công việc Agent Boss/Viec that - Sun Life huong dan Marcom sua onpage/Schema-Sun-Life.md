@@ -279,3 +279,44 @@ Lấy từ sunlife.com.vn ngày 01/10/2026 và thông tin Trang cung cấp.
 }
 </script>
 ```
+
+## JobPosting – Manager, Corporate Communications
+
+```html
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "JobPosting",
+  "title": "Manager, Corporate Communications",
+  "description": "<p>Responsible for shaping, protecting and executing Sun Life Vietnam’s corporate communications strategy and internal narrative through integrated internal communications, external communications and employee engagement activities.</p><p>Ensures consistent, clear and credible messaging across employees, advisors, media, partners and the public, while supporting business priorities, leadership messaging and change initiatives in a highly regulated environment.</p><p>Để ứng tuyển, vui lòng gửi hồ sơ về email: VN_careers@sunlife.com</p>",
+  "datePosted": "2026-09-20",
+  "hiringOrganization": {
+    "@type": "Organization",
+    "name": "Công ty TNHH Bảo Hiểm Nhân Thọ Sun Life Việt Nam",
+    "sameAs": "https://www.sunlife.com.vn/vn/",
+    "logo": "https://www.sunlife.com.vn/content/dam/sunlife/regional/vietnam/images/logo-sun-life.JPG"
+  },
+  "jobLocation": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Tầng 29, Tòa nhà Vietcombank Tower, số 05 Công trường Mê Linh",
+      "addressLocality": "Phường Sài Gòn",
+      "addressRegion": "Thành phố Hồ Chí Minh",
+      "postalCode": "71016",
+      "addressCountry": "VN"
+    }
+  },
+  "industry": "Bảo hiểm nhân thọ",
+  "occupationalCategory": "Corporate Communications – Client & Marketing",
+  "educationRequirements": "Bachelor’s degree in Communications, Journalism, Marketing, Business or related fields",
+  "experienceRequirements": "7+ years of experience in communications, corporate affairs or public relations. Proven experience in internal communications, media relations and corporate events. Experience working with senior leadership and managing sensitive issues. Experience in regulated industries preferred.",
+  "qualifications": "Strong knowledge of corporate communications, media relations and employee communications. Understanding of communications practices in financial services or regulated industries. Experience in issue and crisis communication management.",
+  "skills": "Stakeholder management and advisory capability for senior leadership; advanced communication, storytelling and messaging skills; issue and crisis communication management",
+  "responsibilities": "External communications & media relations; leadership communications & thought leadership; internal communications for employees and advisors; administration and support for other Marketing activities.",
+  "jobBenefits": "Lương, thưởng minh bạch theo cấp bậc, cạnh tranh thị trường, trả theo hiệu suất; Sun Life cùng đóng góp vào quỹ hưu trí của Nhân viên (Pension Matching Program); giảm phí sản phẩm bảo hiểm cho Nhân viên và Gia đình (Employee Discount Program); bảo hiểm sức khỏe toàn diện cho Nhân viên và Gia đình; chính sách ngày nghỉ phép cạnh tranh; thời gian làm việc linh hoạt, làm việc từ xa, phụ cấp ăn trưa, phụ cấp di chuyển.",
+  "incentiveCompensation": "Thưởng theo hiệu suất, xem xét hàng năm",
+  "directApply": false
+}
+</script>
+```
