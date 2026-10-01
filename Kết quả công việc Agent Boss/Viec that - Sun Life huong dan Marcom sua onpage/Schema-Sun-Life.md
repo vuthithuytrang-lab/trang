@@ -242,3 +242,40 @@ Lấy từ sunlife.com.vn ngày 01/10/2026 và thông tin Trang cung cấp.
 }
 </script>
 ```
+
+## BreadcrumbList – bài viết "Bảo hiểm nhân thọ hỗn hợp là gì"
+
+```html
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "name": "Trang chủ",
+    "item": "https://www.sunlife.com.vn/vn/"
+  },{
+    "@type": "ListItem",
+    "position": 2,
+    "name": "Khách hàng Cá nhân",
+    "item": "https://www.sunlife.com.vn/vn/ca-nhan/"
+  },{
+    "@type": "ListItem",
+    "position": 3,
+    "name": "Quản lý tài chính cá nhân",
+    "item": "https://www.sunlife.com.vn/vn/ca-nhan/lam-sao-quan-ly-tai-chinh-hieu-qua/"
+  },{
+    "@type": "ListItem",
+    "position": 4,
+    "name": "Bảo Hiểm Nhân Thọ",
+    "item": "https://www.sunlife.com.vn/vn/ca-nhan/lam-sao-quan-ly-tai-chinh-hieu-qua/bao-hiem-nhan-tho/"
+  },{
+    "@type": "ListItem",
+    "position": 5,
+    "name": "Bảo hiểm nhân thọ hỗn hợp là gì? Khi nào là lựa chọn phù hợp?",
+    "item": "https://www.sunlife.com.vn/vn/ca-nhan/lam-sao-quan-ly-tai-chinh-hieu-qua/bao-hiem-nhan-tho/bao-hiem-nhan-tho-hon-hop-la-gi-khi-nao-la-lua-chon-phu-hop/"
+  }]
+}
+</script>
+```
