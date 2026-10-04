@@ -30,9 +30,16 @@
 |---|---|---|---|---|
 | Blogger (= blogspot.com, cùng 1 blog) | `https://asiaingredientsgroup.blogspot.com/` | `share-bai-blogger` | `asiaingredientsgroup.blogspot.com` | Cần setup |
 | WordPress.com | `https://asiaingredientsgroup.wordpress.com/` | `share-bai-wp` | `asiaingredientsgroup.wordpress.com` | Cần setup |
-| Webflow | `https://asiaingredientsgroup.webflow.io/` | `share-bai-webflow` | `asiaingredientsgroup-webflow` | Cần setup |
-| Wix | `https://nguyenlieuachau.wixsite.com/asia-group` | `share-bai-wix` | `nguyenlieuachau.wixsite.com/asia-group` | Cần setup |
+| Webflow | `https://asiaingredientsgroup.webflow.io/` | `share-bai-webflow` | `asiaingredientsgroup-webflow` | ✅ Đã kết nối 04/10/2026 |
+| Wix | `https://nguyenlieuachau.wixsite.com/asia-group` | `share-bai-wix` | `nguyenlieuachau.wixsite.com/asia-group` | ✅ Đã kết nối 04/10/2026 (chìa cần thay — xem BAO-MAT.md) |
 | X (Twitter) | `https://x.com/asiagroupvn` | *chưa có skill* | — | Chưa hỗ trợ |
+
+## Ghi chú kỹ thuật từng nền tảng
+
+- **Wix**: site AIG `site_id` 43c11825-0837-44a0-b7ea-7c8800737638, tác giả `asiaseoproject6`.
+- **Webflow**: collection **Blogs** (slug `blog`). Cả 5 field đều BẮT BUỘC: `name`, `slug`, `content` (RichText),
+  `thumbnail` (ảnh — bài không có ảnh sẽ bị Webflow từ chối), `link` (điền URL bài gốc —
+  truyền `link <URL gốc>` vào cuối lệnh `build-item-payload`). Link bài dạng `asiaingredientsgroup.webflow.io/blog/<slug>`.
 
 ## Cách chọn 5 nền tảng "so le" — CHỜ TRANG CHỐT
 

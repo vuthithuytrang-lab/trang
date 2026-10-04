@@ -87,7 +87,7 @@ Lỗi ở bước nào (4xx/5xx) → bỏ qua ảnh, tiếp tục Step 7 không 
 
 ### Step 7 — Tạo & publish item
 
-Đọc `references/webflow-cms-api-steps.md` mục "Tạo & publish item". Gọi `node scripts/webflow-json.js build-item-payload` để tạo file JSON body (`isDraft:false`), rồi `bash scripts/webflow-http.sh create-item`. Gọi thêm `bash scripts/webflow-http.sh publish-item` tường minh ngay sau đó để đảm bảo item thật sự lên live site. KHÔNG dừng lại hỏi user xác nhận trước khi publish — user đã yêu cầu skill này tự publish luôn sau khi soạn xong.
+Đọc `references/webflow-cms-api-steps.md` mục "Tạo & publish item". Gọi `node scripts/webflow-json.js build-item-payload` để tạo file JSON body (`isDraft:false`; nếu collection có field Link bắt buộc — vd site AIG có field `link` — truyền thêm 2 tham số cuối `<field-link-slug> <source URL>`), rồi `bash scripts/webflow-http.sh create-item`. Gọi thêm `bash scripts/webflow-http.sh publish-item` tường minh ngay sau đó để đảm bảo item thật sự lên live site. KHÔNG dừng lại hỏi user xác nhận trước khi publish — user đã yêu cầu skill này tự publish luôn sau khi soạn xong.
 
 **Exit condition**: `create-item` trả về `id` + `fieldData.slug`, `publish-item` không lỗi.
 

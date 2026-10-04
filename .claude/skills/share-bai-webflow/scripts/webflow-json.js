@@ -91,11 +91,13 @@ switch (cmd) {
     break;
   }
   case 'build-item-payload': {
-    // build-item-payload <content-html-file> <title> <slug> <field-body-slug> <field-image-slug-or-empty> <image-hosted-url-or-empty> <out-file>
-    const [contentFile, title, slug, fieldBody, fieldImage, imageUrl, outFile] = args;
+    // build-item-payload <content-html-file> <title> <slug> <field-body-slug> <field-image-slug-or-empty> <image-hosted-url-or-empty> <out-file> [field-link-slug] [link-url]
+    // field-link-slug/link-url: optional, for collections with a required Link field (e.g. AIG's "link" = source URL)
+    const [contentFile, title, slug, fieldBody, fieldImage, imageUrl, outFile, fieldLink, linkUrl] = args;
     const content = fs.readFileSync(contentFile, 'utf8');
     const fieldData = { name: title, slug, [fieldBody]: content };
     if (fieldImage && imageUrl) fieldData[fieldImage] = { url: imageUrl };
+    if (fieldLink && linkUrl) fieldData[fieldLink] = linkUrl;
     const payload = { isArchived: false, isDraft: false, fieldData };
     fs.writeFileSync(outFile, JSON.stringify(payload));
     console.log('written', outFile, fs.statSync(outFile).size, 'bytes');
