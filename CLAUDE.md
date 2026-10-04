@@ -124,4 +124,6 @@ Trang nhắc tới "share bài", "đăng bài social", "chạy đăng bài AIG",
 3b. **Bài nào cũng phải kèm ảnh** (ảnh đại diện + 1 ảnh trong bài, lấy từ bài gốc). Không có ảnh → không đăng, ghi lý do cột H.
 4. **Mỗi dự án dùng chìa API riêng**, không dùng chung. Chìa nằm trong `.claude/skills/*/<nền tảng>-accounts.local.json`
    (bị chặn commit). Trang gửi chìa bằng **đính kèm file**, không dán vào chat.
-5. Tình trạng kết nối + việc còn mở: `cong-cu/share-bai-social/GHI-CHU.md`.
+5. **Trước mỗi lần đăng, soát đủ "CHECKLIST TRƯỚC KHI ĐĂNG"** và bảng "Sự cố kỹ thuật đã gặp" cuối file hồ sơ dự án —
+   đó là các lỗi Trang đã chỉ ra, tuyệt đối không lặp lại.
+6. Tình trạng kết nối + việc còn mở: `cong-cu/share-bai-social/GHI-CHU.md`.

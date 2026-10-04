@@ -127,3 +127,37 @@ Youtube: https://www.youtube.com/@AIG2001
 
 Quy tắc chung của skill vẫn giữ: viết lại không chép nguyên câu, ~1000 từ, gắn link bài gốc vào 1 lần xuất hiện
 từ khóa chính, không dùng "nhất / số 1 / hàng đầu" khi không có chứng minh.
+
+## ✅ CHECKLIST TRƯỚC KHI ĐĂNG — soát từng bài, từng nền tảng
+
+Rút ra từ các lỗi thật của bài đầu tiên "trái cây iqf" (04/10/2026). Không đạt mục nào → sửa rồi mới đăng.
+
+| # | Kiểm tra | Lỗi đã từng gặp |
+|---|---|---|
+| 1 | **Tiêu đề < 65 ký tự** (đếm bằng lệnh, không ước lượng), có key chính, đúng insight, thôi thúc click | Blogger 70, Webflow 77 ký tự |
+| 2 | **Mô tả SEO < 165 ký tự**, có key chính, trả lời insight; ghi cột `J`; điền vào bài nếu nền tảng hỗ trợ | 3 bài đầu thiếu mô tả |
+| 3 | **Slug = key chính không dấu** (vd `trai-cay-iqf`) — Blogger: đăng lần đầu bằng tiêu đề không dấu rồi đổi tiêu đề; Wix: `update-draft-post` đổi `seoSlug` sau khi tạo | Blogger ra `trai-cay-iqf-hoi-ap-ve-trai-cay-ong` |
+| 4 | **Không có mục "Tóm lại" / "Tóm tắt" / "Kết luận"** | Bài WordPress có "Tóm lại" |
+| 5 | **Có ảnh**: ảnh đại diện + 1 ảnh trong bài | — |
+| 6 | **Hashtag đúng dạng từng nền tảng**: Wix viết liền (`#traicayiqf`), nền tảng khác có gạch (`#trai-cay-iqf`) | Wix cắt `#trai-cay-iqf` thành `#trai` |
+| 7 | **Link bấm được**: Nguồn tham khảo, Website, Fanpage, Youtube — kiểm tra trên trang thật có `href` | Link để chữ trơn |
+| 8 | Khối liên hệ chép **nguyên văn** | — |
+| 9 | Không có "nhất", "số 1", "hàng đầu" (bài gốc AIG có dùng "hàng đầu" — không chép theo) | — |
+| 10 | Đúng **1 link** từ khóa chính về bài gốc | — |
+| 11 | Mỗi nền tảng **một cách viết khác nhau** (góc mở bài, thứ tự mục) | — |
+
+**Sau khi đăng:** mở trang thật (HTTP 200), soát lại mục 1–7 trên trang thật, rồi mới ghi sheet:
+`D` nền tảng · `E` link · `F` ngày · `H` key phụ / lỗi · `I` tiêu đề · `J` mô tả.
+
+## ⚠️ Sự cố kỹ thuật đã gặp & cách tránh
+
+| Sự cố | Nguyên nhân | Cách tránh |
+|---|---|---|
+| Ghi sheet bị 403 "không có quyền" | Tài khoản bấm "cho phép" Google Sheet chỉ có quyền xem | Tài khoản đó phải là **Editor** của file (đã share Editor cho `asiaseoproject@gmail.com`) |
+| Wix 401/403 khi đăng bài | Chìa thiếu quyền **Wix Blog** | Tạo/sửa chìa phải tích Wix Blog + Contacts & Members + Manage Site Media; sửa xong **chờ ~1 phút** |
+| Webflow từ chối tạo bài | Collection Blogs bắt buộc `thumbnail` + `link` | Luôn có ảnh; truyền `link <URL gốc>` cho `build-item-payload` |
+| Blogger tải ảnh lỗi "unbound variable" | `download-image` thiếu tham số cookie | Truyền tham số cookie rỗng `""` |
+| Đăng lại / đăng thêm bài bị hệ thống chặn | Cần Trang đồng ý trực tiếp | Hỏi Trang trước mọi thao tác đăng thêm, xóa, đăng lại bài đã lên |
+| Chìa bị dán vào chat | — | Nhắc Trang gửi chìa bằng **đính kèm file** trước khi Trang copy chìa |
+| Chìa mất khi phiên đóng | Chìa chỉ nằm trên máy tạm của phiên | Cất vào cài đặt kín của môi trường (việc còn mở trong `GHI-CHU.md`) |
+
