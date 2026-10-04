@@ -4,3 +4,11 @@ cong-cu/telegram.env
 *.key
 *.token
 chia-agent-boss.txt
+
+# Agent share-bai-social — file chứa token thật, KHÔNG commit
+*.local.json
+.env
+.env.*
+.claude/settings.local.json
+.claude/CLAUDE.md
+node_modules/
