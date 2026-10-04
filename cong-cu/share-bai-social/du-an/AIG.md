@@ -103,8 +103,14 @@ Các bài cũ (đã có `E`) agent bỏ qua, dù ô `C` tích hay không.
    hoặc dùng tiêu đề mang nội dung (vd "AIG đồng hành cùng doanh nghiệp thế nào?").
 4b. **Ảnh — BẮT BUỘC mọi bài, mọi nền tảng** (Trang dặn 04/10/2026): dùng ảnh đại diện của bài gốc (thẻ `og:image`),
    làm ảnh đại diện bài + chèn 1 ảnh trong thân bài. Không lấy được ảnh → KHÔNG đăng, ghi lý do vào cột `H`.
+4c. **Hashtag riêng cho Wix** (Trang dặn 04/10/2026): Wix cắt hashtag ở dấu gạch ngang (`#trai-cay-iqf` chỉ nhận `#trai`).
+   Trên Wix viết hashtag **liền, không dấu, không gạch**:
+   `#asiagroup #traicayiqf #traicaydonglanhiqf #congnghecapdongiqf #tapdoannguyenlieuachauaig #asiaingredientsgroup`.
+   Các nền tảng khác giữ dạng có gạch ngang như mục 4.
 5. **Nguồn tham khảo**: `Nguồn tham khảo: <link bài gốc ở cột B>`
-6. **Khối liên hệ — chép NGUYÊN VĂN, không sửa chữ nào:**
+6. **Khối liên hệ — chép NGUYÊN VĂN, không sửa chữ nào.** Các link trong khối này **phải bấm được** (gắn hyperlink thật,
+   không để chữ trơn) — Trang dặn 04/10/2026: Website, Fanpage, Youtube. Link "Nguồn tham khảo" cũng gắn hyperlink.
+   Trên Wix dùng `add-link-decoration` cho từng đoạn (text = chính URL).
 
 ```
 Thông tin liên hệ:
