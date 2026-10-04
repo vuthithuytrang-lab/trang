@@ -6,7 +6,7 @@
   python3 cap-nhat.py soat bai1 <export.json>  so file Google Docs (bản xuất HTML) với bản dựng
   python3 cap-nhat.py bao-cao dd/mm/yyyy <link bài 1> <link bài 2> ["ghi chú thêm" ...]
 """
-import difflib, html, json, os, re, subprocess, sys
+import difflib, html, json, os, re, subprocess, sys, time
 
 TAM = 'tam/'
 BAI = {
@@ -50,11 +50,15 @@ def lay():
     viec = [(f'{k}.html', v['url']) for k, v in BAI.items()] + [('topi.html', TOPI_URL)] + \
            [(f'vne-{t}.json', VNE_URL + 'bank_rate_' + t) for t in ['offline', 'online']]
     for f, u in viec:
+      for lan in range(5):                  # Techcombank hay ngắt kết nối giữa chừng -> thử lại tối đa 5 lần
         r = subprocess.run(['curl', '-sS', '-L', '-m', '60', '--retry', '3', '-A', 'Mozilla/5.0',
                             '-o', TAM + f, '-w', '%{http_code}', u], capture_output=True, text=True)
         ok = r.returncode == 0 and r.stdout.strip() == '200' and os.path.getsize(TAM + f) > 1000
         trang_thai[f] = 'ok' if ok else f'lỗi ({r.stdout.strip()} {r.stderr.strip()[:80]})'
-        print(f, trang_thai[f])
+        if ok or '403' in r.stderr:           # 403 = bị tường lửa môi trường chặn, thử lại vô ích
+            break
+        time.sleep(3 * (lan + 1))
+      print(f, trang_thai[f])
     json.dump(trang_thai, open(TAM + 'trang-thai-nguon.json', 'w'), ensure_ascii=False, indent=1)
 
 

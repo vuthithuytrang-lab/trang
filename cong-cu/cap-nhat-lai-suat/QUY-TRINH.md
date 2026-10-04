@@ -11,7 +11,8 @@ Làm trong thư mục `cong-cu/cap-nhat-lai-suat/`, nhánh `claude/vibrant-kelle
 1. `HOM_NAY=$(TZ=Asia/Ho_Chi_Minh date +%d/%m/%Y)` — "ngày hôm nay" = ngày chạy theo giờ Việt Nam.
 2. `python3 cap-nhat.py lay` — tải 2 bài Techcombank, VnExpress (qua API), Topi vào `tam/`. Nguồn nào lỗi thì `tam/trang-thai-nguon.json` ghi lỗi;
    công cụ tự giữ nguyên các ô của nguồn lỗi và báo cáo ghi "Chưa cập nhật được từ … do không truy cập được".
-   (Techcombank đôi khi reset kết nối → chạy lại `lay` 2–3 lần trước khi kết luận lỗi.)
+   (Công cụ tự thử lại 5 lần khi Techcombank ngắt kết nối. Lỗi `CONNECT tunnel failed, response 403` = môi trường chạy chặn mạng:
+   lịch tự chạy phải dùng môi trường cho phép techcombank.com, vnexpress.net, topi.vn — báo Trang, đừng thử lại.)
 3. `python3 cap-nhat.py dung $HOM_NAY` — dựng `tam/bai1.min.html`, `tam/bai2.min.html` (đã tô vàng) + `tam/ket-qua.json`.
 4. Với từng bài: Drive `search_files` (`title = '<tên file>'`) — **đã có file cùng tên của hôm nay thì KHÔNG tạo**, ghi vào báo cáo.
    Chưa có: Drive `create_file` — `title` = `Lãi suất tiết kiệm Techcombank – dd/mm/yyyy` (Bài 1) hoặc
