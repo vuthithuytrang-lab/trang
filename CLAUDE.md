@@ -108,3 +108,17 @@ Agent đọc chìa từ file, gửi qua header `Authorization: Bearer <chìa>`, 
 | `khoa-hoc/` | Tiến độ khóa Agent Boss, mã nộp từng bài, sản phẩm đã làm |
 | `cong-cu/` | Công cụ dùng lại được — prompt SEO, bản tin tự động |
 | `BAO-MAT.md` | Danh sách chìa khóa đã lộ cần thu hồi |
+
+## 7. Quy trình share bài social (agent `share-bai-social`)
+
+Trang nhắc tới "share bài", "đăng bài social", "chạy đăng bài AIG", "chạy thử" → làm theo quy trình này.
+
+1. **Đọc hồ sơ dự án trước tiên**: `cong-cu/share-bai-social/du-an/<DỰ-ÁN>.md` (hiện có: `AIG.md`).
+   Trong đó có: file sheet + tab, cột nào là gì, nền tảng + account key, **cấu trúc bài bắt buộc**
+   (slug, title, key phụ, dòng hashtag, nguồn tham khảo, khối liên hệ chép nguyên văn).
+2. **Trang chỉ điền 1 dòng/bài**: Key (cột A) + link bài gốc (B) + tích Duyệt đăng (C). Agent tự chọn nền tảng
+   (xoay vòng thứ tự giữa các bài), bung ra các dòng bên dưới, đăng, ghi link (E) + ngày (F) + key phụ/lỗi (H).
+3. **Key phụ**: Trang ghi trong ô Key cách dấu phẩy; không ghi → agent tự chọn 1–2 key phụ từ chính bài gốc.
+4. **Mỗi dự án dùng chìa API riêng**, không dùng chung. Chìa nằm trong `.claude/skills/*/<nền tảng>-accounts.local.json`
+   (bị chặn commit). Trang gửi chìa bằng **đính kèm file**, không dán vào chat.
+5. Tình trạng kết nối + việc còn mở: `cong-cu/share-bai-social/GHI-CHU.md`.

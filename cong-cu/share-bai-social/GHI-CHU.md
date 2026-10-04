@@ -9,9 +9,20 @@ Nguồn: https://github.com/nguyenminhnguyet-ops/share-bai-social-agent (tải v
 - Danh sách lệnh được phép chạy nền: `.claude/settings.json`
 - Hướng dẫn gốc: `README-goc.md` · File mẫu cấu hình dự án: `CLAUDE.md.example`
 
-## Còn thiếu (chưa dùng được ngay)
-- [ ] Cấu hình dự án: copy `CLAUDE.md.example` thành `.claude/CLAUDE.md`, điền sheet + cột — **cần Trang cung cấp link Sheet**
-- [ ] Kết nối từng nền tảng (tạo file `*-accounts.local.json` chứa token) — chỉ nền tảng nào cần dùng
-- [ ] Kết nối Google Sheet (skill `google-sheets-social`)
+## Dự án đang chạy
+| Dự án | Hồ sơ (sheet, cột, nền tảng, cấu trúc bài) |
+|---|---|
+| AIG — Asia Ingredients Group | `du-an/AIG.md` |
+
+Thêm dự án mới → tạo file `du-an/<TEN>.md` theo mẫu AIG. **Mỗi dự án tạo chìa API riêng**
+(Google Cloud project riêng, OAuth client riêng cho Blogger và cho Sheet, app WordPress riêng, chìa Wix/Webflow riêng) —
+không bao giờ dùng chung chìa giữa các dự án.
+
+## Còn mở
+- [ ] **Giữ chìa qua các phiên**: chìa đang nằm trong `*-accounts.local.json` trên máy tạm của phiên làm việc
+      → phiên đóng là mất. Cần cất vào cài đặt kín của môi trường (biến môi trường) — chưa làm.
+- [ ] Thay chìa Wix + Webflow của AIG (đã bị dán vào chat) — xem `BAO-MAT.md` mục 4, 5.
+- [ ] X (Twitter): chưa có skill. Chờ Trang quyết làm hay bỏ.
+- [ ] Chưa chạy thử bài đầu tiên.
 
 ⚠️ Repo này public: file `*.local.json` đã được chặn trong `.gitignore`, tuyệt đối không commit token.

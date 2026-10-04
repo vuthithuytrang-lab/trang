@@ -21,7 +21,7 @@
 - Cột `D` = Social — **agent tự điền** nền tảng đã chọn (ghi link profile, ví dụ `https://asiaingredientsgroup.wordpress.com/`)
 - Cột `E` = Link share — **agent điền** link bài sau khi đăng xong
 - Cột `F` = Ngày share (agent điền ngày đăng, dạng dd/mm/yyyy)
-- Mỗi bài = 5 dòng liên tiếp (dòng đầu có Key, 4 dòng sau để trống cột A), sau đó 1 dòng trống ngăn cách.
+- Bài cũ (dòng 10–62): 5 dòng/bài + 1 dòng trống. Bài mới: 4 dòng/bài (4 nền tảng) + 1 dòng trống — xem mục "Trang điền sheet thế nào".
 - Chỉ xử lý bài có `C = TRUE` và ô `E` còn trống.
 
 ## Nền tảng của AIG (từ tab 7.1, cột D)
