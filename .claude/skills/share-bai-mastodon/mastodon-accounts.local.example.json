@@ -1,0 +1,7 @@
+{
+  "tenban@mastodon.social": {
+    "access_token": "DAN_ACCESS_TOKEN_TU_MASTODON_DEVELOPMENT",
+    "instance_url": "https://mastodon.social",
+    "account_handle": "@tenban"
+  }
+}
