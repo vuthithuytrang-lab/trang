@@ -10,6 +10,7 @@ Trong quá trình đọc lại bản chụp session cũ, phát hiện **3 chìa 
 | 1 | Chìa Agent Boss (bản 1) | Đã bị hệ thống Agent Boss tự khóa vì phát hiện lộ | Không dùng lại |
 | 2 | Chìa Agent Boss (bản 2) | Trang gửi lại nhưng **vẫn là chìa cũ** — chưa từng tạo chìa mới | **Phải tạo chìa mới** |
 | 3 | Token bot Telegram `ban_tin_marketing_trang_bot` | Đã dán vào chat, vẫn còn hiệu lực | **Thu hồi và cấp lại** |
+| 4 | Chìa API Wix "AIG share social" (site AIG, ngày 04/10/2026) | Dán thẳng vào chat, đang dùng tạm cho agent share-bai-social | **Xóa chìa tại manage.wix.com/account/api-keys, tạo chìa mới cùng 3 quyền, gửi qua file** |
 
 ## Việc 1 — Tạo chìa Agent Boss mới
 
