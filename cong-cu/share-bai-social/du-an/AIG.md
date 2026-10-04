@@ -70,7 +70,17 @@ Các bài cũ (đã có `E`) agent bỏ qua, dù ô `C` tích hay không.
 ## Cấu trúc bài đăng AIG — áp dụng cho MỌI bài, mọi nền tảng (Trang gửi 04/10/2026)
 
 1. **Slug**: tối ưu theo từ khóa chính (không dấu, nối gạch ngang, vd `cong-ty-cung-cap-huong-lieu`).
-2. **Title**: chứa từ khóa chính.
+2. **Tiêu đề SEO (Title)** — Trang dặn 04/10/2026:
+   - **Dưới 65 ký tự** (đếm cả dấu cách) — đếm thật trước khi đăng.
+   - Chứa từ khóa chính; **đúng insight** người đọc (nỗi lo / mong muốn thật của doanh nghiệp mua nguyên liệu).
+   - Có yếu tố **kích thích, thôi thúc click** (lợi ích cụ thể, câu hỏi, con số có thật trong bài) — không giật tít sai sự thật.
+   - Ghi tiêu đề đã dùng vào cột `I` (Title bài share) của đúng dòng nền tảng đó.
+2b. **Mô tả SEO (Meta description)**:
+   - **Dưới 165 ký tự**, khoảng 2–3 dòng.
+   - **Trả lời được insight** (mong muốn thầm kín của người đọc) + **tóm tắt** nội dung bài.
+   - **Chứa từ khóa chính** (và từ khóa phụ nếu vừa).
+   - Ghi vào cột `J` (Mô tả bài share) của đúng dòng; đặt làm mô tả/đoạn trích của bài ở nền tảng nào hỗ trợ
+     (WordPress: `excerpt`; Wix: `excerpt`/SEO description; Blogger: không có qua API → chỉ ghi sheet; Webflow: chỉ có nếu collection có field mô tả).
 3. **Content**: bài viết lại từ bài gốc, triển khai quanh:
    - từ khóa chính
    - từ khóa phụ 1
@@ -85,6 +95,9 @@ Các bài cũ (đã có `E`) agent bỏ qua, dù ô `C` tích hay không.
    `#asiagroup #<key-chinh> [#<key-phu-1> #<key-phu-2>] #tap-doan-nguyen-lieu-a-chau-aig #asia-ingredients-group`
    Ví dụ Trang đưa — key "bã sắn", không có key phụ:
    `#asiagroup #ba-san #tap-doan-nguyen-lieu-a-chau-aig #asia-ingredients-group`
+3b. **KHÔNG dùng mục "Tóm lại" / "Tóm tắt" / "Kết luận"** làm tiêu đề mục trong bài (Trang dặn 04/10/2026).
+   Đoạn chốt cuối bài vẫn viết bình thường nhưng không đặt tiêu đề kiểu đó — có thể để không tiêu đề,
+   hoặc dùng tiêu đề mang nội dung (vd "AIG đồng hành cùng doanh nghiệp thế nào?").
 4b. **Ảnh — BẮT BUỘC mọi bài, mọi nền tảng** (Trang dặn 04/10/2026): dùng ảnh đại diện của bài gốc (thẻ `og:image`),
    làm ảnh đại diện bài + chèn 1 ảnh trong thân bài. Không lấy được ảnh → KHÔNG đăng, ghi lý do vào cột `H`.
 5. **Nguồn tham khảo**: `Nguồn tham khảo: <link bài gốc ở cột B>`

@@ -119,6 +119,7 @@ Trang nhắc tới "share bài", "đăng bài social", "chạy đăng bài AIG",
 2. **Trang chỉ điền 1 dòng/bài**: Key (cột A) + link bài gốc (B) + tích Duyệt đăng (C). Agent tự chọn nền tảng
    (xoay vòng thứ tự giữa các bài), bung ra các dòng bên dưới, đăng, ghi link (E) + ngày (F) + key phụ/lỗi (H).
 3. **Key phụ**: Trang ghi trong ô Key cách dấu phẩy; không ghi → agent tự chọn 1–2 key phụ từ chính bài gốc.
+3c. **Tiêu đề SEO < 65 ký tự** (đúng insight, thôi thúc click) ghi cột I; **mô tả SEO < 165 ký tự** (trả lời insight, tóm tắt, có từ khóa) ghi cột J. Không đặt mục "Tóm lại/Tóm tắt" trong bài. Chi tiết trong hồ sơ dự án.
 3b. **Bài nào cũng phải kèm ảnh** (ảnh đại diện + 1 ảnh trong bài, lấy từ bài gốc). Không có ảnh → không đăng, ghi lý do cột H.
 4. **Mỗi dự án dùng chìa API riêng**, không dùng chung. Chìa nằm trong `.claude/skills/*/<nền tảng>-accounts.local.json`
    (bị chặn commit). Trang gửi chìa bằng **đính kèm file**, không dán vào chat.
