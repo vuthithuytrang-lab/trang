@@ -43,9 +43,26 @@
   `thumbnail` (ảnh — bài không có ảnh sẽ bị Webflow từ chối), `link` (điền URL bài gốc —
   truyền `link <URL gốc>` vào cuối lệnh `build-item-payload`). Link bài dạng `asiaingredientsgroup.webflow.io/blog/<slug>`.
 
-## Cách chọn 5 nền tảng "so le" — CHỜ TRANG CHỐT
+## Trang điền sheet thế nào (đã thống nhất 04/10/2026)
 
-- Cần bổ sung: Trang muốn so le theo cách nào (xem ghi chú trong `GHI-CHU.md`).
+Trang chỉ điền **1 dòng cho mỗi bài**, ở dòng trống đầu tiên dưới bài cuối cùng:
+- `A` = Key, `B` = link bài gốc, tích ô `C` (Duyệt đăng).
+- Chừa **5 dòng trống** bên dưới trước khi điền bài tiếp theo (4 dòng cho agent + 1 dòng ngăn cách).
+
+Agent làm phần còn lại cho mỗi dòng có `A` + `B` + `C = TRUE` mà `D` còn trống:
+1. Chọn nền tảng (hiện 4: Blogger, WordPress, Webflow, Wix — X chưa hỗ trợ), xoay thứ tự giữa các bài
+   (bài sau bắt đầu từ nền tảng kế tiếp bài trước) để không lần nào cũng đăng cùng một thứ tự.
+2. Ghi nền tảng thứ 1 vào `D` của chính dòng đó; nền tảng 2–4 vào `D` của 3 dòng ngay dưới,
+   đồng thời chép link bài gốc vào `B` của 3 dòng đó (cột `A` để trống, đúng mẫu các bài cũ).
+   Nếu 3 dòng bên dưới không trống → KHÔNG ghi đè, báo lại cho Trang.
+3. Đăng xong nền tảng nào → ghi link vào `E` và ngày vào `F` của đúng dòng đó.
+4. Dòng nào lỗi → để trống `E`, ghi lý do ngắn vào `H` (NOTE).
+
+Các bài cũ (đã có `E`) agent bỏ qua, dù ô `C` tích hay không.
+
+## Cách "so le" — CHỜ TRANG CHỐT
+
+- Tạm thời: đủ 4 nền tảng mỗi bài, xoay thứ tự như trên. Chờ Trang chốt có giãn thời gian giữa các nền tảng không.
 
 ## Quy tắc viết bài riêng cho AIG
 
