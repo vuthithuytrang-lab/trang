@@ -82,6 +82,8 @@ Các bài cũ (đã có `E`) agent bỏ qua, dù ô `C` tích hay không.
    `#asiagroup #<key-chinh> [#<key-phu-1> #<key-phu-2>] #tap-doan-nguyen-lieu-a-chau-aig #asia-ingredients-group`
    Ví dụ Trang đưa — key "bã sắn", không có key phụ:
    `#asiagroup #ba-san #tap-doan-nguyen-lieu-a-chau-aig #asia-ingredients-group`
+4b. **Ảnh — BẮT BUỘC mọi bài, mọi nền tảng** (Trang dặn 04/10/2026): dùng ảnh đại diện của bài gốc (thẻ `og:image`),
+   làm ảnh đại diện bài + chèn 1 ảnh trong thân bài. Không lấy được ảnh → KHÔNG đăng, ghi lý do vào cột `H`.
 5. **Nguồn tham khảo**: `Nguồn tham khảo: <link bài gốc ở cột B>`
 6. **Khối liên hệ — chép NGUYÊN VĂN, không sửa chữ nào:**
 
