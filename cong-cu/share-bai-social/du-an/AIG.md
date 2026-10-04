@@ -64,6 +64,32 @@ Các bài cũ (đã có `E`) agent bỏ qua, dù ô `C` tích hay không.
 
 - Tạm thời: đủ 4 nền tảng mỗi bài, xoay thứ tự như trên. Chờ Trang chốt có giãn thời gian giữa các nền tảng không.
 
-## Quy tắc viết bài riêng cho AIG
+## Cấu trúc bài đăng AIG — áp dụng cho MỌI bài, mọi nền tảng (Trang gửi 04/10/2026)
 
-- Cần bổ sung (từ cấm, tên thương hiệu viết đúng nguyên văn, ...).
+1. **Slug**: tối ưu theo từ khóa chính (không dấu, nối gạch ngang, vd `cong-ty-cung-cap-huong-lieu`).
+2. **Title**: chứa từ khóa chính.
+3. **Content**: bài viết lại từ bài gốc, triển khai quanh:
+   - từ khóa chính
+   - từ khóa phụ 1
+   - từ khóa phụ 2
+   *(Cần bổ sung: từ khóa phụ lấy từ đâu, và 3 dòng `#keyword` là tiêu đề mục hay hashtag — chờ Trang xác nhận.)*
+4. **Dòng hashtag** (nguyên mẫu, thay từ khóa thật, viết không dấu nối gạch):
+   `#asiagroup #<key-chinh> #<key-phu-1> #<key-phu-2> #tap-doan-nguyen-lieu-a-chau-aig #asia-ingredients-group`
+5. **Nguồn tham khảo**: `Nguồn tham khảo: <link bài gốc ở cột B>`
+6. **Khối liên hệ — chép NGUYÊN VĂN, không sửa chữ nào:**
+
+```
+Thông tin liên hệ:
+Asia Ingredients Group
+Địa chỉ: Tòa nhà AIG – Lô TH-1B Đường số 7 Khu Thương mại Nam Khu Chế Xuất Tân Thuận, Phường Tân Thuận, TP HCM, Việt Nam
+SĐT: +84 28 5411 1557
+Email: contact@asiagroup-vn.com
+Website: https://asiagroup-vn.com/
+
+Follow social:
+Fanpage: https://www.facebook.com/tapdoanaig
+Youtube: https://www.youtube.com/@AIG2001
+```
+
+Quy tắc chung của skill vẫn giữ: viết lại không chép nguyên câu, ~1000 từ, gắn link bài gốc vào 1 lần xuất hiện
+từ khóa chính, không dùng "nhất / số 1 / hàng đầu" khi không có chứng minh.
