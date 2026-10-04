@@ -65,6 +65,9 @@ Agent làm phần còn lại cho mỗi dòng có `A` + `B` + `C = TRUE` mà `D` 
 4. Dòng nào lỗi → để trống `E`, ghi lý do ngắn vào `H` (NOTE).
 
 Các bài cũ (đã có `E`) agent bỏ qua, dù ô `C` tích hay không.
+**Bài trùng → BỎ QUA** (Trang chốt 04/10/2026): trước khi bung dòng, dò cột `A`/`B` các dòng phía trên.
+Key hoặc link bài gốc đã từng share rồi → không đăng lại, ghi `H`: "Bỏ qua: bài đã share trước đó (dòng …)".
+(Ví dụ: "bã sắn" dòng 69 trùng dòng 10–14.)
 
 ## Lịch đăng giãn cách — KHÔNG đăng ồ ạt (Trang dặn 04/10/2026)
 
