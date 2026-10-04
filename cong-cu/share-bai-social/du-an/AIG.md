@@ -74,7 +74,9 @@ Các bài cũ (đã có `E`) agent bỏ qua, dù ô `C` tích hay không.
    - từ khóa phụ 2
    **Từ khóa phụ là TÙY CHỌN** — chỉ dùng khi Trang ghi trong ô Key (cột A), cách nhau bằng dấu phẩy:
    `bã sắn, từ khóa phụ 1, từ khóa phụ 2` → từ đầu tiên là key chính. Ô Key chỉ có 1 cụm → bài chỉ có key chính.
-   Agent KHÔNG tự nghĩ thêm từ khóa phụ.
+   Ô Key KHÔNG có key phụ → agent **tự chọn 1–2 key phụ** từ chính nội dung bài gốc (Trang cho phép 04/10/2026):
+   cụm từ thật sự xuất hiện trong bài gốc, liên quan trực tiếp key chính, không bịa thông tin mới.
+   Ghi key phụ đã chọn vào cột `H` (NOTE) của dòng đầu bài, dạng `Key phụ: a, b`, để Trang soát lại.
    *(Cần bổ sung: 3 dòng `#keyword` trong Content là tiêu đề mục hay hashtag — chờ Trang xác nhận; tạm làm tiêu đề mục H2.)*
 4. **Dòng hashtag** (thay từ khóa thật, viết không dấu, nối gạch ngang; bỏ hashtag key phụ nếu không có):
    `#asiagroup #<key-chinh> [#<key-phu-1> #<key-phu-2>] #tap-doan-nguyen-lieu-a-chau-aig #asia-ingredients-group`
