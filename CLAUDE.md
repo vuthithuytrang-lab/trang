@@ -121,6 +121,7 @@ Trang nhắc tới "share bài", "đăng bài social", "chạy đăng bài AIG",
 3. **Key phụ**: Trang ghi trong ô Key cách dấu phẩy; không ghi → agent tự chọn 1–2 key phụ từ chính bài gốc.
 3c. **Tiêu đề SEO < 65 ký tự** (đúng insight, thôi thúc click) ghi cột I; **mô tả SEO < 165 ký tự** (trả lời insight, tóm tắt, có từ khóa) ghi cột J. Không đặt mục "Tóm lại/Tóm tắt" trong bài. Chi tiết trong hồ sơ dự án.
 3d. **Link Website / Fanpage / Youtube / Nguồn tham khảo phải bấm được.** Hashtag trên Wix viết liền không gạch (`#traicayiqf`). Không có mục "Tóm tắt/Tóm lại" cuối bài.
+3e. **Đăng giãn cách, không ồ ạt**: mỗi lượt 1 bài × 1 nền tảng, các lượt cách ≥ 60 phút, mỗi nền tảng ≤ 3 bài/ngày (cách ≥ 3 giờ), chỉ 8:00–21:00. Ghi giờ hẹn vào cột F. Chi tiết trong hồ sơ dự án.
 3b. **Bài nào cũng phải kèm ảnh** (ảnh đại diện + 1 ảnh trong bài, lấy từ bài gốc). Không có ảnh → không đăng, ghi lý do cột H.
 4. **Mỗi dự án dùng chìa API riêng**, không dùng chung. Chìa nằm trong `.claude/skills/*/<nền tảng>-accounts.local.json`
    (bị chặn commit). Trang gửi chìa bằng **đính kèm file**, không dán vào chat.

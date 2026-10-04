@@ -66,9 +66,26 @@ Agent làm phần còn lại cho mỗi dòng có `A` + `B` + `C = TRUE` mà `D` 
 
 Các bài cũ (đã có `E`) agent bỏ qua, dù ô `C` tích hay không.
 
-## Cách "so le" — CHỜ TRANG CHỐT
+## Lịch đăng giãn cách — KHÔNG đăng ồ ạt (Trang dặn 04/10/2026)
 
-- Tạm thời: đủ 4 nền tảng mỗi bài, xoay thứ tự như trên. Chờ Trang chốt có giãn thời gian giữa các nền tảng không.
+Trang tích nhiều bài một lúc → agent **chia lịch, đăng dần**, tránh nền tảng coi là spam / khóa tài khoản.
+Mặc định (Trang có thể chỉnh số):
+
+| Quy tắc | Mức |
+|---|---|
+| Mỗi lượt chạy | chỉ đăng **1 bài lên 1 nền tảng** |
+| Khoảng cách giữa 2 lượt | **≥ 60 phút** (kèm lệch ngẫu nhiên 5–20 phút cho tự nhiên) |
+| Cùng 1 nền tảng | tối đa **3 bài/ngày**, 2 bài cách nhau **≥ 3 giờ** |
+| Giờ đăng | **8:00 – 21:00** giờ Việt Nam; ngoài giờ không đăng |
+| Thứ tự | bài tích trước đăng trước; 4 nền tảng của 1 bài rải trong ngày, xoay vòng như trên |
+
+→ 1 bài xong cả 4 nền tảng trong khoảng 4–5 giờ; tối đa ~3 bài/ngày (12 lượt đăng).
+
+**Ghi lịch lên sheet để Trang theo dõi:** ngay khi bung dòng, ghi giờ hẹn vào cột `F` dạng `Hẹn 05/10 09:15`;
+đăng xong thay bằng ngày đăng thật `05/10/2026` + link ở cột `E`.
+
+**Vì sao vẫn đăng đủ 4 nền tảng/bài:** AIG chỉ có 4 nền tảng đăng được nên không thể "chọn 4 trong nhiều hơn";
+độ "so le" đạt được bằng giãn thời gian + xoay thứ tự nền tảng + mỗi nền tảng một cách viết khác nhau.
 
 ## Cấu trúc bài đăng AIG — áp dụng cho MỌI bài, mọi nền tảng (Trang gửi 04/10/2026)
 
