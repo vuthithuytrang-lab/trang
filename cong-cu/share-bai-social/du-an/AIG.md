@@ -38,6 +38,9 @@
 
 - **Google Sheet**: sheet-key `aig-share-social`, OAuth client RIÊNG "AIG Sheets" (khác client Blogger) trong project `aig-share-social`. Đã thử đọc OK 04/10/2026; ghi ô chưa thử.
 
+- **Blogger**: Blogger tự tạo slug từ tiêu đề lúc đăng LẦN ĐẦU và bỏ mất chữ "đ" (vd "đông" → "ong").
+  Để slug đúng từ khóa: đăng lần đầu với tiêu đề KHÔNG DẤU = từ khóa chính (vd `trai cay iqf` → `/trai-cay-iqf.html`),
+  rồi cập nhật lại tiêu đề tiếng Việt thật (link giữ nguyên). Lệnh tải ảnh `download-image` cần truyền đủ tham số cookie (để chuỗi rỗng).
 - **Wix**: site AIG `site_id` 43c11825-0837-44a0-b7ea-7c8800737638, tác giả `asiaseoproject6`.
 - **Webflow**: collection **Blogs** (slug `blog`). Cả 5 field đều BẮT BUỘC: `name`, `slug`, `content` (RichText),
   `thumbnail` (ảnh — bài không có ảnh sẽ bị Webflow từ chối), `link` (điền URL bài gốc —
