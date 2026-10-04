@@ -42,6 +42,9 @@
   Để slug đúng từ khóa: đăng lần đầu với tiêu đề KHÔNG DẤU = từ khóa chính (vd `trai cay iqf` → `/trai-cay-iqf.html`),
   rồi cập nhật lại tiêu đề tiếng Việt thật (link giữ nguyên). Lệnh tải ảnh `download-image` cần truyền đủ tham số cookie (để chuỗi rỗng).
 - **Wix**: site AIG `site_id` 43c11825-0837-44a0-b7ea-7c8800737638, tác giả `asiaseoproject6`.
+  Chìa phải có quyền **Wix Blog** (kèm Contacts & Members, Manage Site Media); sửa quyền xong cần chờ ~1 phút mới có hiệu lực.
+  Ảnh bìa: thêm `draftPost.media` (wixMedia.image id+url) vào payload; mô tả SEO: thêm `draftPost.excerpt` + `seoData` meta description.
+  Sau khi tạo bài phải chạy `update-draft-post` để đổi slug sang ASCII (vd `trai-cay-iqf`).
 - **Webflow**: collection **Blogs** (slug `blog`). Cả 5 field đều BẮT BUỘC: `name`, `slug`, `content` (RichText),
   `thumbnail` (ảnh — bài không có ảnh sẽ bị Webflow từ chối), `link` (điền URL bài gốc —
   truyền `link <URL gốc>` vào cuối lệnh `build-item-payload`). Link bài dạng `asiaingredientsgroup.webflow.io/blog/<slug>`.

@@ -21,8 +21,8 @@ không bao giờ dùng chung chìa giữa các dự án.
 ## Còn mở
 - [ ] **Giữ chìa qua các phiên**: chìa đang nằm trong `*-accounts.local.json` trên máy tạm của phiên làm việc
       → phiên đóng là mất. Cần cất vào cài đặt kín của môi trường (biến môi trường) — chưa làm.
-- [ ] Thay chìa Wix + Webflow của AIG (đã bị dán vào chat) — xem `BAO-MAT.md` mục 4, 5.
+- [x] Thay chìa Wix (xong 04/10/2026). - [ ] Thay chìa Webflow (đã bị dán vào chat) — `BAO-MAT.md` mục 5.
 - [ ] X (Twitter): chưa có skill. Chờ Trang quyết làm hay bỏ.
-- [ ] Chưa chạy thử bài đầu tiên.
+- [x] Bài đầu tiên "trái cây iqf" (dòng 64–67) đã đăng đủ 4 nền tảng 04/10/2026.
 
 ⚠️ Repo này public: file `*.local.json` đã được chặn trong `.gitignore`, tuyệt đối không commit token.
