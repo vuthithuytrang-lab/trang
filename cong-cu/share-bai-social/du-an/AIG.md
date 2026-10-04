@@ -28,7 +28,7 @@
 
 | Nền tảng | Link profile (ghi vào cột D) | Skill | Account key | Trạng thái |
 |---|---|---|---|---|
-| Blogger (= blogspot.com, cùng 1 blog) | `https://asiaingredientsgroup.blogspot.com/` | `share-bai-blogger` | `asiaingredientsgroup.blogspot.com` | Cần setup |
+| Blogger (= blogspot.com, cùng 1 blog) | `https://asiaingredientsgroup.blogspot.com/` | `share-bai-blogger` | `asiaingredientsgroup.blogspot.com` | ✅ Đã kết nối 04/10/2026 (Google Cloud project riêng `aig-share-social`, In production, blog_id 2314208901361543116) |
 | WordPress.com | `https://asiaingredientsgroup.wordpress.com/` | `share-bai-wp` | `asiaingredientsgroup.wordpress.com` | ✅ Đã kết nối 04/10/2026 (app "AIG share social", chìa chỉ cấp cho đúng blog này, không hết hạn) |
 | Webflow | `https://asiaingredientsgroup.webflow.io/` | `share-bai-webflow` | `asiaingredientsgroup-webflow` | ✅ Đã kết nối 04/10/2026 |
 | Wix | `https://nguyenlieuachau.wixsite.com/asia-group` | `share-bai-wix` | `nguyenlieuachau.wixsite.com/asia-group` | ✅ Đã kết nối 04/10/2026 (chìa cần thay — xem BAO-MAT.md) |
