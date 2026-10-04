@@ -30,6 +30,17 @@ TEN = {
     'NamABank': ('NamABank', 'Nam Á Bank'), 'Vikki Bank': ('Vikki Bank', 'Vikkibank (Đông Á)'),
 }
 VANG = 'background-color:#ffff00'
+XANH = {'rgb(10,132,255)', 'rgb(66,133,244)', '#0a84ff', '#4285f4'}
+DO = {'rgb(237,28,36)', 'rgb(255,0,0)', '#ed1c24', '#ff0000'}
+TEN_MAU = {'xanh': 'xanh (cao nhất)', 'do': 'đỏ (thấp nhất)', 'thuong': 'chữ thường'}
+
+
+def thay_o(row, i, o_moi):
+    """Thay ô thứ i (tính cả cột tên) trong một dòng bảng, theo vị trí — không theo nội dung, vì nhiều ô giống hệt nhau."""
+    phan = re.split(r'(<td[^>]*>.*?</td>)', row, flags=re.S)
+    vt = [j for j, x in enumerate(phan) if x.startswith('<td')]
+    phan[vt[i]] = o_moi
+    return ''.join(phan)
 
 
 def chu(x):
@@ -149,7 +160,7 @@ def dung(hom_nay):
 def dung_bai(ma, cfg, hom_nay, vne, topi):
     thang_nay = hom_nay[3:]
     src = open(f'{TAM}{ma}.html', encoding='utf-8').read()
-    ghi = {'sua': [], 'gan_nhat': [], 'gan_nhat_trung': [], 'chinh_thuc': [], 'gach': [], 'can_duyet': [], 'doi_ngay': []}
+    ghi = {'doi_mau': [], 'sua': [], 'gan_nhat': [], 'gan_nhat_trung': [], 'chinh_thuc': [], 'gach': [], 'can_duyet': [], 'doi_ngay': []}
 
     def to_vang(x, dam=None):
         return f'<span style="{VANG}{";font-weight:400" if dam is False else ""}">{x}</span>'
@@ -209,15 +220,82 @@ def dung_bai(ma, cfg, hom_nay, vne, topi):
         tb = m.group(0)
         hang = re.findall(r'<tr.*?</tr>', tb, re.S)
         cot = [re.sub(r'\D', '', chu(c)) for c in re.findall(r'<td[^>]*>.*?</td>', hang[0], re.S)]
-        moi_tb = tb
-        for row in hang[1:]:
+        for j, row in enumerate(hang[1:], 1):
             cells = re.findall(r'<td[^>]*>.*?</td>', row, re.S)
             ten = chu(cells[0]).replace(' (', '(').replace('(', ' (')
-            if ten == 'Techcombank':
-                continue
-            row2 = sua_dong(key, ten, cot, cells, row)
-            moi_tb = moi_tb.replace(row, row2, 1)
+            if ten != 'Techcombank':
+                hang[j] = sua_dong(key, ten, cot, cells, row)
+        phan = re.split(r'(<tr.*?</tr>)', tb, flags=re.S)
+        vt = [j for j, x in enumerate(phan) if x.startswith('<tr')]
+        for j, h in zip(vt, hang):
+            phan[j] = h
+        moi_tb = ''.join(phan)
+        # bảng có chú thích "Màu xanh … cao nhất, màu đỏ … thấp nhất" ngay bên dưới -> tô lại màu theo số mới
+        if 'Màu xanh' in chu(body[m.end():m.end() + 3000]):
+            moi_tb = to_lai_mau(key, moi_tb)
         return moi_tb
+
+    def mau_hien_tai(cell):
+        """Màu chữ đang hiển thị của con số trong ô: 'xanh' / 'do' / 'thuong'."""
+        so_txt = chu(cell)
+        vi_tri = [x.start() for x in re.finditer(r'>\s*' + re.escape(so_txt) + r'\s*<', cell)]
+        if not vi_tri:
+            return None
+        ngan = []
+        for t in re.finditer(r'<(/?)(span|b|strong|p|td)\b([^>]*)>', cell[:vi_tri[0] + 1]):
+            if t.group(2) != 'span':
+                continue
+            if t.group(1):
+                if ngan:
+                    ngan.pop()
+            else:
+                mm = re.search(r'color:\s*([^;"]+)', t.group(3).replace('background-color', 'bg'))
+                ngan.append(mm.group(1).strip().replace(' ', '') if mm else None)
+        mau = next((c for c in reversed(ngan) if c), None)
+        if mau in XANH:
+            return 'xanh'
+        if mau in DO:
+            return 'do'
+        return 'thuong'
+
+    def to_lai_mau(key, tb):
+        hang = re.findall(r'<tr.*?</tr>', tb, re.S)
+        cot = [re.sub(r'\D', '', chu(c)) for c in re.findall(r'<td[^>]*>.*?</td>', hang[0], re.S)]
+        dong = []          # [chỉ số dòng trong bảng, tên, danh sách ô]
+        for j, row in enumerate(hang[1:], 1):
+            cells = re.findall(r'<td[^>]*>.*?</td>', row, re.S)
+            ten = chu(cells[0]).replace(' (', '(').replace('(', ' (')
+            if ten != 'Techcombank':
+                dong.append([j, ten, cells])
+        for i, k in enumerate(cot):
+            if k not in THU_TU:
+                continue
+            gia_tri = [so(chu(d[2][i])) for d in dong]
+            co = [v for v in gia_tri if v is not None]
+            if not co:
+                continue
+            cao, thap = max(co), min(co)
+            for d, v in zip(dong, gia_tri):
+                if v is None:
+                    continue
+                can = 'xanh' if v == cao else 'do' if v == thap else 'thuong'
+                cell = d[2][i]
+                dang = mau_hien_tai(cell)
+                if dang is None or dang == can:
+                    continue
+                so_txt = chu(cell)
+                vang = f'<span style="{VANG}">{so_txt}</span>'
+                noi_dung = {'xanh': f'<b><span style="color: rgb(10,132,255);">{vang}</span></b>',
+                            'do': f'<b><span style="color: rgb(237,28,36);">{vang}</span></b>', 'thuong': vang}[can]
+                d[2][i] = re.match(r'<td[^>]*>', cell).group(0) + f'<p style="text-align: center;">{noi_dung}</p></td>'
+                hang[d[0]] = thay_o(hang[d[0]], i, d[2][i])
+                ghi['doi_mau'].append([TEN_BANG[key], d[1], k, so_txt, TEN_MAU[dang], TEN_MAU[can]])
+        # ghép lại bảng theo vị trí từng dòng
+        phan = re.split(r'(<tr.*?</tr>)', tb, flags=re.S)
+        vt = [j for j, x in enumerate(phan) if x.startswith('<tr')]
+        for j, h in zip(vt, hang):
+            phan[j] = h
+        return ''.join(phan)
 
     def sua_dong(key, ten, cot, cells, row):
         tv, tt = TEN.get(ten, (ten, ten))
@@ -287,7 +365,7 @@ def dung_bai(ma, cfg, hom_nay, vne, topi):
                 ghi['can_duyet'].append(f'Bảng {bang} – {ten} – {k} tháng: không thay được số trong ô (ô ghi "{cu}"), giữ nguyên.')
                 continue
             cell2 = cell[:m.start()] + '>' + m.group(1) + to_vang(gt) + m.group(2) + '<' + cell[m.end():]
-            row = row.replace(cell, cell2, 1)
+            row = thay_o(row, cot.index(k), cell2)
             cells[cot.index(k)] = cell2
             if nguon == 'A':
                 ghi['gan_nhat'].append([bang, ten, k, cu, gt, can_cu])
@@ -383,6 +461,10 @@ def bao_cao(hom_nay, links, them):
             L += [b['loi'], '']
             continue
         k = lambda x: f'{x} tháng'
+        if not (b['sua'] or b['gan_nhat'] or b['chinh_thuc'] or b.get('doi_mau')):
+            # Trang dặn: lãi suất không đổi thì chỉ cần báo không thay đổi
+            L += [f'**Link file:** [{b["ten_file"]}]({link})', '', '**Không có thay đổi lãi suất.**', '']
+            continue
         L += [f'**1. Link file:** [{b["ten_file"]}]({link})', '', '**2. Ngày tháng đã đổi:**', '']
         L += [f'- {x}' for x in b['doi_ngay']] or ['- Ngày, tháng trong bài đã đúng, không đổi.']
         if not any('tháng' in x and 'Tiêu đề' not in x for x in b['doi_ngay']):
@@ -393,6 +475,9 @@ def bao_cao(hom_nay, links, them):
               '- Biểu lãi suất ngân hàng (Bước 4.2): ' + ('không dùng.' if not b['chinh_thuc'] else 'chưa có link trong danh sách.'), '',
               f'**4. Ô đã sửa từ VnExpress và Topi ({len(b["sua"])} ô):**', '']
         L += [f'- Bảng {c[0]} – {c[1]} – {k(c[2])}: {c[3]} → {c[4]} (nguồn: {c[5]})' for c in b['sua']] or ['- Không có.']
+        dm = b.get('doi_mau', [])
+        L += ['', f'**4b. Ô đổi màu cao nhất / thấp nhất ({len(dm)} ô, đều tô vàng):**', '']
+        L += [f'- Bảng {c[0]} – {c[1]} – {k(c[2])}: {c[3]} — {c[4]} → {c[5]}' for c in dm] or ['- Không có.']
         L += ['', f'**5. Ô lấy theo kỳ hạn gần nhất – Trường hợp A ({len(b["gan_nhat"])} ô):**', '']
         L += [f'- Bảng {c[0]} – {c[1]} – {k(c[2])}: {c[3]} → {c[4]} (lấy theo kỳ hạn {c[5]} tháng)' for c in b['gan_nhat']] or ['- Không có.']
         if b['gan_nhat_trung']:
@@ -411,8 +496,7 @@ def bao_cao(hom_nay, links, them):
             if tre > 3:
                 cu.append(f'Dữ liệu VnExpress cũ {tre} ngày (cập nhật đến {n["vne_ngay"]}); kỳ hạn ngắn có thể đã đổi mà VnExpress chưa cập nhật.')
         L += [f'- {x}' for x in cu + b['can_duyet'] + bat_thuong(b)] or ['- Không có.']
-        L += ['', '**9.** ' + ('Không có thay đổi lãi suất.' if not (b['sua'] or b['gan_nhat'] or b['chinh_thuc'])
-                              else f'Có thay đổi: {len(b["sua"]) + len(b["gan_nhat"]) + len(b["chinh_thuc"])} ô.')]
+        L += ['', f'**9.** Có thay đổi: {len(b["sua"]) + len(b["gan_nhat"]) + len(b["chinh_thuc"])} ô lãi suất, {len(dm)} ô đổi màu.']
     p = f'bao-cao/{hom_nay[6:]}-{hom_nay[3:5]}-{hom_nay[:2]}.md'
     open(p, 'w').write('\n'.join(L) + '\n')
     print('\n'.join(L))

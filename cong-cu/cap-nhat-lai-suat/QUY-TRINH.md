@@ -20,6 +20,7 @@ Làm trong thư mục `cong-cu/cap-nhat-lai-suat/`, nhánh `claude/vibrant-kelle
    `textContent` = **nguyên văn** nội dung `tam/baiN.min.html` (đọc file bằng `cat`, chép đủ, không sửa), `parentId` = thư mục nếu Trang đã chỉ định.
 5. Soát: `download_file_content` (exportMimeType `text/html`) → `python3 cap-nhat.py soat baiN <đường dẫn file kết quả>`.
    Phải ra "dòng lệch: 0" và chữ giống 100%. Lệch thì `trash_file` file vừa tạo và tạo lại.
+5b. Thay ô trong bảng luôn theo VỊ TRÍ (nhiều ô giống hệt nhau, thay theo nội dung sẽ trúng nhầm ô).
 6. `python3 cap-nhat.py bao-cao $HOM_NAY <link bài 1> <link bài 2> ["ghi chú" ...]` → `bao-cao/yyyy-mm-dd.md`; commit + push; gửi Trang link + báo cáo.
 
 Ghi chú kỹ thuật:
@@ -37,6 +38,22 @@ Ghi chú kỹ thuật:
 Tên ghép đã chắc chắn: MBBank = MB = MB Bank · OceanBank = MBV = MBV (OceanBank) · VCB Neo (CBBank) / CBBank = VCBNeo = VCBNeo (CBBank) ·
 Viet Capital Bank (BVBANK) = BVBank · BAOVIET Bank = BaoVietBank = Bảo Việt · PG Bank = PGBank · PVcomBank = PVCombank ·
 Kienlongbank = Kiên Long · Vikki Bank = Vikkibank (Đông Á) · NamABank = Nam Á Bank · BacABank = Bắc Á · VietBank = Vietbank.
+
+## Bổ sung của Trang ngày 04/10/2026 (áp dụng cùng bản 3)
+
+```
+1. Nếu lãi suất không thay đổi chỉ cần báo không thay đổi là được.
+2. Đọc phần "Lưu ý" dưới bảng (Màu xanh là mức lãi suất cao nhất trong kỳ hạn và màu đỏ là lãi suất thấp nhất):
+   khi update xong lãi suất cũng phải tô lại màu của lãi suất cao nhất và thấp nhất. Các phần lãi suất cũ bị thay đổi màu
+   hay lãi suất tô màu mới đều cần tô vàng, và note lại trong báo cáo.
+Bất cứ thay đổi nào cũng phải tô vàng.
+```
+
+Cách công cụ làm (`cap-nhat.py`):
+- Chỉ tô lại màu ở bảng có chú thích "Màu xanh … màu đỏ …" ngay bên dưới (Bài 1, cả tại quầy và online). Bài 2 không có chú thích này → không tô màu.
+- Từng cột kỳ hạn, bỏ dòng Techcombank: số cao nhất → chữ xanh đậm, thấp nhất → chữ đỏ đậm, còn lại → chữ thường. Bằng nhau thì tô hết.
+- Ô nào đổi màu (xanh → thường, thường → xanh, …) thì tô vàng và ghi ở mục **4b** của báo cáo. Ô giữ nguyên màu thì không đụng tới.
+- Một bài không có ô lãi suất / màu nào đổi → báo cáo của bài đó chỉ còn link + "Không có thay đổi lãi suất".
 
 ---
 
