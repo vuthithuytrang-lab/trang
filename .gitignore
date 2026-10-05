@@ -4,3 +4,9 @@ cong-cu/telegram.env
 *.key
 *.token
 chia-agent-boss.txt
+
+# Theo dõi publish Techcombank — chìa khóa và nhật ký chạy chỉ nằm trên máy
+cong-cu/theo-doi-publish-techcombank/bi-mat/*
+!cong-cu/theo-doi-publish-techcombank/bi-mat/DOC-TOI.txt
+cong-cu/theo-doi-publish-techcombank/logs/
+__pycache__/

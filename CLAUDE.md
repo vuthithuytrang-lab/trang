@@ -79,7 +79,7 @@ giả lập của khóa học, có bộ màu riêng, đừng trộn hai bên và
 |---|---|---|
 | ~~`hoc.agentboss.vn`~~ | ✅ **ĐÃ MỞ từ 08/09/2026** — vào bình thường, chỉ cần chìa đúng | — |
 | YouTube (tải video) | `IpBlocked` — đã thử 7 cách | Chạy trên máy cá nhân; hoặc tìm bài báo/bản ghi nguồn khác |
-| `techcombank.com` | tường lửa chặn domain + connection reset | Nhờ Trang dán thẳng nội dung bài vào chat |
+| ~~`techcombank.com`~~ | ✅ **Vào được từ 05/10/2026** — thỉnh thoảng bị reset kết nối, thử lại 1–2 lần là được | — |
 | Desktop / Documents của Trang | bản web không thấy máy cá nhân | Nhờ Trang đính kèm file vào khung chat |
 
 | LibreOffice (xem thử file Word) | `source file could not be loaded` — hỏng cả với file mẫu gốc | Kiểm tra bằng python-docx + kiểm tra zip, không render được ảnh |
@@ -107,4 +107,5 @@ Agent đọc chìa từ file, gửi qua header `Authorization: Bearer <chìa>`, 
 | `ho-so/` | Hồ sơ Trang, phần cần cập nhật trên Agent Boss |
 | `khoa-hoc/` | Tiến độ khóa Agent Boss, mã nộp từng bài, sản phẩm đã làm |
 | `cong-cu/` | Công cụ dùng lại được — prompt SEO, bản tin tự động |
+| `cong-cu/theo-doi-publish-techcombank/` | Theo dõi ngày publish 35 URL Techcombank 08:00/20:00, ghi Google Sheet, báo Telegram — đọc `HUONG-DAN.md` |
 | `BAO-MAT.md` | Danh sách chìa khóa đã lộ cần thu hồi |

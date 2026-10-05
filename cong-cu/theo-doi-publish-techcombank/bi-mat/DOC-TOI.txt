@@ -1,0 +1,6 @@
+Thu muc nay chua CHIA KHOA. Moi file o day (tru file nay) KHONG BAO GIO duoc dua len GitHub.
+
+Can bo vao day:
+  service-account.json         - file JSON tai tu Google Cloud (doi ten dung nhu vay)
+  telegram-token.txt           - neu bao cao qua Telegram: dan token bot vao, luu lai
+  gmail-mat-khau-ung-dung.txt  - neu bao cao qua Gmail: dan mat khau ung dung 16 ky tu

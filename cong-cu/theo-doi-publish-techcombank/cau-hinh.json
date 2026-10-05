@@ -1,0 +1,14 @@
+{
+  "link_google_sheet": "https://docs.google.com/spreadsheets/d/1d-jCrL_qmcXFE6pxWc9VlLDGVoTP0AnFJGQohE6q-Ko/edit",
+  "file_service_account": "bi-mat/service-account.json",
+  "kenh_bao_cao": "telegram",
+  "telegram": {
+    "chat_id": "",
+    "file_token": "bi-mat/telegram-token.txt"
+  },
+  "gmail": {
+    "gui_tu": "",
+    "gui_den": "",
+    "file_mat_khau_ung_dung": "bi-mat/gmail-mat-khau-ung-dung.txt"
+  }
+}
