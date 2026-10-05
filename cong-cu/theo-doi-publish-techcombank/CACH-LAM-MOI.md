@@ -11,15 +11,19 @@ Trang thấy bản cài Windows + Service Account quá rắc rối. Chốt lại
 - Agent tự chạy lấy ngày (`lay_ngay.py` trong thư mục này — techcombank vào được từ máy chủ cloud) rồi ghi vào sheet.
   Trang không phải cài gì.
 
-## Đang kẹt
+## Tình trạng (05/10/2026 tối)
 
-Connector Google Sheets báo `Permission denied` với mọi file của tài khoản seongon
-(Drive connector thì tạo/đọc được). Khả năng cao Sheets connector đang đăng nhập tài khoản khác.
-Đã nhờ Trang kết nối lại Google Sheets bằng vuthithuytrang@seongon.com rồi mở phiên mới.
-(Đã thử share file cho hoaa8k58@gmail.com — không giúp được.)
+- Trang đã kết nối lại Google Sheets bằng tài khoản seongon → Agent sửa được sheet.
+- File đổi tên thành **Theo dõi publish TCB**. Tab vẫn tên `Untitled` (sheetId `1467189799`).
+- Đã đặt múi giờ sheet = Việt Nam, sửa tiêu đề C1/E1 thành 05/10/2026, 06/10/2026 (dạng chữ).
+- Đã cài luật tô hồng (định dạng có điều kiện, công thức dùng dấu `;` vì sheet để locale vi_VN):
+  `=AND(ISODD(COLUMN());LEN($B2)>0;LEN(C$1)>0;LEN(C2)>0;TO_TEXT(C2)<>TO_TEXT(C$1))`
+  áp cho C2 trở đi → mọi cột ngày (C, E, G...) ô khác ngày tiêu đề tự tô hồng, kể cả cột thêm sau.
+- `cap_nhat_sheet.py` chuẩn bị dữ liệu ghi: tìm cặp cột của hôm nay (chưa có thì thêm cặp mới,
+  chép định dạng từ C:D), lấy ngày toàn bộ URL ở cột B, xuất vùng + giá trị để ghi.
+- Lịch tự động 08:00 và 20:00 (giờ VN) chạy trên cloud, mỗi lần mở phiên mới, dùng connector Google Sheets.
 
-## Phiên sau làm tiếp
+## Kết nối Sheets lỗi lại?
 
-1. Thử `get_values` trên file trên. Được thì: sửa tiêu đề C1/E1 thành 05/10/2026, 06/10/2026.
-2. Chạy lấy ngày 35 URL, ghi vào cặp cột của hôm nay (chưa có thì thêm 2 cột), tô hồng ô ≠ hôm nay.
-3. Hỏi Trang có muốn lịch tự động 08:00/20:00 (Routine trên cloud) không — lần 20:00 ghi đè cặp cột của ngày đó.
+Connector Google Sheets báo `Permission denied` → nhờ Trang vào https://claude.ai/customize/connectors →
+tab **Yours** → Google Sheets → Disconnect → Connect bằng vuthithuytrang@seongon.com.
