@@ -25,7 +25,7 @@ không bao giờ dùng chung chìa giữa các dự án.
 - Thêm bài mới → tạo lại lịch (nối tiếp sau lượt cuối), ghi cột F, cập nhật file JSON.
 
 ## Còn mở
-- [ ] **Giữ chìa qua các phiên**: chìa đang nằm trong `*-accounts.local.json` trên máy tạm của phiên làm việc
+- [~] **Giữ chìa qua các phiên** — 05/10/2026: thử cất lên Drive bị hệ thống an toàn chặn; Trang chọn để nguyên. Nếu lượt đăng báo thiếu chìa → hướng dẫn Trang kết nối lại (app/client đã có sẵn).: chìa đang nằm trong `*-accounts.local.json` trên máy tạm của phiên làm việc
       → phiên đóng là mất. Cần cất vào cài đặt kín của môi trường (biến môi trường) — chưa làm.
 - [x] Thay chìa Wix (xong 04/10/2026). - [ ] Thay chìa Webflow (đã bị dán vào chat) — `BAO-MAT.md` mục 5.
 - [ ] X (Twitter): chưa có skill. Chờ Trang quyết làm hay bỏ.
