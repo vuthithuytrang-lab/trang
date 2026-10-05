@@ -21,7 +21,9 @@ Trang thấy bản cài Windows + Service Account quá rắc rối. Chốt lại
   áp cho C2 trở đi → mọi cột ngày (C, E, G...) ô khác ngày tiêu đề tự tô hồng, kể cả cột thêm sau.
 - `cap_nhat_sheet.py` chuẩn bị dữ liệu ghi: tìm cặp cột của hôm nay (chưa có thì thêm cặp mới,
   chép định dạng từ C:D), lấy ngày toàn bộ URL ở cột B, xuất vùng + giá trị để ghi.
-- Lịch tự động 08:00 và 20:00 (giờ VN) chạy trên cloud, mỗi lần mở phiên mới, dùng connector Google Sheets.
+- Lịch tự động 08:00 và 20:00 (giờ VN): Routine `trig_01QNyb6Qj58zr6aWAJv8WDD8`, bắn vào phiên `session_01FZgPSenFqeVNPkgaJ1KB2Q`
+  (phiên này có connector Google Sheets; kiểu "mỗi lần mở phiên mới" không mang theo connector được nên không dùng).
+  Muốn tắt: `update_trigger` enabled=false.
 
 ## Kết nối Sheets lỗi lại?
 
