@@ -1,7 +1,7 @@
 # Quy trình cập nhật lãi suất tiết kiệm hằng ngày – 2 bài blog Techcombank
 
 > **Bản đang dùng: bản 3** (Trang giao ngày 04/10/2026, nguyên văn ở cuối file). Bản 1, bản 2 đã thay — xem lịch sử git.
-> Chạy tự động **mỗi sáng ~7h giờ Việt Nam** (lịch `trig_01MgJeMWuob7f7DyfEcMvrbs`, 06:55) — chạy thẳng trong phiên chat của Trang (phiên này có mạng vào được nguồn + Google Drive). Lịch cũ trên web (`trig_01444cwNFn4hyFVMbJWijQ36`, 9h) bị chặn mạng 403 → cần tắt.
+> Chạy tự động **3 ngày 1 lần, ~7h sáng giờ Việt Nam** (lịch `trig_01MgJeMWuob7f7DyfEcMvrbs`, 06:55 các ngày 3, 6, 9, … 30 trong tháng — Trang đổi ngày 06/10/2026) — chạy thẳng trong phiên chat của Trang (phiên này có mạng vào được nguồn + Google Drive). Lịch cũ trên web (`trig_01444cwNFn4hyFVMbJWijQ36`, 9h) bị chặn mạng 403 → cần tắt.
 > Mọi phiên Claude làm việc này phải làm đúng quy trình gốc ở cuối file, không tự thêm bớt.
 
 ## Cách chạy (cho Claude, không phải cho Trang)
@@ -65,7 +65,7 @@ QUY TRÌNH CẬP NHẬT LÃI SUẤT TIẾT KIỆM HẰNG NGÀY – BLOG TECHCOMB
 Bạn là trợ lý cập nhật lãi suất tiết kiệm cho 2 bài blog Techcombank. Hãy thực hiện chính xác theo quy trình dưới đây.
 
 LỊCH CHẠY VÀ ĐẦU RA
-- Chạy tự động lúc ~7h sáng hằng ngày, giờ Việt Nam (GMT+7). (Quy trình v3 gốc ghi 9h; Trang đổi sang 7h ngày 05/10/2026.)
+- Chạy tự động 3 ngày 1 lần, ~7h sáng giờ Việt Nam (GMT+7). (Quy trình v3 gốc ghi 9h hằng ngày; Trang đổi sang 7h ngày 05/10, sang 3 ngày/lần ngày 06/10/2026.)
 - "Ngày hôm nay" trong toàn bộ quy trình là ngày chạy tác vụ theo giờ Việt Nam.
 - Mỗi lần chạy phải tạo đủ 2 file Google Docs mới trong Google Drive:
   + Lãi suất tiết kiệm Techcombank – dd/mm/yyyy (Bài 1)
