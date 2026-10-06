@@ -17,8 +17,9 @@ Trang thấy bản cài Windows + Service Account quá rắc rối. Chốt lại
 - File đổi tên thành **Theo dõi publish TCB**. Tab vẫn tên `Untitled` (sheetId `1467189799`).
 - Đã đặt múi giờ sheet = Việt Nam, sửa tiêu đề C1/E1 thành 05/10/2026, 06/10/2026 (dạng chữ).
 - Đã cài luật tô hồng (định dạng có điều kiện, công thức dùng dấu `;` vì sheet để locale vi_VN):
-  `=AND(ISODD(COLUMN());LEN($B2)>0;LEN(C$1)>0;LEN(C2)>0;TO_TEXT(C2)<>TO_TEXT(C$1))`
-  áp cho C2 trở đi → mọi cột ngày (C, E, G...) ô khác ngày tiêu đề tự tô hồng, kể cả cột thêm sau.
+  `=IFERROR(AND(ISODD(COLUMN());LEN($B2)>0;DATE(RIGHT(TO_TEXT(C2);4);MID(TO_TEXT(C2);4;2);LEFT(TO_TEXT(C2);2))<DATE(RIGHT(TO_TEXT(C$1);4);MID(TO_TEXT(C$1);4;2);LEFT(TO_TEXT(C$1);2)));FALSE)`
+  áp cho C2 trở đi → mọi cột ngày (C, E, G...) chỉ tô hồng ô có ngày **nhỏ hơn** ngày tiêu đề
+  (Trang chốt 06/10). Ngày bằng/lớn hơn, "Không có ngày", "Lỗi" → không tô.
 - `cap_nhat_sheet.py` chuẩn bị dữ liệu ghi: tìm cặp cột của hôm nay (chưa có thì thêm cặp mới,
   chép định dạng từ C:D), lấy ngày toàn bộ URL ở cột B, xuất vùng + giá trị để ghi.
 - Lịch tự động 08:00, 13:00 và 20:00 (giờ VN, thêm 13:00 từ 06/10): Routine `trig_01QNyb6Qj58zr6aWAJv8WDD8`, bắn vào phiên `session_01FZgPSenFqeVNPkgaJ1KB2Q`
