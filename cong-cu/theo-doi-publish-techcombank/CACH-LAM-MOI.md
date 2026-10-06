@@ -22,7 +22,7 @@ Trang thấy bản cài Windows + Service Account quá rắc rối. Chốt lại
   (Trang chốt 06/10). Ngày bằng/lớn hơn, "Không có ngày", "Lỗi" → không tô.
 - `cap_nhat_sheet.py` chuẩn bị dữ liệu ghi: tìm cặp cột của hôm nay (chưa có thì thêm cặp mới,
   chép định dạng từ C:D), lấy ngày toàn bộ URL ở cột B, xuất vùng + giá trị để ghi.
-- Lịch tự động 08:00, 13:00 và 20:00 (giờ VN, thêm 13:00 từ 06/10): Routine `trig_01QNyb6Qj58zr6aWAJv8WDD8`, bắn vào phiên `session_01FZgPSenFqeVNPkgaJ1KB2Q`
+- Lịch tự động 08:00, 13:00 và 19:00 (giờ VN; thêm 13:00 và đổi 20:00 → 19:00 từ 06/10): Routine `trig_01QNyb6Qj58zr6aWAJv8WDD8`, bắn vào phiên `session_01FZgPSenFqeVNPkgaJ1KB2Q`
   (phiên này có connector Google Sheets; kiểu "mỗi lần mở phiên mới" không mang theo connector được nên không dùng).
   Muốn tắt: `update_trigger` enabled=false.
 
