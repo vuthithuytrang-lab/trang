@@ -49,6 +49,9 @@ def tao_phien() -> requests.Session:
         "User-Agent": USER_AGENT,
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
         "Accept-Language": "vi-VN,vi;q=0.9,en;q=0.8",
+        # Xin bản mới nhất, không lấy bản lưu tạm (cache) — khách vừa đăng là thấy ngay
+        "Cache-Control": "no-cache",
+        "Pragma": "no-cache",
     })
     return phien
 
