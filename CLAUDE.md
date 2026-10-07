@@ -55,6 +55,8 @@ trang đích, brief gửi thiết kế, báo cáo cho sếp — vẫn giữ đú
 - **Tự soát trước khi gửi**: chụp ảnh trang, đọc lại ảnh, kiểm tra dấu tiếng Việt + layout không vỡ.
 - Dọn file nháp (ảnh chụp soát) trước khi lưu vào kho.
 - Lưu file vào git và push, rồi mới báo xong.
+- **File Google Docs tạo cho Trang → chia sẻ quyền sửa (writer)** cho mọi email trong Sheet "Update", tab `Hướng dẫn`, ô `B11:B20`
+  (Sheet `1pG0TA0nwiOkF086eAhbukUJ375oZRfuJpQy4bEUiVck`). Không chép email vào repo (repo công khai).
 - Nhắc Trang tải lại trang (Cmd + R) nếu đang mở tab cũ trên máy Mac.
 
 ## 3b. Nhận diện thương hiệu — ĐỌC TRƯỚC KHI THIẾT KẾ

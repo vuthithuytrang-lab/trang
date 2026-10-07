@@ -42,6 +42,8 @@ Bài làm lần đầu chưa đóng gói thì **chưa** thêm vào bảng.
    **Không hỏi Trang gì** — chạy theo lịch, không ai trả lời. Mọi lựa chọn mặc định ghi vào báo cáo.
 4. Tạo Google Docs đúng như SKILL.md (Bước 5: `search_files` trùng tên → thêm ` (cập nhật HHhMM)` vào tên, `create_file` text/html,
    tải về chạy `soat` phải ra `dòng lệch: 0`; lệch → trash file vừa tạo, tạo lại).
+4b. **Chia sẻ quyền sửa:** đọc tab `Hướng dẫn` ô `B11:B20` (mỗi ô một email) → `share_file` role `writer` cho từng email
+   với file Docs vừa tạo. Danh sách email chỉ nằm trong Sheet (repo công khai — KHÔNG chép email vào repo).
 5. Ghi vào ô (dòng đó × cột hôm nay) bằng `updateCells`: `userEnteredValue.stringValue` = tên file,
    `textFormatRuns` = `[{"startIndex":0,"format":{"link":{"uri":"<link Docs>"}}}]`
    (fields `userEnteredValue,textFormatRuns`). Ô đã có link của lần chạy trước cùng ngày → ghi đè bằng link mới.
