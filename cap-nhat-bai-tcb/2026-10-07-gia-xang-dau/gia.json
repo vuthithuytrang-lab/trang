@@ -1,0 +1,11 @@
+{
+ "_ghi_chu": {"pvoil": "pvoil.com.vn chặn truy cập tự động (Cloudflare, HTTP 403)"},
+ "petrolimex": {"ky": "kỳ điều hành 15:00 01/10/2026 (TCBC 54/2026/PLX-TCBC)",
+   "nguon": "https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-dieu-chinh-gia-xang-dau-tu-15-gio-00-phut-ngay-01-10-2026.html",
+   "gia": {"e10_95_v": [28180, 28740], "e10_95_iii": [27180, 27720], "e5_92": [26560, 27090],
+           "do_0001": [31110, 31730], "do_005": [29710, 30300], "dau_hoa": [29770, 30360]}},
+ "pvoil": null,
+ "mipec": {"ky": "giá đang áp dụng trên mipec.com.vn (đọc 07/10/2026)",
+   "nguon": "https://www.mipec.com.vn/pages/gia-xang-dau-ban-le",
+   "gia": {"e10_95_iii": [27180, 27720], "e5_92": [26560, 27090], "do_0001": [31110, 31730], "do_005": [29710, 30300]}}
+}

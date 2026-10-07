@@ -1,0 +1,205 @@
+{
+ "bai1": {
+  "sua": [
+   {
+    "tim": "Giá dầu DO 0,001S-V là 31,740 VND/lít tại Vùng 1 và 32,370 VND/lít tại Vùng 2",
+    "thay": "Giá dầu DO 0,001S-V là 31,110 VND/lít tại Vùng 1 và 31,730 VND/lít tại Vùng 2",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-dieu-chinh-gia-xang-dau-tu-15-gio-00-phut-ngay-01-10-2026.html",
+    "ly_do": "Câu hỏi thường gặp – DO 0,001S-V theo Petrolimex kỳ điều hành 15:00 01/10/2026 (TCBC 54/2026/PLX-TCBC)"
+   },
+   {
+    "tim": "Giá E10 RON 95-V là 26,830 VND/lít tại Vùng 1 và 27,360 VND/lít tại Vùng 2; E10 RON 95-III lần lượt là 25,630 VND/lít và 26,140 VND/lít",
+    "thay": "Giá E10 RON 95-V là 28,180 VND/lít tại Vùng 1 và 28,740 VND/lít tại Vùng 2; E10 RON 95-III lần lượt là 27,180 VND/lít và 27,720 VND/lít",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-dieu-chinh-gia-xang-dau-tu-15-gio-00-phut-ngay-01-10-2026.html",
+    "ly_do": "Câu hỏi thường gặp – RON 95 Vùng 1/Vùng 2 theo Petrolimex kỳ điều hành 15:00 01/10/2026 (TCBC 54/2026/PLX-TCBC)"
+   },
+   {
+    "tim": "1 lít xăng E5 RON 92-II có giá khoảng 25,630 VND/lít",
+    "thay": "1 lít xăng E5 RON 92-II có giá khoảng 26,560 VND/lít",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-dieu-chinh-gia-xang-dau-tu-15-gio-00-phut-ngay-01-10-2026.html",
+    "ly_do": "Câu hỏi thường gặp – E5 RON 92-II Vùng 1 theo Petrolimex kỳ điều hành 15:00 01/10/2026 (TCBC 54/2026/PLX-TCBC)"
+   },
+   {
+    "tim": "1 lít xăng E10 RON 95-III có giá khoảng 26,830 VND/lít",
+    "thay": "1 lít xăng E10 RON 95-III có giá khoảng 27,180 VND/lít",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-dieu-chinh-gia-xang-dau-tu-15-gio-00-phut-ngay-01-10-2026.html",
+    "ly_do": "Câu hỏi thường gặp – E10 RON 95-III Vùng 1 theo Petrolimex kỳ điều hành 15:00 01/10/2026 (TCBC 54/2026/PLX-TCBC)"
+   },
+   {
+    "tim": "30,530",
+    "thay": "30,300",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.mipec.com.vn/pages/gia-xang-dau-ban-le",
+    "ly_do": "MIPEC giá đang áp dụng trên mipec.com.vn (đọc 07/10/2026): Dầu Điêzen 0,05S mức 2 Vùng 2 = 30,300 đ/lít"
+   },
+   {
+    "tim": "29,940",
+    "thay": "29,710",
+    "lan": 3,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.mipec.com.vn/pages/gia-xang-dau-ban-le",
+    "ly_do": "MIPEC giá đang áp dụng trên mipec.com.vn (đọc 07/10/2026): Dầu Điêzen 0,05S mức 2 Vùng 1 = 29,710 đ/lít"
+   },
+   {
+    "tim": "32,370",
+    "thay": "31,730",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.mipec.com.vn/pages/gia-xang-dau-ban-le",
+    "ly_do": "MIPEC giá đang áp dụng trên mipec.com.vn (đọc 07/10/2026): Dầu Điêzen 0,001S mức 5 Vùng 2 = 31,730 đ/lít"
+   },
+   {
+    "tim": "31,740",
+    "thay": "31,110",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.mipec.com.vn/pages/gia-xang-dau-ban-le",
+    "ly_do": "MIPEC giá đang áp dụng trên mipec.com.vn (đọc 07/10/2026): Dầu Điêzen 0,001S mức 5 Vùng 1 = 31,110 đ/lít"
+   },
+   {
+    "tim": "25,630",
+    "thay": "27,090",
+    "lan": 5,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.mipec.com.vn/pages/gia-xang-dau-ban-le",
+    "ly_do": "MIPEC giá đang áp dụng trên mipec.com.vn (đọc 07/10/2026): Xăng sinh học E5 RON 92-II Vùng 2 = 27,090 đ/lít"
+   },
+   {
+    "tim": "25,130",
+    "thay": "26,560",
+    "lan": 3,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.mipec.com.vn/pages/gia-xang-dau-ban-le",
+    "ly_do": "MIPEC giá đang áp dụng trên mipec.com.vn (đọc 07/10/2026): Xăng sinh học E5 RON 92-II Vùng 1 = 26,560 đ/lít"
+   },
+   {
+    "tim": "26,140",
+    "thay": "27,720",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.mipec.com.vn/pages/gia-xang-dau-ban-le",
+    "ly_do": "MIPEC giá đang áp dụng trên mipec.com.vn (đọc 07/10/2026): Xăng E10 RON 95-III Vùng 2 = 27,720 đ/lít"
+   },
+   {
+    "tim": "25,630",
+    "thay": "27,180",
+    "lan": 4,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.mipec.com.vn/pages/gia-xang-dau-ban-le",
+    "ly_do": "MIPEC giá đang áp dụng trên mipec.com.vn (đọc 07/10/2026): Xăng E10 RON 95-III Vùng 1 = 27,180 đ/lít"
+   },
+   {
+    "tim": "32,090",
+    "thay": "30,360",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-dieu-chinh-gia-xang-dau-tu-15-gio-00-phut-ngay-01-10-2026.html",
+    "ly_do": "PETROLIMEX kỳ điều hành 15:00 01/10/2026 (TCBC 54/2026/PLX-TCBC): Dầu hỏa 2-K Vùng 2 = 30,360 đ/lít"
+   },
+   {
+    "tim": "31,470",
+    "thay": "29,770",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-dieu-chinh-gia-xang-dau-tu-15-gio-00-phut-ngay-01-10-2026.html",
+    "ly_do": "PETROLIMEX kỳ điều hành 15:00 01/10/2026 (TCBC 54/2026/PLX-TCBC): Dầu hỏa 2-K Vùng 1 = 29,770 đ/lít"
+   },
+   {
+    "tim": "30,530",
+    "thay": "30,300",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-dieu-chinh-gia-xang-dau-tu-15-gio-00-phut-ngay-01-10-2026.html",
+    "ly_do": "PETROLIMEX kỳ điều hành 15:00 01/10/2026 (TCBC 54/2026/PLX-TCBC): Dầu DO 0,05S-II Vùng 2 = 30,300 đ/lít"
+   },
+   {
+    "tim": "29,940",
+    "thay": "29,710",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-dieu-chinh-gia-xang-dau-tu-15-gio-00-phut-ngay-01-10-2026.html",
+    "ly_do": "PETROLIMEX kỳ điều hành 15:00 01/10/2026 (TCBC 54/2026/PLX-TCBC): Dầu DO 0,05S-II Vùng 1 = 29,710 đ/lít"
+   },
+   {
+    "tim": "32,370",
+    "thay": "31,730",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-dieu-chinh-gia-xang-dau-tu-15-gio-00-phut-ngay-01-10-2026.html",
+    "ly_do": "PETROLIMEX kỳ điều hành 15:00 01/10/2026 (TCBC 54/2026/PLX-TCBC): Dầu DO 0,001S-V Vùng 2 = 31,730 đ/lít"
+   },
+   {
+    "tim": "31,740",
+    "thay": "31,110",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-dieu-chinh-gia-xang-dau-tu-15-gio-00-phut-ngay-01-10-2026.html",
+    "ly_do": "PETROLIMEX kỳ điều hành 15:00 01/10/2026 (TCBC 54/2026/PLX-TCBC): Dầu DO 0,001S-V Vùng 1 = 31,110 đ/lít"
+   },
+   {
+    "tim": "25,630",
+    "thay": "27,090",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-dieu-chinh-gia-xang-dau-tu-15-gio-00-phut-ngay-01-10-2026.html",
+    "ly_do": "PETROLIMEX kỳ điều hành 15:00 01/10/2026 (TCBC 54/2026/PLX-TCBC): Xăng E5 RON 92-II Vùng 2 = 27,090 đ/lít"
+   },
+   {
+    "tim": "25,130",
+    "thay": "26,560",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-dieu-chinh-gia-xang-dau-tu-15-gio-00-phut-ngay-01-10-2026.html",
+    "ly_do": "PETROLIMEX kỳ điều hành 15:00 01/10/2026 (TCBC 54/2026/PLX-TCBC): Xăng E5 RON 92-II Vùng 1 = 26,560 đ/lít"
+   },
+   {
+    "tim": "26,140",
+    "thay": "27,720",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-dieu-chinh-gia-xang-dau-tu-15-gio-00-phut-ngay-01-10-2026.html",
+    "ly_do": "PETROLIMEX kỳ điều hành 15:00 01/10/2026 (TCBC 54/2026/PLX-TCBC): Xăng E10 RON 95-III Vùng 2 = 27,720 đ/lít"
+   },
+   {
+    "tim": "25,630",
+    "thay": "27,180",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-dieu-chinh-gia-xang-dau-tu-15-gio-00-phut-ngay-01-10-2026.html",
+    "ly_do": "PETROLIMEX kỳ điều hành 15:00 01/10/2026 (TCBC 54/2026/PLX-TCBC): Xăng E10 RON 95-III Vùng 1 = 27,180 đ/lít"
+   },
+   {
+    "tim": "27,360",
+    "thay": "28,740",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-dieu-chinh-gia-xang-dau-tu-15-gio-00-phut-ngay-01-10-2026.html",
+    "ly_do": "PETROLIMEX kỳ điều hành 15:00 01/10/2026 (TCBC 54/2026/PLX-TCBC): Xăng E10 RON 95-V Vùng 2 = 28,740 đ/lít"
+   },
+   {
+    "tim": "26,830",
+    "thay": "28,180",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-dieu-chinh-gia-xang-dau-tu-15-gio-00-phut-ngay-01-10-2026.html",
+    "ly_do": "PETROLIMEX kỳ điều hành 15:00 01/10/2026 (TCBC 54/2026/PLX-TCBC): Xăng E10 RON 95-V Vùng 1 = 28,180 đ/lít"
+   }
+  ],
+  "can_duyet": [
+   "Bảng PVOIL: không đọc được nguồn (pvoil.com.vn chặn truy cập tự động (Cloudflare, HTTP 403)) – giữ nguyên số cũ, cần bạn kiểm tra.",
+   "Bảng PVOIL (bài cũ): 2 dòng dầu DO có vẻ bị đảo số – DO 0,001S-V ghi 29,940 còn DO 0,05S-II ghi 31,640 (thường DO 0,001S-V đắt hơn). Chưa sửa vì không đọc được nguồn PVOIL.",
+   "Câu hỏi thường gặp 5.1: câu cũ ghi E5 RON 92-II 25,630 (là giá Vùng 2 cũ). Mình cập nhật theo giá Vùng 1 mới 26,560 cho thống nhất với câu RON 95-III (cũng dùng Vùng 1).",
+   "webgia.com: số trên trang cập nhật lúc 14:02 01/10/2026 – TRƯỚC giờ điều chỉnh 15:00 cùng ngày, nên là giá cũ; không dùng. Giá lấy theo bảng trong thông cáo Petrolimex (Mipec trùng khớp).",
+   "Mục 5: bài gốc đánh số 5.1 rồi nhảy sang 5.3 (không có 5.2) – chưa sửa."
+  ]
+ }
+}
