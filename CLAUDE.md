@@ -116,4 +116,5 @@ Agent đọc chìa từ file, gửi qua header `Authorization: Bearer <chìa>`, 
 | Trang nhắn | Đọc và làm theo |
 |---|---|
 | "Update bài giá cà phê" / dán link `techcombank.com/thong-tin/blog/gia-ca-phe-hom-nay` | `cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/gia-ca-phe/README.md` — nguồn, cách ghi số, tên file đã chốt sẵn |
+| "Chạy bảng update" / lịch tự động mỗi giờ | `cong-cu/skill-cap-nhat-bai-tcb/bang-dieu-khien/README.md` — Google Sheets "Update", chạy các dòng đã tích |
 | Link bài Techcombank khác + nguồn tham khảo | `cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/SKILL.md` (quy trình chung) |
