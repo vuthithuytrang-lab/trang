@@ -137,6 +137,9 @@ def main():
             else:
                 can.append(f'Không thấy câu hỏi thường gặp về {ten} để cập nhật.')
 
+    if re.search(r'\n5\.1\. ', van) and re.search(r'\n5\.3\. ', van) and not re.search(r'\n5\.2\. ', van):
+        can.append('Mục 5 trong bài gốc đánh số 5.1 rồi nhảy sang 5.3 (không có 5.2) – không sửa, chỉ báo lại.')
+
     if a.kiem:
         print('Soát:', 'khớp hết' if not lech else f'{len(lech)} chỗ lệch: ' + '; '.join(lech))
         sys.exit(1 if lech else 0)

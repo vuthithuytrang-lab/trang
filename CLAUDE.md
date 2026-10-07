@@ -116,6 +116,7 @@ Agent đọc chìa từ file, gửi qua header `Authorization: Bearer <chìa>`, 
 | Trang nhắn | Đọc và làm theo |
 |---|---|
 | "Update bài giá cà phê" / dán link `techcombank.com/thong-tin/blog/gia-ca-phe-hom-nay` | `cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/gia-ca-phe/README.md` — nguồn, cách ghi số, tên file đã chốt sẵn |
+| "Update bài giá xăng dầu" / dán link `techcombank.com/thong-tin/blog/gia-xang-dau-hom-nay` | `cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/gia-xang-dau/README.md` — Petrolimex (thông cáo + Topi), PVOIL (Topi), Mipec |
 | "Chạy bảng update" / lịch tự động mỗi giờ | `cong-cu/skill-cap-nhat-bai-tcb/bang-dieu-khien/README.md` — Google Sheets "Update", chạy các dòng đã tích |
 | Đóng gói xong quy trình 1 bài mới | **Tự thêm dòng vào Google Sheets "Update"** theo mục "Thêm bài mới vào bảng" trong `bang-dieu-khien/README.md` — Trang không phải tự điền |
 | Link bài Techcombank khác + nguồn tham khảo | `cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/SKILL.md` (quy trình chung) |

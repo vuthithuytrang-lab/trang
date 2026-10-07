@@ -57,3 +57,4 @@ tải lên `cap-nhat-bai-tcb.zip`. (Cần bật chạy code và kết nối Goog
 | Bài | Bạn chỉ cần nhắn | Chi tiết |
 |---|---|---|
 | Giá cà phê hôm nay | "Update bài giá cà phê" | `cong-thuc/gia-ca-phe/README.md` — nguồn Nhà Bè Agri + giacaphe.com, mọi lựa chọn đã chốt |
+| Giá xăng dầu hôm nay | "Update bài giá xăng dầu" | `cong-thuc/gia-xang-dau/README.md` — Petrolimex, PVOIL (qua Topi), Mipec |
