@@ -1,10 +1,10 @@
 # Báo cáo cập nhật bài Techcombank – 07/10/2026
 
-> Bảng 1 (nguyên liệu): huythanhjewelry.vn. SJC, BTMC: webgia.com. Phú Quý: phuquygroup.vn. DOJI: banggia.doji.vn (link update.giavang.doji.vn báo 404). PNJ: pnj.com.vn. Mục giá vàng thế giới giữ nguyên (không đọc được tỷ giá Techcombank).
+> Bản 18h13 (bổ sung chú thích ảnh + giá vàng thế giới). Bảng 1: huythanhjewelry.vn. SJC, BTMC: webgia.com. Phú Quý: phuquygroup.vn. DOJI: banggia.doji.vn. PNJ: pnj.com.vn. Thế giới: giavang.org/the-gioi (tỷ giá Vietcombank).
 
 ## BÀI 1 – https://techcombank.com/thong-tin/blog/1-chi-vang-bao-nhieu-tien
 
-**1. Link file:** [1 chỉ vàng bao nhiêu tiền? Giá vàng 24K, 18K, 9999 – 07/10/2026](https://docs.google.com/document/d/17jwEqyupsYLWg4cPhhErtA1sYz50N3beHp4VMj1cJ6E/edit)
+**1. Link file:** [1 chỉ vàng bao nhiêu tiền? Giá vàng 24K, 18K, 9999 – 07/10/2026](https://docs.google.com/document/d/1n5Lxqh8ybxGZrrWINi2pLzJYHR3_YYkYYimayS0KB9k/edit)
 
 **2. Ngày tháng đã đổi:**
 
@@ -25,16 +25,16 @@
 **3. Nguồn đã dùng:**
 
 - Nguồn của chỗ sửa: https://giavang.doji.vn/
+- Nguồn của chỗ sửa: https://giavang.org/the-gioi/
 - Nguồn của chỗ sửa: https://huythanhjewelry.vn/gia-vang-hom-nay
 - Nguồn của chỗ sửa: https://phuquygroup.vn/
 - Nguồn của chỗ sửa: https://webgia.com/gia-vang/bao-tin-minh-chau/
 - Nguồn của chỗ sửa: https://webgia.com/gia-vang/sjc/
 - Nguồn của chỗ sửa: https://www.pnj.com.vn/site/gia-vang
 
-**5. Nội dung khác đã cập nhật (109 chỗ, đều tô vàng):**
+**5. Nội dung khác đã cập nhật (110 chỗ, đều tô vàng):**
 
-- Đoạn "…3. Cập nhật giá vàng thế giới hôm nay 07/10/2026": "Giá vàng thế giới ngày 07/10/2026" → "Giá vàng thế giới ngày 24/09/2026" (nguồn: chưa ghi; mục giá vàng thế giới giữ số cũ nên giữ ngày gốc)
-- Đoạn "…a nên tham khảo trực tiếp tại website của PJI. 3.": "Cập nhật giá vàng thế giới hôm nay 07/10/2026" → "Cập nhật giá vàng thế giới hôm nay 28/09/2026" (nguồn: chưa ghi; mục giá vàng thế giới giữ số cũ nên giữ ngày gốc)
+- Đoạn "…3. Cập nhật giá vàng thế giới hôm nay 07/10/2026": "Giá vàng thế giới ngày 07/10/2026 giao dịch quanh ngưỡng 4,800 USD/ounce (tương đương khoảng 124,922,400 VND/lượng quy đổi theo tỷ giá Techcombank" → "Giá vàng thế giới ngày 07/10/2026 giao dịch quanh ngưỡng 4,121 USD/ounce (tương đương khoảng 130,027,437 VND/lượng quy đổi theo tỷ giá Vietcombank" (nguồn: https://giavang.org/the-gioi/; giavang.org 18:11:57 07/10/2026: 4,121.06 USD/ounce; 1 lượng = 1.20565303 ounce = 130,027,437 VNĐ theo tỷ giá Vietcombank)
 - Đoạn "…14K) 9,289,000 10,179,000 Vàng 333 (8K) 4,904,000": "5,794,000" → "4,712,000" (nguồn: https://www.pnj.com.vn/site/gia-vang; PNJ – "Vàng 333 (8K)", cập nhật 07/10/2026 13:25:09)
 - Đoạn "…Vàng 585 (14K) 9,289,000 10,179,000 Vàng 333 (8K)": "4,904,000" → "3,722,000" (nguồn: https://www.pnj.com.vn/site/gia-vang; PNJ – "Vàng 333 (8K)", cập nhật 07/10/2026 13:25:09)
 - Đoạn "…6K) 9,724,000 10,614,000 Vàng 585 (14K) 9,289,000": "10,179,000" → "8,278,000" (nguồn: https://www.pnj.com.vn/site/gia-vang; PNJ – "Vàng 585 (14K)", cập nhật 07/10/2026 13:25:09)
@@ -96,6 +96,7 @@
 - Đoạn "…SJC 17,350,000 17,650,000 Nhẫn tròn Phú Quý 999.9": "17,350,000" → "13,950,000" (nguồn: https://phuquygroup.vn/; PHUQUY – "Nhẫn tròn Phú Quý 999.9", cập nhật 17:51 07/10/2026)
 - Đoạn "…oại vàng Mua vào Bán ra Vàng miếng SJC 17,350,000": "17,650,000" → "14,300,000" (nguồn: https://phuquygroup.vn/; PHUQUY – "Vàng miếng SJC", cập nhật 17:51 07/10/2026)
 - Đoạn "…: VND/chỉ Loại vàng Mua vào Bán ra Vàng miếng SJC": "17,350,000" → "13,950,000" (nguồn: https://phuquygroup.vn/; PHUQUY – "Vàng miếng SJC", cập nhật 17:51 07/10/2026)
+- Đoạn "…ham khảo trực tiếp tại website Bảo Tín Minh Châu.": "Vàng Rồng Thăng Long niêm yết giá 17,500,000 VND 1 chỉ vào ngày 28.09.2026" → "Vàng Rồng Thăng Long niêm yết giá 14,220,000 VND 1 chỉ vào ngày 07.10.2026" (nguồn: https://webgia.com/gia-vang/bao-tin-minh-chau/; chú thích ảnh: giá bán trang sức Rồng Thăng Long 999.9 hôm nay)
 - Đoạn "…,000 Vàng thị trường Vàng nguyên liệu 999.9 (24K)": "16,750,000" → "13,250,000" (nguồn: https://webgia.com/gia-vang/bao-tin-minh-chau/; BTMC – "Vàng Thị Trường Vàng 999.9 (24k)", cập nhật 18:00:03 07/10/2026)
 - Đoạn "…ng sức vàng Rồng Thăng Long 99.9 (24K) 17,080,000": "17,480,000" → "14,200,000" (nguồn: https://webgia.com/gia-vang/bao-tin-minh-chau/; BTMC – "Vàng BTMC Trang sức bằng Vàng Rồng Thăng Long 99.9 (24k)", cập nhật 18:00:03 07/10/2026)
 - Đoạn "…500,000 Trang sức vàng Rồng Thăng Long 99.9 (24K)": "17,080,000" → "13,800,000" (nguồn: https://webgia.com/gia-vang/bao-tin-minh-chau/; BTMC – "Vàng BTMC Trang sức bằng Vàng Rồng Thăng Long 99.9 (24k)", cập nhật 18:00:03 07/10/2026)
@@ -109,6 +110,7 @@
 - Đoạn "…,000 Nhẫn tròn trơn Bảo Tín Minh Châu 999.9 (24K)": "17,350,000" → "13,920,000" (nguồn: https://webgia.com/gia-vang/bao-tin-minh-chau/; BTMC – "VRTL Nhẫn tròn trơn 999.9 (24k)", cập nhật 18:00:03 07/10/2026)
 - Đoạn "…ếng VRTL Bảo Tín Minh Châu 999.9 (24K) 17,350,000": "17,650,000" → "14,320,000" (nguồn: https://webgia.com/gia-vang/bao-tin-minh-chau/; BTMC – "VRTL Vàng miếng 999.9 (24k)", cập nhật 18:00:03 07/10/2026)
 - Đoạn "…ong Vàng miếng VRTL Bảo Tín Minh Châu 999.9 (24K)": "17,350,000" → "13,920,000" (nguồn: https://webgia.com/gia-vang/bao-tin-minh-chau/; BTMC – "VRTL Vàng miếng 999.9 (24k)", cập nhật 18:00:03 07/10/2026)
+- Đoạn "…gười mua nên tham khảo trực tiếp tại website SJC.": "Vàng miếng SJC vẫn có giá trên 14 vào ngày 28.09.2026" → "Vàng miếng SJC vẫn có giá trên 14 vào ngày 07.10.2026" (nguồn: chưa ghi; chú thích ảnh: ngày = hôm nay (giá bán SJC vẫn trên 14 triệu/chỉ))
 - Đoạn "…3% 10,569,100 10,101,900 Nữ trang 41,7% 6,339,800": "7,229,800" → "5,916,100" (nguồn: https://webgia.com/gia-vang/sjc/; SJC – "Nữ trang 41,7%", cập nhật 18:00:05 07/10/2026)
 - Đoạn "…trang 58,3% 10,569,100 10,101,900 Nữ trang 41,7%": "6,339,800" → "4,936,100" (nguồn: https://webgia.com/gia-vang/sjc/; SJC – "Nữ trang 41,7%", cập nhật 18:00:05 07/10/2026)
 - Đoạn "…1% 9,679,100 10,569,100 Nữ trang 58,3% 10,569,100": "10,101,900" → "8,265,300" (nguồn: https://webgia.com/gia-vang/sjc/; SJC – "Nữ trang 58,3%", cập nhật 18:00:05 07/10/2026)
@@ -150,6 +152,6 @@
 - Bảng DOJI: dòng "Giá nguyên liệu 16K – Bán lẻ" không có ở nguồn – giữ nguyên.
 - Bảng DOJI: dòng "Giá nguyên liệu 15K – Bán lẻ" không có ở nguồn – giữ nguyên.
 - PNJ không có "990" – lấy dòng "Vàng nữ trang 9920".
-- Mục 3 "giá vàng thế giới": không có nguồn tỷ giá Techcombank đọc được (trang tỷ giá báo không có dữ liệu) – giữ nguyên số và ngày gốc. Lưu ý: số cũ 124,922,400 = 4,800 USD × ~26,025 là giá theo OUNCE, không phải theo lượng (1 lượng ≈ 1.2057 ounce) – nên sửa chữ "lượng" hoặc tính lại.
+- Mục 3: nguồn giavang.org quy đổi theo tỷ giá VIETCOMBANK (không có tỷ giá Techcombank) – câu đã đổi "theo tỷ giá Techcombank" thành "theo tỷ giá Vietcombank" cho đúng nguồn, đồng thời sửa lỗi cũ (số cũ tính theo ounce). Muốn giữ chữ Techcombank thì cần nguồn tỷ giá Techcombank.
 
-**7.** Có thay đổi: 109 chỗ nội dung khác.
+**7.** Có thay đổi: 110 chỗ nội dung khác.

@@ -7,10 +7,11 @@
 
 Bài có 6 bảng VND/chỉ; mỗi bảng thuộc 1 nguồn theo đề mục đứng trước:
   "1. Giá vàng 24K…" -> huythanh | "2.1. SJC" -> sjc | "2.2. Bảo Tín Minh Châu" -> btmc | "2.3. Phú Quý" -> phuquy
-  "2.4. DOJI" -> doji | "2.5. PNJ" -> pnj | "3. …thế giới" -> giữ nguyên (không có nguồn tỷ giá Techcombank).
+  "2.4. DOJI" -> doji | "2.5. PNJ" -> pnj | "3. …thế giới" -> giavang.org/the-gioi (tỷ giá Vietcombank).
+Chú thích ảnh SJC / Rồng Thăng Long (ngày dd.mm.yyyy, giá RTL) cũng được cập nhật.
 Mỗi dòng trong bài khớp 1 dòng nguồn theo bảng KHOP bên dưới. Không khớp / nguồn thiếu giá -> giữ nguyên + cần duyệt.
 """
-import argparse, html as H, json, re, sys, unicodedata
+import argparse, datetime, html as H, json, re, sys, unicodedata
 
 # (nguồn, mẫu tên dòng trong bài, mẫu tên dòng ở nguồn)
 KHOP = {
@@ -206,17 +207,48 @@ def main():
             else:
                 them(cu, vt, f'{moi:,}', nguon[ma]['url'], ly)
 
-    # Mục 3 (giá vàng thế giới): không có nguồn tỷ giá -> trả lại ngày gốc
-    if a.goc:
-        goc = re.sub(r'\s+', ' ', H.unescape(re.sub(r'<[^>]+>', ' ', open(a.goc, encoding='utf-8').read())))
-        for nhan in ('Cập nhật giá vàng thế giới hôm nay ', 'Giá vàng thế giới ngày '):
-            mg = re.search(re.escape(nhan) + r'(\d{1,2}/\d{1,2}/\d{4})', goc)
-            m = re.search(re.escape(nhan) + r'(\d{1,2}/\d{1,2}/\d{4})', van)
-            if mg and m:
-                them(m.group(0), m.start(), nhan + mg.group(1), '', 'mục giá vàng thế giới giữ số cũ nên giữ ngày gốc')
-        can.append('Mục 3 "giá vàng thế giới": không có nguồn tỷ giá Techcombank đọc được (trang tỷ giá báo không có dữ liệu) – '
-                   'giữ nguyên số và ngày gốc. Lưu ý: số cũ 124,922,400 = 4,800 USD × ~26,025 là giá theo OUNCE, '
-                   'không phải theo lượng (1 lượng ≈ 1.2057 ounce) – nên sửa chữ "lượng" hoặc tính lại.')
+    # Chú thích ảnh có ngày dạng dd.mm.yyyy (+ giá Rồng Thăng Long) -> hôm nay / giá mới
+    hn = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=7)))
+    ngay_cham = hn.strftime('%d.%m.%Y')
+    rtl = next((r for r in bang.get('btmc', []) if re.search(r'Rồng Thăng Long 999\.9', r[0])), None)
+    for o, la_o, noi in dong:
+        # dòng ảnh có dạng "[ẢNH: chữ thay thế]Chú thích hiện ra" -> chỉ sửa phần chú thích hiện ra (lần khớp cuối)
+        m = ([None] + list(re.finditer(r'(Vàng miếng SJC vẫn có giá trên 14 vào ngày )(\d{2}\.\d{2}\.\d{4})', noi)))[-1]
+        if m and o:
+            ban_sjc = next((r[2] for r in bang.get('sjc', []) if r[0].startswith('Vàng SJC 1L')), None)
+            if ban_sjc and ban_sjc > 14_000_000:
+                them(m.group(0), o[0][1] + m.start(), m.group(1) + ngay_cham, '', 'chú thích ảnh: ngày = hôm nay (giá bán SJC vẫn trên 14 triệu/chỉ)')
+            else:
+                can.append('Chú thích ảnh SJC "vẫn có giá trên 14": giá bán SJC hôm nay không còn trên 14 triệu – giữ nguyên, cần sửa câu.')
+        m = ([None] + list(re.finditer(r'(Vàng Rồng Thăng Long niêm yết giá )([\d,]+)( VND 1 chỉ vào ngày )(\d{2}\.\d{2}\.\d{4})', noi)))[-1]
+        if m and o and rtl and rtl[2]:
+            them(m.group(0), o[0][1] + m.start(), f'{m.group(1)}{rtl[2]:,}{m.group(3)}{ngay_cham}', nguon['btmc']['url'],
+                 'chú thích ảnh: giá bán trang sức Rồng Thăng Long 999.9 hôm nay')
+
+    # Mục 3 (giá vàng thế giới) theo giavang.org/the-gioi (quy đổi theo tỷ giá Vietcombank của nguồn)
+    tg = nguon.get('thegioi')
+    chu_tg = ' '.join(r[0] for r in tg['rows']) if tg else ''
+    usd = re.search(r'XAU\) hôm nay là ([\d,]+\.?\d*) USD', chu_tg)
+    luong = re.search(r'1 cây vàng[^.]*?có giá là ([\d.]+) VNĐ', chu_tg)
+    ngay = f'{hn.day:02d}/{hn.month:02d}/{hn.year}'
+    if usd and luong:
+        usd_tron = round(float(usd.group(1).replace(',', '')))
+        vnd = int(luong.group(1).replace('.', ''))
+        for o, la_o, noi in dong:
+            m = re.search(r'(Cập nhật giá vàng thế giới hôm nay )(\d{1,2}/\d{1,2}/\d{4})', noi)
+            if m and o:
+                them(m.group(0), o[0][1] + m.start(), m.group(1) + ngay, tg['url'], 'đề mục: ngày = hôm nay')
+            m = re.search(r'(Giá vàng thế giới ngày )(\d{1,2}/\d{1,2}/\d{4})( giao dịch quanh ngưỡng )([\d,]+)( USD/ounce \(tương đương khoảng )([\d,]+)( VND/lượng quy đổi theo tỷ giá )(\w+)', noi)
+            if m and o:
+                g = list(m.groups())
+                g[1], g[3], g[5], g[7] = ngay, f'{usd_tron:,}', f'{vnd:,}', 'Vietcombank'
+                them(m.group(0), o[0][1] + m.start(), ''.join(g), tg['url'],
+                     f'giavang.org {tg["cap_nhat"]}: {usd.group(1)} USD/ounce; 1 lượng = 1.20565303 ounce = {vnd:,} VNĐ theo tỷ giá Vietcombank')
+        can.append('Mục 3: nguồn giavang.org quy đổi theo tỷ giá VIETCOMBANK (không có tỷ giá Techcombank) – câu đã đổi '
+                   '"theo tỷ giá Techcombank" thành "theo tỷ giá Vietcombank" cho đúng nguồn, đồng thời sửa lỗi cũ (số cũ tính theo ounce). '
+                   'Muốn giữ chữ Techcombank thì cần nguồn tỷ giá Techcombank.')
+    else:
+        can.append('Mục 3: không đọc được giavang.org/the-gioi – giữ nguyên đoạn giá vàng thế giới (cả ngày).')
 
     if a.kiem:
         print('Soát:', 'khớp hết' if not lech else f'{len(lech)} chỗ lệch: ' + '; '.join(lech[:20]))

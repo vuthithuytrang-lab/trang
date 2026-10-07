@@ -2,20 +2,12 @@
  "bai1": {
   "sua": [
    {
-    "tim": "Giá vàng thế giới ngày 07/10/2026",
-    "thay": "Giá vàng thế giới ngày 24/09/2026",
+    "tim": "Giá vàng thế giới ngày 07/10/2026 giao dịch quanh ngưỡng 4,800 USD/ounce (tương đương khoảng 124,922,400 VND/lượng quy đổi theo tỷ giá Techcombank",
+    "thay": "Giá vàng thế giới ngày 07/10/2026 giao dịch quanh ngưỡng 4,121 USD/ounce (tương đương khoảng 130,027,437 VND/lượng quy đổi theo tỷ giá Vietcombank",
     "lan": 1,
     "giu_nguyen_so": true,
-    "nguon": "",
-    "ly_do": "mục giá vàng thế giới giữ số cũ nên giữ ngày gốc"
-   },
-   {
-    "tim": "Cập nhật giá vàng thế giới hôm nay 07/10/2026",
-    "thay": "Cập nhật giá vàng thế giới hôm nay 28/09/2026",
-    "lan": 1,
-    "giu_nguyen_so": true,
-    "nguon": "",
-    "ly_do": "mục giá vàng thế giới giữ số cũ nên giữ ngày gốc"
+    "nguon": "https://giavang.org/the-gioi/",
+    "ly_do": "giavang.org 18:11:57 07/10/2026: 4,121.06 USD/ounce; 1 lượng = 1.20565303 ounce = 130,027,437 VNĐ theo tỷ giá Vietcombank"
    },
    {
     "tim": "5,794,000",
@@ -506,6 +498,14 @@
     "ly_do": "PHUQUY – \"Vàng miếng SJC\", cập nhật 17:51 07/10/2026"
    },
    {
+    "tim": "Vàng Rồng Thăng Long niêm yết giá 17,500,000 VND 1 chỉ vào ngày 28.09.2026",
+    "thay": "Vàng Rồng Thăng Long niêm yết giá 14,220,000 VND 1 chỉ vào ngày 07.10.2026",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/bao-tin-minh-chau/",
+    "ly_do": "chú thích ảnh: giá bán trang sức Rồng Thăng Long 999.9 hôm nay"
+   },
+   {
     "tim": "16,750,000",
     "thay": "13,250,000",
     "lan": 1,
@@ -608,6 +608,14 @@
     "giu_nguyen_so": true,
     "nguon": "https://webgia.com/gia-vang/bao-tin-minh-chau/",
     "ly_do": "BTMC – \"VRTL Vàng miếng 999.9 (24k)\", cập nhật 18:00:03 07/10/2026"
+   },
+   {
+    "tim": "Vàng miếng SJC vẫn có giá trên 14 vào ngày 28.09.2026",
+    "thay": "Vàng miếng SJC vẫn có giá trên 14 vào ngày 07.10.2026",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "",
+    "ly_do": "chú thích ảnh: ngày = hôm nay (giá bán SJC vẫn trên 14 triệu/chỉ)"
    },
    {
     "tim": "7,229,800",
@@ -880,7 +888,7 @@
    "Bảng DOJI: dòng \"Giá nguyên liệu 16K – Bán lẻ\" không có ở nguồn – giữ nguyên.",
    "Bảng DOJI: dòng \"Giá nguyên liệu 15K – Bán lẻ\" không có ở nguồn – giữ nguyên.",
    "PNJ không có \"990\" – lấy dòng \"Vàng nữ trang 9920\".",
-   "Mục 3 \"giá vàng thế giới\": không có nguồn tỷ giá Techcombank đọc được (trang tỷ giá báo không có dữ liệu) – giữ nguyên số và ngày gốc. Lưu ý: số cũ 124,922,400 = 4,800 USD × ~26,025 là giá theo OUNCE, không phải theo lượng (1 lượng ≈ 1.2057 ounce) – nên sửa chữ \"lượng\" hoặc tính lại."
+   "Mục 3: nguồn giavang.org quy đổi theo tỷ giá VIETCOMBANK (không có tỷ giá Techcombank) – câu đã đổi \"theo tỷ giá Techcombank\" thành \"theo tỷ giá Vietcombank\" cho đúng nguồn, đồng thời sửa lỗi cũ (số cũ tính theo ounce). Muốn giữ chữ Techcombank thì cần nguồn tỷ giá Techcombank."
   ]
  }
 }

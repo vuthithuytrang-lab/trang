@@ -10,6 +10,7 @@ const NGUON = {
   phuquy:   { url: 'https://phuquygroup.vn/', ua: UA, can: /Phú Quý 1 Lượng/i },
   doji:     { url: 'https://banggia.doji.vn/gold-price', ua: null, can: /NGUY.N LI.U 18K/i },   // DOJI: để trình duyệt mặc định
   pnj:      { url: 'https://www.pnj.com.vn/site/gia-vang', ua: UA, can: /Vàng 750 \(18K\)/i },
+  thegioi:  { url: 'https://giavang.org/the-gioi/', ua: UA, chu: /1 cây vàng[^\n]*có giá là/i },   // lấy chữ, không lấy bảng
 };
 (async () => {
   const out = process.argv[2] || 'bang-nguon.json';
@@ -24,6 +25,11 @@ const NGUON = {
         if (i === 6) await pg.reload({ waitUntil: 'domcontentloaded', timeout: 60000 }).catch(() => {});
         await pg.waitForTimeout(4000);
         rows = await pg.evaluate(() => [...document.querySelectorAll('tr')].map(tr => [...tr.cells].map(c => c.innerText.replace(/\s+/g, ' ').trim())).filter(r => r.length));
+        if (n.chu) {
+          const t = await pg.evaluate(() => document.body.innerText);
+          if (n.chu.test(t)) { rows = t.split('\n').filter(l => /XAU|Ounce|cây vàng|Cập nhật lúc/i.test(l)).map(l => [l.trim()]); break; }
+          continue;
+        }
         if (rows.some(r => n.can.test(r.join(' ').normalize('NFC')))) break;
         rows = [];
       }
