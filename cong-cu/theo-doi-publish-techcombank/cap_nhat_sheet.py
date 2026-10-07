@@ -8,12 +8,18 @@ chưa có thì thêm cặp mới bên phải. Ô có ngày nhỏ hơn ngày ở 
 Từ 18:00 trở đi (lần kiểm 19:00), ngày cần kiểm là NGÀY MAI: nội dung phải chuyển sang ngày hôm sau
 từ tối, chưa chuyển là chậm (Trang chốt 06/10/2026). Kết quả ghi vào cặp cột của ngày mai.
 
+Lần kiểm buổi trưa (11:00–17:59) được BỎ QUA nếu lần kiểm gần nhất trong ngày đã thấy toàn bộ URL
+cập nhật đúng ngày (Trang chốt 07/10/2026). Muốn kiểm bất kể, thêm --ep (Trang nhờ kiểm tay).
+
 Cách dùng:
   python cap_nhat_sheet.py dau-vao.json > ket-qua.json
-dau-vao.json: {"header": [hàng 1 của sheet], "rows": [[STT, URL], ...] (từ hàng 2),
+  python cap_nhat_sheet.py dau-vao.json --ep > ket-qua.json   (kiểm tay, không bỏ qua)
+dau-vao.json: {"bang": [toàn bộ giá trị tab từ A1, mỗi hàng 1 mảng],
                "column_count": số cột hiện có của tab, "sheet_id": id số của tab, "tab": "Untitled"}
-ket-qua.json: {"requests": [...] cho update_spreadsheet (có thể rỗng),
+              (kiểu cũ vẫn dùng được: "header": [hàng 1], "rows": [[STT, URL], ...] từ hàng 2)
+ket-qua.json: {"bo_qua": true/false, "requests": [...] cho update_spreadsheet (có thể rỗng),
                "range": vùng A1 cho update_values, "values": [...], "tom_tat": "..."}
+              bo_qua = true → KHÔNG ghi gì vào sheet, chỉ báo tom_tat.
 """
 
 import json
@@ -23,6 +29,14 @@ from datetime import datetime, timedelta, timezone
 import lay_ngay
 
 GIO_CHUYEN_NGAY = 18  # từ giờ này, trang phải hiện ngày mai mới tính là đã cập nhật
+GIO_TRUA = (11, 18)  # khung giờ của lần kiểm 13:00 — được bỏ qua nếu buổi sáng đã đủ
+
+
+def _doc_ngay(chu):
+    try:
+        return datetime.strptime(str(chu).strip().lstrip("'"), "%d/%m/%Y").date()
+    except ValueError:
+        return None
 
 
 def ten_cot(i):  # 0 -> A
@@ -36,13 +50,33 @@ def ten_cot(i):  # 0 -> A
 
 def main():
     vao = json.load(open(sys.argv[1], encoding="utf-8"))
-    header = [str(o).strip() for o in vao["header"]]
-    rows = vao["rows"]  # giữ nguyên thứ tự hàng để ghi đúng chỗ; hàng không có URL thì để trống
+    ep = "--ep" in sys.argv[2:]
+    bang = vao.get("bang")
+    if bang is not None:
+        header = [str(o).strip() for o in (bang[0] if bang else [])]
+        rows = [list(h[:2]) for h in bang[1:]]
+    else:
+        header = [str(o).strip() for o in vao["header"]]
+        rows = vao["rows"]  # giữ nguyên thứ tự hàng để ghi đúng chỗ; hàng không có URL thì để trống
     tab, sheet_id = vao.get("tab", "Untitled"), vao["sheet_id"]
 
     bay_gio = datetime.now(timezone(timedelta(hours=7)))
     ngay_kiem = bay_gio.date() + timedelta(days=1 if bay_gio.hour >= GIO_CHUYEN_NGAY else 0)
     hom_nay = ngay_kiem.strftime("%d/%m/%Y")  # ngày cần kiểm (tên biến giữ nguyên cho gọn)
+
+    # Lần kiểm trưa: buổi sáng đã đủ hết thì bỏ qua
+    if (not ep and bang is not None and GIO_TRUA[0] <= bay_gio.hour < GIO_TRUA[1]
+            and hom_nay in header[2:]):
+        c = header.index(hom_nay, 2)
+        co_url = [h for h in bang[1:] if len(h) > 1 and str(h[1]).strip().startswith("http")]
+        ngay = [_doc_ngay(h[c]) if len(h) > c else None for h in co_url]
+        if co_url and all(n is not None and n >= ngay_kiem for n in ngay):
+            gio_cu = next((str(h[c + 1]) for h in co_url if len(h) > c + 1 and h[c + 1]), "?")
+            json.dump({"bo_qua": True, "requests": [], "range": None, "values": [],
+                       "tom_tat": f"Bỏ qua lần kiểm {bay_gio:%H:%M}: lần kiểm trước ({gio_cu}) đã thấy "
+                                  f"đủ {len(co_url)}/{len(co_url)} URL cập nhật ngày {hom_nay}."},
+                      sys.stdout, ensure_ascii=False)
+            return
 
     # Tìm cặp cột của hôm nay; chưa có thì lấy cặp trống đầu tiên bên phải
     if hom_nay in header[2:]:
@@ -81,7 +115,7 @@ def main():
     if loi:
         tom_tat += "\nLỗi: " + "; ".join(loi)
 
-    json.dump({"requests": requests,
+    json.dump({"bo_qua": False, "requests": requests,
                "range": f"{tab}!{ten_cot(cot)}1:{ten_cot(cot + 1)}{len(rows) + 1}",
                "values": values, "tom_tat": tom_tat}, sys.stdout, ensure_ascii=False)
 

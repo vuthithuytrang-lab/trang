@@ -23,6 +23,9 @@ Trang thấy bản cài Windows + Service Account quá rắc rối. Chốt lại
 - **Lần 19:00 so với NGÀY MAI** (Trang chốt 06/10): nội dung phải chuyển sang ngày hôm sau từ tối,
   chưa chuyển là chậm. Từ 18:00 trở đi `cap_nhat_sheet.py` lấy ngày mai làm ngày kiểm và ghi vào
   cặp cột của ngày mai (tạo mới nếu chưa có); 08:00/13:00 hôm sau ghi đè cùng cặp cột đó.
+- **Bỏ qua lần 13:00** (Trang chốt 07/10): nếu lần kiểm gần nhất trong ngày đã thấy toàn bộ URL đúng
+  ngày hôm nay thì lần trưa (11:00–17:59) không kiểm, không ghi. Routine truyền cả bảng (`"bang"`) để
+  script tự xét. Trang nhờ kiểm tay giữa ngày → thêm `--ep` để luôn kiểm.
 - `cap_nhat_sheet.py` chuẩn bị dữ liệu ghi: tìm cặp cột của hôm nay (chưa có thì thêm cặp mới,
   chép định dạng từ C:D), lấy ngày toàn bộ URL ở cột B, xuất vùng + giá trị để ghi.
 - Lịch tự động 08:00, 13:00 và 19:00 (giờ VN; thêm 13:00 và đổi 20:00 → 19:00 từ 06/10): Routine `trig_01QNyb6Qj58zr6aWAJv8WDD8`, bắn vào phiên `session_01FZgPSenFqeVNPkgaJ1KB2Q`
