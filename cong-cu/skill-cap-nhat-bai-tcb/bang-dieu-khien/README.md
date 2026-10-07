@@ -38,13 +38,14 @@ Bài làm lần đầu chưa đóng gói thì **chưa** thêm vào bảng.
    - URL là bài vàng 14K (`vang-14k-gia-hom-nay`) → `../cong-thuc/vang-14k/README.md`.
    - URL là bài vàng 18K (`vang-18k`) → `../cong-thuc/vang-18k/README.md`.
    - URL là bài vàng 10K (`vang-10k`) → `../cong-thuc/vang-10k/README.md`.
+   - URL là bài 1 chỉ vàng (`1-chi-vang-bao-nhieu-tien`) → `../cong-thuc/1-chi-vang/README.md`.
    - URL khớp một công thức khác trong `../cong-thuc/` → làm theo công thức đó.
    - Còn lại → quy trình chung `../cap-nhat-bai-tcb/SKILL.md`, nguồn tham khảo lấy ở cột D;
      bài có bảng lãi suất tiết kiệm mà cột D trống → dùng nguồn mặc định VnExpress + Topi như SKILL.md.
    - Cột D trống, không có công thức, không phải bài lãi suất → **không đoán nguồn**: ghi vào ô ngày
      `⚠️ Thiếu nguồn tham khảo – điền cột D rồi tích lại`, bỏ tích, chuyển dòng sau.
    **Không hỏi Trang gì** — chạy theo lịch, không ai trả lời. Mọi lựa chọn mặc định ghi vào báo cáo.
-4. Tạo Google Docs đúng như SKILL.md (Bước 5: `search_files` trùng tên → thêm ` (cập nhật HHhMM)` vào tên, `create_file` text/html,
+4. Tạo Google Docs đúng như SKILL.md, **`parentId` = `1FXvxKb6TvSsbMeK6I3utnLvRZ4Y_vXxI`** (thư mục "Cập nhật bài Techcombank (Claude)") (Bước 5: `search_files` trùng tên → thêm ` (cập nhật HHhMM)` vào tên, `create_file` text/html,
    tải về chạy `soat` phải ra `dòng lệch: 0`; lệch → trash file vừa tạo, tạo lại).
 4b. **Chia sẻ quyền sửa:** đọc tab `Hướng dẫn` ô `B11:B20` (mỗi ô một email) → `share_file` role `writer` cho từng email
    với file Docs vừa tạo. Danh sách email chỉ nằm trong Sheet (repo công khai — KHÔNG chép email vào repo).

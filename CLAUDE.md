@@ -55,6 +55,7 @@ trang đích, brief gửi thiết kế, báo cáo cho sếp — vẫn giữ đú
 - **Tự soát trước khi gửi**: chụp ảnh trang, đọc lại ảnh, kiểm tra dấu tiếng Việt + layout không vỡ.
 - Dọn file nháp (ảnh chụp soát) trước khi lưu vào kho.
 - Lưu file vào git và push, rồi mới báo xong.
+- **File Google Docs tạo cho Trang → đặt vào thư mục Drive "Cập nhật bài Techcombank (Claude)"** (`parentId` = `1FXvxKb6TvSsbMeK6I3utnLvRZ4Y_vXxI`) — Trang mở quyền chia sẻ ở thư mục này.
 - **File Google Docs tạo cho Trang → chia sẻ quyền sửa (writer)** cho mọi email trong Sheet "Update", tab `Hướng dẫn`, ô `B11:B20`
   (Sheet `1pG0TA0nwiOkF086eAhbukUJ375oZRfuJpQy4bEUiVck`). Không chép email vào repo (repo công khai).
 - Nhắc Trang tải lại trang (Cmd + R) nếu đang mở tab cũ trên máy Mac.
@@ -123,6 +124,7 @@ Agent đọc chìa từ file, gửi qua header `Authorization: Bearer <chìa>`, 
 | "Update bài vàng 14K" / dán link `techcombank.com/thong-tin/blog/vang-14k-gia-hom-nay` | `cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/vang-14k/README.md` — SJC (webgia), PNJ, Huy Thanh |
 | "Update bài vàng 18K" / dán link `techcombank.com/thong-tin/blog/vang-18k` | `cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/vang-18k/README.md` — PNJ, SJC (webgia), DOJI |
 | "Update bài vàng 10K" / dán link `techcombank.com/thong-tin/blog/vang-10k` | `cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/vang-10k/README.md` — PNJ |
+| "Update bài 1 chỉ vàng" / dán link `techcombank.com/thong-tin/blog/1-chi-vang-bao-nhieu-tien` | `cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/1-chi-vang/README.md` — Huy Thanh, SJC + BTMC (webgia), Phú Quý, DOJI, PNJ |
 | "Chạy bảng update" / lịch tự động mỗi giờ | `cong-cu/skill-cap-nhat-bai-tcb/bang-dieu-khien/README.md` — Google Sheets "Update", chạy các dòng đã tích |
 | Đóng gói xong quy trình 1 bài mới | **Tự thêm dòng vào Google Sheets "Update"** theo mục "Thêm bài mới vào bảng" trong `bang-dieu-khien/README.md` — Trang không phải tự điền |
 | Link bài Techcombank khác + nguồn tham khảo | `cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/SKILL.md` (quy trình chung) |
