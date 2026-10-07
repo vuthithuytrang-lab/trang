@@ -1,0 +1,14 @@
+{
+  "bai": [
+    {"url": "https://techcombank.com/thong-tin/blog/lai-suat-tiet-kiem",
+     "ten_file": "Lãi suất tiết kiệm Techcombank"},
+    {"url": "https://techcombank.com/thong-tin/blog/cach-tinh-lai-suat-tien-gui-tiet-kiem",
+     "ten_file": "Cách tính lãi suất tiền gửi tiết kiệm Techcombank",
+     "bang": ["online"]}
+  ],
+  "nguon": [
+    {"url": "https://vnexpress.net/chu-de/lai-suat-ngan-hang-3210", "ky_han": ["1", "3", "6", "9", "12"]},
+    {"url": "https://topi.vn/lai-suat-tiet-kiem-ngan-hang-nao-cao-nhat.html", "ky_han": ["18", "24", "36"]}
+  ],
+  "ten_ghep": {}
+}
