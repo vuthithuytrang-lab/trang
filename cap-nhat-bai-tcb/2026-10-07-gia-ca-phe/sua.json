@@ -1,0 +1,219 @@
+{
+ "bai1": {
+  "sua": [
+   {
+    "tim": "93,000 - 93,800",
+    "thay": "94,200",
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe/",
+    "ly_do": "Nhà Bè Agri ghi Tây Nguyên 94.200 đ/kg (một mức, không phải khoảng)",
+    "giu_nguyen_so": true
+   },
+   {
+    "tim": "93,800",
+    "thay": "94,400",
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe/",
+    "ly_do": "Đắk Nông 94.400 đ/kg theo Nhà Bè Agri"
+   },
+   {
+    "tim": "93,600",
+    "thay": "94,200",
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe/",
+    "ly_do": "Đắk Lắk 94.200 đ/kg theo Nhà Bè Agri"
+   },
+   {
+    "tim": "92,600",
+    "thay": "94,200",
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe/",
+    "ly_do": "Gia Lai 94.200 đ/kg theo Nhà Bè Agri"
+   },
+   {
+    "tim": "93,000",
+    "thay": "93,600",
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe/",
+    "ly_do": "Lâm Đồng 93.600 đ/kg theo Nhà Bè Agri"
+   },
+   {
+    "tim": "Không đổi",
+    "thay": "+400",
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe/",
+    "ly_do": "Lâm Đồng: tăng 400 đ/kg so với phiên trước (nguồn đánh dấu tăng)",
+    "lan": 5,
+    "giu_nguyen_so": true
+   },
+   {
+    "tim": "Không đổi",
+    "thay": "+400",
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe/",
+    "ly_do": "Gia Lai: tăng 400 đ/kg so với phiên trước (nguồn đánh dấu tăng)",
+    "lan": 4,
+    "giu_nguyen_so": true
+   },
+   {
+    "tim": "Không đổi",
+    "thay": "+200",
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe/",
+    "ly_do": "Đắk Lắk: tăng 200 đ/kg so với phiên trước (nguồn đánh dấu tăng)",
+    "lan": 3,
+    "giu_nguyen_so": true
+   },
+   {
+    "tim": "Không đổi",
+    "thay": "+400",
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe/",
+    "ly_do": "Đắk Nông: tăng 400 đ/kg so với phiên trước (nguồn đánh dấu tăng)",
+    "lan": 2,
+    "giu_nguyen_so": true
+   },
+   {
+    "tim": "Không đổi",
+    "thay": "+200",
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe/",
+    "ly_do": "Tây Nguyên: tăng 200 đ/kg so với phiên trước (nguồn đánh dấu tăng)",
+    "lan": 1,
+    "giu_nguyen_so": true
+   },
+   {
+    "tim": "RMK27",
+    "thay": "RMN27",
+    "nguon": "https://giacaphe.com/gia-ca-phe-noi-dia-ngay-2026-10-07/",
+    "ly_do": "Robusta kỳ hạn 07/27: giá 3,532 USD/tấn, thay đổi +65 (giacaphe.com); mã HĐ RMN27 theo quy ước mã tháng của sàn ICE"
+   },
+   {
+    "tim": "05/27",
+    "thay": "07/27",
+    "nguon": "https://giacaphe.com/gia-ca-phe-noi-dia-ngay-2026-10-07/",
+    "ly_do": "Robusta kỳ hạn 07/27: giá 3,532 USD/tấn, thay đổi +65 (giacaphe.com); mã HĐ RMN27 theo quy ước mã tháng của sàn ICE",
+    "lan": 1
+   },
+   {
+    "tim": "3,300s",
+    "thay": "3,532s",
+    "nguon": "https://giacaphe.com/gia-ca-phe-noi-dia-ngay-2026-10-07/",
+    "ly_do": "Robusta kỳ hạn 07/27: giá 3,532 USD/tấn, thay đổi +65 (giacaphe.com); mã HĐ RMN27 theo quy ước mã tháng của sàn ICE"
+   },
+   {
+    "tim": "-53",
+    "thay": "+65",
+    "nguon": "https://giacaphe.com/gia-ca-phe-noi-dia-ngay-2026-10-07/",
+    "ly_do": "Robusta kỳ hạn 07/27: giá 3,532 USD/tấn, thay đổi +65 (giacaphe.com); mã HĐ RMN27 theo quy ước mã tháng của sàn ICE",
+    "lan": 1,
+    "giu_nguyen_so": true
+   },
+   {
+    "tim": "RMH27",
+    "thay": "RMK27",
+    "nguon": "https://giacaphe.com/gia-ca-phe-noi-dia-ngay-2026-10-07/",
+    "ly_do": "Robusta kỳ hạn 05/27: giá 3,546 USD/tấn, thay đổi +66 (giacaphe.com); mã HĐ RMK27 theo quy ước mã tháng của sàn ICE"
+   },
+   {
+    "tim": "03/27",
+    "thay": "05/27",
+    "nguon": "https://giacaphe.com/gia-ca-phe-noi-dia-ngay-2026-10-07/",
+    "ly_do": "Robusta kỳ hạn 05/27: giá 3,546 USD/tấn, thay đổi +66 (giacaphe.com); mã HĐ RMK27 theo quy ước mã tháng của sàn ICE",
+    "lan": 1
+   },
+   {
+    "tim": "3,304s",
+    "thay": "3,546s",
+    "nguon": "https://giacaphe.com/gia-ca-phe-noi-dia-ngay-2026-10-07/",
+    "ly_do": "Robusta kỳ hạn 05/27: giá 3,546 USD/tấn, thay đổi +66 (giacaphe.com); mã HĐ RMK27 theo quy ước mã tháng của sàn ICE"
+   },
+   {
+    "tim": "-56",
+    "thay": "+66",
+    "nguon": "https://giacaphe.com/gia-ca-phe-noi-dia-ngay-2026-10-07/",
+    "ly_do": "Robusta kỳ hạn 05/27: giá 3,546 USD/tấn, thay đổi +66 (giacaphe.com); mã HĐ RMK27 theo quy ước mã tháng của sàn ICE",
+    "lan": 1,
+    "giu_nguyen_so": true
+   },
+   {
+    "tim": "RMF27",
+    "thay": "RMH27",
+    "nguon": "https://giacaphe.com/gia-ca-phe-noi-dia-ngay-2026-10-07/",
+    "ly_do": "Robusta kỳ hạn 03/27: giá 3,559 USD/tấn, thay đổi +67 (giacaphe.com); mã HĐ RMH27 theo quy ước mã tháng của sàn ICE"
+   },
+   {
+    "tim": "01/27",
+    "thay": "03/27",
+    "nguon": "https://giacaphe.com/gia-ca-phe-noi-dia-ngay-2026-10-07/",
+    "ly_do": "Robusta kỳ hạn 03/27: giá 3,559 USD/tấn, thay đổi +67 (giacaphe.com); mã HĐ RMH27 theo quy ước mã tháng của sàn ICE",
+    "lan": 1
+   },
+   {
+    "tim": "3,312s",
+    "thay": "3,559s",
+    "nguon": "https://giacaphe.com/gia-ca-phe-noi-dia-ngay-2026-10-07/",
+    "ly_do": "Robusta kỳ hạn 03/27: giá 3,559 USD/tấn, thay đổi +67 (giacaphe.com); mã HĐ RMH27 theo quy ước mã tháng của sàn ICE"
+   },
+   {
+    "tim": "-61",
+    "thay": "+67",
+    "nguon": "https://giacaphe.com/gia-ca-phe-noi-dia-ngay-2026-10-07/",
+    "ly_do": "Robusta kỳ hạn 03/27: giá 3,559 USD/tấn, thay đổi +67 (giacaphe.com); mã HĐ RMH27 theo quy ước mã tháng của sàn ICE",
+    "lan": 1,
+    "giu_nguyen_so": true
+   },
+   {
+    "tim": "RMX26",
+    "thay": "RMF27",
+    "nguon": "https://giacaphe.com/gia-ca-phe-noi-dia-ngay-2026-10-07/",
+    "ly_do": "Robusta kỳ hạn 01/27: giá 3,577 USD/tấn, thay đổi +65 (giacaphe.com); mã HĐ RMF27 theo quy ước mã tháng của sàn ICE"
+   },
+   {
+    "tim": "11/26",
+    "thay": "01/27",
+    "nguon": "https://giacaphe.com/gia-ca-phe-noi-dia-ngay-2026-10-07/",
+    "ly_do": "Robusta kỳ hạn 01/27: giá 3,577 USD/tấn, thay đổi +65 (giacaphe.com); mã HĐ RMF27 theo quy ước mã tháng của sàn ICE",
+    "lan": 1
+   },
+   {
+    "tim": "3,337s",
+    "thay": "3,577s",
+    "nguon": "https://giacaphe.com/gia-ca-phe-noi-dia-ngay-2026-10-07/",
+    "ly_do": "Robusta kỳ hạn 01/27: giá 3,577 USD/tấn, thay đổi +65 (giacaphe.com); mã HĐ RMF27 theo quy ước mã tháng của sàn ICE"
+   },
+   {
+    "tim": "-59",
+    "thay": "+65",
+    "nguon": "https://giacaphe.com/gia-ca-phe-noi-dia-ngay-2026-10-07/",
+    "ly_do": "Robusta kỳ hạn 01/27: giá 3,577 USD/tấn, thay đổi +65 (giacaphe.com); mã HĐ RMF27 theo quy ước mã tháng của sàn ICE",
+    "lan": 2,
+    "giu_nguyen_so": true
+   },
+   {
+    "tim": "RMU26",
+    "thay": "RMX26",
+    "nguon": "https://giacaphe.com/gia-ca-phe-noi-dia-ngay-2026-10-07/",
+    "ly_do": "Robusta kỳ hạn 11/26: giá 3,590 USD/tấn, thay đổi +62 (giacaphe.com); mã HĐ RMX26 theo quy ước mã tháng của sàn ICE"
+   },
+   {
+    "tim": "09/26",
+    "thay": "11/26",
+    "nguon": "https://giacaphe.com/gia-ca-phe-noi-dia-ngay-2026-10-07/",
+    "ly_do": "Robusta kỳ hạn 11/26: giá 3,590 USD/tấn, thay đổi +62 (giacaphe.com); mã HĐ RMX26 theo quy ước mã tháng của sàn ICE",
+    "lan": 1
+   },
+   {
+    "tim": "3,307s",
+    "thay": "3,590s",
+    "nguon": "https://giacaphe.com/gia-ca-phe-noi-dia-ngay-2026-10-07/",
+    "ly_do": "Robusta kỳ hạn 11/26: giá 3,590 USD/tấn, thay đổi +62 (giacaphe.com); mã HĐ RMX26 theo quy ước mã tháng của sàn ICE"
+   },
+   {
+    "tim": "-59",
+    "thay": "+62",
+    "nguon": "https://giacaphe.com/gia-ca-phe-noi-dia-ngay-2026-10-07/",
+    "ly_do": "Robusta kỳ hạn 11/26: giá 3,590 USD/tấn, thay đổi +62 (giacaphe.com); mã HĐ RMX26 theo quy ước mã tháng của sàn ICE",
+    "lan": 1,
+    "giu_nguyen_so": true
+   }
+  ],
+  "can_duyet": [
+   "Bảng Arabica: GIỮ NGUYÊN. giacaphe.com ghi các kỳ hạn 03/27 (295.85, +11.55), 05/27 (292.50, +11.60), 07/27 (289.95, +11.40), 09/27 (287.20, +11.15), 12/27 (284.15, +10.95) và KHÔNG có kỳ hạn 12/26; trong khi Nhà Bè Agri viết 'Arabica kỳ hạn tháng 12/2026 chạm gần mốc 296 cent/lb'. Hai nguồn lệch nhau về tên kỳ hạn → cần bạn chọn nguồn hoặc đưa nguồn khác.",
+   "Bảng Robusta: giacaphe.com gọi cột giá là 'Giá khớp', không ghi rõ là giá thanh toán (settlement). Mình giữ ký tự 's' như bài cũ — nếu muốn chính xác tuyệt đối thì bỏ 's' hoặc lấy giá settlement từ nguồn khác.",
+   "Bảng trong nước, dòng Tây Nguyên: bài cũ ghi một khoảng (93,000 - 93,800); nguồn chỉ có một mức 94,200. Nếu muốn giữ dạng khoảng thì có thể dùng 93,600 - 94,400 (thấp nhất – cao nhất của 4 tỉnh).",
+   "Đoạn 7: có lỗi chính tả sẵn trên web 'Tây Nuy' (đúng là 'Tây Nguyên') – chưa sửa vì không thuộc phần số liệu.",
+   "Bài TCB trên web đã ghi sẵn ngày 07/10/2026, nên không có ngày nào cần đổi."
+  ]
+ }
+}
