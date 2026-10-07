@@ -1,0 +1,77 @@
+{
+ "bai1": {
+  "sua": [
+   {
+    "tim": "97.51",
+    "thay": "96.22",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – Vàng 680 (16.3K): 9,622,000 đ/chỉ = 96.22 triệu/lượng (cập nhật 07/10/2026 13:25:09)"
+   },
+   {
+    "tim": "87.61",
+    "thay": "86.32",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – Vàng 680 (16.3K): 8,632,000 đ/chỉ = 86.32 triệu/lượng (cập nhật 07/10/2026 13:25:09)"
+   },
+   {
+    "tim": "87.5",
+    "thay": "86.5",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.mihong.vn/gia-vang-trong-nuoc",
+    "ly_do": "Mi Hồng – 680: 8,650,000 đ/chỉ = 86.5 triệu/lượng (cập nhật 07/10/2026 16:23)"
+   },
+   {
+    "tim": "84.5",
+    "thay": "83.5",
+    "lan": 3,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.mihong.vn/gia-vang-trong-nuoc",
+    "ly_do": "Mi Hồng – 680: 8,350,000 đ/chỉ = 83.5 triệu/lượng (cập nhật 07/10/2026 16:23)"
+   },
+   {
+    "tim": "97.332",
+    "thay": "96.38",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – Nữ trang 68%: 9,638,000 đ/chỉ = 96.38 triệu/lượng (cập nhật 18:15:03 07/10/2026)"
+   },
+   {
+    "tim": "87.532",
+    "thay": "86.58",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – Nữ trang 68%: 8,658,000 đ/chỉ = 86.58 triệu/lượng (cập nhật 18:15:03 07/10/2026)"
+   },
+   {
+    "tim": "dao động 84.5 - 97.3 triệu VND/lượng, tương đương khoảng 8.45 - 9.73 triệu VND/chỉ",
+    "thay": "dao động 83.5 - 96.4 triệu VND/lượng, tương đương khoảng 8.35 - 9.64 triệu VND/chỉ",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "",
+    "ly_do": "tính từ bảng (sjc, pnj, mihong): thấp nhất giá mua 83.5 – cao nhất giá bán 96.38 triệu/lượng, làm tròn 1 số lẻ; theo chỉ = chia 10, 2 số lẻ",
+    "tinh_toan": true
+   },
+   {
+    "tim": "khoảng 84.5 - 97.3 triệu VND/lượng (mua vào - bán ra), tương đương khoảng 8.45 - 9.73 triệu VND/chỉ",
+    "thay": "khoảng 83.5 - 96.4 triệu VND/lượng (mua vào - bán ra), tương đương khoảng 8.35 - 9.64 triệu VND/chỉ",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "",
+    "ly_do": "tính từ bảng (sjc, pnj, mihong): thấp nhất giá mua 83.5 – cao nhất giá bán 96.38 triệu/lượng, làm tròn 1 số lẻ; theo chỉ = chia 10, 2 số lẻ",
+    "tinh_toan": true
+   }
+  ],
+  "can_duyet": [
+   "SJC lấy từ webgia.com dòng 'Nữ trang 68%' (sjc.com.vn chặn máy chủ) – tương ứng 'Vàng 680 (16.3K)' trong bài.",
+   "Mi Hồng: dòng '680' trên mihong.vn (cập nhật 16:23).",
+   "Khoảng giá tóm tắt tính trên cả 3 hãng: thấp nhất giá mua (Mi Hồng 83.5) – cao nhất giá bán (SJC 96.38 → 96.4) triệu/lượng."
+  ]
+ }
+}
