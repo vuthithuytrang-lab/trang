@@ -15,6 +15,16 @@ dán link file Docs vào cột ngày hôm nay, rồi bỏ tích. Dựng ngày 07
 | E `Chạy update` | ô tích |
 | F trở đi | mỗi cột một ngày (tiêu đề là ngày, hiện `d/m`), **ngày mới nhất ở cột F**; ô = link file Docs đã chạy |
 
+## Thêm bài mới vào bảng — Claude tự điền, Trang không phải gõ
+
+Trang gửi link bài + nguồn + hướng dẫn **trong chat**. Claude làm bài đó lần đầu, Trang duyệt xong thì Claude:
+1. Đóng gói thành công thức `../cong-thuc/<ten-ngan>/` (README chốt nguồn + mọi lựa chọn, `cau-hinh.json`, script tự lấy số nếu cần)
+   — làm giống `../cong-thuc/gia-ca-phe/`. Ghi thêm 1 dòng vào bảng "Công thức có sẵn" trong `CLAUDE.md`.
+2. **Tự thêm 1 dòng vào sheet** (dòng trống đầu tiên có URL rỗng): A = STT tiếp theo, B = URL bài, C = tên ngắn,
+   D = `Công thức: <ten-ngan> – nguồn: <tên các nguồn>`, E giữ ô tích = FALSE. Không động vào các dòng khác.
+3. Báo Trang: "đã thêm vào bảng, lần sau chỉ cần tích".
+Bài làm lần đầu chưa đóng gói thì **chưa** thêm vào bảng.
+
 ## Mỗi lần kiểm tra — các bước
 
 1. Đọc `A1:Z200` của tab đầu. Dòng nào ô E = TRUE và B có link → cần chạy. **Không có dòng nào → dừng ngay, không làm gì thêm.**
