@@ -35,6 +35,7 @@ Bài làm lần đầu chưa đóng gói thì **chưa** thêm vào bảng.
    - URL là bài giá cà phê (`gia-ca-phe-hom-nay`) → `../cong-thuc/gia-ca-phe/README.md`.
    - URL là bài giá xăng dầu (`gia-xang-dau-hom-nay`) → `../cong-thuc/gia-xang-dau/README.md`.
    - URL là bài vàng 24K (`vang-24k`) → `../cong-thuc/vang-24k/README.md`.
+   - URL là bài vàng 14K (`vang-14k-gia-hom-nay`) → `../cong-thuc/vang-14k/README.md`.
    - URL khớp một công thức khác trong `../cong-thuc/` → làm theo công thức đó.
    - Còn lại → quy trình chung `../cap-nhat-bai-tcb/SKILL.md`, nguồn tham khảo lấy ở cột D;
      bài có bảng lãi suất tiết kiệm mà cột D trống → dùng nguồn mặc định VnExpress + Topi như SKILL.md.
