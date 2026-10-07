@@ -1,11 +1,11 @@
 # Báo cáo cập nhật bài Techcombank – 07/10/2026
 
 > **Không đọc được nguồn tham khảo https://www.pvoil.com.vn/tin-gia-xang-dau: lỗi (HTTP 403 ).**
-> PVOIL (pvoil.com.vn) chặn truy cập tự động (Cloudflare, HTTP 403) – bảng PVOIL giữ nguyên số cũ. Giá Petrolimex đọc từ bảng ảnh trong thông cáo 54/2026/PLX-TCBC (hiệu lực 15:00 01/10/2026); Mipec trùng khớp.
+> Bản hoàn chỉnh 16h54. Petrolimex: bảng ảnh trong thông cáo 54/2026/PLX-TCBC (15:00 01/10/2026). PVOIL: ảnh chụp màn hình Trang gửi (pvoil.com.vn chặn máy chủ), đối chiếu khớp topi.vn. Mipec: mipec.com.vn.
 
 ## BÀI 1 – https://techcombank.com/thong-tin/blog/gia-xang-dau-hom-nay
 
-**1. Link file:** [Giá xăng dầu hôm nay bao nhiêu 1 lít mới nhất? – 07/10/2026](https://docs.google.com/document/d/1p3LZkzpVLFyPstNHInGR085ScMcxkEN122M1nqlYwJM/edit)
+**1. Link file:** [Giá xăng dầu hôm nay bao nhiêu 1 lít mới nhất? – 07/10/2026](https://docs.google.com/document/d/1LVtGBlmgWKc15vFmA66tVz9w4qVJP2EJCkZhyxqvHjk/edit)
 
 **2. Ngày tháng đã đổi:**
 
@@ -18,7 +18,7 @@
 - Tham khảo (đã đọc): https://www.pvoil.com.vn/tin-gia-xang-dau
 - Tham khảo (đã đọc): https://www.mipec.com.vn/pages/gia-xang-dau-ban-le
 
-**5. Nội dung khác đã cập nhật (24 chỗ, đều tô vàng):**
+**5. Nội dung khác đã cập nhật (28 chỗ, đều tô vàng):**
 
 - Đoạn "…này. 5.4. Dầu DO 0,001S hôm nay có giá bao nhiêu?": "Giá dầu DO 0,001S-V là 31,740 VND/lít tại Vùng 1 và 32,370 VND/lít tại Vùng 2" → "Giá dầu DO 0,001S-V là 31,110 VND/lít tại Vùng 1 và 31,730 VND/lít tại Vùng 2" (nguồn: https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-dieu-chinh-gia-xang-dau-tu-15-gio-00-phut-ngay-01-10-2026.html; Câu hỏi thường gặp – DO 0,001S-V theo Petrolimex kỳ điều hành 15:00 01/10/2026 (TCBC 54/2026/PLX-TCBC))
 - Đoạn "…ản lý. 5.3. Giá xăng RON 95 hôm nay là bao nhiêu?": "Giá E10 RON 95-V là 26,830 VND/lít tại Vùng 1 và 27,360 VND/lít tại Vùng 2; E10 RON 95-III lần lượt là 25,630 VND/lít và 26,140 VND/lít" → "Giá E10 RON 95-V là 28,180 VND/lít tại Vùng 1 và 28,740 VND/lít tại Vùng 2; E10 RON 95-III lần lượt là 27,180 VND/lít và 27,720 VND/lít" (nguồn: https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-dieu-chinh-gia-xang-dau-tu-15-gio-00-phut-ngay-01-10-2026.html; Câu hỏi thường gặp – RON 95 Vùng 1/Vùng 2 theo Petrolimex kỳ điều hành 15:00 01/10/2026 (TCBC 54/2026/PLX-TCBC))
@@ -32,6 +32,10 @@
 - Đoạn "…N 95-III 25,630 26,140 Xăng sinh học E5 RON 92-II": "25,130" → "26,560" (nguồn: https://www.mipec.com.vn/pages/gia-xang-dau-ban-le; MIPEC giá đang áp dụng trên mipec.com.vn (đọc 07/10/2026): Xăng sinh học E5 RON 92-II Vùng 1 = 26,560 đ/lít)
 - Đoạn "…) Giá Vùng 2 (VND/lít) Xăng E10 RON 95-III 25,630": "26,140" → "27,720" (nguồn: https://www.mipec.com.vn/pages/gia-xang-dau-ban-le; MIPEC giá đang áp dụng trên mipec.com.vn (đọc 07/10/2026): Xăng E10 RON 95-III Vùng 2 = 27,720 đ/lít)
 - Đoạn "…VND/lít) Giá Vùng 2 (VND/lít) Xăng E10 RON 95-III": "25,630" → "27,180" (nguồn: https://www.mipec.com.vn/pages/gia-xang-dau-ban-le; MIPEC giá đang áp dụng trên mipec.com.vn (đọc 07/10/2026): Xăng E10 RON 95-III Vùng 1 = 27,180 đ/lít)
+- Đoạn "…-II 25,130 Dầu DO 0,001S-V 29,940 Dầu DO 0,05S-II": "31,640" → "29,710" (nguồn: https://www.pvoil.com.vn/tin-gia-xang-dau; PVOIL kỳ điều chỉnh 15:00 01/10/2026 (ảnh chụp trang pvoil.com.vn do Trang gửi): Dầu DO 0,05S-II  = 29,710 đ/lít)
+- Đoạn "…I 25,630 Xăng E5 RON 92-II 25,130 Dầu DO 0,001S-V": "29,940" → "31,110" (nguồn: https://www.pvoil.com.vn/tin-gia-xang-dau; PVOIL kỳ điều chỉnh 15:00 01/10/2026 (ảnh chụp trang pvoil.com.vn do Trang gửi): Dầu DO 0,001S-V  = 31,110 đ/lít)
+- Đoạn "…lít) Xăng E10 RON 95-III 25,630 Xăng E5 RON 92-II": "25,130" → "26,560" (nguồn: https://www.pvoil.com.vn/tin-gia-xang-dau; PVOIL kỳ điều chỉnh 15:00 01/10/2026 (ảnh chụp trang pvoil.com.vn do Trang gửi): Xăng E5 RON 92-II  = 26,560 đ/lít)
+- Đoạn "…iá bán lẻ tham khảo (VND/lít) Xăng E10 RON 95-III": "25,630" → "27,180" (nguồn: https://www.pvoil.com.vn/tin-gia-xang-dau; PVOIL kỳ điều chỉnh 15:00 01/10/2026 (ảnh chụp trang pvoil.com.vn do Trang gửi): Xăng E10 RON 95-III  = 27,180 đ/lít)
 - Đoạn "…Dầu DO 0,05S-II 29,940 30,530 Dầu hỏa 2-K 31,470": "32,090" → "30,360" (nguồn: https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-dieu-chinh-gia-xang-dau-tu-15-gio-00-phut-ngay-01-10-2026.html; PETROLIMEX kỳ điều hành 15:00 01/10/2026 (TCBC 54/2026/PLX-TCBC): Dầu hỏa 2-K Vùng 2 = 30,360 đ/lít)
 - Đoạn "…32,370 Dầu DO 0,05S-II 29,940 30,530 Dầu hỏa 2-K": "31,470" → "29,770" (nguồn: https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-dieu-chinh-gia-xang-dau-tu-15-gio-00-phut-ngay-01-10-2026.html; PETROLIMEX kỳ điều hành 15:00 01/10/2026 (TCBC 54/2026/PLX-TCBC): Dầu hỏa 2-K Vùng 1 = 29,770 đ/lít)
 - Đoạn "…DO 0,001S-V 31,740 32,370 Dầu DO 0,05S-II 29,940": "30,530" → "30,300" (nguồn: https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-dieu-chinh-gia-xang-dau-tu-15-gio-00-phut-ngay-01-10-2026.html; PETROLIMEX kỳ điều hành 15:00 01/10/2026 (TCBC 54/2026/PLX-TCBC): Dầu DO 0,05S-II Vùng 2 = 30,300 đ/lít)
@@ -47,10 +51,9 @@
 
 **6. Trường hợp cần người duyệt kiểm tra:**
 
-- Bảng PVOIL: không đọc được nguồn (pvoil.com.vn chặn truy cập tự động (Cloudflare, HTTP 403)) – giữ nguyên số cũ, cần bạn kiểm tra.
-- Bảng PVOIL (bài cũ): 2 dòng dầu DO có vẻ bị đảo số – DO 0,001S-V ghi 29,940 còn DO 0,05S-II ghi 31,640 (thường DO 0,001S-V đắt hơn). Chưa sửa vì không đọc được nguồn PVOIL.
-- Câu hỏi thường gặp 5.1: câu cũ ghi E5 RON 92-II 25,630 (là giá Vùng 2 cũ). Mình cập nhật theo giá Vùng 1 mới 26,560 cho thống nhất với câu RON 95-III (cũng dùng Vùng 1).
-- webgia.com: số trên trang cập nhật lúc 14:02 01/10/2026 – TRƯỚC giờ điều chỉnh 15:00 cùng ngày, nên là giá cũ; không dùng. Giá lấy theo bảng trong thông cáo Petrolimex (Mipec trùng khớp).
+- Bảng PVOIL: số lấy từ ảnh chụp màn hình trang PVOIL do bạn gửi (pvoil.com.vn chặn máy chủ). Hai dòng dầu DO trong bài cũ bị đảo số (0,001S-V ghi 29,940; 0,05S-II ghi 31,640) – nay đã đúng: 0,001S-V = 31,110; 0,05S-II = 29,710.
+- Câu hỏi thường gặp 5.1: câu cũ ghi E5 RON 92-II 25,630 (là giá Vùng 2 cũ). Mình cập nhật theo giá Vùng 1 mới 26,560 cho thống nhất với câu RON 95-III.
+- webgia.com: số trên trang cập nhật lúc 14:02 01/10/2026 – TRƯỚC giờ điều chỉnh 15:00, là giá cũ; không dùng.
 - Mục 5: bài gốc đánh số 5.1 rồi nhảy sang 5.3 (không có 5.2) – chưa sửa.
 
-**7.** Có thay đổi: 24 chỗ nội dung khác.
+**7.** Có thay đổi: 28 chỗ nội dung khác.

@@ -98,6 +98,38 @@
     "ly_do": "MIPEC giá đang áp dụng trên mipec.com.vn (đọc 07/10/2026): Xăng E10 RON 95-III Vùng 1 = 27,180 đ/lít"
    },
    {
+    "tim": "31,640",
+    "thay": "29,710",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pvoil.com.vn/tin-gia-xang-dau",
+    "ly_do": "PVOIL kỳ điều chỉnh 15:00 01/10/2026 (ảnh chụp trang pvoil.com.vn do Trang gửi): Dầu DO 0,05S-II  = 29,710 đ/lít"
+   },
+   {
+    "tim": "29,940",
+    "thay": "31,110",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pvoil.com.vn/tin-gia-xang-dau",
+    "ly_do": "PVOIL kỳ điều chỉnh 15:00 01/10/2026 (ảnh chụp trang pvoil.com.vn do Trang gửi): Dầu DO 0,001S-V  = 31,110 đ/lít"
+   },
+   {
+    "tim": "25,130",
+    "thay": "26,560",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pvoil.com.vn/tin-gia-xang-dau",
+    "ly_do": "PVOIL kỳ điều chỉnh 15:00 01/10/2026 (ảnh chụp trang pvoil.com.vn do Trang gửi): Xăng E5 RON 92-II  = 26,560 đ/lít"
+   },
+   {
+    "tim": "25,630",
+    "thay": "27,180",
+    "lan": 3,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pvoil.com.vn/tin-gia-xang-dau",
+    "ly_do": "PVOIL kỳ điều chỉnh 15:00 01/10/2026 (ảnh chụp trang pvoil.com.vn do Trang gửi): Xăng E10 RON 95-III  = 27,180 đ/lít"
+   },
+   {
     "tim": "32,090",
     "thay": "30,360",
     "lan": 1,
@@ -195,10 +227,9 @@
    }
   ],
   "can_duyet": [
-   "Bảng PVOIL: không đọc được nguồn (pvoil.com.vn chặn truy cập tự động (Cloudflare, HTTP 403)) – giữ nguyên số cũ, cần bạn kiểm tra.",
-   "Bảng PVOIL (bài cũ): 2 dòng dầu DO có vẻ bị đảo số – DO 0,001S-V ghi 29,940 còn DO 0,05S-II ghi 31,640 (thường DO 0,001S-V đắt hơn). Chưa sửa vì không đọc được nguồn PVOIL.",
-   "Câu hỏi thường gặp 5.1: câu cũ ghi E5 RON 92-II 25,630 (là giá Vùng 2 cũ). Mình cập nhật theo giá Vùng 1 mới 26,560 cho thống nhất với câu RON 95-III (cũng dùng Vùng 1).",
-   "webgia.com: số trên trang cập nhật lúc 14:02 01/10/2026 – TRƯỚC giờ điều chỉnh 15:00 cùng ngày, nên là giá cũ; không dùng. Giá lấy theo bảng trong thông cáo Petrolimex (Mipec trùng khớp).",
+   "Bảng PVOIL: số lấy từ ảnh chụp màn hình trang PVOIL do bạn gửi (pvoil.com.vn chặn máy chủ). Hai dòng dầu DO trong bài cũ bị đảo số (0,001S-V ghi 29,940; 0,05S-II ghi 31,640) – nay đã đúng: 0,001S-V = 31,110; 0,05S-II = 29,710.",
+   "Câu hỏi thường gặp 5.1: câu cũ ghi E5 RON 92-II 25,630 (là giá Vùng 2 cũ). Mình cập nhật theo giá Vùng 1 mới 26,560 cho thống nhất với câu RON 95-III.",
+   "webgia.com: số trên trang cập nhật lúc 14:02 01/10/2026 – TRƯỚC giờ điều chỉnh 15:00, là giá cũ; không dùng.",
    "Mục 5: bài gốc đánh số 5.1 rồi nhảy sang 5.3 (không có 5.2) – chưa sửa."
   ]
  }
