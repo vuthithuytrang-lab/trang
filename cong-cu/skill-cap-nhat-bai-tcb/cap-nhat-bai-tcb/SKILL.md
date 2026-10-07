@@ -89,8 +89,16 @@ Quy tắc phán đoán (bắt buộc):
   trong bảng so sánh lãi suất **không bao giờ sửa**.
 - Sửa ít nhất có thể: chỉ đổi con số / cụm từ đã cũ, giữ nguyên câu văn, giọng văn, link, định dạng. Không viết lại đoạn,
   không thêm đoạn mới, không xóa đoạn — trừ khi người dùng yêu cầu.
-- Câu chữ không còn đúng với số mới (vd "online cao hơn 0.1 – 0.4%/năm" trong khi bảng mới chênh vài điểm) → sửa con số nếu
-  tính được rõ ràng, không thì đưa vào `can_duyet`.
+- Câu chữ không còn đúng với số mới (vd "online cao hơn 0.1 – 0.4%/năm" trong khi bảng mới chênh vài điểm) → sửa con số chỉ khi
+  tính được **rõ ràng và ổn định** (số liệu nguồn sạch, không có ngoại lệ/lỗi nhập làm khoảng tính ra vô nghĩa); dữ liệu nhiễu → không tự
+  chọn cách lọc, đưa vào `can_duyet` kèm số liệu bạn thấy.
+- **Văn bản pháp luật** (số hiệu thông tư/quyết định, mức quy định gắn với văn bản): chỉ sửa theo nguồn chính thức nói về chính văn bản đó
+  (cơ quan ban hành, cổng văn bản pháp luật, báo chí dẫn rõ văn bản mới thay thế). Nguồn thị trường (bài so sánh lãi suất…) không đủ
+  để sửa nội dung gắn với văn bản → `can_duyet`.
+- **Nguồn Techcombank không đọc được** (trang vẽ bằng JavaScript, bị chặn, đã thử công cụ đọc web của bạn): vẫn làm tiếp phần còn lại,
+  giữ nguyên mọi thông tin về Techcombank, ghi rõ ở đầu báo cáo bằng `--ghi-chu` và nói với người dùng.
+- Ví dụ minh họa / phép tính mẫu trong bài (vd "gửi 100 triệu, lãi 6%…") là giả định, **không cập nhật** trừ khi người dùng yêu cầu
+  (chỉ kiểm tra phép tính đúng; sai thì ghi `can_duyet`).
 
 ## Bước 4 – Ghi các chỗ sửa vào `cap-nhat/sua.json` và áp
 
@@ -100,8 +108,8 @@ Mẫu: `references/sua-mau.json`.
 {
   "bai1": {
     "sua": [
-      {"tim": "0.1 - 0.4%/năm", "thay": "0.1 - 3.7%/năm", "lan": "tat_ca",
-       "nguon": "https://...", "ly_do": "chênh lệch online/tại quầy theo bảng mới", "tinh_toan": true},
+      {"tim": "0.1 - 0.4%/năm", "thay": "0.2 - 0.5%/năm", "lan": "tat_ca",
+       "nguon": "https://...", "ly_do": "nguồn ghi rõ: online cao hơn tại quầy 0,2 – 0,5%/năm"},
       {"ngu_canh": "Theo quyết định số 986/QĐ-TTg", "tim": "đến năm 2025", "thay": "đến năm 2030",
        "nguon": "https://...", "ly_do": "văn bản mới thay thế"}
     ],
@@ -111,8 +119,9 @@ Mẫu: `references/sua-mau.json`.
 ```
 
 - `tim`: chữ **đúng như trong bài** (chép từ kết quả `xem`; khoảng trắng gộp, không cần quan tâm chữ đậm/nghiêng/link).
-- `thay`: chữ mới hoàn chỉnh. Script chỉ thay và tô vàng **phần khác nhau** (vd chỉ `3.7`), giữ nguyên chữ đậm/link xung quanh.
-- `tim` xuất hiện nhiều lần → thêm `ngu_canh` (một đoạn chữ lân cận, xuất hiện đúng 1 lần, có chứa `tim`), hoặc `"lan": 2`
+- `thay`: chữ mới hoàn chỉnh. Script chỉ thay và tô vàng **từng phần khác nhau** (vd chỉ `3.7`; hai số đổi thì tô riêng hai số),
+  giữ nguyên chữ đậm/link xung quanh.
+- `tim` xuất hiện nhiều lần → thêm `ngu_canh` (đoạn chữ lân cận xuất hiện đúng 1 lần, chứa hoặc gối lên `tim`), hoặc `"lan": 2`
   (lần thứ 2), hoặc `"lan": "tat_ca"` (sửa mọi chỗ).
 - Số trong `thay` tự viết lại theo số cũ cùng thứ tự trong `tim` (dấu thập phân, dấu nghìn, kiểu `2.10`). Không muốn → `"giu_nguyen_so": true`.
 
@@ -122,7 +131,8 @@ python3 $SKILL/scripts/cap_nhat.py sua cap-nhat/cau-hinh.json cap-nhat/sua.json
 
 Exit 0 = áp đủ. Lỗi (không thấy chữ, xuất hiện nhiều lần…) → sửa `sua.json`, chạy lại (luôn áp lại từ bản nền, chạy bao nhiêu lần cũng được).
 Đọc mọi cảnh báo "viết lại thành …" và "vắt qua chữ đậm" để chắc kết quả đúng ý. Chạy `xem` lần nữa để đọc lại bản cuối.
-Không có chỗ nào cần sửa → bỏ qua bước này.
+**Luôn chạy `sua`** khi có chỗ sửa **hoặc** có mục `can_duyet` (không có chỗ sửa thì để `"sua": []`) — `can_duyet` chỉ vào báo cáo qua bước này.
+Chỉ bỏ qua bước này khi không sửa gì và không có gì cần duyệt. Muốn thử nghiệm thì dùng file khác, rồi chạy lại `sua.json` thật trước khi tạo Docs.
 
 ## Bước 5 – Tạo Google Docs (mỗi bài)
 

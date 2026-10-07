@@ -3,11 +3,17 @@
     "sua": [
       {
         "tim": "0.1 - 0.4%/năm",
-        "thay": "0.1 - 3.7%/năm",
+        "thay": "0.2 - 0.5%/năm",
         "lan": "tat_ca",
-        "nguon": "https://vnexpress.net/chu-de/lai-suat-ngan-hang-3210",
-        "ly_do": "tính từ bảng mới trong bài: chênh lệch online – tại quầy thấp nhất 0.1, cao nhất 3.7 điểm (ví dụ minh họa)",
-        "tinh_toan": true
+        "nguon": "https://... (bài báo/nguồn nói rõ mức chênh)",
+        "ly_do": "nguồn ghi rõ: online cao hơn tại quầy 0,2 – 0,5%/năm"
+      },
+      {
+        "ngu_canh": "Sacombank",
+        "tim": "4.90",
+        "thay": "5,2",
+        "nguon": "https://...",
+        "ly_do": "ví dụ: số trong bảng không phải bảng lãi suất tự động; sẽ được viết thành 5.20 theo ô cũ"
       },
       {
         "ngu_canh": "Theo quyết định số 986/QĐ-TTg",

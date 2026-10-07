@@ -627,6 +627,7 @@ def xem(ch, ma):
     h = re.sub(r'</t[dh]>', ' | ', h)
     h = re.sub(r'<(/p|/li|/h\d|/tr|br)[^>]*>', '\n', h)
     h = re.sub(r'<img[^>]*alt="([^"]*)"[^>]*>', r'[ẢNH: \1]', h)
+    h = re.sub(r'</?(?:span|b|i|u|a|strong|em|sup|sub|font)\b[^>]*>', '', h)   # thẻ trong dòng: bỏ, không chèn dấu cách
     t = html.unescape(re.sub(r'<[^>]+>', ' ', h)).replace('\xa0', ' ')
     dong = [re.sub(r'\s+', ' ', x).strip(' ') for x in t.split('\n')]
     for i, x in enumerate([x for x in dong if x.strip(' |')], 1):
@@ -726,10 +727,11 @@ def sua(ch, duong_dan):
                     continue
                 vung = (vt[0], vt[0] + len(nc))
             t2 = re.sub(r'\s+', ' ', tim)
-            vt = [m.start() + vung[0] for m in re.finditer(re.escape(t2), V[vung[0]:vung[1]])]
+            # chỗ "tim" phải chồng lên đoạn ngữ cảnh (nằm trong, chứa, hoặc gối lên ngữ cảnh)
+            vt = [m.start() for m in re.finditer(re.escape(t2), V) if m.start() < vung[1] and m.end() > vung[0]]
             lan = e.get('lan')
             if not vt:
-                r['loi'].append(f'Sửa #{i}: không thấy "{t2[:80]}" trong bài' + (' (trong ngữ cảnh đã cho)' if e.get('ngu_canh') else '') + '.')
+                r['loi'].append(f'Sửa #{i}: không thấy "{t2[:80]}" trong bài' + (' – "tim" phải nằm trong hoặc gối lên "ngu_canh"' if e.get('ngu_canh') else '') + '.')
                 continue
             if lan == 'tat_ca':
                 chon = vt
@@ -740,32 +742,28 @@ def sua(ch, duong_dan):
             else:
                 r['loi'].append(f'Sửa #{i}: "{t2[:60]}" xuất hiện {len(vt)} lần – thêm "ngu_canh" hoặc "lan".')
                 continue
-            # chỉ thay và tô vàng đúng phần khác nhau (giữ phần đầu/cuối giống nhau), tính theo từ / con số
+            # chỉ thay và tô vàng đúng những phần khác nhau (so theo từ / con số); mỗi phần khác nhau tô riêng
             tu_cu, tu_moi = TU.findall(t2), TU.findall(re.sub(r'\s+', ' ', thay))
-            dau = 0
-            while dau < min(len(tu_cu), len(tu_moi)) and tu_cu[dau] == tu_moi[dau]:
-                dau += 1
-            cuoi = 0
-            while cuoi < min(len(tu_cu), len(tu_moi)) - dau and tu_cu[-1 - cuoi] == tu_moi[-1 - cuoi]:
-                cuoi += 1
-            bo_dau, bo_cuoi = len(''.join(tu_cu[:dau])), len(''.join(tu_cu[len(tu_cu) - cuoi:]))
-            phan_moi = ''.join(tu_moi[dau:len(tu_moi) - cuoi])
-            if not phan_moi.strip() and len(tu_cu) - cuoi == dau:
-                r['loi'].append(f'Sửa #{i}: "tim" và "thay" giống nhau, không có gì để sửa.')
+            khuc = [op for op in difflib.SequenceMatcher(None, tu_cu, tu_moi, autojunk=False).get_opcodes() if op[0] != 'equal']
+            if not khuc:
+                r['loi'].append(f'Sửa #{i}: "tim" và "thay" giống nhau (sau khi viết số theo bài), không có gì để sửa.')
                 continue
+            dai = lambda ds, n: len(''.join(ds[:n]))
             vat = False
             for bd in sorted(chon, reverse=True):              # sửa từ cuối lên để vị trí phía trước không lệch
-                x0, x1 = bd + bo_dau, bd + len(t2) - bo_cuoi
-                vt_goc = [M[j] for j in range(x0, x1) if M[j]]
-                if vt_goc:
-                    a, b = vt_goc[0][0], vt_goc[-1][1]
-                else:                                          # chỉ chèn thêm chữ: chèn ngay sau phần giống nhau phía trước
-                    truoc = [M[j] for j in range(bd, x0) if M[j]]
-                    a = b = truoc[-1][1] if truoc else M[bd][0]
-                giua = ''.join(re.findall(r'<[^>]*>', h[a:b]))   # bỏ chữ cũ, giữ nguyên thẻ (đậm, nghiêng, link) nằm giữa
-                vat |= bool(giua)
-                moi = f'<span style="{VANG}">{html.escape(phan_moi, quote=False)}</span>' if phan_moi.strip() else phan_moi
-                h = h[:a] + moi + giua + h[b:]
+                for _, i1, i2, j1, j2 in reversed(khuc):
+                    x0, x1 = bd + dai(tu_cu, i1), bd + dai(tu_cu, i2)
+                    phan_moi = ''.join(tu_moi[j1:j2])
+                    vt_goc = [M[j] for j in range(x0, x1) if M[j]]
+                    if vt_goc:
+                        a, b = vt_goc[0][0], vt_goc[-1][1]
+                    else:                                      # chỉ chèn thêm chữ: chèn ngay sau phần giống nhau phía trước
+                        truoc = [M[j] for j in range(bd, x0) if M[j]]
+                        a = b = truoc[-1][1] if truoc else M[bd][0]
+                    giua = ''.join(re.findall(r'<[^>]*>', h[a:b]))   # bỏ chữ cũ, giữ nguyên thẻ (đậm, nghiêng, link) nằm giữa
+                    vat |= bool(giua)
+                    moi = f'<span style="{VANG}">{html.escape(phan_moi, quote=False)}</span>' if phan_moi.strip() else phan_moi
+                    h = h[:a] + moi + giua + h[b:]
             if vat:
                 r['canh_bao'].append(f'Sửa #{i}: phần sửa vắt qua chữ đậm/nghiêng/link – mở file kiểm tra định dạng chỗ này.')
             if e.get('tinh_toan'):
@@ -840,7 +838,12 @@ def bao_cao(ch, hom_nay, links, them):
         lk = f'[{b["ten_file"]}]({link})' if link else b['ten_file']
         if not (b['sua'] or b['gan_nhat'] or b['gach'] or b['doi_mau'] or s['da_sua']):
             L += [f'**Link file:** {lk}', '']
-            L += ['**Không có thay đổi lãi suất.**' if co_bang and not ch['tham_khao'] else '**Không có nội dung nào cần cập nhật.**']
+            if co_bang and not ch['tham_khao']:                   # quy trình lãi suất: chỉ cần báo không đổi
+                L += ['**Không có thay đổi lãi suất.**', '']
+                continue
+            L += ['**Không có số liệu / nội dung nào cần cập nhật theo nguồn.**', '']
+            L += [f'- Ngày tháng đã đổi (tô vàng): {x}' for x in b['doi_ngay']]
+            L += [f'- Nguồn tham khảo đã đọc: {t.get("url") or t.get("tep_html")}' for t in ch['tham_khao']]
             L += [f'- Cần người duyệt: {x}' for x in s['can_duyet'] + s['loi']] + ['']
             continue
         L += [f'**1. Link file:** {lk}', '', '**2. Ngày tháng đã đổi:**', '']
@@ -851,8 +854,10 @@ def bao_cao(ch, hom_nay, links, them):
             td = f' – {n["tieu_de"]}' if n['tieu_de'] else ''
             L.append(f'- Bảng lãi suất – {n["ten"]}{pt}: dữ liệu ngày {n["ngay"] or "không đọc được"}{td}')
         dung_tk = sorted({x['nguon'] for x in s['da_sua'] if x['nguon']})
-        L += [f'- Tham khảo: {x}' for x in dung_tk]
-        if not kq['nguon'] and not dung_tk:
+        doc_tk = [t.get('url') or t.get('tep_html') for t in ch['tham_khao']]
+        L += [f'- Tham khảo (đã đọc): {x}' for x in doc_tk]
+        L += [f'- Nguồn của chỗ sửa: {x}' for x in dung_tk if x not in doc_tk]
+        if not kq['nguon'] and not dung_tk and not doc_tk:
             L.append('- Không có.')
         if co_bang:
             L += ['', f'**4. Bảng lãi suất – ô đã sửa theo nguồn ({len(b["sua"])} ô):**', '']
