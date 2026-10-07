@@ -60,3 +60,4 @@ tải lên `cap-nhat-bai-tcb.zip`. (Cần bật chạy code và kết nối Goog
 | Giá xăng dầu hôm nay | "Update bài giá xăng dầu" | `cong-thuc/gia-xang-dau/README.md` — Petrolimex, PVOIL (qua Topi), Mipec |
 | Vàng 24K | "Update bài vàng 24K" | `cong-thuc/vang-24k/README.md` — PNJ, DOJI, SJC + Bảo Tín Minh Châu (qua webgia) |
 | Vàng 14K | "Update bài vàng 14K" | `cong-thuc/vang-14k/README.md` — SJC (qua webgia), PNJ, Huy Thanh |
+| Vàng 18K | "Update bài vàng 18K" | `cong-thuc/vang-18k/README.md` — PNJ, SJC (qua webgia), DOJI |
