@@ -51,3 +51,9 @@ tải lên `cap-nhat-bai-tcb.zip`. (Cần bật chạy code và kết nối Goog
 - Cần **kết nối Google Drive**; không có thì Claude gửi file để bạn kéo vào Drive và mở bằng Google Tài liệu.
 - Thông tin về **chính Techcombank** chỉ được sửa theo trang techcombank.com; dòng Techcombank trong bảng so sánh không bao giờ bị sửa.
 - Claude **không viết lại văn**: chỉ đổi con số / cụm từ đã cũ. Câu nào cần viết lại, Claude ghi vào mục "cần duyệt" để bạn quyết.
+
+## Công thức riêng đã đóng gói
+
+| Bài | Bạn chỉ cần nhắn | Chi tiết |
+|---|---|---|
+| Giá cà phê hôm nay | "Update bài giá cà phê" | `cong-thuc/gia-ca-phe/README.md` — nguồn Nhà Bè Agri + giacaphe.com, mọi lựa chọn đã chốt |

@@ -108,3 +108,12 @@ Agent đọc chìa từ file, gửi qua header `Authorization: Bearer <chìa>`, 
 | `khoa-hoc/` | Tiến độ khóa Agent Boss, mã nộp từng bài, sản phẩm đã làm |
 | `cong-cu/` | Công cụ dùng lại được — prompt SEO, bản tin tự động |
 | `BAO-MAT.md` | Danh sách chìa khóa đã lộ cần thu hồi |
+| `cong-cu/skill-cap-nhat-bai-tcb/` | Skill cập nhật bài blog Techcombank → Google Docs tô vàng (đọc `cap-nhat-bai-tcb/SKILL.md`) |
+| `cap-nhat-bai-tcb/` | Kết quả từng lần cập nhật bài TCB (cấu hình, danh sách sửa, báo cáo) |
+
+## 7. Công thức có sẵn — làm luôn, không hỏi lại
+
+| Trang nhắn | Đọc và làm theo |
+|---|---|
+| "Update bài giá cà phê" / dán link `techcombank.com/thong-tin/blog/gia-ca-phe-hom-nay` | `cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/gia-ca-phe/README.md` — nguồn, cách ghi số, tên file đã chốt sẵn |
+| Link bài Techcombank khác + nguồn tham khảo | `cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/SKILL.md` (quy trình chung) |
