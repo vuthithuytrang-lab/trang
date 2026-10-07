@@ -122,6 +122,7 @@ Agent đọc chìa từ file, gửi qua header `Authorization: Bearer <chìa>`, 
 | "Update bài vàng 24K" / dán link `techcombank.com/thong-tin/blog/vang-24k` | `cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/vang-24k/README.md` — PNJ, DOJI, SJC + BTMC (qua webgia) |
 | "Update bài vàng 14K" / dán link `techcombank.com/thong-tin/blog/vang-14k-gia-hom-nay` | `cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/vang-14k/README.md` — SJC (webgia), PNJ, Huy Thanh |
 | "Update bài vàng 18K" / dán link `techcombank.com/thong-tin/blog/vang-18k` | `cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/vang-18k/README.md` — PNJ, SJC (webgia), DOJI |
+| "Update bài vàng 10K" / dán link `techcombank.com/thong-tin/blog/vang-10k` | `cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/vang-10k/README.md` — PNJ |
 | "Chạy bảng update" / lịch tự động mỗi giờ | `cong-cu/skill-cap-nhat-bai-tcb/bang-dieu-khien/README.md` — Google Sheets "Update", chạy các dòng đã tích |
 | Đóng gói xong quy trình 1 bài mới | **Tự thêm dòng vào Google Sheets "Update"** theo mục "Thêm bài mới vào bảng" trong `bang-dieu-khien/README.md` — Trang không phải tự điền |
 | Link bài Techcombank khác + nguồn tham khảo | `cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/SKILL.md` (quy trình chung) |
