@@ -64,3 +64,4 @@ tải lên `cap-nhat-bai-tcb.zip`. (Cần bật chạy code và kết nối Goog
 | Vàng 10K | "Update bài vàng 10K" | `cong-thuc/vang-10k/README.md` — PNJ |
 | 1 chỉ vàng bao nhiêu tiền | "Update bài 1 chỉ vàng" | `cong-thuc/1-chi-vang/README.md` — 6 bảng: Huy Thanh, SJC, BTMC, Phú Quý, DOJI, PNJ |
 | Vàng 16K | "Update bài vàng 16K" | `cong-thuc/vang-16k/README.md` — SJC (qua webgia), Mi Hồng, PNJ |
+| Vàng 610 | "Update bài vàng 610" | `cong-thuc/vang-610/README.md` — PNJ |

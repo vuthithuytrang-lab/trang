@@ -40,6 +40,7 @@ Bài làm lần đầu chưa đóng gói thì **chưa** thêm vào bảng.
    - URL là bài vàng 10K (`vang-10k`) → `../cong-thuc/vang-10k/README.md`.
    - URL là bài 1 chỉ vàng (`1-chi-vang-bao-nhieu-tien`) → `../cong-thuc/1-chi-vang/README.md`.
    - URL là bài vàng 16K (`gia-vang-16k-hom-nay`) → `../cong-thuc/vang-16k/README.md`.
+   - URL là bài vàng 610 (`vang-610-la-vang-gi`) → `../cong-thuc/vang-610/README.md`.
    - URL khớp một công thức khác trong `../cong-thuc/` → làm theo công thức đó.
    - Còn lại → quy trình chung `../cap-nhat-bai-tcb/SKILL.md`, nguồn tham khảo lấy ở cột D;
      bài có bảng lãi suất tiết kiệm mà cột D trống → dùng nguồn mặc định VnExpress + Topi như SKILL.md.
