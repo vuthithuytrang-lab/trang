@@ -108,5 +108,5 @@ Agent đọc chìa từ file, gửi qua header `Authorization: Bearer <chìa>`, 
 | `khoa-hoc/` | Tiến độ khóa Agent Boss, mã nộp từng bài, sản phẩm đã làm |
 | `cong-cu/` | Công cụ dùng lại được — prompt SEO, bản tin tự động |
 | `cong-cu/cap-nhat-lai-suat/` | **Việc định kỳ (tự chạy ~7h sáng, 3 ngày/lần)**: cập nhật lãi suất 2 bài blog Techcombank — đọc `QUY-TRINH.md` trước |
-| `cong-cu/skill-cap-nhat-lai-suat-tcb/` | **Skill đóng gói** cập nhật lãi suất cho bài Techcombank bất kỳ (gửi Claude khác dùng được, file `.zip`) — tách riêng, không ảnh hưởng việc định kỳ ở trên |
+| `cong-cu/skill-cap-nhat-bai-tcb/` | **Skill đóng gói** cập nhật bài Techcombank bất kỳ (đọc bài mới nhất + nguồn tham khảo, sửa chỗ lỗi thời, viết số theo bài, tô vàng → Google Docs). Gửi Claude khác dùng được (file `.zip`) — tách riêng, không ảnh hưởng việc định kỳ ở trên |
 | `BAO-MAT.md` | Danh sách chìa khóa đã lộ cần thu hồi |

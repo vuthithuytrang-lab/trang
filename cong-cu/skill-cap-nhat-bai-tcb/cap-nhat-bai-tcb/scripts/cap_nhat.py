@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
-"""Cập nhật bảng lãi suất trong bài blog Techcombank từ các nguồn số liệu, xuất bản HTML để tạo Google Docs.
+"""Cập nhật bài blog Techcombank bất kỳ: chép bài mới nhất, sửa nội dung lỗi thời theo nguồn, tô vàng, xuất HTML để tạo Google Docs.
 
-Mọi lệnh nhận đường dẫn file cấu hình JSON (xem references/cau-hinh-mau.json). File tạm nằm ở <thư mục cấu hình>/tam/.
+Mọi lệnh nhận file cấu hình JSON (xem references/cau-hinh-mau.json). File tạm ở <thư mục cấu hình>/tam/.
 
-  python3 lai_suat.py lay  cau-hinh.json                     tải bài Techcombank + các nguồn
-  python3 lai_suat.py dung cau-hinh.json dd/mm/yyyy          dựng tam/baiN.min.html (đã tô vàng) + tam/ket-qua.json
-  python3 lai_suat.py soat cau-hinh.json baiN <export.json>  so bản xuất HTML của Google Docs với bản dựng (exit 0 = khớp)
-  python3 lai_suat.py bao-cao cau-hinh.json dd/mm/yyyy <link Google Docs bài 1> [<link Docs bài 2> ...] [--ghi-chu "..."]
+  python3 cap_nhat.py lay  cau-hinh.json                  tải bài + nguồn bảng lãi suất + nguồn tham khảo (ra chữ ở tam/thamkhaoN.txt)
+  python3 cap_nhat.py dung cau-hinh.json dd/mm/yyyy       chép bài, đổi ngày/tháng, cập nhật bảng lãi suất (nếu có nguồn bảng)
+  python3 cap_nhat.py xem  cau-hinh.json baiN             in nội dung bài (chữ thường, bảng) để đọc và tìm chỗ lỗi thời
+  python3 cap_nhat.py sua  cau-hinh.json sua.json         áp các chỗ sửa nội dung (tô vàng, tự theo cách viết số của bài)
+  python3 cap_nhat.py soat cau-hinh.json baiN <export>    so bản xuất HTML của Google Docs với bản dựng (exit 0 = khớp)
+  python3 cap_nhat.py bao-cao cau-hinh.json dd/mm/yyyy <link Google Docs bài 1> [<link Docs bài 2> ...] [--ghi-chu "..."]
 """
 import base64, difflib, html, json, os, re, subprocess, sys, time, unicodedata
 from datetime import date
@@ -81,6 +83,10 @@ def doc_cau_hinh(p):
         TEN_GHEP[ten] = TEN_GHEP.get(ten, []) + list(khac)
     for i, b in enumerate(ch['bai'], 1):
         b.setdefault('ma', f'bai{i}')
+    ch.setdefault('nguon', [])
+    ch['tham_khao'] = [{'url': x} if isinstance(x, str) else x for x in ch.get('tham_khao', [])]
+    for i, t in enumerate(ch['tham_khao'], 1):
+        t.setdefault('ma', f'thamkhao{i}')
     for i, n in enumerate(ch['nguon'], 1):
         n.setdefault('ma', f'nguon{i}')
         n.setdefault('ten', ten_nguon(n))
@@ -126,6 +132,8 @@ def chep(nguon, dich):
 def lay(ch):
     T = ch['_tam']
     os.makedirs(T, exist_ok=True)
+    for f in os.listdir(T):                      # luôn lấy bản mới nhất, không dùng lại file của lần trước
+        os.remove(T + f)
     tt = {}
     for b in ch['bai']:
         # "tep_html": trang đã lưu sẵn (Ctrl+S) khi môi trường không vào được techcombank.com
@@ -140,9 +148,34 @@ def lay(ch):
             tt[n['ma']] = 'ok' if 'ok' in kq else kq[0]
         else:
             tt[n['ma']] = tai(n['url'], f'{T}{n["ma"]}.html')
+    for t in ch['tham_khao']:
+        goc = f'{T}{t["ma"]}.goc'
+        tt[t['ma']] = chep(t['tep_html'], goc) if t.get('tep_html') else tai(t['url'], goc)
+        if tt[t['ma']] == 'ok':
+            n_chu = ra_chu(goc, f'{T}{t["ma"]}.txt')
+            tt[t['ma']] += f' → {T}{t["ma"]}.txt ({n_chu} ký tự)'
+            if n_chu < 500:
+                tt[t['ma']] += ' – rất ít chữ, có thể trang vẽ bằng JavaScript: đọc bằng công cụ đọc web của bạn'
     for k, v in tt.items():
         print(k, v)
     json.dump(tt, open(T + 'trang-thai-nguon.json', 'w'), ensure_ascii=False, indent=1)
+
+
+def ra_chu(goc, dich):
+    """Chuyển trang tham khảo (HTML hoặc PDF) thành chữ để đọc; bảng giữ dạng 'ô | ô | ô'."""
+    dl = open(goc, 'rb').read()
+    if dl[:4] == b'%PDF':
+        r = subprocess.run(['pdftotext', '-layout', goc, dich], capture_output=True)
+        return len(open(dich, encoding='utf-8', errors='replace').read()) if r.returncode == 0 else 0
+    s = dl.decode('utf-8', errors='replace')
+    s = re.sub(r'<(script|style|noscript|svg|nav|footer|header)\b.*?</\1>', ' ', s, flags=re.S | re.I)
+    s = re.sub(r'</t[dh]>', ' | ', s, flags=re.I)
+    s = re.sub(r'<(br|/p|/tr|/li|/h\d|/div|/table)[^>]*>', '\n', s, flags=re.I)
+    t = html.unescape(re.sub(r'<[^>]+>', ' ', s)).replace('\xa0', ' ')
+    t = '\n'.join(re.sub(r'[ \t]+', ' ', x).strip() for x in t.split('\n'))
+    t = re.sub(r'\n{3,}', '\n\n', t).strip()
+    open(dich, 'w', encoding='utf-8').write(t)
+    return len(t)
 
 
 def hien_vne(v):
@@ -275,6 +308,8 @@ def dung(ch, hom_nay):
         except Exception as e:
             kq['bai'][b['ma']] = {'loi': f'Không đọc được cấu trúc bài {b["url"]} ({e}) – có thể không phải bài blog Techcombank.'}
     json.dump(kq, open(ch['_tam'] + 'ket-qua.json', 'w'), ensure_ascii=False, indent=1)
+    if os.path.exists(ch['_tam'] + 'sua-ket-qua.json'):          # dựng lại thì các chỗ sửa cũ phải áp lại
+        os.remove(ch['_tam'] + 'sua-ket-qua.json')
     for ma, r in kq['bai'].items():
         print(ma, r.get('loi') or f"{r['ten_file']}: {len(r['bang'])} bảng lãi suất {r['bang']}, {len(r['sua'])} ô sửa, "
                                     f"{len(r['gan_nhat'])} ô kỳ hạn gần nhất, {len(r['gach'])} ô '-', "
@@ -514,7 +549,7 @@ def dung_bai(ch, cfg, hom_nay):
         return row
 
     body = re.sub(r'<table.*?</table>', sua_bang, body, flags=re.S)
-    if not ghi['bang']:
+    if not ghi['bang'] and ch['nguon']:
         ghi['can_duyet'].append('Không tìm thấy bảng lãi suất nào (bảng có cột "Ngân hàng" và dòng Techcombank) trong bài.')
 
     # ----- kẻ bảng giống file mẫu: viền xám nhạt, cột tên ngân hàng 92.5pt, cột kỳ hạn 51.3pt -----
@@ -551,10 +586,201 @@ def dung_bai(ch, cfg, hom_nay):
     g = re.sub(r'rgb\((\d+),\s*(\d+),\s*(\d+)\)', lambda m: '#%02x%02x%02x' % tuple(int(x) for x in m.groups()), g)
     g = re.sub(r'style="([^"]*)"', lambda m: 'style="' + re.sub(r'\s*([:;])\s*', r'\1', m.group(1)).strip(' ;') + '"', g)
     open(f'{T}{ma}.min.html', 'w', encoding='utf-8').write(g)
+    open(f'{T}{ma}.dung.min.html', 'w', encoding='utf-8').write(g)     # bản gốc cho lệnh `sua` (chạy lại được nhiều lần)
     ghi['ten_file'] = f'{cfg["ten_file"]} – {hom_nay}'
     ghi['url'] = cfg['url']
     ghi['kich_thuoc'] = len(g)
     return ghi
+
+
+# ======================= ĐỌC BÀI & SỬA NỘI DUNG =======================
+KHOI = re.compile(r'</?(p|td|th|li|h[1-6]|tr|table|ul|ol|div|figure|br)\b', re.I)
+
+
+def ban_do(h):
+    """Chữ hiển thị của trang (khoảng trắng gộp, ranh giới khối = 1 dấu cách) + vị trí gốc trong HTML của từng ký tự."""
+    V, M = [], []
+    for t in re.finditer(r'<[^>]+>|&#?\w+;|[^<&]+|&', h):
+        x = t.group(0)
+        if x.startswith('<'):
+            if KHOI.match(x) and V and V[-1] != ' ':
+                V.append(' '); M.append(None)
+            continue
+        if x.startswith('&') and len(x) > 1:
+            c = html.unescape(x)
+            c = ' ' if c.isspace() else c[:1]
+            if not (c == ' ' and V and V[-1] == ' '):
+                V.append(c); M.append((t.start(), t.end()))
+            continue
+        for i, c in enumerate(x):
+            if c.isspace() or c == '\xa0':
+                if V and V[-1] == ' ':
+                    continue
+                c = ' '
+            V.append(c); M.append((t.start() + i, t.start() + i + 1))
+    return ''.join(V), M
+
+
+def xem(ch, ma):
+    """In bài (bản đã dựng, tức nội dung mới nhất trên web + ngày đã đổi) thành chữ: mỗi khối một dòng, bảng 'ô | ô'."""
+    h = open(f'{ch["_tam"]}{ma}.min.html', encoding='utf-8').read()
+    h = re.sub(r'</t[dh]>', ' | ', h)
+    h = re.sub(r'<(/p|/li|/h\d|/tr|br)[^>]*>', '\n', h)
+    h = re.sub(r'<img[^>]*alt="([^"]*)"[^>]*>', r'[ẢNH: \1]', h)
+    t = html.unescape(re.sub(r'<[^>]+>', ' ', h)).replace('\xa0', ' ')
+    dong = [re.sub(r'\s+', ' ', x).strip(' ') for x in t.split('\n')]
+    for i, x in enumerate([x for x in dong if x.strip(' |')], 1):
+        print(f'{i:3d}. {x}')
+
+
+TU = re.compile(r'\d+(?:[.,]\d+)*|\w+|\s+|[^\w\s]')
+SO = re.compile(r'(?<![\w.,])\d{1,3}(?:([.,])\d{3})+(?:([.,])\d+)?(?![\w])|(?<![\w.,])\d+(?:[.,]\d+)?(?![\w])')
+
+
+def kieu_bai(h):
+    """Cách bài đang viết số: dấu thập phân và dấu phân cách nghìn. TCB thường viết 4.75 và 100,000,000."""
+    t = chu(h)
+    nghin_phay = len(re.findall(r'\d,\d{3}(?:,\d{3})+|\d{1,3},\d{3}(?![\d.,])', t))
+    nghin_cham = len(re.findall(r'\d\.\d{3}\.\d{3}', t))
+    tp_cham = len(re.findall(r'(?<![\d.,])\d{1,2}\.\d{1,2}(?![\d.,])', t))
+    tp_phay = len(re.findall(r'(?<![\d.,])\d{1,2},\d{1,2}(?![\d.,])', t))
+    tp = '.' if tp_cham >= tp_phay else ','
+    nghin = ',' if (nghin_phay >= nghin_cham and tp == '.') else '.' if tp == ',' else ','
+    return tp, nghin
+
+
+def tach_so(x, tp_goi_y=None):
+    """'1.234.567' / '7,2' / '100,000,000' -> (phần nguyên, phần thập phân). tp_goi_y: dấu thập phân của số cũ cùng vị trí."""
+    cham, phay = x.count('.'), x.count(',')
+    if cham and phay:
+        tp = '.' if x.rfind('.') > x.rfind(',') else ','
+    elif cham + phay == 0:
+        return x, ''
+    else:
+        d = '.' if cham else ','
+        sau = x.split(d)[-1]
+        if cham + phay > 1:
+            tp = None
+        elif tp_goi_y is not None:
+            tp = d if tp_goi_y == 'tp' else None
+        else:
+            tp = None if len(sau) == 3 else d
+    if tp is None:
+        return re.sub(r'[.,]', '', x), ''
+    nguyen, le = x.rsplit(tp, 1)
+    return re.sub(r'[.,]', '', nguyen), le
+
+
+def theo_kieu_cu(moi, cu, kieu):
+    """Viết số mới theo đúng cách số cũ đang viết trong bài: dấu thập phân, dấu nghìn, số chữ số thập phân kiểu 2.10."""
+    tp, nghin = kieu
+    co_tp_cu = re.search(r'[.,]\d{1,2}$', cu) and not re.fullmatch(r'\d{1,3}([.,]\d{3})+', cu)
+    nguyen, le = tach_so(moi, 'tp' if co_tp_cu else 'nghin' if re.search(r'[.,]\d{3}', cu) else None)
+    _, le_cu = tach_so(cu, 'tp' if co_tp_cu else None)
+    if le_cu and le and len(le) < len(le_cu) and le_cu.endswith('0'):
+        le = le.ljust(len(le_cu), '0')                    # ô cũ kiểu 2.10 -> số mới cũng 2 chữ số, không làm tròn
+    co_nhom = bool(re.search(r'\d[.,]\d{3}([.,]\d{3})*($|[.,]\d{1,2}$)', cu)) and not (co_tp_cu and cu.count(tp) + cu.count(nghin) == 1)
+    if le_cu:
+        tp = cu[-len(le_cu) - 1]                          # dấu thập phân đúng như số cũ đang dùng
+    if co_nhom:
+        nghin = re.search(r'\d([.,])\d{3}', cu).group(1)  # dấu nghìn đúng như số cũ đang dùng
+        nguyen = f'{int(nguyen):,}'.replace(',', nghin)
+    return nguyen + (tp + le if le else '')
+
+
+def sua(ch, duong_dan):
+    """Áp danh sách sửa {baiN: {"sua": [{tim, thay, ngu_canh?, lan?, nguon, ly_do}], "can_duyet": [...]}} lên bản dựng."""
+    T = ch['_tam']
+    ds = json.load(open(duong_dan, encoding='utf-8'))
+    kq, het_loi = {}, True
+    for ma, viec in ds.items():
+        h = open(f'{T}{ma}.dung.min.html', encoding='utf-8').read()
+        kieu = kieu_bai(h)
+        r = {'da_sua': [], 'loi': [], 'canh_bao': [], 'can_duyet': list(viec.get('can_duyet', []))}
+        for i, e in enumerate(viec.get('sua', []), 1):
+            tim, thay = e['tim'].strip(), e['thay'].strip()
+            # số trong "thay" viết lại theo cách viết của số tương ứng trong "tim" (cùng thứ tự)
+            so_cu, so_moi = [m.group(0) for m in SO.finditer(tim)], list(SO.finditer(thay))
+            if so_moi and len(so_cu) == len(so_moi) and not e.get('giu_nguyen_so'):
+                ra, cuoi = [], 0
+                for m, c in zip(so_moi, so_cu):
+                    viet = theo_kieu_cu(m.group(0), c, kieu)
+                    if viet != m.group(0):
+                        r['canh_bao'].append(f'Sửa #{i}: số "{m.group(0)}" viết lại thành "{viet}" theo cách viết trong bài (số cũ "{c}").')
+                    ra.append(thay[cuoi:m.start()] + viet)
+                    cuoi = m.end()
+                thay = ''.join(ra) + thay[cuoi:]
+            elif so_moi:
+                for m in so_moi:
+                    x = m.group(0)
+                    sai = (kieu[0] == '.' and re.fullmatch(r'\d+,\d{1,2}', x)) or (kieu[0] == ',' and re.fullmatch(r'\d+\.\d{1,2}', x))
+                    if sai:
+                        r['canh_bao'].append(f'Sửa #{i}: số "{x}" khác cách viết của bài (bài dùng "{kieu[0]}" cho phần thập phân) – kiểm tra lại.')
+            V, M = ban_do(h)
+            vung = (0, len(V))
+            if e.get('ngu_canh'):
+                nc = re.sub(r'\s+', ' ', e['ngu_canh'].strip())
+                vt = [m.start() for m in re.finditer(re.escape(nc), V)]
+                if len(vt) != 1:
+                    r['loi'].append(f'Sửa #{i}: ngữ cảnh "{nc[:60]}" xuất hiện {len(vt)} lần (cần đúng 1).')
+                    continue
+                vung = (vt[0], vt[0] + len(nc))
+            t2 = re.sub(r'\s+', ' ', tim)
+            vt = [m.start() + vung[0] for m in re.finditer(re.escape(t2), V[vung[0]:vung[1]])]
+            lan = e.get('lan')
+            if not vt:
+                r['loi'].append(f'Sửa #{i}: không thấy "{t2[:80]}" trong bài' + (' (trong ngữ cảnh đã cho)' if e.get('ngu_canh') else '') + '.')
+                continue
+            if lan == 'tat_ca':
+                chon = vt
+            elif isinstance(lan, int) and 1 <= lan <= len(vt):
+                chon = [vt[lan - 1]]
+            elif len(vt) == 1:
+                chon = vt
+            else:
+                r['loi'].append(f'Sửa #{i}: "{t2[:60]}" xuất hiện {len(vt)} lần – thêm "ngu_canh" hoặc "lan".')
+                continue
+            # chỉ thay và tô vàng đúng phần khác nhau (giữ phần đầu/cuối giống nhau), tính theo từ / con số
+            tu_cu, tu_moi = TU.findall(t2), TU.findall(re.sub(r'\s+', ' ', thay))
+            dau = 0
+            while dau < min(len(tu_cu), len(tu_moi)) and tu_cu[dau] == tu_moi[dau]:
+                dau += 1
+            cuoi = 0
+            while cuoi < min(len(tu_cu), len(tu_moi)) - dau and tu_cu[-1 - cuoi] == tu_moi[-1 - cuoi]:
+                cuoi += 1
+            bo_dau, bo_cuoi = len(''.join(tu_cu[:dau])), len(''.join(tu_cu[len(tu_cu) - cuoi:]))
+            phan_moi = ''.join(tu_moi[dau:len(tu_moi) - cuoi])
+            if not phan_moi.strip() and len(tu_cu) - cuoi == dau:
+                r['loi'].append(f'Sửa #{i}: "tim" và "thay" giống nhau, không có gì để sửa.')
+                continue
+            vat = False
+            for bd in sorted(chon, reverse=True):              # sửa từ cuối lên để vị trí phía trước không lệch
+                x0, x1 = bd + bo_dau, bd + len(t2) - bo_cuoi
+                vt_goc = [M[j] for j in range(x0, x1) if M[j]]
+                if vt_goc:
+                    a, b = vt_goc[0][0], vt_goc[-1][1]
+                else:                                          # chỉ chèn thêm chữ: chèn ngay sau phần giống nhau phía trước
+                    truoc = [M[j] for j in range(bd, x0) if M[j]]
+                    a = b = truoc[-1][1] if truoc else M[bd][0]
+                giua = ''.join(re.findall(r'<[^>]*>', h[a:b]))   # bỏ chữ cũ, giữ nguyên thẻ (đậm, nghiêng, link) nằm giữa
+                vat |= bool(giua)
+                moi = f'<span style="{VANG}">{html.escape(phan_moi, quote=False)}</span>' if phan_moi.strip() else phan_moi
+                h = h[:a] + moi + giua + h[b:]
+            if vat:
+                r['canh_bao'].append(f'Sửa #{i}: phần sửa vắt qua chữ đậm/nghiêng/link – mở file kiểm tra định dạng chỗ này.')
+            if e.get('tinh_toan'):
+                r['can_duyet'].append(f'Sửa #{i} "{tim}" → "{thay}": số TÍNH RA từ nguồn, không có sẵn trên nguồn ({e.get("ly_do", "chưa ghi cách tính")}).')
+            canh = V[max(0, chon[0] - 50):chon[0]].strip()
+            r['da_sua'].append({'cu': tim, 'moi': thay, 'so_cho': len(chon), 'nguon': e.get('nguon', ''),
+                                'ly_do': e.get('ly_do', ''), 'vi_tri': ('…' + canh) if canh else 'đầu bài'})
+        open(f'{T}{ma}.min.html', 'w', encoding='utf-8').write(h)
+        kq[ma] = r
+        het_loi &= not r['loi']
+        print(f'{ma}: sửa được {len(r["da_sua"])}/{len(viec.get("sua", []))} chỗ')
+        for x in r['loi'] + r['canh_bao']:
+            print('  -', x)
+    json.dump(kq, open(T + 'sua-ket-qua.json', 'w'), ensure_ascii=False, indent=1)
+    return het_loi
 
 
 # ======================= SOÁT =======================
@@ -591,41 +817,63 @@ def soat(ch, ma, duong_dan):
 
 # ======================= BÁO CÁO =======================
 def bao_cao(ch, hom_nay, links, them):
-    kq = json.load(open(ch['_tam'] + 'ket-qua.json', encoding='utf-8'))
-    L = [f'# Báo cáo cập nhật lãi suất – {hom_nay}', '']
+    T = ch['_tam']
+    kq = json.load(open(T + 'ket-qua.json', encoding='utf-8'))
+    sk = json.load(open(T + 'sua-ket-qua.json', encoding='utf-8')) if os.path.exists(T + 'sua-ket-qua.json') else {}
+    co_bang = bool(ch['nguon'])
+    L = [f'# Báo cáo cập nhật bài Techcombank – {hom_nay}', '']
     for x in kq['loi_nguon']:
         L.append(f'> **Chưa cập nhật được từ {x} do không truy cập được.**')
+    tt = json.load(open(T + 'trang-thai-nguon.json', encoding='utf-8'))
+    for t in ch['tham_khao']:
+        if not tt.get(t['ma'], '').startswith('ok'):
+            L.append(f'> **Không đọc được nguồn tham khảo {t.get("url") or t.get("tep_html")}: {tt.get(t["ma"])}.**')
     L += [f'> {x}' for x in them]
     h = list(map(int, hom_nay.split('/')))
+    k = lambda x: f'{x} tháng'
     for so_bai, ((ma, b), link) in enumerate(zip(kq['bai'].items(), links + [''] * len(kq['bai'])), 1):
         L += ['', f'## BÀI {so_bai} – {b.get("url") or next(x["url"] for x in ch["bai"] if x["ma"] == ma)}', '']
         if 'loi' in b:
             L += [b['loi'], '']
             continue
-        k = lambda x: f'{x} tháng'
+        s = sk.get(ma, {'da_sua': [], 'loi': [], 'canh_bao': [], 'can_duyet': []})
         lk = f'[{b["ten_file"]}]({link})' if link else b['ten_file']
-        if not (b['sua'] or b['gan_nhat'] or b['gach'] or b['doi_mau']):
-            L += [f'**Link file:** {lk}', '', '**Không có thay đổi lãi suất.**', '']
+        if not (b['sua'] or b['gan_nhat'] or b['gach'] or b['doi_mau'] or s['da_sua']):
+            L += [f'**Link file:** {lk}', '']
+            L += ['**Không có thay đổi lãi suất.**' if co_bang and not ch['tham_khao'] else '**Không có nội dung nào cần cập nhật.**']
+            L += [f'- Cần người duyệt: {x}' for x in s['can_duyet'] + s['loi']] + ['']
             continue
         L += [f'**1. Link file:** {lk}', '', '**2. Ngày tháng đã đổi:**', '']
         L += [f'- {x}' for x in b['doi_ngay']] or ['- Ngày, tháng trong bài đã đúng, không đổi.']
-        L += ['', '**3. Ngày dữ liệu nguồn:**', '']
+        L += ['', '**3. Nguồn đã dùng:**', '']
         for n in kq['nguon']:
             pt = f' (kỳ hạn {", ".join(n["ky_han"])} tháng)' if n['ky_han'] else ''
-            td = f' – "{n["tieu_de"]}"' if n['tieu_de'] else ''
-            L.append(f'- {n["ten"]}{pt}: {n["ngay"] or "không đọc được ngày"}{td}')
-        L += ['', f'**4. Ô đã sửa theo nguồn ({len(b["sua"])} ô):**', '']
-        L += [f'- Bảng {c[0]} – {c[1]} – {k(c[2])}: {c[3]} → {c[4]} (nguồn: {c[5]})' for c in b['sua']] or ['- Không có.']
-        L += ['', f'**4b. Ô đổi màu cao nhất / thấp nhất ({len(b["doi_mau"])} ô, đều tô vàng):**', '']
-        L += [f'- Bảng {c[0]} – {c[1]} – {k(c[2])}: {c[3]} — {c[4]} → {c[5]}' for c in b['doi_mau']] or ['- Không có.']
-        L += ['', f'**5. Ô lấy theo kỳ hạn gần nhất – Trường hợp A ({len(b["gan_nhat"])} ô):**', '']
-        L += [f'- Bảng {c[0]} – {c[1]} – {k(c[2])}: {c[3]} → {c[4]} (lấy theo kỳ hạn {c[5]} tháng)' for c in b['gan_nhat']] or ['- Không có.']
-        if b['gan_nhat_trung']:
-            L += ['', 'Ô cũng lấy theo kỳ hạn gần nhất nhưng ra đúng số cũ (không sửa, không tô):', '']
-            L += [f'- Bảng {c[0]} – {c[1]} – {k(c[2])}: {c[3]} (theo kỳ hạn {c[4]} tháng)' for c in b['gan_nhat_trung']]
-        L += ['', f'**6. Ô điền "-" do không nguồn nào có ngân hàng này – Trường hợp B ({len(b["gach"])} ô):**', '']
-        L += [f'- Bảng {c[0]} – {c[1]} – {k(c[2])}: {c[3]} → -' for c in b['gach']] or ['- Không có.']
-        L += ['', '**7. Trường hợp cần người duyệt kiểm tra:**', '']
+            td = f' – {n["tieu_de"]}' if n['tieu_de'] else ''
+            L.append(f'- Bảng lãi suất – {n["ten"]}{pt}: dữ liệu ngày {n["ngay"] or "không đọc được"}{td}')
+        dung_tk = sorted({x['nguon'] for x in s['da_sua'] if x['nguon']})
+        L += [f'- Tham khảo: {x}' for x in dung_tk]
+        if not kq['nguon'] and not dung_tk:
+            L.append('- Không có.')
+        if co_bang:
+            L += ['', f'**4. Bảng lãi suất – ô đã sửa theo nguồn ({len(b["sua"])} ô):**', '']
+            L += [f'- Bảng {c[0]} – {c[1]} – {k(c[2])}: {c[3]} → {c[4]} (nguồn: {c[5]})' for c in b['sua']] or ['- Không có.']
+            L += ['', f'**4b. Ô đổi màu cao nhất / thấp nhất ({len(b["doi_mau"])} ô, đều tô vàng):**', '']
+            L += [f'- Bảng {c[0]} – {c[1]} – {k(c[2])}: {c[3]} — {c[4]} → {c[5]}' for c in b['doi_mau']] or ['- Không có.']
+            L += ['', f'**4c. Ô lấy theo kỳ hạn gần nhất – Trường hợp A ({len(b["gan_nhat"])} ô):**', '']
+            L += [f'- Bảng {c[0]} – {c[1]} – {k(c[2])}: {c[3]} → {c[4]} (lấy theo kỳ hạn {c[5]} tháng)' for c in b['gan_nhat']] or ['- Không có.']
+            if b['gan_nhat_trung']:
+                L += ['', 'Ô cũng lấy theo kỳ hạn gần nhất nhưng ra đúng số cũ (không sửa, không tô):', '']
+                L += [f'- Bảng {c[0]} – {c[1]} – {k(c[2])}: {c[3]} (theo kỳ hạn {c[4]} tháng)' for c in b['gan_nhat_trung']]
+            L += ['', f'**4d. Ô điền "-" do không nguồn nào có ngân hàng này – Trường hợp B ({len(b["gach"])} ô):**', '']
+            L += [f'- Bảng {c[0]} – {c[1]} – {k(c[2])}: {c[3]} → -' for c in b['gach']] or ['- Không có.']
+        L += ['', f'**5. Nội dung khác đã cập nhật ({len(s["da_sua"])} chỗ, đều tô vàng):**', '']
+        for x in s['da_sua']:
+            nhieu = f' ({x["so_cho"]} chỗ)' if x['so_cho'] > 1 else ''
+            ly = f'; {x["ly_do"]}' if x['ly_do'] else ''
+            L.append(f'- Đoạn "{x["vi_tri"]}": "{x["cu"]}" → "{x["moi"]}"{nhieu} (nguồn: {x["nguon"] or "chưa ghi"}{ly})')
+        if not s['da_sua']:
+            L.append('- Không có.')
+        L += ['', '**6. Trường hợp cần người duyệt kiểm tra:**', '']
         cu = []
         for n in kq['nguon']:
             if n['ngay'] and re.fullmatch(r'\d{1,2}/\d{1,2}/\d{4}', n['ngay']):
@@ -635,9 +883,11 @@ def bao_cao(ch, hom_nay, links, them):
                     cu.append(f'Dữ liệu {n["ten"]}{" (bảng Tại quầy)" if n["ten"] == "VnExpress" else ""} cũ {tre} ngày (cập nhật đến {n["ngay"]}); số có thể đã đổi mà nguồn chưa cập nhật.')
         manh = [f'Bảng {c[0]} – {c[1]} – {c[2]} tháng: đổi mạnh {c[3]} → {c[4]} (nguồn {c[5]}).' for c in b['sua']
                 if so(c[3]) is not None and so(c[4]) is not None and abs(so(c[4]) - so(c[3])) >= 0.8]
-        L += [f'- {x}' for x in cu + b['can_duyet'] + manh] or ['- Không có.']
-        L += ['', f'**8.** Có thay đổi: {len(b["sua"]) + len(b["gan_nhat"]) + len(b["gach"])} ô lãi suất, {len(b["doi_mau"])} ô đổi màu.']
-    thu_muc = os.path.join(os.path.dirname(ch['_tam'].rstrip('/')), 'bao-cao')
+        ds = cu + b['can_duyet'] + manh + s['can_duyet'] + [f'Chưa áp được: {x}' for x in s['loi']] + s['canh_bao']
+        L += [f'- {x}' for x in ds] or ['- Không có.']
+        tong = [f'{len(b["sua"]) + len(b["gan_nhat"]) + len(b["gach"])} ô lãi suất, {len(b["doi_mau"])} ô đổi màu'] if co_bang else []
+        L += ['', f'**7.** Có thay đổi: {", ".join(tong + [str(len(s["da_sua"])) + " chỗ nội dung khác"])}.']
+    thu_muc = os.path.join(os.path.dirname(T.rstrip('/')), 'bao-cao')
     os.makedirs(thu_muc, exist_ok=True)
     p = os.path.join(thu_muc, f'{hom_nay[6:]}-{hom_nay[3:5]}-{hom_nay[:2]}.md')
     open(p, 'w', encoding='utf-8').write('\n'.join(L) + '\n')
@@ -653,6 +903,10 @@ if __name__ == '__main__':
         lay(ch)
     elif lenh == 'dung':
         dung(ch, sys.argv[3])
+    elif lenh == 'xem':
+        xem(ch, sys.argv[3])
+    elif lenh == 'sua':
+        sys.exit(0 if sua(ch, sys.argv[3]) else 1)
     elif lenh == 'soat':
         sys.exit(0 if soat(ch, sys.argv[3], sys.argv[4]) else 1)
     elif lenh == 'bao-cao':
