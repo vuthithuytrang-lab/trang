@@ -1,8 +1,13 @@
 {
-  "bai": [{"url": "https://techcombank.com/thong-tin/blog/gia-ca-phe-hom-nay"}],
-  "tham_khao": [
-    "https://nhabeagri.com/gia-nong-san/gia-ca-phe/",
-    "https://giacaphe.com/gia-ca-phe-noi-dia-ngay-2026-10-07/"
-  ],
-  "nguon": []
+ "bai": [
+  {
+   "url": "https://techcombank.com/thong-tin/blog/gia-ca-phe-hom-nay"
+  }
+ ],
+ "tham_khao": [
+  "https://nhabeagri.com/gia-nong-san/gia-ca-phe/",
+  "https://giacaphe.com/gia-ca-phe-noi-dia-ngay-2026-10-07/",
+  "https://giacaphe.com/gia-ca-phe-truc-tuyen/"
+ ],
+ "nguon": []
 }

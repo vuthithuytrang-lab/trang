@@ -206,14 +206,84 @@
     "ly_do": "Robusta kỳ hạn 11/26: giá 3,590 USD/tấn, thay đổi +62 (giacaphe.com); mã HĐ RMX26 theo quy ước mã tháng của sàn ICE",
     "lan": 1,
     "giu_nguyen_so": true
+   },
+   {
+    "tim": "276.40s",
+    "thay": "307.55",
+    "nguon": "https://giacaphe.com/gia-ca-phe-truc-tuyen/",
+    "ly_do": "Arabica KCZ26 12/26: giá khớp 307.55 US cent/pound, thay đổi +3.10 (giacaphe.com trực tuyến, cập nhật 16:10 07/10/2026)",
+    "giu_nguyen_so": true
+   },
+   {
+    "tim": "-4.10",
+    "thay": "+3.10",
+    "nguon": "https://giacaphe.com/gia-ca-phe-truc-tuyen/",
+    "ly_do": "Arabica KCZ26 12/26: giá khớp 307.55 US cent/pound, thay đổi +3.10 (giacaphe.com trực tuyến, cập nhật 16:10 07/10/2026)",
+    "giu_nguyen_so": true
+   },
+   {
+    "tim": "268.45s",
+    "thay": "298.85",
+    "nguon": "https://giacaphe.com/gia-ca-phe-truc-tuyen/",
+    "ly_do": "Arabica KCH27 03/27: giá khớp 298.85 US cent/pound, thay đổi +3.00 (giacaphe.com trực tuyến, cập nhật 16:10 07/10/2026)",
+    "giu_nguyen_so": true
+   },
+   {
+    "tim": "-3.50",
+    "thay": "+3.00",
+    "nguon": "https://giacaphe.com/gia-ca-phe-truc-tuyen/",
+    "ly_do": "Arabica KCH27 03/27: giá khớp 298.85 US cent/pound, thay đổi +3.00 (giacaphe.com trực tuyến, cập nhật 16:10 07/10/2026)",
+    "giu_nguyen_so": true
+   },
+   {
+    "tim": "265.95s",
+    "thay": "296.45",
+    "nguon": "https://giacaphe.com/gia-ca-phe-truc-tuyen/",
+    "ly_do": "Arabica KCK27 05/27: giá khớp 296.45 US cent/pound, thay đổi +3.95 (giacaphe.com trực tuyến, cập nhật 16:10 07/10/2026)",
+    "giu_nguyen_so": true
+   },
+   {
+    "tim": "-3.55",
+    "thay": "+3.95",
+    "nguon": "https://giacaphe.com/gia-ca-phe-truc-tuyen/",
+    "ly_do": "Arabica KCK27 05/27: giá khớp 296.45 US cent/pound, thay đổi +3.95 (giacaphe.com trực tuyến, cập nhật 16:10 07/10/2026)",
+    "giu_nguyen_so": true
+   },
+   {
+    "tim": "263.10s",
+    "thay": "289.70",
+    "nguon": "https://giacaphe.com/gia-ca-phe-truc-tuyen/",
+    "ly_do": "Arabica KCU27 09/27: giá khớp 289.70 US cent/pound, thay đổi +2.50 (giacaphe.com trực tuyến, cập nhật 16:10 07/10/2026)",
+    "giu_nguyen_so": true
+   },
+   {
+    "tim": "-3.60",
+    "thay": "+2.50",
+    "nguon": "https://giacaphe.com/gia-ca-phe-truc-tuyen/",
+    "ly_do": "Arabica KCU27 09/27: giá khớp 289.70 US cent/pound, thay đổi +2.50 (giacaphe.com trực tuyến, cập nhật 16:10 07/10/2026)",
+    "giu_nguyen_so": true,
+    "lan": 2
+   },
+   {
+    "tim": "264.60s",
+    "thay": "293.40",
+    "nguon": "https://giacaphe.com/gia-ca-phe-truc-tuyen/",
+    "ly_do": "Arabica KCN27 07/27: giá khớp 293.40 US cent/pound, thay đổi +3.45 (giacaphe.com trực tuyến, cập nhật 16:10 07/10/2026)",
+    "giu_nguyen_so": true
+   },
+   {
+    "tim": "-3.60",
+    "thay": "+3.45",
+    "nguon": "https://giacaphe.com/gia-ca-phe-truc-tuyen/",
+    "ly_do": "Arabica KCN27 07/27: giá khớp 293.40 US cent/pound, thay đổi +3.45 (giacaphe.com trực tuyến, cập nhật 16:10 07/10/2026)",
+    "giu_nguyen_so": true
    }
   ],
   "can_duyet": [
-   "Bảng Arabica: GIỮ NGUYÊN. giacaphe.com ghi các kỳ hạn 03/27 (295.85, +11.55), 05/27 (292.50, +11.60), 07/27 (289.95, +11.40), 09/27 (287.20, +11.15), 12/27 (284.15, +10.95) và KHÔNG có kỳ hạn 12/26; trong khi Nhà Bè Agri viết 'Arabica kỳ hạn tháng 12/2026 chạm gần mốc 296 cent/lb'. Hai nguồn lệch nhau về tên kỳ hạn → cần bạn chọn nguồn hoặc đưa nguồn khác.",
-   "Bảng Robusta: giacaphe.com gọi cột giá là 'Giá khớp', không ghi rõ là giá thanh toán (settlement). Mình giữ ký tự 's' như bài cũ — nếu muốn chính xác tuyệt đối thì bỏ 's' hoặc lấy giá settlement từ nguồn khác.",
+   "Bảng Arabica: lấy giá trực tuyến lúc 16:10 07/10/2026 (phiên New York đang giao dịch), nên giá sẽ còn thay đổi đến khi đóng phiên. Vì đây không phải giá chốt phiên, mình BỎ ký tự 's' ở 5 giá Arabica; dòng chú thích '*Ký tự s…' dưới bảng vẫn giữ nguyên – bạn quyết giữ hay bỏ dòng này.",
+   "Hai bảng thế giới khác thời điểm: Robusta là giá chốt phiên 06/10 (có 's', khớp cột 'Hôm trước' trên trang trực tuyến), còn Arabica là giá đang giao dịch 16:10 ngày 07/10. Muốn đồng bộ thì mình có thể đổi Robusta sang giá trực tuyến (11/26: 3,655, +65 lúc 16:10).",
    "Bảng trong nước, dòng Tây Nguyên: bài cũ ghi một khoảng (93,000 - 93,800); nguồn chỉ có một mức 94,200. Nếu muốn giữ dạng khoảng thì có thể dùng 93,600 - 94,400 (thấp nhất – cao nhất của 4 tỉnh).",
-   "Đoạn 7: có lỗi chính tả sẵn trên web 'Tây Nuy' (đúng là 'Tây Nguyên') – chưa sửa vì không thuộc phần số liệu.",
-   "Bài TCB trên web đã ghi sẵn ngày 07/10/2026, nên không có ngày nào cần đổi."
+   "Đoạn 7: có lỗi chính tả sẵn trên web 'Tây Nuy' (đúng là 'Tây Nguyên') – chưa sửa vì không thuộc phần số liệu."
   ]
  }
 }
