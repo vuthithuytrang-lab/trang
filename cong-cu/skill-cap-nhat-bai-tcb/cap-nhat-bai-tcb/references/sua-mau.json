@@ -1,0 +1,30 @@
+{
+  "bai1": {
+    "sua": [
+      {
+        "tim": "0.1 - 0.4%/năm",
+        "thay": "0.2 - 0.5%/năm",
+        "lan": "tat_ca",
+        "nguon": "https://... (bài báo/nguồn nói rõ mức chênh)",
+        "ly_do": "nguồn ghi rõ: online cao hơn tại quầy 0,2 – 0,5%/năm"
+      },
+      {
+        "ngu_canh": "Sacombank",
+        "tim": "4.90",
+        "thay": "5,2",
+        "nguon": "https://...",
+        "ly_do": "ví dụ: số trong bảng không phải bảng lãi suất tự động; sẽ được viết thành 5.20 theo ô cũ"
+      },
+      {
+        "ngu_canh": "Theo quyết định số 986/QĐ-TTg",
+        "tim": "đến năm 2025",
+        "thay": "đến năm 2030",
+        "nguon": "https://...",
+        "ly_do": "ví dụ – chỉ sửa khi nguồn nói rõ"
+      }
+    ],
+    "can_duyet": [
+      "Đoạn 9: Quyết định 986/QĐ-TTg – chưa tìm được nguồn xác nhận văn bản thay thế, giữ nguyên."
+    ]
+  }
+}

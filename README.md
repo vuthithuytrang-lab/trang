@@ -17,6 +17,7 @@ Toàn bộ nội dung ở đây được đọc lại từ bản chụp màn hì
 | `cong-cu/cong-cu-toi-uu-title-meta-seo.md` | Prompt SEO title/meta — **khôi phục nguyên văn** |
 | `cong-cu/cong-cu-chen-tu-khoa-onpage.md` | Prompt chèn từ khoá on-page ngân hàng |
 | `cong-cu/ban-tin-marketing-sang.md` | Bản tin Telegram tự động 7h sáng |
+| `cong-cu/skill-cap-nhat-bai-tcb/` | Skill cập nhật bài blog Techcombank → Google Docs tô vàng chỗ đổi (đọc `HUONG-DAN.md`) |
 
 ## Việc đang dở — làm tiếp từ đây
 
