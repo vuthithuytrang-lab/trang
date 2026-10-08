@@ -1,0 +1,78 @@
+{
+ "_ghi_chu": {},
+ "_petrolimex_tcbc": {
+  "url": "https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-dieu-chinh-gia-xang-dau-tu-15-gio-00-phut-ngay-01-10-2026.html",
+  "tieu_de": "Petrolimex điều chỉnh giá xăng dầu từ 15 giờ 00 phút ngày 01.10.2026",
+  "anh": "cap-nhat/tam/plx-gia.jpg"
+ },
+ "petrolimex": {
+  "ky": "kỳ điều chỉnh từ 15 giờ 00 phút ngày 01.10.2026 (số theo topi.vn, đối chiếu ảnh thông cáo)",
+  "nguon": "https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-dieu-chinh-gia-xang-dau-tu-15-gio-00-phut-ngay-01-10-2026.html",
+  "gia": {
+   "e10_95_v": [
+    28180,
+    28740
+   ],
+   "e10_95_iii": [
+    27180,
+    27720
+   ],
+   "e5_92": [
+    26560,
+    27090
+   ],
+   "do_0001": [
+    31110,
+    31730
+   ],
+   "do_005": [
+    29710,
+    30300
+   ],
+   "dau_hoa": [
+    29770,
+    30360
+   ]
+  }
+ },
+ "pvoil": {
+  "ky": "kỳ điều chỉnh từ 15 giờ 00 phút ngày 01.10.2026 (theo topi.vn)",
+  "nguon": "https://topi.vn/gia-xang-dau-hom-nay.html",
+  "gia": {
+   "e10_95_iii": [
+    27180
+   ],
+   "e5_92": [
+    26560
+   ],
+   "do_005": [
+    29710
+   ],
+   "do_0001": [
+    31110
+   ]
+  }
+ },
+ "mipec": {
+  "ky": "giá đang áp dụng trên mipec.com.vn",
+  "nguon": "https://www.mipec.com.vn/pages/gia-xang-dau-ban-le",
+  "gia": {
+   "e10_95_iii": [
+    27180,
+    27720
+   ],
+   "e5_92": [
+    26560,
+    27090
+   ],
+   "do_0001": [
+    31110,
+    31730
+   ],
+   "do_005": [
+    29710,
+    30300
+   ]
+  }
+ }
+}
