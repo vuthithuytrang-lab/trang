@@ -1,0 +1,32 @@
+{
+ "bai1": {
+  "sua": [
+   {
+    "tim": "cập nhật đến ngày 09/10/2026",
+    "thay": "cập nhật đến ngày 9/10/2026",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "",
+    "ly_do": "ngày cập nhật bảng giá = hôm nay"
+   },
+   {
+    "tim": "cập nhật đến ngày 09/10/2026",
+    "thay": "cập nhật đến ngày 9/10/2026",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "",
+    "ly_do": "ngày cập nhật bảng giá = hôm nay"
+   },
+   {
+    "tim": "mua vào cao nhất khoảng 8.879 triệu VND/chỉ và bán ra thấp nhất khoảng 10.613 triệu VND/chỉ",
+    "thay": "mua vào cao nhất khoảng 9.879 triệu VND/chỉ và bán ra thấp nhất khoảng 10.613 triệu VND/chỉ",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "",
+    "ly_do": "tính từ bảng: giá mua cao nhất 9,879,000 đ/chỉ, giá bán thấp nhất 10,613,000 đ/chỉ",
+    "tinh_toan": true
+   }
+  ],
+  "can_duyet": []
+ }
+}

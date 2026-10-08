@@ -1,0 +1,43 @@
+{
+ "_ghi_chu": {
+  "pvoil": "Topi chưa sang kỳ 08.10.2026 (vẫn số kỳ 01.10) – giữ số cũ, nhờ Trang chụp màn hình trang PVOIL",
+  "mipec": "mipec.com.vn lúc 15h41 vẫn hiện giá kỳ trước – giữ số cũ, cần duyệt"
+ },
+ "_petrolimex_tcbc": {
+  "url": "https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-dieu-chinh-gia-xang-dau-tu-15-gio-00-phut-ngay-08-10-2026.html",
+  "tieu_de": "Petrolimex điều chỉnh giá xăng dầu từ 15 giờ 00 phút ngày 08.10.2026",
+  "anh": "cap-nhat/tam/plx-gia.jpg"
+ },
+ "petrolimex": {
+  "ky": "kỳ điều chỉnh từ 15 giờ 00 phút ngày 08.10.2026 (số theo ảnh bảng giá trong thông cáo Petrolimex – Topi chưa sang kỳ mới)",
+  "nguon": "https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-dieu-chinh-gia-xang-dau-tu-15-gio-00-phut-ngay-08-10-2026.html",
+  "gia": {
+   "e10_95_v": [
+    29050,
+    29630
+   ],
+   "e10_95_iii": [
+    28250,
+    28810
+   ],
+   "e5_92": [
+    27700,
+    28250
+   ],
+   "do_0001": [
+    30520,
+    31130
+   ],
+   "do_005": [
+    29120,
+    29700
+   ],
+   "dau_hoa": [
+    30630,
+    31240
+   ]
+  }
+ },
+ "pvoil": null,
+ "mipec": null
+}
