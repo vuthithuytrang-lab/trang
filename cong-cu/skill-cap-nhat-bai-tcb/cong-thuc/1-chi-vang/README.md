@@ -13,7 +13,7 @@ Trang tích ô trong Sheet "Update" hoặc nhắn *"Update bài 1 chỉ vàng"* 
 | 2.3 Phú Quý | https://phuquygroup.vn/ |
 | 2.4 DOJI | https://banggia.doji.vn/gold-price (nghìn đ/chỉ ×1000). "KNT + KTT + Kim Giáp" ↔ "KIM TT/AVPL". Dòng 16K, 15K: DOJI không còn niêm yết → giữ nguyên, báo cần duyệt |
 | 2.5 PNJ | https://www.pnj.com.vn/site/gia-vang (×1000). "Vàng trang sức 990" ↔ "Vàng nữ trang 9920" |
-| 3. Giá vàng thế giới | https://giavang.org/the-gioi/ — USD/ounce (làm tròn, `4,121`) + giá 1 lượng quy đổi của nguồn; nguồn dùng **tỷ giá Vietcombank** → câu ghi "theo tỷ giá Vietcombank" (Trang đã chỉ nguồn này 07/10/2026) |
+| 3. Giá vàng thế giới | https://giavang.org/the-gioi/ — USD/ounce (bài ghi số lẻ như `4,124.80` → ghi đúng 2 số lẻ của nguồn; bài ghi số tròn `4,121` → làm tròn) + giá 1 lượng quy đổi của nguồn; nguồn dùng **tỷ giá Vietcombank** → câu ghi "theo tỷ giá Vietcombank" (Trang đã chỉ nguồn này 07/10/2026) |
 | Chú thích ảnh | "Vàng miếng SJC vẫn có giá trên 14 vào ngày dd.mm.yyyy" → ngày hôm nay (nếu giá bán SJC còn > 14 triệu); "Vàng Rồng Thăng Long niêm yết giá X VND 1 chỉ vào ngày …" → giá bán trang sức Rồng Thăng Long 999.9 + hôm nay. Chỉ sửa chữ hiện dưới ảnh, không sửa chữ thay thế ảnh |
 | Ghép dòng | Bảng `KHOP` trong `tao_sua.py` (tên dòng trong bài ↔ tên dòng ở nguồn) |
 | Tên file Docs | `<Tiêu đề bài> – dd/mm/yyyy`; trùng → thêm ` (cập nhật HHhMM)` |

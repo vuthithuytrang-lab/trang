@@ -234,20 +234,29 @@ def main():
     ngay = f'{hn.day:02d}/{hn.month:02d}/{hn.year}'
     if usd and luong:
         usd_tron = round(float(usd.group(1).replace(',', '')))
+        thay_cau_tg = False
         vnd = int(luong.group(1).replace('.', ''))
         for o, la_o, noi in dong:
             m = re.search(r'(Cập nhật giá vàng thế giới hôm nay )(\d{1,2}/\d{1,2}/\d{4})', noi)
             if m and o:
                 them(m.group(0), o[0][1] + m.start(), m.group(1) + ngay, tg['url'], 'đề mục: ngày = hôm nay')
-            m = re.search(r'(Giá vàng thế giới ngày )(\d{1,2}/\d{1,2}/\d{4})( giao dịch quanh ngưỡng )([\d,]+)( USD/ounce \(tương đương khoảng )([\d,]+)( VND/lượng quy đổi theo tỷ giá )(\w+)', noi)
+            m = re.search(r'(Giá vàng thế giới ngày )(\d{1,2}/\d{1,2}/\d{4})( giao dịch quanh ngưỡng )([\d,]+(?:\.\d+)?)( USD/ounce \(tương đương khoảng )([\d,]+)( VND/lượng quy đổi theo tỷ giá )(\w+)', noi)
             if m and o:
                 g = list(m.groups())
-                g[1], g[3], g[5], g[7] = ngay, f'{usd_tron:,}', f'{vnd:,}', 'Vietcombank'
+                # bài ghi USD có số lẻ (4,124.80) -> ghi đúng số lẻ của nguồn; bài ghi số tròn (4,121) -> làm tròn
+                so_le = len(g[3].split('.')[1]) if '.' in g[3] else 0
+                usd_moi = f'{float(usd.group(1).replace(",", "")):,.{so_le}f}' if so_le else f'{usd_tron:,}'
+                g[1], g[3], g[5], g[7] = ngay, usd_moi, f'{vnd:,}', 'Vietcombank'
+                thay_cau_tg = True
                 them(m.group(0), o[0][1] + m.start(), ''.join(g), tg['url'],
                      f'giavang.org {tg["cap_nhat"]}: {usd.group(1)} USD/ounce; 1 lượng = 1.20565303 ounce = {vnd:,} VNĐ theo tỷ giá Vietcombank')
-        can.append('Mục 3: nguồn giavang.org quy đổi theo tỷ giá VIETCOMBANK (không có tỷ giá Techcombank) – câu đã đổi '
-                   '"theo tỷ giá Techcombank" thành "theo tỷ giá Vietcombank" cho đúng nguồn, đồng thời sửa lỗi cũ (số cũ tính theo ounce). '
-                   'Muốn giữ chữ Techcombank thì cần nguồn tỷ giá Techcombank.')
+        if not thay_cau_tg:
+            can.append('Mục 3: không tìm thấy câu "Giá vàng thế giới ngày … giao dịch quanh ngưỡng … USD/ounce …" (bài TCB đổi cách viết?) '
+                       '– chưa cập nhật số giá vàng thế giới, cần kiểm tra tay.')
+        else:
+            can.append('Mục 3: nguồn giavang.org quy đổi theo tỷ giá VIETCOMBANK (không có tỷ giá Techcombank) – câu đã đổi '
+                       '"theo tỷ giá Techcombank" thành "theo tỷ giá Vietcombank" cho đúng nguồn, đồng thời sửa lỗi cũ (số cũ tính theo ounce). '
+                       'Muốn giữ chữ Techcombank thì cần nguồn tỷ giá Techcombank.')
     else:
         can.append('Mục 3: không đọc được giavang.org/the-gioi – giữ nguyên đoạn giá vàng thế giới (cả ngày).')
 
