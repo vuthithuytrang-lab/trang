@@ -46,6 +46,9 @@ Bài làm lần đầu chưa đóng gói thì **chưa** thêm vào bảng.
      bài có bảng lãi suất tiết kiệm mà cột D trống → dùng nguồn mặc định VnExpress + Topi như SKILL.md.
    - Cột D trống, không có công thức, không phải bài lãi suất → **không đoán nguồn**: ghi vào ô ngày
      `⚠️ Thiếu nguồn tham khảo – điền cột D rồi tích lại`, bỏ tích, chuyển dòng sau.
+   **Ngày ghi trong bài (Trang chốt 08/10/2026):** chạy trước 15h → ngày hôm nay; chạy **từ 15h trở đi → ngày hôm sau**
+   (vd chạy 16h ngày 8/10 → mọi ngày trong bài, tên file Docs, báo cáo đều ghi 9/10). Các công thức đã tự làm việc này
+   (`N=$(TZ=Asia/Ho_Chi_Minh date -d "+9 hours" +%d/%m/%Y)`). Cột ngày trong Sheet vẫn là **ngày chạy** (hôm nay).
    **Không hỏi Trang gì** — chạy theo lịch, không ai trả lời. Mọi lựa chọn mặc định ghi vào báo cáo.
 4. Tạo Google Docs đúng như SKILL.md, **`parentId` = `1FXvxKb6TvSsbMeK6I3utnLvRZ4Y_vXxI`** (thư mục "Cập nhật bài Techcombank (Claude)") (Bước 5: `search_files` trùng tên → thêm ` (cập nhật HHhMM)` vào tên, `create_file` text/html,
    tải về chạy `soat` phải ra `dòng lệch: 0`; lệch → trash file vừa tạo, tạo lại).

@@ -24,7 +24,7 @@ Trang tích ô trong Sheet "Update" hoặc nhắn *"Update bài 1 chỉ vàng"* 
 SKILL=/home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb
 CT=/home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/1-chi-vang
 cd <thư mục nháp> && mkdir -p cap-nhat && cp $CT/cau-hinh.json cap-nhat/
-N=$(TZ=Asia/Ho_Chi_Minh date +%d/%m/%Y)
+N=$(TZ=Asia/Ho_Chi_Minh date -d "+9 hours" +%d/%m/%Y)   # ngày ghi trong bài: chạy từ 15h trở đi -> ngày hôm sau
 
 python3 -I $SKILL/scripts/cap_nhat.py lay  cap-nhat/cau-hinh.json
 NODE_PATH=/opt/node22/lib/node_modules node $CT/lay_bang.js cap-nhat/bang-nguon.json       # 6 trang, ~2–4 phút

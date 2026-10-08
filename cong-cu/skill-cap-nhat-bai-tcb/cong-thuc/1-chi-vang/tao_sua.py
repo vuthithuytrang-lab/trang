@@ -208,7 +208,8 @@ def main():
                 them(cu, vt, f'{moi:,}', nguon[ma]['url'], ly)
 
     # Chú thích ảnh có ngày dạng dd.mm.yyyy (+ giá Rồng Thăng Long) -> hôm nay / giá mới
-    hn = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=7)))
+    # Ngày ghi trong bài: chạy từ 15h giờ VN trở đi -> ghi ngày hôm sau (+9 giờ là sang ngày mới)
+    hn = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=7))) + datetime.timedelta(hours=9)
     ngay_cham = hn.strftime('%d.%m.%Y')
     rtl = next((r for r in bang.get('btmc', []) if re.search(r'Rồng Thăng Long 999\.9', r[0])), None)
     for o, la_o, noi in dong:

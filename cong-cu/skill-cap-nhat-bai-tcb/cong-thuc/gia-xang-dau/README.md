@@ -25,7 +25,7 @@ Chạy trên bộ công cụ chung `../../cap-nhat-bai-tcb/`.
 SKILL=/home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb
 CT=/home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/gia-xang-dau
 cd <thư mục nháp> && mkdir -p cap-nhat && cp $CT/cau-hinh.json cap-nhat/
-N=$(TZ=Asia/Ho_Chi_Minh date +%d/%m/%Y)
+N=$(TZ=Asia/Ho_Chi_Minh date -d "+9 hours" +%d/%m/%Y)   # ngày ghi trong bài: chạy từ 15h trở đi -> ngày hôm sau
 
 python3 -I $SKILL/scripts/cap_nhat.py lay  cap-nhat/cau-hinh.json      # tải bài TCB (lệnh này XÓA cap-nhat/tam/ → chạy trước)
 python3 -I $CT/lay_gia.py cap-nhat                                     # giá 3 hệ thống → cap-nhat/gia.json + ảnh thông cáo

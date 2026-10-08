@@ -38,7 +38,8 @@ def main():
     a = ap.parse_args()
     dong, van = doc_xem(a.xem)
     g = json.load(open(a.gia, encoding='utf-8')).get('pnj')
-    hn = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=7)))
+    # Ngày ghi trong bài: chạy từ 15h giờ VN trở đi -> ghi ngày hôm sau (+9 giờ là sang ngày mới)
+    hn = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=7))) + datetime.timedelta(hours=9)
     ngay = f'{hn.day}/{hn.month}/{hn.year}'
     sua, can, lech, thay = [], [], [], set()
 

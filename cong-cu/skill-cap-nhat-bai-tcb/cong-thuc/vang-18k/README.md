@@ -23,7 +23,7 @@ Chạy trên bộ công cụ chung `../../cap-nhat-bai-tcb/`.
 SKILL=/home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb
 CT=/home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/vang-18k
 cd <thư mục nháp> && mkdir -p cap-nhat && cp $CT/cau-hinh.json cap-nhat/
-N=$(TZ=Asia/Ho_Chi_Minh date +%d/%m/%Y)
+N=$(TZ=Asia/Ho_Chi_Minh date -d "+9 hours" +%d/%m/%Y)   # ngày ghi trong bài: chạy từ 15h trở đi -> ngày hôm sau
 
 python3 -I $SKILL/scripts/cap_nhat.py lay  cap-nhat/cau-hinh.json
 NODE_PATH=/opt/node22/lib/node_modules node $CT/lay_gia_18k.js cap-nhat/gia-18k.json      # mở trình duyệt đọc 3 nguồn
