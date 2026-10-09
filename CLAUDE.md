@@ -108,3 +108,16 @@ Agent đọc chìa từ file, gửi qua header `Authorization: Bearer <chìa>`, 
 | `khoa-hoc/` | Tiến độ khóa Agent Boss, mã nộp từng bài, sản phẩm đã làm |
 | `cong-cu/` | Công cụ dùng lại được — prompt SEO, bản tin tự động |
 | `BAO-MAT.md` | Danh sách chìa khóa đã lộ cần thu hồi |
+
+## 7. Agent share-bai-social — trạng thái kết nối
+
+Agent + 8 skill cài ở `.claude/` (bản gốc ở `cong-cu/share-bai-social/`). Danh sách quyền chạy ngầm
+(`settings.json`) **chưa bật** — cần Trang đồng ý.
+
+| Nền tảng | Trạng thái | Ghi chú |
+|---|---|---|
+| Blogger | ✅ Đã kết nối 09/10/2026 | Blog "Techcombank Việt Nam" — nganhangtechcombankvn.blogspot.com (tài khoản trangjena3@gmail.com). Google Cloud project `share-bai-blogger`, ở chế độ **Test** → chìa hết hạn sau **7 ngày**. Nút Publish bị mờ, Trang chọn không làm tiếp. |
+
+⚠️ File chìa (`*.local.json`) **không lên git** → máy chủ phiên mới sẽ không có. Khi cần đăng ở phiên mới:
+nhờ Trang đính kèm lại file `client_secret_….json` (đã tải ở bước tạo client), rồi chạy lại bước cấp quyền
+(`google-oauth-server.js`; trang lỗi 127.0.0.1 là bình thường → Trang dán địa chỉ, agent tự `curl` vào server).
