@@ -63,7 +63,9 @@ def _tai_html(phien: requests.Session, url: str) -> tuple[str | None, str | None
         if lan:
             time.sleep(random.uniform(1, 2) * lan)
         try:
-            tl = phien.get(url, timeout=TIMEOUT)
+            # Thêm tham số ngẫu nhiên để vượt lớp lưu tạm (CloudFront) của Techcombank:
+            # đường link thường có thể trả bản cũ thêm vài chục phút sau khi khách đã đăng.
+            tl = phien.get(url, params={"_kiem": random.randint(1, 10**9)}, timeout=TIMEOUT)
         except requests.RequestException as e:
             loi = type(e).__name__
             continue
