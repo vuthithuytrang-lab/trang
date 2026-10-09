@@ -90,6 +90,11 @@ Có bài mẫu đã đăng thật để bắt chước giọng văn và cấu tr
 - **WordPress: heading phải đặt cỡ chữ trong từng bài** — H2 = 26px, H3 = 21px (theme mặc định chữ quá to, gói miễn phí không sửa giao diện chung được). Mẫu khối Gutenberg chính xác ở mục C4 của `HUONG-DAN-TCB.md`. Blogger không áp dụng.
 - Không đọc được bài gốc thì bỏ qua dòng đó và báo lại, **không bịa**. Soát lỗi theo bảng C5 và checklist C6.
 
+**Nhịp đăng + kết bài (Trang dặn 09/10/2026):**
+- Các bài cách nhau **45–60 phút** (lệch ngẫu nhiên trong khoảng đó).
+- **Không có đoạn/mục tóm tắt ở cuối bài** (không "Kết luận", "Tóm lại", "Như vậy…"). Kết bằng mục nội dung cuối, rồi đúng 1 câu lưu ý "thông tin mang tính tham khảo, có thể thay đổi theo thời điểm".
+- Đợt Hoa 10–11/10/2026: 40 bài WordPress lên `nganhangtechcombankvn.wordpress.com`, xong trước 17h Chủ nhật 11/10. Công cụ + lịch: `cong-cu/share-bai-social/tcb-hoa/`.
+
 **Làm việc cùng tool kia (Trang dặn 09/10/2026):** tôi là *đồng nghiệp* đăng song song với một tool khác, không phải người quản lý tool đó.
 - **Không động vào bất cứ thứ gì tool kia làm**: không sửa, không xóa, không đăng lại bài của nó trên các nền tảng; không sửa ô hay dòng nó đã điền trên sheet (cột G, H, I, J của nó).
 - Chỉ **thêm** dòng mới cho bài của chính mình, vào dòng trống ngay dưới nhóm.

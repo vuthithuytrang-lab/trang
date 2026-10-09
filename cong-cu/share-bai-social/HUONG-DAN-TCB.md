@@ -159,6 +159,8 @@
 
 ## PHẦN D — Nhịp đăng chống spam
 
+- **Quy tắc mới (Trang dặn 09/10/2026): các bài cách nhau 45–60 phút.** Bài **không có đoạn/mục tóm tắt cuối bài** — kết bằng mục nội dung cuối + 1 câu lưu ý tham khảo.
+
 - Mỗi nền tảng **~50 phút / bài** (lệch ngẫu nhiên ±8 phút). Hai nền tảng so le nhau 15–25 phút.
 - WordPress: hẹn giờ trước hàng loạt được.
 - Blogger: **không tạo hàng loạt** — tạo từng bài cách nhau vài phút trở lên; tốt nhất tạo đúng giờ đăng. Bị 403 → dừng, chờ vài giờ.
