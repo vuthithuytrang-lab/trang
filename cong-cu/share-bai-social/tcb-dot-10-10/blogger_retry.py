@@ -11,5 +11,5 @@ for s in S:
     out=subprocess.run(['python3','post.py','blogger',str(s['row']),t.isoformat()],capture_output=True,text=True)
     line=(out.stdout or out.stderr).strip().splitlines()[-1]
     open('posted.jsonl','a').write(line+'\n'); print(now.strftime('%H:%M'),line,flush=True)
-    if '"url"' in line: time.sleep(600); break
+    if '"url"' in line: time.sleep(1200); break
     time.sleep(1800)
