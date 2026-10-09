@@ -1,0 +1,83 @@
+{
+ "kw_phu": [
+  "rủi ro tỷ giá",
+  "phòng ngừa rủi ro tỷ giá"
+ ],
+ "docs": {
+  "Webflow": {
+   "title": "Biến động tỷ giá với doanh nghiệp SME: tác động và cách ứng phó",
+   "meta": "Biến động tỷ giá với doanh nghiệp SME ảnh hưởng ra sao tới chi phí nhập khẩu, doanh thu xuất khẩu? Xem các cách phòng ngừa rủi ro tỷ giá chủ động.",
+   "sapo": "Với doanh nghiệp SME làm xuất nhập khẩu, mỗi lần tỷ giá đổi chiều là giá vốn, biên lợi nhuận và kế hoạch dòng tiền cũng thay đổi theo. Bài viết dưới đây giúp bạn nhìn rõ biến động tỷ giá với doanh nghiệp SME tác động ở đâu và có thể làm gì để chủ động hơn.",
+   "sections": [
+    {
+     "h2": "1. Biến động tỷ giá tác động thế nào đến hoạt động của doanh nghiệp SME xuất nhập khẩu?",
+     "paras": [
+      "Rủi ro lớn nhất thường nằm ở khoảng thời gian giữa lúc ký hợp đồng và lúc thực sự trả hoặc nhận tiền. Khoảng cách này có thể kéo dài vài tuần tới vài tháng tùy điều khoản L/C hay TT, và trong thời gian đó tỷ giá hoàn toàn có thể dịch chuyển theo hướng bất lợi.",
+      "Nếu bạn nhập khẩu, tỷ giá tăng nghĩa là phải bỏ ra nhiều VND hơn cho cùng một khoản ngoại tệ. Nguyên liệu, linh kiện hay máy móc đều đắt lên, trong khi giá bán trong nước khó điều chỉnh ngay, nên phần lãi của những đơn hàng đã chốt giá sẽ bị bào mòn.",
+      "Nếu bạn xuất khẩu, chiều ngược lại cũng gây khó: tỷ giá giảm khiến số VND quy đổi từ hợp đồng ngoại tệ thấp hơn kế hoạch. Doanh thu hụt kéo theo áp lực lên dòng tiền, chi phí vận hành và kế hoạch tái đầu tư, nhất là với SME có nguồn vốn mỏng."
+     ]
+    },
+    {
+     "h2": "2. Các giải pháp phòng ngừa rủi ro tỷ giá hiệu quả cho doanh nghiệp SME",
+     "paras": [
+      "Thay vì chờ thị trường quyết định thay mình, bạn có thể kết hợp vài cách làm từ khâu kế hoạch đến công cụ phòng vệ chuyên dụng:",
+      "- Lập kế hoạch dòng tiền ngoại tệ theo tháng hoặc quý, ghi rõ khoản nào phải thu, phải trả và vào thời điểm nào, để có thời gian chọn lúc mua bán ngoại tệ phù hợp.",
+      "- Đàm phán đa dạng đồng tiền thanh toán với đối tác, hoặc cân nhắc trả một phần bằng VND với đối tác quen trong khu vực, để không dồn toàn bộ rủi ro vào USD.",
+      "- Cập nhật mỗi ngày tỷ giá trung tâm mà Ngân hàng Nhà nước công bố cùng các bản tin phân tích thị trường để nhận ra xu hướng sớm.",
+      "- Dùng dịch vụ mua bán ngoại tệ kỳ hạn để chốt trước tỷ giá cho giao dịch tương lai, kỳ hạn linh hoạt từ 3 đến 364 ngày, cùng các giải pháp hoán đổi hoặc quyền chọn.",
+      "Trên Techcombank Business, kênh FX Hub hỗ trợ thêm: ưu đãi tỷ giá theo quy mô giao dịch, cảnh báo khi tỷ giá chạm mức bạn mong muốn, báo cáo dự báo từ chuyên gia, biểu đồ tỷ giá real-time và công cụ quy đổi ngoại tệ."
+     ]
+    }
+   ],
+   "image": {
+    "index": 2,
+    "after_section": 1,
+    "caption": "FX Hub trên Techcombank Business giúp doanh nghiệp theo dõi tỷ giá real-time và chốt tỷ giá kỳ hạn, một công cụ phòng ngừa rủi ro tỷ giá thiết thực."
+   },
+   "conclusion": "Biến động tỷ giá với doanh nghiệp SME là chuyện khó tránh, nhưng có thể kiểm soát được. Khi kết hợp kế hoạch dòng tiền rõ ràng, đồng tiền thanh toán đa dạng, thói quen theo dõi thị trường và công cụ phái sinh phù hợp, doanh nghiệp sẽ giữ được biên lợi nhuận ổn định hơn và chủ động hơn trong kế hoạch dài hạn.",
+   "cta": "Bạn muốn chốt trước tỷ giá cho các hợp đồng sắp tới? Hãy tìm hiểu dịch vụ mua bán ngoại tệ kỳ hạn và trải nghiệm FX Hub trên Techcombank Business, hoặc liên hệ hotline doanh nghiệp 1800 6556 để được chuyên viên Techcombank tư vấn."
+  },
+  "Wix": {
+   "title": "Biến động tỷ giá với doanh nghiệp SME và giải pháp phòng vệ",
+   "meta": "Tỷ giá lên xuống làm chi phí nhập khẩu, doanh thu xuất khẩu của SME thay đổi ra sao? Gợi ý cách quản lý rủi ro tỷ giá và chốt giá trước cùng Techcombank.",
+   "sapo": "Chỉ một thay đổi nhỏ của tỷ giá cũng có thể làm lệch kế hoạch lợi nhuận của cả lô hàng. Cùng điểm lại biến động tỷ giá với doanh nghiệp SME gây ra những áp lực nào và các bước giúp bạn bớt bị động trước thị trường ngoại hối.",
+   "sections": [
+    {
+     "h2": "1. Biến động tỷ giá tác động thế nào đến hoạt động của doanh nghiệp SME xuất nhập khẩu?",
+     "paras": [
+      "Với SME thanh toán hoặc thu tiền bằng ngoại tệ, tỷ giá ảnh hưởng thẳng tới giá vốn, lãi gộp và khả năng lập ngân sách. Điểm dễ bị bỏ qua là độ trễ giữa ngày ký hợp đồng và ngày tiền thật sự chuyển đi hoặc về.",
+      "Ở phía nhập khẩu, tỷ giá đi lên khiến cùng một hóa đơn ngoại tệ tốn nhiều VND hơn. Giá bán nội địa lại không thể tăng theo ngay, nên các đơn đã báo giá trước có thể mất hiệu quả. Ở phía xuất khẩu, tỷ giá đi xuống làm khoản thu quy đổi ra VND nhỏ đi dù giá trị hợp đồng không đổi, kéo theo khó khăn cho dòng tiền và thanh khoản ngắn hạn."
+     ]
+    },
+    {
+     "h2": "2. Các giải pháp phòng ngừa rủi ro tỷ giá hiệu quả cho doanh nghiệp SME",
+     "paras": [
+      "Nền tảng đầu tiên là một bảng dòng tiền ngoại tệ theo tháng hoặc theo quý. Khi biết trước khoản nào đến hạn, bạn sẽ có đủ thời gian lựa chọn công cụ và thời điểm giao dịch, thay vì phải mua bán gấp đúng lúc tỷ giá kém thuận lợi.",
+      "Tiếp theo, hãy giảm sự phụ thuộc vào một loại tiền duy nhất bằng cách thương lượng nhiều đồng tiền thanh toán, hoặc dùng VND cho một phần giao dịch với đối tác trong khu vực. Song song, việc cập nhật tỷ giá trung tâm hằng ngày và các báo cáo thị trường do Techcombank cung cấp giúp bạn ra quyết định có cơ sở hơn.",
+      "Cuối cùng là công cụ phòng vệ: dịch vụ mua bán ngoại tệ kỳ hạn cho phép cố định tỷ giá hôm nay cho giao dịch trong tương lai, bên cạnh hoán đổi và quyền chọn. FX Hub trên Techcombank Business bổ sung cảnh báo ngưỡng tỷ giá, ưu đãi tỷ giá riêng và biểu đồ theo thời gian thực."
+     ]
+    }
+   ],
+   "image": {
+    "index": 1,
+    "after_section": 1,
+    "caption": "Đa dạng hóa đồng tiền thanh toán trong hợp đồng là một cách quản lý rủi ro tỷ giá, giảm phụ thuộc vào một loại ngoại tệ."
+   },
+   "conclusion": "Tóm lại, rủi ro tỷ giá đến từ cả hai chiều tăng và giảm, tác động lên chi phí lẫn doanh thu. Doanh nghiệp SME chủ động lập kế hoạch, phân tán đồng tiền thanh toán, theo dõi thị trường và dùng công cụ phái sinh phù hợp sẽ chuyển từ thế bị động sang thế chủ động.",
+   "cta": "Hãy để Techcombank đồng hành cùng bạn trong việc quản lý ngoại tệ: tìm hiểu dịch vụ mua bán ngoại tệ kỳ hạn, kênh FX Hub trên Techcombank Business hoặc gặp chuyên viên Quản lý khách hàng doanh nghiệp tại chi nhánh gần nhất."
+  },
+  "Mastodon": {
+   "open": "Biến động tỷ giá với doanh nghiệp SME xuất nhập khẩu: lợi nhuận có thể lung lay chỉ sau một lần tỷ giá đổi chiều.",
+   "points": "• Tỷ giá tăng: hàng nhập tốn thêm VND\n• Tỷ giá giảm: doanh thu xuất khẩu quy đổi hụt\n• Cách giảm rủi ro: lập kế hoạch dòng tiền ngoại tệ, đa dạng đồng tiền thanh toán, chốt tỷ giá kỳ hạn",
+   "close_cta": "Xem cách Techcombank hỗ trợ:",
+   "image_index": 0,
+   "caption": "Biến động tỷ giá với doanh nghiệp SME làm thay đổi cả giá vốn hàng nhập lẫn số tiền thu về từ hàng xuất."
+  },
+  "Pinterest": {
+   "title": "Biến động tỷ giá với doanh nghiệp SME: rủi ro và cách chủ động phòng vệ",
+   "desc": "Tỷ giá tăng làm chi phí nhập khẩu đội lên, tỷ giá giảm làm doanh thu xuất khẩu quy đổi hụt đi. SME có thể giảm rủi ro tỷ giá bằng kế hoạch dòng tiền ngoại tệ, đa dạng đồng tiền thanh toán, theo dõi thị trường và chốt tỷ giá kỳ hạn qua FX Hub trên Techcombank Business. Tìm hiểu thêm tại:",
+   "image_index": 2,
+   "caption": "Kênh FX Hub trên Techcombank Business hỗ trợ phòng ngừa rủi ro tỷ giá cho doanh nghiệp SME."
+  }
+ }
+}
