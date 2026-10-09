@@ -1,0 +1,11 @@
+{
+  "ten-site-webflow": {
+    "token": "SITE_TOKEN_TU_WEBFLOW",
+    "token_saved_at": "TU_DONG_DIEN",
+    "site_id": "ID_SITE",
+    "collection_id": "ID_COLLECTION_BLOG",
+    "field_body": "slug-truong-noi-dung",
+    "field_image": "slug-truong-anh",
+    "site_domain": "ten-site.webflow.io"
+  }
+}
