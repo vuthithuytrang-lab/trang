@@ -120,6 +120,18 @@
 
 - Chỉ dùng thẻ: `<p>`, `<h2>`, `<h3>`, `<ul>`, `<ol>`, `<li>`, `<strong>`, `<a>`. Không H1 (tiêu đề nằm riêng), không markdown, không style.
 - Blogger: HTML thường. WordPress: bọc thành khối Gutenberg.
+- **WordPress — cỡ chữ heading (bắt buộc với mọi bài WP, cả bài đăng ngay lẫn bài hẹn giờ):** theme mặc định làm H2/H3 rất to,
+  gói miễn phí không cho sửa giao diện chung của cả trang → đặt cỡ chữ ngay trong từng khối heading. Đây là **ngoại lệ duy nhất** của quy tắc "không style".
+  - H2 = **26px**:
+    `<!-- wp:heading {"style":{"typography":{"fontSize":"26px"}}} -->`
+    `<h2 class="wp-block-heading" style="font-size:26px">…</h2>`
+    `<!-- /wp:heading -->`
+  - H3 = **21px**:
+    `<!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"21px"}}} -->`
+    `<h3 class="wp-block-heading" style="font-size:21px">…</h3>`
+    `<!-- /wp:heading -->`
+  - Blogger không áp dụng (giữ HTML thường).
+  - Sau khi đăng: mở bài, chụp ảnh soát cỡ chữ heading + dấu tiếng Việt + bố cục.
 
 ### C5. Lỗi hay gặp trong bài gốc TCB (đừng chép theo)
 

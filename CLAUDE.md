@@ -87,6 +87,7 @@ Có bài mẫu đã đăng thật để bắt chước giọng văn và cấu tr
 - Kết bài có câu "thông tin mang tính tham khảo, có thể thay đổi theo thời điểm".
 - Cùng một từ khóa thì bài cho mỗi nền tảng phải khác hẳn nhau: Blogger viết theo thứ tự bài gốc, WordPress mở bằng một tình huống hoặc câu hỏi.
 - Chỉ dùng các thẻ `p h2 h3 ul ol li strong a`. Bài cho WordPress bọc thành khối Gutenberg.
+- **WordPress: heading phải đặt cỡ chữ trong từng bài** — H2 = 26px, H3 = 21px (theme mặc định chữ quá to, gói miễn phí không sửa giao diện chung được). Mẫu khối Gutenberg chính xác ở mục C4 của `HUONG-DAN-TCB.md`. Blogger không áp dụng.
 - Không đọc được bài gốc thì bỏ qua dòng đó và báo lại, **không bịa**. Soát lỗi theo bảng C5 và checklist C6.
 
 **Làm việc cùng tool kia (Trang dặn 09/10/2026):** tôi là *đồng nghiệp* đăng song song với một tool khác, không phải người quản lý tool đó.
