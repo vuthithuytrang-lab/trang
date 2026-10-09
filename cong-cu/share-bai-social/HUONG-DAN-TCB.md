@@ -15,6 +15,8 @@
 | Blogger | https://nganhangtechcombankvn.blogspot.com (blog "Techcombank Việt Nam", blog ID `6701158052132617774`) | trangjena3@gmail.com | Google OAuth (Blogger API v3) | **Có — 7 ngày** (app đang ở chế độ Test) |
 | WordPress.com | https://techcombankvietnam.wordpress.com (site ID `257871734`) | tài khoản WP của Trang | WordPress.com OAuth, `response_type=code`, scope `global` | Không |
 | Mastodon / Pinterest / Wix / Webflow | (tool khác đang chạy) | — | — | — |
+| WordPress.com (của mình — cột H ghi `- Hoa`) | https://nganhangtechcombankvn.wordpress.com (tên site "techcombank7", site ID `257873894`) | tài khoản WP của Trang | WordPress.com OAuth `response_type=code`, scope `global`, app Client ID `150168` | Không — **đã kết nối 09/10/2026**, thử quyền đăng bài OK |
+| Blogger (của mình — cột H ghi `- Hoa`) | https://nganhangtechcombankvietnam.blogspot.com | hoaa8k58@gmail.com (chị Hoa) | Google OAuth, project `share-bai-blogger-511119` trên hoaa8k58 | **CHƯA xong** — đã có chìa, còn bước bấm Cho phép: Google đòi mã trên điện thoại Galaxy của chị Hoa. Hướng đề xuất: chị Hoa mời Gmail của Trang làm Quản trị viên blog |
 
 ### A2. Kết nối Blogger (làm 1 lần, ~10 phút)
 
