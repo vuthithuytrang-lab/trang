@@ -46,8 +46,8 @@ def to_gutenberg(html):
     out = []
     for line in [l.strip() for l in html.splitlines() if l.strip()]:
         if line.startswith('<p'): out.append('<!-- wp:paragraph -->\n' + line + '\n<!-- /wp:paragraph -->')
-        elif line.startswith('<h2'): out.append('<!-- wp:heading -->\n' + line.replace('<h2>', '<h2 class="wp-block-heading">') + '\n<!-- /wp:heading -->')
-        elif line.startswith('<h3'): out.append('<!-- wp:heading {"level":3} -->\n' + line.replace('<h3>', '<h3 class="wp-block-heading">') + '\n<!-- /wp:heading -->')
+        elif line.startswith('<h2'): out.append('<!-- wp:heading {"style":{"typography":{"fontSize":"26px"}}} -->\n' + line.replace('<h2>', '<h2 class="wp-block-heading" style="font-size:26px">') + '\n<!-- /wp:heading -->')
+        elif line.startswith('<h3'): out.append('<!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"21px"}}} -->\n' + line.replace('<h3>', '<h3 class="wp-block-heading" style="font-size:21px">') + '\n<!-- /wp:heading -->')
         elif line.startswith('<ul'): out.append('<!-- wp:list -->\n<ul class="wp-block-list">')
         elif line.startswith('<ol'): out.append('<!-- wp:list {"ordered":true} -->\n<ol class="wp-block-list">')
         elif line.startswith('</ul'): out.append('</ul>\n<!-- /wp:list -->')

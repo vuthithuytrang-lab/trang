@@ -117,6 +117,9 @@
 
 - Chỉ dùng thẻ: `<p>`, `<h2>`, `<h3>`, `<ul>`, `<ol>`, `<li>`, `<strong>`, `<a>`. Không H1 (tiêu đề nằm riêng), không markdown, không style.
 - Blogger: HTML thường. WordPress: bọc thành khối Gutenberg.
+- **WordPress — cỡ chữ heading:** theme mặc định làm H2/H3 rất to. Đặt cỡ chữ ngay trong khối:
+  H2 = **26px** (`<!-- wp:heading {"style":{"typography":{"fontSize":"26px"}}} -->` + `style="font-size:26px"`), H3 = **21px**.
+  (Gói miễn phí không cho sửa CSS toàn site, nên phải đặt trong từng bài.)
 
 ### C5. Lỗi hay gặp trong bài gốc TCB (đừng chép theo)
 
