@@ -75,7 +75,7 @@
 - Cột: **D** từ khóa · **F** URL bài gốc · **H** nền tảng · **I** link đã share · **J** ngày share. Cột G là số nền tảng (tool khác điền) — không đụng.
 - **Dòng gốc** = dòng có cả D và F. Các dòng ngay dưới, D/F trống nhưng có H → cùng bài với dòng gốc.
 - Ghi bài mới: điền vào **dòng trống ngay dưới nhóm** của bài đó (không chèn dòng, không ghi đè dòng có sẵn).
-  - Cột H ghi theo dạng **`<Nền tảng> - Trang`**: `Blogger - Trang`, `WordPress - Trang`.
+  - Cột H ghi theo dạng **`<Tên nền tảng social> - Hoa`**, ví dụ `Blog - Hoa` (từ đợt sau 10/10/2026; đợt 10/10 đã ghi `Blogger - Trang`, `WordPress - Trang` — giữ nguyên các dòng cũ).
   - Cột I: link bài (link đẹp). Cột J: ngày đăng dạng `d/m/yyyy` (vd `10/10/2026`).
 - Không sửa / xóa bất kỳ ô nào khác, đặc biệt cột H do tool khác chèn.
 - Bỏ qua dòng tiêu đề nhóm (chỉ có ngày như "10/9"), dòng trống, dòng đã có link ở cột I.

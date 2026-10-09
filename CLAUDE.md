@@ -92,7 +92,7 @@ Có bài mẫu đã đăng thật để bắt chước giọng văn và cấu tr
 **Điền sheet, tóm tắt** (tab "Share social"):
 - Cột D là từ khóa, F là URL bài gốc, H là nền tảng, I là link đã share, J là ngày share. **Không đụng cột G.**
 - Điền vào dòng trống ngay dưới nhóm của bài đó. Không chèn dòng, không ghi đè ô đã có.
-- Cột H ghi theo dạng `<Nền tảng> - Trang`. Cột I là link đẹp (WordPress không dùng link `?p=`). Cột J ghi `d/m/yyyy`.
+- Cột H ghi theo dạng `<Tên nền tảng social> - Hoa`, ví dụ `Blog - Hoa` (Trang đổi ngày 09/10/2026; đợt trước ghi `- Trang`). Cột I là link đẹp (WordPress không dùng link `?p=`). Cột J ghi `d/m/yyyy`.
 - Từ khoảng dòng 476 có loạt dòng trùng lặp không có STT → đừng đăng trùng.
 
 ## 4. Giới hạn môi trường đã gặp (đừng mất công thử lại)
