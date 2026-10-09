@@ -117,7 +117,8 @@ Agent + 8 skill cài ở `.claude/` (bản gốc ở `cong-cu/share-bai-social/`
 | Nền tảng | Trạng thái | Ghi chú |
 |---|---|---|
 | Blogger | ✅ Đã kết nối 09/10/2026 | Blog "Techcombank Việt Nam" — nganhangtechcombankvn.blogspot.com (tài khoản trangjena3@gmail.com). Google Cloud project `share-bai-blogger`, ở chế độ **Test** → chìa hết hạn sau **7 ngày**. Nút Publish bị mờ, Trang chọn không làm tiếp. |
+| WordPress | ✅ Đã kết nối 09/10/2026 | Blog techcombankvietnam.wordpress.com (site ID 257871734, tên "techcombankvn"). App WP `share-bai-wp` client_id 150163, scope `global`. Chìa **không hết hạn**. |
 
 ⚠️ File chìa (`*.local.json`) **không lên git** → máy chủ phiên mới sẽ không có. Khi cần đăng ở phiên mới:
-nhờ Trang đính kèm lại file `client_secret_….json` (đã tải ở bước tạo client), rồi chạy lại bước cấp quyền
+nhờ Trang đính kèm lại file chìa (Blogger: `client_secret_….json`; WordPress: `chia-wordpress.txt`), rồi chạy lại bước cấp quyền
 (`google-oauth-server.js`; trang lỗi 127.0.0.1 là bình thường → Trang dán địa chỉ, agent tự `curl` vào server).
