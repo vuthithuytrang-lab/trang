@@ -1,0 +1,12 @@
+{
+  "tenblog.wordpress.com": {
+    "client_id": "WP_APP_CLIENT_ID",
+    "client_secret": "WP_APP_CLIENT_SECRET",
+    "redirect_uri": "https://localhost/",
+    "access_token": "TU_DONG_DIEN",
+    "token_type": "bearer",
+    "token_scope": "global",
+    "token_expires": false,
+    "obtained_at": "TU_DONG_DIEN"
+  }
+}

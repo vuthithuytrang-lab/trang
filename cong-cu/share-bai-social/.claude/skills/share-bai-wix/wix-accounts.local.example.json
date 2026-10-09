@@ -1,0 +1,8 @@
+{
+  "tenban.wixsite.com/ten-site": {
+    "api_key": "API_KEY_TU_WIX",
+    "account_id": "ID_ACCOUNT",
+    "site_id": "ID_SITE",
+    "member_id": "ID_THANH_VIEN_TAC_GIA"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bash .claude/skills/share-bai-wp/scripts/wp-http.sh *)",
+      "Bash(node .claude/skills/share-bai-wp/scripts/wp-json.js *)",
+      "Bash(bash .claude/skills/share-bai-blogger/scripts/blogger-http.sh *)",
+      "Bash(node .claude/skills/share-bai-blogger/scripts/blogger-json.js *)",
+      "Bash(bash .claude/skills/share-bai-ggr/scripts/ggr-http.sh *)",
+      "Bash(node .claude/skills/share-bai-ggr/scripts/ggr-json.js *)",
+      "Bash(node .claude/skills/share-bai-ggr/scripts/ggr-oauth-server.js *)",
+      "Bash(bash .claude/skills/share-bai-tumblr/scripts/tumblr-http.sh *)",
+      "Bash(node .claude/skills/share-bai-tumblr/scripts/tumblr-json.js *)",
+      "Bash(node .claude/skills/share-bai-tumblr/scripts/tumblr-oauth-server.js *)",
+      "Bash(bash .claude/skills/share-bai-wix/scripts/wix-http.sh *)",
+      "Bash(node .claude/skills/share-bai-wix/scripts/wix-json.js *)",
+      "Bash(bash .claude/skills/share-bai-webflow/scripts/webflow-http.sh *)",
+      "Bash(node .claude/skills/share-bai-webflow/scripts/webflow-json.js *)",
+      "Bash(bash .claude/skills/share-bai-mastodon/scripts/mastodon-http.sh *)",
+      "Bash(node .claude/skills/share-bai-mastodon/scripts/mastodon-json.js *)",
+      "Bash(bash .claude/skills/google-sheets-social/scripts/sheets-http.sh *)",
+      "Bash(node .claude/skills/google-sheets-social/scripts/sheets-json.js *)",
+      "Bash(node .claude/skills/google-sheets-social/scripts/sheets-oauth-server.js *)"
+    ]
+  }
+}
