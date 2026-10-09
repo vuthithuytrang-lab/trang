@@ -73,6 +73,28 @@ Ba luật cứng nhất:
 ⚠️ Cẩm nang này là của **SEONGON — công ty Trang**. Sản phẩm bài học (ShopOne, v.v.) là thương hiệu
 giả lập của khóa học, có bộ màu riêng, đừng trộn hai bên vào nhau.
 
+## 3c. Share bài Techcombank (TCB) — cách viết bài + cách điền sheet
+
+**Phần việc của tôi:** viết bài và điền sheet. Việc kết nối nền tảng là Trang tự lo, tôi không tự kết nối.
+Trước khi viết hoặc điền sheet, **đọc lại phần B + C + D của `cong-cu/share-bai-social/HUONG-DAN-TCB.md`**, đừng làm theo trí nhớ.
+Có bài mẫu đã đăng thật để bắt chước giọng văn và cấu trúc: `cong-cu/share-bai-social/bai-mau-tcb/`.
+
+**Viết bài, tóm tắt:**
+- Mỗi bài 900–1100 từ, tiếng Việt đủ dấu, giữ đúng mọi số liệu và căn cứ pháp luật của bài gốc. Không chép nguyên câu.
+- Tiêu đề 55–70 ký tự, có từ khóa. Từ khóa có ở đoạn mở đầu và lặp 3–5 lần trong bài.
+- **Đúng 1 link**: đặt trên từ khóa ở đoạn mở đầu, trỏ về URL ở cột F.
+- Không dùng từ "nhất / số 1 / hàng đầu" nếu không có số liệu chứng minh. Không chép hotline hay email.
+- Kết bài có câu "thông tin mang tính tham khảo, có thể thay đổi theo thời điểm".
+- Cùng một từ khóa thì bài cho mỗi nền tảng phải khác hẳn nhau: Blogger viết theo thứ tự bài gốc, WordPress mở bằng một tình huống hoặc câu hỏi.
+- Chỉ dùng các thẻ `p h2 h3 ul ol li strong a`. Bài cho WordPress bọc thành khối Gutenberg.
+- Không đọc được bài gốc thì bỏ qua dòng đó và báo lại, **không bịa**. Soát lỗi theo bảng C5 và checklist C6.
+
+**Điền sheet, tóm tắt** (tab "Share social"):
+- Cột D là từ khóa, F là URL bài gốc, H là nền tảng, I là link đã share, J là ngày share. **Không đụng cột G.**
+- Điền vào dòng trống ngay dưới nhóm của bài đó. Không chèn dòng, không ghi đè ô đã có.
+- Cột H ghi theo dạng `<Nền tảng> - Trang`. Cột I là link đẹp (WordPress không dùng link `?p=`). Cột J ghi `d/m/yyyy`.
+- Từ khoảng dòng 476 có loạt dòng trùng lặp không có STT → đừng đăng trùng.
+
 ## 4. Giới hạn môi trường đã gặp (đừng mất công thử lại)
 
 | Bị chặn | Biểu hiện | Đường vòng |
