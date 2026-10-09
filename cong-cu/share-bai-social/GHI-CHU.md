@@ -21,7 +21,10 @@ không bao giờ dùng chung chìa giữa các dự án.
 ## Lịch tự chạy
 - Routine **"AIG – đăng bài social theo lịch"** (`trig_01XTBV46CbbCK7xXmG1KTwb8`): chạy :05 mỗi giờ, 8:05–20:05 giờ VN,
   mỗi lần đăng đúng 1 mục đến hạn trong `du-an/AIG-lich-dang.json`, theo `HUONG-DAN-LUOT-DANG.md`.
-- Lịch hiện tại: 11 bài × 4 nền tảng = 44 lượt, 05/10 14:05 → 09/10 08:05 (giờ hẹn cũng ghi ở cột F trên sheet).
+- Lịch đợt 1: 11 bài × 4 nền tảng = 44 lượt, 05/10 14:05 → 09/10 08:05. **✅ XONG 44/44 lúc 09/10/2026 08:10, 0 lỗi.**
+  Routine đã **TẮT** (enabled=false) — đợt mới: tạo lịch mới rồi bật lại routine.
+- 08/10: lượt 12:05 bị trễ (mất kết nối) → lùi các lượt còn lại 1 giờ, vẫn đúng giãn cách.
+- Việc còn hỏi Trang: WordPress có hiện nội dung 2 lần không (giao diện); ảnh trong thân bài Wix có hiện không; Blogger không có ảnh xem trước khi share (giao diện).
 - Thêm bài mới → tạo lại lịch (nối tiếp sau lượt cuối), ghi cột F, cập nhật file JSON.
 
 ## Còn mở
