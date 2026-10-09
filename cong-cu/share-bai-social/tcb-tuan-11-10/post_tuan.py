@@ -6,7 +6,7 @@ import json, os, re, subprocess, sys, tempfile, datetime
 HERE = os.path.dirname(os.path.abspath(__file__))
 SITE = 'techcombankvn2026.wordpress.com'
 ACC = '/home/user/trang/.claude/skills/share-bai-wp/wp-accounts.local.json'
-CAM = re.compile(r'\b(duy nhất|số 1|số một|hàng đầu|tốt nhất|cao nhất|rẻ nhất|lớn nhất|uy tín nhất|nhanh nhất|thấp nhất|hiệu quả nhất)\b', re.I)
+CAM = re.compile(r'\b(duy nhất|(?<!Mẫu )(?<!Phụ lục )số 1(?![\d/])|hàng đầu|tốt nhất|cao nhất|rẻ nhất|lớn nhất|uy tín nhất|nhanh nhất|thấp nhất|hiệu quả nhất)\b', re.I)
 KETLUAN = re.compile(r'<h[23][^>]*>[^<]*(kết luận|tóm lại|tổng kết|tóm tắt|lời kết)', re.I)
 ALLOWED = {'p','h2','h3','ul','ol','li','strong','a'}
 
