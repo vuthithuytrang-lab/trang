@@ -56,6 +56,15 @@ def main():
     code, r = curl([API + '/posts/slug:' + meta['slug'] + '?fields=ID,status,URL'])
     if code == 200 and r.get('ID'):
         sys.exit(json.dumps({'error': 'da co bai cung slug', 'row': row, 'id': r['ID'], 'status': r.get('status')}))
+    # chốt chặn: mọi bài trên site phải cách nhau tối thiểu 55 phút, hạn chót 17h 11/10/2026
+    t = datetime.datetime.fromisoformat(when)
+    if t > datetime.datetime.fromisoformat('2026-10-11T17:00:00+07:00'):
+        sys.exit(json.dumps({'error': 'qua han chot 17h 11/10', 'row': row}))
+    code, r = curl([API + '/posts?status=publish,future&number=100&fields=ID,date,slug'])
+    for p in [p for p in r.get('posts', []) if p.get('slug') != 'hello-world']:
+        gap = abs((datetime.datetime.fromisoformat(p['date']) - t).total_seconds()) / 60
+        if gap < 55:
+            sys.exit(json.dumps({'error': 'cach bai khac duoi 55 phut', 'row': row, 'bai_gan': p['ID'], 'phut': round(gap)}))
     content = to_gutenberg(open(os.path.join(d, 'wp-hoa.html'), encoding='utf-8').read())
     future = datetime.datetime.fromisoformat(when) > datetime.datetime.now(datetime.timezone.utc)
     code, r = curl(['-X', 'POST', API + '/posts/new'], {
