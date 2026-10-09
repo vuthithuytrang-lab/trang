@@ -78,6 +78,7 @@
   - Cột H ghi theo dạng **`<Tên nền tảng social> - Hoa`**, ví dụ `Blog - Hoa` (từ đợt sau 10/10/2026; đợt 10/10 đã ghi `Blogger - Trang`, `WordPress - Trang` — giữ nguyên các dòng cũ).
   - Cột I: link bài (link đẹp). Cột J: ngày đăng dạng `d/m/yyyy` (vd `10/10/2026`).
 - Không sửa / xóa bất kỳ ô nào khác, đặc biệt cột H do tool khác chèn.
+- **Bài và dòng do tool khác đăng/điền: không động vào** — không sửa, không xóa, không đăng lại. Mình là đồng nghiệp đăng song song: chỉ thêm dòng của mình; nền tảng nào trong nhóm đã có link thì không đăng trùng; thấy lỗi bên tool kia thì báo Trang, không tự sửa.
 - Bỏ qua dòng tiêu đề nhóm (chỉ có ngày như "10/9"), dòng trống, dòng đã có link ở cột I.
 - Lưu ý: từ khoảng dòng 476 có một loạt dòng **trùng lặp, không có STT** (Thẻ tín dụng quốc tế, CIC là gì…) — chưa xử lý, đừng đăng trùng.
 

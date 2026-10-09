@@ -89,6 +89,12 @@ Có bài mẫu đã đăng thật để bắt chước giọng văn và cấu tr
 - Chỉ dùng các thẻ `p h2 h3 ul ol li strong a`. Bài cho WordPress bọc thành khối Gutenberg.
 - Không đọc được bài gốc thì bỏ qua dòng đó và báo lại, **không bịa**. Soát lỗi theo bảng C5 và checklist C6.
 
+**Làm việc cùng tool kia (Trang dặn 09/10/2026):** tôi là *đồng nghiệp* đăng song song với một tool khác, không phải người quản lý tool đó.
+- **Không động vào bất cứ thứ gì tool kia làm**: không sửa, không xóa, không đăng lại bài của nó trên các nền tảng; không sửa ô hay dòng nó đã điền trên sheet (cột G, H, I, J của nó).
+- Chỉ **thêm** dòng mới cho bài của chính mình, vào dòng trống ngay dưới nhóm.
+- Trước khi đăng, xem trong nhóm của từ khóa đó: nền tảng nào đã có link thì coi như đã xong, không đăng trùng.
+- Thấy lỗi ở phần tool kia làm thì **chỉ báo Trang**, không tự sửa.
+
 **Điền sheet, tóm tắt** (tab "Share social"):
 - Cột D là từ khóa, F là URL bài gốc, H là nền tảng, I là link đã share, J là ngày share. **Không đụng cột G.**
 - Điền vào dòng trống ngay dưới nhóm của bài đó. Không chèn dòng, không ghi đè ô đã có.
