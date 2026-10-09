@@ -4,3 +4,7 @@ cong-cu/telegram.env
 *.key
 *.token
 chia-agent-boss.txt
+
+# share-bai-social — file chứa mật khẩu/token thật của từng nền tảng
+*.local.json
+.claude/settings.local.json
