@@ -80,6 +80,7 @@ def publish(n):
     return 200, res
 
 def run():
+    next_stage = 0  # thời điểm được tạo nháp tiếp theo (không chặn việc đăng bài đến giờ)
     while True:
         rows_done = {n['row'] for n in jl(LOG)}
         if len(rows_done) == len(plan()): say('XONG'); return
@@ -94,11 +95,11 @@ def run():
         ready = {int(l) for l in open(os.path.join(HERE, 'san-sang.txt')) if l.strip()} if os.path.exists(os.path.join(HERE, 'san-sang.txt')) else set()
         staged = {n['row'] for n in jl(NHAP)}
         todo = sorted((x for x in plan() if x['row'] in ready and x['row'] not in staged), key=lambda x: x['when'])
-        if todo:
+        if todo and time.time() >= next_stage:
             code, r = prepare(todo[0]['row'])
             say('NHAP' if code == 200 else 'LOI NHAP', todo[0]['row'], str(r)[:200])
-            time.sleep(random.randint(480, 720)); continue  # tạo nháp thưa ra 8–12 phút/bài
-        time.sleep(60)
+            next_stage = time.time() + random.randint(480, 720)  # tạo nháp thưa ra 8–12 phút/bài
+        time.sleep(30)
 
 if __name__ == '__main__':
     if sys.argv[1] == 'check':
