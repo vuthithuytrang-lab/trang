@@ -121,6 +121,9 @@
   H2 = **26px** (`<!-- wp:heading {"style":{"typography":{"fontSize":"26px"}}} -->` + `style="font-size:26px"`), H3 = **21px**.
   (Gói miễn phí không cho sửa CSS toàn site, nên phải đặt trong từng bài.)
 
+
+- **Ảnh thumbnail WordPress (bắt buộc):** ảnh techcombank.com không tải được → tự dựng ảnh 1200×630 (nền xanh đậm, chữ Inter, dòng nhỏ "Kiến thức tài chính doanh nghiệp" + từ khóa + tiêu đề), **không dùng logo Techcombank**. Upload `media/new` rồi đặt `featured_image`. Cập nhật **cách nhau ~15 phút/bài** để tránh bị đánh dấu spam. Mẫu: `tcb-dot-10-10/thumbs.js`.
+
 ### C5. Lỗi hay gặp trong bài gốc TCB (đừng chép theo)
 
 | Bài gốc | Lỗi | Cách xử lý |
