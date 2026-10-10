@@ -88,9 +88,11 @@ def run():
         # 1) đến giờ thì publish bài đã chuẩn bị (chỉ khi trang mẫu Blog Posts đã gắn xong -> có file cho-phep-dang)
         for n in (jl(NHAP) if os.path.exists(os.path.join(HERE, 'cho-phep-dang')) else []):
             if n['row'] in rows_done or datetime.datetime.fromisoformat(n['when']) > now: continue
+            last = max((datetime.datetime.fromisoformat(d['published_at']) for d in jl(LOG)), default=None)
+            if last and (now - last).total_seconds() < 20 * 60: break  # sau khi máy khởi động lại: không dồn bài, cách nhau >= 20 phút
             code, r = publish(n)
             say('OK' if code == 200 else 'LOI', n['row'], n['when'], r.get('url') if code == 200 else str(r)[:200])
-            time.sleep(30)
+            rows_done.add(n['row']); time.sleep(30); break
         # 2) chuẩn bị nháp cho bài sẵn sàng sắp tới (mỗi vòng 1 bài, cách nhau vài phút)
         ready = {int(l) for l in open(os.path.join(HERE, 'san-sang.txt')) if l.strip()} if os.path.exists(os.path.join(HERE, 'san-sang.txt')) else set()
         staged = {n['row'] for n in jl(NHAP)}

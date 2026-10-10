@@ -73,6 +73,10 @@ def to_ricos(h):
         else: raise ValueError('dong khong hieu: ' + line[:80])
     return out
 
+def image_node(img, alt):
+    return {'type': 'IMAGE', 'id': nid(), 'nodes': [], 'imageData': {'containerData': {'width': {'size': 'CONTENT'}, 'alignment': 'CENTER'},
+            'image': {'src': {'id': img['id']}, 'width': 1200, 'height': 675}, 'altText': alt}}
+
 def upload_thumb(row, meta):
     png = os.path.join(tempfile.gettempdir(), f'thumb-{row}.png')
     subprocess.run([sys.executable, os.path.join(HERE, 'thumb.py'), str(row), png], check=True)
@@ -92,8 +96,9 @@ def post(row):
     if (t - datetime.datetime.now(datetime.timezone.utc)).total_seconds() < 300: return 0, {'error': 'qua gio hen'}
     img, err = upload_thumb(row, meta)
     if err: return 0, {'error': err}
-    draft = {'title': meta['title'], 'memberId': A['member_id'], 'richContent': {'nodes': to_ricos(h)},
-             'heroImage': {'id': img['id'], 'url': img['url'], 'altText': meta['thumb']},
+    # Không dùng heroImage: Wix tự đặt width=0 cho nó nên ảnh ở đầu bài bị vỡ. Ảnh bìa = 'media' (hiện ở danh sách bài,
+    # ảnh chia sẻ mạng xã hội) + một khối ảnh ở đầu nội dung (hiện trong trang bài).
+    draft = {'title': meta['title'], 'memberId': A['member_id'], 'richContent': {'nodes': [image_node(img, meta['thumb'])] + to_ricos(h)},
              'media': {'wixMedia': {'image': {'id': img['id'], 'url': img['url'], 'width': 1200, 'height': 675}}, 'displayed': True, 'custom': True}}
     code, r = call('POST', '/blog/v3/draft-posts', {'draftPost': draft, 'publish': False})
     if code != 200: return code, r
