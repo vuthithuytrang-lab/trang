@@ -84,8 +84,8 @@ def run():
         rows_done = {n['row'] for n in jl(LOG)}
         if len(rows_done) == len(plan()): say('XONG'); return
         now = datetime.datetime.now(datetime.timezone.utc)
-        # 1) đến giờ thì publish bài đã chuẩn bị
-        for n in jl(NHAP):
+        # 1) đến giờ thì publish bài đã chuẩn bị (chỉ khi trang mẫu Blog Posts đã gắn xong -> có file cho-phep-dang)
+        for n in (jl(NHAP) if os.path.exists(os.path.join(HERE, 'cho-phep-dang')) else []):
             if n['row'] in rows_done or datetime.datetime.fromisoformat(n['when']) > now: continue
             code, r = publish(n)
             say('OK' if code == 200 else 'LOI', n['row'], n['when'], r.get('url') if code == 200 else str(r)[:200])
