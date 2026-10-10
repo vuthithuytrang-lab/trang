@@ -14,6 +14,7 @@
 |---|---|---|---|---|
 | Blogger | https://nganhangtechcombankvn.blogspot.com (blog "Techcombank Việt Nam", blog ID `6701158052132617774`) | trangjena3@gmail.com | Google OAuth (Blogger API v3) | **Có — 7 ngày** (app đang ở chế độ Test) |
 | WordPress.com | https://techcombankvietnam.wordpress.com (site ID `257871734`) | tài khoản WP của Trang | WordPress.com OAuth, `response_type=code`, scope `global` | Không |
+| Webflow (Tuấn) | https://techcombankvietnam.webflow.io (site ID `6aca533c222462adbcf024b7`, collection "Blog Posts" `6aca5ad1eebd47a5e917abbc`, trường `post-body`/`main-image`) | tài khoản Webflow của Trang | Site API token `dang-bai-tuan` (Assets + CMS read/write, Sites read) | Hết hạn nếu 365 ngày không dùng |
 | Wix (Tuấn) | https://accyenthang2.wixsite.com/techcombankvietnam (site "Techcombank Guide", site ID `d2b55558-7a1f-4b0e-ad15-0af44a86cb9f`) | Wix accyenthang2@gmail.com | API Key `dang-bai-tuan` (quyền Wix Blog + Contacts & Members) | Không |
 | Blogger (Tuấn) | https://techcombank2026.blogspot.com (blog "Techcombank Việt Nam", blog ID `108363577887142318`) | tài khoản Google của Trang | Google OAuth (Blogger API v3), Desktop client, project `friendly-joy-511210-q4` | **Có — 7 ngày** (kết nối 10/10/2026 → hết hạn ~17/10/2026) |
 | WordPress.com (Tuấn) | https://techcombankvn2026.wordpress.com (site ID `257874409`) | tài khoản WP của Trang | WordPress.com OAuth, `response_type=code`, scope `global` | Không |
