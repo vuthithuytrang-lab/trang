@@ -107,25 +107,33 @@ def post(row):
                    {'draftPost': {'id': pid, 'memberId': A['member_id'], 'seoSlug': meta['slug']}, 'action': 'UPDATE'})
     d = r.get('draftPost', {})
     if code != 200 or d.get('status') != 'SCHEDULED': return code or 1, {'draft_id': pid, **r}
-    u = d.get('url', {}); url = (u.get('base', '') + u.get('path', '')) if isinstance(u, dict) else u
+    url = f"https://{KEY}/post/{meta['slug']}"  # url trả về đôi khi còn là đường dẫn cũ có dấu
     res = {'row': x['row'], 'tuan_row': x['tuan_row'], 'id': pid, 'url': url, 'status': d['status'], 'when': x['when'], 'words': words, 'thumb': img['url']}
     open(LOG, 'a').write(json.dumps(res, ensure_ascii=False) + '\n')
     return 200, res
 
 def done(): return {json.loads(l)['row'] for l in open(LOG)} if os.path.exists(LOG) else set()
 
+def ready():
+    f = os.path.join(HERE, 'san-sang.txt')  # các row đã được soát xong, cho phép đăng
+    return {int(l) for l in open(f) if l.strip()} if os.path.exists(f) else set()
+
 def run():
-    for x in plan():
-        if x['row'] in done(): continue
-        if not os.path.exists(os.path.join(HERE, 'bai', str(x['row']), 'meta.json')): say('CHUA CO BAI', x['stt'], x['row']); continue
+    """Chạy tới khi đăng đủ: mỗi lượt lấy bài sẵn sàng có giờ sớm nhất, xong nghỉ 8–12 phút."""
+    while True:
+        left = [x for x in plan() if x['row'] not in done()]
+        if not left: say('XONG'); return
+        todo = [x for x in left if x['row'] in ready()]
+        if not todo: time.sleep(60); continue
+        x = min(todo, key=lambda x: x['when'])
         code, r = post(x['row'])
         if code == 200: say('OK', x['stt'], x['row'], r['when'], r['url'])
         else:
             say('LOI', x['stt'], x['row'], code, str(r)[:250])
             if 'draft_id' in r or code in (403, 429): raise SystemExit('dung')
+            open(os.path.join(HERE, 'san-sang.txt'), 'w').write(''.join(f'{r}\n' for r in ready() - {x['row']}))
             continue
         time.sleep(random.randint(int(os.environ.get('GIAN_MIN', 480)), int(os.environ.get('GIAN_MAX', 720))))
-    say('XONG LUOT')
 
 if __name__ == '__main__':
     if sys.argv[1] == 'check':
