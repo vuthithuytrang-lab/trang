@@ -54,15 +54,27 @@ def post_one(x):
     open(LOG, 'a').write(json.dumps(res, ensure_ascii=False) + '\n')
     return 200, res
 
+HAN_CHOT = datetime.datetime.fromisoformat(os.environ.get('HAN_CHOT', '2026-10-11T18:28:00+07:00'))
+
+def replan(plan, done):
+    rest = [x for x in plan if x['row'] not in done]
+    start = datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(minutes=15)
+    gap = (HAN_CHOT - start) / max(len(rest) - 1, 1)
+    for i, x in enumerate(rest): x['when'] = (start + gap * i).astimezone(HAN_CHOT.tzinfo).replace(microsecond=0).isoformat()
+    json.dump(plan, open(os.path.join(HERE, 'plan.json'), 'w'), ensure_ascii=False, indent=1)
+    say('GIAN LAI', len(rest), 'bai, cach', int(gap.total_seconds() // 60), 'phut, tu', rest[0]['when'])
+
 def main():
     plan = json.load(open(os.path.join(HERE, 'plan.json')))
     done = {json.loads(l)['row'] for l in open(LOG)} if os.path.exists(LOG) else set()
     for x in plan:
         if x['row'] in done: continue
         for attempt in range(6):
+            if (datetime.datetime.fromisoformat(x['when']) - datetime.datetime.now(datetime.timezone.utc)).total_seconds() < 600:
+                replan(plan, done)  # lỡ giờ (vd bị chặn lâu) -> giãn đều phần còn lại tới hạn chót, không dồn bài
             code, r = post_one(x)
             if code == 200:
-                say('OK', x['stt'], x['row'], r['status'], r['when'], r['url']); break
+                say('OK', x['stt'], x['row'], r['status'], r['when'], r['url']); done.add(x['row']); break
             say('LOI', x['stt'], x['row'], code, str(r)[:200])
             if 'draft_id' in r:  # nháp đã tạo nhưng chưa hẹn giờ được -> dừng hẳn để người xử lý
                 raise SystemExit('dung: nhap ' + r['draft_id'] + ' chua hen gio')
