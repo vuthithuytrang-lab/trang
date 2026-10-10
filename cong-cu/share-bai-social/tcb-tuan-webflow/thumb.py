@@ -10,12 +10,13 @@ THEMES = [('#0B2545', '#13315C', '#8DA9C4'), ('#1B4332', '#2D6A4F', '#95D5B2'), 
 
 def main(row, out):
     meta = json.load(open(os.path.join(HERE, 'bai', str(row), 'meta.json'), encoding='utf-8'))
+    fs = 72 if len(meta['thumb']) <= 42 else 60 if len(meta['thumb']) <= 60 else 52  # chữ dài thì nhỏ lại cho vừa khung
     a, b, c = THEMES[(int(row) // 11 + 2) % len(THEMES)]
     page = f'''<!doctype html><meta charset="utf-8"><style>
 html,body{{margin:0;width:1200px;height:675px;overflow:hidden}}
 body{{background:linear-gradient(135deg,{a} 0%,{b} 100%);font-family:"Inter","Noto Sans",sans-serif;color:#fff;position:relative}}
 .k{{position:absolute;left:80px;top:70px;font-size:26px;letter-spacing:3px;text-transform:uppercase;color:{c};font-weight:700}}
-.t{{position:absolute;left:80px;right:80px;top:150px;font-size:72px;line-height:1.18;font-weight:800}}
+.t{{position:absolute;left:80px;right:80px;top:150px;font-size:{fs}px;line-height:1.18;font-weight:800}}
 .bar{{position:absolute;left:80px;bottom:90px;width:140px;height:10px;background:{c};border-radius:5px}}
 .d{{position:absolute;left:80px;bottom:40px;font-size:24px;color:#ffffffcc}}
 .o{{position:absolute;right:-140px;top:-140px;width:520px;height:520px;border-radius:50%;border:60px solid #ffffff14}}
