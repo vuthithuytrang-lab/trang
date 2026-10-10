@@ -154,3 +154,4 @@
 - WordPress: hẹn giờ trước hàng loạt được.
 - Blogger: **không tạo hàng loạt** — tạo từng bài cách nhau vài phút trở lên; tốt nhất tạo đúng giờ đăng. Bị 403 → dừng, chờ vài giờ.
 - Tài khoản mới: nên ≤ 20–25 bài/ngày/nền tảng.
+- **Không gửi hàng loạt lệnh** (tạo / sửa / đổi giờ / gắn ảnh) lên cùng một site. Mọi thao tác hàng loạt chạy **từng bài, cách nhau vài phút** (gắn ảnh: 15 phút/bài; Blogger tạo bài: ≥20 phút/bài). Khi đổi giờ hàng loạt, lọc trùng theo dòng trước khi gửi.
