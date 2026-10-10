@@ -93,7 +93,7 @@ Có bài mẫu đã đăng thật để bắt chước giọng văn và cấu tr
 **Nhịp đăng + kết bài (Trang dặn 09/10/2026):**
 - Các bài cách nhau **45–60 phút** (lệch ngẫu nhiên trong khoảng đó).
 - **Không có đoạn/mục tóm tắt ở cuối bài** (không "Kết luận", "Tóm lại", "Như vậy…"). Kết bằng mục nội dung cuối, rồi đúng 1 câu lưu ý "thông tin mang tính tham khảo, có thể thay đổi theo thời điểm".
-- Đợt Hoa 10–11/10/2026: ban đầu 40 bài lên WordPress `nganhangtechcombankvn.wordpress.com` — **site bị khóa (410) chiều 10/10**, đã gỡ 40 dòng sheet. Chuyển sang **Blogger `nganhangtechcombankvietnam.blogspot.com`**, cột H ghi `Blog - Hoa`, 40 bài cách nhau 32–36 phút (Trang chốt hạn 17h CN 11/10 nên không giữ được 55 phút), tạo bài cách nhau 4 phút để tránh bị chặn. Công cụ + lịch: `cong-cu/share-bai-social/tcb-hoa/` (`post-blogger.py`, `chay-blogger.sh`, `lich-blogger.json`).
+- Đợt Hoa 10–11/10/2026: ban đầu 40 bài lên WordPress `nganhangtechcombankvn.wordpress.com` — **site bị khóa (410) chiều 10/10**, đã gỡ 40 dòng sheet. Chuyển sang **Blogger `nganhangtechcombankvietnam.blogspot.com`**, cột H ghi `Blog - Hoa`, 40 bài cách nhau 33–38 phút, hạn chót Trang nới thành **trước 18h CN 11/10** (không giữ được 55 phút), tạo bài cách nhau 20 phút để tránh bị chặn. Công cụ + lịch: `cong-cu/share-bai-social/tcb-hoa/` (`post-blogger.py`, `chay-blogger.sh`, `lich-blogger.json`).
 
 **Làm việc cùng tool kia (Trang dặn 09/10/2026):** tôi là *đồng nghiệp* đăng song song với một tool khác, không phải người quản lý tool đó.
 - **Không động vào bất cứ thứ gì tool kia làm**: không sửa, không xóa, không đăng lại bài của nó trên các nền tảng; không sửa ô hay dòng nó đã điền trên sheet (cột G, H, I, J của nó).

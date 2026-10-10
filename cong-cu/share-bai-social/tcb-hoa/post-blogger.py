@@ -9,7 +9,7 @@ import json, os, subprocess, sys, tempfile, datetime, urllib.parse
 HERE = os.path.dirname(os.path.abspath(__file__))
 ACC = '/home/user/trang/.claude/skills/share-bai-blogger/blogger-accounts.local.json'
 KEY = 'nganhangtechcombankvietnam.blogspot.com'
-DEADLINE = datetime.datetime.fromisoformat('2026-10-11T17:00:00+07:00')
+DEADLINE = datetime.datetime.fromisoformat('2026-10-11T18:00:00+07:00')
 MIN_GAP = 30  # phút, chốt chặn giữa 2 bài bất kỳ trên blog
 VN = datetime.timezone(datetime.timedelta(hours=7))
 
@@ -54,7 +54,7 @@ def stop_if_limited(code, r, row, step):
 def main():
     row, when = sys.argv[1], sys.argv[2]
     t = datetime.datetime.fromisoformat(when)
-    if t > DEADLINE: sys.exit(json.dumps({'error': 'qua han chot 17h 11/10', 'row': row}))
+    if t > DEADLINE: sys.exit(json.dumps({'error': 'qua han chot 18h 11/10', 'row': row}))
     log = os.path.join(HERE, 'da-dang-blogger.jsonl')
     if os.path.exists(log) and any(json.loads(l)['row'] == int(row) for l in open(log)):
         sys.exit(json.dumps({'error': 'row da dang', 'row': row}))
