@@ -79,7 +79,7 @@ giả lập của khóa học, có bộ màu riêng, đừng trộn hai bên và
 |---|---|---|
 | ~~`hoc.agentboss.vn`~~ | ✅ **ĐÃ MỞ từ 08/09/2026** — vào bình thường, chỉ cần chìa đúng | — |
 | YouTube (tải video) | `IpBlocked` — đã thử 7 cách | Chạy trên máy cá nhân; hoặc tìm bài báo/bản ghi nguồn khác |
-| `techcombank.com` | tường lửa chặn domain + connection reset | Nhờ Trang dán thẳng nội dung bài vào chat |
+| `techcombank.com` | curl bị connection reset | ✅ 10/10/2026: đọc được bằng công cụ WebFetch (không dùng curl). Không được thì nhờ Trang dán nội dung vào chat |
 | Desktop / Documents của Trang | bản web không thấy máy cá nhân | Nhờ Trang đính kèm file vào khung chat |
 
 | LibreOffice (xem thử file Word) | `source file could not be loaded` — hỏng cả với file mẫu gốc | Kiểm tra bằng python-docx + kiểm tra zip, không render được ảnh |
