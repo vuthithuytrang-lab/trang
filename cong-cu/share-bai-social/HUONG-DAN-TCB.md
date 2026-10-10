@@ -170,3 +170,10 @@
 | 8 | Đổi giờ hẹn qua API phải gửi **JSON** (`{"date": "...+07:00", "status": "future"}`). Gửi dạng form thì dấu `+` thành dấu cách → WordPress hiểu sai giờ và **đăng ngay lập tức**. |
 
 Công cụ dùng lại được: `cong-cu/share-bai-social/tcb-tuan-11-10/post_tuan.py` (`check <row>` để tự soát, `post <row>` để hẹn giờ; ghi kết quả vào `da-dang.jsonl`).
+
+## PHẦN F — Blogger mới: nhịp tạo bài (bài học 10/10/2026, blog techcombank2026)
+
+- Tạo bài hẹn giờ cách nhau 3–4,5 phút → **bài thứ 21 bị 403** "The caller does not have permission" (khoảng 20 bài trong 73 phút). Blog không bị khóa, 20 bài đã hẹn vẫn còn.
+- Gặp 403: **dừng ngay, chờ ≥ 2 tiếng**, rồi tạo tiếp mỗi bài cách **8–12 phút**.
+- Giờ lên bài (publishDate) tách riêng với giờ tạo: tạo trước, hẹn giờ lên sau — giờ lên vẫn đều 36–38 phút/bài.
+- Công cụ: `cong-cu/share-bai-social/tcb-tuan-blogger/dang_blogger.py` (tự bỏ qua bài đã đăng, ghi `da-dang.jsonl`).

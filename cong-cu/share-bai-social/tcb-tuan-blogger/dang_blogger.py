@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Hẹn giờ 40 bài 'Blogger - Tuấn' lên techcombank2026.blogspot.com.
 Dùng lại bài viết ở ../tcb-tuan-11-10/bai/<row>/ (trang WordPress cũ đã bị xóa nên không trùng).
-Tạo từng bài cách nhau vài phút (tránh chống spam của Blogger); gặp 403/429 thì chờ rồi thử lại.
+Tạo từng bài cách nhau 8–12 phút (tránh chống spam của Blogger); gặp 403/429 thì chờ 2 tiếng rồi thử lại.
+Đợt 10/10: tạo 20 bài cách 3–4,5 phút thì bị 403 ở bài 21 -> nhịp an toàn là >= 8 phút/bài.
 Ghi kết quả vào da-dang.jsonl. Không in token."""
 import json, os, random, subprocess, sys, tempfile, time, datetime, urllib.parse
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -65,11 +66,11 @@ def main():
             say('LOI', x['stt'], x['row'], code, str(r)[:200])
             if 'draft_id' in r:  # nháp đã tạo nhưng chưa hẹn giờ được -> dừng hẳn để người xử lý
                 raise SystemExit('dung: nhap ' + r['draft_id'] + ' chua hen gio')
-            if code in (403, 429, 500, 503): time.sleep(1800); continue
+            if code in (403, 429, 500, 503): time.sleep(int(os.environ.get('CHO_403', 7200))); continue
             raise SystemExit('dung: loi khong thu lai')
         else:
             raise SystemExit('dung: thu lai qua nhieu lan')
-        time.sleep(random.randint(180, 270))
+        time.sleep(random.randint(int(os.environ.get('GIAN_MIN', 480)), int(os.environ.get('GIAN_MAX', 720))))
     say('XONG')
 
 if __name__ == '__main__': main()
