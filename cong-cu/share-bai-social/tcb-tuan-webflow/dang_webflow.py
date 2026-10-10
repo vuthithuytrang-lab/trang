@@ -97,7 +97,7 @@ def run():
         if todo:
             code, r = prepare(todo[0]['row'])
             say('NHAP' if code == 200 else 'LOI NHAP', todo[0]['row'], str(r)[:200])
-            time.sleep(random.randint(150, 240)); continue
+            time.sleep(random.randint(480, 720)); continue  # tạo nháp thưa ra 8–12 phút/bài
         time.sleep(60)
 
 if __name__ == '__main__':
