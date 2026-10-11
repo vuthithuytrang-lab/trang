@@ -78,7 +78,7 @@ def main():
             say('LOI', x['stt'], x['row'], code, str(r)[:200])
             if 'draft_id' in r:  # nháp đã tạo nhưng chưa hẹn giờ được -> dừng hẳn để người xử lý
                 raise SystemExit('dung: nhap ' + r['draft_id'] + ' chua hen gio')
-            if code in (403, 429, 500, 503): time.sleep(int(os.environ.get('CHO_403', 7200))); continue
+            if code in (403, 429, 500, 503): time.sleep(int(os.environ.get('CHO_403', 3000))); continue
             raise SystemExit('dung: loi khong thu lai')
         else:
             raise SystemExit('dung: thu lai qua nhieu lan')
