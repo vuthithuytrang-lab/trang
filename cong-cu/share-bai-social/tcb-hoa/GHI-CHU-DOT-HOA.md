@@ -13,3 +13,9 @@
 - Nơi nộp hồ sơ: "Sở Tài chính" (617) vs "Sở KH&ĐT" (661, 881) — giữ theo từng bài gốc.
 - 793: công cụ đọc web trả bản tóm tắt tiếng Anh, số liệu đã đối chiếu với bài đồng nghiệp.
 - Bài tool kia (chỉ báo, không sửa): vài bài Blogger/WP - Trang có mục "Kết luận"/"Tóm lại"; bài Blogger 529 có hotline + email.
+
+## Chuyển sang Blogger (10–11/10/2026)
+- WordPress nganhangtechcombankvn bị khóa (410) chiều 10/10 → không xóa được bài qua API; đã gỡ 40 dòng "WordPress - Hoa" trên sheet.
+- 40 bài (cùng nội dung bản Hoa) hẹn giờ lên **nganhangtechcombankvietnam.blogspot.com**: bài 1 lúc 18:10 10/10, bài 40 lúc 17:46 11/10, cách nhau 33–38 phút. Tạo bài theo đợt 3 bài/giờ, mỗi bài cách 4 phút; không lần nào bị Blogger chặn.
+- Sheet: 40 dòng `Blog - Hoa` ở đúng dòng cũ (ngay dưới "WordPress - Trang"). Danh sách: `da-dang-blogger.jsonl`, lịch: `lich-blogger.json`.
+- Quyền Blogger hết hạn khoảng 17/10/2026.
