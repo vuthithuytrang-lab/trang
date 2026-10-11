@@ -19,3 +19,9 @@
 - 40 bài (cùng nội dung bản Hoa) hẹn giờ lên **nganhangtechcombankvietnam.blogspot.com**: bài 1 lúc 18:10 10/10, bài 40 lúc 17:46 11/10, cách nhau 33–38 phút. Tạo bài theo đợt 3 bài/giờ, mỗi bài cách 4 phút; không lần nào bị Blogger chặn.
 - Sheet: 40 dòng `Blog - Hoa` ở đúng dòng cũ (ngay dưới "WordPress - Trang"). Danh sách: `da-dang-blogger.jsonl`, lịch: `lich-blogger.json`.
 - Quyền Blogger hết hạn khoảng 17/10/2026.
+
+## Kiểm tra 11/10/2026 tối
+- Blogger: quyền đăng còn tốt, blog bình thường, 40 bài đang hiện (không có bài nháp hay hẹn giờ nào còn treo). Quyền hết hạn khoảng 18h ngày 17/10.
+- WordPress nganhangtechcombankvn: vẫn khóa (410).
+- Sheet: tool khác chèn/xóa dòng liên tục → 2 dòng "Blog - Hoa" bị ghi đè (cách quản lý tài chính kinh doanh, lợi nhuận). Khi ghi bù, dòng bị dịch nên lỡ đè 3 ô (Wix - Tuấn 2, Webflow - Tuấn 2, Wix - Trang) → đã khôi phục đúng nội dung cũ và kiểm tra lại. "Lợi nhuận" đã ghi bù xong; "cách quản lý tài chính kinh doanh" CHƯA ghi bù (đợi sheet đứng yên).
+- Bài học: khi sheet đang có tool khác sửa, đọc ngay trước khi ghi và kiểm tra lại ngay sau khi ghi; thấy dòng dịch thì dừng, không ghi tiếp.
