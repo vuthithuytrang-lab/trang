@@ -6,8 +6,10 @@ const fs = require('fs');
 const URL = 'https://giacaphe.com/gia-ca-phe-truc-tuyen/';
 (async () => {
   const out = process.argv[2] || 'gia-the-gioi.json';
-  const b = await chromium.launch({ args: ['--no-sandbox'] });
+  const b = await chromium.launch({ args: ['--no-sandbox'], ...(process.env.HTTPS_PROXY ? { proxy: { server: process.env.HTTPS_PROXY } } : {}) });
   const pg = await b.newPage({ userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/141 Safari/537.36' });
+  // Chromium không tin chứng chỉ proxy của máy chủ → mọi lượt tải đi qua Node (vẫn kiểm tra chứng chỉ bằng CA của proxy)
+  await pg.route('**/*', async r => { try { await r.fulfill({ response: await r.fetch() }); } catch (e) { await r.abort().catch(() => {}); } });
   await pg.goto(URL, { waitUntil: 'domcontentloaded', timeout: 60000 });
   let data = null;
   for (let i = 0; i < 12; i++) {           // chờ tối đa ~60 giây cho số hiện ra

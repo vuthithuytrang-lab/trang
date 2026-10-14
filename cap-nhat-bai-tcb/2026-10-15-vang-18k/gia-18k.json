@@ -1,0 +1,23 @@
+{
+ "pnj": {
+  "san_pham": "Vàng 750 (18K)",
+  "mua": 9585000,
+  "ban": 10575000,
+  "cap_nhat": "14/10/2026 14:18:41",
+  "nguon": "https://www.pnj.com.vn/site/gia-vang"
+ },
+ "sjc": {
+  "san_pham": "Nữ trang 75%",
+  "mua": 9671100,
+  "ban": 10651100,
+  "cap_nhat": "15:00:04 14/10/2026",
+  "nguon": "https://webgia.com/gia-vang/sjc/"
+ },
+ "doji": {
+  "san_pham": "GIÁ NGUYÊN LIỆU 18K",
+  "mua": 9879000,
+  "ban": null,
+  "cap_nhat": "08:04 ngày 14/10/2026",
+  "nguon": "https://banggia.doji.vn/gold-price"
+ }
+}

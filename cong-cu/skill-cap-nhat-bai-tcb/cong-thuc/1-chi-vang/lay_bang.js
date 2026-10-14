@@ -14,10 +14,12 @@ const NGUON = {
 };
 (async () => {
   const out = process.argv[2] || 'bang-nguon.json';
-  const b = await chromium.launch({ args: ['--no-sandbox'] });
+  const b = await chromium.launch({ args: ['--no-sandbox'], ...(process.env.HTTPS_PROXY ? { proxy: { server: process.env.HTTPS_PROXY } } : {}) });
   const kq = {};
   for (const [ma, n] of Object.entries(NGUON)) {
     const pg = await b.newPage(n.ua ? { userAgent: n.ua } : {});
+    // Chromium không tin chứng chỉ proxy của máy chủ → mọi lượt tải đi qua Node (vẫn kiểm tra chứng chỉ bằng CA của proxy)
+    await pg.route('**/*', async r => { try { await r.fulfill({ response: await r.fetch() }); } catch (e) { await r.abort().catch(() => {}); } });
     let rows = [], text = '';
     try {
       await pg.goto(n.url, { waitUntil: 'domcontentloaded', timeout: 60000 });

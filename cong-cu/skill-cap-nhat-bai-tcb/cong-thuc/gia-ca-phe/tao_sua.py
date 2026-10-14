@@ -56,12 +56,12 @@ def doc_nha_be(path):
     s = open(path, encoding='utf-8', errors='replace').read()
     ra = {}
     for ten, gia, lop, doi in re.findall(
-            r'>([^<>]{2,20})</a></td>\s*<td>([\d.]+)đ</td>\s*<td class="([^"]*)">\s*([\d.]+)đ', s):
+            r'>([^<>]{2,20})</a></td>\s*<td>([\d.]+)đ</td>\s*<td class="([^"]*)">\s*([+-]?[\d.]+)đ', s):
         ten = nfc(html.unescape(ten))
         if ten in ra:
             continue
-        d = int(doi.replace('.', ''))
-        if 'down' in lop:
+        d = int(doi.replace('.', ''))                # Nhà Bè Agri có lúc ghi dấu sẵn (-200đ), có lúc chỉ ghi số + class "down"
+        if 'down' in lop and d > 0:
             d = -d
         ra[ten] = (int(gia.replace('.', '')), d)
     m = re.search(r'Cập nhật gần nhất:\s*([^<]+)<', s)
