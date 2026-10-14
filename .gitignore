@@ -4,3 +4,4 @@ cong-cu/telegram.env
 *.key
 *.token
 chia-agent-boss.txt
+__pycache__/

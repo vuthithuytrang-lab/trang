@@ -1,0 +1,92 @@
+{
+ "bai1": {
+  "sua": [
+   {
+    "tim": "cập nhật đến ngày 24/9/2026",
+    "thay": "cập nhật đến ngày 7/10/2026",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "",
+    "ly_do": "ngày cập nhật bảng giá = hôm nay"
+   },
+   {
+    "tim": "14,580,000",
+    "thay": "14,320,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/bao-tin-minh-chau/",
+    "ly_do": "Bảo Tín Minh Châu – Nhẫn tròn trơn 999.9 (24k) (bán ra), cập nhật 17:20:05 07/10/2026"
+   },
+   {
+    "tim": "14,180,000",
+    "thay": "13,920,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/bao-tin-minh-chau/",
+    "ly_do": "Bảo Tín Minh Châu – Nhẫn tròn trơn 999.9 (24k) (mua vào), cập nhật 17:20:05 07/10/2026"
+   },
+   {
+    "tim": "14,440,000",
+    "thay": "14,300,000",
+    "lan": 3,
+    "giu_nguyen_so": true,
+    "nguon": "https://banggia.doji.vn/gold-price",
+    "ly_do": "DOJI – VÀNG MIẾNG SJC (bán ra), cập nhật 10:23 ngày 07/10/2026"
+   },
+   {
+    "tim": "14,140,000",
+    "thay": "14,000,000",
+    "lan": 3,
+    "giu_nguyen_so": true,
+    "nguon": "https://banggia.doji.vn/gold-price",
+    "ly_do": "DOJI – VÀNG MIẾNG SJC (mua vào), cập nhật 10:23 ngày 07/10/2026"
+   },
+   {
+    "tim": "14,440,000",
+    "thay": "14,250,000",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – Nhẫn Trơn PNJ 999.9 (bán ra), cập nhật 07/10/2026 13:25:09"
+   },
+   {
+    "tim": "14,140,000",
+    "thay": "13,950,000",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – Nhẫn Trơn PNJ 999.9 (mua vào), cập nhật 07/10/2026 13:25:09"
+   },
+   {
+    "tim": "14,440,000",
+    "thay": "14,300,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – Vàng SJC 1L, 10L, 1KG (bán ra), cập nhật 17:20:05 07/10/2026"
+   },
+   {
+    "tim": "14,140,000",
+    "thay": "14,000,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – Vàng SJC 1L, 10L, 1KG (mua vào), cập nhật 17:20:05 07/10/2026"
+   },
+   {
+    "tim": "cập nhật đến ngày 24/9/2026",
+    "thay": "cập nhật đến ngày 7/10/2026",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "",
+    "ly_do": "ngày cập nhật bảng giá = hôm nay"
+   }
+  ],
+  "can_duyet": [
+   "SJC và Bảo Tín Minh Châu: sjc.com.vn chặn máy chủ (Cloudflare), btmc.vn không vào được – giá lấy từ webgia.com (nguồn ghi rõ lấy từ SJC/BTMC), đối chiếu khớp giavang.org lúc 17:15 cùng ngày.",
+   "DOJI: dòng trong bài ghi 'Vàng miếng 24K' – DOJI không có sản phẩm đúng tên này; lấy giá 'Vàng miếng SJC' tại DOJI.",
+   "Bảo Tín Minh Châu: dòng 'Vàng nhẫn Rồng Thăng Long 999.9' lấy theo 'Nhẫn tròn trơn 999.9 (24k)' nhóm Vàng Rồng Thăng Long (VRTL).",
+   "PNJ: giá khu vực TP. Hồ Chí Minh (mặc định trên pnj.com.vn), cập nhật 13:25."
+  ]
+ }
+}

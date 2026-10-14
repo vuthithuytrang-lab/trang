@@ -55,6 +55,9 @@ trang đích, brief gửi thiết kế, báo cáo cho sếp — vẫn giữ đú
 - **Tự soát trước khi gửi**: chụp ảnh trang, đọc lại ảnh, kiểm tra dấu tiếng Việt + layout không vỡ.
 - Dọn file nháp (ảnh chụp soát) trước khi lưu vào kho.
 - Lưu file vào git và push, rồi mới báo xong.
+- **File Google Docs tạo cho Trang → đặt vào thư mục Drive "Cập nhật bài Techcombank (Claude)"** (`parentId` = `1FXvxKb6TvSsbMeK6I3utnLvRZ4Y_vXxI`) — thư mục đã mở **"Bất kỳ ai có đường liên kết – Người chỉnh sửa"** (07/10/2026), file đặt vào đây tự mở theo; không cần làm thêm.
+- **File Google Docs tạo cho Trang → chia sẻ quyền sửa (writer)** cho mọi email trong Sheet "Update", tab `Hướng dẫn`, ô `B11:B20`
+  (Sheet `1pG0TA0nwiOkF086eAhbukUJ375oZRfuJpQy4bEUiVck`). Không chép email vào repo (repo công khai).
 - Nhắc Trang tải lại trang (Cmd + R) nếu đang mở tab cũ trên máy Mac.
 
 ## 3b. Nhận diện thương hiệu — ĐỌC TRƯỚC KHI THIẾT KẾ
@@ -108,5 +111,24 @@ Agent đọc chìa từ file, gửi qua header `Authorization: Bearer <chìa>`, 
 | `khoa-hoc/` | Tiến độ khóa Agent Boss, mã nộp từng bài, sản phẩm đã làm |
 | `cong-cu/` | Công cụ dùng lại được — prompt SEO, bản tin tự động |
 | `cong-cu/cap-nhat-lai-suat/` | **Việc định kỳ (tự chạy ~7h sáng, 3 ngày/lần)**: cập nhật lãi suất 2 bài blog Techcombank — đọc `QUY-TRINH.md` trước |
-| `cong-cu/skill-cap-nhat-bai-tcb/` | **Skill đóng gói** cập nhật bài Techcombank bất kỳ (đọc bài mới nhất + nguồn tham khảo, sửa chỗ lỗi thời, viết số theo bài, tô vàng → Google Docs). Gửi Claude khác dùng được (file `.zip`) — tách riêng, không ảnh hưởng việc định kỳ ở trên |
+| `cong-cu/skill-cap-nhat-bai-tcb/` | **Skill đóng gói** (+ công thức giá vàng/cà phê/xăng dầu + bảng điều khiển Google Sheets "Update") cập nhật bài Techcombank bất kỳ (đọc bài mới nhất + nguồn tham khảo, sửa chỗ lỗi thời, viết số theo bài, tô vàng → Google Docs). Gửi Claude khác dùng được (file `.zip`) — tách riêng, không ảnh hưởng việc định kỳ ở trên |
 | `BAO-MAT.md` | Danh sách chìa khóa đã lộ cần thu hồi |
+| `cap-nhat-bai-tcb/` | Kết quả từng lần cập nhật bài TCB (cấu hình, danh sách sửa, báo cáo) |
+
+## 7. Công thức có sẵn — làm luôn, không hỏi lại
+
+| Trang nhắn | Đọc và làm theo |
+|---|---|
+| "Update bài giá cà phê" / dán link `techcombank.com/thong-tin/blog/gia-ca-phe-hom-nay` | `cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/gia-ca-phe/README.md` — nguồn, cách ghi số, tên file đã chốt sẵn |
+| "Update bài giá xăng dầu" / dán link `techcombank.com/thong-tin/blog/gia-xang-dau-hom-nay` | `cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/gia-xang-dau/README.md` — Petrolimex (thông cáo + Topi), PVOIL (Topi), Mipec |
+| "Update bài vàng 24K" / dán link `techcombank.com/thong-tin/blog/vang-24k` | `cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/vang-24k/README.md` — PNJ, DOJI, SJC + BTMC (qua webgia) |
+| "Update bài vàng 14K" / dán link `techcombank.com/thong-tin/blog/vang-14k-gia-hom-nay` | `cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/vang-14k/README.md` — SJC (webgia), PNJ, Huy Thanh |
+| "Update bài vàng 18K" / dán link `techcombank.com/thong-tin/blog/vang-18k` | `cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/vang-18k/README.md` — PNJ, SJC (webgia), DOJI |
+| "Update bài vàng 10K" / dán link `techcombank.com/thong-tin/blog/vang-10k` | `cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/vang-10k/README.md` — PNJ |
+| "Update bài 1 chỉ vàng" / dán link `techcombank.com/thong-tin/blog/1-chi-vang-bao-nhieu-tien` | `cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/1-chi-vang/README.md` — Huy Thanh, SJC + BTMC (webgia), Phú Quý, DOJI, PNJ |
+| "Update bài vàng 16K" / dán link `techcombank.com/thong-tin/blog/gia-vang-16k-hom-nay` | `cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/vang-16k/README.md` — SJC (webgia), Mi Hồng, PNJ |
+| "Update bài vàng 610" / dán link `techcombank.com/thong-tin/blog/vang-610-la-vang-gi` | `cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/vang-610/README.md` — PNJ |
+| ⏰ Quy tắc ngày cho mọi bài TCB | Chạy **từ 15h (giờ VN) trở đi → ghi ngày hôm sau** trong bài + tên file (vd chạy chiều 8/10 → 9/10). Trước 15h → hôm nay. Cột ngày trong Sheet vẫn là ngày chạy |
+| "Chạy bảng update" / lịch tự động mỗi giờ | `cong-cu/skill-cap-nhat-bai-tcb/bang-dieu-khien/README.md` — Google Sheets "Update", chạy các dòng đã tích |
+| Đóng gói xong quy trình 1 bài mới | **Tự thêm dòng vào Google Sheets "Update"** theo mục "Thêm bài mới vào bảng" trong `bang-dieu-khien/README.md` — Trang không phải tự điền |
+| Link bài Techcombank khác + nguồn tham khảo | `cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/SKILL.md` (quy trình chung) |

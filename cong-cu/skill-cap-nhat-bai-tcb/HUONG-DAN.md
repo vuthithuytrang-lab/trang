@@ -51,3 +51,17 @@ tải lên `cap-nhat-bai-tcb.zip`. (Cần bật chạy code và kết nối Goog
 - Cần **kết nối Google Drive**; không có thì Claude gửi file để bạn kéo vào Drive và mở bằng Google Tài liệu.
 - Thông tin về **chính Techcombank** chỉ được sửa theo trang techcombank.com; dòng Techcombank trong bảng so sánh không bao giờ bị sửa.
 - Claude **không viết lại văn**: chỉ đổi con số / cụm từ đã cũ. Câu nào cần viết lại, Claude ghi vào mục "cần duyệt" để bạn quyết.
+
+## Công thức riêng đã đóng gói
+
+| Bài | Bạn chỉ cần nhắn | Chi tiết |
+|---|---|---|
+| Giá cà phê hôm nay | "Update bài giá cà phê" | `cong-thuc/gia-ca-phe/README.md` — nguồn Nhà Bè Agri + giacaphe.com, mọi lựa chọn đã chốt |
+| Giá xăng dầu hôm nay | "Update bài giá xăng dầu" | `cong-thuc/gia-xang-dau/README.md` — Petrolimex, PVOIL (qua Topi), Mipec |
+| Vàng 24K | "Update bài vàng 24K" | `cong-thuc/vang-24k/README.md` — PNJ, DOJI, SJC + Bảo Tín Minh Châu (qua webgia) |
+| Vàng 14K | "Update bài vàng 14K" | `cong-thuc/vang-14k/README.md` — SJC (qua webgia), PNJ, Huy Thanh |
+| Vàng 18K | "Update bài vàng 18K" | `cong-thuc/vang-18k/README.md` — PNJ, SJC (qua webgia), DOJI |
+| Vàng 10K | "Update bài vàng 10K" | `cong-thuc/vang-10k/README.md` — PNJ |
+| 1 chỉ vàng bao nhiêu tiền | "Update bài 1 chỉ vàng" | `cong-thuc/1-chi-vang/README.md` — 6 bảng: Huy Thanh, SJC, BTMC, Phú Quý, DOJI, PNJ |
+| Vàng 16K | "Update bài vàng 16K" | `cong-thuc/vang-16k/README.md` — SJC (qua webgia), Mi Hồng, PNJ |
+| Vàng 610 | "Update bài vàng 610" | `cong-thuc/vang-610/README.md` — PNJ |

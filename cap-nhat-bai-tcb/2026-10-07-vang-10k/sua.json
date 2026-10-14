@@ -1,0 +1,33 @@
+{
+ "bai1": {
+  "sua": [
+   {
+    "tim": "cập nhật đến ngày 24/9/2026",
+    "thay": "cập nhật đến ngày 7/10/2026",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "",
+    "ly_do": "ngày cập nhật giá = hôm nay"
+   },
+   {
+    "tim": "Giá bán ra: 5,965,000 VND/chỉ",
+    "thay": "Giá bán ra: 5,886,000 VND/chỉ",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – Vàng 416 (10K), cập nhật 07/10/2026 13:25:09"
+   },
+   {
+    "tim": "Giá mua vào: 4,975,000 VND/chỉ",
+    "thay": "Giá mua vào: 4,896,000 VND/chỉ",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – Vàng 416 (10K), cập nhật 07/10/2026 13:25:09"
+   }
+  ],
+  "can_duyet": [
+   "Bài gốc lệch số nhỏ: mục 1 ghi kim loại khác 58.4%, mục 3.2 ghi 58.3% – chưa sửa (không thuộc phần giá)."
+  ]
+ }
+}

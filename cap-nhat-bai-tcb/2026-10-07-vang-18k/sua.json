@@ -1,0 +1,85 @@
+{
+ "bai1": {
+  "sua": [
+   {
+    "tim": "cập nhật đến ngày 24/9/2026",
+    "thay": "cập nhật đến ngày 7/10/2026",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "",
+    "ly_do": "ngày cập nhật bảng giá = hôm nay"
+   },
+   {
+    "tim": "bán ra hiện dao động từ khoảng 10.733 triệu VND/chỉ",
+    "thay": "bán ra hiện dao động từ khoảng 10.613 triệu VND/chỉ",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "",
+    "ly_do": "tính từ bảng: giá mua cao nhất 9,879,000 đ/chỉ, giá bán thấp nhất 10,613,000 đ/chỉ",
+    "tinh_toan": true
+   },
+   {
+    "tim": "cập nhật đến ngày 24/9/2026",
+    "thay": "cập nhật đến ngày 7/10/2026",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "",
+    "ly_do": "ngày cập nhật bảng giá = hôm nay"
+   },
+   {
+    "tim": "mua vào cao nhất khoảng 10.027 triệu VND/chỉ và bán ra thấp nhất khoảng 10.733 triệu VND/chỉ",
+    "thay": "mua vào cao nhất khoảng 9.879 triệu VND/chỉ và bán ra thấp nhất khoảng 10.613 triệu VND/chỉ",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "",
+    "ly_do": "tính từ bảng: giá mua cao nhất 9,879,000 đ/chỉ, giá bán thấp nhất 10,613,000 đ/chỉ",
+    "tinh_toan": true
+   },
+   {
+    "tim": "10,027,000 VND/chỉ",
+    "thay": "9,879,000 VND/chỉ",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://banggia.doji.vn/gold-price",
+    "ly_do": "DOJI – GIÁ NGUYÊN LIỆU 18K (mua vào), cập nhật 10:43 ngày 07/10/2026"
+   },
+   {
+    "tim": "10,733,600 VND/chỉ",
+    "thay": "10,628,600 VND/chỉ",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC (Nữ trang 75%) – Nữ trang 75% (bán ra), cập nhật 17:40:05 07/10/2026"
+   },
+   {
+    "tim": "9,753,600 VND/chỉ",
+    "thay": "9,648,600 VND/chỉ",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC (Nữ trang 75%) – Nữ trang 75% (mua vào), cập nhật 17:40:05 07/10/2026"
+   },
+   {
+    "tim": "10,755,000 VND/chỉ",
+    "thay": "10,613,000 VND/chỉ",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – Vàng 750 (18K) (bán ra), cập nhật 07/10/2026 13:25:09"
+   },
+   {
+    "tim": "9,765,000 VND/chỉ",
+    "thay": "9,623,000 VND/chỉ",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – Vàng 750 (18K) (mua vào), cập nhật 07/10/2026 13:25:09"
+   }
+  ],
+  "can_duyet": [
+   "DOJI: chỉ có 'GIÁ NGUYÊN LIỆU 18K' (giá mua 9,879,000 đ/chỉ, không có giá bán) – giữ ô bán '(Liên hệ để cập nhật giá)'.",
+   "SJC lấy từ webgia.com dòng 'Nữ trang 75%' (sjc.com.vn chặn máy chủ). PNJ dòng 'Vàng 750 (18K)', khu vực TP.HCM.",
+   "Câu tổng kết dùng số tính từ bảng: mua vào cao nhất (DOJI 9.879 triệu) và bán ra thấp nhất (PNJ 10.613 triệu)."
+  ]
+ }
+}

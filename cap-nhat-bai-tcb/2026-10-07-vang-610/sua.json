@@ -1,0 +1,35 @@
+{
+ "bai1": {
+  "sua": [
+   {
+    "tim": "Giá bán ra: Khoảng 10,460,000 VND/chỉ đến 10,919,000 VND/chỉ",
+    "thay": "Giá bán ra: Khoảng 8,632,000 VND/chỉ (theo PNJ)",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – Vàng 610 (14.6K): mua 7,642,000 / bán 8,632,000 đ/chỉ, cập nhật 07/10/2026 13:25:09"
+   },
+   {
+    "tim": "Giá mua vào: Khoảng 9,900,000 VND/chỉ đến 10,029,000 VND/chỉ",
+    "thay": "Giá mua vào: Khoảng 7,642,000 VND/chỉ (theo PNJ)",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – Vàng 610 (14.6K): mua 7,642,000 / bán 8,632,000 đ/chỉ, cập nhật 07/10/2026 13:25:09"
+   },
+   {
+    "tim": "Giá vàng 610 (tháng 09/2025): Mua vào khoảng 6,43 – 6,58 triệu VNĐ/chỉ, bán ra khoảng 6.78 – 7.19 triệu VNĐ/chỉ",
+    "thay": "Giá vàng 610 (tháng 10/2026): Mua vào khoảng 7.64 triệu VNĐ/chỉ, bán ra khoảng 8.63 triệu VNĐ/chỉ",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – Vàng 610 (14.6K): mua 7,642,000 / bán 8,632,000 đ/chỉ, cập nhật 07/10/2026 13:25:09 (tóm tắt: 1 nguồn nên ghi 1 mức)"
+   }
+  ],
+  "can_duyet": [
+   "Bài chỉ có nguồn PNJ (1 mức giá) nên các khoảng \"từ … đến …\" được ghi thành 1 mức, kèm \"(theo PNJ)\" ở mục 3. Muốn giữ dạng khoảng thì cần thêm nguồn thương hiệu khác.",
+   "Tóm tắt đầu bài: số cũ ghi lẫn dấu phẩy và dấu chấm thập phân (6,43 / 6.78) – nay thống nhất dấu chấm (7.64 / 8.63).",
+   "PNJ dòng 'Vàng 610 (14.6K)', khu vực TP.HCM, cập nhật 13:25 07/10/2026."
+  ]
+ }
+}

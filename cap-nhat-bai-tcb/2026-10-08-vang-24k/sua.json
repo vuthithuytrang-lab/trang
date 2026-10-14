@@ -1,0 +1,23 @@
+{
+ "bai1": {
+  "sua": [
+   {
+    "tim": "cập nhật đến ngày 08/10/2026",
+    "thay": "cập nhật đến ngày 8/10/2026",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "",
+    "ly_do": "ngày cập nhật bảng giá = hôm nay"
+   },
+   {
+    "tim": "cập nhật đến ngày 08/10/2026",
+    "thay": "cập nhật đến ngày 8/10/2026",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "",
+    "ly_do": "ngày cập nhật bảng giá = hôm nay"
+   }
+  ],
+  "can_duyet": []
+ }
+}
