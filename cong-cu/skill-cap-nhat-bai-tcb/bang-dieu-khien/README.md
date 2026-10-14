@@ -27,6 +27,8 @@ Bài làm lần đầu chưa đóng gói thì **chưa** thêm vào bảng.
 
 ## Mỗi lần kiểm tra — các bước
 
+⛔ **Cập nhật, không thay đổi nội dung** (Trang dặn 14/10/2026): chỉ đổi số/ngày/tháng; giữ nguyên câu chữ và dạng câu của bài (khoảng vẫn là khoảng, không thêm "(theo …)", không đổi tên riêng). Không cập nhật được đúng dạng → giữ nguyên + ghi cần duyệt.
+
 1. Đọc `A1:Z200` của tab đầu. Dòng nào ô E = TRUE và B có link → cần chạy. **Không có dòng nào → dừng ngay, không làm gì thêm.**
 2. Ngày hôm nay `TZ=Asia/Ho_Chi_Minh`. Tìm cột có tiêu đề = hôm nay (tiêu đề là số ngày kiểu Sheets, xem `formattedValue` dạng `d/m`).
    Chưa có → chèn 1 cột tại F (`insertDimension` COLUMNS start 5 end 6, `inheritFromBefore: false`),

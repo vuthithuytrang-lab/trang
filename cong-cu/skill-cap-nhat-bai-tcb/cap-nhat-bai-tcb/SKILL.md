@@ -16,6 +16,11 @@ Người dùng thường **không rành kỹ thuật**: nói lời thường, t�
 
 ## 3 yêu cầu cốt lõi
 
+> ⛔ **CẬP NHẬT, KHÔNG THAY ĐỔI NỘI DUNG** (Trang dặn 14/10/2026): chỉ thay **con số / ngày / tháng** đã cũ. Giữ nguyên câu chữ,
+> cấu trúc câu và cách trình bày của bài: câu ghi khoảng "Khoảng X đến Y" vẫn phải là khoảng (không rút thành 1 mức),
+> không thêm chữ như "(theo PNJ)", không đổi tên riêng (vd "tỷ giá Techcombank" giữ nguyên — muốn số đúng thì tìm nguồn tỷ giá
+> Techcombank). Không đủ nguồn để cập nhật đúng dạng của bài → **giữ nguyên chỗ đó** và ghi `can_duyet`.
+
 1. **Đọc nội dung mới nhất của bài TCB** — mỗi lần chạy tải lại bài từ web (`lay` xóa sạch file cũ), rồi đọc trọn bằng `xem`.
    Không dùng bản cũ, không dùng trí nhớ.
 2. **Đọc nguồn tham khảo để sửa chỗ lỗi thời** — chỉ sửa khi nguồn nói rõ; mỗi chỗ sửa ghi nguồn + lý do.

@@ -1,11 +1,12 @@
-"""Tự lập sua.json cho bài TCB "Vàng 610 là vàng gì? Là bao nhiêu K? Giá vàng 610 hôm nay".
+"""Tự lập sua.json cho bài TCB "Vàng 610 là vàng gì?… Giá vàng 610 hôm nay".
 
-  --xem  kết quả `cap_nhat.py xem ... bai1`   --gia  gia-610.json (lay_gia_610.js)
+  --xem  kết quả `cap_nhat.py xem ... bai1`   --gia  gia-610.json (lay_gia_610.js: PNJ + SJC 61%)
   --ra   sua.json                              --kiem soát lại sau khi sửa
-Nguồn duy nhất: PNJ "Vàng 610 (14.6K)" -> chỉ có 1 mức giá mua và 1 mức giá bán, nên các khoảng "từ … đến …" trong bài
-được viết thành 1 mức (ghi rõ "theo PNJ"):
-  - Tóm tắt: "Giá vàng 610 (tháng mm/yyyy): Mua vào khoảng a – b triệu VNĐ/chỉ, bán ra khoảng c – d triệu VNĐ/chỉ"
-  - Mục 3:   "Giá mua vào: Khoảng X VND/chỉ đến Y VND/chỉ" / "Giá bán ra: …"; "tháng mm/yyyy" -> tháng này.
+CHỈ CẬP NHẬT SỐ, GIỮ NGUYÊN CÂU CHỮ (Trang dặn 14/10/2026):
+  - Mục 3 "Giá mua vào: Khoảng X VND/chỉ đến Y VND/chỉ" -> X = thấp nhất, Y = cao nhất trong các nguồn (PNJ, SJC 61%).
+    Thiếu nguồn (chỉ còn 1) -> giữ nguyên dòng đó, ghi cần duyệt. Không bao giờ đổi thành 1 mức / thêm chữ "(theo …)".
+  - Tóm tắt "Mua vào khoảng a – b triệu …": giữ dạng như bài (khoảng thì min – max, 1 mức thì giá PNJ), giữ dấu thập phân của bài.
+  - "tháng mm/yyyy" -> tháng này.
 """
 import argparse, datetime, json, re, sys, unicodedata
 
@@ -32,9 +33,9 @@ def lan_thu(van, tim, vt):
     return n
 
 
-def trieu(v, dau):
-    """8,632,000 -> '8.63' hoặc '8,63' theo dấu thập phân bài đang dùng ở chỗ đó."""
-    return f'{v / 1e6:.2f}'.replace('.', dau)
+def trieu(v, cu):
+    """7,611,000 -> '7.61' (hoặc '7,61' nếu số cũ ở chỗ đó dùng dấu phẩy)."""
+    return f'{v / 1e6:.2f}'.replace('.', ',' if re.fullmatch(r'\d+,\d+', cu.strip()) else '.')
 
 
 def main():
@@ -45,43 +46,69 @@ def main():
     ap.add_argument('--kiem', action='store_true')
     a = ap.parse_args()
     dong, van = doc_xem(a.xem)
-    g = json.load(open(a.gia, encoding='utf-8')).get('pnj')
+    gia = json.load(open(a.gia, encoding='utf-8'))
+    co = {k: v for k, v in gia.items() if v}
+    g = co.get('pnj')
     # Ngày ghi trong bài: chạy từ 15h giờ VN trở đi -> ghi ngày hôm sau (+9 giờ là sang ngày mới)
     hn = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=7))) + datetime.timedelta(hours=9)
     thang = f'{hn.month:02d}/{hn.year}'
     sua, can, lech = [], [], []
+    nguon = ', '.join(v['nguon'] for v in co.values())
+    ly = '; '.join(f'{k.upper()} – {v["san_pham"]}: mua {v["mua"]:,} / bán {v["ban"]:,} đ/chỉ, cập nhật {v["cap_nhat"]}' for k, v in co.items())
 
     def them(cu, vt, moi, ly):
         if cu == moi:
             return
         lech.append(f'"{cu}" (cần là "{moi}")')
         sua.append({'tim': cu, 'thay': moi, 'lan': lan_thu(van, cu, vt), 'giu_nguyen_so': True,
-                    'nguon': g['nguon'] if g else '', 'ly_do': ly, '_vt': vt})
+                    'nguon': nguon, 'ly_do': ly, '_vt': vt})
 
-    if not g:
-        can.append('Không đọc được giá PNJ – giữ nguyên toàn bộ giá và tháng.')
+    def khoang(loai, cu):
+        """Giá mới cho 1 ô theo đúng dạng ô cũ: '7.64 – 8.32' -> min – max; '7.64' -> giá PNJ."""
+        vs = [v[loai] for v in co.values()]
+        if '–' in cu or ' - ' in cu:
+            a_, b_ = re.split(r'\s*[–-]\s*', cu)
+            return f'{trieu(min(vs), a_)} – {trieu(max(vs), b_)}' if len(vs) >= 2 else None
+        return trieu(g[loai], cu) if g else None
+
+    if not co:
+        can.append('Không đọc được nguồn nào (PNJ, SJC) – giữ nguyên toàn bộ giá và tháng.')
     else:
-        ly = f'PNJ – {g["san_pham"]}: mua {g["mua"]:,} / bán {g["ban"]:,} đ/chỉ, cập nhật {g["cap_nhat"]}'
         n = 0
         for chu, vt in dong:
             m = re.search(r'(Giá vàng 610 \(tháng )(\d{2}/\d{4})(\): Mua vào khoảng )([\d.,]+ – [\d.,]+|[\d.,]+)( triệu VNĐ/chỉ, bán ra khoảng )([\d.,]+ – [\d.,]+|[\d.,]+)( triệu VNĐ/chỉ)', chu)
             if m:
-                gr = list(m.groups())
-                # bài dùng dấu chấm thập phân ("6.78"); tóm tắt cũ lẫn "6,43" -> thống nhất dấu chấm
-                gr[1], gr[3], gr[5] = thang, trieu(g['mua'], '.'), trieu(g['ban'], '.')
-                them(m.group(0), vt + m.start(), ''.join(gr), ly + ' (tóm tắt: 1 nguồn nên ghi 1 mức)'); n += 1
-            for nhan, gt in (('Giá mua vào: Khoảng ', g['mua']), ('Giá bán ra: Khoảng ', g['ban'])):
-                m = re.search(re.escape(nhan) + r'([\d,]+ VND/chỉ)( đến [\d,]+ VND/chỉ)?( \(theo PNJ\))?', chu)
-                if m:
-                    them(m.group(0), vt + m.start(), f'{nhan}{gt:,} VND/chỉ (theo PNJ)', ly); n += 1
+                gr = list(m.groups()); n += 1
+                mua, ban = khoang('mua', gr[3]), khoang('ban', gr[5])
+                if mua and ban:
+                    gr[1], gr[3], gr[5] = thang, mua, ban
+                    them(m.group(0), vt + m.start(), ''.join(gr), ly + ' (tóm tắt: giữ dạng của bài)')
+                else:
+                    can.append('Tóm tắt: không đủ nguồn để cập nhật theo đúng dạng của bài – giữ nguyên.')
+            for nhan, loai in (('Giá mua vào: Khoảng ', 'mua'), ('Giá bán ra: Khoảng ', 'ban')):
+                m = re.search(re.escape(nhan) + r'([\d,]+)( VND/chỉ)(?:( đến )([\d,]+)( VND/chỉ))?', chu)
+                if not m:
+                    continue
+                n += 1
+                vs = [v[loai] for v in co.values()]
+                if m.group(3):                                   # dạng khoảng: thấp nhất đến cao nhất
+                    if len(vs) < 2:
+                        can.append(f'{nhan.strip()} bài ghi dạng khoảng nhưng chỉ đọc được 1 nguồn – giữ nguyên.')
+                        continue
+                    moi = f'{nhan}{min(vs):,}{m.group(2)}{m.group(3)}{max(vs):,}{m.group(5)}'
+                else:                                            # bài ghi 1 mức -> giá PNJ
+                    if not g:
+                        continue
+                    moi = f'{nhan}{g[loai]:,}{m.group(2)}'
+                them(m.group(0), vt + m.start(), moi, ly)
             for m in re.finditer(r'(tháng )(\d{2}/\d{4})', chu):
                 if 'Giá vàng 610 (tháng' in chu[max(0, m.start() - 20):m.start() + 6]:
                     continue
                 them(m.group(0), vt + m.start(), m.group(1) + thang, 'tháng khảo sát = tháng này')
         if n < 3:
             can.append(f'Chỉ thấy {n}/3 chỗ ghi giá vàng 610 trong bài – kiểm tra lại cấu trúc bài.')
-        can.append('Bài chỉ có nguồn PNJ (1 mức giá) nên các khoảng "từ … đến …" được ghi thành 1 mức, kèm "(theo PNJ)" ở mục 3. '
-                   'Muốn giữ dạng khoảng thì cần thêm nguồn thương hiệu khác.')
+        if len(co) < 2:
+            can.append('Chỉ đọc được 1 nguồn – các chỗ ghi dạng khoảng "từ … đến …" giữ nguyên.')
 
     if a.kiem:
         print('Soát:', 'khớp hết' if not lech else f'{len(lech)} chỗ lệch: ' + '; '.join(lech))

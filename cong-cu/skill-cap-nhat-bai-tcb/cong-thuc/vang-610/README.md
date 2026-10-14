@@ -8,8 +8,8 @@ Trang tích ô trong Sheet "Update" hoặc nhắn *"Update bài vàng 610"* — 
 | Việc | Cách làm cố định |
 |---|---|
 | Nguồn | https://www.pnj.com.vn/site/gia-vang dòng "Vàng 610 (14.6K)" (1.000đ/chỉ ×1000), khu vực TP.HCM |
-| Tóm tắt đầu bài "Giá vàng 610 (tháng mm/yyyy): Mua vào khoảng … triệu VNĐ/chỉ, bán ra khoảng …" | Tháng này + 1 mức theo PNJ, triệu/chỉ 2 số lẻ, **dấu chấm** thập phân (`7.64`) |
-| Mục 3 "Giá mua vào / Giá bán ra: Khoảng … VND/chỉ" | 1 mức theo PNJ + "(theo PNJ)" (`7,642,000 VND/chỉ (theo PNJ)`) |
+| Tóm tắt đầu bài "Giá vàng 610 (tháng mm/yyyy): Mua vào khoảng … triệu VNĐ/chỉ, bán ra khoảng …" | Tháng này + giữ đúng dạng của bài: 1 mức → giá PNJ; khoảng → thấp nhất – cao nhất (PNJ, SJC 61%). Triệu/chỉ 2 số lẻ, giữ dấu thập phân của bài |
+| Mục 3 "Giá mua vào / Giá bán ra: Khoảng … VND/chỉ" | **Giữ dạng "Khoảng X VND/chỉ đến Y VND/chỉ"**: X = thấp nhất, Y = cao nhất của PNJ "Vàng 610 (14.6K)" và SJC "Nữ trang 61%" (webgia.com). Chỉ đọc được 1 nguồn → giữ nguyên dòng, ghi cần duyệt. KHÔNG đổi thành 1 mức, KHÔNG thêm "(theo PNJ)" (Trang dặn 14/10/2026) |
 | "tháng mm/yyyy" khác | Tháng này |
 | Tên file Docs | `<Tiêu đề bài> – dd/mm/yyyy`; trùng → thêm ` (cập nhật HHhMM)`; trong thư mục Drive chung |
 
@@ -37,5 +37,5 @@ Rồi Bước 5 – 6 của `SKILL.md`. Lưu kết quả vào `/home/user/trang/
 
 | File | Làm gì |
 |---|---|
-| `lay_gia_610.js` | Mở pnj.com.vn bằng Chromium, lấy giá mua/bán vàng 610 → `gia-610.json` |
+| `lay_gia_610.js` | (PNJ + SJC 61% qua webgia) Mở pnj.com.vn bằng Chromium, lấy giá mua/bán vàng 610 → `gia-610.json` |
 | `tao_sua.py` | Tóm tắt + mục 3 + tháng → `sua.json`; `--kiem` soát lại |
