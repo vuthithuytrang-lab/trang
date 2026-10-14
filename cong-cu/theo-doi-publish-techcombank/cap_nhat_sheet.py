@@ -14,6 +14,7 @@ cập nhật đúng ngày (Trang chốt 07/10/2026). Muốn kiểm bất kể, t
 Cách dùng:
   python cap_nhat_sheet.py dau-vao.json > ket-qua.json
   python cap_nhat_sheet.py dau-vao.json --ep > ket-qua.json   (kiểm tay, không bỏ qua)
+  python cap_nhat_sheet.py dau-vao.json --ep --ngay 15/10/2026 > ket-qua.json   (so với ngày chỉ định)
 dau-vao.json: {"bang": [toàn bộ giá trị tab từ A1, mỗi hàng 1 mảng],
                "column_count": số cột hiện có của tab, "sheet_id": id số của tab, "tab": "Untitled"}
               (kiểu cũ vẫn dùng được: "header": [hàng 1], "rows": [[STT, URL], ...] từ hàng 2)
@@ -51,6 +52,7 @@ def ten_cot(i):  # 0 -> A
 def main():
     vao = json.load(open(sys.argv[1], encoding="utf-8"))
     ep = "--ep" in sys.argv[2:]
+    ngay_chi_dinh = sys.argv[sys.argv.index("--ngay") + 1] if "--ngay" in sys.argv else None
     bang = vao.get("bang")
     if bang is not None:
         header = [str(o).strip() for o in (bang[0] if bang else [])]
@@ -62,6 +64,8 @@ def main():
 
     bay_gio = datetime.now(timezone(timedelta(hours=7)))
     ngay_kiem = bay_gio.date() + timedelta(days=1 if bay_gio.hour >= GIO_CHUYEN_NGAY else 0)
+    if ngay_chi_dinh:  # Trang nhờ chuyển sang một ngày cụ thể
+        ngay_kiem = datetime.strptime(ngay_chi_dinh, "%d/%m/%Y").date()
     hom_nay = ngay_kiem.strftime("%d/%m/%Y")  # ngày cần kiểm (tên biến giữ nguyên cho gọn)
 
     # Lần kiểm trưa: buổi sáng đã đủ hết thì bỏ qua
