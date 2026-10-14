@@ -1,10 +1,10 @@
 # Báo cáo cập nhật bài Techcombank – 15/10/2026
 
-> Ngày ghi trong bài cố định 15/10/2026 theo yêu cầu của Trang; số liệu lấy ngày 14/10/2026 (khoảng 15h). Đủ 7 nguồn đọc được (lần đầu trình duyệt báo lỗi chứng chỉ do máy chủ đổi chứng chỉ proxy — đã cho trình duyệt dùng chứng chỉ mới, không tắt kiểm tra bảo mật). Giá DOJI cập nhật lúc 08:05 14/10/2026: các dòng DOJI ngoài vàng miếng SJC không đổi so với bài. Giá thế giới ghi số tròn 4,151 (nguồn 4,151.29) vì ô cũ ghi sai định dạng 4,121,49. Soát Google Docs: dòng lệch 0, ô vàng 82/82, chữ giống 100.00%.
+> Làm lại 14/10 chiều theo yêu cầu của Trang: chỉ cập nhật số, giữ nguyên câu chữ – câu giá vàng thế giới giữ 'tỷ giá Techcombank' (quy đổi bằng tỷ giá USD bán chuyển khoản trên trang tỷ giá Techcombank) và giữ cách ghi số của bài.
 
 ## BÀI 1 – https://techcombank.com/thong-tin/blog/1-chi-vang-bao-nhieu-tien
 
-**1. Link file:** [1 chỉ vàng bao nhiêu tiền? Giá vàng 24K, 18K, 9999 hôm nay – 15/10/2026](https://docs.google.com/document/d/14SH7_KrCeVUZJlOOGmM_JGaUAO4KjTdmCnUsqwG4A8Y/edit)
+**1. Link file:** [1 chỉ vàng bao nhiêu tiền? Giá vàng 24K, 18K, 9999 hôm nay – 15/10/2026](https://docs.google.com/document/d/1XYLRP7yUixN85O0u4ab-4lRzyaQ3lJHsRtflLACt2dE/edit)
 
 **2. Ngày tháng đã đổi:**
 
@@ -36,7 +36,7 @@
 
 **5. Nội dung khác đã cập nhật (84 chỗ, đều tô vàng):**
 
-- Đoạn "…3. Cập nhật giá vàng thế giới hôm nay 15/10/2026": "Giá vàng thế giới ngày 15/10/2026 giao dịch quanh ngưỡng 4,121,49 USD/ounce (tương đương khoảng 129,891,931 VND/lượng quy đổi theo tỷ giá Techcombank" → "Giá vàng thế giới ngày 15/10/2026 giao dịch quanh ngưỡng 4,151 USD/ounce (tương đương khoảng 130,530,800 VND/lượng quy đổi theo tỷ giá Vietcombank" (nguồn: https://giavang.org/the-gioi/; giavang.org 15:05:01 14/10/2026: 4,151.29 USD/ounce; 1 lượng = 1.20565303 ounce = 130,530,800 VNĐ theo tỷ giá Vietcombank)
+- Đoạn "…3. Cập nhật giá vàng thế giới hôm nay 15/10/2026": "Giá vàng thế giới ngày 15/10/2026 giao dịch quanh ngưỡng 4,121,49 USD/ounce (tương đương khoảng 129,891,931 VND/lượng quy đổi theo tỷ giá Techcombank" → "Giá vàng thế giới ngày 15/10/2026 giao dịch quanh ngưỡng 4,151,29 USD/ounce (tương đương khoảng 130,505,776 VND/lượng quy đổi theo tỷ giá Techcombank" (nguồn: https://giavang.org/the-gioi/; giavang.org 15:05:01 14/10/2026: 4,151.29 USD/ounce × 1.20565303 ounce/lượng × 26,075 đ/USD (Techcombank bán chuyển khoản USD (50,100), 2026-10-14T16:02:16.176Z) = 130,505,776 VND/lượng)
 - Đoạn "…(14K) 7,288,000 8,278,000 Vàng 333 (8K) 3,722,000": "4,712,000" → "4,695,000" (nguồn: https://www.pnj.com.vn/site/gia-vang; PNJ – "Vàng 333 (8K)", cập nhật 14/10/2026 14:18:41)
 - Đoạn "…Vàng 585 (14K) 7,288,000 8,278,000 Vàng 333 (8K)": "3,722,000" → "3,705,000" (nguồn: https://www.pnj.com.vn/site/gia-vang; PNJ – "Vàng 333 (8K)", cập nhật 14/10/2026 14:18:41)
 - Đoạn "….6K) 7,642,000 8,632,000 Vàng 585 (14K) 7,288,000": "8,278,000" → "8,249,000" (nguồn: https://www.pnj.com.vn/site/gia-vang; PNJ – "Vàng 585 (14K)", cập nhật 14/10/2026 14:18:41)
@@ -125,6 +125,5 @@
 
 - DOJI không còn dòng "KNT + KTT + Kim Giáp" – lấy dòng "KIM TT/AVPL" (kim thần tài/ An Vượng Phát Lộc).
 - PNJ không có "990" – lấy dòng "Vàng nữ trang 9920".
-- Mục 3: nguồn giavang.org quy đổi theo tỷ giá VIETCOMBANK (không có tỷ giá Techcombank) – câu đã đổi "theo tỷ giá Techcombank" thành "theo tỷ giá Vietcombank" cho đúng nguồn, đồng thời sửa lỗi cũ (số cũ tính theo ounce). Muốn giữ chữ Techcombank thì cần nguồn tỷ giá Techcombank.
 
 **7.** Có thay đổi: 84 chỗ nội dung khác.

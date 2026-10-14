@@ -3,11 +3,11 @@
   "sua": [
    {
     "tim": "Giá vàng thế giới ngày 15/10/2026 giao dịch quanh ngưỡng 4,121,49 USD/ounce (tương đương khoảng 129,891,931 VND/lượng quy đổi theo tỷ giá Techcombank",
-    "thay": "Giá vàng thế giới ngày 15/10/2026 giao dịch quanh ngưỡng 4,151 USD/ounce (tương đương khoảng 130,530,800 VND/lượng quy đổi theo tỷ giá Vietcombank",
+    "thay": "Giá vàng thế giới ngày 15/10/2026 giao dịch quanh ngưỡng 4,151,29 USD/ounce (tương đương khoảng 130,505,776 VND/lượng quy đổi theo tỷ giá Techcombank",
     "lan": 1,
     "giu_nguyen_so": true,
     "nguon": "https://giavang.org/the-gioi/",
-    "ly_do": "giavang.org 15:05:01 14/10/2026: 4,151.29 USD/ounce; 1 lượng = 1.20565303 ounce = 130,530,800 VNĐ theo tỷ giá Vietcombank"
+    "ly_do": "giavang.org 15:05:01 14/10/2026: 4,151.29 USD/ounce × 1.20565303 ounce/lượng × 26,075 đ/USD (Techcombank bán chuyển khoản USD (50,100), 2026-10-14T16:02:16.176Z) = 130,505,776 VND/lượng"
    },
    {
     "tim": "4,712,000",
@@ -676,8 +676,7 @@
   ],
   "can_duyet": [
    "DOJI không còn dòng \"KNT + KTT + Kim Giáp\" – lấy dòng \"KIM TT/AVPL\" (kim thần tài/ An Vượng Phát Lộc).",
-   "PNJ không có \"990\" – lấy dòng \"Vàng nữ trang 9920\".",
-   "Mục 3: nguồn giavang.org quy đổi theo tỷ giá VIETCOMBANK (không có tỷ giá Techcombank) – câu đã đổi \"theo tỷ giá Techcombank\" thành \"theo tỷ giá Vietcombank\" cho đúng nguồn, đồng thời sửa lỗi cũ (số cũ tính theo ounce). Muốn giữ chữ Techcombank thì cần nguồn tỷ giá Techcombank."
+   "PNJ không có \"990\" – lấy dòng \"Vàng nữ trang 9920\"."
   ]
  }
 }
