@@ -1,0 +1,31 @@
+{
+ "lay_luc": "15/10/2026 ~17:40 giờ VN (bản tin sáng/trưa 15/10/2026, số của Sở NN&MT An Giang phiên 14–15/10)",
+ "nguon": {
+  "dnhn": {"url": "https://doanhnghiephoinhap.vn/gia-lua-gao-hom-nay-15102026-gia-phu-pham-tang-gia-lua-tuoi-chung-151642.html", "dang_luc": "2026-10-15T07:45:42+07:00", "ghi_chu": "bảng giá gạo/nếp/lúa là ẢNH; ảnh gạo tạo 15/10 06:33, ảnh nếp tạo 24/09, ảnh lúa tạo 14/10"},
+  "congthuong": {"url": "https://congthuong.vn/gia-lua-gao-hom-nay-ngay-15-10-2026-gia-lua-tuoi-bien-dong-476954.html", "dang_luc": "15/10/2026 11:30"},
+  "baovanhoa": {"url": "https://baovanhoa.vn/kinh-te/gia-lua-gao-hom-nay-15102026-gao-cl555-o-muc-88008850-dongkg-274632.html", "dang_luc": "2026-10-15T05:48:34+07:00"},
+  "indexvn": {"url": "https://index.vn/tin-tuc/gia-lua-gao-ngay-hom-nay-15-10-2026-gao-nguyen-lieu-cl-555-tang-50-dong-kg-ir-504-tang-100-dong-kg", "dang_luc": "15/10/2026"},
+  "tbtc": {"url": "https://thoibaotaichinhvietnam.vn/ngay-15-10-gia-mot-so-loai-gao-nguyen-lieu-xuat-khau-tiep-tuc-tang-205372.html", "dang_luc": "15/10/2026 06:17"}
+ },
+ "gao_trong_nuoc_dnhn_anh": {
+  "Nàng Nhen": "28.000", "Gạo Sóc thơm": "7.500 - 7.600", "Gạo thơm": "17.000 - 22.000", "Gạo thơm Jasmine": "13.000 - 20.500",
+  "Gạo Nàng Hoa": "21.000", "Gạo tẻ thường": "12.000 - 15.000", "Gạo thơm thái hạt dài": "20.000 - 22.000", "Gạo Hương Lài": "22.000",
+  "Gạo Đài thơm": "15.000 - 16.000", "TP OM 5451 (đã sortex)": "10.750 – 10.900", "Gạo Sóc Thường": "17.500",
+  "Gạo nguyên liệu OM 380": "7.500 - 7.600", "Gạo nguyên liệu CL 555": "8.800 – 8.850 (+50)", "Gạo nguyên liệu IR 504": "8.700 – 8.800",
+  "Gạo nguyên liệu OM 5451": "9.550 - 9.650", "Gạo nguyên liệu OM 18": "8.700 - 8.850", "Gạo IR 50404": "8.500 - 8.600"
+ },
+ "gao_doi_chieu": {
+  "congthuong": {"CL 555": "8.800 - 8.850", "IR 504": "8.700 - 8.800", "OM 5451": "9.300 - 9.400", "OM 18": "8.700 - 8.850", "OM 380": "7.500 - 7.600", "Sóc thơm": "7.500 - 7.600",
+                 "le": {"Nàng Nhen": "28.000", "Hương Lài": "22.000", "Thái hạt dài": "20.000 - 22.000", "Nàng Hoa": "21.000", "gạo thường": "14.000 - 15.000", "Sóc thường": "15.000 - 16.000", "Jasmine": "17.000 - 18.000", "Đài Thơm 8": "15.000 - 16.000"}},
+  "baovanhoa": {"CL555": "8.800–8.850 (14/10)", "IR504": "8.700–8.800"},
+  "indexvn": {"CL 555": "8.750 - 8.800", "IR 504": "8.700 - 8.800", "OM 5451": "9.300 - 9.400", "Jasmine": "16.500 - 17.500"},
+  "dnhn_chu": {"CL 555": "8.800 - 8.900 (chữ, khác ảnh)", "IR 504": "8.700–8.800", "OM 5451": "9.550 - 9.650", "Jasmine": "13.000 - 20.500", "gạo thường": "12.000 - 15.000"}
+ },
+ "nep": {"Nếp IR 4625": "7.300 - 7.500", "Nếp IR 5625 tươi": "7.300 - 7.500", "Nếp 3 tháng (khô)": "9.600 - 9.700", "nguon": "dnhn ảnh + chữ, congthuong/indexvn/tbtc khớp"},
+ "lua": {
+  "dnhn_anh_14_10": {"IR 50404 (tươi)": "5.900 - 6.000", "OM 5451": "6.000 – 6.200", "Đài Thơm 8": "6.200 – 6.300", "OM 18": "6.200 – 6.300", "OM 34": "5.800 – 5.900", "Nàng nhen (khô)": "20.000", "DS1": "6.500 – 6.600", "Lúa tươi IR 504": "5.900 – 6.000"},
+  "chu_15_10": {"IR 50404": "6.000 - 6.200 (congthuong, baovanhoa, indexvn, tbtc)", "OM 5451": "6.000 - 6.100", "OM 18": "6.200 - 6.300", "Đài Thơm 8": "6.200 - 6.300 (congthuong: 6.200 - 6.400, +100)", "OM 34": "5.800 - 5.900 (congthuong: 5.800 - 6.000, +100)", "DS1": "6.500 - 6.600"}
+ },
+ "the_gioi_usd_tan": {"Thái Lan 5% tấm": "455 - 459 (congthuong: giảm 4)", "Thái Lan 100% tấm": "381 - 385 (congthuong: giảm 1)", "Ấn Độ 100% tấm": "326 - 330 (congthuong: tăng 3)", "Ấn Độ gạo đồ 5% tấm": "381 - 385 (dnhn/tbtc: không biến động)", "Ấn Độ 5% tấm": "382 - 386", "Pakistan 5% tấm": "409 - 413",
+  "VN_VFA": {"trắng 5% tấm": "420 - 424", "Jasmine": "515 - 519", "thơm 5% tấm": "440 - 445"}}
+}

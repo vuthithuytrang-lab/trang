@@ -57,6 +57,7 @@ def main():
     ap.add_argument('--xem', required=True)
     ap.add_argument('--the-gioi', required=True)
     ap.add_argument('--ra')
+    ap.add_argument('--html', help='cap-nhat/tam/bai1.dung.min.html – để soát link nháp có sẵn trong bài')
     ap.add_argument('--kiem', action='store_true')
     a = ap.parse_args()
 
@@ -110,6 +111,13 @@ def main():
     if 'chất lượng cà phê, sản lượng thu mua' in van:
         can.append('Câu "Lưu ý" dưới 2 bảng giá sàn nói về "chất lượng cà phê, sản lượng thu mua, chi phí vận chuyển… từng khu vực" '
                    '(câu của giá thu mua trong nước, không khớp với giá hợp đồng trên sàn) – theo quy tắc không sửa chữ, chỉ báo lại.')
+
+    try:
+        if 'utm_source=chatgpt.com' in open(a.html, encoding='utf-8').read():
+            can.append('Bài gốc có một link ẩn (khoảng trắng cuối đoạn mở đầu mục 3) trỏ tới ice.com kèm đuôi '
+                       '"utm_source=chatgpt.com" – link nháp sót lại, theo quy tắc không sửa, chỉ báo lại.')
+    except (TypeError, OSError):
+        pass
 
     if a.kiem:
         for l in loi:
