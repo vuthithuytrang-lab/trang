@@ -1,0 +1,81 @@
+{
+ "thoi_diem_lay": "17:37 15/10/2026",
+ "nguon": {
+  "lich_su_dak_lak": {
+   "url": "https://nhabeagri.com/gia-nong-san/gia-ca-phe-dak-lak/",
+   "cap_nhat": "17:37 15/10/2026",
+   "bang": [
+    {
+     "ngay": "15/10/2026",
+     "gia": 93300,
+     "thay_doi": 100
+    },
+    {
+     "ngay": "14/10/2026",
+     "gia": 93200,
+     "thay_doi": 0
+    },
+    {
+     "ngay": "13/10/2026",
+     "gia": 93200,
+     "thay_doi": 1400
+    },
+    {
+     "ngay": "12/10/2026",
+     "gia": 91800,
+     "thay_doi": 0
+    },
+    {
+     "ngay": "09/10/2026",
+     "gia": 91800,
+     "thay_doi": -2400
+    },
+    {
+     "ngay": "08/10/2026",
+     "gia": 94200,
+     "thay_doi": 0
+    },
+    {
+     "ngay": "07/10/2026",
+     "gia": 94200,
+     "thay_doi": 200
+    },
+    {
+     "ngay": "06/10/2026",
+     "gia": 173700,
+     "thay_doi": 0
+    }
+   ]
+  },
+  "cac_vung": {
+   "url": "https://nhabeagri.com/gia-nong-san/gia-ca-phe/",
+   "cap_nhat": "17:02 15/10/2026",
+   "bang": {
+    "Đắk Lắk": {
+     "gia": 93300,
+     "thay_doi": 100
+    },
+    "Gia Lai": {
+     "gia": 93300,
+     "thay_doi": 100
+    },
+    "Đắk Nông": {
+     "gia": 93500,
+     "thay_doi": 300
+    },
+    "Lâm Đồng": {
+     "gia": 92600,
+     "thay_doi": 100
+    },
+    "Tây Nguyên": {
+     "gia": 93300,
+     "thay_doi": 100
+    },
+    "Hồ tiêu": {
+     "gia": 139000,
+     "thay_doi": 500
+    }
+   }
+  }
+ }
+}

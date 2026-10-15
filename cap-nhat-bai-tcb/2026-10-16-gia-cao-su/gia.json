@@ -1,0 +1,195 @@
+{
+ "trong_nuoc": {
+  "nguon": "https://doanhnghiephoinhap.vn/gia-cao-su-hom-nay-15102026-gia-cao-su-tren-san-shfe-giam-hon-3-151644.html",
+  "thoi_diem": "cập nhật lúc 08:20:01 ngày 15/10/2026 trên trang giacaphe.com",
+  "gia": {
+   "phu_rieng_mu_tap": 390,
+   "phu_rieng_mu_nuoc": 420,
+   "mang_yang_mu_nuoc_loai2": 458,
+   "mang_yang_mu_nuoc_loai1": 463,
+   "mang_yang_mu_dong_loai2": 404,
+   "mang_yang_mu_dong_loai1": 459,
+   "binh_long_nha_may": 540,
+   "binh_long_doi_sx": 530,
+   "binh_long_mu_tap": 18000,
+   "ba_ria_mu_nuoc": 420,
+   "ba_ria_mu_dong": 14600,
+   "ba_ria_mu_dong_nhom_drc": "35 - 44%",
+   "ba_ria_mu_nguyen_lieu": 18100
+  },
+  "cau_goc": {
+   "phu_rieng_mu_tap": "Phú Riềng, chào giá thu mua mủ tạp bình ổn ở mức 390 đồng/DRC",
+   "phu_rieng_mu_nuoc": "Phú Riềng, chào giá thu mua mủ tạp bình ổn ở mức 390 đồng/DRC, giá thu mua mủ nước 420 đồng/TSC",
+   "mang_yang_mu_nuoc": "MangYang, giá thu mua mủ nước ghi nhận khoảng 458 - 463 đồng/TSC (loại 2-loại 1)",
+   "mang_yang_mu_dong": "MangYang, giá thu mua mủ nước ghi nhận khoảng 458 - 463 đồng/TSC (loại 2-loại 1), mủ đông tạp khoảng 404 - 459 đồng/DRC (loại 2-loại 1)",
+   "binh_long_nha_may": "Bình Long, giá cao su thu mua tại Nhà máy ở mức 540 đồng",
+   "binh_long_doi_sx": "Bình Long, giá cao su thu mua tại Nhà máy ở mức 540 đồng/độ TSC/kg và giá thu mua tại đội sản xuất 530 đồng",
+   "binh_long_mu_tap": "Bình Long, giá cao su thu mua tại Nhà máy ở mức 540 đồng/độ TSC/kg và giá thu mua tại đội sản xuất 530 đồng/TSC/kg; giá mủ tạp (DRC 60%) bình ổn 18.000 đồng/kg",
+   "ba_ria_mu_nuoc": "Bà Rịa cũng báo giá thu mua mủ nước ở mức 420 đồng/độ TSC/kg (áp dụng cho độ TSC từ 25 đến dưới 30)",
+   "ba_ria_mu_dong": "Bà Rịa cũng báo giá thu mua mủ nước ở mức 420 đồng/độ TSC/kg (áp dụng cho độ TSC từ 25 đến dưới 30); mủ đông DRC (35 - 44%) ở mức 14.600 đồng/kg",
+   "ba_ria_mu_nguyen_lieu": "Bà Rịa cũng báo giá thu mua mủ nước ở mức 420 đồng/độ TSC/kg (áp dụng cho độ TSC từ 25 đến dưới 30); mủ đông DRC (35 - 44%) ở mức 14.600 đồng/kg, mủ nguyên liệu 18.100 đồng/kg"
+  }
+ },
+ "tocom": {
+  "nguon": "https://www.jpx.co.jp/english/markets/derivatives/settlement-price/tvdivq00000014l6-att/rb_e20261015.csv",
+  "thoi_diem": "giá thanh toán ngày 20261015",
+  "hop_dong": [
+   {
+    "ky_han": "10/26",
+    "gia": "470"
+   },
+   {
+    "ky_han": "11/26",
+    "gia": "448"
+   },
+   {
+    "ky_han": "12/26",
+    "gia": "449.7"
+   },
+   {
+    "ky_han": "01/27",
+    "gia": "440"
+   },
+   {
+    "ky_han": "02/27",
+    "gia": "443.5"
+   },
+   {
+    "ky_han": "03/27",
+    "gia": "446.6"
+   },
+   {
+    "ky_han": "04/27",
+    "gia": "450"
+   },
+   {
+    "ky_han": "05/27",
+    "gia": "450"
+   },
+   {
+    "ky_han": "06/27",
+    "gia": "450"
+   },
+   {
+    "ky_han": "07/27",
+    "gia": "450"
+   },
+   {
+    "ky_han": "08/27",
+    "gia": "450"
+   },
+   {
+    "ky_han": "09/27",
+    "gia": "450"
+   }
+  ]
+ },
+ "shfe": {
+  "nguon": "https://giacaphe.com/gia-cao-su-truc-tuyen/",
+  "thoi_diem": "Cập nhật: 15/10/2026 lúc 17:35:01 (lấy lúc 2026-10-15T10:39:34.968Z UTC)",
+  "hop_dong": [
+   {
+    "ky_han": "10/26",
+    "gia": "18800",
+    "thay_doi": "-375 -1.96%",
+    "hom_truoc": "19175"
+   },
+   {
+    "ky_han": "11/26",
+    "gia": "19040",
+    "thay_doi": "-405 -2.08%",
+    "hom_truoc": "19445"
+   },
+   {
+    "ky_han": "01/27",
+    "gia": "19735",
+    "thay_doi": "-480 -2.37%",
+    "hom_truoc": "20215"
+   },
+   {
+    "ky_han": "03/27",
+    "gia": "19730",
+    "thay_doi": "-505 -2.50%",
+    "hom_truoc": "20235"
+   },
+   {
+    "ky_han": "04/27",
+    "gia": "19730",
+    "thay_doi": "-540 -2.66%",
+    "hom_truoc": "20270"
+   }
+  ]
+ },
+ "sgx": {
+  "nguon": "https://giacaphe.com/gia-cao-su-truc-tuyen/",
+  "thoi_diem": "Cập nhật: 15/10/2026 lúc 17:35:01 (lấy lúc 2026-10-15T10:39:34.968Z UTC)",
+  "hop_dong": [
+   {
+    "ky_han": "11/26",
+    "gia": "255.10",
+    "thay_doi": "-3.50 -1.35%",
+    "hom_truoc": "258.60"
+   },
+   {
+    "ky_han": "12/26",
+    "gia": "252.00",
+    "thay_doi": "-4 -1.56%",
+    "hom_truoc": "256.00"
+   },
+   {
+    "ky_han": "01/27",
+    "gia": "250.50",
+    "thay_doi": "-4.10 -1.61%",
+    "hom_truoc": "254.60"
+   },
+   {
+    "ky_han": "02/27",
+    "gia": "249.30",
+    "thay_doi": "-4.10 -1.62%",
+    "hom_truoc": "253.40"
+   },
+   {
+    "ky_han": "03/27",
+    "gia": "248.70",
+    "thay_doi": "-4 -1.58%",
+    "hom_truoc": "252.70"
+   }
+  ]
+ },
+ "tocom_giacaphe": {
+  "nguon": "https://giacaphe.com/gia-cao-su-truc-tuyen/",
+  "thoi_diem": "Cập nhật: 15/10/2026 lúc 17:35:01 (lấy lúc 2026-10-15T10:39:34.968Z UTC)",
+  "hop_dong": [
+   {
+    "ky_han": "10/26",
+    "gia": "470.00",
+    "thay_doi": "0 0.00%",
+    "hom_truoc": "470.00"
+   },
+   {
+    "ky_han": "11/26",
+    "gia": "448.00",
+    "thay_doi": "-4.80 -1.07%",
+    "hom_truoc": "448.00"
+   },
+   {
+    "ky_han": "12/26",
+    "gia": "449.70",
+    "thay_doi": "-4.90 -1.09%",
+    "hom_truoc": "449.70"
+   },
+   {
+    "ky_han": "01/27",
+    "gia": "440.00",
+    "thay_doi": "-10.60 -2.41%",
+    "hom_truoc": "440.00"
+   },
+   {
+    "ky_han": "02/27",
+    "gia": "443.50",
+    "thay_doi": "-7.40 -1.67%",
+    "hom_truoc": "443.50"
+   }
+  ]
+ }
+}

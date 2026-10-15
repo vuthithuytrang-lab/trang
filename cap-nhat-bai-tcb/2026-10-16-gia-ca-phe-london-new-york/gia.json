@@ -1,0 +1,73 @@
+{
+ "the_gioi": {
+  "url": "https://giacaphe.com/gia-ca-phe-truc-tuyen/",
+  "cap_nhat": "Cập nhật: 15/10/2026 lúc 17:35:01",
+  "ghi_chu": "giá trực tuyến lấy trong giờ sàn (17:35 15/10/2026 giờ VN), chưa phải giá chốt phiên",
+  "bang": {
+   "robusta": [
+    {
+     "ky_han": "11/26",
+     "gia": "3441",
+     "thay_doi": "-42",
+     "hom_truoc": "3483"
+    },
+    {
+     "ky_han": "01/27",
+     "gia": "3424",
+     "thay_doi": "-46",
+     "hom_truoc": "3470"
+    },
+    {
+     "ky_han": "03/27",
+     "gia": "3401",
+     "thay_doi": "-44",
+     "hom_truoc": "3445"
+    },
+    {
+     "ky_han": "05/27",
+     "gia": "3387",
+     "thay_doi": "-42",
+     "hom_truoc": "3429"
+    },
+    {
+     "ky_han": "07/27",
+     "gia": "3372",
+     "thay_doi": "-42",
+     "hom_truoc": "3414"
+    }
+   ],
+   "arabica": [
+    {
+     "ky_han": "12/26",
+     "gia": "294.00",
+     "thay_doi": "-4.05",
+     "hom_truoc": "298.05"
+    },
+    {
+     "ky_han": "03/27",
+     "gia": "286.00",
+     "thay_doi": "-4.15",
+     "hom_truoc": "290.15"
+    },
+    {
+     "ky_han": "05/27",
+     "gia": "282.40",
+     "thay_doi": "-4.15",
+     "hom_truoc": "286.55"
+    },
+    {
+     "ky_han": "07/27",
+     "gia": "280.25",
+     "thay_doi": "-3.55",
+     "hom_truoc": "283.80"
+    },
+    {
+     "ky_han": "09/27",
+     "gia": "280.75",
+     "thay_doi": "-0.65",
+     "hom_truoc": "281.40"
+    }
+   ]
+  }
+ }
+}

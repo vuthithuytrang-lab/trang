@@ -1,0 +1,163 @@
+{
+ "bai1": {
+  "sua": [
+   {
+    "tim": "Đắk Nông khoảng 94,400 VND/kg",
+    "thay": "Đắk Nông khoảng 93,500 VND/kg",
+    "giu_nguyen_so": true,
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe/",
+    "ly_do": "Đắk Nông: 93,500 đ/kg, thay đổi +300 (Nhà Bè Agri, cập nhật 17:02 15/10/2026)",
+    "lan": 1
+   },
+   {
+    "tim": "Gia Lai khoảng 94,200 VND/kg",
+    "thay": "Gia Lai khoảng 93,300 VND/kg",
+    "giu_nguyen_so": true,
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe/",
+    "ly_do": "Gia Lai: 93,300 đ/kg, thay đổi +100 (Nhà Bè Agri, cập nhật 17:02 15/10/2026)",
+    "lan": 1
+   },
+   {
+    "tim": "Lâm Đồng khoảng 93,600 VND/kg",
+    "thay": "Lâm Đồng khoảng 92,600 VND/kg",
+    "giu_nguyen_so": true,
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe/",
+    "ly_do": "Lâm Đồng: 92,600 đ/kg, thay đổi +100 (Nhà Bè Agri, cập nhật 17:02 15/10/2026)",
+    "lan": 1
+   },
+   {
+    "tim": "-800",
+    "thay": "-2,400",
+    "giu_nguyen_so": true,
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe-dak-lak/",
+    "ly_do": "Đắk Lắk ngày 09/10/2026: 91,800 đ/kg, thay đổi -2,400 (Nhà Bè Agri, cập nhật 17:37 15/10/2026)",
+    "lan": 1
+   },
+   {
+    "tim": "93,800",
+    "thay": "91,800",
+    "giu_nguyen_so": true,
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe-dak-lak/",
+    "ly_do": "Đắk Lắk ngày 09/10/2026: 91,800 đ/kg, thay đổi -2,400 (Nhà Bè Agri, cập nhật 17:37 15/10/2026)",
+    "lan": 1
+   },
+   {
+    "tim": "02/10/2026",
+    "thay": "09/10/2026",
+    "giu_nguyen_so": true,
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe-dak-lak/",
+    "ly_do": "Đắk Lắk ngày 09/10/2026: 91,800 đ/kg, thay đổi -2,400 (Nhà Bè Agri, cập nhật 17:37 15/10/2026)",
+    "lan": 1
+   },
+   {
+    "tim": "+200",
+    "thay": "+0",
+    "giu_nguyen_so": true,
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe-dak-lak/",
+    "ly_do": "Đắk Lắk ngày 12/10/2026: 91,800 đ/kg, thay đổi +0 (Nhà Bè Agri, cập nhật 17:37 15/10/2026)",
+    "lan": 2
+   },
+   {
+    "tim": "94,000",
+    "thay": "91,800",
+    "giu_nguyen_so": true,
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe-dak-lak/",
+    "ly_do": "Đắk Lắk ngày 12/10/2026: 91,800 đ/kg, thay đổi +0 (Nhà Bè Agri, cập nhật 17:37 15/10/2026)",
+    "lan": 2
+   },
+   {
+    "tim": "03/10/2026",
+    "thay": "12/10/2026",
+    "giu_nguyen_so": true,
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe-dak-lak/",
+    "ly_do": "Đắk Lắk ngày 12/10/2026: 91,800 đ/kg, thay đổi +0 (Nhà Bè Agri, cập nhật 17:37 15/10/2026)",
+    "lan": 1
+   },
+   {
+    "tim": "+0",
+    "thay": "+1,400",
+    "giu_nguyen_so": true,
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe-dak-lak/",
+    "ly_do": "Đắk Lắk ngày 13/10/2026: 93,200 đ/kg, thay đổi +1,400 (Nhà Bè Agri, cập nhật 17:37 15/10/2026)",
+    "lan": 1
+   },
+   {
+    "tim": "94,000",
+    "thay": "93,200",
+    "giu_nguyen_so": true,
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe-dak-lak/",
+    "ly_do": "Đắk Lắk ngày 13/10/2026: 93,200 đ/kg, thay đổi +1,400 (Nhà Bè Agri, cập nhật 17:37 15/10/2026)",
+    "lan": 1
+   },
+   {
+    "tim": "06/10/2026",
+    "thay": "13/10/2026",
+    "giu_nguyen_so": true,
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe-dak-lak/",
+    "ly_do": "Đắk Lắk ngày 13/10/2026: 93,200 đ/kg, thay đổi +1,400 (Nhà Bè Agri, cập nhật 17:37 15/10/2026)",
+    "lan": 1
+   },
+   {
+    "tim": "+200",
+    "thay": "+0",
+    "giu_nguyen_so": true,
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe-dak-lak/",
+    "ly_do": "Đắk Lắk ngày 14/10/2026: 93,200 đ/kg, thay đổi +0 (Nhà Bè Agri, cập nhật 17:37 15/10/2026)",
+    "lan": 1
+   },
+   {
+    "tim": "94,200",
+    "thay": "93,200",
+    "giu_nguyen_so": true,
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe-dak-lak/",
+    "ly_do": "Đắk Lắk ngày 14/10/2026: 93,200 đ/kg, thay đổi +0 (Nhà Bè Agri, cập nhật 17:37 15/10/2026)",
+    "lan": 2
+   },
+   {
+    "tim": "07/10/2026",
+    "thay": "14/10/2026",
+    "giu_nguyen_so": true,
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe-dak-lak/",
+    "ly_do": "Đắk Lắk ngày 14/10/2026: 93,200 đ/kg, thay đổi +0 (Nhà Bè Agri, cập nhật 17:37 15/10/2026)",
+    "lan": 1
+   },
+   {
+    "tim": "-1,400",
+    "thay": "+100",
+    "giu_nguyen_so": true,
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe-dak-lak/",
+    "ly_do": "Đắk Lắk ngày 15/10/2026: 93,300 đ/kg, thay đổi +100 (Nhà Bè Agri, cập nhật 17:37 15/10/2026)",
+    "lan": 1
+   },
+   {
+    "tim": "92,800",
+    "thay": "93,300",
+    "giu_nguyen_so": true,
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe-dak-lak/",
+    "ly_do": "Đắk Lắk ngày 15/10/2026: 93,300 đ/kg, thay đổi +100 (Nhà Bè Agri, cập nhật 17:37 15/10/2026)",
+    "lan": 1
+   },
+   {
+    "tim": "08/10/2026",
+    "thay": "15/10/2026",
+    "giu_nguyen_so": true,
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe-dak-lak/",
+    "ly_do": "Đắk Lắk ngày 15/10/2026: 93,300 đ/kg, thay đổi +100 (Nhà Bè Agri, cập nhật 17:37 15/10/2026)",
+    "lan": 1
+   },
+   {
+    "tim": "ở mức khoảng 94,200 VND/kg, tăng khoảng 200 VND/kg",
+    "thay": "ở mức khoảng 93,300 VND/kg, tăng khoảng 100 VND/kg",
+    "giu_nguyen_so": true,
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe-dak-lak/",
+    "ly_do": "Đắk Lắk ngày 15/10/2026: 93,300 đ/kg, thay đổi +100 (Nhà Bè Agri, cập nhật 17:37 15/10/2026)",
+    "lan": 1
+   }
+  ],
+  "can_duyet": [
+   "Đoạn giá hôm nay ghi \"cập nhật trong ngày 16/10/2026\" nhưng số là giá ngày 15/10/2026 (ngày gần nhất nguồn có, cập nhật 17:37 15/10/2026); bảng theo ngày cũng mở đầu bằng 15/10/2026 – cần duyệt.",
+   "Câu \"giá Đắk Lắk đang ở mức tương đối cao\" so với vùng lân cận: theo nguồn Đắk Lắk 93,300 đ/kg, thấp hơn Đắk Nông 93,500 – giữ nguyên câu, cần duyệt.",
+   "Bài gốc còn sót câu \"Dưới đây là bảng thông tin được trích xuất và kẻ lại y hệt theo hình ảnh bạn cung cấp:\" (câu nháp, không hợp với bài đăng) – theo quy tắc không sửa chữ, chỉ báo lại."
+  ]
+ }
+}

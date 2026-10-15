@@ -1,0 +1,19 @@
+{
+ "bai1": {
+  "sua": [
+   {
+    "tim": "Giá điều hôm nay 9/10/2026",
+    "thay": "Giá điều hôm nay 16/10/2026",
+    "lan": "tat_ca",
+    "giu_nguyen_so": true,
+    "nguon": "ngày ghi bài",
+    "ly_do": "ngày kiểu không có số 0 (tiêu đề, mở bài, đề mục 1, kết bài), công cụ không tự đổi"
+   }
+  ],
+  "can_duyet": [
+   "Bảng giá điều giữ nguyên toàn bộ: nguồn banggianongsan.com (15/10/2026) và giacaphehomnay.vn (16:55 15/10/2026) ghi đúng các mức như bài, \"Không đổi\". Các trang này giữ cùng một mức từ ít nhất 04/09/2026 (đang trái vụ điều) — giá mang tính tham khảo, cần duyệt có muốn giữ hay tìm nguồn giao dịch thực tế.",
+   "Dòng \"10,5 - 12,8\" / \"8,5 - 10,8\" là USD/kg (nguồn ghi 10.5 – 12.8 USD/kg); bài dùng dấu phẩy thập phân trong khi các dòng VND dùng dấu phẩy ngăn nghìn — giữ nguyên kiểu của bài.",
+   "Lỗi có sẵn trong bài (không sửa chữ): \"Chi phí chế biến và logistic\" (thiếu \"s\"); nhãn tỉnh dùng tên cũ (Đắk Nông, Kon Tum, Bình Phước, Vũng Tàu) — giữ như nguồn và bài."
+  ]
+ }
+}

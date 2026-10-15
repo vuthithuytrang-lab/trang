@@ -1,0 +1,78 @@
+{
+ "lay_luc": "15/10/2026 ~18:00 giờ VN",
+ "nguon": [
+  {
+   "url": "https://banggianongsan.com/",
+   "thoi_diem": "\"Giá hạt điều cập nhật ngày 15/10/2026\"",
+   "ghi_chu": "bảng Giá cũ/Giá mới/Thay đổi: mọi dòng Không đổi"
+  },
+  {
+   "url": "https://giacaphehomnay.vn/gia-nong-san/gia-dieu/",
+   "thoi_diem": "cập nhật lúc 15/10/2026 16:55",
+   "ghi_chu": "mọi dòng \"Không đổi so với hôm qua\""
+  }
+ ],
+ "hang": [
+  {
+   "nhan": "Điều tươi Đắk Lắk (VND/kg)",
+   "gia_nguon": "25.000 – 30.000 vnđ/kg",
+   "giong_bai": true
+  },
+  {
+   "nhan": "Điều tươi Đắk Nông (VND/kg)",
+   "gia_nguon": "25.000 – 30.000 vnđ/kg",
+   "giong_bai": true
+  },
+  {
+   "nhan": "Điều tươi Gia Lai (VND/kg)",
+   "gia_nguon": "25.000 – 30.000 vnđ/kg",
+   "giong_bai": true
+  },
+  {
+   "nhan": "Điều tươi Kon Tum (VND/kg)",
+   "gia_nguon": "25.000 – 30.000 vnđ/kg",
+   "giong_bai": true
+  },
+  {
+   "nhan": "Điều tươi Lâm Đồng (VND/kg)",
+   "gia_nguon": "25.000 – 30.000 vnđ/kg",
+   "giong_bai": true
+  },
+  {
+   "nhan": "Điều tươi Bình Phước (VND/kg)",
+   "gia_nguon": "25.000 – 30.000 vnđ/kg",
+   "giong_bai": true
+  },
+  {
+   "nhan": "Điều tươi Vũng Tàu (VND/kg)",
+   "gia_nguon": "30.000 – 35.000 vnđ/kg",
+   "giong_bai": true
+  },
+  {
+   "nhan": "Điều nhân trắng W240 (240 hạt/kg)",
+   "gia_nguon": "290.000 – 380.000 vnđ/kg",
+   "giong_bai": true
+  },
+  {
+   "nhan": "Điều nhân trắng W320 (320 hạt/kg)",
+   "gia_nguon": "230.000 – 320.000 vnđ/kg",
+   "giong_bai": true
+  },
+  {
+   "nhan": "Điều nhân trắng W450 (450 hạt/kg)",
+   "gia_nguon": "185.000 – 260.000 vnđ/kg",
+   "giong_bai": true
+  },
+  {
+   "nhan": "Hạt điều nhân trắng W240 (USD/kg)",
+   "gia_nguon": "10.5 – 12.8 USD/kg",
+   "giong_bai": true
+  },
+  {
+   "nhan": "Hạt điều nhân trắng W320 (USD/kg)",
+   "gia_nguon": "8.5 – 10.8 USD/kg",
+   "giong_bai": true
+  }
+ ],
+ "ket_luan": "Giá nguồn 15/10/2026 trùng hết với cột Giá mới của bài (10,5 - 12,8 và 8,5 - 10,8 là USD/kg) -> giữ nguyên mọi số, Thay đổi vẫn \"Không đổi\"; chỉ đổi ngày 9/10/2026 -> 16/10/2026."
+}
