@@ -1,0 +1,72 @@
+{
+ "ALIV2026": {
+  "ma_nguon": "ALV26",
+  "gia_nguon": "3086.25",
+  "phan_tram": "-1.33%",
+  "thoi_diem": "giá chốt phiên 10/14/26",
+  "url": "https://www.barchart.com/futures/quotes/ALV26/overview"
+ },
+ "ALIX2026": {
+  "ma_nguon": "ALX26",
+  "gia_nguon": "3077.25",
+  "phan_tram": "-1.75%",
+  "thoi_diem": "giá chốt phiên 10/14/26",
+  "url": "https://www.barchart.com/futures/quotes/ALX26/overview"
+ },
+ "ALIZ2026": {
+  "ma_nguon": "ALZ26",
+  "gia_nguon": "3076.25",
+  "phan_tram": "-1.80%",
+  "thoi_diem": "giá chốt phiên trước (Previous Close 3,076.25); % = (3076.25 − 3132.75) / 3132.75 (giá chốt hôm trước nữa theo Yahoo Finance)",
+  "url": "https://www.barchart.com/futures/quotes/ALZ26/overview"
+ },
+ "ALIF2027": {
+  "ma_nguon": "ALF27",
+  "gia_nguon": "3075.00",
+  "phan_tram": "-1.74%",
+  "thoi_diem": "giá chốt phiên trước (Previous Close 3,075.00); % = (3075.00 − 3129.5) / 3129.5 (giá chốt hôm trước nữa theo Yahoo Finance)",
+  "url": "https://www.barchart.com/futures/quotes/ALF27/overview"
+ },
+ "ALIG2027": {
+  "ma_nguon": "ALG27",
+  "gia_nguon": "3085.50",
+  "phan_tram": "-1.81%",
+  "thoi_diem": "giá chốt phiên 10/14/26",
+  "url": "https://www.barchart.com/futures/quotes/ALG27/overview"
+ },
+ "ALIH2027": {
+  "ma_nguon": "ALH27",
+  "gia_nguon": "3091.50",
+  "phan_tram": "-1.72%",
+  "thoi_diem": "giá chốt phiên 10/14/26",
+  "url": "https://www.barchart.com/futures/quotes/ALH27/overview"
+ },
+ "ALIJ2027": {
+  "ma_nguon": "ALJ27",
+  "gia_nguon": "3094.00",
+  "phan_tram": "-1.60%",
+  "thoi_diem": "giá chốt phiên 10/14/26",
+  "url": "https://www.barchart.com/futures/quotes/ALJ27/overview"
+ },
+ "ALIK2027": {
+  "ma_nguon": "ALK27",
+  "gia_nguon": "3098.25",
+  "phan_tram": "-1.47%",
+  "thoi_diem": "giá chốt phiên 10/14/26",
+  "url": "https://www.barchart.com/futures/quotes/ALK27/overview"
+ },
+ "ALIM2027": {
+  "ma_nguon": "ALM27",
+  "gia_nguon": "3101.50",
+  "phan_tram": "-1.35%",
+  "thoi_diem": "giá chốt phiên 10/14/26",
+  "url": "https://www.barchart.com/futures/quotes/ALM27/overview"
+ },
+ "ALIN2027": {
+  "ma_nguon": "ALN27",
+  "gia_nguon": "3111.50",
+  "phan_tram": "-1.35%",
+  "thoi_diem": "giá chốt phiên 10/14/26",
+  "url": "https://www.barchart.com/futures/quotes/ALN27/overview"
+ }
+}

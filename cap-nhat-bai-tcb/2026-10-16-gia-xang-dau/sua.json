@@ -1,0 +1,235 @@
+{
+ "bai1": {
+  "sua": [
+   {
+    "tim": "Giá dầu DO 0,001S-V là 30,520 VND/lít tại Vùng 1 và 31,130 VND/lít tại Vùng 2",
+    "thay": "Giá dầu DO 0,001S-V là 30,200 VND/lít tại Vùng 1 và 30,800 VND/lít tại Vùng 2",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-chu-dong-giam-gia-xang-dau-300-dong-litkg-de-chia-se-ap-luc-chi-phi-voi-nguoi-dan-va-doanh-nghiep.html",
+    "ly_do": "Câu hỏi thường gặp – DO 0,001S-V theo Petrolimex kỳ điều hành từ 15 giờ 00 phút ngày 15/10/2026 (số theo topi.vn, đối chiếu ảnh thông cáo 56/2026/PLX-TCBC – khớp 12/12)"
+   },
+   {
+    "tim": "Giá E10 RON 95-V là 29,050 VND/lít tại Vùng 1 và 29,630 VND/lít tại Vùng 2; E10 RON 95-III lần lượt là 28,250 VND/lít và 28,810 VND/lít",
+    "thay": "Giá E10 RON 95-V là 27,520 VND/lít tại Vùng 1 và 28,070 VND/lít tại Vùng 2; E10 RON 95-III lần lượt là 26,720 VND/lít và 27,250 VND/lít",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-chu-dong-giam-gia-xang-dau-300-dong-litkg-de-chia-se-ap-luc-chi-phi-voi-nguoi-dan-va-doanh-nghiep.html",
+    "ly_do": "Câu hỏi thường gặp – RON 95 Vùng 1/Vùng 2 theo Petrolimex kỳ điều hành từ 15 giờ 00 phút ngày 15/10/2026 (số theo topi.vn, đối chiếu ảnh thông cáo 56/2026/PLX-TCBC – khớp 12/12)"
+   },
+   {
+    "tim": "1 lít xăng E5 RON 92-II có giá khoảng 27,700 VND/lít",
+    "thay": "1 lít xăng E5 RON 92-II có giá khoảng 26,670 VND/lít",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-chu-dong-giam-gia-xang-dau-300-dong-litkg-de-chia-se-ap-luc-chi-phi-voi-nguoi-dan-va-doanh-nghiep.html",
+    "ly_do": "Câu hỏi thường gặp – E5 RON 92-II Vùng 1 theo Petrolimex kỳ điều hành từ 15 giờ 00 phút ngày 15/10/2026 (số theo topi.vn, đối chiếu ảnh thông cáo 56/2026/PLX-TCBC – khớp 12/12)"
+   },
+   {
+    "tim": "1 lít xăng E10 RON 95-III có giá khoảng 28,250 VND/lít",
+    "thay": "1 lít xăng E10 RON 95-III có giá khoảng 26,720 VND/lít",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-chu-dong-giam-gia-xang-dau-300-dong-litkg-de-chia-se-ap-luc-chi-phi-voi-nguoi-dan-va-doanh-nghiep.html",
+    "ly_do": "Câu hỏi thường gặp – E10 RON 95-III Vùng 1 theo Petrolimex kỳ điều hành từ 15 giờ 00 phút ngày 15/10/2026 (số theo topi.vn, đối chiếu ảnh thông cáo 56/2026/PLX-TCBC – khớp 12/12)"
+   },
+   {
+    "tim": "29,700",
+    "thay": "29,680",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.mipec.com.vn/pages/gia-xang-dau-ban-le",
+    "ly_do": "MIPEC giá đang áp dụng trên mipec.com.vn: Dầu Điêzen 0,05S mức 2 Vùng 2 = 29,680 đ/lít"
+   },
+   {
+    "tim": "29,120",
+    "thay": "29,100",
+    "lan": 3,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.mipec.com.vn/pages/gia-xang-dau-ban-le",
+    "ly_do": "MIPEC giá đang áp dụng trên mipec.com.vn: Dầu Điêzen 0,05S mức 2 Vùng 1 = 29,100 đ/lít"
+   },
+   {
+    "tim": "31,130",
+    "thay": "30,800",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.mipec.com.vn/pages/gia-xang-dau-ban-le",
+    "ly_do": "MIPEC giá đang áp dụng trên mipec.com.vn: Dầu Điêzen 0,001S mức 5 Vùng 2 = 30,800 đ/lít"
+   },
+   {
+    "tim": "30,520",
+    "thay": "30,200",
+    "lan": 3,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.mipec.com.vn/pages/gia-xang-dau-ban-le",
+    "ly_do": "MIPEC giá đang áp dụng trên mipec.com.vn: Dầu Điêzen 0,001S mức 5 Vùng 1 = 30,200 đ/lít"
+   },
+   {
+    "tim": "28,250",
+    "thay": "27,500",
+    "lan": 5,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.mipec.com.vn/pages/gia-xang-dau-ban-le",
+    "ly_do": "MIPEC giá đang áp dụng trên mipec.com.vn: Xăng sinh học E5 RON 92-II Vùng 2 = 27,500 đ/lít"
+   },
+   {
+    "tim": "27,700",
+    "thay": "26,970",
+    "lan": 3,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.mipec.com.vn/pages/gia-xang-dau-ban-le",
+    "ly_do": "MIPEC giá đang áp dụng trên mipec.com.vn: Xăng sinh học E5 RON 92-II Vùng 1 = 26,970 đ/lít"
+   },
+   {
+    "tim": "28,810",
+    "thay": "27,560",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.mipec.com.vn/pages/gia-xang-dau-ban-le",
+    "ly_do": "MIPEC giá đang áp dụng trên mipec.com.vn: Xăng E10 RON 95-III Vùng 2 = 27,560 đ/lít"
+   },
+   {
+    "tim": "28,250",
+    "thay": "27,020",
+    "lan": 4,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.mipec.com.vn/pages/gia-xang-dau-ban-le",
+    "ly_do": "MIPEC giá đang áp dụng trên mipec.com.vn: Xăng E10 RON 95-III Vùng 1 = 27,020 đ/lít"
+   },
+   {
+    "tim": "29,120",
+    "thay": "29,100",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://topi.vn/gia-xang-dau-hom-nay.html",
+    "ly_do": "PVOIL kỳ điều hành từ 15 giờ 00 phút ngày 15/10/2026 (theo topi.vn, lấy lúc 17:40 15/10/2026; topi ghi mức điều chỉnh E10 -1230 đ, E5 -730 đ): Dầu DO 0,05S-II  = 29,100 đ/lít"
+   },
+   {
+    "tim": "30,520",
+    "thay": "30,200",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://topi.vn/gia-xang-dau-hom-nay.html",
+    "ly_do": "PVOIL kỳ điều hành từ 15 giờ 00 phút ngày 15/10/2026 (theo topi.vn, lấy lúc 17:40 15/10/2026; topi ghi mức điều chỉnh E10 -1230 đ, E5 -730 đ): Dầu DO 0,001S-V  = 30,200 đ/lít"
+   },
+   {
+    "tim": "27,700",
+    "thay": "26,970",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://topi.vn/gia-xang-dau-hom-nay.html",
+    "ly_do": "PVOIL kỳ điều hành từ 15 giờ 00 phút ngày 15/10/2026 (theo topi.vn, lấy lúc 17:40 15/10/2026; topi ghi mức điều chỉnh E10 -1230 đ, E5 -730 đ): Xăng E5 RON 92-II  = 26,970 đ/lít"
+   },
+   {
+    "tim": "28,250",
+    "thay": "27,020",
+    "lan": 3,
+    "giu_nguyen_so": true,
+    "nguon": "https://topi.vn/gia-xang-dau-hom-nay.html",
+    "ly_do": "PVOIL kỳ điều hành từ 15 giờ 00 phút ngày 15/10/2026 (theo topi.vn, lấy lúc 17:40 15/10/2026; topi ghi mức điều chỉnh E10 -1230 đ, E5 -730 đ): Xăng E10 RON 95-III  = 27,020 đ/lít"
+   },
+   {
+    "tim": "31,240",
+    "thay": "31,010",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-chu-dong-giam-gia-xang-dau-300-dong-litkg-de-chia-se-ap-luc-chi-phi-voi-nguoi-dan-va-doanh-nghiep.html",
+    "ly_do": "PETROLIMEX kỳ điều hành từ 15 giờ 00 phút ngày 15/10/2026 (số theo topi.vn, đối chiếu ảnh thông cáo 56/2026/PLX-TCBC – khớp 12/12): Dầu hỏa 2-K Vùng 2 = 31,010 đ/lít"
+   },
+   {
+    "tim": "30,630",
+    "thay": "30,410",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-chu-dong-giam-gia-xang-dau-300-dong-litkg-de-chia-se-ap-luc-chi-phi-voi-nguoi-dan-va-doanh-nghiep.html",
+    "ly_do": "PETROLIMEX kỳ điều hành từ 15 giờ 00 phút ngày 15/10/2026 (số theo topi.vn, đối chiếu ảnh thông cáo 56/2026/PLX-TCBC – khớp 12/12): Dầu hỏa 2-K Vùng 1 = 30,410 đ/lít"
+   },
+   {
+    "tim": "29,700",
+    "thay": "29,370",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-chu-dong-giam-gia-xang-dau-300-dong-litkg-de-chia-se-ap-luc-chi-phi-voi-nguoi-dan-va-doanh-nghiep.html",
+    "ly_do": "PETROLIMEX kỳ điều hành từ 15 giờ 00 phút ngày 15/10/2026 (số theo topi.vn, đối chiếu ảnh thông cáo 56/2026/PLX-TCBC – khớp 12/12): Dầu DO 0,05S-II Vùng 2 = 29,370 đ/lít"
+   },
+   {
+    "tim": "29,120",
+    "thay": "28,800",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-chu-dong-giam-gia-xang-dau-300-dong-litkg-de-chia-se-ap-luc-chi-phi-voi-nguoi-dan-va-doanh-nghiep.html",
+    "ly_do": "PETROLIMEX kỳ điều hành từ 15 giờ 00 phút ngày 15/10/2026 (số theo topi.vn, đối chiếu ảnh thông cáo 56/2026/PLX-TCBC – khớp 12/12): Dầu DO 0,05S-II Vùng 1 = 28,800 đ/lít"
+   },
+   {
+    "tim": "31,130",
+    "thay": "30,800",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-chu-dong-giam-gia-xang-dau-300-dong-litkg-de-chia-se-ap-luc-chi-phi-voi-nguoi-dan-va-doanh-nghiep.html",
+    "ly_do": "PETROLIMEX kỳ điều hành từ 15 giờ 00 phút ngày 15/10/2026 (số theo topi.vn, đối chiếu ảnh thông cáo 56/2026/PLX-TCBC – khớp 12/12): Dầu DO 0,001S-V Vùng 2 = 30,800 đ/lít"
+   },
+   {
+    "tim": "30,520",
+    "thay": "30,200",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-chu-dong-giam-gia-xang-dau-300-dong-litkg-de-chia-se-ap-luc-chi-phi-voi-nguoi-dan-va-doanh-nghiep.html",
+    "ly_do": "PETROLIMEX kỳ điều hành từ 15 giờ 00 phút ngày 15/10/2026 (số theo topi.vn, đối chiếu ảnh thông cáo 56/2026/PLX-TCBC – khớp 12/12): Dầu DO 0,001S-V Vùng 1 = 30,200 đ/lít"
+   },
+   {
+    "tim": "28,250",
+    "thay": "27,200",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-chu-dong-giam-gia-xang-dau-300-dong-litkg-de-chia-se-ap-luc-chi-phi-voi-nguoi-dan-va-doanh-nghiep.html",
+    "ly_do": "PETROLIMEX kỳ điều hành từ 15 giờ 00 phút ngày 15/10/2026 (số theo topi.vn, đối chiếu ảnh thông cáo 56/2026/PLX-TCBC – khớp 12/12): Xăng E5 RON 92-II Vùng 2 = 27,200 đ/lít"
+   },
+   {
+    "tim": "27,700",
+    "thay": "26,670",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-chu-dong-giam-gia-xang-dau-300-dong-litkg-de-chia-se-ap-luc-chi-phi-voi-nguoi-dan-va-doanh-nghiep.html",
+    "ly_do": "PETROLIMEX kỳ điều hành từ 15 giờ 00 phút ngày 15/10/2026 (số theo topi.vn, đối chiếu ảnh thông cáo 56/2026/PLX-TCBC – khớp 12/12): Xăng E5 RON 92-II Vùng 1 = 26,670 đ/lít"
+   },
+   {
+    "tim": "28,810",
+    "thay": "27,250",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-chu-dong-giam-gia-xang-dau-300-dong-litkg-de-chia-se-ap-luc-chi-phi-voi-nguoi-dan-va-doanh-nghiep.html",
+    "ly_do": "PETROLIMEX kỳ điều hành từ 15 giờ 00 phút ngày 15/10/2026 (số theo topi.vn, đối chiếu ảnh thông cáo 56/2026/PLX-TCBC – khớp 12/12): Xăng E10 RON 95-III Vùng 2 = 27,250 đ/lít"
+   },
+   {
+    "tim": "28,250",
+    "thay": "26,720",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-chu-dong-giam-gia-xang-dau-300-dong-litkg-de-chia-se-ap-luc-chi-phi-voi-nguoi-dan-va-doanh-nghiep.html",
+    "ly_do": "PETROLIMEX kỳ điều hành từ 15 giờ 00 phút ngày 15/10/2026 (số theo topi.vn, đối chiếu ảnh thông cáo 56/2026/PLX-TCBC – khớp 12/12): Xăng E10 RON 95-III Vùng 1 = 26,720 đ/lít"
+   },
+   {
+    "tim": "29,630",
+    "thay": "28,070",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-chu-dong-giam-gia-xang-dau-300-dong-litkg-de-chia-se-ap-luc-chi-phi-voi-nguoi-dan-va-doanh-nghiep.html",
+    "ly_do": "PETROLIMEX kỳ điều hành từ 15 giờ 00 phút ngày 15/10/2026 (số theo topi.vn, đối chiếu ảnh thông cáo 56/2026/PLX-TCBC – khớp 12/12): Xăng E10 RON 95-V Vùng 2 = 28,070 đ/lít"
+   },
+   {
+    "tim": "29,050",
+    "thay": "27,520",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-chu-dong-giam-gia-xang-dau-300-dong-litkg-de-chia-se-ap-luc-chi-phi-voi-nguoi-dan-va-doanh-nghiep.html",
+    "ly_do": "PETROLIMEX kỳ điều hành từ 15 giờ 00 phút ngày 15/10/2026 (số theo topi.vn, đối chiếu ảnh thông cáo 56/2026/PLX-TCBC – khớp 12/12): Xăng E10 RON 95-V Vùng 1 = 27,520 đ/lít"
+   }
+  ],
+  "can_duyet": [
+   "Mục 5 trong bài gốc đánh số 5.1 rồi nhảy sang 5.3 (không có 5.2) – không sửa, chỉ báo lại.",
+   "Lỗi có sẵn trong bài: câu \"Được biết Vùng 1 Vùng 1 là mức giá chuẩn…\" lặp chữ \"Vùng 1\"; câu 5.7 kết thúc bằng hai dấu chấm \"thông cáo báo chí..\" – không sửa chữ, chỉ báo lại.",
+   "Kỳ giá mới từ 15 giờ 00 ngày 15/10/2026: Petrolimex ra Thông cáo số 56/2026/PLX-TCBC (chủ động giảm thêm 300 đồng/lít,kg, áp dụng tối thiểu tới 29/10/2026). Bảng Petrolimex lấy theo ảnh giá bán lẻ trong thông cáo này (khớp topi.vn 12/12 số). Bài không nhắc mức giảm 300 đồng nên không thêm câu chữ."
+  ]
+ }
+}

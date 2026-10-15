@@ -1,0 +1,76 @@
+{
+ "nguon": "https://www.thitruonghanghoa.com/gia-kim-loai",
+ "lay_luc": "15/10/2026 17:47 (giờ VN)",
+ "gia": {
+  "Vàng": {
+   "vnd": "129.803.036",
+   "don_vi_vnd": "VNĐ/lượng",
+   "gia_goc": "4,154.44",
+   "thay_doi_goc": "-2.70 USD/TOZ",
+   "phan_tram": "-0.06"
+  },
+  "Bạc": {
+   "vnd": "1.770.121",
+   "don_vi_vnd": "VNĐ/lượng",
+   "gia_goc": "56.65",
+   "thay_doi_goc": "-0.17 USD/TOZ",
+   "phan_tram": "-0.30"
+  },
+  "Đồng": {
+   "vnd": "374.933.968",
+   "don_vi_vnd": "VNĐ/tấn",
+   "gia_goc": "656.25",
+   "thay_doi_goc": "-2.44 UScents/LB",
+   "phan_tram": "-0.37"
+  },
+  "Bạch kim": {
+   "vnd": "50.728.440",
+   "don_vi_vnd": "VNĐ/lượng",
+   "gia_goc": "1,623.60",
+   "thay_doi_goc": "-3.19 USD/TOZ",
+   "phan_tram": "-0.20"
+  },
+  "Nickel": {
+   "vnd": "402.434.035",
+   "don_vi_vnd": "VNĐ/tấn",
+   "gia_goc": "15,529.00",
+   "thay_doi_goc": "-98.37 USD/MT",
+   "phan_tram": "-0.63"
+  },
+  "Chì": {
+   "vnd": "49.199.628",
+   "don_vi_vnd": "VNĐ/tấn",
+   "gia_goc": "1,898.50",
+   "thay_doi_goc": "-6.28 USD/MT",
+   "phan_tram": "-0.33"
+  },
+  "Nhôm": {
+   "vnd": "77.275.939",
+   "don_vi_vnd": "VNĐ/tấn",
+   "gia_goc": "2,981.90",
+   "thay_doi_goc": "-37.13 USD/MT",
+   "phan_tram": "-1.25"
+  },
+  "Kẽm": {
+   "vnd": "96.512.643",
+   "don_vi_vnd": "VNĐ/tấn",
+   "gia_goc": "3,724.20",
+   "thay_doi_goc": "-27.30 USD/MT",
+   "phan_tram": "-0.73"
+  },
+  "Quặng sắt 62% Fe": {
+   "vnd": "2.341.420",
+   "don_vi_vnd": "VNĐ/dmtu",
+   "gia_goc": "90.35",
+   "thay_doi_goc": "+0.05 USD/DMTU",
+   "phan_tram": "+0.06"
+  },
+  "Thiếc": {
+   "vnd": "1.341.541.805",
+   "don_vi_vnd": "VNĐ/tấn",
+   "gia_goc": "51,767.00",
+   "thay_doi_goc": "+321.99 USD/MT",
+   "phan_tram": "+0.62"
+  }
+ }
+}

@@ -1,0 +1,11 @@
+{"bai1":{"sua":[
+ {"tim":"1. Giá gas hôm nay 11/10/2026","thay":"1. Giá gas hôm nay 16/10/2026","giu_nguyen_so":true,"nguon":"","ly_do":"ngày cập nhật bài = 16/10/2026"},
+ {"tim":"cập nhật gần nhất ngày 11/10/2026","thay":"cập nhật gần nhất ngày 15/10/2026","giu_nguyen_so":true,"nguon":"https://thuongtruong.com.vn/news/gia-gas-hom-nay-1510-chenh-lech-gan-70000-dongbinh-170690.html","ly_do":"bản tin giá gas mới nhất đăng 07:55 ngày 15/10/2026, chưa có đợt điều chỉnh mới"},
+ {"tim":"644,112","thay":"644,122","giu_nguyen_so":true,"nguon":"https://thuongtruong.com.vn/news/gia-gas-hom-nay-1510-chenh-lech-gan-70000-dongbinh-170690.html","ly_do":"Thương Trường 15/10: Hà Nội bình 12kg 644.122 đồng (bài đang ghi 644,112 — lệch 1 chữ số)"}
+],"can_duyet":[
+ "Giá gas tháng 10 giữ nguyên từ đợt điều chỉnh 1/10 (Thương Trường 15/10: 'chưa ghi nhận đợt điều chỉnh mới') — mọi ô khác đối chiếu khớp, không đổi.",
+ "Câu 'dữ liệu cập nhật gần nhất ngày …' ghi 15/10/2026 (ngày của bản tin nguồn), không ghi 16/10.",
+ "Ô Hà Nội bình 12kg ở bảng khu vực: bài ghi 644,112, nguồn và bảng thương hiệu ngay dưới ghi 644,122 → đã sửa thành 644,122.",
+ "Nguồn có thêm Pacific Petro (599.500 / 2.218.000) nhưng bảng của bài không có dòng này → không thêm (không đổi nội dung). Câu dẫn bảng có nhắc Pacific Petro.",
+ "Đợt điều chỉnh tiếp theo dự kiến 1/11/2026 (theo giá CP tháng 11)."
+]}}

@@ -1,0 +1,81 @@
+{
+ "_ghi_chu": {
+  "lay_luc": "17:35–17:45 giờ VN 15/10/2026",
+  "luu_y": "lay_gia.py nhận nhầm thông cáo 08.10 vì thông cáo kỳ 15/10 có tiêu đề khác mẫu (\"Petrolimex chủ động giảm giá xăng dầu 300 đồng…\"); đã tự mở thông cáo 15/10 và đối chiếu ảnh"
+ },
+ "_petrolimex_tcbc": {
+  "url": "https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-chu-dong-giam-gia-xang-dau-300-dong-litkg-de-chia-se-ap-luc-chi-phi-voi-nguoi-dan-va-doanh-nghiep.html",
+  "tieu_de": "Thông cáo báo chí số 56/2026/PLX-TCBC: Petrolimex chủ động giảm giá xăng dầu 300 đồng/lít,kg… (giá bán lẻ từ 15 giờ 00 phút ngày 15/10/2026)",
+  "anh": "ảnh \"giá bán lẻ.jpg\" trong thông cáo – đã đối chiếu, khớp 12/12 số với topi.vn"
+ },
+ "petrolimex": {
+  "ky": "kỳ điều hành từ 15 giờ 00 phút ngày 15/10/2026 (số theo topi.vn, đối chiếu ảnh thông cáo 56/2026/PLX-TCBC – khớp 12/12)",
+  "nguon": "https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-chu-dong-giam-gia-xang-dau-300-dong-litkg-de-chia-se-ap-luc-chi-phi-voi-nguoi-dan-va-doanh-nghiep.html",
+  "gia": {
+   "e10_95_v": [
+    27520,
+    28070
+   ],
+   "e10_95_iii": [
+    26720,
+    27250
+   ],
+   "e5_92": [
+    26670,
+    27200
+   ],
+   "do_0001": [
+    30200,
+    30800
+   ],
+   "do_005": [
+    28800,
+    29370
+   ],
+   "dau_hoa": [
+    30410,
+    31010
+   ]
+  }
+ },
+ "pvoil": {
+  "ky": "kỳ điều hành từ 15 giờ 00 phút ngày 15/10/2026 (theo topi.vn, lấy lúc 17:40 15/10/2026; topi ghi mức điều chỉnh E10 -1230 đ, E5 -730 đ)",
+  "nguon": "https://topi.vn/gia-xang-dau-hom-nay.html",
+  "gia": {
+   "e10_95_iii": [
+    27020
+   ],
+   "e5_92": [
+    26970
+   ],
+   "do_005": [
+    29100
+   ],
+   "do_0001": [
+    30200
+   ]
+  }
+ },
+ "mipec": {
+  "ky": "giá đang áp dụng trên mipec.com.vn",
+  "nguon": "https://www.mipec.com.vn/pages/gia-xang-dau-ban-le",
+  "gia": {
+   "e10_95_iii": [
+    27020,
+    27560
+   ],
+   "e5_92": [
+    26970,
+    27500
+   ],
+   "do_0001": [
+    30200,
+    30800
+   ],
+   "do_005": [
+    29100,
+    29680
+   ]
+  }
+ }
+}

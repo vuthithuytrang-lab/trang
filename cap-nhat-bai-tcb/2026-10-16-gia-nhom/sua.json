@@ -1,0 +1,84 @@
+{
+ "bai1": {
+  "sua": [
+   {
+    "tim": "ALIV2026 3,238 -0.02%",
+    "thay": "ALIV2026 3,086 -1.33%",
+    "giu_nguyen_so": true,
+    "nguon": "https://www.barchart.com/futures/quotes/ALV26/overview",
+    "ly_do": "Aluminum Oct '26 (ALV26): 3086.25 USD/tấn (giá chốt phiên 10/14/26), thay đổi -1.33%; làm tròn tới đơn vị như bài"
+   },
+   {
+    "tim": "ALIX2026 3,240 -0.25%",
+    "thay": "ALIX2026 3,077 -1.75%",
+    "giu_nguyen_so": true,
+    "nguon": "https://www.barchart.com/futures/quotes/ALX26/overview",
+    "ly_do": "Aluminum Nov '26 (ALX26): 3077.25 USD/tấn (giá chốt phiên 10/14/26), thay đổi -1.75%; làm tròn tới đơn vị như bài"
+   },
+   {
+    "tim": "ALIZ2026 3,259 +0.34%",
+    "thay": "ALIZ2026 3,076 -1.80%",
+    "giu_nguyen_so": true,
+    "nguon": "https://www.barchart.com/futures/quotes/ALZ26/overview",
+    "ly_do": "Aluminum Dec '26 (ALZ26): 3076.25 USD/tấn (giá chốt phiên trước (Previous Close 3,076.25); % = (3076.25 − 3132.75) / 3132.75 (giá chốt hôm trước nữa theo Yahoo Finance)), thay đổi -1.80%; làm tròn tới đơn vị như bài",
+    "tinh_toan": true
+   },
+   {
+    "tim": "ALIF2027 3,245 -0.27%",
+    "thay": "ALIF2027 3,075 -1.74%",
+    "giu_nguyen_so": true,
+    "nguon": "https://www.barchart.com/futures/quotes/ALF27/overview",
+    "ly_do": "Aluminum Jan '27 (ALF27): 3075.00 USD/tấn (giá chốt phiên trước (Previous Close 3,075.00); % = (3075.00 − 3129.5) / 3129.5 (giá chốt hôm trước nữa theo Yahoo Finance)), thay đổi -1.74%; làm tròn tới đơn vị như bài",
+    "tinh_toan": true
+   },
+   {
+    "tim": "ALIG2027 3,251 -0.22%",
+    "thay": "ALIG2027 3,086 -1.81%",
+    "giu_nguyen_so": true,
+    "nguon": "https://www.barchart.com/futures/quotes/ALG27/overview",
+    "ly_do": "Aluminum Feb '27 (ALG27): 3085.50 USD/tấn (giá chốt phiên 10/14/26), thay đổi -1.81%; làm tròn tới đơn vị như bài"
+   },
+   {
+    "tim": "ALIH2027 3,264 -0.02%",
+    "thay": "ALIH2027 3,092 -1.72%",
+    "giu_nguyen_so": true,
+    "nguon": "https://www.barchart.com/futures/quotes/ALH27/overview",
+    "ly_do": "Aluminum Mar '27 (ALH27): 3091.50 USD/tấn (giá chốt phiên 10/14/26), thay đổi -1.72%; làm tròn tới đơn vị như bài"
+   },
+   {
+    "tim": "ALIJ2027 3,263 -0.02%",
+    "thay": "ALIJ2027 3,094 -1.60%",
+    "giu_nguyen_so": true,
+    "nguon": "https://www.barchart.com/futures/quotes/ALJ27/overview",
+    "ly_do": "Aluminum Apr '27 (ALJ27): 3094.00 USD/tấn (giá chốt phiên 10/14/26), thay đổi -1.60%; làm tròn tới đơn vị như bài"
+   },
+   {
+    "tim": "ALIK2027 3,263 -0.02%",
+    "thay": "ALIK2027 3,098 -1.47%",
+    "giu_nguyen_so": true,
+    "nguon": "https://www.barchart.com/futures/quotes/ALK27/overview",
+    "ly_do": "Aluminum May '27 (ALK27): 3098.25 USD/tấn (giá chốt phiên 10/14/26), thay đổi -1.47%; làm tròn tới đơn vị như bài"
+   },
+   {
+    "tim": "ALIM2027 3,262 -0.02%",
+    "thay": "ALIM2027 3,102 -1.35%",
+    "giu_nguyen_so": true,
+    "nguon": "https://www.barchart.com/futures/quotes/ALM27/overview",
+    "ly_do": "Aluminum Jun '27 (ALM27): 3101.50 USD/tấn (giá chốt phiên 10/14/26), thay đổi -1.35%; làm tròn tới đơn vị như bài"
+   },
+   {
+    "tim": "ALIN2027 3,272 -0.02%",
+    "thay": "ALIN2027 3,112 -1.35%",
+    "giu_nguyen_so": true,
+    "nguon": "https://www.barchart.com/futures/quotes/ALN27/overview",
+    "ly_do": "Aluminum Jul '27 (ALN27): 3111.50 USD/tấn (giá chốt phiên 10/14/26), thay đổi -1.35%; làm tròn tới đơn vị như bài"
+   }
+  ],
+  "can_duyet": [
+   "Bảng giá nhôm thế giới: dùng GIÁ CHỐT PHIÊN 14/10/2026 (giờ Mỹ) của sàn COMEX trên barchart.com cho cả 10 hợp đồng (lấy lúc ~17:50 ngày 15/10/2026 giờ VN, phiên 15/10 đang giao dịch nên chưa có giá chốt). Nguồn ghi 2 số lẻ (vd 3,086.25), bài ghi số nguyên → đã làm tròn tới đơn vị (3,086).",
+   "Bảng giá nhôm thế giới: đã kiểm tra – mã ALI đúng là hợp đồng nhôm, giá ~3,100 USD/tấn khớp sàn COMEX, bảng này ĐÚNG. Chính bài 'Giá đồng hôm nay' mới là bài chép nhầm bảng nhôm này (cũng mã ALI, số gần như trùng).",
+   "Bảng giá nhôm trong nước (7 dòng): nguồn khớp đúng tên loại và đúng khoảng giá là Phế liệu Quang Phong (https://www.phelieuquangphong.com/thu-mua-phe-lieu-nhom/) – số trên nguồn hôm nay GIỐNG HỆT bài, trang không ghi ngày cập nhật → giữ nguyên, không tô vàng.",
+   "Lỗi có sẵn (không sửa chữ): mục 4 có 2 ý cùng mở đầu 'Đối với thị trường đầu tư:' liền nhau."
+  ]
+ }
+}

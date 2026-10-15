@@ -1,0 +1,11 @@
+{"bai1":{"sua":[
+ {"tim":"104.12","thay":"104.49","nguon":"https://query1.finance.yahoo.com/v8/finance/chart/BZZ26.NYM","ly_do":"Brent hợp đồng gần nhất (12/2026, BZZ26) lúc 17:49 15/10/2026 giờ VN"},
+ {"tim":"+4.08 USD (+4.1%)","thay":"-1.57 USD (-1.5%)","giu_nguyen_so":true,"tinh_toan":true,"nguon":"https://query1.finance.yahoo.com/v8/finance/chart/BZZ26.NYM","ly_do":"104.49 − giá chốt phiên 14/10 106.06 = −1.57 USD; −1.57/106.06 = −1.48% ≈ −1.5%"},
+ {"tim":"91.17","thay":"95.07","nguon":"https://query1.finance.yahoo.com/v8/finance/chart/CLX26.NYM","ly_do":"WTI hợp đồng gần nhất (11/2026, CLX26) lúc 17:50 15/10/2026 giờ VN"},
+ {"tim":"+3.21 USD (+3.6%)","thay":"-0.02 USD (-0.02%)","giu_nguyen_so":true,"tinh_toan":true,"nguon":"https://query1.finance.yahoo.com/v8/finance/chart/CLX26.NYM","ly_do":"95.07 − giá chốt phiên 14/10 95.09 = −0.02 USD; −0.02/95.09 = −0.021%"}
+],"can_duyet":[
+ "Giá Brent/WTI là giá đang giao dịch lúc ~17:50 ngày 15/10 (giờ VN), chưa phải giá chốt phiên. Đối chiếu oilprice.com cùng lúc: Brent 104.6, WTI 95.15 (+0.06) — lệch nhỏ do thời điểm.",
+ "WTI gần như đứng giá: ghi '-0.02 USD (-0.02%)' (2 số lẻ) vì làm tròn 1 số lẻ sẽ thành '-0.0%'.",
+ "Mức thay đổi tính so với giá chốt phiên 14/10 (Yahoo Finance) — số tính ra, không phải nguồn ghi sẵn.",
+ "Lỗi có sẵn: sapo ghi 'cùng diễn biến 5 ngày gần đây' nhưng bài không có bảng 5 ngày → không sửa chữ."
+]}}
