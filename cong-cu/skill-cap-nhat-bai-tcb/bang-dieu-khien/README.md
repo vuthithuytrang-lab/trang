@@ -15,6 +15,14 @@ dán link file Docs vào cột ngày hôm nay, rồi bỏ tích. Dựng ngày 07
 | E `Chạy update` | ô tích |
 | F trở đi | mỗi cột một ngày (tiêu đề là ngày, hiện `d/m`), **ngày mới nhất ở cột F**; ô = link file Docs đã chạy |
 
+## Tab thứ hai "Giá hàng hóa" (sheetId 806120945) — dựng 15/10/2026
+
+Trang muốn bộ 15 bài giá hàng hóa (cà phê, cao su, xăng dầu, kim loại, đồng, nhôm, thép, ca cao, cà phê Đắk Lắk, tiêu, điều,
+cà phê London/New York, dầu thế giới, gas, lúa gạo) nằm ở **tab riêng** trong cùng file "Update". Cấu trúc cột y hệt tab đầu (A–E + cột ngày từ F).
+Bài cà phê và xăng dầu có ở **cả hai tab** (Trang chốt) — tích ở tab nào thì ghi link vào tab đó.
+Mỗi lần kiểm tra/"chạy bảng update": đọc **cả hai tab**, làm các bước dưới cho từng tab (cột ngày, ô link, bỏ tích theo đúng tab đó).
+Bài có cột "Giá cũ / Giá mới / Thay đổi": giá mới lần trước → giá cũ, giá hôm nay → giá mới, tính lại thay đổi (Trang chốt 15/10/2026).
+
 ## Thêm bài mới vào bảng — Claude tự điền, Trang không phải gõ
 
 Trang gửi link bài + nguồn + hướng dẫn **trong chat**. Claude làm bài đó lần đầu, Trang duyệt xong thì Claude:
