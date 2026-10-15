@@ -1,0 +1,526 @@
+{
+ "trong_nuoc": {
+  "nguon": "https://banggianongsan.com/bang-gia-cacao-hom-nay/",
+  "bang_ngay": "15/10/2026",
+  "trang_sua_luc": "2026-10-15T01:44:02+00:00",
+  "gia": {
+   "Cacao tươi": {
+    "gia_cu": [
+     7300,
+     8000
+    ],
+    "gia_moi": [
+     7300,
+     8000
+    ],
+    "chenh_lech": "➖ Không đổi"
+   },
+   "Hạt cacao xô": {
+    "gia_cu": [
+     69000,
+     77000
+    ],
+    "gia_moi": [
+     69000,
+     77000
+    ],
+    "chenh_lech": "➖ Không đổi"
+   },
+   "Hạt cacao lên men loại I": {
+    "gia_cu": [
+     78000,
+     86000
+    ],
+    "gia_moi": [
+     78000,
+     86000
+    ],
+    "chenh_lech": "➖ Không đổi"
+   },
+   "Cacao lên men loại II": {
+    "gia_cu": [
+     96000,
+     104000
+    ],
+    "gia_moi": [
+     96000,
+     104000
+    ],
+    "chenh_lech": "➖ Không đổi"
+   },
+   "Cacao lên men loại III": {
+    "gia_cu": [
+     103000,
+     114000
+    ],
+    "gia_moi": [
+     103000,
+     114000
+    ],
+    "chenh_lech": "➖ Không đổi"
+   },
+   "Bột cacao nguyên chất": {
+    "gia_cu": [
+     173000,
+     219000
+    ],
+    "gia_moi": [
+     173000,
+     219000
+    ],
+    "chenh_lech": "➖ Không đổi"
+   }
+  }
+ },
+ "the_gioi": {
+  "lay_luc_utc": "2026-10-15 10:45:59",
+  "san": {
+   "newyork": {
+    "trang": "https://www.ice.com/products/7/Cocoa-Futures/data",
+    "api": "https://www.ice.com/marketdata/api/productguide/charting/contract-data?productId=578&hubId=727&mode=2",
+    "ky_han": [
+     {
+      "ky_han": "Dec26",
+      "gia": 5945,
+      "luc": "10/15/2026 10:35 AM GMT",
+      "pct": 3.6617262423714037,
+      "chot_truoc_ngay": "2026-10-14",
+      "chot_truoc": 5735.0,
+      "lich_su_cuoi": [
+       [
+        "Mon Oct 12 00:00:00 2026",
+        5676.0
+       ],
+       [
+        "Tue Oct 13 00:00:00 2026",
+        5733.0
+       ],
+       [
+        "Wed Oct 14 00:00:00 2026",
+        5735.0
+       ]
+      ],
+      "thay_doi": 210.0
+     },
+     {
+      "ky_han": "Mar27",
+      "gia": 6064,
+      "luc": "10/15/2026 10:33 AM GMT",
+      "pct": 3.551912568306011,
+      "chot_truoc_ngay": "2026-10-14",
+      "chot_truoc": 5856.0,
+      "lich_su_cuoi": [
+       [
+        "Mon Oct 12 00:00:00 2026",
+        5801.0
+       ],
+       [
+        "Tue Oct 13 00:00:00 2026",
+        5858.0
+       ],
+       [
+        "Wed Oct 14 00:00:00 2026",
+        5856.0
+       ]
+      ],
+      "thay_doi": 208.0
+     },
+     {
+      "ky_han": "May27",
+      "gia": 6111,
+      "luc": "10/15/2026 10:35 AM GMT",
+      "pct": 3.401015228426396,
+      "chot_truoc_ngay": "2026-10-14",
+      "chot_truoc": 5910.0,
+      "lich_su_cuoi": [
+       [
+        "Mon Oct 12 00:00:00 2026",
+        5860.0
+       ],
+       [
+        "Tue Oct 13 00:00:00 2026",
+        5911.0
+       ],
+       [
+        "Wed Oct 14 00:00:00 2026",
+        5910.0
+       ]
+      ],
+      "thay_doi": 201.0
+     },
+     {
+      "ky_han": "Jul27",
+      "gia": 6125,
+      "luc": "10/15/2026 10:34 AM GMT",
+      "pct": 3.51529491296265,
+      "chot_truoc_ngay": "2026-10-14",
+      "chot_truoc": 5917.0,
+      "lich_su_cuoi": [
+       [
+        "Mon Oct 12 00:00:00 2026",
+        5886.0
+       ],
+       [
+        "Tue Oct 13 00:00:00 2026",
+        5927.0
+       ],
+       [
+        "Wed Oct 14 00:00:00 2026",
+        5917.0
+       ]
+      ],
+      "thay_doi": 208.0
+     },
+     {
+      "ky_han": "Sep27",
+      "gia": 6110,
+      "luc": "10/15/2026 10:27 AM GMT",
+      "pct": 3.6120061047990504,
+      "chot_truoc_ngay": "2026-10-14",
+      "chot_truoc": 5897.0,
+      "lich_su_cuoi": [
+       [
+        "Mon Oct 12 00:00:00 2026",
+        5876.0
+       ],
+       [
+        "Tue Oct 13 00:00:00 2026",
+        5913.0
+       ],
+       [
+        "Wed Oct 14 00:00:00 2026",
+        5897.0
+       ]
+      ],
+      "thay_doi": 213.0
+     },
+     {
+      "ky_han": "Dec27",
+      "gia": 6038,
+      "luc": "10/15/2026 10:27 AM GMT",
+      "pct": 3.4435497687168066,
+      "chot_truoc_ngay": "2026-10-14",
+      "chot_truoc": 5837.0,
+      "lich_su_cuoi": [
+       [
+        "Mon Oct 12 00:00:00 2026",
+        5820.0
+       ],
+       [
+        "Tue Oct 13 00:00:00 2026",
+        5857.0
+       ],
+       [
+        "Wed Oct 14 00:00:00 2026",
+        5837.0
+       ]
+      ],
+      "thay_doi": 201.0
+     },
+     {
+      "ky_han": "Mar28",
+      "gia": 5964,
+      "luc": "10/15/2026 10:15 AM GMT",
+      "pct": 3.2548476454293627,
+      "chot_truoc_ngay": "2026-10-14",
+      "chot_truoc": 5776.0,
+      "lich_su_cuoi": [
+       [
+        "Mon Oct 12 00:00:00 2026",
+        5769.0
+       ],
+       [
+        "Tue Oct 13 00:00:00 2026",
+        5807.0
+       ],
+       [
+        "Wed Oct 14 00:00:00 2026",
+        5776.0
+       ]
+      ],
+      "thay_doi": 188.0
+     },
+     {
+      "ky_han": "May28",
+      "gia": null,
+      "luc": null,
+      "pct": 0.0,
+      "chot_truoc_ngay": "2026-10-14",
+      "chot_truoc": 5719.0,
+      "lich_su_cuoi": [
+       [
+        "Mon Oct 12 00:00:00 2026",
+        5727.0
+       ],
+       [
+        "Tue Oct 13 00:00:00 2026",
+        5770.0
+       ],
+       [
+        "Wed Oct 14 00:00:00 2026",
+        5719.0
+       ]
+      ]
+     },
+     {
+      "ky_han": "Jul28",
+      "gia": null,
+      "luc": null,
+      "pct": 0.0,
+      "chot_truoc_ngay": "2026-10-14",
+      "chot_truoc": 5688.0,
+      "lich_su_cuoi": [
+       [
+        "Mon Oct 12 00:00:00 2026",
+        5707.0
+       ],
+       [
+        "Tue Oct 13 00:00:00 2026",
+        5752.0
+       ],
+       [
+        "Wed Oct 14 00:00:00 2026",
+        5688.0
+       ]
+      ]
+     }
+    ]
+   },
+   "london": {
+    "trang": "https://www.ice.com/products/37089076/London-Cocoa-Futures/data",
+    "api": "https://www.ice.com/marketdata/api/productguide/charting/contract-data?productId=15246&hubId=17450&mode=2",
+    "ky_han": [
+     {
+      "ky_han": "Dec26",
+      "gia": 4442,
+      "luc": "10/15/2026 10:35 AM GMT",
+      "pct": 2.895529302756544,
+      "chot_truoc_ngay": "2026-10-14",
+      "chot_truoc": 4317.0,
+      "lich_su_cuoi": [
+       [
+        "Mon Oct 12 00:00:00 2026",
+        4279.0
+       ],
+       [
+        "Tue Oct 13 00:00:00 2026",
+        4292.0
+       ],
+       [
+        "Wed Oct 14 00:00:00 2026",
+        4317.0
+       ]
+      ],
+      "thay_doi": 125.0
+     },
+     {
+      "ky_han": "Mar27",
+      "gia": 4585,
+      "luc": "10/15/2026 10:35 AM GMT",
+      "pct": 2.733587273134663,
+      "chot_truoc_ngay": "2026-10-14",
+      "chot_truoc": 4463.0,
+      "lich_su_cuoi": [
+       [
+        "Mon Oct 12 00:00:00 2026",
+        4423.0
+       ],
+       [
+        "Tue Oct 13 00:00:00 2026",
+        4440.0
+       ],
+       [
+        "Wed Oct 14 00:00:00 2026",
+        4463.0
+       ]
+      ],
+      "thay_doi": 122.0
+     },
+     {
+      "ky_han": "May27",
+      "gia": 4618,
+      "luc": "10/15/2026 10:35 AM GMT",
+      "pct": 2.6450322293843076,
+      "chot_truoc_ngay": "2026-10-14",
+      "chot_truoc": 4499.0,
+      "lich_su_cuoi": [
+       [
+        "Mon Oct 12 00:00:00 2026",
+        4458.0
+       ],
+       [
+        "Tue Oct 13 00:00:00 2026",
+        4474.0
+       ],
+       [
+        "Wed Oct 14 00:00:00 2026",
+        4499.0
+       ]
+      ],
+      "thay_doi": 119.0
+     },
+     {
+      "ky_han": "Jul27",
+      "gia": 4643,
+      "luc": "10/15/2026 10:31 AM GMT",
+      "pct": 2.6758071649712516,
+      "chot_truoc_ngay": "2026-10-14",
+      "chot_truoc": 4522.0,
+      "lich_su_cuoi": [
+       [
+        "Mon Oct 12 00:00:00 2026",
+        4484.0
+       ],
+       [
+        "Tue Oct 13 00:00:00 2026",
+        4499.0
+       ],
+       [
+        "Wed Oct 14 00:00:00 2026",
+        4522.0
+       ]
+      ],
+      "thay_doi": 121.0
+     },
+     {
+      "ky_han": "Sep27",
+      "gia": 4563,
+      "luc": "10/15/2026 10:31 AM GMT",
+      "pct": 2.677767776777678,
+      "chot_truoc_ngay": "2026-10-14",
+      "chot_truoc": 4444.0,
+      "lich_su_cuoi": [
+       [
+        "Mon Oct 12 00:00:00 2026",
+        4420.0
+       ],
+       [
+        "Tue Oct 13 00:00:00 2026",
+        4430.0
+       ],
+       [
+        "Wed Oct 14 00:00:00 2026",
+        4444.0
+       ]
+      ],
+      "thay_doi": 119.0
+     },
+     {
+      "ky_han": "Dec27",
+      "gia": 4457,
+      "luc": "10/15/2026 10:31 AM GMT",
+      "pct": 2.554072710538426,
+      "chot_truoc_ngay": "2026-10-14",
+      "chot_truoc": 4346.0,
+      "lich_su_cuoi": [
+       [
+        "Mon Oct 12 00:00:00 2026",
+        4327.0
+       ],
+       [
+        "Tue Oct 13 00:00:00 2026",
+        4338.0
+       ],
+       [
+        "Wed Oct 14 00:00:00 2026",
+        4346.0
+       ]
+      ],
+      "thay_doi": 111.0
+     },
+     {
+      "ky_han": "Mar28",
+      "gia": 4466,
+      "luc": "10/15/2026 10:31 AM GMT",
+      "pct": 2.5487944890929968,
+      "chot_truoc_ngay": "2026-10-14",
+      "chot_truoc": 4355.0,
+      "lich_su_cuoi": [
+       [
+        "Mon Oct 12 00:00:00 2026",
+        4342.0
+       ],
+       [
+        "Tue Oct 13 00:00:00 2026",
+        4352.0
+       ],
+       [
+        "Wed Oct 14 00:00:00 2026",
+        4355.0
+       ]
+      ],
+      "thay_doi": 111.0
+     },
+     {
+      "ky_han": "May28",
+      "gia": 4342,
+      "luc": "10/15/2026 08:56 AM GMT",
+      "pct": 1.0237319683573756,
+      "chot_truoc_ngay": "2026-10-14",
+      "chot_truoc": 4298.0,
+      "lich_su_cuoi": [
+       [
+        "Mon Oct 12 00:00:00 2026",
+        4307.0
+       ],
+       [
+        "Tue Oct 13 00:00:00 2026",
+        4318.0
+       ],
+       [
+        "Wed Oct 14 00:00:00 2026",
+        4298.0
+       ]
+      ],
+      "thay_doi": 44.0
+     },
+     {
+      "ky_han": "Jul28",
+      "gia": 4253,
+      "luc": "10/15/2026 08:56 AM GMT",
+      "pct": 0.21206409048067862,
+      "chot_truoc_ngay": "2026-10-14",
+      "chot_truoc": 4244.0,
+      "lich_su_cuoi": [
+       [
+        "Mon Oct 12 00:00:00 2026",
+        4287.0
+       ],
+       [
+        "Tue Oct 13 00:00:00 2026",
+        4298.0
+       ],
+       [
+        "Wed Oct 14 00:00:00 2026",
+        4244.0
+       ]
+      ],
+      "thay_doi": 9.0
+     },
+     {
+      "ky_han": "Sep28",
+      "gia": null,
+      "luc": null,
+      "pct": 0.0,
+      "chot_truoc_ngay": "2026-10-14",
+      "chot_truoc": 4208.0,
+      "lich_su_cuoi": [
+       [
+        "Mon Oct 12 00:00:00 2026",
+        4273.0
+       ],
+       [
+        "Tue Oct 13 00:00:00 2026",
+        4279.0
+       ],
+       [
+        "Wed Oct 14 00:00:00 2026",
+        4208.0
+       ]
+      ]
+     }
+    ]
+   }
+  }
+ }
+}

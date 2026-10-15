@@ -1,0 +1,157 @@
+{
+ "bai1": {
+  "sua": [
+   {
+    "tim": "-2.00",
+    "thay": "-5.00",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.barchart.com/futures/quotes/V7N27/overview",
+    "ly_do": "Barchart V7N27 (Steel HRC FOB China, sàn LME): 505.00s -5.00 (-0.98%) ngày 10/14/26 (tháng/ngày/năm)"
+   },
+   {
+    "tim": "512.50",
+    "thay": "505.00",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.barchart.com/futures/quotes/V7N27/overview",
+    "ly_do": "Barchart V7N27 (Steel HRC FOB China, sàn LME): 505.00s -5.00 (-0.98%) ngày 10/14/26 (tháng/ngày/năm)"
+   },
+   {
+    "tim": "-0.50",
+    "thay": "-1.50",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.barchart.com/futures/quotes/V7M27/overview",
+    "ly_do": "Barchart V7M27 (Steel HRC FOB China, sàn LME): 502.50s -1.50 (-0.30%) ngày 10/14/26 (tháng/ngày/năm)"
+   },
+   {
+    "tim": "511.50",
+    "thay": "502.50",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.barchart.com/futures/quotes/V7M27/overview",
+    "ly_do": "Barchart V7M27 (Steel HRC FOB China, sàn LME): 502.50s -1.50 (-0.30%) ngày 10/14/26 (tháng/ngày/năm)"
+   },
+   {
+    "tim": "510.50",
+    "thay": "502.50",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.barchart.com/futures/quotes/V7K27/overview",
+    "ly_do": "Barchart V7K27 (Steel HRC FOB China, sàn LME): 502.50s -1.00 (-0.20%) ngày 10/14/26 (tháng/ngày/năm)"
+   },
+   {
+    "tim": "510.50",
+    "thay": "502.50",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.barchart.com/futures/quotes/V7J27/overview",
+    "ly_do": "Barchart V7J27 (Steel HRC FOB China, sàn LME): 502.50s -1.00 (-0.20%) ngày 10/14/26 (tháng/ngày/năm)"
+   },
+   {
+    "tim": "-1.00",
+    "thay": "-3.50",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.barchart.com/futures/quotes/V7H27/overview",
+    "ly_do": "Barchart V7H27 (Steel HRC FOB China, sàn LME): 497.50s -3.50 (-0.70%) ngày 10/14/26 (tháng/ngày/năm)"
+   },
+   {
+    "tim": "508.00",
+    "thay": "497.50",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.barchart.com/futures/quotes/V7H27/overview",
+    "ly_do": "Barchart V7H27 (Steel HRC FOB China, sàn LME): 497.50s -3.50 (-0.70%) ngày 10/14/26 (tháng/ngày/năm)"
+   },
+   {
+    "tim": "-1.50",
+    "thay": "-6.00",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.barchart.com/futures/quotes/V7G27/overview",
+    "ly_do": "Barchart V7G27 (Steel HRC FOB China, sàn LME): 494.00s -6.00 (-1.20%) ngày 10/14/26 (tháng/ngày/năm)"
+   },
+   {
+    "tim": "506.50",
+    "thay": "494.00",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.barchart.com/futures/quotes/V7G27/overview",
+    "ly_do": "Barchart V7G27 (Steel HRC FOB China, sàn LME): 494.00s -6.00 (-1.20%) ngày 10/14/26 (tháng/ngày/năm)"
+   },
+   {
+    "tim": "-1.00",
+    "thay": "-6.50",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.barchart.com/futures/quotes/V7F27/overview",
+    "ly_do": "Barchart V7F27 (Steel HRC FOB China, sàn LME): 492.00s -6.50 (-1.30%) ngày 10/14/26 (tháng/ngày/năm)"
+   },
+   {
+    "tim": "504.50",
+    "thay": "492.00",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.barchart.com/futures/quotes/V7F27/overview",
+    "ly_do": "Barchart V7F27 (Steel HRC FOB China, sàn LME): 492.00s -6.50 (-1.30%) ngày 10/14/26 (tháng/ngày/năm)"
+   },
+   {
+    "tim": "-0.50",
+    "thay": "-4.00",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.barchart.com/futures/quotes/V7Z26/overview",
+    "ly_do": "Barchart V7Z26 (Steel HRC FOB China, sàn LME): 489.00s -4.00 (-0.81%) ngày 10/14/26 (tháng/ngày/năm)"
+   },
+   {
+    "tim": "500.50",
+    "thay": "489.00",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.barchart.com/futures/quotes/V7Z26/overview",
+    "ly_do": "Barchart V7Z26 (Steel HRC FOB China, sàn LME): 489.00s -4.00 (-0.81%) ngày 10/14/26 (tháng/ngày/năm)"
+   },
+   {
+    "tim": "-2.00",
+    "thay": "-6.50",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.barchart.com/futures/quotes/V7X26/overview",
+    "ly_do": "Barchart V7X26 (Steel HRC FOB China, sàn LME): 486.00s -6.50 (-1.32%) ngày 10/14/26 (tháng/ngày/năm)"
+   },
+   {
+    "tim": "498.00",
+    "thay": "486.00",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.barchart.com/futures/quotes/V7X26/overview",
+    "ly_do": "Barchart V7X26 (Steel HRC FOB China, sàn LME): 486.00s -6.50 (-1.32%) ngày 10/14/26 (tháng/ngày/năm)"
+   },
+   {
+    "tim": "-1.50",
+    "thay": "-6.00",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.barchart.com/futures/quotes/V7V26/overview",
+    "ly_do": "Barchart V7V26 (Steel HRC FOB China, sàn LME): 486.50s -6.00 (-1.22%) ngày 10/14/26 (tháng/ngày/năm)"
+   },
+   {
+    "tim": "498.50",
+    "thay": "486.50",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.barchart.com/futures/quotes/V7V26/overview",
+    "ly_do": "Barchart V7V26 (Steel HRC FOB China, sàn LME): 486.50s -6.00 (-1.22%) ngày 10/14/26 (tháng/ngày/năm)"
+   }
+  ],
+  "can_duyet": [
+   "Câu \"Lưu ý\" dưới bảng HRC ghi nhầm \"tùy theo chất lượng cà phê, sản lượng thu mua…\" (chép từ bài cà phê) – theo quy tắc không sửa câu chữ, cần biên tập viên duyệt.",
+   "Bảng HRC: Barchart (mã V7 = Steel HRC FOB China, Barchart ghi sàn LME) chỉ có giá chốt phiên ngày 14/10/2026 (ký hiệu \"s\" trên Barchart, lấy lúc ~17h40 ngày 15/10 giờ VN); bài gốc không ghi \"s\" sau giá dù phần giải thích ký hiệu có dòng \"s: Giá thanh toán cuối phiên\" – giữ đúng cách ghi của bài (không thêm \"s\"), cần duyệt có muốn thêm \"s\" không.",
+   "Bảng HRC: 10 kỳ hạn 10/2026 – 7/2027 vẫn đang giao dịch, không phải cuộn kỳ hạn; hợp đồng 10/2026 đáo hạn cuối tháng 10 – lần cập nhật sau tháng 10 cần cuộn lên (công cụ tự làm).",
+   "Bảng giá trong nước: Steelonline ngày 15-10-2026 (bảng hiện mặc định của từng thương hiệu) cho đúng các khoảng giá đang có trong bài (cả VND/kg và VND/cây) – không có ô nào cần đổi.",
+   "Bài gốc có 2 đề mục cùng đánh số \"3.\" (\"3. Những yếu tố ảnh hưởng…\" và \"3. Giá thép tác động…\") – không sửa, cần duyệt."
+  ]
+ }
+}

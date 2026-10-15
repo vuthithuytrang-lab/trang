@@ -1,0 +1,454 @@
+{
+ "bai1": {
+  "sua": [
+   {
+    "tim": "-32",
+    "thay": "-71",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.ice.com/products/37089076/London-Cocoa-Futures/data",
+    "ly_do": "London (ICE Europe, GBP/tấn) kỳ hạn 9/2028: hôm nay chưa có giao dịch – lấy giá chốt phiên Oct 14 4,208, so với phiên trước (Oct 13) 4,279 → -71 – nguồn ICE https://www.ice.com/products/37089076/London-Cocoa-Futures/data; mã hợp đồng theo quy ước tháng của sàn ICE",
+    "tinh_toan": true
+   },
+   {
+    "tim": "4,167",
+    "thay": "4,208",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.ice.com/products/37089076/London-Cocoa-Futures/data",
+    "ly_do": "London (ICE Europe, GBP/tấn) kỳ hạn 9/2028: hôm nay chưa có giao dịch – lấy giá chốt phiên Oct 14 4,208, so với phiên trước (Oct 13) 4,279 → -71 – nguồn ICE https://www.ice.com/products/37089076/London-Cocoa-Futures/data; mã hợp đồng theo quy ước tháng của sàn ICE",
+    "tinh_toan": true
+   },
+   {
+    "tim": "-33",
+    "thay": "+9",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.ice.com/products/37089076/London-Cocoa-Futures/data",
+    "ly_do": "London (ICE Europe, GBP/tấn) kỳ hạn 7/2028: 4,253 lúc 10/15/2026 08:56 AM GMT; giá chốt phiên trước (2026-10-14) 4,244 → thay đổi +9 – nguồn ICE https://www.ice.com/products/37089076/London-Cocoa-Futures/data; mã hợp đồng theo quy ước tháng của sàn ICE",
+    "tinh_toan": true
+   },
+   {
+    "tim": "4,192",
+    "thay": "4,253",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.ice.com/products/37089076/London-Cocoa-Futures/data",
+    "ly_do": "London (ICE Europe, GBP/tấn) kỳ hạn 7/2028: 4,253 lúc 10/15/2026 08:56 AM GMT; giá chốt phiên trước (2026-10-14) 4,244 → thay đổi +9 – nguồn ICE https://www.ice.com/products/37089076/London-Cocoa-Futures/data; mã hợp đồng theo quy ước tháng của sàn ICE",
+    "tinh_toan": true
+   },
+   {
+    "tim": "-40",
+    "thay": "+44",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.ice.com/products/37089076/London-Cocoa-Futures/data",
+    "ly_do": "London (ICE Europe, GBP/tấn) kỳ hạn 5/2028: 4,342 lúc 10/15/2026 08:56 AM GMT; giá chốt phiên trước (2026-10-14) 4,298 → thay đổi +44 – nguồn ICE https://www.ice.com/products/37089076/London-Cocoa-Futures/data; mã hợp đồng theo quy ước tháng của sàn ICE",
+    "tinh_toan": true
+   },
+   {
+    "tim": "4,221",
+    "thay": "4,342",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.ice.com/products/37089076/London-Cocoa-Futures/data",
+    "ly_do": "London (ICE Europe, GBP/tấn) kỳ hạn 5/2028: 4,342 lúc 10/15/2026 08:56 AM GMT; giá chốt phiên trước (2026-10-14) 4,298 → thay đổi +44 – nguồn ICE https://www.ice.com/products/37089076/London-Cocoa-Futures/data; mã hợp đồng theo quy ước tháng của sàn ICE",
+    "tinh_toan": true
+   },
+   {
+    "tim": "-48",
+    "thay": "+111",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.ice.com/products/37089076/London-Cocoa-Futures/data",
+    "ly_do": "London (ICE Europe, GBP/tấn) kỳ hạn 3/2028: 4,466 lúc 10/15/2026 10:31 AM GMT; giá chốt phiên trước (2026-10-14) 4,355 → thay đổi +111 – nguồn ICE https://www.ice.com/products/37089076/London-Cocoa-Futures/data; mã hợp đồng theo quy ước tháng của sàn ICE",
+    "tinh_toan": true
+   },
+   {
+    "tim": "4,262",
+    "thay": "4,466",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.ice.com/products/37089076/London-Cocoa-Futures/data",
+    "ly_do": "London (ICE Europe, GBP/tấn) kỳ hạn 3/2028: 4,466 lúc 10/15/2026 10:31 AM GMT; giá chốt phiên trước (2026-10-14) 4,355 → thay đổi +111 – nguồn ICE https://www.ice.com/products/37089076/London-Cocoa-Futures/data; mã hợp đồng theo quy ước tháng của sàn ICE",
+    "tinh_toan": true
+   },
+   {
+    "tim": "-49",
+    "thay": "+111",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.ice.com/products/37089076/London-Cocoa-Futures/data",
+    "ly_do": "London (ICE Europe, GBP/tấn) kỳ hạn 12/2027: 4,457 lúc 10/15/2026 10:31 AM GMT; giá chốt phiên trước (2026-10-14) 4,346 → thay đổi +111 – nguồn ICE https://www.ice.com/products/37089076/London-Cocoa-Futures/data; mã hợp đồng theo quy ước tháng của sàn ICE",
+    "tinh_toan": true
+   },
+   {
+    "tim": "4,244",
+    "thay": "4,457",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.ice.com/products/37089076/London-Cocoa-Futures/data",
+    "ly_do": "London (ICE Europe, GBP/tấn) kỳ hạn 12/2027: 4,457 lúc 10/15/2026 10:31 AM GMT; giá chốt phiên trước (2026-10-14) 4,346 → thay đổi +111 – nguồn ICE https://www.ice.com/products/37089076/London-Cocoa-Futures/data; mã hợp đồng theo quy ước tháng của sàn ICE",
+    "tinh_toan": true
+   },
+   {
+    "tim": "-58",
+    "thay": "+119",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.ice.com/products/37089076/London-Cocoa-Futures/data",
+    "ly_do": "London (ICE Europe, GBP/tấn) kỳ hạn 9/2027: 4,563 lúc 10/15/2026 10:31 AM GMT; giá chốt phiên trước (2026-10-14) 4,444 → thay đổi +119 – nguồn ICE https://www.ice.com/products/37089076/London-Cocoa-Futures/data; mã hợp đồng theo quy ước tháng của sàn ICE",
+    "tinh_toan": true
+   },
+   {
+    "tim": "4,327",
+    "thay": "4,563",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.ice.com/products/37089076/London-Cocoa-Futures/data",
+    "ly_do": "London (ICE Europe, GBP/tấn) kỳ hạn 9/2027: 4,563 lúc 10/15/2026 10:31 AM GMT; giá chốt phiên trước (2026-10-14) 4,444 → thay đổi +119 – nguồn ICE https://www.ice.com/products/37089076/London-Cocoa-Futures/data; mã hợp đồng theo quy ước tháng của sàn ICE",
+    "tinh_toan": true
+   },
+   {
+    "tim": "-65",
+    "thay": "+121",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.ice.com/products/37089076/London-Cocoa-Futures/data",
+    "ly_do": "London (ICE Europe, GBP/tấn) kỳ hạn 7/2027: 4,643 lúc 10/15/2026 10:31 AM GMT; giá chốt phiên trước (2026-10-14) 4,522 → thay đổi +121 – nguồn ICE https://www.ice.com/products/37089076/London-Cocoa-Futures/data; mã hợp đồng theo quy ước tháng của sàn ICE",
+    "tinh_toan": true
+   },
+   {
+    "tim": "4,377",
+    "thay": "4,643",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.ice.com/products/37089076/London-Cocoa-Futures/data",
+    "ly_do": "London (ICE Europe, GBP/tấn) kỳ hạn 7/2027: 4,643 lúc 10/15/2026 10:31 AM GMT; giá chốt phiên trước (2026-10-14) 4,522 → thay đổi +121 – nguồn ICE https://www.ice.com/products/37089076/London-Cocoa-Futures/data; mã hợp đồng theo quy ước tháng của sàn ICE",
+    "tinh_toan": true
+   },
+   {
+    "tim": "-67",
+    "thay": "+119",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.ice.com/products/37089076/London-Cocoa-Futures/data",
+    "ly_do": "London (ICE Europe, GBP/tấn) kỳ hạn 5/2027: 4,618 lúc 10/15/2026 10:35 AM GMT; giá chốt phiên trước (2026-10-14) 4,499 → thay đổi +119 – nguồn ICE https://www.ice.com/products/37089076/London-Cocoa-Futures/data; mã hợp đồng theo quy ước tháng của sàn ICE",
+    "tinh_toan": true
+   },
+   {
+    "tim": "4,351",
+    "thay": "4,618",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.ice.com/products/37089076/London-Cocoa-Futures/data",
+    "ly_do": "London (ICE Europe, GBP/tấn) kỳ hạn 5/2027: 4,618 lúc 10/15/2026 10:35 AM GMT; giá chốt phiên trước (2026-10-14) 4,499 → thay đổi +119 – nguồn ICE https://www.ice.com/products/37089076/London-Cocoa-Futures/data; mã hợp đồng theo quy ước tháng của sàn ICE",
+    "tinh_toan": true
+   },
+   {
+    "tim": "-67",
+    "thay": "+122",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.ice.com/products/37089076/London-Cocoa-Futures/data",
+    "ly_do": "London (ICE Europe, GBP/tấn) kỳ hạn 3/2027: 4,585 lúc 10/15/2026 10:35 AM GMT; giá chốt phiên trước (2026-10-14) 4,463 → thay đổi +122 – nguồn ICE https://www.ice.com/products/37089076/London-Cocoa-Futures/data; mã hợp đồng theo quy ước tháng của sàn ICE",
+    "tinh_toan": true
+   },
+   {
+    "tim": "4,317",
+    "thay": "4,585",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.ice.com/products/37089076/London-Cocoa-Futures/data",
+    "ly_do": "London (ICE Europe, GBP/tấn) kỳ hạn 3/2027: 4,585 lúc 10/15/2026 10:35 AM GMT; giá chốt phiên trước (2026-10-14) 4,463 → thay đổi +122 – nguồn ICE https://www.ice.com/products/37089076/London-Cocoa-Futures/data; mã hợp đồng theo quy ước tháng của sàn ICE",
+    "tinh_toan": true
+   },
+   {
+    "tim": "-57",
+    "thay": "+125",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.ice.com/products/37089076/London-Cocoa-Futures/data",
+    "ly_do": "London (ICE Europe, GBP/tấn) kỳ hạn 12/2026: 4,442 lúc 10/15/2026 10:35 AM GMT; giá chốt phiên trước (2026-10-14) 4,317 → thay đổi +125 – nguồn ICE https://www.ice.com/products/37089076/London-Cocoa-Futures/data; mã hợp đồng theo quy ước tháng của sàn ICE",
+    "tinh_toan": true
+   },
+   {
+    "tim": "4,174",
+    "thay": "4,442",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.ice.com/products/37089076/London-Cocoa-Futures/data",
+    "ly_do": "London (ICE Europe, GBP/tấn) kỳ hạn 12/2026: 4,442 lúc 10/15/2026 10:35 AM GMT; giá chốt phiên trước (2026-10-14) 4,317 → thay đổi +125 – nguồn ICE https://www.ice.com/products/37089076/London-Cocoa-Futures/data; mã hợp đồng theo quy ước tháng của sàn ICE",
+    "tinh_toan": true
+   },
+   {
+    "tim": "-86",
+    "thay": "-64",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.ice.com/products/7/Cocoa-Futures/data",
+    "ly_do": "New York (ICE US, USD/tấn) kỳ hạn 7/2028: hôm nay chưa có giao dịch – lấy giá chốt phiên Oct 14 5,688, so với phiên trước (Oct 13) 5,752 → -64 – nguồn ICE https://www.ice.com/products/7/Cocoa-Futures/data; mã hợp đồng theo quy ước tháng của sàn ICE",
+    "tinh_toan": true
+   },
+   {
+    "tim": "5,597",
+    "thay": "5,688",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.ice.com/products/7/Cocoa-Futures/data",
+    "ly_do": "New York (ICE US, USD/tấn) kỳ hạn 7/2028: hôm nay chưa có giao dịch – lấy giá chốt phiên Oct 14 5,688, so với phiên trước (Oct 13) 5,752 → -64 – nguồn ICE https://www.ice.com/products/7/Cocoa-Futures/data; mã hợp đồng theo quy ước tháng của sàn ICE",
+    "tinh_toan": true
+   },
+   {
+    "tim": "-98",
+    "thay": "-51",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.ice.com/products/7/Cocoa-Futures/data",
+    "ly_do": "New York (ICE US, USD/tấn) kỳ hạn 5/2028: hôm nay chưa có giao dịch – lấy giá chốt phiên Oct 14 5,719, so với phiên trước (Oct 13) 5,770 → -51 – nguồn ICE https://www.ice.com/products/7/Cocoa-Futures/data; mã hợp đồng theo quy ước tháng của sàn ICE",
+    "tinh_toan": true
+   },
+   {
+    "tim": "5,620",
+    "thay": "5,719",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.ice.com/products/7/Cocoa-Futures/data",
+    "ly_do": "New York (ICE US, USD/tấn) kỳ hạn 5/2028: hôm nay chưa có giao dịch – lấy giá chốt phiên Oct 14 5,719, so với phiên trước (Oct 13) 5,770 → -51 – nguồn ICE https://www.ice.com/products/7/Cocoa-Futures/data; mã hợp đồng theo quy ước tháng của sàn ICE",
+    "tinh_toan": true
+   },
+   {
+    "tim": "-105",
+    "thay": "+188",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.ice.com/products/7/Cocoa-Futures/data",
+    "ly_do": "New York (ICE US, USD/tấn) kỳ hạn 3/2028: 5,964 lúc 10/15/2026 10:15 AM GMT; giá chốt phiên trước (2026-10-14) 5,776 → thay đổi +188 – nguồn ICE https://www.ice.com/products/7/Cocoa-Futures/data; mã hợp đồng theo quy ước tháng của sàn ICE",
+    "tinh_toan": true
+   },
+   {
+    "tim": "5,670",
+    "thay": "5,964",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.ice.com/products/7/Cocoa-Futures/data",
+    "ly_do": "New York (ICE US, USD/tấn) kỳ hạn 3/2028: 5,964 lúc 10/15/2026 10:15 AM GMT; giá chốt phiên trước (2026-10-14) 5,776 → thay đổi +188 – nguồn ICE https://www.ice.com/products/7/Cocoa-Futures/data; mã hợp đồng theo quy ước tháng của sàn ICE",
+    "tinh_toan": true
+   },
+   {
+    "tim": "-113",
+    "thay": "+201",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.ice.com/products/7/Cocoa-Futures/data",
+    "ly_do": "New York (ICE US, USD/tấn) kỳ hạn 12/2027: 6,038 lúc 10/15/2026 10:27 AM GMT; giá chốt phiên trước (2026-10-14) 5,837 → thay đổi +201 – nguồn ICE https://www.ice.com/products/7/Cocoa-Futures/data; mã hợp đồng theo quy ước tháng của sàn ICE",
+    "tinh_toan": true
+   },
+   {
+    "tim": "5,722",
+    "thay": "6,038",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.ice.com/products/7/Cocoa-Futures/data",
+    "ly_do": "New York (ICE US, USD/tấn) kỳ hạn 12/2027: 6,038 lúc 10/15/2026 10:27 AM GMT; giá chốt phiên trước (2026-10-14) 5,837 → thay đổi +201 – nguồn ICE https://www.ice.com/products/7/Cocoa-Futures/data; mã hợp đồng theo quy ước tháng của sàn ICE",
+    "tinh_toan": true
+   },
+   {
+    "tim": "-118",
+    "thay": "+213",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.ice.com/products/7/Cocoa-Futures/data",
+    "ly_do": "New York (ICE US, USD/tấn) kỳ hạn 9/2027: 6,110 lúc 10/15/2026 10:27 AM GMT; giá chốt phiên trước (2026-10-14) 5,897 → thay đổi +213 – nguồn ICE https://www.ice.com/products/7/Cocoa-Futures/data; mã hợp đồng theo quy ước tháng của sàn ICE",
+    "tinh_toan": true
+   },
+   {
+    "tim": "5,779",
+    "thay": "6,110",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.ice.com/products/7/Cocoa-Futures/data",
+    "ly_do": "New York (ICE US, USD/tấn) kỳ hạn 9/2027: 6,110 lúc 10/15/2026 10:27 AM GMT; giá chốt phiên trước (2026-10-14) 5,897 → thay đổi +213 – nguồn ICE https://www.ice.com/products/7/Cocoa-Futures/data; mã hợp đồng theo quy ước tháng của sàn ICE",
+    "tinh_toan": true
+   },
+   {
+    "tim": "-120",
+    "thay": "+208",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.ice.com/products/7/Cocoa-Futures/data",
+    "ly_do": "New York (ICE US, USD/tấn) kỳ hạn 7/2027: 6,125 lúc 10/15/2026 10:34 AM GMT; giá chốt phiên trước (2026-10-14) 5,917 → thay đổi +208 – nguồn ICE https://www.ice.com/products/7/Cocoa-Futures/data; mã hợp đồng theo quy ước tháng của sàn ICE",
+    "tinh_toan": true
+   },
+   {
+    "tim": "5,783",
+    "thay": "6,125",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.ice.com/products/7/Cocoa-Futures/data",
+    "ly_do": "New York (ICE US, USD/tấn) kỳ hạn 7/2027: 6,125 lúc 10/15/2026 10:34 AM GMT; giá chốt phiên trước (2026-10-14) 5,917 → thay đổi +208 – nguồn ICE https://www.ice.com/products/7/Cocoa-Futures/data; mã hợp đồng theo quy ước tháng của sàn ICE",
+    "tinh_toan": true
+   },
+   {
+    "tim": "-119",
+    "thay": "+201",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.ice.com/products/7/Cocoa-Futures/data",
+    "ly_do": "New York (ICE US, USD/tấn) kỳ hạn 5/2027: 6,111 lúc 10/15/2026 10:35 AM GMT; giá chốt phiên trước (2026-10-14) 5,910 → thay đổi +201 – nguồn ICE https://www.ice.com/products/7/Cocoa-Futures/data; mã hợp đồng theo quy ước tháng của sàn ICE",
+    "tinh_toan": true
+   },
+   {
+    "tim": "5,760",
+    "thay": "6,111",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.ice.com/products/7/Cocoa-Futures/data",
+    "ly_do": "New York (ICE US, USD/tấn) kỳ hạn 5/2027: 6,111 lúc 10/15/2026 10:35 AM GMT; giá chốt phiên trước (2026-10-14) 5,910 → thay đổi +201 – nguồn ICE https://www.ice.com/products/7/Cocoa-Futures/data; mã hợp đồng theo quy ước tháng của sàn ICE",
+    "tinh_toan": true
+   },
+   {
+    "tim": "-122",
+    "thay": "+208",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.ice.com/products/7/Cocoa-Futures/data",
+    "ly_do": "New York (ICE US, USD/tấn) kỳ hạn 3/2027: 6,064 lúc 10/15/2026 10:33 AM GMT; giá chốt phiên trước (2026-10-14) 5,856 → thay đổi +208 – nguồn ICE https://www.ice.com/products/7/Cocoa-Futures/data; mã hợp đồng theo quy ước tháng của sàn ICE",
+    "tinh_toan": true
+   },
+   {
+    "tim": "5,695",
+    "thay": "6,064",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.ice.com/products/7/Cocoa-Futures/data",
+    "ly_do": "New York (ICE US, USD/tấn) kỳ hạn 3/2027: 6,064 lúc 10/15/2026 10:33 AM GMT; giá chốt phiên trước (2026-10-14) 5,856 → thay đổi +208 – nguồn ICE https://www.ice.com/products/7/Cocoa-Futures/data; mã hợp đồng theo quy ước tháng của sàn ICE",
+    "tinh_toan": true
+   },
+   {
+    "tim": "-118",
+    "thay": "+210",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.ice.com/products/7/Cocoa-Futures/data",
+    "ly_do": "New York (ICE US, USD/tấn) kỳ hạn 12/2026: 5,945 lúc 10/15/2026 10:35 AM GMT; giá chốt phiên trước (2026-10-14) 5,735 → thay đổi +210 – nguồn ICE https://www.ice.com/products/7/Cocoa-Futures/data; mã hợp đồng theo quy ước tháng của sàn ICE",
+    "tinh_toan": true
+   },
+   {
+    "tim": "5,582",
+    "thay": "5,945",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.ice.com/products/7/Cocoa-Futures/data",
+    "ly_do": "New York (ICE US, USD/tấn) kỳ hạn 12/2026: 5,945 lúc 10/15/2026 10:35 AM GMT; giá chốt phiên trước (2026-10-14) 5,735 → thay đổi +210 – nguồn ICE https://www.ice.com/products/7/Cocoa-Futures/data; mã hợp đồng theo quy ước tháng của sàn ICE",
+    "tinh_toan": true
+   },
+   {
+    "tim": "-2,000 - -3,000 VND/kg",
+    "thay": "Không đổi",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://banggianongsan.com/bang-gia-cacao-hom-nay/",
+    "ly_do": "Bột cacao nguyên chất: giá mới 173.000 - 219.000 đ/kg, chênh lệch \"➖ Không đổi\" (banggianongsan.com, bảng ngày 15/10/2026, trang sửa lúc 2026-10-15T01:44:02+00:00)"
+   },
+   {
+    "tim": "172,000 - 217,000",
+    "thay": "173,000 - 219,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://banggianongsan.com/bang-gia-cacao-hom-nay/",
+    "ly_do": "Bột cacao nguyên chất: giá mới 173.000 - 219.000 đ/kg, chênh lệch \"➖ Không đổi\" (banggianongsan.com, bảng ngày 15/10/2026, trang sửa lúc 2026-10-15T01:44:02+00:00)"
+   },
+   {
+    "tim": "-3,000 VND/kg",
+    "thay": "Không đổi",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://banggianongsan.com/bang-gia-cacao-hom-nay/",
+    "ly_do": "Cacao lên men loại III: giá mới 103.000 - 114.000 đ/kg, chênh lệch \"➖ Không đổi\" (banggianongsan.com, bảng ngày 15/10/2026, trang sửa lúc 2026-10-15T01:44:02+00:00)"
+   },
+   {
+    "tim": "102,000 - 113,000",
+    "thay": "103,000 - 114,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://banggianongsan.com/bang-gia-cacao-hom-nay/",
+    "ly_do": "Cacao lên men loại III: giá mới 103.000 - 114.000 đ/kg, chênh lệch \"➖ Không đổi\" (banggianongsan.com, bảng ngày 15/10/2026, trang sửa lúc 2026-10-15T01:44:02+00:00)"
+   },
+   {
+    "tim": "-3,000 VND/kg",
+    "thay": "Không đổi",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://banggianongsan.com/bang-gia-cacao-hom-nay/",
+    "ly_do": "Cacao lên men loại II: giá mới 96.000 - 104.000 đ/kg, chênh lệch \"➖ Không đổi\" (banggianongsan.com, bảng ngày 15/10/2026, trang sửa lúc 2026-10-15T01:44:02+00:00)"
+   },
+   {
+    "tim": "95,000 - 103,000",
+    "thay": "96,000 - 104,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://banggianongsan.com/bang-gia-cacao-hom-nay/",
+    "ly_do": "Cacao lên men loại II: giá mới 96.000 - 104.000 đ/kg, chênh lệch \"➖ Không đổi\" (banggianongsan.com, bảng ngày 15/10/2026, trang sửa lúc 2026-10-15T01:44:02+00:00)"
+   },
+   {
+    "tim": "-2,000 VND/kg",
+    "thay": "Không đổi",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://banggianongsan.com/bang-gia-cacao-hom-nay/",
+    "ly_do": "Hạt cacao lên men loại I: giá mới 78.000 - 86.000 đ/kg, chênh lệch \"➖ Không đổi\" (banggianongsan.com, bảng ngày 15/10/2026, trang sửa lúc 2026-10-15T01:44:02+00:00)"
+   },
+   {
+    "tim": "77,000 - 85,000",
+    "thay": "78,000 - 86,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://banggianongsan.com/bang-gia-cacao-hom-nay/",
+    "ly_do": "Hạt cacao lên men loại I: giá mới 78.000 - 86.000 đ/kg, chênh lệch \"➖ Không đổi\" (banggianongsan.com, bảng ngày 15/10/2026, trang sửa lúc 2026-10-15T01:44:02+00:00)"
+   },
+   {
+    "tim": "-2,000 VND/kg",
+    "thay": "Không đổi",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://banggianongsan.com/bang-gia-cacao-hom-nay/",
+    "ly_do": "Hạt cacao xô: giá mới 69.000 - 77.000 đ/kg, chênh lệch \"➖ Không đổi\" (banggianongsan.com, bảng ngày 15/10/2026, trang sửa lúc 2026-10-15T01:44:02+00:00)"
+   },
+   {
+    "tim": "68,000 - 76,000",
+    "thay": "69,000 - 77,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://banggianongsan.com/bang-gia-cacao-hom-nay/",
+    "ly_do": "Hạt cacao xô: giá mới 69.000 - 77.000 đ/kg, chênh lệch \"➖ Không đổi\" (banggianongsan.com, bảng ngày 15/10/2026, trang sửa lúc 2026-10-15T01:44:02+00:00)"
+   },
+   {
+    "tim": "-100 VND/kg",
+    "thay": "Không đổi",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://banggianongsan.com/bang-gia-cacao-hom-nay/",
+    "ly_do": "Cacao tươi: giá mới 7.300 - 8.000 đ/kg, chênh lệch \"➖ Không đổi\" (banggianongsan.com, bảng ngày 15/10/2026, trang sửa lúc 2026-10-15T01:44:02+00:00)"
+   },
+   {
+    "tim": "7,200 - 7,900",
+    "thay": "7,300 - 8,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://banggianongsan.com/bang-gia-cacao-hom-nay/",
+    "ly_do": "Cacao tươi: giá mới 7.300 - 8.000 đ/kg, chênh lệch \"➖ Không đổi\" (banggianongsan.com, bảng ngày 15/10/2026, trang sửa lúc 2026-10-15T01:44:02+00:00)"
+   }
+  ],
+  "can_duyet": [
+   "Bảng giá trong nước: cột \"Giá mới dự kiến\" GIỮ NGUYÊN (nguồn không có giá dự kiến). Lưu ý: số cũ của bài khớp đúng bảng giacaphehomnay.vn ngày 09/10/2026 – \"Giá hiện tại\" cũ = giá hôm trước, \"Giá mới dự kiến\" cũ = giá hôm đó của nguồn, \"Thay đổi\" = mức đổi trong ngày. Nếu muốn theo cách đó thì \"Giá mới dự kiến\" cũng nên lấy giá mới của nguồn – cần duyệt.",
+   "Bảng giá trong nước: cột \"Thay đổi\" ghi theo mức chênh lệch so với hôm trước của nguồn (hôm nay \"Không đổi\"), không phải hiệu \"Giá mới dự kiến\" – \"Giá hiện tại\" – cần duyệt cách ghi.",
+   "Bảng ca cao New York (ICE US, USD/tấn): ICE chỉ niêm yết 9 kỳ hạn, bài có 10 dòng – 1 dòng cuối (CCU28) giữ nguyên số cũ.",
+   "Bảng New York (ICE US, USD/tấn) dòng CCK28: hôm nay chưa có giao dịch – ghi giá chốt phiên 14/10 và mức đổi so với 13/10 (khác thời điểm các dòng trên).",
+   "Bảng New York (ICE US, USD/tấn) dòng CCN28: hôm nay chưa có giao dịch – ghi giá chốt phiên 14/10 và mức đổi so với 13/10 (khác thời điểm các dòng trên).",
+   "Bảng London (ICE Europe, GBP/tấn) dòng CAU28: hôm nay chưa có giao dịch – ghi giá chốt phiên 14/10 và mức đổi so với 13/10 (khác thời điểm các dòng trên).",
+   "Giá thế giới lấy lúc 17:45 15/10/2026 (giờ VN) khi hai sàn đang giao dịch: là giá khớp gần nhất trong phiên 15/10, chưa phải giá chốt phiên; cột \"Thay đổi\" tính = giá khớp − giá chốt phiên 14/10 (ICE không ghi sẵn số tuyệt đối).",
+   "Lỗi có sẵn trong bài: câu \"Lưu ý\" dưới bảng ca cao New York ghi \"chất lượng cà phê\" (nhầm sản phẩm) – không sửa chữ, chỉ báo lại."
+  ]
+ }
+}
