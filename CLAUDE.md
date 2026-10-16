@@ -106,5 +106,5 @@ Agent đọc chìa từ file, gửi qua header `Authorization: Bearer <chìa>`, 
 |---|---|
 | `ho-so/` | Hồ sơ Trang, phần cần cập nhật trên Agent Boss |
 | `khoa-hoc/` | Tiến độ khóa Agent Boss, mã nộp từng bài, sản phẩm đã làm |
-| `cong-cu/` | Công cụ dùng lại được — prompt SEO, bản tin tự động |
+| `cong-cu/` | Công cụ dùng lại được — prompt SEO, bản tin tự động, **tạo Docs tối ưu nhanh** (`cong-cu/tao-docs-tu-url/`) |
 | `BAO-MAT.md` | Danh sách chìa khóa đã lộ cần thu hồi |
