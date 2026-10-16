@@ -1,0 +1,80 @@
+{
+ "_ghi_chu": {
+  "petrolimex_tcbc": "lay_gia.py bắt nhầm thông cáo 08/10 (thông cáo 15/10 có tiêu đề khác \"chủ động giảm giá…\") — đã tự lấy thông cáo 15/10 và đối chiếu ảnh"
+ },
+ "_petrolimex_tcbc": {
+  "url": "https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-chu-dong-giam-gia-xang-dau-300-dong-litkg-de-chia-se-ap-luc-chi-phi-voi-nguoi-dan-va-doanh-nghiep.html",
+  "tieu_de": "Thông cáo số 56/2026/PLX-TCBC: Petrolimex chủ động giảm giá xăng dầu 300 đồng/lít,kg (giá bán lẻ từ 15 giờ 00 phút ngày 15/10/2026)",
+  "anh": "cap-nhat/tam/plx-gia.jpg"
+ },
+ "petrolimex": {
+  "ky": "kỳ điều chỉnh từ 15 giờ 00 phút ngày 15/10/2026 (số theo topi.vn, đã đối chiếu khớp ảnh thông cáo 56/2026/PLX-TCBC)",
+  "nguon": "https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-chu-dong-giam-gia-xang-dau-300-dong-litkg-de-chia-se-ap-luc-chi-phi-voi-nguoi-dan-va-doanh-nghiep.html",
+  "gia": {
+   "e10_95_v": [
+    27520,
+    28070
+   ],
+   "e10_95_iii": [
+    26720,
+    27250
+   ],
+   "e5_92": [
+    26670,
+    27200
+   ],
+   "do_0001": [
+    30200,
+    30800
+   ],
+   "do_005": [
+    28800,
+    29370
+   ],
+   "dau_hoa": [
+    30410,
+    31010
+   ]
+  }
+ },
+ "pvoil": {
+  "ky": "kỳ điều chỉnh mới nhất trên topi.vn (cùng ngày Topi đã sang kỳ 15/10/2026)",
+  "nguon": "https://topi.vn/gia-xang-dau-hom-nay.html",
+  "gia": {
+   "e10_95_iii": [
+    26670
+   ],
+   "e5_92": [
+    26620
+   ],
+   "do_005": [
+    28750
+   ],
+   "do_0001": [
+    30200
+   ]
+  }
+ },
+ "mipec": {
+  "ky": "giá đang áp dụng trên mipec.com.vn",
+  "nguon": "https://www.mipec.com.vn/pages/gia-xang-dau-ban-le",
+  "gia": {
+   "e10_95_iii": [
+    27020,
+    27560
+   ],
+   "e5_92": [
+    26970,
+    27500
+   ],
+   "do_0001": [
+    30200,
+    30800
+   ],
+   "do_005": [
+    29100,
+    29680
+   ]
+  }
+ }
+}
