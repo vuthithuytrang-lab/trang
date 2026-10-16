@@ -8,8 +8,9 @@ chưa có thì thêm cặp mới bên phải. Ô có ngày nhỏ hơn ngày ở 
 Từ 18:00 trở đi (lần kiểm 19:00), ngày cần kiểm là NGÀY MAI: nội dung phải chuyển sang ngày hôm sau
 từ tối, chưa chuyển là chậm (Trang chốt 06/10/2026). Kết quả ghi vào cặp cột của ngày mai.
 
-Lần kiểm buổi trưa (11:00–17:59) được BỎ QUA nếu lần kiểm gần nhất trong ngày đã thấy toàn bộ URL
-cập nhật đúng ngày (Trang chốt 07/10/2026). Muốn kiểm bất kể, thêm --ep (Trang nhờ kiểm tay).
+Lần kiểm sáng và trưa (00:00–17:59) được BỎ QUA nếu lần kiểm gần nhất ghi vào cột hôm nay (kể cả lần
+19:00 tối hôm trước) đã thấy toàn bộ URL cập nhật đúng ngày (Trang chốt 07/10 cho lần trưa, 16/10/2026
+mở rộng cho cả lần sáng: tối đã đủ thì hôm sau không kiểm, chỉ kiểm tối). Muốn kiểm bất kể, thêm --ep (Trang nhờ kiểm tay).
 
 Cách dùng:
   python cap_nhat_sheet.py dau-vao.json > ket-qua.json
@@ -30,7 +31,7 @@ from datetime import datetime, timedelta, timezone
 import lay_ngay
 
 GIO_CHUYEN_NGAY = 18  # từ giờ này, trang phải hiện ngày mai mới tính là đã cập nhật
-GIO_TRUA = (11, 18)  # khung giờ của lần kiểm 13:00 — được bỏ qua nếu buổi sáng đã đủ
+GIO_BO_QUA = (0, 18)  # lần 08:00 và 13:00 — bỏ qua nếu lần kiểm trước (tối qua/sáng nay) đã đủ
 
 
 def _doc_ngay(chu):
@@ -68,8 +69,8 @@ def main():
         ngay_kiem = datetime.strptime(ngay_chi_dinh, "%d/%m/%Y").date()
     hom_nay = ngay_kiem.strftime("%d/%m/%Y")  # ngày cần kiểm (tên biến giữ nguyên cho gọn)
 
-    # Lần kiểm trưa: buổi sáng đã đủ hết thì bỏ qua
-    if (not ep and bang is not None and GIO_TRUA[0] <= bay_gio.hour < GIO_TRUA[1]
+    # Lần kiểm sáng/trưa: lần kiểm trước (tối qua hoặc sáng nay) đã đủ hết thì bỏ qua
+    if (not ep and bang is not None and GIO_BO_QUA[0] <= bay_gio.hour < GIO_BO_QUA[1]
             and hom_nay in header[2:]):
         c = header.index(hom_nay, 2)
         co_url = [h for h in bang[1:] if len(h) > 1 and str(h[1]).strip().startswith("http")]
