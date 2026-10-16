@@ -130,6 +130,7 @@ Agent đọc chìa từ file, gửi qua header `Authorization: Bearer <chìa>`, 
 | "Update bài vàng 610" / dán link `techcombank.com/thong-tin/blog/vang-610-la-vang-gi` | `cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/vang-610/README.md` — PNJ |
 | ⛔ Quy tắc nội dung cho mọi bài TCB | **Cập nhật, không thay đổi nội dung** (Trang dặn 14/10/2026): chỉ đổi số/ngày/tháng; giữ nguyên câu chữ, dạng câu ("Khoảng X đến Y" vẫn là khoảng), không thêm "(theo …)", không đổi tên riêng. Không làm được đúng dạng → giữ nguyên + ghi cần duyệt |
 | ⏰ Quy tắc ngày cho mọi bài TCB | Chạy **từ 15h (giờ VN) trở đi → ghi ngày hôm sau** trong bài + tên file (vd chạy chiều 8/10 → 9/10). Trước 15h → hôm nay. Cột ngày trong Sheet vẫn là ngày chạy |
+| "Update lãi suất" / dòng lãi suất trong Sheet "Update" (dòng 10–11) | `cong-cu/cap-nhat-lai-suat/QUY-TRINH.md` — 2 bài lãi suất, nguồn VnExpress + Topi |
 | "Chạy bảng update" / lịch tự động mỗi giờ | `cong-cu/skill-cap-nhat-bai-tcb/bang-dieu-khien/README.md` — Google Sheets "Update", chạy các dòng đã tích |
 | Đóng gói xong quy trình 1 bài mới | **Tự thêm dòng vào Google Sheets "Update"** theo mục "Thêm bài mới vào bảng" trong `bang-dieu-khien/README.md` — Trang không phải tự điền |
 | Link bài Techcombank khác + nguồn tham khảo | `cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/SKILL.md` (quy trình chung) |

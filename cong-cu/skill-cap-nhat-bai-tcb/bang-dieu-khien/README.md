@@ -43,6 +43,9 @@ Bài làm lần đầu chưa đóng gói thì **chưa** thêm vào bảng.
    - URL là bài 1 chỉ vàng (`1-chi-vang-bao-nhieu-tien`) → `../cong-thuc/1-chi-vang/README.md`.
    - URL là bài vàng 16K (`gia-vang-16k-hom-nay`) → `../cong-thuc/vang-16k/README.md`.
    - URL là bài vàng 610 (`vang-610-la-vang-gi`) → `../cong-thuc/vang-610/README.md`.
+   - URL là bài lãi suất `lai-suat-tiet-kiem` (Bài 1) hoặc `cach-tinh-lai-suat-tien-gui-tiet-kiem` (Bài 2) → công cụ lãi suất
+     `/home/user/trang/cong-cu/cap-nhat-lai-suat/` (đọc `QUY-TRINH.md`, mục "Cách chạy"; `cap-nhat.py lay` → `dung <ngày>` dựng cả 2 bài).
+     Chỉ tạo Docs cho bài có dòng được tích; `bao-cao` lưu ở `cong-cu/cap-nhat-lai-suat/bao-cao/`. Dòng 10–11 trong sheet (thêm 16/10/2026).
    - URL khớp một công thức khác trong `../cong-thuc/` → làm theo công thức đó.
    - Còn lại → quy trình chung `../cap-nhat-bai-tcb/SKILL.md`, nguồn tham khảo lấy ở cột D;
      bài có bảng lãi suất tiết kiệm mà cột D trống → dùng nguồn mặc định VnExpress + Topi như SKILL.md.
