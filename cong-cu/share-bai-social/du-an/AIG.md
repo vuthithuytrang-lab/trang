@@ -181,3 +181,4 @@ Rút ra từ các lỗi thật của bài đầu tiên "trái cây iqf" (04/10/2
 | Chìa bị dán vào chat | — | Nhắc Trang gửi chìa bằng **đính kèm file** trước khi Trang copy chìa |
 | Chìa mất khi phiên đóng | Chìa chỉ nằm trên máy tạm của phiên | Cất vào cài đặt kín của môi trường (việc còn mở trong `GHI-CHU.md`) |
 
+| Ảnh trong thân bài Wix không hiện (chỉ có khung trống) | Node ảnh ghi `src.url` — Wix không dựng ảnh từ URL | Import ảnh vào Wix Media rồi ghi node ảnh bằng `image.src.id` + `width` + `height` (phát hiện 16/10/2026; các bài Wix trước đó có thể bị — chờ Trang đồng ý mới sửa) |
