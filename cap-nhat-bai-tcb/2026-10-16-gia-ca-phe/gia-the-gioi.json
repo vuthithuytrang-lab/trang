@@ -1,0 +1,70 @@
+{
+ "cap_nhat": "Cập nhật: 16/10/2026 lúc 10:45:02",
+ "bang": {
+  "robusta": [
+   {
+    "ky_han": "11/26",
+    "gia": "3375",
+    "thay_doi": "-108",
+    "hom_truoc": "3483"
+   },
+   {
+    "ky_han": "01/27",
+    "gia": "3364",
+    "thay_doi": "-106",
+    "hom_truoc": "3470"
+   },
+   {
+    "ky_han": "03/27",
+    "gia": "3339",
+    "thay_doi": "-106",
+    "hom_truoc": "3445"
+   },
+   {
+    "ky_han": "05/27",
+    "gia": "3325",
+    "thay_doi": "-104",
+    "hom_truoc": "3429"
+   },
+   {
+    "ky_han": "07/27",
+    "gia": "3310",
+    "thay_doi": "-104",
+    "hom_truoc": "3414"
+   }
+  ],
+  "arabica": [
+   {
+    "ky_han": "12/26",
+    "gia": "294.80",
+    "thay_doi": "-3.25",
+    "hom_truoc": "298.05"
+   },
+   {
+    "ky_han": "03/27",
+    "gia": "285.35",
+    "thay_doi": "-4.80",
+    "hom_truoc": "290.15"
+   },
+   {
+    "ky_han": "05/27",
+    "gia": "281.75",
+    "thay_doi": "-4.80",
+    "hom_truoc": "286.55"
+   },
+   {
+    "ky_han": "07/27",
+    "gia": "279.05",
+    "thay_doi": "-4.75",
+    "hom_truoc": "283.80"
+   },
+   {
+    "ky_han": "09/27",
+    "gia": "276.65",
+    "thay_doi": "-4.75",
+    "hom_truoc": "281.40"
+   }
+  ]
+ },
+ "nguon": "https://giacaphe.com/gia-ca-phe-truc-tuyen/"
+}
