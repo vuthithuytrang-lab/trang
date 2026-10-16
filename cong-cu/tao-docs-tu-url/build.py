@@ -29,14 +29,23 @@ def clean(node):
             src=t.get('src') or t.get('data-src')
             if not src or src.startswith('data:') or src.endswith('.svg'): t.decompose(); continue
             attrs['src']=urljoin(BASE,src); attrs['width']='500'
-            if t.get('alt'): attrs['alt']=t['alt']
         if t.name in ('td','th') :
             for k in ('colspan','rowspan'):
                 if t.get(k): attrs[k]=t[k]
         if t.name=='table': attrs['border']='1'; attrs['style']='border-collapse:collapse;width:100%'
         if t.name in ('p','li','h2','h3','h4','h5'): attrs['style']=J
+        if t.name=='p' and t.find('img'): attrs['style']='text-align:center;'  # ảnh + chú thích căn giữa
         if t.name=='span': t.unwrap(); continue
         t.attrs=attrs
+    # chú thích ảnh nằm ở đoạn riêng ngay dưới ảnh (toàn chữ nghiêng, ngắn) -> căn giữa
+    for pi in node.find_all('p'):
+        if not pi.find('img'): continue
+        nx=pi.find_next_sibling()
+        if nx is not None and nx.name=='p' and not nx.find('img'):
+            it=nx.find('i'); txt=nx.get_text(' ',strip=True)
+            if it is not None and txt and it.get_text(' ',strip=True)==txt and len(txt)<300:
+                nx['style']='text-align:center;'
+    for im in node.find_all('img'): im.insert_after(node.new_tag('br') if hasattr(node,'new_tag') else BeautifulSoup('<br/>','lxml').br)
     return node
 def article(s):
     a=s.select_one('.article-text')
@@ -75,11 +84,9 @@ for id,url in rows:
     slug=url.rstrip('/').split('/')[-1]
     kw=keyword(slug,[h1,title,md,BeautifulSoup(body,'lxml').get_text(' ')])
     doc=f'''<html><head><meta charset="utf-8"></head><body style="font-family:Arial">
-<p>URL: <a href="{url}">{url}</a></p>
-<table border="1" style="border-collapse:collapse;width:100%"><tr><td style="background:#f3f3f3">
-<p style="text-align:center"><b>{html.escape(title)}</b></p>
-<p style="text-align:center;color:#888888">{html.escape(md)}</p></td></tr></table>
-<h1 style="{J}">{html.escape(h1)}</h1>
+<p>URL: <a href="{url}">{url}</a></p><p></p>
+<p style="text-align:center"><b>{html.escape(title)}</b></p><p></p>
+<p style="text-align:center;color:#888888">{html.escape(md)}</p><p></p>
 {body}
 </body></html>'''
     open(SP+f'out/{id}.html','w',encoding='utf-8').write(doc)
