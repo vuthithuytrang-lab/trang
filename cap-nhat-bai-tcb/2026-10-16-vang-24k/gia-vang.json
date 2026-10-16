@@ -1,0 +1,30 @@
+{
+ "pnj": {
+  "san_pham": "Nhẫn Trơn PNJ 999.9",
+  "mua": 13980000,
+  "ban": 14280000,
+  "cap_nhat": "16/10/2026 08:01:59",
+  "nguon": "https://www.pnj.com.vn/site/gia-vang"
+ },
+ "doji": {
+  "san_pham": "VÀNG MIẾNG SJC",
+  "mua": 14030000,
+  "ban": 14330000,
+  "cap_nhat": "03:48 ngày 16/10/2026",
+  "nguon": "https://banggia.doji.vn/gold-price"
+ },
+ "sjc": {
+  "san_pham": "Vàng SJC 1L, 10L, 1KG",
+  "mua": 14030000,
+  "ban": 14330000,
+  "cap_nhat": "10:40:06 16/10/2026",
+  "nguon": "https://webgia.com/gia-vang/sjc/"
+ },
+ "btmc": {
+  "san_pham": "Nhẫn tròn trơn 999.9 (24k)",
+  "mua": 13840000,
+  "ban": 14240000,
+  "cap_nhat": "10:40:05 16/10/2026",
+  "nguon": "https://webgia.com/gia-vang/bao-tin-minh-chau/"
+ }
+}

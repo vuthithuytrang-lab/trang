@@ -1,0 +1,23 @@
+{
+ "bai1": {
+  "sua": [
+   {
+    "tim": "14,280,000",
+    "thay": "14,240,000",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/bao-tin-minh-chau/",
+    "ly_do": "Bảo Tín Minh Châu – Nhẫn tròn trơn 999.9 (24k) (bán ra), cập nhật 10:40:05 16/10/2026"
+   },
+   {
+    "tim": "13,880,000",
+    "thay": "13,840,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/bao-tin-minh-chau/",
+    "ly_do": "Bảo Tín Minh Châu – Nhẫn tròn trơn 999.9 (24k) (mua vào), cập nhật 10:40:05 16/10/2026"
+   }
+  ],
+  "can_duyet": []
+ }
+}
