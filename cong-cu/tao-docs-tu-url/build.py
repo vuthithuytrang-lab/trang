@@ -37,15 +37,24 @@ def clean(node):
         if t.name=='p' and t.find('img'): attrs['style']='text-align:center;'  # ảnh + chú thích căn giữa
         if t.name=='span': t.unwrap(); continue
         t.attrs=attrs
-    # chú thích ảnh nằm ở đoạn riêng ngay dưới ảnh (toàn chữ nghiêng, ngắn) -> căn giữa
-    for pi in node.find_all('p'):
-        if not pi.find('img'): continue
-        nx=pi.find_next_sibling()
-        if nx is not None and nx.name=='p' and not nx.find('img'):
+    # ảnh + chú thích ảnh căn giữa (Trang yêu cầu 15/10/2026)
+    for im in node.find_all('img'):
+        par=im.find_parent('p')
+        if par is None:
+            par=BeautifulSoup('<p></p>','lxml').p
+            im.wrap(par)
+        par['style']='text-align:center;'
+        if not (im.next_sibling is not None and getattr(im.next_sibling,'name',None)=='br'):
+            im.insert_after(BeautifulSoup('<br/>','lxml').br)
+        # chú thích ở đoạn riêng ngay sau: toàn chữ nghiêng, ngắn
+        nx=par.find_next_sibling()
+        while nx is not None and nx.name=='br': nx=nx.find_next_sibling()
+        if nx is not None and nx.name in ('i','em') and len(nx.get_text(strip=True))<300:
+            cap=BeautifulSoup('<p></p>','lxml').p; nx.wrap(cap); cap['style']='text-align:center;'
+        elif nx is not None and nx.name=='p' and not nx.find('img'):
             it=nx.find('i'); txt=nx.get_text(' ',strip=True)
             if it is not None and txt and it.get_text(' ',strip=True)==txt and len(txt)<300:
                 nx['style']='text-align:center;'
-    for im in node.find_all('img'): im.insert_after(node.new_tag('br') if hasattr(node,'new_tag') else BeautifulSoup('<br/>','lxml').br)
     return node
 def article(s):
     a=s.select_one('.article-text')
