@@ -80,11 +80,13 @@ def main():
     plx = {}
     try:
         ds = tai(PLX_LIST)
-        m = re.search(r'href="(/ndi/thong-cao-bao-chi/[^"]*dieu-chinh-gia-xang-dau[^"]*)"', ds)
+        # thông cáo giá mới nhất: thường là "điều chỉnh giá xăng dầu", có lúc "chủ động giảm/tăng giá xăng dầu" (15/10/2026)
+        m = re.search(r'href="(/ndi/thong-cao-bao-chi/[^"]*(?:dieu-chinh|giam|tang)-gia-xang-dau[^"]*)"', ds)
         plx['url'] = 'https://www.petrolimex.com.vn' + m.group(1)
         bai = tai(plx['url'])
         plx['tieu_de'] = chu(re.search(r'<title>(.*?)</title>', bai, re.S).group(1)).split('::')[0].strip()
-        sau = bai[bai.find('mức giá mới như sau'):]
+        vt = bai.find('mức giá mới như sau')
+        sau = bai[vt:] if vt >= 0 else bai[bai.find('<h1'):]
         anh = re.search(r'<img[^>]+src="([^"]+\.jpg)"', sau)
         if anh:
             src = anh.group(1)
