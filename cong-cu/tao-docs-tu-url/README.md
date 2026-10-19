@@ -15,7 +15,7 @@ Mỗi URL → 1 file Google Docs chứa URL, Title, Meta và toàn bộ bài vi�
 
 ## Quy tắc đặt tên file
 
-`F - B - Từ khóa` → ví dụ `Tối ưu nhanh - WebTUN785 - Giấy phép kinh doanh`.
+**Từ 19/10/2026: tên file = từ khóa chính (cột D)**, ví dụ `Giấy phép kinh doanh`. (Trước đó dùng `F - B - Từ khóa`.) Câu lệnh chuẩn: `CAU-LENH.md`.
 Nếu cột D trống: lấy từ khóa từ đường dẫn bài (slug) rồi khớp lại chữ có dấu trong H1/title (script tự làm).
 
 ## Mẫu trình bày Trang đã duyệt
