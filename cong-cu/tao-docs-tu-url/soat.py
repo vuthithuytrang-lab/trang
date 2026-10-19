@@ -2,10 +2,8 @@
 import sys, json
 sys.path.insert(0, sys.argv[1]); from blocks import load, bodypct
 SP = sys.argv[1]
-TG = {'r2': [('1 Tệ bằng bao nhiêu tiền Việt','1-te-bang-bao-nhieu-tien-viet-nam'),('tiền Nhật','/tien-nhat'),('1 Yên bằng bao nhiêu tiền Việt','1-yen-bang-bao-nhieu-tien-viet-nam'),('1 Won bằng bao nhiêu tiền Việt','1-won-bang-bao-nhieu-tien-viet'),('nhận tiền từ nước ngoài','cach-nhan-tien-tu-nuoc-ngoai-ve-viet-nam')],
-      'r3': [('1 đô bằng bao nhiêu tiền Việt','1-dong-do-la-my-bang-bao-nhieu-tien-viet-nam'),('tiền Nhật','/tien-nhat'),('1 Yên bằng bao nhiêu tiền Việt','1-yen-bang-bao-nhieu-tien-viet-nam'),('1 Won bằng bao nhiêu tiền Việt','1-won-bang-bao-nhieu-tien-viet')],
-      'r4': [('1 Tệ bằng bao nhiêu tiền Việt','1-te-bang-bao-nhieu-tien-viet-nam'),('tỷ giá Won','1-won-bang-bao-nhieu-tien-viet'),('1 Man bằng bao nhiêu tiền Việt','1-man-bang-bao-nhieu-tien-viet'),('1 triệu đô bằng bao nhiêu tiền Việt','1-trieu-do-bang-bao-nhieu-tien-viet'),('1000 Won bằng bao nhiêu tiền Việt','1000-won-bang-bao-nhieu-tien-viet')]}
-for r in ['r2','r3','r4']:
+TG = json.load(open(f'{SP}targets.json', encoding='utf-8'))  # {id: [[anchor, slug], ...]}
+for r in TG:
     print('=====', r)
     s, bl = load(f'{SP}out/{r}.html')
     for a, slug in TG[r]:

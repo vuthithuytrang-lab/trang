@@ -1,0 +1,80 @@
+{
+ "r5": [
+  {
+   "t": "xemthem",
+   "i": 30,
+   "anchor": "1 Tệ bằng bao nhiêu tiền Việt",
+   "url": "https://techcombank.com/thong-tin/blog/1-te-bang-bao-nhieu-tien-viet-nam",
+   "sentence": ">>> Khách hàng có thể xem thêm 1 Tệ bằng bao nhiêu tiền Việt để nắm rõ giá trị quy đổi của từng đơn vị Nhân dân tệ theo tỷ giá tham khảo."
+  },
+  {
+   "t": "tygia",
+   "i": 37,
+   "anchor": "USD sang VND",
+   "url": "https://techcombank.com/cong-cu-tien-ich/ty-gia?utm_source=blog_SEO&utm_medium=Internal-SEO&utm_campaign=Other_BAU_RBG_OTTFX_SEO_Blog_All&utm_content=3",
+   "before": "Chọn điểm đổi tiền uy tín, có giấy phép hoạt động: Khi đổi tiền từ Tệ sang VND, bạn nên chọn những nơi có uy tín như ngân hàng hoặc các điểm đổi tiền được cấp phép hoạt động hợp pháp.",
+   "after": "Chọn điểm đổi tiền uy tín, có giấy phép hoạt động: Dù bạn thực hiện giao dịch chuyển đổi tiền Tệ hay USD sang VND, bạn cũng nên chọn những nơi có uy tín như ngân hàng hoặc các điểm đổi tiền được cấp phép hoạt động hợp pháp."
+  },
+  {
+   "t": "phrase",
+   "i": 64,
+   "anchor": "nhận tiền từ nước ngoài",
+   "url": "https://techcombank.com/thong-tin/blog/cach-nhan-tien-tu-nuoc-ngoai-ve-viet-nam"
+  },
+  {
+   "t": "xemthem",
+   "i": 69,
+   "anchor": "1 đô bằng bao nhiêu tiền Việt",
+   "url": "https://techcombank.com/thong-tin/blog/1-dong-do-la-my-bang-bao-nhieu-tien-viet-nam",
+   "sentence": ">>> Với các giao dịch nhận tiền bằng USD, khách hàng có thể xem thêm 1 đô bằng bao nhiêu tiền Việt để ước tính giá trị quy đổi."
+  }
+ ],
+ "r6": [
+  {
+   "t": "tygia",
+   "i": 32,
+   "anchor": "USD sang VND",
+   "url": "https://techcombank.com/cong-cu-tien-ich/ty-gia?utm_source=blog_SEO&utm_medium=Internal-SEO&utm_campaign=Other_BAU_RBG_OTTFX_SEO_Blog_All&utm_content=4",
+   "before": "Tỷ giá giữa Tân Đài tệ (TWD) và Việt Nam đồng (VND) thay đổi liên tục theo biến động thị trường ngoại hối, chính sách tiền tệ và quy định của từng ngân hàng. Vì vậy, nếu muốn quy đổi hoặc giao dịch ngoại tệ chính xác, bạn nên tham khảo từ những nguồn uy tín thay vì chỉ dựa vào mức tham khảo chung.",
+   "after": "Tỷ giá giữa Tân Đài tệ (TWD) và Việt Nam đồng (VND) thay đổi liên tục theo biến động thị trường ngoại hối, chính sách tiền tệ và quy định của từng ngân hàng. Vì vậy, nếu muốn quy đổi từ TWD hay USD sang VND chính xác, bạn nên tham khảo từ những nguồn uy tín thay vì chỉ dựa vào mức tham khảo chung."
+  },
+  {
+   "t": "xemthem",
+   "i": 55,
+   "anchor": "1 Won bằng bao nhiêu tiền Việt",
+   "url": "https://techcombank.com/thong-tin/blog/1-won-bang-bao-nhieu-tien-viet",
+   "sentence": ">>> Khách hàng có kế hoạch đến các quốc gia khác trong khu vực có thể xem thêm 1 Won bằng bao nhiêu tiền Việt để chủ động chuẩn bị chi phí."
+  },
+  {
+   "t": "xemthem",
+   "i": 65,
+   "anchor": "1 triệu đô bằng bao nhiêu tiền Việt",
+   "url": "https://techcombank.com/thong-tin/blog/1-trieu-do-bang-bao-nhieu-tien-viet",
+   "sentence": ">>> Với các khoản nhận tiền có giá trị lớn bằng USD, khách hàng có thể xem thêm 1 triệu đô bằng bao nhiêu tiền Việt để ước tính giá trị quy đổi."
+  }
+ ],
+ "r7": [
+  {
+   "t": "xemthem",
+   "i": 30,
+   "anchor": "1,000 won",
+   "url": "https://techcombank.com/thong-tin/blog/1000-won-bang-bao-nhieu-tien-viet",
+   "sentence": ">>> Để ước tính nhanh các khoản chi tiêu nhỏ, khách hàng có thể xem thêm giá trị quy đổi của 1,000 won sang tiền Việt theo tỷ giá tham khảo."
+  },
+  {
+   "t": "tygia",
+   "i": 33,
+   "anchor": "USD sang VND",
+   "url": "https://techcombank.com/cong-cu-tien-ich/ty-gia?utm_source=blog_SEO&utm_medium=Internal-SEO&utm_campaign=Other_BAU_RBG_OTTFX_SEO_Blog_All&utm_content=5",
+   "before": "Hầu hết các ngân hàng đều cập nhật tỷ giá liên tục theo thời gian giao dịch trên thị trường ngoại hối quốc tế, bạn nên theo dõi tỷ giá tại website của các ngân hàng để có thông tin về tỷ giá tương đối chính xác từ đó lựa chọn kênh mua bán ngoại tệ, và phương thức chuyển tiền quốc tế phù hợp nhất.",
+   "after": "Hầu hết các ngân hàng đều cập nhật tỷ giá liên tục theo thời gian giao dịch trên thị trường ngoại hối quốc tế, bạn nên theo dõi biến động tỷ giá USD sang VND hay các đồng tiền khác tại website của các ngân hàng để có thông tin tương đối chính xác, từ đó lựa chọn kênh mua bán ngoại tệ và phương thức chuyển tiền quốc tế phù hợp nhất."
+  },
+  {
+   "t": "xemthem",
+   "i": 68,
+   "anchor": "1 đô bằng bao nhiêu tiền Việt",
+   "url": "https://techcombank.com/thong-tin/blog/1-dong-do-la-my-bang-bao-nhieu-tien-viet-nam",
+   "sentence": ">>> Với các giao dịch nhận tiền bằng USD, khách hàng có thể xem thêm 1 đô bằng bao nhiêu tiền Việt để ước tính giá trị quy đổi."
+  }
+ ]
+}

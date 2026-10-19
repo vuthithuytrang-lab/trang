@@ -69,3 +69,69 @@ chỗ đặt "xem thêm" mà không sát link khác).
   > Đối với các khoản chuyển tiền có giá trị lớn, việc nắm rõ giá trị quy đổi giúp khách hàng chủ động hơn trong kế
   > hoạch tài chính. Bạn có thể tham khảo **[1 triệu đô bằng bao nhiêu tiền Việt]** để ước tính giá trị các khoản giao
   > dịch bằng đô la Mỹ.
+
+---
+
+## Dòng 5 — file "1 vạn tệ bằng bao nhiêu tiền Việt"
+
+### Đoạn 5-A
+- **Anchor:** tiền Nhật → https://techcombank.com/thong-tin/blog/tien-nhat
+- **Vị trí đề xuất:** cuối H2 "3. Lưu ý khi đổi tiền Nhân dân tệ sang tiền Việt", sau ảnh "Các yếu tố kinh tế vĩ mô…" (khoảng 41%).
+- ⚠️ Đoạn đầu mục 4 ngay dưới (cách 1 tiêu đề H2) đã có link "Dịch vụ nhận và chuyển tiền quốc tế".
+- **Nguyên văn:**
+  > Bên cạnh Nhân dân tệ, đồng Yên (JPY) của Nhật Bản cũng là ngoại tệ được nhiều khách hàng quan tâm khi du lịch hoặc
+  > giao thương trong khu vực châu Á. Khách hàng có thể tham khảo thông tin về các mệnh giá và cách quy đổi
+  > **[tiền Nhật]** để chủ động hơn khi cần giao dịch.
+
+### Đoạn 5-B
+- **Anchor:** 1 Yên bằng bao nhiêu tiền Việt → https://techcombank.com/thong-tin/blog/1-yen-bang-bao-nhieu-tien-viet-nam
+- **Vị trí đề xuất:** dưới H3 "5.3. Nên đổi Nhân dân tệ sang tiền Việt ở đâu?", sau câu trả lời (khoảng 87%).
+- ⚠️ Câu trả lời 5.2 phía trên và 5.4 phía dưới đều có link (cách 1 tiêu đề H3).
+- **Nguyên văn:**
+  > Nguyên tắc lựa chọn địa điểm đổi tiền uy tín cũng áp dụng với các ngoại tệ khác như Yên Nhật. Khách hàng có thể
+  > tham khảo **[1 Yên bằng bao nhiêu tiền Việt]** để nắm rõ giá trị quy đổi trước khi giao dịch.
+
+---
+
+## Dòng 6 — file "1 vạn tiền Đài Loan bằng bao nhiêu tiền Việt"
+
+### Đoạn 6-A
+- **Anchor:** 1 Yên bằng bao nhiêu tiền Việt → https://techcombank.com/thong-tin/blog/1-yen-bang-bao-nhieu-tien-viet-nam
+- **Vị trí đề xuất:** cuối H2 "3. Cách cập nhật tỷ giá Tân Đài tệ (TWD/VND) chính xác", sau ý "Liên hệ trực tiếp quầy giao dịch" (khoảng 31%).
+- ⚠️ Đoạn đầu mục 4 ngay dưới (cách 1 tiêu đề H2) đã có link chuyển tiền quốc tế.
+- **Nguyên văn:**
+  > Cách cập nhật tỷ giá nêu trên cũng có thể áp dụng khi bạn tra cứu các ngoại tệ châu Á khác. Chẳng hạn, khách hàng
+  > quan tâm đến đồng tiền Nhật Bản có thể tham khảo **[1 Yên bằng bao nhiêu tiền Việt]** để nắm rõ giá trị quy đổi.
+
+### Đoạn 6-B
+- **Anchor:** 1 Man bằng bao nhiêu tiền Việt → https://techcombank.com/thong-tin/blog/1-man-bang-bao-nhieu-tien-viet
+- **Vị trí đề xuất:** dưới H3 "7.1. 5 vạn Đài tệ bằng bao nhiêu tiền Việt Nam?", sau câu trả lời (khoảng 87%).
+- ⚠️ Câu trả lời 7.2 phía dưới có link "tiền Đài Loan" (cách 1 tiêu đề H3).
+- **Nguyên văn:**
+  > Tương tự cách gọi "vạn" với Tân Đài tệ, người Nhật thường dùng đơn vị "Man" (tương đương 10.000 Yên) khi nói về
+  > các khoản tiền lớn. Khách hàng có thể tham khảo **[1 Man bằng bao nhiêu tiền Việt]** để hiểu rõ hơn về cách quy đổi này.
+
+---
+
+## Dòng 7 — file "1 Won bằng bao nhiêu tiền Việt"
+
+### Đoạn 7-A
+- **Anchor:** 1 Tệ bằng bao nhiêu tiền Việt → https://techcombank.com/thong-tin/blog/1-te-bang-bao-nhieu-tien-viet-nam
+- **Vị trí đề xuất:** cuối H3 "5.1. Chuyển tiền từ Việt Nam sang Hàn Quốc", sau ảnh "Chuyển tiền quốc tế không gián đoạn…" (khoảng 71%).
+- **Nguyên văn:**
+  > Ngoài Won Hàn Quốc, Nhân dân tệ (CNY) cũng là ngoại tệ được nhiều khách hàng quan tâm khi giao thương hoặc du lịch
+  > trong khu vực. Khách hàng có thể tham khảo **[1 Tệ bằng bao nhiêu tiền Việt]** để nắm rõ cách quy đổi trước khi giao dịch.
+
+### Đoạn 7-B — mình nghiêng về **bỏ qua** (không còn chỗ không sát link)
+- **Anchor:** tiền Nhật → https://techcombank.com/thong-tin/blog/tien-nhat
+- **Vị trí đề xuất:** cuối H3 "5.2", sau ý "Về phía người nhận" của mục SWIFT, trước ảnh (khoảng 85%). Ngay dưới ảnh là 2 dòng ">>>" có link.
+- **Nguyên văn:**
+  > Bên cạnh Won Hàn Quốc, nhiều khách hàng cũng có nhu cầu nhận tiền từ Nhật Bản về Việt Nam. Khách hàng có thể tham
+  > khảo thêm thông tin về mệnh giá và cách quy đổi **[tiền Nhật]** để chủ động hơn khi giao dịch.
+
+### Đoạn 7-C — mình nghiêng về **bỏ qua** (không còn chỗ không sát link)
+- **Anchor:** 1 Yên bằng bao nhiêu tiền Việt → https://techcombank.com/thong-tin/blog/1-yen-bang-bao-nhieu-tien-viet-nam
+- **Vị trí đề xuất:** sau đoạn kết "Hiểu rõ 1 Won bằng bao nhiêu tiền Việt Nam…" (khoảng 92%). Ngay trên là dòng ">>>" có link, ngay dưới là khối "Lưu ý" có link.
+- **Nguyên văn:**
+  > Ngoài Won Hàn Quốc, Yên Nhật cũng là ngoại tệ được nhiều người Việt quan tâm khi du học, du lịch hoặc làm việc tại
+  > nước ngoài. Khách hàng có thể tham khảo **[1 Yên bằng bao nhiêu tiền Việt]** để nắm rõ giá trị quy đổi.

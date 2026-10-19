@@ -21,10 +21,10 @@ def diff_render(before, after, anchor, url, bold=()):
     for op, i1, i2, j1, j2 in difflib.SequenceMatcher(None, bw, aw, autojunk=False).get_opcodes():
         if op != 'equal':
             for j in range(j1, j2): changed[j] = True
-    # gộp các vùng đổi cách nhau <= 2 từ giống nhau, để phần tô vàng liền mạch, dễ đọc
+    # gộp các vùng đổi cách nhau <= 3 từ giống nhau, để phần tô vàng liền mạch, dễ đọc
     idx = [j for j, c in enumerate(changed) if c]
     for a, b in zip(idx, idx[1:]):
-        if 1 < b - a <= 3:
+        if 1 < b - a <= 4:
             for j in range(a, b): changed[j] = True
     a0 = after.index(anchor); a1 = a0 + len(anchor)
     marks = [False]*len(after)
@@ -76,9 +76,16 @@ def run(rid, ops):
         b = bl[op['i']]
         before_txt = norm(orig[op['i']].get_text(''))
         if op['t'] == 'tygia':
-            if norm(op['before']).rstrip('.') != before_txt.rstrip('.'):  # bỏ qua khác biệt dấu chấm cuối câu
+            # câu gốc ở cột I có thể chỉ là một phần của đoạn / gạch đầu dòng (VD sau nhãn in đậm)
+            bt, at = norm(op['before']).rstrip('.'), norm(op['after'])
+            k = before_txt.find(bt)
+            if k < 0:
                 log.append(dict(op=op, ok=False, why='không khớp câu gốc')); continue
-            inner = diff_render(before_txt, norm(op['after']), op['anchor'], op['url'], op.get('bold', ()))
+            tail = before_txt[k+len(bt):]
+            if tail.startswith('.') and at.endswith('.'): tail = tail[1:]
+            full_after = before_txt[:k] + at + tail
+            bold = op.get('bold') or [x.get_text('') for x in orig[op['i']].find_all('b') if norm(x.get_text(''))]
+            inner = diff_render(before_txt, full_after, op['anchor'], op['url'], [norm(x) for x in bold])
             if op['after'].lstrip().startswith('>>>'): inner = f'<b><i>{inner}</i></b>'
             b.clear(); b.append(BeautifulSoup(f'<x>{inner}</x>', 'lxml').x); b.x.unwrap()
             after_blocks.append((b, f'[Trước khi chèn: {before_txt}]'))
@@ -101,7 +108,10 @@ def run(rid, ops):
             p.insert_before(BeautifulSoup('<p></p>', 'lxml').p)
         log.append(dict(op=op, ok=True))
     for b, t in after_blocks:
-        b.insert_after(note(t))
+        if b.name == 'li':   # gạch đầu dòng: ghi chú xuống dòng ngay trong cùng gạch, không chen vào giữa danh sách
+            b.append(BeautifulSoup('<br/>', 'lxml').br); b.append(note(t).i)
+        else:
+            b.insert_after(note(t))
     open(f'{SP}final/{rid}.html', 'w', encoding='utf-8').write(str(s))
     return log
 
