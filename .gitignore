@@ -4,3 +4,10 @@ cong-cu/telegram.env
 *.key
 *.token
 chia-agent-boss.txt
+
+# Skill inlink-generator — chìa đăng nhập Google, môi trường Python, file chạy từng bài
+.claude/skills/inlink-generator/.venv/
+.claude/skills/inlink-generator/credentials/
+.claude/skills/inlink-generator/oauth_clients/
+.claude/skills/inlink-generator/runs/
+__pycache__/

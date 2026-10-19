@@ -1,0 +1,15 @@
+[
+  {
+    "anchor_text": "iPhone 18 Pro",
+    "target_url": "https://example.com/iphone-18-pro-256gb.html",
+    "paragraph_index": 7,
+    "text_start": 42,
+    "text_end": 55,
+    "start_index": 1290,
+    "end_index": 1303,
+    "matched_text": "iPhone 18 Pro",
+    "context_before": "Nếu cần màn hình lớn và camera tốt hơn, ",
+    "context_after": " là lựa chọn đáng cân nhắc",
+    "paragraph_has_existing_link": false
+  }
+]
