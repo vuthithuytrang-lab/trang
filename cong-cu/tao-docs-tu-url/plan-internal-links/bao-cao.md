@@ -107,3 +107,29 @@ Sheet thực tế: mỗi nhóm anchor chỉ có **2 cột** (J-K, L-M, N-O, P-Q,
   chuyển sang đúng anchor "1 Yên bằng bao nhiêu tiền Việt" (mỗi chỗ thêm 1 câu ngắn trong cùng câu trả lời FAQ).
 - Dòng 6: link cũ "Tiền Đài Loan" → chuyển sang đúng anchor "Tân Đài tệ" (cụm có sẵn ngay trong câu).
 - Kiểm tra máy: cả 6 file, mỗi anchor sheet là chữ của đúng 1 link tới đúng URL. Cập nhật H2, H6, E2, E6; 2 file cũ vào thùng rác.
+
+---
+
+# Đợt 2 — dòng 8 → 104 (19/10/2026)
+
+**Kết quả:** 96/97 bài đã tạo file Docs, chèn link, tô vàng, ghi chú; đã điền cột H và cột E. Danh sách đầy đủ trong `tien-do.csv`.
+Mọi file nằm trong thư mục "Plan internal links - File blog" (quyền "Bất kỳ ai có đường liên kết – Người chỉnh sửa" theo thư mục).
+
+**Soát tự động từng file trước khi điền sheet:**
+- Mỗi anchor trong sheet là chữ NGUYÊN VĂN của 1 link tới đúng URL đích, và được tô vàng (`kiemtra.py`).
+- Không mất link gốc nào của bài (`linkcu.py`), không mất bảng / hàng / gạch đầu dòng / ảnh (`cautruc.py`).
+- Chữ trong file Docs (xuất PDF) khớp với bản đã chèn (`verify.py`); vài chỗ lệch chỉ do PDF tách chữ / số thứ tự / chữ Hán.
+
+**Cần Trang xem:**
+- **Dòng 60** (`vang-la-gi1`): trang trả về 404 → không tạo file. Có thể URL ở cột B gõ thừa số "1".
+- **Dòng 15** (Tiền Thái Lan): đề xuất ở cột I nói về Dinar Kuwait, không có trong bài → CHƯA chèn anchor "USD sang VND" (theo quy tắc không tự chèn chỗ khác). Cột I dòng này có lẽ bị dán nhầm của bài Dinar Kuwait (dòng 10).
+- **Cột F trống** ở các dòng 28, 34, 39, 86, 102: lấy anchor là cụm chữ đã gắn link trong ô cột I.
+- **Viết hoa tên riêng** theo quy tắc: "cic" → "CIC" (dòng 42, 81, 83, 93, 94), "eco card" → "Eco Card", "viettel" → "Viettel".
+- **Link trong ô cột I khác cột G** (utm_content) ở nhiều dòng → luôn dùng URL cột G.
+- Đề xuất cột I dạng "thêm đoạn riêng" (dòng 52, 54, 100) được chèn thành đoạn mới, ghi chú "[Đề xuất viết thêm đoạn mới]"; dòng 52 vị trí này nằm ở 23% bài (vị trí cột I đã duyệt).
+
+**Lỗi công cụ phát hiện & đã sửa trong đợt này (đã làm lại các file bị ảnh hưởng):**
+1. Áp đề xuất cột I làm mất link cũ trong cùng đoạn (dòng 26, 27, 29, 37, 41, 48) → sửa, giữ nguyên link cũ.
+2. Áp đề xuất cột I trong bảng / danh sách lồng làm gộp mất hàng (dòng 37, 51, 81, 98) → chỉ sửa đúng ô / gạch chứa câu gốc.
+3. Anchor cột I không tô vàng khi chữ không đổi (dòng 75) → luôn tô vàng.
+4. Google Docs biến chữ giữa 2 dấu "$" thành công thức toán (dòng 11, "NT$; … NT$") → bọc riêng dấu $; đã kiểm tra toàn bộ file, không còn chỗ nào.

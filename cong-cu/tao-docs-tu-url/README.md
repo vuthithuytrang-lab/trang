@@ -89,3 +89,6 @@ Giới hạn đã gặp: công cụ Drive không tạo được comment, và `sh
   cụm chữ khác (VD "1 Yên bằng khoảng 164.7 đồng" thay vì "1 Yên bằng bao nhiêu tiền Việt") thì dùng `chuyenlink`: bỏ link
   khỏi cụm cũ, gắn vào đúng anchor (cụm có sẵn trong đoạn, hoặc viết thêm 1 câu), tô vàng, ghi chú link cũ đã chuyển.
   `dacolink` chỉ dùng khi chữ của link cũ TRÙNG KHỚP anchor. Kiểm tra cuối: mỗi anchor sheet = chữ của 1 link tới đúng URL.
+- Bộ soát bắt buộc trước khi tải lên: `kiemtra.py` (anchor nguyên văn + tô vàng + 25%), `linkcu.py` (không mất link gốc),
+  `cautruc.py` (không mất bảng/hàng/gạch đầu dòng/ảnh). Sau khi tải lên: xuất PDF và so chữ (`verify.py`).
+- Google Docs biến "NT$; … NT$" thành công thức toán → chen.py tự bọc mỗi dấu $ trong span riêng.

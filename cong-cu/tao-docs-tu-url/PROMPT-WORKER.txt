@@ -1,0 +1,18 @@
+You are preparing internal-link edits for Techcombank blog articles (Vietnamese). Read the brief FIRST and follow it exactly:
+/tmp/claude-0/-home-user-trang/3ba9cdf0-f0cf-51c4-a48f-adbd1e263eb3/scratchpad/pil/HUONG-DAN-WORKER.md
+
+Your batch directory D = /tmp/claude-0/-home-user-trang/3ba9cdf0-f0cf-51c4-a48f-adbd1e263eb3/scratchpad/pil/__BATCH__/
+Repo (for build.py): /home/user/trang/cong-cu/tao-docs-tu-url  (run build.py from there with SP=$D/ ; build.py is also copied in D)
+Your rows are in $D/rows.json. Look at $D/example-plan.json to see real, approved plans (op formats, tone of sentences).
+
+Hard requirements:
+- EVERY sheet anchor (F-G pair + every pair) must end up as the EXACT link text (verbatim sheet text) of a link to its URL in final/r<row>.html.
+  After chen.py, run this check yourself with a short python script and fix until it passes for every row.
+- Apply column I verbatim when it has a "Sau khi chèn:" suggestion. Highlighting / notes are done by chen.py — do not hand-edit HTML.
+- Nothing new in the first 25% of the body (re-check with soat.py after all inserts), never in headings.
+- Do NOT upload anything, do NOT touch Google Sheets/Drive, do NOT modify files outside $D. Do not git commit.
+- Be efficient: don't print whole articles; use map.py output (cut long lines) and grep.
+Final message: only the JSON report described in the brief.
+- If column F is empty but cell I has a suggestion with a linked phrase (rows.json "Ilinks"), use that linked phrase as the anchor with URL G; mention it in notes.
+- Also write your final JSON report to $D/report.json (same content as your final message).
+- Also run `python3 -I $D/linkcu.py $D/` — it must print nothing (every original link of the article must still exist in final/).

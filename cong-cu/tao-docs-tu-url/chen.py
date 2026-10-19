@@ -85,16 +85,26 @@ def run(rid, ops):
         if op['t'] == 'tygia':
             # câu gốc ở cột I có thể chỉ là một phần của đoạn / gạch đầu dòng (VD sau nhãn in đậm)
             bt, at = norm(op['before']).rstrip('.'), norm(op['after'])
+            # chỉ viết lại phần tử NHỎ NHẤT chứa câu gốc (1 ô bảng, 1 gạch đầu dòng con) để giữ nguyên cấu trúc bảng/danh sách
+            cands = [x for x in [b] + b.find_all(['p', 'li', 'td', 'th']) if bt in norm(x.get_text(''))]
+            if cands:
+                small = min(cands, key=lambda x: len(x.get_text('')))
+                if small is not b:
+                    path = [y for y in b.find_all(True)].index(small)
+                    b = small; orig_b = [y for y in orig[op['i']].find_all(True)][path]
+                    before_txt = norm(orig_b.get_text(''))
+                else: orig_b = orig[op['i']]
+            else: orig_b = orig[op['i']]
             k = before_txt.find(bt)
             if k < 0:
                 log.append(dict(op=op, ok=False, why='không khớp câu gốc')); continue
             tail = before_txt[k+len(bt):]
             if tail.startswith('.') and at.endswith('.'): tail = tail[1:]
             full_after = before_txt[:k] + at + tail
-            bold = op.get('bold') or [x.get_text('') for x in orig[op['i']].find_all('b') if norm(x.get_text(''))]
+            bold = op.get('bold') or [x.get_text('') for x in orig_b.find_all('b') if norm(x.get_text(''))]
             inner = diff_render(before_txt, full_after, op['anchor'], op['url'], [norm(x) for x in bold])
             if op['after'].lstrip().startswith('>>>'): inner = f'<b><i>{inner}</i></b>'
-            old_links = [(x.get_text(''), x.get('href', '')) for x in orig[op['i']].find_all('a') if x.get('href')]
+            old_links = [(x.get_text(''), x.get('href', '')) for x in orig_b.find_all('a') if x.get('href')]
             b.clear(); b.append(BeautifulSoup(f'<x>{inner}</x>', 'lxml').x); b.x.unwrap()
             # giữ lại link cũ của đoạn (viết lại câu không được làm mất link có sẵn)
             for t, h in old_links:
@@ -171,6 +181,11 @@ def run(rid, ops):
             b.append(BeautifulSoup('<br/>', 'lxml').br); b.append(note(t).i)
         else:
             b.insert_after(note(t))
+    # Google Docs tự biến đoạn chữ giữa 2 dấu $ (VD "NT$; ... NT$") thành công thức toán → bọc riêng từng dấu $
+    for st in list(s.find_all(string=lambda t: '$' in t)):
+        if st.find_parent(['script', 'style']) or (st.parent.name == 'span' and st == '$'): continue
+        st.replace_with(BeautifulSoup('<x>' + esc(str(st)).replace('$', '<span style="font-family:Arial">$</span>') + '</x>', 'lxml').x)
+    for x in s.find_all('x'): x.unwrap()
     open(f'{SP}final/{rid}.html', 'w', encoding='utf-8').write(str(s))
     return log
 

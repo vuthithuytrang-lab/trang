@@ -1,0 +1,3 @@
+Upload HTML files to Google Drive as Google Docs. First load the tool via ToolSearch query "select:mcp__Google_Drive__create_file".
+The list of files is in __LIST__ (JSON: [{"file": "<absolute path>", "title": "..."}]). For EACH entry, one at a time: read the file in full with the Read tool, then call mcp__Google_Drive__create_file with contentMimeType = "text/html", parentId = "1qLQU6FfkXcOvAsUvKZ-KsVeXWC5RLgHH", title = the given title, textContent = the EXACT full file content (do not edit, shorten, reformat or summarize anything).
+Do nothing else (no deletes, no moves, no sheet edits). Final reply: JSON only, [{"file": "...", "id": "..."}].

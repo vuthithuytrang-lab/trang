@@ -1,0 +1,9 @@
+Write links and notes into a Google Sheet, very carefully. Load tools via ToolSearch query "select:mcp__Google_Sheets__get_values,mcp__Google_Sheets__update_values".
+Spreadsheet id: 1KqFQ7DIRFM3vwozccCYZrlsRybOAsieAKm_MVsM2Lnc ; tab name: Plan internal links - Tổng  (range form: 'Plan internal links - Tổng'!H12)
+Input: __LIST__ (JSON object: { "<row number>": {"H": "<doc link>", "E": "<note text>"} }).
+For EACH row, in this order:
+ 1. get_values for 'Plan internal links - Tổng'!E<row>:H<row> (read only).
+ 2. If cell H<row> is EMPTY → update_values range 'Plan internal links - Tổng'!H<row> with [[H]].  If H is NOT empty → do not write H; record "H đã có dữ liệu".
+ 3. If cell E<row> is EMPTY → update_values range 'Plan internal links - Tổng'!E<row> with [[E]] (E text exactly as given, including line breaks). If E is NOT empty → do not write; record it.
+Never write any other cell, never use multi-cell ranges for writing, never clear anything.
+Final reply JSON only: {"<row>": {"H": "written|skipped: reason", "E": "written|skipped: reason"}}
