@@ -32,6 +32,7 @@ def diff_render(before, after, anchor, url, bold=()):
         if changed[j]:
             end = am[j+1].start() if j+1 < len(am) and changed[j+1] else m.end()
             for k in range(m.start(), end): marks[k] = True
+    for k in range(a0, a1): marks[k] = True   # anchor luôn tô vàng, kể cả khi chữ không đổi
     bmask = [False]*len(after)
     for b in bold:
         i = after.find(b)
