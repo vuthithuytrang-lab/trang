@@ -67,3 +67,23 @@ Sheet thực tế: mỗi nhóm anchor chỉ có **2 cột** (J-K, L-M, N-O, P-Q,
 - Công cụ không sửa được file Docs đã tạo → tạo lại 3 file, chuyển 3 file cũ vào thùng rác (khôi phục được trong 30 ngày),
   cập nhật link mới vào H2, H3, H4 (ô cũ chứa link file cũ do mình điền).
 - Soát lại: chữ khớp 100% với bài gốc, trình bày đúng mẫu.
+
+---
+
+# Đợt 2 — 100 URL (dòng 5–104), chạy thử dòng 5–7 (19/10/2026)
+
+| Dòng | Tên file | Link |
+|---|---|---|
+| 5 | 1 vạn tệ bằng bao nhiêu tiền Việt | https://docs.google.com/document/d/1_RWBZNc7v5Q1o7BOetpTdqeXubkuhwxiVyOhbLUwj6s/edit |
+| 6 | 1 vạn tiền Đài Loan bằng bao nhiêu tiền Việt | https://docs.google.com/document/d/1IU6b2nSaZhqpaZAI5-D6HugOw8gb7LysqD-hDA5yQLc/edit |
+| 7 | 1 Won bằng bao nhiêu tiền Việt | https://docs.google.com/document/d/1T2hUpuKwse4vWDAWM3bLpGjHdgIN4AhsGmvD3Yqo5cc/edit |
+
+- Bài lỗi: không có. H5–H7 trống trước khi ghi. Chữ trong Docs khớp 100% bản đã chèn.
+- Đề xuất cột I: cả 3 dòng tìm thấy câu gốc và đã áp nguyên văn. Dòng 5 và 7, câu gốc nằm trong gạch đầu dòng
+  → ghi chú [Trước khi chèn] xuống dòng ngay trong gạch đó.
+- Link đã chèn: dòng 5: 1 Tệ (xem thêm, 32%), nhận tiền từ nước ngoài (câu có sẵn, 67%), 1 đô (xem thêm, 73%) ·
+  dòng 6: 1 Won (xem thêm, 51%), 1 triệu đô (xem thêm, 59%) · dòng 7: 1,000 won (xem thêm, 25%), 1 đô (xem thêm, 78%).
+- Bỏ qua vì đã có link: dòng 6 "Tân Đài tệ" (đã link ở FAQ 7.2).
+- Link gần nhau: dòng 6 — đoạn áp đề xuất cột I nằm ngay trên câu đã có sẵn link trang tỷ giá (vị trí cột I đã duyệt).
+- Đoạn chờ duyệt: 5-A, 5-B, 6-A, 6-B, 7-A, 7-B, 7-C (chi tiết `cho-duyet.md`).
+- Phân quyền & comment: như đợt 1, chưa làm được.
