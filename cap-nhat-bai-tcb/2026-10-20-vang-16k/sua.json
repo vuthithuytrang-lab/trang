@@ -1,0 +1,41 @@
+{
+ "bai1": {
+  "sua": [
+   {
+    "tim": "96.584",
+    "thay": "96.244",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – Nữ trang 68%: 9,624,400 đ/chỉ = 96.244 triệu/lượng (cập nhật 13:10:03 19/10/2026)"
+   },
+   {
+    "tim": "86.784",
+    "thay": "86.444",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – Nữ trang 68%: 8,644,400 đ/chỉ = 86.444 triệu/lượng (cập nhật 13:10:03 19/10/2026)"
+   },
+   {
+    "tim": "dao động 83.0 - 96.6 triệu VND/lượng, tương đương khoảng 8.30 - 9.66 triệu VND/chỉ",
+    "thay": "dao động 83.0 - 96.2 triệu VND/lượng, tương đương khoảng 8.30 - 9.62 triệu VND/chỉ",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "",
+    "ly_do": "tính từ bảng (sjc, pnj, mihong): thấp nhất giá mua 83 – cao nhất giá bán 96.244 triệu/lượng, làm tròn 1 số lẻ; theo chỉ = chia 10, 2 số lẻ",
+    "tinh_toan": true
+   },
+   {
+    "tim": "khoảng 83.0 - 96.6 triệu VND/lượng (mua vào - bán ra), tương đương khoảng 8.30 - 9.66 triệu VND/chỉ",
+    "thay": "khoảng 83.0 - 96.2 triệu VND/lượng (mua vào - bán ra), tương đương khoảng 8.30 - 9.62 triệu VND/chỉ",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "",
+    "ly_do": "tính từ bảng (sjc, pnj, mihong): thấp nhất giá mua 83 – cao nhất giá bán 96.244 triệu/lượng, làm tròn 1 số lẻ; theo chỉ = chia 10, 2 số lẻ",
+    "tinh_toan": true
+   }
+  ],
+  "can_duyet": []
+ }
+}

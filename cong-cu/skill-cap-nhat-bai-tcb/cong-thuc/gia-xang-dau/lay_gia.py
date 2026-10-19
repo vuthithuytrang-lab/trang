@@ -86,8 +86,11 @@ def main():
         bai = tai(plx['url'])
         plx['tieu_de'] = chu(re.search(r'<title>(.*?)</title>', bai, re.S).group(1)).split('::')[0].strip()
         vt = bai.find('mức giá mới như sau')
-        sau = bai[vt:] if vt >= 0 else bai[bai.find('<h1'):]
-        anh = re.search(r'<img[^>]+src="([^"]+\.jpg)"', sau)
+        h1 = bai.find('<h1')
+        sau = bai[vt:] if vt >= 0 else (bai[h1:] if h1 >= 0 else bai)
+        # ảnh bảng giá nằm trong /jpgs/ (19/10/2026: trang không còn <h1>, thẻ img có loading/decoding trước src)
+        anh = (re.search(r'<img[^>]+src="([^"]*/jpgs/[^"]+\.jpg)"', sau)
+               or re.search(r'<img[^>]+src="([^"]+\.jpg)"', sau))
         if anh:
             src = anh.group(1)
             src = 'https:' + src if src.startswith('//') else src
