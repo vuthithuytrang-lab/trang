@@ -127,8 +127,11 @@ def run(rid, ops):
         elif op['t'] == 'sentence':
             sent = op['sentence']; a0 = sent.index(op['anchor'])
             inner = esc(' ') + hl(sent[:a0]) + link(op['url'], hl(op['anchor'])) + hl(sent[a0+len(op['anchor']):])
-            b.append(BeautifulSoup(f'<x>{inner}</x>', 'lxml').x); b.x.unwrap()
-            after_blocks.append((b, f'[Nội dung gốc trước khi chèn: {before_txt}]'))
+            # mục danh sách bọc chữ trong <p>: viết thêm câu vào trong <p>, không để chữ trôi ra ngoài (Docs dính liền 2 câu)
+            kids = [x for x in b.children if getattr(x, 'name', None) or str(x).strip()]
+            tb = kids[-1] if b.name == 'li' and kids and getattr(kids[-1], 'name', None) == 'p' else b
+            tb.append(BeautifulSoup(f'<x>{inner}</x>', 'lxml').x); tb.x.unwrap()
+            after_blocks.append((tb, f'[Nội dung gốc trước khi chèn: {before_txt}]'))
         elif op['t'] == 'xemthem':
             sent = op['sentence']; a0 = sent.index(op['anchor'])
             inner = hl(sent[:a0]) + link(op['url'], hl(op['anchor'])) + hl(sent[a0+len(op['anchor']):])
