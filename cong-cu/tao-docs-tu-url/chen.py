@@ -189,6 +189,10 @@ def run(rid, ops):
         if st.find_parent(['script', 'style']) or (st.parent.name == 'span' and st == '$'): continue
         st.replace_with(BeautifulSoup('<x>' + esc(str(st)).replace('$', '<span style="font-family:Arial">$</span>') + '</x>', 'lxml').x)
     for x in s.find_all('x'): x.unwrap()
+    # phông Arial của Docs thiếu chữ chỉ số dưới "ₘ" (hiện ô vuông) → đổi sang chữ m dạng chỉ số dưới
+    for st in list(s.find_all(string=lambda t: 'ₘ' in t)):
+        st.replace_with(BeautifulSoup('<x>' + esc(str(st)).replace('ₘ', '<sub>m</sub>') + '</x>', 'lxml').x)
+    for x in s.find_all('x'): x.unwrap()
     open(f'{SP}final/{rid}.html', 'w', encoding='utf-8').write(str(s))
     return log
 
