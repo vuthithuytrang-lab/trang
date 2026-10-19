@@ -21,7 +21,9 @@ for rid, r in rows.items():
         s = BeautifulSoup(open(f'{D}final/{rid}.html', encoding='utf-8').read(), 'lxml')
     except FileNotFoundError:
         out[r['row']] = dict(ok=False, loi=['chưa có file final'], ghichu_E=''); continue
-    can = [(r['F'], r['G'])] + [tuple(p) for p in r['pairs']]
+    # cột F trống nhưng cột I có đề xuất kèm link → anchor lấy từ chữ được gắn link trong ô I
+    F = r['F'] or (r['Ilinks'][0][0] if r.get('Ilinks') else '')
+    can = ([(F, r['G'])] if F and r['G'] else []) + [tuple(p) for p in r['pairs']]
     links = s.find_all('a')
     for a, u in can:
         hit = [x for x in links if norm(x.get_text('')).lower() == norm(a).lower() and slug(x.get('href', '')) == slug(u)]
