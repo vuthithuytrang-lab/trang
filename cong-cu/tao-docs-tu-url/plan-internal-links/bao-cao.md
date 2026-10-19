@@ -6,9 +6,9 @@ Thư mục Drive: [Plan internal links - File blog](https://drive.google.com/dri
 
 | Dòng | Tên file | Link | Bước 1 | Bước 2 |
 |---|---|---|---|---|
-| 2 | 1 Man bằng bao nhiêu tiền Việt | https://docs.google.com/document/d/1OQpgkQQhpuFHvijom29J4P348vQ73eWkjoQmN-2FVAo/edit | ✅ | ✅ |
-| 3 | 1 Tệ bằng bao nhiêu tiền Việt Nam | https://docs.google.com/document/d/1ZHC3tqfaMa5D_uHqrWPgg8tYzzJ94vqsORmAOAczClg/edit | ✅ | ✅ (2 đoạn chờ duyệt) |
-| 4 | 1 triệu Won bằng bao nhiêu tiền Việt | https://docs.google.com/document/d/1UMRRTh202yzEI3ijq74OFIcPBXwAYICTCA31juuDzVM/edit | ✅ | ✅ (3 đoạn chờ duyệt) |
+| 2 | 1 Man bằng bao nhiêu tiền Việt | https://docs.google.com/document/d/1CRMKvsFXSiHn5_WdpwXnzEyoEjCGejReuuTozhIC4GU/edit | ✅ | ✅ |
+| 3 | 1 Tệ bằng bao nhiêu tiền Việt Nam | https://docs.google.com/document/d/1ivcasR6U2U8RSUqLVkwpzwU4wzaL6UZU0NX0dC79fCs/edit | ✅ | ✅ (2 đoạn chờ duyệt) |
+| 4 | 1 triệu Won bằng bao nhiêu tiền Việt | https://docs.google.com/document/d/1g8VO-sYEKQ2CfytBll10_5QmFLbxvpbvey0xiBBk58o/edit | ✅ | ✅ (3 đoạn chờ duyệt) |
 
 Đã điền link vào H2, H3, H4 (từng ô một, đã đọc trước — cả 3 ô đều trống). Không đụng ô nào khác.
 Tự soát: chữ trong Docs khớp 100% với bản bài gốc đã chèn (so từng từ); ảnh và chú thích căn giữa; tô vàng + ghi chú đỏ hiển thị đúng.
@@ -60,3 +60,10 @@ Lưu ý: dòng 3 và 4, bài gốc **đã có sẵn** 1 dòng ">>> Cập nhật 
 ## 11. Điểm khác so với câu lệnh
 Sheet thực tế: mỗi nhóm anchor chỉ có **2 cột** (J-K, L-M, N-O, P-Q, R-S = Anchor text N / URL đích N), không có cột
 "Nội dung chèn ACN". Mình ghép theo đúng số thứ tự trên tiêu đề cột.
+
+## 12. Sửa theo góp ý của Trang (19/10/2026)
+- Câu "xem thêm" viết thêm: ghi chú đỏ đổi thành **[Đề xuất viết thêm đoạn mới]**, đặt **trên** câu, cách 1 dòng trống
+  (trước đây là "[Viết thêm đoạn mới]" nằm dưới câu).
+- Công cụ không sửa được file Docs đã tạo → tạo lại 3 file, chuyển 3 file cũ vào thùng rác (khôi phục được trong 30 ngày),
+  cập nhật link mới vào H2, H3, H4 (ô cũ chứa link file cũ do mình điền).
+- Soát lại: chữ khớp 100% với bài gốc, trình bày đúng mẫu.
