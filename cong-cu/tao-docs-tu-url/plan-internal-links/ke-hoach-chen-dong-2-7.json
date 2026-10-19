@@ -29,16 +29,20 @@
    "sentence": ">>> Bên cạnh tiền Nhật, khách hàng có thể xem thêm 1 Won bằng bao nhiêu tiền Việt để nắm rõ cách quy đổi đồng tiền Hàn Quốc khi có nhu cầu giao dịch."
   },
   {
-   "t": "dacolink",
+   "t": "chuyenlink",
    "i": 79,
    "anchor": "tiền Nhật",
-   "slug": "tien-nhat"
+   "slug": "tien-nhat",
+   "url": "https://techcombank.com/thong-tin/blog/tien-nhat",
+   "sentence": "Khách hàng có thể tìm hiểu thêm về các mệnh giá và đặc điểm của tiền Nhật để quy đổi chính xác hơn."
   },
   {
-   "t": "dacolink",
+   "t": "chuyenlink",
    "i": 81,
    "anchor": "1 Yên bằng bao nhiêu tiền Việt",
-   "slug": "1-yen-bang-bao-nhieu-tien-viet-nam"
+   "slug": "1-yen-bang-bao-nhieu-tien-viet-nam",
+   "url": "https://techcombank.com/thong-tin/blog/1-yen-bang-bao-nhieu-tien-viet-nam",
+   "sentence": "Khách hàng có thể xem chi tiết cách quy đổi tại bài viết 1 Yên bằng bao nhiêu tiền Việt."
   }
  ],
  "r3": [
@@ -209,10 +213,11 @@
    "sentence": "Tương tự cách gọi \"vạn\" với Tân Đài tệ, người Nhật thường dùng đơn vị \"Man\" (tương đương 10.000 Yên) khi nói về các khoản tiền lớn. Khách hàng có thể tham khảo 1 Man bằng bao nhiêu tiền Việt để hiểu rõ hơn về cách quy đổi này."
   },
   {
-   "t": "dacolink",
+   "t": "chuyenlink",
    "i": 100,
    "anchor": "Tân Đài tệ",
-   "slug": "tien-dai-loan"
+   "slug": "tien-dai-loan",
+   "url": "https://techcombank.com/thong-tin/blog/tien-dai-loan"
   }
  ],
  "r7": [

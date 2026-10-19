@@ -31,8 +31,12 @@ Always run Python with `python3 -I` and pass `$D/` (with trailing slash) as the 
 - `sentence` — append ONE short sentence (containing the anchor) to existing paragraph `i`.
 - `xemthem` — new line after block `i`: `sentence` must start with ">>> " (rendered bold+italic, TCB style).
 - `doanmoi` — new paragraph (≥2 sentences) after block `i`.
-- `dacolink` — the source article ALREADY links to that exact target URL in block `i`: keep it, `slug` = url last segment;
-  chen.py adds a red note. Do not insert a second link.
+- `dacolink` — the source article ALREADY links to that exact target URL in block `i` AND the link text is EXACTLY the sheet anchor:
+  keep it, `slug` = url last segment; chen.py highlights it and adds a red note.
+- `chuyenlink` — the article links to the target URL but with DIFFERENT link text: chen.py removes that link and links the exact
+  anchor instead (`anchor`, `url`, `slug`; add `sentence` containing the anchor if the phrase is not already in block `i`).
+- ANCHOR TEXT MUST BE THE SHEET TEXT VERBATIM (only proper-name capitalisation may change). Final check: each sheet anchor is the
+  exact text of a link pointing to its URL.
   (If `i` is a bullet, xemthem/doanmoi are placed after the whole list automatically.)
 
 ## Placement rules (priority order)

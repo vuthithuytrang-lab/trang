@@ -85,3 +85,7 @@ Giới hạn đã gặp: công cụ Drive không tạo được comment, và `sh
   đối chiếu với cột C "Số link chèn".
 - Ghi chú đoạn sửa: **[Nội dung gốc trước khi chèn: …]** (đổi từ "[Trước khi chèn: …]" theo Trang 19/10/2026).
   Mọi anchor đều tô vàng, kể cả link có sẵn được giữ nguyên (`dacolink`).
+- **Anchor phải đúng NGUYÊN VĂN cụm trong sheet** (chỉ được viết hoa tên riêng). Nếu bài đã có link tới URL đích nhưng gắn trên
+  cụm chữ khác (VD "1 Yên bằng khoảng 164.7 đồng" thay vì "1 Yên bằng bao nhiêu tiền Việt") thì dùng `chuyenlink`: bỏ link
+  khỏi cụm cũ, gắn vào đúng anchor (cụm có sẵn trong đoạn, hoặc viết thêm 1 câu), tô vàng, ghi chú link cũ đã chuyển.
+  `dacolink` chỉ dùng khi chữ của link cũ TRÙNG KHỚP anchor. Kiểm tra cuối: mỗi anchor sheet = chữ của 1 link tới đúng URL.

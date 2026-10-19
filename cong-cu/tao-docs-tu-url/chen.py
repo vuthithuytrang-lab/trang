@@ -120,6 +120,25 @@ def run(rid, ops):
             block_end(b).insert_after(p)
             p.insert_before(note('[Đề xuất viết thêm đoạn mới]'))
             p.insert_before(BeautifulSoup('<p></p>', 'lxml').p)
+        elif op['t'] == 'chuyenlink':
+            # bài có sẵn link tới URL đích nhưng sai anchor: bỏ link khỏi cụm cũ, gắn vào ĐÚNG anchor của sheet
+            hit = [x for x in b.find_all('a') if x.get('href', '').split('?')[0].rstrip('/').endswith(op['slug'])]
+            if not hit:
+                log.append(dict(op=op, ok=False, why='không thấy link có sẵn')); continue
+            olds = []
+            for a in hit:
+                olds.append(a.get_text(''))
+                a.replace_with(BeautifulSoup(f'<x>{hl(a.get_text(""))}</x>', 'lxml').x)
+            for x in b.find_all('x'): x.unwrap()
+            if op.get('sentence'):
+                sent = op['sentence']; a0 = sent.index(op['anchor'])
+                inner = esc(' ') + hl(sent[:a0]) + link(op['url'], hl(op['anchor'])) + hl(sent[a0+len(op['anchor']):])
+                b.append(BeautifulSoup(f'<x>{inner}</x>', 'lxml').x); b.x.unwrap()
+            else:
+                # cụm anchor có sẵn trong đoạn (có thể vừa được tô vàng ở bước trên)
+                if not wrap_phrase(b, op['anchor'], op['url']):
+                    log.append(dict(op=op, ok=False, why='không thấy cụm anchor')); continue
+            after_blocks.append((b, f'[Nội dung gốc trước khi chèn: {before_txt}] (link cũ gắn trên cụm "{"; ".join(olds)}" đã chuyển sang đúng anchor "{op["anchor"]}")'))
         elif op['t'] == 'dacolink':
             # bài gốc đã có link đúng URL đích: giữ nguyên, chỉ ghi chú để người duyệt thấy đủ anchor
             hit = [x for x in b.find_all('a') if x.get('href', '').split('?')[0].rstrip('/').endswith(op['slug'])]
