@@ -95,8 +95,10 @@ def run(rid, ops):
             sent = op['sentence']; a0 = sent.index(op['anchor'])
             inner = hl(sent[:a0]) + link(op['url'], hl(op['anchor'])) + hl(sent[a0+len(op['anchor']):])
             p = BeautifulSoup(f'<p style="text-align:justify;"><b><i>{inner}</i></b></p>', 'lxml').p
+            # Mẫu Trang duyệt 19/10/2026: ghi chú đỏ nằm TRÊN câu viết thêm, cách 1 dòng trống
             b.insert_after(p)
-            after_blocks.append((p, '[Viết thêm đoạn mới]'))
+            p.insert_before(note('[Đề xuất viết thêm đoạn mới]'))
+            p.insert_before(BeautifulSoup('<p></p>', 'lxml').p)
         log.append(dict(op=op, ok=True))
     for b, t in after_blocks:
         b.insert_after(note(t))

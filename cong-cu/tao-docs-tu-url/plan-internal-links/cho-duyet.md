@@ -1,7 +1,7 @@
 # Đoạn viết mới chờ duyệt — Plan internal links
 
 > Các đoạn dưới đây **CHƯA chèn vào file Docs**. Trang đọc từng đoạn và trả lời **"bỏ qua"** hoặc **"chèn"**.
-> Chỉ khi Trang trả lời "chèn" thì mới đưa vào file, tô vàng và ghi chú đỏ "[Viết thêm đoạn mới]".
+> Chỉ khi Trang trả lời "chèn" thì mới đưa vào file, tô vàng và ghi chú đỏ "[Đề xuất viết thêm đoạn mới]" (đặt TRÊN đoạn, cách 1 dòng trống).
 > Phần in đậm trong ngoặc vuông [ ] là chữ sẽ gắn link.
 
 Lý do phải viết đoạn mới: bài không có cụm từ phù hợp, và đã dùng hết 2 câu "xem thêm" (hoặc không còn
