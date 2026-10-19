@@ -6,9 +6,9 @@ Thư mục Drive: [Plan internal links - File blog](https://drive.google.com/dri
 
 | Dòng | Tên file | Link | Bước 1 | Bước 2 |
 |---|---|---|---|---|
-| 2 | 1 Man bằng bao nhiêu tiền Việt | https://docs.google.com/document/d/1aGhPMZoa2P5VMlg8VrSyeE1Z8fymQ8dWuAiAihUmybg/edit | ✅ | ✅ |
-| 3 | 1 Tệ bằng bao nhiêu tiền Việt Nam | https://docs.google.com/document/d/1I8WNn4yUDk-HkrmfbCZQLDgaposQ2KDqTzpAKavEgms/edit | ✅ | ✅ (2 đoạn chờ duyệt) |
-| 4 | 1 triệu Won bằng bao nhiêu tiền Việt | https://docs.google.com/document/d/1ZOT9nXV4X2KzrOLAmX9x46tS2XQNvFYnCFtC8iv2mnU/edit | ✅ | ✅ (3 đoạn chờ duyệt) |
+| 2 | 1 Man bằng bao nhiêu tiền Việt | https://docs.google.com/document/d/1bnt6jDFQfI0i8zFt9MYBJ3WevXFxGu2NgQNcDFP4FPY/edit | ✅ | ✅ |
+| 3 | 1 Tệ bằng bao nhiêu tiền Việt Nam | https://docs.google.com/document/d/1BZCbsLRwaC5qP0z5eSqS_8xXPuyiYvhvKixGM_edTZM/edit | ✅ | ✅ (2 đoạn chờ duyệt) |
+| 4 | 1 triệu Won bằng bao nhiêu tiền Việt | https://docs.google.com/document/d/1wt9qe9M2GG-yqq-fKM_ZkSS1JHd8wS2pUrxDxve9yRQ/edit | ✅ | ✅ (3 đoạn chờ duyệt) |
 
 Đã điền link vào H2, H3, H4 (từng ô một, đã đọc trước — cả 3 ô đều trống). Không đụng ô nào khác.
 Tự soát: chữ trong Docs khớp 100% với bản bài gốc đã chèn (so từng từ); ảnh và chú thích căn giữa; tô vàng + ghi chú đỏ hiển thị đúng.
@@ -74,9 +74,9 @@ Sheet thực tế: mỗi nhóm anchor chỉ có **2 cột** (J-K, L-M, N-O, P-Q,
 
 | Dòng | Tên file | Link |
 |---|---|---|
-| 5 | 1 vạn tệ bằng bao nhiêu tiền Việt | https://docs.google.com/document/d/1eEa4HtnSsGCuGwWRfkuGTcj2zLJui52URmjZJ1XKvuk/edit |
-| 6 | 1 vạn tiền Đài Loan bằng bao nhiêu tiền Việt | https://docs.google.com/document/d/13w_sWIVYjzsY2bn4ThtAc-aNWPB6DHIQIznwZeCpTCM/edit |
-| 7 | 1 Won bằng bao nhiêu tiền Việt | https://docs.google.com/document/d/1tmpxhAY66Pd76R8mA9h7md8UJyarXpzMPnxnHrGsXuQ/edit |
+| 5 | 1 vạn tệ bằng bao nhiêu tiền Việt | https://docs.google.com/document/d/1X5zylbZ_WbFRETqJvVDMc_zVKvFyV1AIWDDHjHf7isA/edit |
+| 6 | 1 vạn tiền Đài Loan bằng bao nhiêu tiền Việt | https://docs.google.com/document/d/1_Yss_qyN0zttd6IG7k3Q_tIC5EhKv_7XsrBRq3yYvuU/edit |
+| 7 | 1 Won bằng bao nhiêu tiền Việt | https://docs.google.com/document/d/1BhtvTbZXL6D57KSV4BSkW7sAjyzITQ2A7Xt4kUylR8I/edit |
 
 - Bài lỗi: không có. H5–H7 trống trước khi ghi. Chữ trong Docs khớp 100% bản đã chèn.
 - Đề xuất cột I: cả 3 dòng tìm thấy câu gốc và đã áp nguyên văn. Dòng 5 và 7, câu gốc nằm trong gạch đầu dòng
@@ -96,3 +96,8 @@ Sheet thực tế: mỗi nhóm anchor chỉ có **2 cột** (J-K, L-M, N-O, P-Q,
 - Dời câu "xem thêm" 1,000 won ở dòng 7 xuống mục 5.1 vì lọt vào 25% đầu sau khi bài dài thêm.
 - Tạo lại 6 file, file cũ chuyển vào thùng rác, cập nhật H2–H7.
 - **Phân quyền: ĐÃ XONG.** Trang mở quyền "Bất kỳ ai có đường liên kết – Người chỉnh sửa" ở cấp thư mục; đã kiểm tra file con nhận quyền theo.
+
+## Sửa lần 3 (19/10/2026)
+- Link có sẵn đúng URL đích (giữ nguyên) nay cũng tô vàng.
+- Ghi chú đổi thành "[Nội dung gốc trước khi chèn: …]".
+- Tạo lại 6 file, file cũ vào thùng rác, cập nhật H2–H7. Chữ khớp 100%.
