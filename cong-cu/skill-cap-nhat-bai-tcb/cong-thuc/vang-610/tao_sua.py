@@ -86,7 +86,7 @@ def main():
                 else:
                     can.append('Tóm tắt: không đủ nguồn để cập nhật theo đúng dạng của bài – giữ nguyên.')
             for nhan, loai in (('Giá mua vào: Khoảng ', 'mua'), ('Giá bán ra: Khoảng ', 'ban')):
-                m = re.search(re.escape(nhan) + r'([\d,]+)( VND/chỉ)(?:( đến )([\d,]+)( VND/chỉ))?', chu)
+                m = re.search(re.escape(nhan) + r'([\d,]+)( VND/chỉ)(?:( ?đến ?)([\d,]+)( VND/chỉ))?', chu)
                 if not m:
                     continue
                 n += 1

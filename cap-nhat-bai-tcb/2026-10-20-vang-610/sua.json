@@ -1,0 +1,23 @@
+{
+ "bai1": {
+  "sua": [
+   {
+    "tim": "Giá bán ra: Khoảng 8,601,000 VND/chỉ đến 8,665,700 VND/chỉ",
+    "thay": "Giá bán ra: Khoảng 8,601,000 VND/chỉ đến 8,635,200 VND/chỉ",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang, https://webgia.com/gia-vang/sjc/",
+    "ly_do": "PNJ – Vàng 610 (14.6K): mua 7,611,000 / bán 8,601,000 đ/chỉ, cập nhật 19/10/2026 10:54:32; SJC – Nữ trang 61%: mua 7,655,200 / bán 8,635,200 đ/chỉ, cập nhật 13:10:03 19/10/2026"
+   },
+   {
+    "tim": "Giá mua vào: Khoảng 7,611,000 VND/chỉ đến7,685,700 VND/chỉ",
+    "thay": "Giá mua vào: Khoảng 7,611,000 VND/chỉ đến7,655,200 VND/chỉ",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang, https://webgia.com/gia-vang/sjc/",
+    "ly_do": "PNJ – Vàng 610 (14.6K): mua 7,611,000 / bán 8,601,000 đ/chỉ, cập nhật 19/10/2026 10:54:32; SJC – Nữ trang 61%: mua 7,655,200 / bán 8,635,200 đ/chỉ, cập nhật 13:10:03 19/10/2026"
+   }
+  ],
+  "can_duyet": []
+ }
+}
