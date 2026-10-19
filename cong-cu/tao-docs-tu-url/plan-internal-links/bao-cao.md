@@ -133,3 +133,23 @@ Mọi file nằm trong thư mục "Plan internal links - File blog" (quyền "B�
 2. Áp đề xuất cột I trong bảng / danh sách lồng làm gộp mất hàng (dòng 37, 51, 81, 98) → chỉ sửa đúng ô / gạch chứa câu gốc.
 3. Anchor cột I không tô vàng khi chữ không đổi (dòng 75) → luôn tô vàng.
 4. Google Docs biến chữ giữa 2 dấu "$" thành công thức toán (dòng 11, "NT$; … NT$") → bọc riêng dấu $; đã kiểm tra toàn bộ file, không còn chỗ nào.
+
+---
+
+# Đợt 3 — dòng 105 → 150 (19/10/2026)
+
+**Kết quả:** 46/46 bài đã tạo file Docs, chèn đủ anchor (đúng nguyên văn sheet), tô vàng, ghi chú; đã điền cột H và cột E.
+Soát như đợt 2 (`kiemtra.py`, `linkcu.py`, `cautruc.py`, so chữ PDF bằng `verify.py`).
+
+**Cần Trang xem:**
+- **Dòng 131:** ô H đang giữ link bản đầu (có lỗi dính chữ "lãnh sự.Trường hợp…"). Bản đã sửa:
+  https://docs.google.com/document/d/1Pk4nlp44qZ1HPcvyVN2i8-U5AEiV_KQPzy5yKlYz5S4/edit — chờ Trang cho phép thay link ở ô H131.
+- **Dòng 106:** bài gốc chỉ có ảnh infographic, không có đoạn chữ phù hợp → chèn 1 đoạn mới ngay sau ảnh.
+- **Dòng 134:** bài gốc trên web còn sót 1 đoạn ghi chú biên tập sau mục 2.3 → nên báo đội nội dung xóa (mình giữ nguyên).
+- **Dòng 137, 139, 145:** bài đã có sẵn link "tỷ giá" nhưng mã utm khác cột G → giữ link cũ, tô vàng, ghi chú ở cột E.
+- **Dòng 106, 126–150:** cột I không có đề xuất → anchor tỷ giá được đặt theo quy tắc chung như các anchor khác.
+
+**Lỗi công cụ phát hiện & đã sửa trong đợt này:**
+1. Câu viết thêm vào gạch đầu dòng có đoạn bọc bên trong bị Google Docs dính liền với câu trước, không có dấu cách
+   (dòng 126, 131) → câu mới nay nằm trong cùng đoạn; đã tạo lại 2 file.
+2. Ký tự chỉ số dưới "ₘ" (công thức Fₘ, Sₘ, dòng 137) hiện thành ô vuông trên Docs → đổi sang chữ m dạng chỉ số dưới; đã tạo lại file.
