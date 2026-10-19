@@ -67,6 +67,12 @@ def wrap_phrase(block, phrase, url):
             return True
     return False
 
+def block_end(b):
+    """Chỗ chèn đoạn mới sau b: nếu b là gạch đầu dòng thì chèn sau cả danh sách."""
+    while b.name == 'li' or (b.parent is not None and b.parent.name in ('ul', 'ol')):
+        b = b.parent
+    return b
+
 def run(rid, ops):
     s, bl = load(f'{SP}out/{rid}.html')
     orig = [copy.copy(b) for b in bl]
@@ -103,9 +109,22 @@ def run(rid, ops):
             inner = hl(sent[:a0]) + link(op['url'], hl(op['anchor'])) + hl(sent[a0+len(op['anchor']):])
             p = BeautifulSoup(f'<p style="text-align:justify;"><b><i>{inner}</i></b></p>', 'lxml').p
             # Mẫu Trang duyệt 19/10/2026: ghi chú đỏ nằm TRÊN câu viết thêm, cách 1 dòng trống
-            b.insert_after(p)
+            block_end(b).insert_after(p)
             p.insert_before(note('[Đề xuất viết thêm đoạn mới]'))
             p.insert_before(BeautifulSoup('<p></p>', 'lxml').p)
+        elif op['t'] == 'doanmoi':
+            # đoạn văn mới (chữ thường), ghi chú đỏ đặt trên, cách 1 dòng trống
+            sent = op['sentence']; a0 = sent.index(op['anchor'])
+            inner = hl(sent[:a0]) + link(op['url'], hl(op['anchor'])) + hl(sent[a0+len(op['anchor']):])
+            p = BeautifulSoup(f'<p style="text-align:justify;">{inner}</p>', 'lxml').p
+            block_end(b).insert_after(p)
+            p.insert_before(note('[Đề xuất viết thêm đoạn mới]'))
+            p.insert_before(BeautifulSoup('<p></p>', 'lxml').p)
+        elif op['t'] == 'dacolink':
+            # bài gốc đã có link đúng URL đích: giữ nguyên, chỉ ghi chú để người duyệt thấy đủ anchor
+            if not any(x.get('href', '').split('?')[0].rstrip('/').endswith(op['slug']) for x in b.find_all('a')):
+                log.append(dict(op=op, ok=False, why='không thấy link có sẵn')); continue
+            after_blocks.append((b, f'[Anchor "{op["anchor"]}": bài gốc đã có sẵn link đúng URL đích tại đoạn này, giữ nguyên, không chèn thêm]'))
         log.append(dict(op=op, ok=True))
     for b, t in after_blocks:
         if b.name == 'li':   # gạch đầu dòng: ghi chú xuống dòng ngay trong cùng gạch, không chen vào giữa danh sách

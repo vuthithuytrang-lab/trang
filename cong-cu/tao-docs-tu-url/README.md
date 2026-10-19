@@ -73,3 +73,10 @@ Quy trình:
 
 Giới hạn đã gặp: công cụ Drive không tạo được comment, và `share_file` chỉ chia sẻ theo email
 → quyền "Bất kỳ ai có đường liên kết – Người chỉnh sửa" phải mở ở cấp thư mục bằng tay.
+
+### Quy tắc Trang chốt thêm (19/10/2026, sau khi xem chạy thử)
+- **Sheet có bao nhiêu anchor thì chèn đủ bấy nhiêu** (cặp tỷ giá F-G + mọi cặp Anchor/URL đích N có dữ liệu).
+  Không để anchor nào chỉ nằm trong `cho-duyet.md`: không có cụm sẵn thì viết thêm câu "xem thêm" hoặc đoạn mới
+  (`xemthem` / `doanmoi`), chèn thẳng vào file, ghi chú đỏ **[Đề xuất viết thêm đoạn mới]** đặt TRÊN, cách 1 dòng trống.
+- Bài gốc đã có sẵn link đúng URL đích (`dacolink`): giữ link cũ, không chèn trùng, thêm ghi chú đỏ ngay sau đoạn đó.
+- Sau khi chèn xong phải chạy lại `soat.py`: bài dài thêm làm % vị trí lùi lại, câu nằm sát mốc 25% có thể lọt vào 25% đầu.

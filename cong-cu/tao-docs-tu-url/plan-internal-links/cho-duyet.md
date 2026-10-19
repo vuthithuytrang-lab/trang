@@ -1,5 +1,9 @@
 # Đoạn viết mới chờ duyệt — Plan internal links
 
+> ⚠️ **Cập nhật 19/10/2026:** theo yêu cầu của Trang ("có bao nhiêu anchor thì chèn bấy nhiêu"), toàn bộ các đoạn dưới đây
+> **đã được chèn thẳng vào file Docs** (có ghi chú đỏ "[Đề xuất viết thêm đoạn mới]" để duyệt ngay trong file).
+> File này giữ lại làm bản đối chiếu.
+
 > Các đoạn dưới đây **CHƯA chèn vào file Docs**. Trang đọc từng đoạn và trả lời **"bỏ qua"** hoặc **"chèn"**.
 > Chỉ khi Trang trả lời "chèn" thì mới đưa vào file, tô vàng và ghi chú đỏ "[Đề xuất viết thêm đoạn mới]" (đặt TRÊN đoạn, cách 1 dòng trống).
 > Phần in đậm trong ngoặc vuông [ ] là chữ sẽ gắn link.
