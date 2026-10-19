@@ -153,3 +153,22 @@ Soát như đợt 2 (`kiemtra.py`, `linkcu.py`, `cautruc.py`, so chữ PDF bằn
 1. Câu viết thêm vào gạch đầu dòng có đoạn bọc bên trong bị Google Docs dính liền với câu trước, không có dấu cách
    (dòng 126, 131) → câu mới nay nằm trong cùng đoạn; đã tạo lại 2 file.
 2. Ký tự chỉ số dưới "ₘ" (công thức Fₘ, Sₘ, dòng 137) hiện thành ô vuông trên Docs → đổi sang chữ m dạng chỉ số dưới; đã tạo lại file.
+
+---
+
+# Đợt 4 — dòng 151 → 200 (19/10/2026)
+
+**Kết quả:** 50/50 bài đã tạo file Docs, chèn anchor đúng nguyên văn sheet, tô vàng, ghi chú; đã điền cột H và cột E.
+49 bài đủ anchor; dòng 170 thiếu 1 anchor (xem dưới). Soát như các đợt trước + soát thêm 2 lỗi mới phát hiện ở đợt 3.
+
+**Lưu ý bố cục sheet:** từ dòng 151, cột I là ô tích (checkbox); câu đề xuất "Trước/Sau khi chèn" nằm ở **cột J**,
+các cặp anchor/URL bắt đầu từ **cột K–L**. Cột E (ghi chú) và H (link file) giữ nguyên vị trí.
+
+**Cần Trang xem:**
+- **Dòng 170** (`cach-su-dung-tai-khoan-cong-ty`): câu gốc ở cột J ("Dịch vụ thanh toán cho Doanh nghiệp nhỏ: Đa dạng gói dịch vụ…")
+  không có trong thân bài (chỉ có ở menu web) → CHƯA chèn anchor "giá USD". Trang chọn vị trí khác hoặc sửa cột J thì chèn bổ sung.
+- **Dòng 154:** câu "Sau khi chèn" ở cột J lặp lại gần nguyên câu đã có ngay sau danh sách — đã áp nguyên văn; cân nhắc bỏ câu trùng.
+- **Dòng 155:** bài về Thái Lan nhưng anchor tỷ giá là "giá yên hôm nay" — đã áp đúng câu đã duyệt.
+- **Dòng 183:** cột F trống → anchor lấy từ cụm gắn link trong ô cột J ("giá Euro").
+- **Dòng 161, 200:** link gắn trong ô cột J có mã utm khác cột G → dùng đúng link cột G.
+- Viết hoa tên riêng trong anchor: "cách nạp tiền viettel" → "cách nạp tiền Viettel" (158), "eco card" → "Eco Card" (159).
