@@ -82,7 +82,7 @@ def run(rid, ops):
     for op in ops:
         b = bl[op['i']]
         before_txt = norm(orig[op['i']].get_text(''))
-        if op['t'] == 'tygia':
+        if op['t'] in ('tygia', 'vietlai'):   # vietlai: viết lại nhẹ 1 câu có sẵn để anchor nằm tự nhiên trong câu
             # câu gốc ở cột I có thể chỉ là một phần của đoạn / gạch đầu dòng (VD sau nhãn in đậm)
             bt, at = norm(op['before']).rstrip('.'), norm(op['after'])
             # chỉ viết lại phần tử NHỎ NHẤT chứa câu gốc (1 ô bảng, 1 gạch đầu dòng con) để giữ nguyên cấu trúc bảng/danh sách

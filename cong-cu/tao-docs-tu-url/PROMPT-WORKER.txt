@@ -16,3 +16,5 @@ Final message: only the JSON report described in the brief.
 - If column F is empty but cell I has a suggestion with a linked phrase (rows.json "Ilinks"), use that linked phrase as the anchor with URL G; mention it in notes.
 - Also write your final JSON report to $D/report.json (same content as your final message).
 - Also run `python3 -I $D/linkcu.py $D/` — it must print nothing (every original link of the article must still exist in final/).
+- Read the "CONTENT QUALITY" section of the brief twice — naturalness of every inserted sentence is now the top priority after correctness.
+- From row 204 on, column J may contain only a date (e.g. "20/10/2026") instead of a "Trước khi chèn / Sau khi chèn" suggestion: that means NO approved suggestion → place the F-G anchor yourself like any other pair (all placement + content-quality rules apply), and report tygia = "no_suggestion".

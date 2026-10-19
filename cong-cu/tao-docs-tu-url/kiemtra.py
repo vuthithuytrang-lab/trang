@@ -8,7 +8,7 @@ D = sys.argv[1]
 rows = {f"r{r['row']}": r for r in json.load(open(D + 'rows.json', encoding='utf-8'))}
 plan = json.load(open(D + 'plan.json', encoding='utf-8'))
 YEL = 'background-color:#ffff00'
-CACH = {'tygia': 'cột I', 'phrase': 'gắn câu có sẵn', 'sentence': 'viết thêm 1 câu', 'xemthem': 'xem thêm',
+CACH = {'tygia': 'cột I', 'vietlai': 'viết lại câu có sẵn', 'phrase': 'gắn câu có sẵn', 'sentence': 'viết thêm 1 câu', 'xemthem': 'xem thêm',
         'doanmoi': 'đoạn mới', 'chuyenlink': 'chuyển link cũ sang đúng anchor', 'dacolink': 'có sẵn link đúng anchor'}
 
 def slug(u): return u.split('?')[0].rstrip('/').split('/')[-1]

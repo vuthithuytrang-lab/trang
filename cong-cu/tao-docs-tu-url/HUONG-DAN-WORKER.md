@@ -31,6 +31,10 @@ Always run Python with `python3 -I` and pass `$D/` (with trailing slash) as the 
 - `sentence` — append ONE short sentence (containing the anchor) to existing paragraph `i`.
 - `xemthem` — new line after block `i`: `sentence` must start with ">>> " (rendered bold+italic, TCB style).
 - `doanmoi` — new paragraph (≥2 sentences) after block `i`.
+- `vietlai` — LIGHTLY rewrite ONE existing sentence so the anchor sits naturally inside it (same format as `tygia`:
+  `before` = exact existing sentence/clause, `after` = rewritten version containing the anchor, `anchor`, `url`, `i`).
+  Keep the original meaning, facts and length (± a few words). Use this when the article already talks about the topic
+  but not with the exact anchor wording — it reads far more naturally than bolting on a new sentence.
 - `dacolink` — the source article ALREADY links to that exact target URL in block `i` AND the link text is EXACTLY the sheet anchor:
   keep it, `slug` = url last segment; chen.py highlights it and adds a red note.
 - `chuyenlink` — the article links to the target URL but with DIFFERENT link text: chen.py removes that link and links the exact
@@ -51,6 +55,28 @@ Always run Python with `python3 -I` and pass `$D/` (with trailing slash) as the 
 6. Wording: professional, serious, banking tone, Vietnamese with full diacritics. NO numbers, rates, fees, promotions or
    promises that are not in the source article or the target page. Do not claim Techcombank supports a currency unless the
    article says so. Vary sentences — don't copy the same xemthem sentence across articles word for word.
+
+## CONTENT QUALITY — the reviewer's #1 complaint was "chèn gượng ép, chưa tự nhiên"
+Act as a senior Vietnamese banking content editor. Every inserted/rewritten text must read as if the original author wrote it.
+1. Preference order for naturalness: `phrase` (existing words) > `vietlai` (light rewrite of an existing sentence) >
+   `sentence` that CONTINUES the paragraph's own idea > `xemthem` > `doanmoi`. Don't add a sentence when an existing one can carry the anchor.
+2. Context fit: put the anchor where the paragraph is ALREADY discussing that need. The inserted sentence must follow logically
+   from the sentence before it (cause → consequence, problem → next step, general → specific). If you have to change topic
+   to mention the anchor, the spot is wrong — find another one.
+3. Reader value: the sentence must tell the reader WHY the linked page helps at this moment (what they will learn/do there),
+   in concrete terms tied to the paragraph — not a generic "tham khảo thêm".
+4. BANNED formula phrases (they make text sound like ads/SEO filler): "Bên cạnh đó, bạn cũng có thể tham khảo", "Ngoài ra, bạn có
+   thể tìm hiểu thêm", "để có thêm thông tin", "để hiểu rõ hơn", "một cách hiệu quả", "vô cùng", "hữu ích", "tham khảo ngay",
+   "đừng quên", "chắc chắn", "tại đây". Don't start two inserts in one article with the same words. Max one ">>>" line per section.
+5. Match the article's voice: same pronoun (bạn / khách hàng / doanh nghiệp / chủ hộ), same register, same sentence length.
+   No exclamation marks, no rhetorical questions, no marketing superlatives.
+6. Anchor grammar: the anchor must be a natural grammatical part of the sentence (object/complement), never a dangling label.
+   Avoid awkward stacking like "tìm hiểu về tỷ giá USD hôm nay để biết tỷ giá".
+7. `xemthem` lines: specific and short, e.g. ">>> Xem thêm: Cách tính thuế thu nhập cá nhân cho người làm tự do" — the anchor
+   inside a meaningful title-like phrase, not a full sales sentence.
+8. SELF-REVIEW before finishing: for every op, print the sentence before + your text + the sentence after, read it as an editor,
+   and ask "would a reader notice this was inserted?". If yes, rewrite or move it. Do this pass for real; mention in notes any
+   insert you still find weak.
 
 ## File name (title)
 Main keyword from the URL slug, rewritten with diacritics to match the article title/H1, first letter upper-case, proper names
