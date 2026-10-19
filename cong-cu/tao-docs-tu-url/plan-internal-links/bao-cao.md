@@ -6,7 +6,7 @@ Thư mục Drive: [Plan internal links - File blog](https://drive.google.com/dri
 
 | Dòng | Tên file | Link | Bước 1 | Bước 2 |
 |---|---|---|---|---|
-| 2 | 1 Man bằng bao nhiêu tiền Việt | https://docs.google.com/document/d/1bnt6jDFQfI0i8zFt9MYBJ3WevXFxGu2NgQNcDFP4FPY/edit | ✅ | ✅ |
+| 2 | 1 Man bằng bao nhiêu tiền Việt | https://docs.google.com/document/d/127fa70nARZPvMyXvM4bmb9GGHvUldI6_gTz5g7c7Gpw/edit | ✅ | ✅ |
 | 3 | 1 Tệ bằng bao nhiêu tiền Việt Nam | https://docs.google.com/document/d/1BZCbsLRwaC5qP0z5eSqS_8xXPuyiYvhvKixGM_edTZM/edit | ✅ | ✅ (2 đoạn chờ duyệt) |
 | 4 | 1 triệu Won bằng bao nhiêu tiền Việt | https://docs.google.com/document/d/1wt9qe9M2GG-yqq-fKM_ZkSS1JHd8wS2pUrxDxve9yRQ/edit | ✅ | ✅ (3 đoạn chờ duyệt) |
 
@@ -75,7 +75,7 @@ Sheet thực tế: mỗi nhóm anchor chỉ có **2 cột** (J-K, L-M, N-O, P-Q,
 | Dòng | Tên file | Link |
 |---|---|---|
 | 5 | 1 vạn tệ bằng bao nhiêu tiền Việt | https://docs.google.com/document/d/1X5zylbZ_WbFRETqJvVDMc_zVKvFyV1AIWDDHjHf7isA/edit |
-| 6 | 1 vạn tiền Đài Loan bằng bao nhiêu tiền Việt | https://docs.google.com/document/d/1_Yss_qyN0zttd6IG7k3Q_tIC5EhKv_7XsrBRq3yYvuU/edit |
+| 6 | 1 vạn tiền Đài Loan bằng bao nhiêu tiền Việt | https://docs.google.com/document/d/1mERiPrL6o5K8Ik0h__RGBKN_7I9IkizRvp5Ysuh3FMk/edit |
 | 7 | 1 Won bằng bao nhiêu tiền Việt | https://docs.google.com/document/d/1BhtvTbZXL6D57KSV4BSkW7sAjyzITQ2A7Xt4kUylR8I/edit |
 
 - Bài lỗi: không có. H5–H7 trống trước khi ghi. Chữ trong Docs khớp 100% bản đã chèn.
@@ -101,3 +101,9 @@ Sheet thực tế: mỗi nhóm anchor chỉ có **2 cột** (J-K, L-M, N-O, P-Q,
 - Link có sẵn đúng URL đích (giữ nguyên) nay cũng tô vàng.
 - Ghi chú đổi thành "[Nội dung gốc trước khi chèn: …]".
 - Tạo lại 6 file, file cũ vào thùng rác, cập nhật H2–H7. Chữ khớp 100%.
+
+## Sửa lần 4 (19/10/2026) — anchor đúng nguyên văn
+- Dòng 2: link cũ "hệ thống tiền tệ Nhật Bản" → chuyển sang đúng anchor "tiền Nhật"; link cũ "1 Yên bằng khoảng 164.7 đồng" →
+  chuyển sang đúng anchor "1 Yên bằng bao nhiêu tiền Việt" (mỗi chỗ thêm 1 câu ngắn trong cùng câu trả lời FAQ).
+- Dòng 6: link cũ "Tiền Đài Loan" → chuyển sang đúng anchor "Tân Đài tệ" (cụm có sẵn ngay trong câu).
+- Kiểm tra máy: cả 6 file, mỗi anchor sheet là chữ của đúng 1 link tới đúng URL. Cập nhật H2, H6, E2, E6; 2 file cũ vào thùng rác.
