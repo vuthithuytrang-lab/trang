@@ -82,6 +82,24 @@ def run(rid, ops):
     for op in ops:
         b = bl[op['i']]
         before_txt = norm(orig[op['i']].get_text(''))
+        if op['t'] == 'vietlai':
+            # viết lại ngay trong ĐÚNG đoạn chữ chứa câu gốc → giữ nguyên in nghiêng, xuống dòng, nhãn in đậm xung quanh
+            bt, at = norm(op['before']).rstrip('.'), norm(op['after'])
+            hit = None
+            for st in b.find_all(string=True):
+                if st.find_parent('a') or st.find_parent(['script', 'style']): continue
+                if bt in norm(str(st)): hit = st; break
+            if hit is not None:
+                old_t = norm(str(hit)); k = old_t.find(bt); tail = old_t[k+len(bt):]
+                if tail.startswith('.') and at.endswith('.'): tail = tail[1:]
+                new_t = old_t[:k] + at + tail
+                lead = ' ' if str(hit)[:1].isspace() else ''; trail = ' ' if str(hit)[-1:].isspace() else ''
+                inner = esc(lead) + diff_render(old_t, new_t, op['anchor'], op['url']) + esc(trail)
+                hit.replace_with(BeautifulSoup(f'<x>{inner}</x>', 'lxml').x)
+                for x in b.find_all('x'): x.unwrap()
+                after_blocks.append((b, f'[Nội dung gốc trước khi chèn: {before_txt}]'))
+                continue
+            # câu gốc vắt qua nhiều đoạn định dạng → dùng cách viết lại cả phần tử như tygia
         if op['t'] in ('tygia', 'vietlai'):   # vietlai: viết lại nhẹ 1 câu có sẵn để anchor nằm tự nhiên trong câu
             # câu gốc ở cột I có thể chỉ là một phần của đoạn / gạch đầu dòng (VD sau nhãn in đậm)
             bt, at = norm(op['before']).rstrip('.'), norm(op['after'])
