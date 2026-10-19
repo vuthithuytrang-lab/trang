@@ -172,3 +172,24 @@ các cặp anchor/URL bắt đầu từ **cột K–L**. Cột E (ghi chú) và 
 - **Dòng 183:** cột F trống → anchor lấy từ cụm gắn link trong ô cột J ("giá Euro").
 - **Dòng 161, 200:** link gắn trong ô cột J có mã utm khác cột G → dùng đúng link cột G.
 - Viết hoa tên riêng trong anchor: "cách nạp tiền viettel" → "cách nạp tiền Viettel" (158), "eco card" → "Eco Card" (159).
+
+---
+
+# Đợt 5 — dòng 201 → 250 (19/10/2026) — chuẩn content mới
+
+**Kết quả:** 50/50 bài đã tạo file Docs, đủ 100% anchor (đúng nguyên văn sheet), tô vàng, ghi chú; đã điền cột H và cột E.
+
+**Phản hồi của Trang:** "nhiều đoạn chèn còn gượng ép, chưa tự nhiên" → từ đợt này áp **chuẩn content mới** (chi tiết trong
+`HUONG-DAN-WORKER.md`, mục CONTENT QUALITY):
+- Ưu tiên gắn link vào cụm có sẵn, hoặc **viết lại nhẹ 1 câu có sẵn** (kiểu chèn mới `vietlai`) thay vì thêm câu mới.
+- Chỉ chèn ở đoạn đang nói đúng chủ đề; câu chèn phải nối mạch câu trước, nói rõ người đọc được gì khi bấm.
+- Cấm câu sáo ("Bên cạnh đó, bạn cũng có thể tham khảo…", "để hiểu rõ hơn", "hữu ích", "tại đây"…); giữ giọng xưng hô của bài.
+- Mỗi chỗ chèn được tự đọc lại cùng câu trước/sau như biên tập viên.
+- Công cụ: kiểu `vietlai` sửa ngay trong đúng đoạn chữ chứa câu gốc → giữ nguyên in nghiêng, xuống dòng (đã sửa dòng 236, 237).
+
+**Cần Trang xem:**
+- **Cột J từ dòng 204 → 250** chỉ ghi ngày "20/10/2026", không có câu đề xuất → anchor tỷ giá do mình tự đặt theo chuẩn mới.
+  Một số bài không nói gì về ngoại tệ (VD dòng 212, 218, 220, 225, 238, 241, 242, 243, 245, 246) nên câu tỷ giá vẫn hơi xa chủ đề —
+  đây là giới hạn của việc ghép anchor tỷ giá vào bài không liên quan.
+- **Dòng 233:** bài gốc có 1 link hỏng (đường link dính 2 địa chỉ) ở cụm "tính lãi suất tiết kiệm online" → đã bỏ link hỏng và gắn lại
+  đúng anchor; nên báo đội web sửa trên bài.
