@@ -193,3 +193,18 @@ các cặp anchor/URL bắt đầu từ **cột K–L**. Cột E (ghi chú) và 
   đây là giới hạn của việc ghép anchor tỷ giá vào bài không liên quan.
 - **Dòng 233:** bài gốc có 1 link hỏng (đường link dính 2 địa chỉ) ở cụm "tính lãi suất tiết kiệm online" → đã bỏ link hỏng và gắn lại
   đúng anchor; nên báo đội web sửa trên bài.
+
+---
+
+# Đợt 6 — dòng 251 → 300 (19/10/2026)
+
+**Kết quả:** 50/50 bài đã tạo file Docs, đủ 100% anchor (đúng nguyên văn sheet), tô vàng, ghi chú; đã điền cột H và cột E.
+Áp chuẩn content mới như đợt 5.
+
+**Lưu ý bố cục sheet:** dòng 251–274 cột J trống (không có đề xuất) → anchor tỷ giá tự đặt; **từ dòng 275 cột F, G trống**
+(không có anchor tỷ giá) → chỉ chèn các cặp anchor từ cột K.
+
+**Cần Trang xem:**
+- **Dòng 264:** cụm "Techcombank Eco" nằm ở mục thẻ tín dụng Visa Eco, nhưng URL đích trên sheet là bài thẻ ghi nợ Eco Card — xem lại URL.
+- **Dòng 294:** trang đích traveloka-voucher có nhãn "Blog đã hết hạn" — kiểm tra trang đích còn dùng được không.
+- Một số bài không nói gì về ngoại tệ (VD 251, 253, 255, 258, 269, 274) nên câu tỷ giá vẫn hơi xa chủ đề.
