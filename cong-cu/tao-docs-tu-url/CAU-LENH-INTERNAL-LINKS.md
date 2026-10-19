@@ -1,6 +1,6 @@
 # Câu lệnh tạo file Docs — sheet "Plan internal links" (luồng RIÊNG, không liên quan "Tối ưu nhanh")
 
-> Tạo 19/10/2026. Sheet này: URL ở cột B, link Docs điền cột H ("FILE BLOG"),
+> Tạo 19/10/2026 — LUỒNG RIÊNG, độc lập với luồng "Tối ưu nhanh" (README.md). Sheet này: URL ở cột B, link Docs điền cột H ("FILE BLOG"),
 > không có cột PIC, không có cột từ khóa. Tên file = từ khóa chính (tự lấy từ slug).
 
 ```
