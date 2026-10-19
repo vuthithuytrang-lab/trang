@@ -80,3 +80,6 @@ Giới hạn đã gặp: công cụ Drive không tạo được comment, và `sh
   (`xemthem` / `doanmoi`), chèn thẳng vào file, ghi chú đỏ **[Đề xuất viết thêm đoạn mới]** đặt TRÊN, cách 1 dòng trống.
 - Bài gốc đã có sẵn link đúng URL đích (`dacolink`): giữ link cũ, không chèn trùng, thêm ghi chú đỏ ngay sau đoạn đó.
 - Sau khi chèn xong phải chạy lại `soat.py`: bài dài thêm làm % vị trí lùi lại, câu nằm sát mốc 25% có thể lọt vào 25% đầu.
+- **Ghi cột E (Ghi chú)** sau mỗi dòng (Trang cho phép 19/10/2026, ô E trống mới ghi): "Đủ x/N anchor. Đã chèn mới (k): anchor (cách chèn); …
+  Bài đã có sẵn link đúng URL, giữ nguyên (m): …  Thiếu: … / không." N = cặp tỷ giá F-G + mọi cặp Anchor/URL N có dữ liệu,
+  đối chiếu với cột C "Số link chèn".
