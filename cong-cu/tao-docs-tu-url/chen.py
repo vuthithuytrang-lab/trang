@@ -94,16 +94,16 @@ def run(rid, ops):
             inner = diff_render(before_txt, full_after, op['anchor'], op['url'], [norm(x) for x in bold])
             if op['after'].lstrip().startswith('>>>'): inner = f'<b><i>{inner}</i></b>'
             b.clear(); b.append(BeautifulSoup(f'<x>{inner}</x>', 'lxml').x); b.x.unwrap()
-            after_blocks.append((b, f'[Trước khi chèn: {before_txt}]'))
+            after_blocks.append((b, f'[Nội dung gốc trước khi chèn: {before_txt}]'))
         elif op['t'] == 'phrase':
             ok = wrap_phrase(b, op['anchor'], op['url'])
             if not ok: log.append(dict(op=op, ok=False, why='không thấy cụm')); continue
-            after_blocks.append((b, f'[Trước khi chèn: {before_txt}]'))
+            after_blocks.append((b, f'[Nội dung gốc trước khi chèn: {before_txt}]'))
         elif op['t'] == 'sentence':
             sent = op['sentence']; a0 = sent.index(op['anchor'])
             inner = esc(' ') + hl(sent[:a0]) + link(op['url'], hl(op['anchor'])) + hl(sent[a0+len(op['anchor']):])
             b.append(BeautifulSoup(f'<x>{inner}</x>', 'lxml').x); b.x.unwrap()
-            after_blocks.append((b, f'[Trước khi chèn: {before_txt}]'))
+            after_blocks.append((b, f'[Nội dung gốc trước khi chèn: {before_txt}]'))
         elif op['t'] == 'xemthem':
             sent = op['sentence']; a0 = sent.index(op['anchor'])
             inner = hl(sent[:a0]) + link(op['url'], hl(op['anchor'])) + hl(sent[a0+len(op['anchor']):])
@@ -122,8 +122,14 @@ def run(rid, ops):
             p.insert_before(BeautifulSoup('<p></p>', 'lxml').p)
         elif op['t'] == 'dacolink':
             # bài gốc đã có link đúng URL đích: giữ nguyên, chỉ ghi chú để người duyệt thấy đủ anchor
-            if not any(x.get('href', '').split('?')[0].rstrip('/').endswith(op['slug']) for x in b.find_all('a')):
+            hit = [x for x in b.find_all('a') if x.get('href', '').split('?')[0].rstrip('/').endswith(op['slug'])]
+            if not hit:
                 log.append(dict(op=op, ok=False, why='không thấy link có sẵn')); continue
+            # Trang yêu cầu 19/10/2026: link có sẵn giữ nguyên nhưng vẫn tô vàng để người duyệt thấy
+            for a in hit:
+                for t in list(a.find_all(string=True)):
+                    t.replace_with(BeautifulSoup(f'<x>{hl(str(t))}</x>', 'lxml').x)
+                for x in a.find_all('x'): x.unwrap()
             after_blocks.append((b, f'[Anchor "{op["anchor"]}": bài gốc đã có sẵn link đúng URL đích tại đoạn này, giữ nguyên, không chèn thêm]'))
         log.append(dict(op=op, ok=True))
     for b, t in after_blocks:

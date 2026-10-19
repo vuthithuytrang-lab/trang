@@ -83,3 +83,5 @@ Giới hạn đã gặp: công cụ Drive không tạo được comment, và `sh
 - **Ghi cột E (Ghi chú)** sau mỗi dòng (Trang cho phép 19/10/2026, ô E trống mới ghi): "Đủ x/N anchor. Đã chèn mới (k): anchor (cách chèn); …
   Bài đã có sẵn link đúng URL, giữ nguyên (m): …  Thiếu: … / không." N = cặp tỷ giá F-G + mọi cặp Anchor/URL N có dữ liệu,
   đối chiếu với cột C "Số link chèn".
+- Ghi chú đoạn sửa: **[Nội dung gốc trước khi chèn: …]** (đổi từ "[Trước khi chèn: …]" theo Trang 19/10/2026).
+  Mọi anchor đều tô vàng, kể cả link có sẵn được giữ nguyên (`dacolink`).
