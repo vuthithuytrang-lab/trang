@@ -6,9 +6,9 @@ Thư mục Drive: [Plan internal links - File blog](https://drive.google.com/dri
 
 | Dòng | Tên file | Link | Bước 1 | Bước 2 |
 |---|---|---|---|---|
-| 2 | 1 Man bằng bao nhiêu tiền Việt | https://docs.google.com/document/d/1CRMKvsFXSiHn5_WdpwXnzEyoEjCGejReuuTozhIC4GU/edit | ✅ | ✅ |
-| 3 | 1 Tệ bằng bao nhiêu tiền Việt Nam | https://docs.google.com/document/d/1ivcasR6U2U8RSUqLVkwpzwU4wzaL6UZU0NX0dC79fCs/edit | ✅ | ✅ (2 đoạn chờ duyệt) |
-| 4 | 1 triệu Won bằng bao nhiêu tiền Việt | https://docs.google.com/document/d/1g8VO-sYEKQ2CfytBll10_5QmFLbxvpbvey0xiBBk58o/edit | ✅ | ✅ (3 đoạn chờ duyệt) |
+| 2 | 1 Man bằng bao nhiêu tiền Việt | https://docs.google.com/document/d/1aGhPMZoa2P5VMlg8VrSyeE1Z8fymQ8dWuAiAihUmybg/edit | ✅ | ✅ |
+| 3 | 1 Tệ bằng bao nhiêu tiền Việt Nam | https://docs.google.com/document/d/1I8WNn4yUDk-HkrmfbCZQLDgaposQ2KDqTzpAKavEgms/edit | ✅ | ✅ (2 đoạn chờ duyệt) |
+| 4 | 1 triệu Won bằng bao nhiêu tiền Việt | https://docs.google.com/document/d/1ZOT9nXV4X2KzrOLAmX9x46tS2XQNvFYnCFtC8iv2mnU/edit | ✅ | ✅ (3 đoạn chờ duyệt) |
 
 Đã điền link vào H2, H3, H4 (từng ô một, đã đọc trước — cả 3 ô đều trống). Không đụng ô nào khác.
 Tự soát: chữ trong Docs khớp 100% với bản bài gốc đã chèn (so từng từ); ảnh và chú thích căn giữa; tô vàng + ghi chú đỏ hiển thị đúng.
@@ -74,9 +74,9 @@ Sheet thực tế: mỗi nhóm anchor chỉ có **2 cột** (J-K, L-M, N-O, P-Q,
 
 | Dòng | Tên file | Link |
 |---|---|---|
-| 5 | 1 vạn tệ bằng bao nhiêu tiền Việt | https://docs.google.com/document/d/1_RWBZNc7v5Q1o7BOetpTdqeXubkuhwxiVyOhbLUwj6s/edit |
-| 6 | 1 vạn tiền Đài Loan bằng bao nhiêu tiền Việt | https://docs.google.com/document/d/1IU6b2nSaZhqpaZAI5-D6HugOw8gb7LysqD-hDA5yQLc/edit |
-| 7 | 1 Won bằng bao nhiêu tiền Việt | https://docs.google.com/document/d/1T2hUpuKwse4vWDAWM3bLpGjHdgIN4AhsGmvD3Yqo5cc/edit |
+| 5 | 1 vạn tệ bằng bao nhiêu tiền Việt | https://docs.google.com/document/d/1eEa4HtnSsGCuGwWRfkuGTcj2zLJui52URmjZJ1XKvuk/edit |
+| 6 | 1 vạn tiền Đài Loan bằng bao nhiêu tiền Việt | https://docs.google.com/document/d/13w_sWIVYjzsY2bn4ThtAc-aNWPB6DHIQIznwZeCpTCM/edit |
+| 7 | 1 Won bằng bao nhiêu tiền Việt | https://docs.google.com/document/d/1tmpxhAY66Pd76R8mA9h7md8UJyarXpzMPnxnHrGsXuQ/edit |
 
 - Bài lỗi: không có. H5–H7 trống trước khi ghi. Chữ trong Docs khớp 100% bản đã chèn.
 - Đề xuất cột I: cả 3 dòng tìm thấy câu gốc và đã áp nguyên văn. Dòng 5 và 7, câu gốc nằm trong gạch đầu dòng
@@ -87,3 +87,12 @@ Sheet thực tế: mỗi nhóm anchor chỉ có **2 cột** (J-K, L-M, N-O, P-Q,
 - Link gần nhau: dòng 6 — đoạn áp đề xuất cột I nằm ngay trên câu đã có sẵn link trang tỷ giá (vị trí cột I đã duyệt).
 - Đoạn chờ duyệt: 5-A, 5-B, 6-A, 6-B, 7-A, 7-B, 7-C (chi tiết `cho-duyet.md`).
 - Phân quyền & comment: như đợt 1, chưa làm được.
+
+## Sửa lần 2 (19/10/2026) — chèn đủ anchor dòng 2–7
+- Theo yêu cầu của Trang: **sheet có bao nhiêu anchor thì chèn đủ bấy nhiêu**. Các đoạn trước đây chờ duyệt đã được chèn thẳng
+  vào file (có ghi chú đỏ "[Đề xuất viết thêm đoạn mới]"). Anchor mà bài đã có sẵn link đúng URL (dòng 2: tiền Nhật, 1 Yên;
+  dòng 6: Tân Đài tệ) được giữ link cũ, có thêm ghi chú đỏ tại chỗ.
+- Số anchor/file: dòng 3 = 5 (sheet có 5), các dòng còn lại = 6. Đã kiểm tra: mọi URL đích trong sheet đều có link trong file.
+- Dời câu "xem thêm" 1,000 won ở dòng 7 xuống mục 5.1 vì lọt vào 25% đầu sau khi bài dài thêm.
+- Tạo lại 6 file, file cũ chuyển vào thùng rác, cập nhật H2–H7.
+- **Phân quyền: ĐÃ XONG.** Trang mở quyền "Bất kỳ ai có đường liên kết – Người chỉnh sửa" ở cấp thư mục; đã kiểm tra file con nhận quyền theo.
