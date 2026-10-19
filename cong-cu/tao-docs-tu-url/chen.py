@@ -93,7 +93,21 @@ def run(rid, ops):
             bold = op.get('bold') or [x.get_text('') for x in orig[op['i']].find_all('b') if norm(x.get_text(''))]
             inner = diff_render(before_txt, full_after, op['anchor'], op['url'], [norm(x) for x in bold])
             if op['after'].lstrip().startswith('>>>'): inner = f'<b><i>{inner}</i></b>'
+            old_links = [(x.get_text(''), x.get('href', '')) for x in orig[op['i']].find_all('a') if x.get('href')]
             b.clear(); b.append(BeautifulSoup(f'<x>{inner}</x>', 'lxml').x); b.x.unwrap()
+            # giữ lại link cũ của đoạn (viết lại câu không được làm mất link có sẵn)
+            for t, h in old_links:
+                t = t.strip().rstrip('.:;, ')   # bỏ dấu câu/khoảng trắng dính vào chữ của link cũ
+                if not t: continue
+                for st in b.find_all(string=True):
+                    if st.find_parent('a') or t not in st: continue
+                    k = st.find(t); par = st.parent
+                    new_html = esc(st[:k]) + f'<a href="{html.escape(h)}">{esc(t)}</a>' + esc(st[k+len(t):])
+                    st.replace_with(BeautifulSoup(f'<x>{new_html}</x>', 'lxml').x)
+                    for x in b.find_all('x'): x.unwrap()
+                    break
+                else:
+                    log.append(dict(op=op, ok=False, why=f'link cũ "{t}" không còn chữ để gắn lại'))
             after_blocks.append((b, f'[Nội dung gốc trước khi chèn: {before_txt}]'))
         elif op['t'] == 'phrase':
             ok = wrap_phrase(b, op['anchor'], op['url'])
