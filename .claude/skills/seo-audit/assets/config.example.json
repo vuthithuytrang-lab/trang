@@ -1,0 +1,11 @@
+{
+  "domain": "example.com",
+  "prefix": "demo",
+  "project": "demo",
+  "csv": "~/Downloads/TOP-100-....csv",
+  "gsc_site": "https://www.example.com/",
+  "goals": {"top10": 85, "top5": 70, "top3": 50},
+  "cluster": {"min_shared": 4, "merge_small": 3, "merge_cluster": 0.7, "depth": 10},
+  "gsc_days": 90,
+  "out_dir": "~/html/demo"
+}

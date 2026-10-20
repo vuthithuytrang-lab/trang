@@ -1,0 +1,7 @@
+# Tạo venv riêng cho skill (chạy trong thư mục chứa skill này):
+#   python3 -m venv .venv && .venv/bin/pip install -r scripts/requirements.txt
+requests>=2.31
+lxml>=5.0
+# Bước Search Console (gsc.py, index_status.py):
+google-api-python-client>=2.100.0
+google-auth>=2.23.0
