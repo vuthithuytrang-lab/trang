@@ -3,7 +3,8 @@
 Quy tắc:
 - URL có "/thong-tin/blog/": đọc thẻ <div class="article-header-body--date"> nằm ngay
   sau H1 và sapo. Thẻ chứa ngày ISO, ví dụ 2026-10-05T00:00:00.000+07:00.
-- URL khác: tìm ngày dd/mm/yyyy trong thẻ <title>.
+- URL khác: tìm ngày dd/mm/yyyy trong thẻ <title>. Không có năm (vd "(21/10)", trang tỷ giá
+  đổi kiểu từ 20/10/2026) thì lấy năm cho ngày gần hôm nay nhất.
 """
 
 import random
@@ -25,6 +26,7 @@ SO_LAN_THU_LAI = 2  # thử lại 2 lần sau lần đầu => tối đa 3 lần 
 THE_NGAY_BLOG = "div.article-header-body--date"
 MAU_ISO = re.compile(r"(\d{4})-(\d{2})-(\d{2})")
 MAU_DMY = re.compile(r"(?<!\d)(\d{1,2})/(\d{1,2})/(\d{4})(?!\d)")
+MAU_DM = re.compile(r"(?<![\d/])(\d{1,2})/(\d{1,2})(?![\d/])")
 
 
 @dataclass
@@ -91,6 +93,11 @@ def tach_ngay(url: str, html: str) -> date | None:
             m = MAU_DMY.search(tieu_de)
             if m:
                 return date(int(m[3]), int(m[2]), int(m[1]))
+            m = MAU_DM.search(tieu_de)
+            if m:  # không có năm: chọn năm cho ngày gần hôm nay nhất (qua giao thừa vẫn đúng)
+                hom_nay = date.today()
+                return min((date(n, int(m[2]), int(m[1])) for n in (hom_nay.year - 1, hom_nay.year, hom_nay.year + 1)),
+                           key=lambda d: abs(d - hom_nay))
     except ValueError:  # ngày vô lý, ví dụ 31/02
         pass
     return None
