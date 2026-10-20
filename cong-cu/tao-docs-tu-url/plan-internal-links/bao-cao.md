@@ -208,3 +208,15 @@ các cặp anchor/URL bắt đầu từ **cột K–L**. Cột E (ghi chú) và 
 - **Dòng 264:** cụm "Techcombank Eco" nằm ở mục thẻ tín dụng Visa Eco, nhưng URL đích trên sheet là bài thẻ ghi nợ Eco Card — xem lại URL.
 - **Dòng 294:** trang đích traveloka-voucher có nhãn "Blog đã hết hạn" — kiểm tra trang đích còn dùng được không.
 - Một số bài không nói gì về ngoại tệ (VD 251, 253, 255, 258, 269, 274) nên câu tỷ giá vẫn hơi xa chủ đề.
+
+---
+
+# Đợt 7 — dòng 301 → 350 (20/10/2026)
+
+**Kết quả:** 49/50 bài đã tạo file Docs, đủ 100% anchor (đúng nguyên văn sheet), tô vàng, ghi chú; đã điền cột H và cột E.
+Đợt này sheet không có anchor tỷ giá (cột F, G trống) — chỉ chèn các cặp anchor từ cột K. Áp chuẩn content mới.
+
+**Cần Trang xem:**
+- **Dòng 333** (`cach-tao-ma-qr`): trang bài gốc báo "Không tìm thấy trang" (đã thử lại) → chưa tạo file; đã ghi lý do vào cột E.
+- Một vài anchor khó khớp chủ đề bài (VD "giá điện sinh hoạt mới nhất" trong bài nạp thẻ Viettel dòng 324, "mở tài khoản cho học sinh"
+  trong bài quét NFC dòng 328) — đã đặt ở chỗ hợp ngữ cảnh nhất có thể.
