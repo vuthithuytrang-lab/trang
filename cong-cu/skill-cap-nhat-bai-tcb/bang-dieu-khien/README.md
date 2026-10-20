@@ -30,6 +30,8 @@ Bài làm lần đầu chưa đóng gói thì **chưa** thêm vào bảng.
 ⛔ **Cập nhật, không thay đổi nội dung** (Trang dặn 14/10/2026): chỉ đổi số/ngày/tháng; giữ nguyên câu chữ và dạng câu của bài (khoảng vẫn là khoảng, không thêm "(theo …)", không đổi tên riêng). Không cập nhật được đúng dạng → giữ nguyên + ghi cần duyệt.
 
 1. Đọc `A1:Z200` của tab đầu. Dòng nào ô E = TRUE và B có link → cần chạy. **Không có dòng nào → dừng ngay, không làm gì thêm.**
+   ⛔ **Chỉ chạy đúng các dòng được tích** (Trang dặn 20/10/2026, để đỡ tốn token): dòng không tích thì không đọc bài, không lấy nguồn,
+   không tạo Docs — kể cả khi Trang nhắn chung chung "update giá".
 2. Ngày hôm nay `TZ=Asia/Ho_Chi_Minh`. Tìm cột có tiêu đề = hôm nay (tiêu đề là số ngày kiểu Sheets, xem `formattedValue` dạng `d/m`).
    Chưa có → chèn 1 cột tại F (`insertDimension` COLUMNS start 5 end 6, `inheritFromBefore: false`),
    ghi F1 = số ngày Sheets của hôm nay (`numberValue` = số ngày kể từ 30/12/1899) với `numberFormat` `DATE` pattern `d/m`, in đậm, căn giữa.
@@ -46,6 +48,8 @@ Bài làm lần đầu chưa đóng gói thì **chưa** thêm vào bảng.
    - URL là bài lãi suất `lai-suat-tiet-kiem` (Bài 1) hoặc `cach-tinh-lai-suat-tien-gui-tiet-kiem` (Bài 2) → công cụ lãi suất
      `/home/user/trang/cong-cu/cap-nhat-lai-suat/` (đọc `QUY-TRINH.md`, mục "Cách chạy"; `cap-nhat.py lay` → `dung <ngày>` dựng cả 2 bài).
      Chỉ tạo Docs cho bài có dòng được tích; `bao-cao` lưu ở `cong-cu/cap-nhat-lai-suat/bao-cao/`. Dòng 10–11 trong sheet (thêm 16/10/2026).
+   - Bài giá nhôm (`gia-nhom`), giá lúa gạo (`gia-lua-gao-hom-nay`), giá kim loại thế giới (`gia-kim-loai-the-gioi`) — thêm 20/10/2026,
+     **chưa có công thức** → quy trình chung `../cap-nhat-bai-tcb/SKILL.md`, nguồn ở cột D. Chạy ổn lần đầu thì đóng gói thành công thức.
    - URL khớp một công thức khác trong `../cong-thuc/` → làm theo công thức đó.
    - Còn lại → quy trình chung `../cap-nhat-bai-tcb/SKILL.md`, nguồn tham khảo lấy ở cột D;
      bài có bảng lãi suất tiết kiệm mà cột D trống → dùng nguồn mặc định VnExpress + Topi như SKILL.md.
