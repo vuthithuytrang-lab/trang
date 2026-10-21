@@ -1,0 +1,23 @@
+{
+ "bai1": {
+  "sua": [
+   {
+    "tim": "Giá bán ra: 5,866,000 VND/chỉ",
+    "thay": "Giá bán ra: 5,820,000 VND/chỉ",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – Vàng 416 (10K), cập nhật 21/10/2026 09:36:37"
+   },
+   {
+    "tim": "Giá mua vào: 4,876,000 VND/chỉ",
+    "thay": "Giá mua vào: 4,830,000 VND/chỉ",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – Vàng 416 (10K), cập nhật 21/10/2026 09:36:37"
+   }
+  ],
+  "can_duyet": []
+ }
+}
