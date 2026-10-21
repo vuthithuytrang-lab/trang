@@ -1,0 +1,172 @@
+{
+ "bai1": {
+  "sua": [
+   {
+    "tim": "3,272",
+    "thay": "3,113.25",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.tradingview.com/symbols/COMEX-ALI1!/contracts/",
+    "ly_do": "ALIN2027: giá 3,113.25 USD/tấn, thay đổi -0.45% (TradingView COMEX, mở bằng Chromium, 'As of today at 04:52 GMT' 21/10/2026; giữ đủ 2 số lẻ như nguồn, dấu trừ ghi '-')"
+   },
+   {
+    "tim": "-0.02%",
+    "thay": "-0.45%",
+    "lan": 6,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.tradingview.com/symbols/COMEX-ALI1!/contracts/",
+    "ly_do": "ALIN2027: giá 3,113.25 USD/tấn, thay đổi -0.45% (TradingView COMEX, mở bằng Chromium, 'As of today at 04:52 GMT' 21/10/2026; giữ đủ 2 số lẻ như nguồn, dấu trừ ghi '-')"
+   },
+   {
+    "tim": "3,262",
+    "thay": "3,103.25",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.tradingview.com/symbols/COMEX-ALI1!/contracts/",
+    "ly_do": "ALIM2027: giá 3,103.25 USD/tấn, thay đổi -0.45% (TradingView COMEX, mở bằng Chromium, 'As of today at 04:52 GMT' 21/10/2026; giữ đủ 2 số lẻ như nguồn, dấu trừ ghi '-')"
+   },
+   {
+    "tim": "-0.02%",
+    "thay": "-0.45%",
+    "lan": 5,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.tradingview.com/symbols/COMEX-ALI1!/contracts/",
+    "ly_do": "ALIM2027: giá 3,103.25 USD/tấn, thay đổi -0.45% (TradingView COMEX, mở bằng Chromium, 'As of today at 04:52 GMT' 21/10/2026; giữ đủ 2 số lẻ như nguồn, dấu trừ ghi '-')"
+   },
+   {
+    "tim": "3,263",
+    "thay": "3,094.25",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.tradingview.com/symbols/COMEX-ALI1!/contracts/",
+    "ly_do": "ALIK2027: giá 3,094.25 USD/tấn, thay đổi -0.63% (TradingView COMEX, mở bằng Chromium, 'As of today at 04:52 GMT' 21/10/2026; giữ đủ 2 số lẻ như nguồn, dấu trừ ghi '-')"
+   },
+   {
+    "tim": "-0.02%",
+    "thay": "-0.63%",
+    "lan": 4,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.tradingview.com/symbols/COMEX-ALI1!/contracts/",
+    "ly_do": "ALIK2027: giá 3,094.25 USD/tấn, thay đổi -0.63% (TradingView COMEX, mở bằng Chromium, 'As of today at 04:52 GMT' 21/10/2026; giữ đủ 2 số lẻ như nguồn, dấu trừ ghi '-')"
+   },
+   {
+    "tim": "3,263",
+    "thay": "3,086.25",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.tradingview.com/symbols/COMEX-ALI1!/contracts/",
+    "ly_do": "ALIJ2027: giá 3,086.25 USD/tấn, thay đổi -0.76% (TradingView COMEX, mở bằng Chromium, 'As of today at 04:52 GMT' 21/10/2026; giữ đủ 2 số lẻ như nguồn, dấu trừ ghi '-')"
+   },
+   {
+    "tim": "-0.02%",
+    "thay": "-0.76%",
+    "lan": 3,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.tradingview.com/symbols/COMEX-ALI1!/contracts/",
+    "ly_do": "ALIJ2027: giá 3,086.25 USD/tấn, thay đổi -0.76% (TradingView COMEX, mở bằng Chromium, 'As of today at 04:52 GMT' 21/10/2026; giữ đủ 2 số lẻ như nguồn, dấu trừ ghi '-')"
+   },
+   {
+    "tim": "3,264",
+    "thay": "3,081.50",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.tradingview.com/symbols/COMEX-ALI1!/contracts/",
+    "ly_do": "ALIH2027: giá 3,081.50 USD/tấn, thay đổi -0.83% (TradingView COMEX, mở bằng Chromium, 'As of today at 04:52 GMT' 21/10/2026; giữ đủ 2 số lẻ như nguồn, dấu trừ ghi '-')"
+   },
+   {
+    "tim": "-0.02%",
+    "thay": "-0.83%",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.tradingview.com/symbols/COMEX-ALI1!/contracts/",
+    "ly_do": "ALIH2027: giá 3,081.50 USD/tấn, thay đổi -0.83% (TradingView COMEX, mở bằng Chromium, 'As of today at 04:52 GMT' 21/10/2026; giữ đủ 2 số lẻ như nguồn, dấu trừ ghi '-')"
+   },
+   {
+    "tim": "3,251",
+    "thay": "3,083.25",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.tradingview.com/symbols/COMEX-ALI1!/contracts/",
+    "ly_do": "ALIG2027: giá 3,083.25 USD/tấn, thay đổi -0.72% (TradingView COMEX, mở bằng Chromium, 'As of today at 04:52 GMT' 21/10/2026; giữ đủ 2 số lẻ như nguồn, dấu trừ ghi '-')"
+   },
+   {
+    "tim": "-0.22%",
+    "thay": "-0.72%",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.tradingview.com/symbols/COMEX-ALI1!/contracts/",
+    "ly_do": "ALIG2027: giá 3,083.25 USD/tấn, thay đổi -0.72% (TradingView COMEX, mở bằng Chromium, 'As of today at 04:52 GMT' 21/10/2026; giữ đủ 2 số lẻ như nguồn, dấu trừ ghi '-')"
+   },
+   {
+    "tim": "3,245",
+    "thay": "3,095.50",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.tradingview.com/symbols/COMEX-ALI1!/contracts/",
+    "ly_do": "ALIF2027: giá 3,095.50 USD/tấn, thay đổi +0.37% (TradingView COMEX, mở bằng Chromium, 'As of today at 04:52 GMT' 21/10/2026; giữ đủ 2 số lẻ như nguồn, dấu trừ ghi '-')"
+   },
+   {
+    "tim": "-0.27%",
+    "thay": "+0.37%",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.tradingview.com/symbols/COMEX-ALI1!/contracts/",
+    "ly_do": "ALIF2027: giá 3,095.50 USD/tấn, thay đổi +0.37% (TradingView COMEX, mở bằng Chromium, 'As of today at 04:52 GMT' 21/10/2026; giữ đủ 2 số lẻ như nguồn, dấu trừ ghi '-')"
+   },
+   {
+    "tim": "3,259",
+    "thay": "3,158.50",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.tradingview.com/symbols/COMEX-ALI1!/contracts/",
+    "ly_do": "ALIZ2026: giá 3,158.50 USD/tấn, thay đổi +1.06% (TradingView COMEX, mở bằng Chromium, 'As of today at 04:52 GMT' 21/10/2026; giữ đủ 2 số lẻ như nguồn, dấu trừ ghi '-')"
+   },
+   {
+    "tim": "+0.34%",
+    "thay": "+1.06%",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.tradingview.com/symbols/COMEX-ALI1!/contracts/",
+    "ly_do": "ALIZ2026: giá 3,158.50 USD/tấn, thay đổi +1.06% (TradingView COMEX, mở bằng Chromium, 'As of today at 04:52 GMT' 21/10/2026; giữ đủ 2 số lẻ như nguồn, dấu trừ ghi '-')"
+   },
+   {
+    "tim": "3,240",
+    "thay": "3,132.75",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.tradingview.com/symbols/COMEX-ALI1!/contracts/",
+    "ly_do": "ALIX2026: giá 3,132.75 USD/tấn, thay đổi -0.01% (TradingView COMEX, mở bằng Chromium, 'As of today at 04:52 GMT' 21/10/2026; giữ đủ 2 số lẻ như nguồn, dấu trừ ghi '-')"
+   },
+   {
+    "tim": "-0.25%",
+    "thay": "-0.01%",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.tradingview.com/symbols/COMEX-ALI1!/contracts/",
+    "ly_do": "ALIX2026: giá 3,132.75 USD/tấn, thay đổi -0.01% (TradingView COMEX, mở bằng Chromium, 'As of today at 04:52 GMT' 21/10/2026; giữ đủ 2 số lẻ như nguồn, dấu trừ ghi '-')"
+   },
+   {
+    "tim": "3,238",
+    "thay": "3,109.00",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.tradingview.com/symbols/COMEX-ALI1!/contracts/",
+    "ly_do": "ALIV2026: giá 3,109.00 USD/tấn, thay đổi -1.25% (TradingView COMEX, mở bằng Chromium, 'As of today at 04:52 GMT' 21/10/2026; giữ đủ 2 số lẻ như nguồn, dấu trừ ghi '-')"
+   },
+   {
+    "tim": "-0.02%",
+    "thay": "-1.25%",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.tradingview.com/symbols/COMEX-ALI1!/contracts/",
+    "ly_do": "ALIV2026: giá 3,109.00 USD/tấn, thay đổi -1.25% (TradingView COMEX, mở bằng Chromium, 'As of today at 04:52 GMT' 21/10/2026; giữ đủ 2 số lẻ như nguồn, dấu trừ ghi '-')"
+   }
+  ],
+  "can_duyet": [
+   "Bảng giá nhôm thế giới: nguồn TradingView ghi giá có 2 số lẻ (vd 3,132.75), bài cũ ghi số nguyên (vd 3,240). Theo quy tắc không làm tròn, giá mới giữ đủ 2 số lẻ như nguồn — nếu muốn ghi số nguyên như bài cũ thì cần làm tròn (vd 3,132.75 → 3,133), cần Trang chốt.",
+   "Bảng giá nhôm thế giới: số lấy lúc 04:52 GMT (11:52 giờ VN) 21/10/2026, TradingView ghi 'D' (giá trễ); hợp đồng ALIV2026 đáo hạn 28/10/2026 — lần cập nhật sau có thể phải cuộn mã hợp đồng.",
+   "Bảng giá nhôm trong nước: 7 dòng trùng khớp hoàn toàn với Phế Liệu Quang Phong (bảng 'Cập nhật ngày 21/10/2026', dù tiêu đề mục trên trang ghi 'tháng 5/2026') → không đổi.",
+   "Các số khác trong bài (85% bauxite, 60% sản lượng Trung Quốc, 45 triệu tấn/năm, thuế Section 232 50%, năm 2026): 2 nguồn không đề cập → giữ nguyên."
+  ]
+ }
+}
