@@ -1,0 +1,132 @@
+{
+ "bai1": {
+  "sua": [
+   {
+    "tim": "3.490",
+    "thay": "3.410",
+    "nguon": "https://baolamdong.vn/gia-ca-phe/the-gioi",
+    "ly_do": "Robusta London kỳ hạn 11/2026: giá khớp 3.410 USD/tấn (cập nhật 11:38 21/10/2026)"
+   },
+   {
+    "tim": "-100 USD/tấn",
+    "thay": "-74 USD/tấn",
+    "nguon": "https://baolamdong.vn/gia-ca-phe/the-gioi",
+    "ly_do": "Robusta London kỳ hạn 11/2026: giảm 74 so với phiên trước"
+   },
+   {
+    "tim": "3.472",
+    "thay": "3.424",
+    "nguon": "https://baolamdong.vn/gia-ca-phe/the-gioi",
+    "ly_do": "Robusta London kỳ hạn 01/2027: giá khớp 3.424 USD/tấn (cập nhật 11:38 21/10/2026)"
+   },
+   {
+    "tim": "-105 USD/tấn",
+    "thay": "-56 USD/tấn",
+    "nguon": "https://baolamdong.vn/gia-ca-phe/the-gioi",
+    "ly_do": "Robusta London kỳ hạn 01/2027: giảm 56 so với phiên trước"
+   },
+   {
+    "tim": "3.458",
+    "thay": "3.411",
+    "nguon": "https://baolamdong.vn/gia-ca-phe/the-gioi",
+    "ly_do": "Robusta London kỳ hạn 03/2027: giá khớp 3.411 USD/tấn (cập nhật 11:38 21/10/2026)"
+   },
+   {
+    "tim": "-101 USD/tấn",
+    "thay": "-47 USD/tấn",
+    "nguon": "https://baolamdong.vn/gia-ca-phe/the-gioi",
+    "ly_do": "Robusta London kỳ hạn 03/2027: giảm 47 so với phiên trước"
+   },
+   {
+    "tim": "3.449",
+    "thay": "3.401",
+    "nguon": "https://baolamdong.vn/gia-ca-phe/the-gioi",
+    "ly_do": "Robusta London kỳ hạn 05/2027: giá khớp 3.401 USD/tấn (cập nhật 11:38 21/10/2026)"
+   },
+   {
+    "tim": "-97 USD/tấn",
+    "thay": "-43 USD/tấn",
+    "nguon": "https://baolamdong.vn/gia-ca-phe/the-gioi",
+    "ly_do": "Robusta London kỳ hạn 05/2027: giảm 43 so với phiên trước"
+   },
+   {
+    "tim": "3.436",
+    "thay": "3.386",
+    "nguon": "https://baolamdong.vn/gia-ca-phe/the-gioi",
+    "ly_do": "Robusta London kỳ hạn 07/2027: giá khớp 3.386 USD/tấn (cập nhật 11:38 21/10/2026)"
+   },
+   {
+    "tim": "-96 USD/tấn",
+    "thay": "-42 USD/tấn",
+    "nguon": "https://baolamdong.vn/gia-ca-phe/the-gioi",
+    "ly_do": "Robusta London kỳ hạn 07/2027: giảm 42 so với phiên trước"
+   },
+   {
+    "tim": "294.25",
+    "thay": "311.30",
+    "nguon": "https://baolamdong.vn/gia-ca-phe/the-gioi",
+    "ly_do": "Arabica New York kỳ hạn 12/2026: giá khớp 311,30 cent/pound (cập nhật 11:38 21/10/2026)"
+   },
+   {
+    "tim": "-10.20 cent/pound",
+    "thay": "-4.40 cent/pound",
+    "nguon": "https://baolamdong.vn/gia-ca-phe/the-gioi",
+    "ly_do": "Arabica New York kỳ hạn 12/2026: giảm 4,40 so với phiên trước"
+   },
+   {
+    "tim": "286.40",
+    "thay": "299.00",
+    "nguon": "https://baolamdong.vn/gia-ca-phe/the-gioi",
+    "ly_do": "Arabica New York kỳ hạn 03/2027: giá khớp 299,00 cent/pound (cập nhật 11:38 21/10/2026)"
+   },
+   {
+    "tim": "-9.45 cent/pound",
+    "thay": "-3.25 cent/pound",
+    "nguon": "https://baolamdong.vn/gia-ca-phe/the-gioi",
+    "ly_do": "Arabica New York kỳ hạn 03/2027: giảm 3,25 so với phiên trước"
+   },
+   {
+    "tim": "283.35",
+    "thay": "294.30",
+    "nguon": "https://baolamdong.vn/gia-ca-phe/the-gioi",
+    "ly_do": "Arabica New York kỳ hạn 05/2027: giá khớp 294,30 cent/pound (cập nhật 11:38 21/10/2026)"
+   },
+   {
+    "tim": "-9.15 cent/pound",
+    "thay": "-3.15 cent/pound",
+    "nguon": "https://baolamdong.vn/gia-ca-phe/the-gioi",
+    "ly_do": "Arabica New York kỳ hạn 05/2027: giảm 3,15 so với phiên trước"
+   },
+   {
+    "tim": "281.05",
+    "thay": "291.05",
+    "nguon": "https://baolamdong.vn/gia-ca-phe/the-gioi",
+    "ly_do": "Arabica New York kỳ hạn 07/2027: giá khớp 291,05 cent/pound (cập nhật 11:38 21/10/2026)"
+   },
+   {
+    "tim": "-8.90 cent/pound",
+    "thay": "-2.85 cent/pound",
+    "nguon": "https://baolamdong.vn/gia-ca-phe/the-gioi",
+    "ly_do": "Arabica New York kỳ hạn 07/2027: giảm 2,85 so với phiên trước"
+   },
+   {
+    "tim": "278.25",
+    "thay": "287.85",
+    "nguon": "https://baolamdong.vn/gia-ca-phe/the-gioi",
+    "ly_do": "Arabica New York kỳ hạn 09/2027: giá khớp 287,85 cent/pound (cập nhật 11:38 21/10/2026)"
+   },
+   {
+    "tim": "-8.95 cent/pound",
+    "thay": "-2.60 cent/pound",
+    "nguon": "https://baolamdong.vn/gia-ca-phe/the-gioi",
+    "ly_do": "Arabica New York kỳ hạn 09/2027: giảm 2,60 so với phiên trước"
+   }
+  ],
+  "can_duyet": [
+   "Giá lấy lúc nguồn ghi 'Cập nhật 11:38 ngày 21/10/2026' – trước giờ mở sàn London (~15h VN) và New York (~15h15 VN), nguồn ghi đang hiển thị giá chốt phiên hợp lệ gần nhất; nếu đăng sau 15h giá có thể đã đổi trong phiên.",
+   "Nguồn tự mâu thuẫn: bảng 'Giá cà phê thế giới theo ngày' ghi phiên 20/10/2026 Robusta 3.412 (giảm 68), Arabica 311,05 (giảm 4,65), trong khi bảng theo kỳ hạn ghi giá phiên trước của kỳ hạn đại diện là 3.480 (Robusta 01/2027) và 315,70 (Arabica 12/2026). Bài dùng bảng theo kỳ hạn (5 kỳ hạn đầu tiên) – nên đối chiếu thêm.",
+   "5 kỳ hạn đầu tiên trên nguồn trùng với bài (Robusta 11/2026–07/2027, Arabica 12/2026–09/2027) nên không phải cuộn tháng đáo hạn.",
+   "Ngày trong bài trên web đã là 21/10/2026 nên không có ô ngày nào bị đổi."
+  ]
+ }
+}

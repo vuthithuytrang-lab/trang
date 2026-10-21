@@ -1,0 +1,57 @@
+{
+ "bai1": {
+  "sua": [
+   {
+    "tim": "95.88",
+    "thay": "95.13",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – Vàng 680 (16.3K): 9,513,000 đ/chỉ = 95.13 triệu/lượng (cập nhật 21/10/2026 09:36:37)"
+   },
+   {
+    "tim": "85.98",
+    "thay": "85.23",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – Vàng 680 (16.3K): 8,523,000 đ/chỉ = 85.23 triệu/lượng (cập nhật 21/10/2026 09:36:37)"
+   },
+   {
+    "tim": "96.244",
+    "thay": "95.292",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – Nữ trang 68%: 9,529,200 đ/chỉ = 95.292 triệu/lượng (cập nhật 14:15:02 21/10/2026)"
+   },
+   {
+    "tim": "86.444",
+    "thay": "85.492",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – Nữ trang 68%: 8,549,200 đ/chỉ = 85.492 triệu/lượng (cập nhật 14:15:02 21/10/2026)"
+   },
+   {
+    "tim": "dao động 83.0 - 96.2 triệu VND/lượng, tương đương khoảng 8.30 - 9.62 triệu VND/chỉ",
+    "thay": "dao động 83.0 - 95.3 triệu VND/lượng, tương đương khoảng 8.30 - 9.53 triệu VND/chỉ",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "",
+    "ly_do": "tính từ bảng (sjc, pnj, mihong): thấp nhất giá mua 83 – cao nhất giá bán 95.292 triệu/lượng, làm tròn 1 số lẻ; theo chỉ = chia 10, 2 số lẻ",
+    "tinh_toan": true
+   },
+   {
+    "tim": "khoảng 83.0 - 96.2 triệu VND/lượng (mua vào - bán ra), tương đương khoảng 8.30 - 9.62 triệu VND/chỉ",
+    "thay": "khoảng 83.0 - 95.3 triệu VND/lượng (mua vào - bán ra), tương đương khoảng 8.30 - 9.53 triệu VND/chỉ",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "",
+    "ly_do": "tính từ bảng (sjc, pnj, mihong): thấp nhất giá mua 83 – cao nhất giá bán 95.292 triệu/lượng, làm tròn 1 số lẻ; theo chỉ = chia 10, 2 số lẻ",
+    "tinh_toan": true
+   }
+  ],
+  "can_duyet": []
+ }
+}
