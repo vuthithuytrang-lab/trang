@@ -1,0 +1,11 @@
+{
+  "bai1": {
+    "sua": [],
+    "can_duyet": [
+      "Bảng 1.2 (giá đồng thế giới): bài đang ghi các hợp đồng ALIV2026 … ALIN2027 với giá khoảng 3,238 – 3,272 USD — đây là mã hợp đồng NHÔM (ALI, sàn COMEX, USD/tấn), không phải đồng. Nguồn Trang đưa (Barchart HG*0) là đồng COMEX tính bằng USD/pound (21/10/2026: HGX26 6.5610 -0.21%, HGZ26 6.5975 -0.09%, HGF27 6.6440 +0.44%, HGH27 6.6955 -0.23%, HGK27 6.7690 -0.17%…). Không thể cập nhật mà không đổi mã hợp đồng và đơn vị nên giữ nguyên cả bảng — cần Trang/biên tập chốt bảng này dùng đồng HG hay nhôm ALI.",
+      "Bảng 1.1: dòng thứ 4 bài ghi 'Đồng cháy' (trùng tên dòng 3), nguồn ghi 'Đồng vàng' 105.000 – 155.000 — giữ nguyên tên theo quy tắc không đổi tên riêng, nhờ biên tập xem lại.",
+      "Bảng 1.1: dòng 1–2 viết dấu phẩy (155,000 - 250,000), dòng 3–4 viết dấu chấm (130.000 - 180.000) — giữ nguyên như bài, nhờ biên tập thống nhất nếu muốn.",
+      "Các số trong phần phân tích (thiếu khoảng 25% vào năm 2035; nhu cầu 26.7 triệu tấn năm 2024 → 34.1 triệu tấn năm 2040; năm 2025) không có trong 2 nguồn được đưa nên giữ nguyên."
+    ]
+  }
+}
