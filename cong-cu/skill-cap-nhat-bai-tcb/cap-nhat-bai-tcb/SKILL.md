@@ -45,7 +45,7 @@ Thiếu thứ nào → mục "Khi bị chặn / thiếu công cụ" cuối file.
 | Phạm vi | Cập nhật mọi chỗ lỗi thời mà nguồn xác nhận được. Người dùng chỉ định phần nào thì chỉ làm phần đó |
 | Tên file Docs | Hỏi; để tùy thì bỏ `ten_file` khỏi cấu hình — script lấy tiêu đề bài, bỏ phần ngày |
 | Thư mục Drive | "My Drive" |
-| Ngày ghi trên file | Giờ Việt Nam: chạy **trước 15h → hôm nay**, chạy **từ 15h trở đi → ngày hôm sau** (Trang chốt 08/10/2026): `TZ=Asia/Ho_Chi_Minh date -d "+9 hours" +%d/%m/%Y`. Áp dụng cho mọi ngày trong bài, tên file Docs và báo cáo |
+| Ngày ghi trên file | **Luôn là ngày hôm sau** theo giờ Việt Nam, không cần biết chạy lúc mấy giờ (Trang chốt 21/10/2026, thay quy tắc 15h cũ): `TZ=Asia/Ho_Chi_Minh date -d "+1 day" +%d/%m/%Y`. Áp dụng cho mọi ngày trong bài, tên file Docs và báo cáo |
 
 Chạy theo lịch, không ai trả lời → không hỏi, dùng mặc định, ghi rõ trong báo cáo.
 
