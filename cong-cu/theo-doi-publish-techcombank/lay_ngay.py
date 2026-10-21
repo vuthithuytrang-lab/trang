@@ -26,7 +26,7 @@ SO_LAN_THU_LAI = 2  # thử lại 2 lần sau lần đầu => tối đa 3 lần 
 THE_NGAY_BLOG = "div.article-header-body--date"
 MAU_ISO = re.compile(r"(\d{4})-(\d{2})-(\d{2})")
 MAU_DMY = re.compile(r"(?<!\d)(\d{1,2})/(\d{1,2})/(\d{4})(?!\d)")
-MAU_DM = re.compile(r"(?<![\d/])(\d{1,2})/(\d{1,2})(?![\d/])")
+MAU_DM = re.compile(r"\((\d{1,2})/(\d{1,2})\)")  # chỉ dạng "(21/10)", tránh nhầm "24/24", "24/7"
 
 
 @dataclass
