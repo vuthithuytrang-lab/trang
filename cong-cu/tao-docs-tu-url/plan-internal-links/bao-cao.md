@@ -239,3 +239,25 @@ Các dòng cũ (2–350) tự dời theo, không mất dữ liệu. Dòng 351–
   Một số dòng cũ (VD 42, 81, 224, 246…) từng viết hoa tên riêng (CIC, Viettel, Eco Card, eTax) khác sheet — báo nếu cần sửa về đúng chữ thường.
 - Vài anchor xa chủ đề bài (VD "giá điện sinh hoạt" trong bài Co-Loyalty dòng 379, "công ty dùng tài khoản cá nhân" dòng 394)
   — đã đặt ở chỗ hợp ngữ cảnh nhất có thể.
+
+---
+
+# Đợt 9 — dòng 408 → 510 (22/10/2026)
+
+**Kết quả:** 103/103 bài đã tạo file Docs, đủ 100% anchor (đúng nguyên văn sheet, kể cả chữ hoa/thường), tô vàng, ghi chú.
+Áp chuẩn content mới như các đợt trước.
+
+**Bố cục sheet đổi lần nữa:** sheet được chèn thêm cột **H "Danh mục"** → **link file Docs nay ở cột J (FILE BLOG)**,
+ghi chú vẫn ở cột F; cột I là URL đích tỷ giá, anchor cặp bắt đầu từ cột N. Link các đợt cũ tự dời sang J, đã kiểm tra.
+
+**Cần Trang xem:**
+- **Dòng 422 và 453:** sheet có 2 anchor cùng chữ "thuế thu nhập cá nhân" trỏ 2 URL khác nhau → đã chèn 2 link riêng, cách xa nhau.
+- **Chữ thường theo sheet:** "cic là gì", "kiểm tra cic", "tra cứu cic", "nộp thuế hộ trên etax", "eco card" được giữ đúng chữ thường như sheet
+  (trong câu nhìn hơi lạ vì đây là tên riêng). Nếu muốn viết hoa CIC / eTax / Eco Card thì báo để sửa đồng loạt.
+- **Dòng 472 (bài gốc lỗi link):** dòng ">>> Đọc thêm bài viết CIC là gì? Cách đăng nhập để kiểm tra CIC…" đang trỏ nhầm sang
+  `/thue-ho-kinh-doanh-2025` — đã giữ nguyên link cũ, nên báo đội web sửa.
+- **Dòng 488:** bài gốc đã có link chữ "lãi suất vay mua xe ô tô" trỏ trang sản phẩm vay mua ô tô; link mới cùng chữ trỏ bài blog
+  `lai-suat-vay-mua-o-to` theo sheet → bài có 2 link cùng chữ khác đích.
+- **Dòng 453:** bài gần như toàn hướng dẫn từng bước → 2 link thuế TNCN đặt sau danh sách bước và ở mục thời hạn hoàn thuế, không chèn giữa các bước.
+- Vài anchor 1 chữ ("vay") hoặc xa chủ đề bài (VD "lãi suất chứng chỉ tiền gửi" trong bài ESG dòng 420, "xếp hạng tín dụng" trong bài trái phiếu doanh nghiệp dòng 464)
+  — đã đặt ở chỗ hợp ngữ cảnh nhất có thể.
