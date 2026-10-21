@@ -1,0 +1,91 @@
+{
+ "bai1": {
+  "sua": [
+   {
+    "ngu_canh": "V7V26 10/2026 498.50 -1.50",
+    "tim": "498.50 -1.50",
+    "thay": "491.50 -0.50",
+    "giu_nguyen_so": true,
+    "nguon": "https://www.barchart.com/futures/quotes/V7V26/overview (trang bảng https://www.barchart.com/futures/quotes/V7V26/futures-prices?viewName=main không hiện bảng – API trả Forbidden – nên đọc từng hợp đồng trên Barchart)",
+    "ly_do": "Barchart V7V26: giá thanh toán (settlement, 's') phiên 20/10/2026 = 491.50, thay đổi -0.50"
+   },
+   {
+    "ngu_canh": "V7X26 11/2026 498.00 -2.00",
+    "tim": "498.00 -2.00",
+    "thay": "485.50 +0.50",
+    "giu_nguyen_so": true,
+    "nguon": "https://www.barchart.com/futures/quotes/V7X26/overview (trang bảng https://www.barchart.com/futures/quotes/V7V26/futures-prices?viewName=main không hiện bảng – API trả Forbidden – nên đọc từng hợp đồng trên Barchart)",
+    "ly_do": "Barchart V7X26: giá thanh toán (settlement, 's') phiên 20/10/2026 = 485.50, thay đổi +0.50"
+   },
+   {
+    "ngu_canh": "V7Z26 12/2026 500.50 -0.50",
+    "tim": "500.50 -0.50",
+    "thay": "486.50 -1.00",
+    "giu_nguyen_so": true,
+    "nguon": "https://www.barchart.com/futures/quotes/V7Z26/overview (trang bảng https://www.barchart.com/futures/quotes/V7V26/futures-prices?viewName=main không hiện bảng – API trả Forbidden – nên đọc từng hợp đồng trên Barchart)",
+    "ly_do": "Barchart V7Z26: giá thanh toán (settlement, 's') phiên 20/10/2026 = 486.50, thay đổi -1.00"
+   },
+   {
+    "ngu_canh": "V7F27 1/2027 504.50 -1.00",
+    "tim": "504.50 -1.00",
+    "thay": "493.00 +0.50",
+    "giu_nguyen_so": true,
+    "nguon": "https://www.barchart.com/futures/quotes/V7F27/overview (trang bảng https://www.barchart.com/futures/quotes/V7V26/futures-prices?viewName=main không hiện bảng – API trả Forbidden – nên đọc từng hợp đồng trên Barchart)",
+    "ly_do": "Barchart V7F27: giá thanh toán (settlement, 's') phiên 20/10/2026 = 493.00, thay đổi +0.50"
+   },
+   {
+    "ngu_canh": "V7G27 2/2027 506.50 -1.50",
+    "tim": "506.50 -1.50",
+    "thay": "496.50 +0.50",
+    "giu_nguyen_so": true,
+    "nguon": "https://www.barchart.com/futures/quotes/V7G27/overview (trang bảng https://www.barchart.com/futures/quotes/V7V26/futures-prices?viewName=main không hiện bảng – API trả Forbidden – nên đọc từng hợp đồng trên Barchart)",
+    "ly_do": "Barchart V7G27: giá thanh toán (settlement, 's') phiên 20/10/2026 = 496.50, thay đổi +0.50"
+   },
+   {
+    "ngu_canh": "V7H27 3/2027 508.00 -1.00",
+    "tim": "508.00 -1.00",
+    "thay": "498.50 +0.50",
+    "giu_nguyen_so": true,
+    "nguon": "https://www.barchart.com/futures/quotes/V7H27/overview (trang bảng https://www.barchart.com/futures/quotes/V7V26/futures-prices?viewName=main không hiện bảng – API trả Forbidden – nên đọc từng hợp đồng trên Barchart)",
+    "ly_do": "Barchart V7H27: giá thanh toán (settlement, 's') phiên 20/10/2026 = 498.50, thay đổi +0.50"
+   },
+   {
+    "ngu_canh": "V7J27 4/2027 510.50 -1.00",
+    "tim": "510.50 -1.00",
+    "thay": "504.00 +0.50",
+    "giu_nguyen_so": true,
+    "nguon": "https://www.barchart.com/futures/quotes/V7J27/overview (trang bảng https://www.barchart.com/futures/quotes/V7V26/futures-prices?viewName=main không hiện bảng – API trả Forbidden – nên đọc từng hợp đồng trên Barchart)",
+    "ly_do": "Barchart V7J27: giá thanh toán (settlement, 's') phiên 20/10/2026 = 504.00, thay đổi +0.50"
+   },
+   {
+    "ngu_canh": "V7K27 5/2027 510.50 -1.00",
+    "tim": "510.50 -1.00",
+    "thay": "504.00 +0.50",
+    "giu_nguyen_so": true,
+    "nguon": "https://www.barchart.com/futures/quotes/V7K27/overview (trang bảng https://www.barchart.com/futures/quotes/V7V26/futures-prices?viewName=main không hiện bảng – API trả Forbidden – nên đọc từng hợp đồng trên Barchart)",
+    "ly_do": "Barchart V7K27: giá thanh toán (settlement, 's') phiên 20/10/2026 = 504.00, thay đổi +0.50"
+   },
+   {
+    "ngu_canh": "V7M27 6/2027 511.50 -0.50",
+    "tim": "511.50 -0.50",
+    "thay": "504.00 +0.50",
+    "giu_nguyen_so": true,
+    "nguon": "https://www.barchart.com/futures/quotes/V7M27/overview (trang bảng https://www.barchart.com/futures/quotes/V7V26/futures-prices?viewName=main không hiện bảng – API trả Forbidden – nên đọc từng hợp đồng trên Barchart)",
+    "ly_do": "Barchart V7M27: giá thanh toán (settlement, 's') phiên 20/10/2026 = 504.00, thay đổi +0.50"
+   },
+   {
+    "ngu_canh": "V7N27 7/2027 512.50 -2.00",
+    "tim": "512.50 -2.00",
+    "thay": "507.00 +0.50",
+    "giu_nguyen_so": true,
+    "nguon": "https://www.barchart.com/futures/quotes/V7N27/overview (trang bảng https://www.barchart.com/futures/quotes/V7V26/futures-prices?viewName=main không hiện bảng – API trả Forbidden – nên đọc từng hợp đồng trên Barchart)",
+    "ly_do": "Barchart V7N27: giá thanh toán (settlement, 's') phiên 20/10/2026 = 507.00, thay đổi +0.50"
+   }
+  ],
+  "can_duyet": [
+   "Bảng giá thép thế giới: giá Barchart là giá thanh toán phiên 20/10/2026 (giờ Mỹ) – phiên mới nhất có số khi chạy lúc 14h ngày 21/10/2026 (giờ VN). Bài không ghi chữ 's' sau giá nên giữ nguyên cách ghi không có 's'.",
+   "Bảng giá thép thế giới: bài cũ chỉ có mức thay đổi âm; mức tăng mới được ghi kèm dấu cộng (vd +0.50) đúng như Barchart – kiểm tra lại cách ghi này có hợp ý không.",
+   "Bảng giá thép trong nước: bảng steelonline.vn ngày 21-10-2026 (bảng mới nhất; trang ngày 22-10-2026 trở đi chưa có số) cho đúng các khoảng giá đang có trong bài (lấy thấp nhất – cao nhất ở tab đầu tiên của mỗi thương hiệu: VNĐ/kg và VNĐ/cây) và giá không đổi so với bảng 07-10-2026 → không sửa ô nào. Lưu ý: Hòa Phát, Việt Đức, Thép VAS, Pomina có nhiều tab miền, bài chỉ theo tab đầu (Hòa Phát tab 2: 14,720 - 15,120 / 106,278 - 843,129)."
+  ]
+ }
+}
