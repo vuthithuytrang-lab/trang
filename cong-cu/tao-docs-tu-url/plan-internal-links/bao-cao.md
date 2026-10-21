@@ -220,3 +220,22 @@ các cặp anchor/URL bắt đầu từ **cột K–L**. Cột E (ghi chú) và 
 - **Dòng 333** (`cach-tao-ma-qr`): trang bài gốc báo "Không tìm thấy trang" (đã thử lại) → chưa tạo file; đã ghi lý do vào cột E.
 - Một vài anchor khó khớp chủ đề bài (VD "giá điện sinh hoạt mới nhất" trong bài nạp thẻ Viettel dòng 324, "mở tài khoản cho học sinh"
   trong bài quét NFC dòng 328) — đã đặt ở chỗ hợp ngữ cảnh nhất có thể.
+
+---
+
+# Đợt 8 — dòng 351 → 407 (21/10/2026)
+
+**Kết quả:** 57/57 bài đã tạo file Docs, đủ 100% anchor (đúng nguyên văn sheet, kể cả chữ hoa/thường), tô vàng, ghi chú.
+Áp chuẩn content mới như đợt 5–7.
+
+**Bố cục sheet đổi (từ 21/10/2026):** sheet được chèn thêm 2 cột → **link file Docs nay ở cột I (FILE BLOG)**,
+**ghi chú ở cột F (Ghi chú)**; cột E là "Tình trạng", G/H là anchor/URL tỷ giá, anchor cặp bắt đầu từ cột M.
+Các dòng cũ (2–350) tự dời theo, không mất dữ liệu. Dòng 351–407 không có anchor tỷ giá.
+
+**Cần Trang xem:**
+- **Dòng 407:** sheet có 2 anchor cùng chữ "thuế thu nhập cá nhân" trỏ 2 URL khác nhau (bài tổng quan và bài cách tính)
+  → đã chèn 2 link riêng ở 2 chỗ cách xa nhau, mỗi chỗ hợp với bài đích của nó.
+- **Dòng 393:** anchor "nộp thuế hộ trên etax" giữ đúng chữ thường như sheet (trong bài các chỗ khác viết "eTax").
+  Một số dòng cũ (VD 42, 81, 224, 246…) từng viết hoa tên riêng (CIC, Viettel, Eco Card, eTax) khác sheet — báo nếu cần sửa về đúng chữ thường.
+- Vài anchor xa chủ đề bài (VD "giá điện sinh hoạt" trong bài Co-Loyalty dòng 379, "công ty dùng tài khoản cá nhân" dòng 394)
+  — đã đặt ở chỗ hợp ngữ cảnh nhất có thể.
