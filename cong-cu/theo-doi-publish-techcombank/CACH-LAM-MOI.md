@@ -11,6 +11,12 @@ Trang thấy bản cài Windows + Service Account quá rắc rối. Chốt lại
 - Agent tự chạy lấy ngày (`lay_ngay.py` trong thư mục này — techcombank vào được từ máy chủ cloud) rồi ghi vào sheet.
   Trang không phải cài gì.
 
+## ⏸️ ĐÃ DỪNG (21/10/2026)
+
+Trang nhờ dừng update publish từ 21/10/2026. Routine `trig_01QNyb6Qj58zr6aWAJv8WDD8` đã **tắt** (enabled=false),
+chưa xóa — muốn chạy lại chỉ cần `update_trigger` enabled=true. Sheet giữ nguyên dữ liệu đến cột 21/10 (AG–AH).
+Trang tự kiểm bằng Screaming Frog (Custom Extraction, xem `SCREAMING-FROG.md`).
+
 ## Tình trạng (05/10/2026 tối)
 
 - Trang đã kết nối lại Google Sheets bằng tài khoản seongon → Agent sửa được sheet.
