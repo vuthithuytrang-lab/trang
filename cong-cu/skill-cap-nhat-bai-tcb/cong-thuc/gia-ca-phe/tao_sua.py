@@ -105,6 +105,8 @@ def main():
     if not nb:
         loi.append('Không đọc được bảng giá trong nước trên Nhà Bè Agri.')
     co_bang_trong_nuoc = False
+    # cột "Thay đổi" viết theo bài: bài đang ghi "-1500" (không dấu phẩy) thì số mới cũng không dấu phẩy
+    khong_phay = any(r[0][0] in nb and re.fullmatch(r'[+-]?\d{4,}', r[2][0].strip()) for r in rows if len(r) > 2)
     for r in rows:
         ten = r[0][0]
         if ten in nb and re.fullmatch(r'[\d,\s\-]+', r[1][0]):
@@ -112,7 +114,7 @@ def main():
             gia, d = nb[ten]
             ly = f'{ten}: {so_nghin(gia)} đ/kg, thay đổi {d:+,} (Nhà Bè Agri, cập nhật {nb_gio})'
             them(r[1], so_nghin(gia), NHA_BE, ly)
-            them(r[2], 'Không đổi' if d == 0 else f'{d:+,}', NHA_BE, ly)
+            them(r[2], 'Không đổi' if d == 0 else (f'{d:+}' if khong_phay else f'{d:+,}'), NHA_BE, ly)
     if nb and not co_bang_trong_nuoc:
         loi.append('Không thấy bảng giá trong nước trong bài (cột Khu vực).')
 
