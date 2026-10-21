@@ -1,0 +1,18 @@
+{
+  "bai1": {
+    "sua": [
+      {"tim": "100.69", "thay": "110.05", "nguon": "https://vn.tradingview.com/symbols/UKOIL/",
+       "ly_do": "Giá Brent (UKOIL, TVC) 110.05 USD/thùng, tính đến 07:17 GMT 21/10/2026 (14:17 giờ VN), thị trường đang mở cửa"},
+      {"tim": "+2.15 USD (+2.18%)", "thay": "+0.90 USD (+0.82%)", "nguon": "https://vn.tradingview.com/symbols/UKOIL/",
+       "ly_do": "TradingView ghi +0.90 / +0.82% so với giá đóng cửa hôm trước 109.15 USD"},
+      {"tim": "111.43", "thay": "98.87", "nguon": "https://vn.tradingview.com/symbols/USOIL/",
+       "ly_do": "Giá WTI (USOIL, TVC) 98.87 USD/thùng, tính đến 07:18 GMT 21/10/2026 (14:18 giờ VN), thị trường đang mở cửa"},
+      {"tim": "+1.88 USD (+1.72%)", "thay": "+0.70 USD (+0.71%)", "nguon": "https://vn.tradingview.com/symbols/USOIL/",
+       "ly_do": "TradingView ghi +0.70 / +0.71% so với giá đóng cửa hôm trước 98.17 USD"}
+    ],
+    "can_duyet": [
+      "Giá Brent/WTI là giá giao dịch trong phiên (TradingView, lúc 07:17–07:18 GMT = 14:17–14:18 giờ VN ngày 21/10/2026), thị trường đang mở cửa nên số còn thay đổi trong ngày.",
+      "Đoạn mô tả đầu bài (sapo) nhắc \"diễn biến 5 ngày gần đây\" nhưng bài hiện không có bảng 5 ngày – giữ nguyên câu chữ, không thêm bảng."
+    ]
+  }
+}

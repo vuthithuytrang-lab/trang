@@ -1,0 +1,78 @@
+{
+ "_ghi_chu": {},
+ "_petrolimex_tcbc": {
+  "url": "https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-chu-dong-giam-gia-xang-dau-300-dong-litkg-de-chia-se-ap-luc-chi-phi-voi-nguoi-dan-va-doanh-nghiep.html",
+  "tieu_de": "Petrolimex chủ động giảm giá xăng dầu 300 đồng/lít,kg để chia sẻ áp lực chi phí với người dân và doanh nghiệp",
+  "anh": "cap-nhat/tam/plx-gia.jpg"
+ },
+ "petrolimex": {
+  "ky": "Petrolimex chủ động giảm giá xăng dầu 300 đồng/lít,kg để chia sẻ áp lực chi phí với người dân và doanh nghiệp (số theo topi.vn, đối chiếu ảnh thông cáo)",
+  "nguon": "https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-chu-dong-giam-gia-xang-dau-300-dong-litkg-de-chia-se-ap-luc-chi-phi-voi-nguoi-dan-va-doanh-nghiep.html",
+  "gia": {
+   "e10_95_v": [
+    27520,
+    28070
+   ],
+   "e10_95_iii": [
+    26720,
+    27250
+   ],
+   "e5_92": [
+    26670,
+    27200
+   ],
+   "do_0001": [
+    30200,
+    30800
+   ],
+   "do_005": [
+    28800,
+    29370
+   ],
+   "dau_hoa": [
+    30410,
+    31010
+   ]
+  }
+ },
+ "pvoil": {
+  "ky": "Petrolimex chủ động giảm giá xăng dầu 300 đồng/lít,kg để chia sẻ áp lực chi phí với người dân và doanh nghiệp (theo topi.vn)",
+  "nguon": "https://topi.vn/gia-xang-dau-hom-nay.html",
+  "gia": {
+   "e10_95_iii": [
+    26670
+   ],
+   "e5_92": [
+    26620
+   ],
+   "do_005": [
+    28750
+   ],
+   "do_0001": [
+    30200
+   ]
+  }
+ },
+ "mipec": {
+  "ky": "giá đang áp dụng trên mipec.com.vn",
+  "nguon": "https://www.mipec.com.vn/pages/gia-xang-dau-ban-le",
+  "gia": {
+   "e10_95_iii": [
+    26720,
+    27250
+   ],
+   "e5_92": [
+    26670,
+    27200
+   ],
+   "do_0001": [
+    30200,
+    30800
+   ],
+   "do_005": [
+    28800,
+    29370
+   ]
+  }
+ }
+}

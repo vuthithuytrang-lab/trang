@@ -1,0 +1,84 @@
+{
+ "bai1": {
+  "sua": [
+   {
+    "tim": "của PNJ ngày 21/10/2026",
+    "thay": "của PNJ ngày 16/10/2026",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "",
+    "ly_do": "đoạn xu hướng giữ số liệu cũ (không có nguồn lịch sử giá) nên giữ đúng ngày gốc của số liệu"
+   },
+   {
+    "tim": "83.66",
+    "thay": "83.19",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://huythanhjewelry.vn/gia-vang-hom-nay",
+    "ly_do": "Huy Thanh – Giá nguyên liệu 14K: 8,319,000 đ/chỉ = 83.19 triệu/lượng (cập nhật 09:00 ngày 21/10/2026)"
+   },
+   {
+    "tim": "79.72",
+    "thay": "79.32",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://huythanhjewelry.vn/gia-vang-hom-nay",
+    "ly_do": "Huy Thanh – Giá nguyên liệu 14K: 7,932,000 đ/chỉ = 79.32 triệu/lượng (cập nhật 09:00 ngày 21/10/2026)"
+   },
+   {
+    "tim": "82.49",
+    "thay": "81.84",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – Vàng 585 (14K): 8,184,000 đ/chỉ = 81.84 triệu/lượng (cập nhật 21/10/2026 09:36:37)"
+   },
+   {
+    "tim": "72.59",
+    "thay": "71.94",
+    "lan": 3,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – Vàng 585 (14K): 7,194,000 đ/chỉ = 71.94 triệu/lượng (cập nhật 21/10/2026 09:36:37)"
+   },
+   {
+    "tim": "82.536",
+    "thay": "81.72",
+    "lan": 3,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – Nữ trang 58,3%: 8,172,000 đ/chỉ = 81.72 triệu/lượng (cập nhật 14:15:02 21/10/2026)"
+   },
+   {
+    "tim": "72.736",
+    "thay": "71.92",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – Nữ trang 58,3%: 7,192,000 đ/chỉ = 71.92 triệu/lượng (cập nhật 14:15:02 21/10/2026)"
+   },
+   {
+    "tim": "dao động khoảng 72.59 - 82.536 triệu VND/lượng, tương đương khoảng 7.26 - 8.25 triệu VND/chỉ",
+    "thay": "dao động khoảng 71.92 - 81.84 triệu VND/lượng, tương đương khoảng 7.19 - 8.18 triệu VND/chỉ",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "",
+    "ly_do": "tính từ SJC + PNJ: thấp nhất giá mua 71.92 – cao nhất giá bán 81.84 triệu/lượng; theo chỉ = chia 10, làm tròn 2 số lẻ; chênh lệch mua–bán từng thương hiệu [9.8, 9.9]",
+    "tinh_toan": true
+   },
+   {
+    "tim": "dao động khoảng 72.59 - 82.536 triệu VND/lượng (mua vào - bán ra)* tùy thương hiệu, tương đương khoảng 7.26 - 8.25 triệu VND/chỉ",
+    "thay": "dao động khoảng 71.92 - 81.84 triệu VND/lượng (mua vào - bán ra)* tùy thương hiệu, tương đương khoảng 7.19 - 8.18 triệu VND/chỉ",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "",
+    "ly_do": "tính từ SJC + PNJ: thấp nhất giá mua 71.92 – cao nhất giá bán 81.84 triệu/lượng; theo chỉ = chia 10, làm tròn 2 số lẻ; chênh lệch mua–bán từng thương hiệu [9.8, 9.9]",
+    "tinh_toan": true
+   }
+  ],
+  "can_duyet": [
+   "Đoạn \"1.1. Xu hướng giá vàng 14K gần đây\": không có nguồn lịch sử giá PNJ để tính lại (so với phiên trước / 7 ngày / 1 tháng / cùng kỳ) – giữ nguyên số và ngày gốc 16/10/2026. Cần bạn quyết: bỏ đoạn này, giữ nguyên, hay đưa nguồn có lịch sử giá.",
+   "Mục 2 (ví dụ cách tính nhẫn 1.2 chỉ): là phép tính minh họa – theo quy tắc không tự cập nhật. Nếu muốn khớp giá hôm nay: giá bán PNJ 14K hiện 8,184,000 đ/chỉ."
+  ]
+ }
+}
