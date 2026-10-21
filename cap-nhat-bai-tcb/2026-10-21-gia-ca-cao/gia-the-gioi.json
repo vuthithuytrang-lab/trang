@@ -1,0 +1,257 @@
+{
+ "nguon": "Barchart core-api (mở bằng Chromium), lấy lúc 14h20 21/10/2026 giờ VN",
+ "new_york_eod": {
+  "CCZ26": {
+   "tradeTime": "10/20/2026",
+   "openPrice": "5,687",
+   "highPrice": "5,903",
+   "lowPrice": "5,634",
+   "lastPrice": "5,801",
+   "priceChange": "+114",
+   "volume": "19,390",
+   "raw": {
+    "tradeTime": "2026-10-20",
+    "openPrice": 5687,
+    "highPrice": 5903,
+    "lowPrice": 5634,
+    "lastPrice": 5801,
+    "priceChange": 114,
+    "volume": 19390
+   }
+  },
+  "CCH27": {
+   "tradeTime": "10/20/2026",
+   "openPrice": "5,786",
+   "highPrice": "6,014",
+   "lowPrice": "5,740",
+   "lastPrice": "5,921",
+   "priceChange": "+136",
+   "volume": "13,680",
+   "raw": {
+    "tradeTime": "2026-10-20",
+    "openPrice": 5786,
+    "highPrice": 6014,
+    "lowPrice": 5740,
+    "lastPrice": 5921,
+    "priceChange": 136,
+    "volume": 13680
+   }
+  },
+  "CCK27": {
+   "tradeTime": "10/20/2026",
+   "openPrice": "5,833",
+   "highPrice": "6,064",
+   "lowPrice": "5,790",
+   "lastPrice": "5,979",
+   "priceChange": "+148",
+   "volume": "5,026",
+   "raw": {
+    "tradeTime": "2026-10-20",
+    "openPrice": 5833,
+    "highPrice": 6064,
+    "lowPrice": 5790,
+    "lastPrice": 5979,
+    "priceChange": 148,
+    "volume": 5026
+   }
+  },
+  "CCN27": {
+   "tradeTime": "10/20/2026",
+   "openPrice": "5,848",
+   "highPrice": "6,071",
+   "lowPrice": "5,803",
+   "lastPrice": "5,999",
+   "priceChange": "+150",
+   "volume": "2,077",
+   "raw": {
+    "tradeTime": "2026-10-20",
+    "openPrice": 5848,
+    "highPrice": 6071,
+    "lowPrice": 5803,
+    "lastPrice": 5999,
+    "priceChange": 150,
+    "volume": 2077
+   }
+  },
+  "CCU27": {
+   "tradeTime": "10/20/2026",
+   "openPrice": "5,866",
+   "highPrice": "6,054",
+   "lowPrice": "5,795",
+   "lastPrice": "5,990",
+   "priceChange": "+148",
+   "volume": "1,145",
+   "raw": {
+    "tradeTime": "2026-10-20",
+    "openPrice": 5866,
+    "highPrice": 6054,
+    "lowPrice": 5795,
+    "lastPrice": 5990,
+    "priceChange": 148,
+    "volume": 1145
+   }
+  },
+  "CCZ27": {
+   "tradeTime": "10/20/2026",
+   "openPrice": "5,822",
+   "highPrice": "5,999",
+   "lowPrice": "5,743",
+   "lastPrice": "5,934",
+   "priceChange": "+139",
+   "volume": "502",
+   "raw": {
+    "tradeTime": "2026-10-20",
+    "openPrice": 5822,
+    "highPrice": 5999,
+    "lowPrice": 5743,
+    "lastPrice": 5934,
+    "priceChange": 139,
+    "volume": 502
+   }
+  },
+  "CCH28": {
+   "tradeTime": "10/20/2026",
+   "openPrice": "5,777",
+   "highPrice": "5,929",
+   "lowPrice": "5,693",
+   "lastPrice": "5,879",
+   "priceChange": "+128",
+   "volume": "93",
+   "raw": {
+    "tradeTime": "2026-10-20",
+    "openPrice": 5777,
+    "highPrice": 5929,
+    "lowPrice": 5693,
+    "lastPrice": 5879,
+    "priceChange": 128,
+    "volume": 93
+   }
+  },
+  "CCK28": {
+   "tradeTime": "10/20/2026",
+   "openPrice": "5,734",
+   "highPrice": "5,865",
+   "lowPrice": "5,680",
+   "lastPrice": "5,825",
+   "priceChange": "+114",
+   "volume": "37",
+   "raw": {
+    "tradeTime": "2026-10-20",
+    "openPrice": 5734,
+    "highPrice": 5865,
+    "lowPrice": 5680,
+    "lastPrice": 5825,
+    "priceChange": 114,
+    "volume": 37
+   }
+  },
+  "CCN28": {
+   "tradeTime": "10/20/2026",
+   "openPrice": "5,718",
+   "highPrice": "5,802",
+   "lowPrice": "5,718",
+   "lastPrice": "5,784",
+   "priceChange": "+100",
+   "volume": "7",
+   "raw": {
+    "tradeTime": "2026-10-20",
+    "openPrice": 5718,
+    "highPrice": 5802,
+    "lowPrice": 5718,
+    "lastPrice": 5784,
+    "priceChange": 100,
+    "volume": 7
+   }
+  },
+  "CCU28": {
+   "tradeTime": "10/20/2026",
+   "openPrice": "5,738",
+   "highPrice": "5,738",
+   "lowPrice": "5,738",
+   "lastPrice": "5,738",
+   "priceChange": "+90",
+   "volume": "0",
+   "raw": {
+    "tradeTime": "2026-10-20",
+    "openPrice": 5738,
+    "highPrice": 5738,
+    "lowPrice": 5738,
+    "lastPrice": 5738,
+    "priceChange": 90,
+    "volume": 0
+   }
+  }
+ },
+ "london": [
+  {
+   "symbol": "CAZ26",
+   "lastPrice": "4,300s",
+   "priceChange": "+47",
+   "previousPrice": "4,253",
+   "tradeTime": "10/20/26"
+  },
+  {
+   "symbol": "CAH27",
+   "lastPrice": "4,445s",
+   "priceChange": "+65",
+   "previousPrice": "4,380",
+   "tradeTime": "10/20/26"
+  },
+  {
+   "symbol": "CAK27",
+   "lastPrice": "4,480s",
+   "priceChange": "+75",
+   "previousPrice": "4,405",
+   "tradeTime": "10/20/26"
+  },
+  {
+   "symbol": "CAN27",
+   "lastPrice": "4,505s",
+   "priceChange": "+74",
+   "previousPrice": "4,431",
+   "tradeTime": "10/20/26"
+  },
+  {
+   "symbol": "CAU27",
+   "lastPrice": "4,449s",
+   "priceChange": "+78",
+   "previousPrice": "4,371",
+   "tradeTime": "10/20/26"
+  },
+  {
+   "symbol": "CAZ27",
+   "lastPrice": "4,362s",
+   "priceChange": "+74",
+   "previousPrice": "4,288",
+   "tradeTime": "10/20/26"
+  },
+  {
+   "symbol": "CAH28",
+   "lastPrice": "4,381s",
+   "priceChange": "+72",
+   "previousPrice": "4,309",
+   "tradeTime": "10/20/26"
+  },
+  {
+   "symbol": "CAK28",
+   "lastPrice": "4,339s",
+   "priceChange": "+70",
+   "previousPrice": "4,269",
+   "tradeTime": "10/20/26"
+  },
+  {
+   "symbol": "CAN28",
+   "lastPrice": "4,294s",
+   "priceChange": "+70",
+   "previousPrice": "4,224",
+   "tradeTime": "10/20/26"
+  },
+  {
+   "symbol": "CAU28",
+   "lastPrice": "4,247s",
+   "priceChange": "+68",
+   "previousPrice": "4,179",
+   "tradeTime": "10/20/26"
+  }
+ ]
+}
