@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="vi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tối ưu SEO &amp; GEO — Khám phụ khoa có đau không</title>
+<style>
+:root{--sg-xanh:#004AEF;--sg-xanh-sang:#0D53F0;--sg-navy:#002992;--sg-mint:#07EF9C;--sg-cyan:#0DD1FF;--sg-vang:#FFCE00;--sg-cam:#F68B1F;
+--sg-den:#151515;--sg-xam-nen:#F3F3F6;--sg-xam-vien:#DCDCDC;--mut:#5A6B66;
+--sg-chu:Gilroy,"Montserrat",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+--sg-dai-mau:linear-gradient(135deg,#002992 0%,#004AEF 55%,#0DD1FF 100%)}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--sg-den);font:16px/1.65 var(--sg-chu)}
+.w{max-width:1000px;margin:0 auto;padding:0 16px 60px}
+header{background:var(--sg-dai-mau);color:#fff;padding:26px 0 30px;margin-bottom:26px}
+header .w{padding-bottom:0}
+.logo{display:inline-block;background:#fff;border-radius:12px;padding:12px 16px;margin-bottom:18px}
+.logo img{width:170px;display:block}
+header h1{font-size:30px;line-height:1.25;margin:0 0 8px;font-weight:800}
+header .sub{font-size:14px;opacity:.92}
+h2{color:var(--sg-xanh);font-size:23px;margin:40px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--sg-xam-vien)}
+h2 .n{display:inline-block;background:var(--sg-xanh);color:#fff;border-radius:8px;padding:0 10px;margin-right:8px;font-size:18px}
+h3{font-size:18px;margin:22px 0 8px;color:var(--sg-navy)}
+.tw{overflow-x:auto;margin:10px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:600px}
+th,td{border:1px solid var(--sg-xam-vien);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--sg-xam-nen);color:var(--sg-navy);font-size:13px}
+.s{font-size:13px;color:var(--mut)}
+.box{background:var(--sg-xam-nen);border-left:4px solid var(--sg-xanh);border-radius:0 10px 10px 0;padding:14px 18px;margin:14px 0}
+.box.cam{border-left-color:var(--sg-cam)}
+.box b.t{display:block;margin-bottom:4px;color:var(--sg-navy)}
+.pill{display:inline-block;padding:0 9px;border-radius:20px;font-size:12px;font-weight:700;white-space:nowrap}
+.sai{background:#fdebd6;color:#8a4a07}.dung{background:#dff8ee;color:#05603f}.vua{background:#fff5cc;color:#6b5600}
+.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:16px 0}
+.kpi div{background:var(--sg-xam-nen);border-radius:12px;padding:14px}
+.kpi b{display:block;font-size:30px;color:var(--sg-xanh);line-height:1.1}
+.kpi b.m{color:#05a46b}
+/* bài viết */
+.art{border:1px solid var(--sg-xam-vien);border-radius:14px;padding:6px 26px 22px;margin-top:14px}
+.art h1{font-size:26px;color:var(--sg-navy);line-height:1.3;margin:20px 0 6px}
+.art h2{font-size:21px;border:0;margin:30px 0 8px;color:var(--sg-xanh)}
+.art .byline{font-size:13px;color:var(--mut)}
+.sum{background:#eef3ff;border:1px solid #c9d8ff;border-radius:12px;padding:14px 18px;margin:16px 0}
+.sum b.t{color:var(--sg-xanh);display:block;margin-bottom:4px;letter-spacing:.3px}
+.k1{background:#dbe6ff;border-radius:3px;padding:0 2px;font-weight:700}
+.k2{background:#d2fbeb;border-radius:3px;padding:0 2px;font-weight:700}
+.note{font-size:13px;color:var(--mut);font-style:italic}
+.cap{font-size:13px;color:var(--mut);background:var(--sg-xam-nen);padding:6px 10px;border-radius:6px;margin:6px 0 12px}
+.legend span{margin-right:12px}
+.bar{height:10px;background:var(--sg-xam-vien);border-radius:5px;overflow:hidden;min-width:90px}
+.bar i{display:block;height:100%;background:var(--sg-xanh)}
+.bar.af i{background:#05a46b}
+.art a{color:var(--sg-xanh);text-decoration:underline}
+footer{margin-top:40px;padding-top:12px;border-top:1px solid var(--sg-xam-vien);font-size:12.5px;color:var(--mut)}
+ol.ref li{font-size:13.5px;margin-bottom:4px}
+@media (max-width:600px){.art{padding:4px 14px 18px}header h1{font-size:25px}}
+@media print{header{-webkit-print-color-adjust:exact;print-color-adjust:exact}h2{break-after:avoid}tr,.box,.sum{break-inside:avoid}}
+</style></head><body>
+<header><div class="w">
+<div class="logo"><img src="data:image/webp;base64,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" alt="SEONGON"></div>
+<h1>Tối ưu SEO &amp; GEO: “Khám phụ khoa có đau không”</h1>
+<div class="sub">Key chính: <b>khám phụ khoa có đau không</b> · URL: hongngochospital.vn/vi/giai-dap-thac-mac-kham-phu-khoa-co-dau-khong · Định hướng: rút phần quy trình, nhường cho /kham-phu-khoa · Người chạy: Vũ Thị Thùy Trang · 22/10/2026</div>
+</div></header>
+<div class="w">
+
+<div class="kpi">
+<div><b>14</b>điểm sai / mâu thuẫn / trùng lặp cần sửa</div>
+<div><b>~45% → ~10%</b>dung lượng bài dành cho “quy trình” (ước tính; rút về 1 bảng + link)</div>
+<div><b>56 → 58</b>ký tự tiêu đề</div>
+<div><b class="m">43 → 81</b>điểm khả năng được AI trích dẫn (ước tính)</div>
+</div>
+
+<div class="box cam"><b class="t">Việc quan trọng nhất trước khi đăng</b>
+① <b>Hai bài đang tranh nhau một từ khoá.</b> Mình mở trang <a href="https://hongngochospital.vn/vi/kham-phu-khoa">/kham-phu-khoa</a> ngày 22/10/2026 và thấy trang đó cũng mô tả đủ 4 bước khám (bên ngoài – mỏ vịt – bằng tay – siêu âm), lại có sẵn mục FAQ 7.1 “Khám phụ khoa có đau không?”. Bài này lặp gần như nguyên phần đó. Cách xử lý: bài này chỉ nói <b>cảm giác</b>, còn <b>quy trình</b> trả hẳn về /kham-phu-khoa; đồng thời sửa FAQ 7.1 bên kia thành 2–3 câu kèm link sang bài này.<br>
+② Bài <b>khẳng định tuyệt đối</b> “hoàn toàn không gây đau” ở 3 chỗ, trong khi chính bài lại liệt kê 5 nguyên nhân có thể gây đau.<br>
+③ Lời khuyên <b>“chỉ đi khám khi đã hoàn toàn sạch kinh để tránh nhiễm trùng”</b> đưa ra lý do sai, và có thể khiến người đang ra máu bất thường hoặc đau bụng dời ngày khám.<br>
+④ Bài ghi <b>“hơn 25 năm kinh nghiệm”</b>, còn trang dịch vụ của chính bệnh viện ghi <b>“20+ năm”</b>.</div>
+
+<!-- 1 -->
+<h2><span class="n">1</span>Phân tích ý định tìm kiếm (Search Intent)</h2>
+<div class="tw"><table>
+<tr><th style="width:24%">Hạng mục</th><th>Phân tích</th></tr>
+<tr><td>Loại intent</td><td><b>Informational — chủ đạo</b>, gốc là <b>nỗi sợ</b>: người đọc đã định đi khám (hoặc buộc phải khám) và muốn biết có đau không, để quyết định đi hay hoãn. Commercial ngầm rất mạnh: đọc xong, người đọc yên tâm và sẵn sàng đặt lịch — đây là bài “đỡ” người đọc trước khi vào trang dịch vụ.</td></tr>
+<tr><td>Câu trả lời chính</td><td>Có đau không, đau mức nào, đau ở bước nào, kéo dài bao lâu.</td></tr>
+<tr><td>Thông tin bổ sung</td><td>Vì sao có người thấy đau; làm gì để bớt đau; quyền được dừng lại; đau sau khám có sao không.</td></tr>
+<tr><td>So sánh</td><td>Cảm giác khi đặt mỏ vịt, lấy tế bào cổ tử cung, siêu âm đầu dò, siêu âm bụng; người đã quan hệ khác người chưa quan hệ thế nào.</td></tr>
+<tr><td>Hướng dẫn</td><td>Chuẩn bị gì để khám nhẹ nhàng hơn; thở và thả lỏng thế nào; nói gì với bác sĩ.</td></tr>
+<tr><td>Phân vai với /kham-phu-khoa</td><td><b>Bài này:</b> cảm giác, nỗi sợ, cách giảm đau, trường hợp đặc biệt. <b>/kham-phu-khoa:</b> khám những gì, quy trình 5 bước, khi nào nên khám, chuẩn bị chung. Hai bài link chéo cho nhau.</td></tr>
+<tr><td>Chân dung người đọc (tự xác định)</td><td>
+① <b>Phụ nữ trẻ đi khám lần đầu</b> (khám tiền hôn nhân, khám vì có triệu chứng) — nhóm chính, sợ nhất.<br>
+② <b>Người chưa quan hệ tình dục</b> — lo mỏ vịt, lo ảnh hưởng màng trinh.<br>
+③ <b>Người từng khám bị đau</b> — muốn biết lần này làm sao đỡ hơn.<br>
+④ <b>Phụ nữ mãn kinh</b>, sau sinh — khô âm đạo nên dễ rát.<br>
+Đặc điểm chung: đọc trên điện thoại, cần được trấn an nhưng không muốn bị “dỗ” suông.</td></tr>
+</table></div>
+<h3>Câu hỏi người đọc thường hỏi thêm</h3>
+<ul>
+<li>Khám phụ khoa lần đầu có đau không?</li><li>Chưa quan hệ có khám phụ khoa được không, có phải đặt mỏ vịt không?</li>
+<li>Lấy tế bào cổ tử cung (Pap) có đau không?</li><li>Siêu âm đầu dò có đau không?</li>
+<li>Khám phụ khoa xong bị ra máu có sao không?</li><li>Đang có kinh có khám phụ khoa được không?</li>
+<li>Bà bầu khám phụ khoa có ảnh hưởng thai không?</li><li>Khám phụ khoa mất bao lâu?</li>
+</ul>
+
+<!-- 2 -->
+<h2><span class="n">2</span>Bản đồ thực thể (Entity Map)</h2>
+<div class="tw"><table>
+<tr><th>Entity</th><th>Loại</th><th>Vai trò trong bài viết</th></tr>
+<tr><td><b>Khám phụ khoa</b></td><td>Primary</td><td>Chủ thể — chỉ định nghĩa ngắn, phần chi tiết link sang /kham-phu-khoa</td></tr>
+<tr><td><b>Cảm giác đau / khó chịu khi khám</b></td><td>Primary</td><td>Trục nội dung chính của bài</td></tr>
+<tr><td>Mỏ vịt (speculum)</td><td>Secondary</td><td>Bước gây khó chịu nhiều nhất — có kích cỡ khác nhau</td></tr>
+<tr><td>Xét nghiệm tế bào cổ tử cung (Pap), xét nghiệm HPV</td><td>Secondary</td><td>Bước có thể gây gợn, co thắt nhẹ, ra ít máu</td></tr>
+<tr><td>Khám bằng tay (khám hai tay)</td><td>Secondary</td><td>Cảm giác áp lực; đau khi ấn là dấu hiệu bệnh</td></tr>
+<tr><td>Siêu âm đầu dò, siêu âm ổ bụng</td><td>Secondary</td><td>Hai lựa chọn — đặc biệt với người chưa quan hệ</td></tr>
+<tr><td>Cơ sàn chậu, co thắt âm đạo (vaginismus)</td><td>Related</td><td>Cơ chế chính gây đau — <b>bài gốc chưa nhắc tên</b></td></tr>
+<tr><td>Khô âm đạo, estrogen, mãn kinh, cho con bú</td><td>Related</td><td>Nguyên nhân gây rát</td></tr>
+<tr><td>Viêm vùng chậu, lạc nội mạc tử cung, u nang buồng trứng</td><td>Related</td><td>Bệnh lý khiến khám bị đau</td></tr>
+<tr><td>Màng trinh, người chưa quan hệ</td><td>Related</td><td>Mối lo lớn của nhóm đọc đông nhất</td></tr>
+<tr><td>Chất bôi trơn, người hỗ trợ (chaperone), quyền dừng khám</td><td>Supporting</td><td>Giải pháp giảm đau có bằng chứng — <b>bài gốc thiếu</b></td></tr>
+<tr><td>ACOG, ACS, WHO</td><td>Supporting</td><td>Nguồn bằng chứng</td></tr>
+<tr><td>ThS.BS Nguyễn Thị Thùy, BV Đa khoa Hồng Ngọc</td><td>Supporting</td><td>Chuyên gia — đã có lời trích thật trong bài</td></tr>
+</table></div>
+
+<!-- 3 -->
+<h2><span class="n">3</span>Độ phủ ngữ nghĩa (Semantic Coverage)</h2>
+<div class="tw"><table>
+<tr><th style="width:22%">Topic Cluster</th><th>Semantic Keywords</th><th style="width:16%">Intent</th></tr>
+<tr><td>Đồng nghĩa key chính</td><td>khám phụ khoa có đau không, đi khám phụ khoa có đau không, khám phụ khoa có đau lắm không, khám phụ khoa đau như thế nào, cảm giác khi khám phụ khoa</td><td>Informational</td></tr>
+<tr><td>Theo từng bước</td><td>đặt mỏ vịt có đau không, lấy tế bào cổ tử cung có đau không, siêu âm đầu dò có đau không, khám bằng tay có đau không</td><td>Informational</td></tr>
+<tr><td>Theo đối tượng</td><td>khám phụ khoa lần đầu có đau không, chưa quan hệ khám phụ khoa có đau không, bà bầu khám phụ khoa có đau không, mãn kinh khám phụ khoa bị rát</td><td>Informational</td></tr>
+<tr><td>Nguyên nhân đau</td><td>căng thẳng, co cơ sàn chậu, khô âm đạo, co thắt âm đạo, viêm nhiễm, mỏ vịt không vừa</td><td>Informational</td></tr>
+<tr><td>Cách giảm đau</td><td>mẹo khám phụ khoa không đau, thả lỏng khi khám phụ khoa, hít thở, mỏ vịt cỡ nhỏ, gel bôi trơn</td><td>Hướng dẫn</td></tr>
+<tr><td>Sau khám</td><td>khám phụ khoa xong bị ra máu, đau bụng sau khi khám phụ khoa</td><td>Informational</td></tr>
+<tr><td>Link về trang trụ cột (không viết sâu ở đây)</td><td>khám phụ khoa là khám những gì, quy trình khám phụ khoa, chuẩn bị trước khi khám, khi nào nên khám</td><td>Informational → trả về /kham-phu-khoa</td></tr>
+<tr><td>Hành động tiếp theo</td><td>chi phí khám phụ khoa, khám phụ khoa ở đâu, đặt lịch khám phụ khoa</td><td>Commercial / Navigational</td></tr>
+</table></div>
+
+<!-- 4 -->
+<h2><span class="n">4</span>Phân tích lỗ hổng nội dung (Content Gap)</h2>
+<h3>4A. Kiểm chứng — những chỗ sai / mâu thuẫn / trùng lặp</h3>
+<p class="s">Đối chiếu với Hội Sản Phụ khoa Hoa Kỳ (ACOG), Hội Ung thư Hoa Kỳ (ACS), WHO, và 2 trang của chính Hồng Ngọc (/kham-phu-khoa, /dich-vu-kham-phu-khoa) — mình đã mở đọc trực tiếp cả hai trang ngày 22/10/2026.</p>
+<div class="tw"><table>
+<tr><th style="width:4%">#</th><th style="width:24%">Bài gốc viết</th><th>Vấn đề</th><th style="width:24%">Sửa thành</th></tr>
+<tr><td>1</td><td>Mục 2 mô tả đủ 4 phương pháp khám, mỗi phương pháp có “Quy trình” + “Tình trạng đau”</td><td><span class="pill sai">Trùng lặp</span> Trang /kham-phu-khoa có đúng 4 mục này (2.1–2.4) — Google khó biết nên xếp hạng trang nào cho truy vấn nào.</td><td>Gộp thành <b>1 bảng cảm giác</b>, mô tả quy trình 1 dòng, link sang /kham-phu-khoa</td></tr>
+<tr><td>2</td><td>“Hoàn toàn không gây đau” (sapo, mục 1), “không hề gây đau” (mục 1), “hoàn toàn yên tâm” (mô tả)</td><td><span class="pill sai">Tuyệt đối hóa</span> ACOG: khám có thể gây cảm giác áp lực, khó chịu; người khô âm đạo, co thắt âm đạo, đang viêm hoặc có sang chấn có thể thấy đau. Bài tự mâu thuẫn vì chính mục 2.2 liệt kê 5 nguyên nhân gây đau.</td><td>“Đa số không đau, chỉ căng tức vài giây; nếu đau, hãy báo bác sĩ”</td></tr>
+<tr><td>3</td><td>“Chỉ đi khám khi đã hoàn toàn sạch kinh <b>để tránh nhiễm trùng</b>”</td><td><span class="pill sai">Lý do sai, rủi ro</span> Lý do thật: máu kinh làm khó đọc mẫu tế bào cổ tử cung (ACS). Viết như cũ dễ khiến người đang <b>ra máu bất thường, đau bụng</b> chờ hết kinh mới đi khám.</td><td>Khám định kỳ / làm Pap: hẹn ngoài kỳ kinh. Có triệu chứng bất thường: đi khám ngay</td></tr>
+<tr><td>4</td><td>Khám bằng tay: “ấn nhẹ để kiểm tra hình dạng và kích thước của <b>cổ tử cung</b>”</td><td><span class="pill sai">Thiếu, dễ hiểu sai</span> Khám hai tay: một tay trong âm đạo, tay kia ấn bụng dưới để đánh giá <b>tử cung, buồng trứng, vòi trứng</b>.</td><td>Sửa mô tả trong bảng</td></tr>
+<tr><td>5</td><td>Siêu âm đầu dò: “với những chị em <b>đã có gia đình</b>…”; “với thiếu nữ chưa quan hệ, bác sĩ có thể chỉ khám bên ngoài”</td><td><span class="pill vua">Thiếu &amp; lệch tiêu chí</span> Tiêu chí y khoa là đã quan hệ tình dục hay chưa, không phải đã kết hôn. Bỏ sót lựa chọn <b>siêu âm qua thành bụng</b> (hoặc qua trực tràng khi cần) cho người chưa quan hệ.</td><td>Thêm mục riêng cho người chưa quan hệ</td></tr>
+<tr><td>6</td><td>Siêu âm đầu dò “là kỹ thuật tương đối phức tạp”</td><td><span class="pill vua">Gây lo thêm</span> Câu này làm người đọc sợ hơn, trái với mục tiêu bài.</td><td>Bỏ</td></tr>
+<tr><td>7</td><td>Đau khi “khám trực tràng” là dấu hiệu bệnh</td><td><span class="pill vua">Dễ hiểu sai</span> Khám trực tràng vốn gây khó chịu. Dấu hiệu đáng chú ý là <b>đau khi bác sĩ ấn tử cung, buồng trứng</b> (gợi ý viêm vùng chậu, lạc nội mạc tử cung, u nang).</td><td>Viết lại</td></tr>
+<tr><td>8</td><td>“Hơn 25 năm kinh nghiệm”</td><td><span class="pill sai">Mâu thuẫn</span> Trang /dich-vu-kham-phu-khoa của bệnh viện ghi “20+ năm đồng hành cùng sức khỏe phụ nữ”.</td><td>Thống nhất theo trang dịch vụ — <b>cần bệnh viện xác nhận</b></td></tr>
+<tr><td>9</td><td>“Chuyên gia đầu ngành”, “tối tân”, “sang trọng… như đi nghỉ dưỡng”, “chăm sóc… đến hậu phẫu”</td><td><span class="pill vua">Quảng cáo quá đà</span> Bài y tế (Google xếp vào nhóm YMYL) bị chấm điểm thấp khi dùng tính từ rỗng. Luật Quảng cáo 2012 cấm từ “nhất, duy nhất, tốt nhất, số một” nếu không có tài liệu chứng minh. “Hậu phẫu” không liên quan đến khám.</td><td>Thay bằng con số có thật trên trang dịch vụ (20+ năm, 40+ bác sĩ, 400.000+ lượt khám)</td></tr>
+<tr><td>10</td><td>Kiêng quan hệ, thuốc đặt <b>3 ngày</b> (mục 3) / <b>72 giờ</b> (FAQ)</td><td><span class="pill dung">Không sai</span> ACS khuyên tối thiểu 2 ngày; 3 ngày là thận trọng hơn. Nhưng nội dung chuẩn bị này đã có ở /kham-phu-khoa (mục 5.1, FAQ 7.2).</td><td>Giữ 1 dòng, link sang /kham-phu-khoa</td></tr>
+<tr><td>11</td><td>Lời BS Thùy: “Tất cả phụ nữ <b>từ tuổi dậy thì</b> nên khám định kỳ” — FAQ: “hầu hết bé gái <b>không cần khám vùng chậu</b>”</td><td><span class="pill vua">Dễ hiểu là mâu thuẫn</span> Cả hai đều đúng nếu nói rõ: khám định kỳ ở tuổi vị thành niên chủ yếu là tư vấn, không phải đặt dụng cụ (ACOG: lần khám đầu 13–15 tuổi).</td><td>Thêm 1 câu giải thích ngay sau lời bác sĩ</td></tr>
+<tr><td>12</td><td>Tóm tắt: “4 kỹ thuật… giúp nhận diện chính xác bệnh lý và <b>mức độ đau tương ứng</b>”</td><td><span class="pill vua">Câu khó hiểu</span> Kỹ thuật khám không “nhận diện mức độ đau”.</td><td>Viết lại tóm tắt</td></tr>
+<tr><td>13</td><td>Thiếu dòng “Tham vấn chuyên môn”</td><td><span class="pill vua">E-E-A-T</span> Hai bài trước đều có; bài này chỉ có lời trích BS Thùy ở giữa bài.</td><td>Thêm byline BS Thùy (cần bệnh viện xác nhận)</td></tr>
+<tr><td>14</td><td>Lỗi trình bày</td><td><span class="pill vua">Biên tập</span> H2 “…giúp <b>chi</b> ” bị cụt; “khám bằng tay<b>"?"</b>” thừa ngoặc kép; 2 chú thích ảnh lặp ý; “1 người bệnh&nbsp;&nbsp;- 1 điều dưỡng” thừa dấu cách; lấy tế bào cổ tử cung gọi là “que lấy dịch”.</td><td>Đã sửa</td></tr>
+</table></div>
+<p class="s"><span class="pill dung">Đã đúng</span> Thời gian khám khoảng 5–10 phút · Mỏ vịt được sát trùng, bôi trơn, có nhiều cỡ · Người chưa quan hệ thường không đặt mỏ vịt · Không thụt rửa, không dùng dung dịch sát khuẩn trước khám · Lần khám đầu 13–15 tuổi, thường không khám vùng chậu (khớp ACOG) · Mô hình “1 bác sĩ – 1 điều dưỡng – 1 bệnh nhân” khớp trang dịch vụ.</p>
+
+<h3>4B. Những phần bài còn thiếu</h3>
+<div class="tw"><table>
+<tr><th style="width:22%">Loại thiếu</th><th>Chi tiết</th></tr>
+<tr><td>Missing entities</td><td>Co thắt âm đạo (vaginismus), cơ sàn chậu, chất bôi trơn, người hỗ trợ khi khám, siêu âm ổ bụng, xét nghiệm HPV</td></tr>
+<tr><td>Missing topics</td><td><b>Quyền được dừng / được báo trước từng bước</b> · Người chưa quan hệ khám thế nào · Mãn kinh, sau sinh, mang thai · <b>Đau, ra máu sau khi khám có bình thường không</b> · Khi nào cơn đau là dấu hiệu bệnh</td></tr>
+<tr><td>Missing questions</td><td>Pap có đau không? Đang có kinh có khám được không? Bà bầu khám có sao không? Khám xong ra máu có sao không?</td></tr>
+<tr><td>Missing statistics / evidence</td><td>Không có nguồn nào. Cần: ACOG về lần khám đầu và cách giảm khó chịu; ACOG về gel bôi trơn không ảnh hưởng kết quả Pap; ACS về chuẩn bị trước Pap; WHO về tầm soát ung thư cổ tử cung</td></tr>
+<tr><td>Thiếu examples / case study</td><td>Chưa có trải nghiệm thật (VD: người khám lần đầu, người có co thắt âm đạo được khám nhẹ nhàng). Cần bệnh viện cung cấp, ẩn danh — <b>không tự bịa</b></td></tr>
+</table></div>
+
+<!-- 5 -->
+<h2><span class="n">5</span>Đề xuất tăng giá trị thông tin (Information Gain)</h2>
+<div class="tw"><table>
+<tr><th style="width:22%">Loại</th><th>Đề xuất cụ thể</th><th style="width:16%">Trạng thái</th></tr>
+<tr><td>Comparison table</td><td><b>Bảng cảm giác từng bước</b>: bước – cảm giác thường gặp – kéo dài – khi nào thành đau. Một bảng thay cho 4 mục quy trình dài.</td><td><span class="pill dung">Đã thêm</span></td></tr>
+<tr><td>Step-by-step guide</td><td>8 việc giúp khám nhẹ nhàng, chia theo trước / trong khi khám, kèm <b>câu mẫu để nói với bác sĩ</b> — đối thủ gần như không có.</td><td><span class="pill dung">Đã thêm</span></td></tr>
+<tr><td>Data / evidence</td><td>ACOG: gel bôi trơn gốc nước lượng nhỏ không làm sai kết quả Pap; lần khám đầu 13–15 tuổi. ACS: tránh quan hệ, thụt rửa, thuốc đặt 2 ngày trước Pap. WHO: tầm soát HPV từ 30 tuổi.</td><td><span class="pill dung">Đã thêm</span></td></tr>
+<tr><td>Expert insight</td><td>Giữ nguyên lời thật của BS Thùy; thêm khung trống để bệnh viện bổ sung lời bác sĩ về các mẹo giảm đau thực tế ở phòng khám.</td><td><span class="pill vua">Cần bổ sung</span></td></tr>
+<tr><td>Case study</td><td>1 trải nghiệm khám lần đầu (ẩn danh, được đồng ý) — tác dụng trấn an rất mạnh với bài dạng “nỗi sợ”.</td><td><span class="pill vua">Cần bổ sung</span></td></tr>
+</table></div>
+
+<!-- 6 -->
+<h2 id="n6"><span class="n">6</span>Bài viết đã tối ưu GEO</h2>
+<div class="tw"><table>
+<tr><th style="width:16%">Thành phần</th><th>Bản gốc</th><th>Bản tối ưu</th></tr>
+<tr><td>Title</td><td>Khám phụ khoa có đau không? Những lưu ý khi khám thực tế <span class="s">(56 ký tự)</span></td><td><b>Khám phụ khoa có đau không? Cảm giác thật và cách giảm đau</b> <span class="s">(58 ký tự)</span><br><span class="s">Lý do đổi: “cảm giác thật” và “cách giảm đau” đúng nhu cầu người tìm hơn “những lưu ý” — vốn là phần của /kham-phu-khoa.</span></td></tr>
+<tr><td>Description</td><td>Lo sợ khám phụ khoa có đau không?… giúp chị em hoàn toàn yên tâm. <span class="s">(158 ký tự)</span></td><td><b>Khám phụ khoa có đau không? Đa số chỉ căng tức vài giây khi đặt mỏ vịt, siêu âm đầu dò. Vì sao có người thấy đau và 8 cách giúp khám nhẹ nhàng hơn.</b> <span class="s">(147 ký tự)</span></td></tr>
+<tr><td>Sapo</td><td>“…hoàn toàn không gây đau đớn…”</td><td>Giữ ý, bỏ tuyệt đối hóa (xem dưới)</td></tr>
+<tr><td>Phần quy trình</td><td>4 mục H3, mỗi mục có “Quy trình” + “Tình trạng đau”</td><td>1 bảng cảm giác + link sang /kham-phu-khoa</td></tr>
+<tr><td>Link nội bộ</td><td>0 link</td><td><b>11 link</b> (bảng ở cuối mục 8)</td></tr>
+</table></div>
+<p class="legend s">Tô màu để Trang dễ soát mật độ: <span><mark class="k1">key chính</mark></span>. Chữ <u>gạch chân xanh</u> là link nội bộ. Khi đưa lên web thì bỏ tô màu.</p>
+
+<div class="art">
+<h1>Khám phụ khoa có đau không? Cảm giác thật và cách giảm đau</h1>
+<div class="byline">Tham vấn chuyên môn: ThS.BS Nguyễn Thị Thùy – Phó khoa Sản – Phụ khoa – Bệnh viện Đa khoa Hồng Ngọc – Phúc Trường Minh <i>[cần bệnh viện xác nhận]</i> · Cập nhật: <i>[ngày cập nhật — cần bổ sung]</i></div>
+
+<p><b>Sapo:</b> <span class="k1">Khám phụ khoa có đau không</span>? Với đa số chị em, câu trả lời là không: bạn chỉ thấy hơi căng tức trong vài giây khi bác sĩ đặt mỏ vịt, lấy tế bào cổ tử cung hoặc đưa đầu dò siêu âm vào âm đạo. Cảm giác đau thường xuất hiện khi cơ thể căng cứng vì lo lắng, khi âm đạo khô hoặc đang viêm — và hầu hết có thể giảm được. Bài viết dưới đây của Bệnh viện Đa khoa Hồng Ngọc giải thích cảm giác ở từng bước, vì sao một số người thấy đau và 8 cách giúp lần khám nhẹ nhàng hơn.</p>
+
+<div class="sum"><b class="t">TÓM TẮT NHANH</b>
+<span class="k1">Khám phụ khoa có đau không</span>? Khám phụ khoa thường không đau; phần lớn chị em chỉ thấy căng tức hoặc áp lực trong vài giây khi đặt mỏ vịt, lấy tế bào cổ tử cung hay siêu âm đầu dò, và toàn bộ lần khám kéo dài khoảng 5–10 phút. Cảm giác đau có thể xuất hiện khi căng thẳng làm co cơ sàn chậu, khi âm đạo khô (mãn kinh, sau sinh) hoặc đang viêm nhiễm. Thả lỏng, hít thở chậm, đề nghị mỏ vịt cỡ nhỏ và báo ngay cho bác sĩ khi thấy đau là những cách giúp khám nhẹ nhàng hơn.</div>
+
+<div class="box"><b class="t">Những điểm chính</b>
+<ul style="margin:0;padding-left:20px">
+<li>Đa số không đau, chỉ <b>căng tức vài giây</b>; cả lần khám khoảng 5–10 phút.</li>
+<li>Bước dễ khó chịu nhất: <b>đặt mỏ vịt</b> và <b>lấy tế bào cổ tử cung</b>.</li>
+<li>Đau thường do <b>căng cơ vì lo lắng, khô âm đạo, viêm nhiễm</b> hoặc mỏ vịt không vừa.</li>
+<li>Bạn <b>có quyền</b> đề nghị mỏ vịt nhỏ hơn, yêu cầu báo trước từng bước và yêu cầu dừng bất cứ lúc nào.</li>
+<li>Người <b>chưa quan hệ</b> thường không phải đặt mỏ vịt; bác sĩ có thể siêu âm qua thành bụng.</li>
+</ul></div>
+
+<h2>1. Khám phụ khoa có đau không?</h2>
+<p><span class="k1">Khám phụ khoa có đau không</span> là nỗi lo khiến nhiều chị em trì hoãn việc đi khám. Thực tế, khám phụ khoa thường không gây đau. Hội Sản Phụ khoa Hoa Kỳ (ACOG) mô tả cảm giác phổ biến nhất là áp lực hoặc khó chịu nhẹ khi dụng cụ được đặt vào âm đạo, và cảm giác này hết ngay khi dụng cụ được lấy ra. Toàn bộ lần khám thường chỉ khoảng 5–10 phút.</p>
+<p>Tuy vậy, mỗi người cảm nhận khác nhau. Nếu bạn thấy <b>đau thật sự</b> chứ không chỉ căng tức, đó là tín hiệu cần báo ngay để bác sĩ điều chỉnh — đổi mỏ vịt nhỏ hơn, thêm gel bôi trơn, tạm dừng — hoặc tìm nguyên nhân gây đau.</p>
+<p>Khám phụ khoa là kiểm tra cơ quan sinh dục nữ từ ngoài vào trong (âm hộ, âm đạo, cổ tử cung, tử cung, buồng trứng) để phát hiện sớm bệnh lý. Nội dung và quy trình chi tiết từng bước, bạn xem tại bài <a href="https://hongngochospital.vn/vi/kham-phu-khoa">khám phụ khoa là khám những gì</a>.</p>
+
+<h2>2. Cảm giác ở từng bước khám phụ khoa</h2>
+<p>Bảng dưới đây tóm tắt cảm giác thường gặp ở từng bước, giúp bạn biết trước điều gì sẽ xảy ra. Tùy tình trạng sức khỏe, bác sĩ chỉ định những bước cần thiết, không phải ai cũng làm đủ tất cả.</p>
+<div class="tw"><table>
+<tr><th>Bước khám</th><th>Bác sĩ làm gì (tóm tắt)</th><th>Cảm giác thường gặp</th><th>Khi nào có thể đau</th></tr>
+<tr><td>Hỏi bệnh, khám bên ngoài</td><td>Hỏi triệu chứng, chu kỳ kinh; quan sát âm hộ, ấn nhẹ bụng dưới</td><td>Không đau</td><td>Đang có vết loét, sưng viêm ở âm hộ</td></tr>
+<tr><td>Đặt mỏ vịt</td><td>Đưa dụng cụ đã bôi trơn vào âm đạo và mở nhẹ để quan sát cổ tử cung</td><td>Mát lạnh, căng tức, áp lực — vài giây đến vài phút</td><td>Căng cơ, khô âm đạo, đang viêm, mỏ vịt quá cỡ</td></tr>
+<tr><td>Lấy tế bào cổ tử cung (Pap, HPV)</td><td>Dùng bàn chải nhỏ quét nhẹ cổ tử cung</td><td>Gợn nhẹ hoặc co thắt như đau bụng kinh nhẹ, vài giây</td><td>Cổ tử cung đang viêm; có thể ra ít máu sau đó — thường bình thường</td></tr>
+<tr><td>Khám bằng tay (khám hai tay)</td><td>Một tay đưa 1–2 ngón vào âm đạo, tay kia ấn bụng dưới để đánh giá tử cung, buồng trứng</td><td>Áp lực ở bụng dưới</td><td>Đau khi ấn có thể gợi ý viêm vùng chậu, lạc nội mạc tử cung, u nang buồng trứng</td></tr>
+<tr><td>Siêu âm đầu dò</td><td>Đưa đầu dò mảnh, bọc bao, có gel vào âm đạo</td><td>Căng tức nhẹ, ít hơn mỏ vịt</td><td>Có khối viêm, lạc nội mạc tử cung</td></tr>
+<tr><td>Siêu âm ổ bụng</td><td>Lướt đầu dò trên bụng; thường cần nhịn tiểu cho bàng quang đầy</td><td>Không đau, chỉ buồn tiểu</td><td>—</td></tr>
+</table></div>
+<p class="note">Bảng tổng hợp cảm giác thường gặp để tham khảo; quy trình đầy đủ xem tại <a href="https://hongngochospital.vn/vi/kham-phu-khoa">quy trình khám phụ khoa tổng quát</a>.</p>
+
+<h2>3. Vì sao có người thấy đau khi khám phụ khoa?</h2>
+<p>Đau khi khám phụ khoa thường có nguyên nhân rõ ràng và phần lớn khắc phục được:</p>
+<h3>Căng thẳng làm co cứng cơ sàn chậu</h3>
+<p>Khi lo lắng, cơ sàn chậu và cơ đùi tự co lại, làm lối vào âm đạo hẹp hơn nên việc đặt dụng cụ gây đau. Đây là nguyên nhân thường gặp nhất, nhất là ở lần khám đầu tiên.</p>
+<h3>Khô âm đạo</h3>
+<p>Nồng độ estrogen thấp ở tuổi mãn kinh, sau sinh, khi cho con bú hoặc khi dùng một số thuốc làm niêm mạc âm đạo mỏng và khô, dễ rát khi đặt dụng cụ. Bác sĩ có thể dùng mỏ vịt nhỏ và thêm gel bôi trơn.</p>
+<h3>Đang viêm nhiễm hoặc có bệnh lý vùng chậu</h3>
+<p>Viêm âm đạo, viêm cổ tử cung làm niêm mạc nhạy cảm hơn. Viêm vùng chậu, lạc nội mạc tử cung hay u nang buồng trứng có thể gây đau khi bác sĩ ấn khám. Trong trường hợp này, cơn đau là thông tin quan trọng giúp chẩn đoán — hãy mô tả rõ cho bác sĩ. Đọc thêm: <a href="https://hongngochospital.vn/vi/dau-bung-duoi-o-phu-nu-bao-hieu-dieu-gi">đau bụng dưới ở phụ nữ báo hiệu điều gì</a>, <a href="https://hongngochospital.vn/vi/lac-noi-mac-tu-cung">lạc nội mạc tử cung</a>.</p>
+<h3>Co thắt âm đạo hoặc từng trải qua sang chấn</h3>
+<p>Co thắt âm đạo (vaginismus) là tình trạng cơ quanh âm đạo co lại ngoài ý muốn mỗi khi có vật đưa vào, khiến việc đặt dụng cụ rất đau hoặc không thực hiện được. Người từng bị xâm hại tình dục cũng có thể thấy rất căng thẳng khi khám. Hãy cho bác sĩ biết trước để được khám chậm hơn, giải thích từng bước, hoặc dùng phương pháp thay thế.</p>
+<h3>Dụng cụ không phù hợp</h3>
+<p>Mỏ vịt có nhiều cỡ. Người chưa sinh con, người mãn kinh hoặc người có âm đạo hẹp thường cần cỡ nhỏ hơn — bạn hoàn toàn có thể đề nghị.</p>
+
+<h2>4. Làm gì để khám phụ khoa ít đau hơn?</h2>
+<h3>Trước khi khám</h3>
+<ol>
+<li><b>Chọn thời điểm phù hợp:</b> nếu khám định kỳ hoặc làm xét nghiệm tế bào cổ tử cung, hẹn vào ngày không có kinh. Nếu đang có triệu chứng bất thường (ra máu nhiều, đau bụng, sốt), hãy đi khám ngay, không cần chờ hết kinh. Xem thêm <a href="https://hongngochospital.vn/vi/thoi-diem-vang-de-tham-kham-phu-khoa">thời điểm vàng để thăm khám phụ khoa</a>.</li>
+<li><b>Không thụt rửa, không đặt thuốc, không quan hệ</b> 2–3 ngày trước khám (Hội Ung thư Hoa Kỳ khuyên tối thiểu 2 ngày trước xét nghiệm Pap). Các lưu ý chuẩn bị đầy đủ có tại <a href="https://hongngochospital.vn/vi/kham-phu-khoa">bài hướng dẫn khám phụ khoa</a>.</li>
+<li><b>Đi tiểu trước khi khám</b> (trừ khi được hẹn siêu âm ổ bụng) — bàng quang rỗng giúp bớt cảm giác tức khi bác sĩ ấn bụng.</li>
+<li><b>Mặc váy hoặc đồ rộng</b> để thay đồ nhanh, đỡ ngại.</li>
+</ol>
+<h3>Trong khi khám</h3>
+<ol start="5">
+<li><b>Nói trước điều bạn lo:</b> lần đầu khám, chưa quan hệ, từng bị đau, mãn kinh, từng trải qua sang chấn. Câu mẫu: <i>“Đây là lần đầu tôi khám, tôi hơi sợ, bác sĩ báo trước giúp tôi từng bước nhé.”</i></li>
+<li><b>Đề nghị mỏ vịt cỡ nhỏ và thêm gel bôi trơn.</b> ACOG cho biết dùng một lượng nhỏ gel bôi trơn gốc nước không làm sai lệch kết quả xét nghiệm tế bào cổ tử cung.</li>
+<li><b>Hít thở chậm bằng bụng,</b> thả lỏng đùi và mông, để đầu gối ngả sang hai bên thay vì khép lại. Thở ra từ từ đúng lúc bác sĩ đặt dụng cụ.</li>
+<li><b>Bạn có quyền yêu cầu dừng bất cứ lúc nào.</b> Bạn cũng có thể đề nghị có điều dưỡng hoặc người thân ở bên.</li>
+</ol>
+<div class="box"><b class="t">Ý kiến bác sĩ</b><i>[Cần bổ sung: 1–2 câu thật của bác sĩ Khoa Sản – Phụ khoa Hồng Ngọc về cách giúp người bệnh thả lỏng khi khám, hoặc kinh nghiệm khám cho người lần đầu. Không tự viết thay bác sĩ.]</i></div>
+
+<h2>5. Những trường hợp đặc biệt</h2>
+<h3>Người chưa quan hệ tình dục</h3>
+<p>Người chưa quan hệ thường không được đặt mỏ vịt hay siêu âm đầu dò. Bác sĩ khám bên ngoài và, nếu cần xem tử cung, buồng trứng, sẽ siêu âm qua thành bụng; trường hợp cần thiết có thể siêu âm qua đường trực tràng. Hãy nói rõ với bác sĩ ngay từ đầu.</p>
+<h3>Phụ nữ mang thai</h3>
+<p>Khám phụ khoa khi mang thai là an toàn khi được bác sĩ chỉ định. Bác sĩ sẽ cân nhắc từng bước theo tuổi thai; bạn nên báo ngay nếu có ra máu, đau bụng hay ra nước âm đạo. Xem thêm: <a href="https://hongngochospital.vn/vi/me-bau-bi-viem-phu-khoa">mẹ bầu bị viêm phụ khoa</a>.</p>
+<h3>Phụ nữ mãn kinh hoặc sau sinh</h3>
+<p>Âm đạo khô do thiếu estrogen dễ gây rát. Hãy báo bác sĩ để được dùng mỏ vịt nhỏ, nhiều gel bôi trơn; nếu khô rát kéo dài, bác sĩ có thể tư vấn điều trị. Tìm hiểu: <a href="https://hongngochospital.vn/vi/man-kinh-la-gi">mãn kinh là gì</a>.</p>
+
+<h2>6. Sau khi khám phụ khoa bị đau hoặc ra máu có sao không?</h2>
+<p>Sau khi lấy tế bào cổ tử cung, ra một ít máu hồng hoặc nâu, hơi gợn bụng dưới trong 1–2 ngày là bình thường. Bạn nên đi khám lại nếu:</p>
+<ul>
+<li>Chảy máu nhiều như hành kinh hoặc kéo dài hơn vài ngày.</li>
+<li>Đau bụng tăng dần, sốt.</li>
+<li>Khí hư có mùi hôi bất thường — xem thêm <a href="https://hongngochospital.vn/vi/phu-khoa-co-mui-hoi">phụ khoa có mùi hôi</a>.</li>
+</ul>
+
+<h2>7. Vì sao không nên vì sợ đau mà bỏ khám phụ khoa?</h2>
+<p>ThS.BS Nguyễn Thị Thùy (Phó khoa Sản – Phụ khoa, Bệnh viện Đa khoa Hồng Ngọc – Phúc Trường Minh) khuyến cáo: “Tất cả phụ nữ từ tuổi dậy thì nên thăm khám phụ khoa định kỳ tại các bệnh viện uy tín, đảm bảo riêng tư để quá trình thăm khám thoải mái hơn.” Với tuổi vị thành niên, khám định kỳ chủ yếu là tư vấn và kiểm tra sức khỏe chung; ACOG khuyên lần khám đầu ở tuổi 13–15 và thường không cần khám bên trong.</p>
+<p>Khám định kỳ giúp phát hiện sớm viêm nhiễm, u xơ, u nang và đặc biệt là <a href="https://hongngochospital.vn/vi/tam-soat-ung-thu-co-tu-cung">tầm soát ung thư cổ tử cung</a> — bệnh ở giai đoạn sớm thường không có triệu chứng. WHO khuyến nghị phụ nữ từ 30 tuổi tầm soát bằng <a href="https://hongngochospital.vn/vi/xet-nghiem-hpv">xét nghiệm HPV</a> định kỳ 5–10 năm/lần. Bác sĩ sẽ tư vấn lịch phù hợp với độ tuổi và yếu tố nguy cơ của bạn. Ngoài ra, khám phụ khoa định kỳ giúp phát hiện sớm nguy cơ hiếm muộn.</p>
+
+<h2>8. Khám phụ khoa nhẹ nhàng, riêng tư tại Bệnh viện Đa khoa Hồng Ngọc</h2>
+<p>Khoa Sản – Phụ khoa, Bệnh viện Đa khoa Hồng Ngọc có hơn 20 năm đồng hành cùng sức khỏe phụ nữ, với hơn 40 bác sĩ Sản Phụ khoa và hơn 400.000 lượt khám, điều trị <i>(số liệu theo trang dịch vụ của bệnh viện)</i>. Để chị em bớt lo lắng khi khám:</p>
+<ul>
+<li><b>Phòng khám khép kín “1 bác sĩ – 1 điều dưỡng – 1 bệnh nhân”</b>, bảo mật thông tin.</li>
+<li><b>Bác sĩ giải thích trước từng bước,</b> điều chỉnh dụng cụ theo từng người.</li>
+<li><b>Thiết bị siêu âm, xét nghiệm hiện đại,</b> trả kết quả nhanh.</li>
+</ul>
+<p>Xem <a href="https://hongngochospital.vn/vi/chi-phi-kham-phu-khoa">chi phí khám phụ khoa</a> hoặc <a href="https://hongngochospital.vn/vi/dich-vu-kham-phu-khoa">đặt lịch khám phụ khoa</a> để được tư vấn trực tiếp. <b>[CTA: nút đặt lịch / hotline — cần bổ sung]</b></p>
+
+<h2>Kết luận</h2>
+<p>Tóm lại, <span class="k1">khám phụ khoa có đau không</span>? Với hầu hết chị em, khám phụ khoa chỉ gây căng tức trong vài giây và kết thúc sau khoảng 5–10 phút. Nếu bạn lo lắng, đang khô âm đạo, chưa quan hệ hoặc từng bị đau, hãy nói trước với bác sĩ để được điều chỉnh. Đừng để nỗi sợ đau khiến bạn bỏ lỡ cơ hội phát hiện sớm bệnh lý.</p>
+
+<h2>Câu hỏi thường gặp về khám phụ khoa có đau không</h2>
+<h3><span class="k1">Khám phụ khoa có đau không</span> nếu là lần đầu?</h3>
+<p>Lần đầu khám thường không đau, nhưng dễ căng thẳng nên cơ co lại và thấy tức hơn. Hãy báo bác sĩ đây là lần đầu để được giải thích từng bước, dùng mỏ vịt cỡ nhỏ và có thời gian thả lỏng.</p>
+<h3>Chưa quan hệ có phải đặt mỏ vịt không?</h3>
+<p>Thường là không. Với người chưa quan hệ, bác sĩ khám bên ngoài và siêu âm qua thành bụng khi cần xem tử cung, buồng trứng; bạn chỉ cần nói rõ với bác sĩ ngay từ đầu.</p>
+<h3>Lấy tế bào cổ tử cung (Pap) có đau không?</h3>
+<p>Đa số chỉ thấy gợn nhẹ hoặc co thắt giống đau bụng kinh nhẹ trong vài giây. Sau đó có thể ra ít máu hồng hoặc nâu trong 1–2 ngày, đây là hiện tượng bình thường.</p>
+<h3>Siêu âm đầu dò có đau không?</h3>
+<p>Siêu âm đầu dò thường không đau, chỉ căng tức nhẹ vì đầu dò mảnh, được bọc bao và bôi gel. Nếu thấy đau khi đầu dò chạm một vị trí, hãy báo bác sĩ vì đó có thể là dấu hiệu viêm hoặc lạc nội mạc tử cung.</p>
+<h3>Đang có kinh có khám phụ khoa được không?</h3>
+<p>Nếu khám định kỳ hoặc làm xét nghiệm tế bào cổ tử cung, nên hẹn vào ngày không có kinh vì máu kinh làm khó đọc mẫu. Nếu đang ra máu bất thường, đau bụng hoặc sốt, hãy đi khám ngay, không cần chờ hết kinh.</p>
+<h3>Bà bầu khám phụ khoa có ảnh hưởng đến thai không?</h3>
+<p>Khám phụ khoa khi mang thai là an toàn khi được bác sĩ chỉ định, vì bác sĩ sẽ điều chỉnh từng bước theo tuổi thai. Mẹ bầu nên báo ngay nếu có ra máu, đau bụng hoặc ra nước âm đạo.</p>
+<h3>Khám phụ khoa mất bao lâu?</h3>
+<p>Phần thăm khám thường chỉ khoảng 5–10 phút. Tổng thời gian có thể lâu hơn nếu cần làm thêm siêu âm hoặc xét nghiệm và chờ kết quả.</p>
+<h3>Bao nhiêu tuổi thì nên khám phụ khoa?</h3>
+<p>Hội Sản Phụ khoa Hoa Kỳ (ACOG) khuyên bé gái đi khám sức khỏe sinh sản lần đầu ở tuổi 13–15; lần này chủ yếu là tư vấn, thường không cần khám bên trong. Sau đó, chị em nên khám định kỳ và tầm soát ung thư cổ tử cung theo lịch bác sĩ tư vấn.</p>
+
+
+<p class="note">Lưu ý: Những thông tin trong bài viết chỉ có tính chất tham khảo, không thay thế cho việc chẩn đoán hoặc điều trị y khoa. Để biết chính xác tình trạng sức khỏe, người bệnh cần được bác sĩ trực tiếp thăm khám và tư vấn.</p>
+<p><b>Tài liệu tham khảo</b></p>
+<ol class="ref">
+<li>ACOG – Your First Gynecologic Visit (FAQ); Annual Women’s Health Care / Well-Woman Visit.</li>
+<li>ACOG – Cervical Cancer Screening (FAQ) và hướng dẫn về sử dụng chất bôi trơn khi lấy tế bào cổ tử cung.</li>
+<li>American Cancer Society – The Pap (Papanicolaou) Test: chuẩn bị trước khi xét nghiệm.</li>
+<li>WHO – Guideline for screening and treatment of cervical pre-cancer lesions, 2nd edition (2021).</li>
+<li>Bệnh viện Đa khoa Hồng Ngọc – Khám phụ khoa là khám những gì?; Dịch vụ khám phụ khoa (truy cập 22/10/2026).</li>
+</ol>
+</div>
+
+<!-- 7 -->
+<h2><span class="n">7</span>FAQ (bản để gắn Schema FAQPage)</h2>
+<p class="s">Mỗi câu trả lời 2–3 câu, đứng độc lập. Câu “bao nhiêu tuổi nên khám” giữ từ bài gốc; câu “cần chuẩn bị gì” đã bỏ vì trùng với FAQ 7.2 của /kham-phu-khoa.</p>
+<h3><span class="k1">Khám phụ khoa có đau không</span> nếu là lần đầu?</h3>
+<p>Lần đầu khám thường không đau, nhưng dễ căng thẳng nên cơ co lại và thấy tức hơn. Hãy báo bác sĩ đây là lần đầu để được giải thích từng bước, dùng mỏ vịt cỡ nhỏ và có thời gian thả lỏng.</p>
+<h3>Chưa quan hệ có phải đặt mỏ vịt không?</h3>
+<p>Thường là không. Với người chưa quan hệ, bác sĩ khám bên ngoài và siêu âm qua thành bụng khi cần xem tử cung, buồng trứng; bạn chỉ cần nói rõ với bác sĩ ngay từ đầu.</p>
+<h3>Lấy tế bào cổ tử cung (Pap) có đau không?</h3>
+<p>Đa số chỉ thấy gợn nhẹ hoặc co thắt giống đau bụng kinh nhẹ trong vài giây. Sau đó có thể ra ít máu hồng hoặc nâu trong 1–2 ngày, đây là hiện tượng bình thường.</p>
+<h3>Siêu âm đầu dò có đau không?</h3>
+<p>Siêu âm đầu dò thường không đau, chỉ căng tức nhẹ vì đầu dò mảnh, được bọc bao và bôi gel. Nếu thấy đau khi đầu dò chạm một vị trí, hãy báo bác sĩ vì đó có thể là dấu hiệu viêm hoặc lạc nội mạc tử cung.</p>
+<h3>Đang có kinh có khám phụ khoa được không?</h3>
+<p>Nếu khám định kỳ hoặc làm xét nghiệm tế bào cổ tử cung, nên hẹn vào ngày không có kinh vì máu kinh làm khó đọc mẫu. Nếu đang ra máu bất thường, đau bụng hoặc sốt, hãy đi khám ngay, không cần chờ hết kinh.</p>
+<h3>Bà bầu khám phụ khoa có ảnh hưởng đến thai không?</h3>
+<p>Khám phụ khoa khi mang thai là an toàn khi được bác sĩ chỉ định, vì bác sĩ sẽ điều chỉnh từng bước theo tuổi thai. Mẹ bầu nên báo ngay nếu có ra máu, đau bụng hoặc ra nước âm đạo.</p>
+<h3>Khám phụ khoa mất bao lâu?</h3>
+<p>Phần thăm khám thường chỉ khoảng 5–10 phút. Tổng thời gian có thể lâu hơn nếu cần làm thêm siêu âm hoặc xét nghiệm và chờ kết quả.</p>
+<h3>Bao nhiêu tuổi thì nên khám phụ khoa?</h3>
+<p>Hội Sản Phụ khoa Hoa Kỳ (ACOG) khuyên bé gái đi khám sức khỏe sinh sản lần đầu ở tuổi 13–15; lần này chủ yếu là tư vấn, thường không cần khám bên trong. Sau đó, chị em nên khám định kỳ và tầm soát ung thư cổ tử cung theo lịch bác sĩ tư vấn.</p>
+
+
+<!-- 8 -->
+<h2><span class="n">8</span>Điểm khả năng được AI trích dẫn</h2>
+<p class="s">Điểm ước tính theo kinh nghiệm GEO (không phải công cụ đo chính thức), mỗi tiêu chí 20 điểm.</p>
+<div class="tw"><table>
+<tr><th style="width:18%">Tiêu chí</th><th style="width:20%">Bài gốc</th><th style="width:20%">Bản tối ưu</th><th>Lý do &amp; cách cải thiện thêm</th></tr>
+<tr><td><b>Information Gain</b></td><td>6/20<div class="bar"><i style="width:30%"></i></div></td><td>15/20<div class="bar af"><i style="width:75%"></i></div></td><td>Bài gốc gần như lặp lại /kham-phu-khoa. Đã thêm bảng cảm giác từng bước, nguyên nhân gây đau, 8 cách giảm đau kèm câu mẫu, trường hợp đặc biệt, đau sau khám. Lên 18+ nếu có trải nghiệm thật và lời bác sĩ về mẹo giảm đau.</td></tr><tr><td><b>Semantic Coverage</b></td><td>10/20<div class="bar"><i style="width:50%"></i></div></td><td>17/20<div class="bar af"><i style="width:85%"></i></div></td><td>Đã thêm co thắt âm đạo, khô âm đạo, người chưa quan hệ, mang thai, mãn kinh, siêu âm ổ bụng, Pap/HPV.</td></tr><tr><td><b>Authority</b></td><td>11/20<div class="bar"><i style="width:55%"></i></div></td><td>15/20<div class="bar af"><i style="width:75%"></i></div></td><td>Có lời trích thật của BS Thùy (điểm cộng). Thiếu byline tham vấn và hộp hồ sơ bác sĩ; bổ sung + schema reviewedBy.</td></tr><tr><td><b>Structure</b></td><td>11/20<div class="bar"><i style="width:55%"></i></div></td><td>18/20<div class="bar af"><i style="width:90%"></i></div></td><td>Đã có tóm tắt nhanh, điểm chính, H2 dạng câu hỏi, bảng, danh sách đánh số, FAQ.</td></tr><tr><td><b>Evidence</b></td><td>5/20<div class="bar"><i style="width:25%"></i></div></td><td>16/20<div class="bar af"><i style="width:80%"></i></div></td><td>Bài gốc không có nguồn nào. Đã gắn ACOG, ACS, WHO và số liệu từ trang dịch vụ của bệnh viện.</td></tr><tr><td><b>Tổng</b></td><td><b>43/100</b></td><td><b>81/100</b></td><td>Mức “dễ được AI trích dẫn” thường từ 80 trở lên.</td></tr>
+</table></div>
+
+<h3>Kế hoạch link nội bộ</h3>
+<p class="s">Tất cả đường dẫn lấy từ sitemap thật của hongngochospital.vn ngày 22/10/2026. Nội dung từng bài đích mình đoán theo tên đường dẫn (riêng /kham-phu-khoa và /dich-vu-kham-phu-khoa đã mở đọc) — biên tập nên mở nhanh kiểm lại.</p>
+<div class="tw"><table>
+<tr><th>Anchor text</th><th>Đặt ở mục</th><th>URL đích</th></tr>
+<tr><td>khám phụ khoa là khám những gì</td><td>1. Khám phụ khoa có đau không?</td><td class="s">hongngochospital.vn/vi/kham-phu-khoa</td></tr><tr><td>đau bụng dưới ở phụ nữ báo hiệu điều gì</td><td>Đang viêm nhiễm hoặc có bệnh lý vùng chậu</td><td class="s">hongngochospital.vn/vi/dau-bung-duoi-o-phu-nu-bao-hieu-dieu-gi</td></tr><tr><td>lạc nội mạc tử cung</td><td>Đang viêm nhiễm hoặc có bệnh lý vùng chậu</td><td class="s">hongngochospital.vn/vi/lac-noi-mac-tu-cung</td></tr><tr><td>thời điểm vàng để thăm khám phụ khoa</td><td>Trước khi khám</td><td class="s">hongngochospital.vn/vi/thoi-diem-vang-de-tham-kham-phu-khoa</td></tr><tr><td>mẹ bầu bị viêm phụ khoa</td><td>Phụ nữ mang thai</td><td class="s">hongngochospital.vn/vi/me-bau-bi-viem-phu-khoa</td></tr><tr><td>mãn kinh là gì</td><td>Phụ nữ mãn kinh hoặc sau sinh</td><td class="s">hongngochospital.vn/vi/man-kinh-la-gi</td></tr><tr><td>phụ khoa có mùi hôi</td><td>6. Sau khi khám phụ khoa bị đau hoặc ra máu có sao không?</td><td class="s">hongngochospital.vn/vi/phu-khoa-co-mui-hoi</td></tr><tr><td>tầm soát ung thư cổ tử cung</td><td>7. Vì sao không nên vì sợ đau mà bỏ khám phụ khoa?</td><td class="s">hongngochospital.vn/vi/tam-soat-ung-thu-co-tu-cung</td></tr><tr><td>xét nghiệm HPV</td><td>7. Vì sao không nên vì sợ đau mà bỏ khám phụ khoa?</td><td class="s">hongngochospital.vn/vi/xet-nghiem-hpv</td></tr><tr><td>chi phí khám phụ khoa</td><td>8. Khám phụ khoa nhẹ nhàng, riêng tư tại Bệnh viện Đa khoa Hồng Ngọc</td><td class="s">hongngochospital.vn/vi/chi-phi-kham-phu-khoa</td></tr><tr><td>đặt lịch khám phụ khoa</td><td>8. Khám phụ khoa nhẹ nhàng, riêng tư tại Bệnh viện Đa khoa Hồng Ngọc</td><td class="s">hongngochospital.vn/vi/dich-vu-kham-phu-khoa</td></tr>
+</table></div>
+
+<h3>Việc cần làm ở trang /kham-phu-khoa (để 2 bài không tranh nhau)</h3>
+<ol>
+<li><b>Rút gọn FAQ 7.1 “Khám phụ khoa có đau không?”</b> còn 2–3 câu, cuối câu gắn link sang bài này với anchor <i>“khám phụ khoa có đau không”</i>.</li>
+<li>Trong mục 2.2 (khám bằng mỏ vịt) và 2.4 (siêu âm đầu dò), thêm 1 câu: “Xem chi tiết cảm giác và cách giảm khó chịu tại bài <i>khám phụ khoa có đau không</i>”.</li>
+<li>Không thêm nội dung “cách giảm đau” vào /kham-phu-khoa — để bài này giữ trọn chủ đề đó.</li>
+</ol>
+
+<h3>Gợi ý tối ưu thêm</h3>
+<ol>
+<li><b>Schema</b> (đoạn mã giúp Google và AI hiểu bài): <code>MedicalWebPage</code> + <code>FAQPage</code>, khai báo <code>reviewedBy</code> và <code>dateModified</code>.</li>
+<li><b>Ảnh minh họa mỏ vịt các cỡ</b> (nhỏ – vừa – lớn) có chú thích — giảm sợ hãi rất hiệu quả; alt: “mỏ vịt khám phụ khoa các cỡ”.</li>
+<li><b>Thống nhất số năm kinh nghiệm</b> trên toàn website (20+ hay 25 năm).</li>
+<li><b>Xin 1 trải nghiệm khám lần đầu</b> (ẩn danh, có đồng ý) để làm case study.</li>
+<li><b>Bác sĩ duyệt</b> bảng cảm giác ở mục 2 và các chỗ đổi chuyên môn (4A số 2–7).</li>
+</ol>
+
+<footer>Nguồn đối chiếu: ACOG, American Cancer Society, WHO; trang /kham-phu-khoa và /dich-vu-kham-phu-khoa của Hồng Ngọc (đọc trực tiếp 22/10/2026). Mật độ key chính “khám phụ khoa có đau không”: 8 lần (1.8%) / 2625 từ phần thân bài. Bản tối ưu thay đổi một số nhận định chuyên môn — cần bác sĩ tham vấn duyệt trước khi đăng.</footer>
+</div></body></html>
