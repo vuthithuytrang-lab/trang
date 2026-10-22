@@ -1,0 +1,41 @@
+{
+ "bai1": {
+  "sua": [
+   {
+    "tim": "86",
+    "thay": "85.5",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.mihong.vn/gia-vang-trong-nuoc",
+    "ly_do": "Mi Hồng – 680: 8,550,000 đ/chỉ = 85.5 triệu/lượng (cập nhật 22/10/2026 13:12)"
+   },
+   {
+    "tim": "83",
+    "thay": "82.5",
+    "lan": 3,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.mihong.vn/gia-vang-trong-nuoc",
+    "ly_do": "Mi Hồng – 680: 8,250,000 đ/chỉ = 82.5 triệu/lượng (cập nhật 22/10/2026 13:12)"
+   },
+   {
+    "tim": "dao động 83.0 - 95.3 triệu VND/lượng, tương đương khoảng 8.30 - 9.53 triệu VND/chỉ",
+    "thay": "dao động 82.5 - 95.3 triệu VND/lượng, tương đương khoảng 8.25 - 9.53 triệu VND/chỉ",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "",
+    "ly_do": "tính từ bảng (sjc, pnj, mihong): thấp nhất giá mua 82.5 – cao nhất giá bán 95.292 triệu/lượng, làm tròn 1 số lẻ; theo chỉ = chia 10, 2 số lẻ",
+    "tinh_toan": true
+   },
+   {
+    "tim": "khoảng 83.0 - 95.3 triệu VND/lượng (mua vào - bán ra), tương đương khoảng 8.30 - 9.53 triệu VND/chỉ",
+    "thay": "khoảng 82.5 - 95.3 triệu VND/lượng (mua vào - bán ra), tương đương khoảng 8.25 - 9.53 triệu VND/chỉ",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "",
+    "ly_do": "tính từ bảng (sjc, pnj, mihong): thấp nhất giá mua 82.5 – cao nhất giá bán 95.292 triệu/lượng, làm tròn 1 số lẻ; theo chỉ = chia 10, 2 số lẻ",
+    "tinh_toan": true
+   }
+  ],
+  "can_duyet": []
+ }
+}
