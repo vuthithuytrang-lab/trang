@@ -1,0 +1,10 @@
+{
+  "bai1": {
+    "sua": [],
+    "can_duyet": [
+      "Bảng 1.2, 2 dòng PV GAS (Hà Nội 642,004 / 2,407,515; TP. Hồ Chí Minh 662,081 / 2,482,819): vẫn không đọc được nguồn https://pvgaslpg.com.vn/vi/gas-price/ (máy chủ lỗi chứng chỉ bảo mật; curl lỗi chứng chỉ, Chromium báo 'upstream request failed') → giữ nguyên số cũ, nhờ Trang chụp màn hình trang giá PV GAS.",
+      "Bảng 1.2, dòng Petrolimex Hà Nội (598,752 / 2,472,768): https://gaspetrolimex.vn/ (trang đại lý, không dùng giá) ghi bình 12kg 644.112 VNĐ, bình 48kg 2.576.448 VNĐ, khác với trang Tổng công ty Gas Petrolimex https://pgas.com.vn/ (598.752 / 2.472.768, 'Giá gas tháng 10/2026'). Giữ theo pgas.com.vn (trùng bài).",
+      "Bài có nhắc thương hiệu Pacific Petro (sapo, mục 1.2) nhưng không có dòng giá Pacific Petro và không có nguồn Pacific Petro → không có gì để cập nhật, chỉ báo lại."
+    ]
+  }
+}
