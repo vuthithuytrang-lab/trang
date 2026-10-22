@@ -1,0 +1,765 @@
+{
+ "nguon": "Barchart core-api historical (mở bằng Chromium), lấy lúc 14h20 22/10/2026 giờ VN",
+ "eod": {
+  "CCZ26": [
+   {
+    "tradeTime": "10/21/2026",
+    "openPrice": "5,792",
+    "highPrice": "5,859",
+    "lowPrice": "5,654",
+    "lastPrice": "5,843",
+    "priceChange": "+42",
+    "volume": "12,190",
+    "raw": {
+     "tradeTime": "2026-10-21",
+     "openPrice": 5792,
+     "highPrice": 5859,
+     "lowPrice": 5654,
+     "lastPrice": 5843,
+     "priceChange": 42,
+     "volume": 12190
+    }
+   },
+   {
+    "tradeTime": "10/20/2026",
+    "openPrice": "5,687",
+    "highPrice": "5,903",
+    "lowPrice": "5,634",
+    "lastPrice": "5,801",
+    "priceChange": "+114",
+    "volume": "19,390",
+    "raw": {
+     "tradeTime": "2026-10-20",
+     "openPrice": 5687,
+     "highPrice": 5903,
+     "lowPrice": 5634,
+     "lastPrice": 5801,
+     "priceChange": 114,
+     "volume": 19390
+    }
+   }
+  ],
+  "CCH27": [
+   {
+    "tradeTime": "10/21/2026",
+    "openPrice": "5,912",
+    "highPrice": "5,970",
+    "lowPrice": "5,771",
+    "lastPrice": "5,954",
+    "priceChange": "+33",
+    "volume": "8,558",
+    "raw": {
+     "tradeTime": "2026-10-21",
+     "openPrice": 5912,
+     "highPrice": 5970,
+     "lowPrice": 5771,
+     "lastPrice": 5954,
+     "priceChange": 33,
+     "volume": 8558
+    }
+   },
+   {
+    "tradeTime": "10/20/2026",
+    "openPrice": "5,786",
+    "highPrice": "6,014",
+    "lowPrice": "5,740",
+    "lastPrice": "5,921",
+    "priceChange": "+136",
+    "volume": "13,680",
+    "raw": {
+     "tradeTime": "2026-10-20",
+     "openPrice": 5786,
+     "highPrice": 6014,
+     "lowPrice": 5740,
+     "lastPrice": 5921,
+     "priceChange": 136,
+     "volume": 13680
+    }
+   }
+  ],
+  "CCK27": [
+   {
+    "tradeTime": "10/21/2026",
+    "openPrice": "5,966",
+    "highPrice": "6,016",
+    "lowPrice": "5,832",
+    "lastPrice": "6,001",
+    "priceChange": "+22",
+    "volume": "3,769",
+    "raw": {
+     "tradeTime": "2026-10-21",
+     "openPrice": 5966,
+     "highPrice": 6016,
+     "lowPrice": 5832,
+     "lastPrice": 6001,
+     "priceChange": 22,
+     "volume": 3769
+    }
+   },
+   {
+    "tradeTime": "10/20/2026",
+    "openPrice": "5,833",
+    "highPrice": "6,064",
+    "lowPrice": "5,790",
+    "lastPrice": "5,979",
+    "priceChange": "+148",
+    "volume": "5,026",
+    "raw": {
+     "tradeTime": "2026-10-20",
+     "openPrice": 5833,
+     "highPrice": 6064,
+     "lowPrice": 5790,
+     "lastPrice": 5979,
+     "priceChange": 148,
+     "volume": 5026
+    }
+   }
+  ],
+  "CCN27": [
+   {
+    "tradeTime": "10/21/2026",
+    "openPrice": "5,988",
+    "highPrice": "6,035",
+    "lowPrice": "5,852",
+    "lastPrice": "6,020",
+    "priceChange": "+21",
+    "volume": "2,123",
+    "raw": {
+     "tradeTime": "2026-10-21",
+     "openPrice": 5988,
+     "highPrice": 6035,
+     "lowPrice": 5852,
+     "lastPrice": 6020,
+     "priceChange": 21,
+     "volume": 2123
+    }
+   },
+   {
+    "tradeTime": "10/20/2026",
+    "openPrice": "5,848",
+    "highPrice": "6,071",
+    "lowPrice": "5,803",
+    "lastPrice": "5,999",
+    "priceChange": "+150",
+    "volume": "2,077",
+    "raw": {
+     "tradeTime": "2026-10-20",
+     "openPrice": 5848,
+     "highPrice": 6071,
+     "lowPrice": 5803,
+     "lastPrice": 5999,
+     "priceChange": 150,
+     "volume": 2077
+    }
+   }
+  ],
+  "CCU27": [
+   {
+    "tradeTime": "10/21/2026",
+    "openPrice": "5,910",
+    "highPrice": "6,016",
+    "lowPrice": "5,846",
+    "lastPrice": "6,008",
+    "priceChange": "+18",
+    "volume": "702",
+    "raw": {
+     "tradeTime": "2026-10-21",
+     "openPrice": 5910,
+     "highPrice": 6016,
+     "lowPrice": 5846,
+     "lastPrice": 6008,
+     "priceChange": 18,
+     "volume": 702
+    }
+   },
+   {
+    "tradeTime": "10/20/2026",
+    "openPrice": "5,866",
+    "highPrice": "6,054",
+    "lowPrice": "5,795",
+    "lastPrice": "5,990",
+    "priceChange": "+148",
+    "volume": "1,145",
+    "raw": {
+     "tradeTime": "2026-10-20",
+     "openPrice": 5866,
+     "highPrice": 6054,
+     "lowPrice": 5795,
+     "lastPrice": 5990,
+     "priceChange": 148,
+     "volume": 1145
+    }
+   }
+  ],
+  "CCZ27": [
+   {
+    "tradeTime": "10/21/2026",
+    "openPrice": "5,815",
+    "highPrice": "5,961",
+    "lowPrice": "5,796",
+    "lastPrice": "5,951",
+    "priceChange": "+17",
+    "volume": "585",
+    "raw": {
+     "tradeTime": "2026-10-21",
+     "openPrice": 5815,
+     "highPrice": 5961,
+     "lowPrice": 5796,
+     "lastPrice": 5951,
+     "priceChange": 17,
+     "volume": 585
+    }
+   },
+   {
+    "tradeTime": "10/20/2026",
+    "openPrice": "5,822",
+    "highPrice": "5,999",
+    "lowPrice": "5,743",
+    "lastPrice": "5,934",
+    "priceChange": "+139",
+    "volume": "502",
+    "raw": {
+     "tradeTime": "2026-10-20",
+     "openPrice": 5822,
+     "highPrice": 5999,
+     "lowPrice": 5743,
+     "lastPrice": 5934,
+     "priceChange": 139,
+     "volume": 502
+    }
+   }
+  ],
+  "CCH28": [
+   {
+    "tradeTime": "10/21/2026",
+    "openPrice": "5,750",
+    "highPrice": "5,896",
+    "lowPrice": "5,749",
+    "lastPrice": "5,895",
+    "priceChange": "+16",
+    "volume": "85",
+    "raw": {
+     "tradeTime": "2026-10-21",
+     "openPrice": 5750,
+     "highPrice": 5896,
+     "lowPrice": 5749,
+     "lastPrice": 5895,
+     "priceChange": 16,
+     "volume": 85
+    }
+   },
+   {
+    "tradeTime": "10/20/2026",
+    "openPrice": "5,777",
+    "highPrice": "5,929",
+    "lowPrice": "5,693",
+    "lastPrice": "5,879",
+    "priceChange": "+128",
+    "volume": "93",
+    "raw": {
+     "tradeTime": "2026-10-20",
+     "openPrice": 5777,
+     "highPrice": 5929,
+     "lowPrice": 5693,
+     "lastPrice": 5879,
+     "priceChange": 128,
+     "volume": 93
+    }
+   }
+  ],
+  "CCK28": [
+   {
+    "tradeTime": "10/21/2026",
+    "openPrice": "5,710",
+    "highPrice": "5,847",
+    "lowPrice": "5,710",
+    "lastPrice": "5,847",
+    "priceChange": "+22",
+    "volume": "25",
+    "raw": {
+     "tradeTime": "2026-10-21",
+     "openPrice": 5710,
+     "highPrice": 5847,
+     "lowPrice": 5710,
+     "lastPrice": 5847,
+     "priceChange": 22,
+     "volume": 25
+    }
+   },
+   {
+    "tradeTime": "10/20/2026",
+    "openPrice": "5,734",
+    "highPrice": "5,865",
+    "lowPrice": "5,680",
+    "lastPrice": "5,825",
+    "priceChange": "+114",
+    "volume": "37",
+    "raw": {
+     "tradeTime": "2026-10-20",
+     "openPrice": 5734,
+     "highPrice": 5865,
+     "lowPrice": 5680,
+     "lastPrice": 5825,
+     "priceChange": 114,
+     "volume": 37
+    }
+   }
+  ],
+  "CCN28": [
+   {
+    "tradeTime": "10/21/2026",
+    "openPrice": "5,814",
+    "highPrice": "5,814",
+    "lowPrice": "5,805",
+    "lastPrice": "5,812",
+    "priceChange": "+28",
+    "volume": "5",
+    "raw": {
+     "tradeTime": "2026-10-21",
+     "openPrice": 5814,
+     "highPrice": 5814,
+     "lowPrice": 5805,
+     "lastPrice": 5812,
+     "priceChange": 28,
+     "volume": 5
+    }
+   },
+   {
+    "tradeTime": "10/20/2026",
+    "openPrice": "5,718",
+    "highPrice": "5,802",
+    "lowPrice": "5,718",
+    "lastPrice": "5,784",
+    "priceChange": "+100",
+    "volume": "7",
+    "raw": {
+     "tradeTime": "2026-10-20",
+     "openPrice": 5718,
+     "highPrice": 5802,
+     "lowPrice": 5718,
+     "lastPrice": 5784,
+     "priceChange": 100,
+     "volume": 7
+    }
+   }
+  ],
+  "CCU28": [
+   {
+    "tradeTime": "10/21/2026",
+    "openPrice": "5,771",
+    "highPrice": "5,771",
+    "lowPrice": "5,771",
+    "lastPrice": "5,771",
+    "priceChange": "+33",
+    "volume": "0",
+    "raw": {
+     "tradeTime": "2026-10-21",
+     "openPrice": 5771,
+     "highPrice": 5771,
+     "lowPrice": 5771,
+     "lastPrice": 5771,
+     "priceChange": 33,
+     "volume": 0
+    }
+   },
+   {
+    "tradeTime": "10/20/2026",
+    "openPrice": "5,738",
+    "highPrice": "5,738",
+    "lowPrice": "5,738",
+    "lastPrice": "5,738",
+    "priceChange": "+90",
+    "volume": "0",
+    "raw": {
+     "tradeTime": "2026-10-20",
+     "openPrice": 5738,
+     "highPrice": 5738,
+     "lowPrice": 5738,
+     "lastPrice": 5738,
+     "priceChange": 90,
+     "volume": 0
+    }
+   }
+  ],
+  "CAZ26": [
+   {
+    "tradeTime": "10/21/2026",
+    "openPrice": "4,289",
+    "highPrice": "4,344",
+    "lowPrice": "4,194",
+    "lastPrice": "4,340",
+    "priceChange": "+40",
+    "volume": "7,511",
+    "raw": {
+     "tradeTime": "2026-10-21",
+     "openPrice": 4289,
+     "highPrice": 4344,
+     "lowPrice": 4194,
+     "lastPrice": 4340,
+     "priceChange": 40,
+     "volume": 7511
+    }
+   },
+   {
+    "tradeTime": "10/20/2026",
+    "openPrice": "4,255",
+    "highPrice": "4,395",
+    "lowPrice": "4,200",
+    "lastPrice": "4,300",
+    "priceChange": "+47",
+    "volume": "8,813",
+    "raw": {
+     "tradeTime": "2026-10-20",
+     "openPrice": 4255,
+     "highPrice": 4395,
+     "lowPrice": 4200,
+     "lastPrice": 4300,
+     "priceChange": 47,
+     "volume": 8813
+    }
+   }
+  ],
+  "CAH27": [
+   {
+    "tradeTime": "10/21/2026",
+    "openPrice": "4,435",
+    "highPrice": "4,471",
+    "lowPrice": "4,341",
+    "lastPrice": "4,469",
+    "priceChange": "+24",
+    "volume": "10,091",
+    "raw": {
+     "tradeTime": "2026-10-21",
+     "openPrice": 4435,
+     "highPrice": 4471,
+     "lowPrice": 4341,
+     "lastPrice": 4469,
+     "priceChange": 24,
+     "volume": 10091
+    }
+   },
+   {
+    "tradeTime": "10/20/2026",
+    "openPrice": "4,380",
+    "highPrice": "4,517",
+    "lowPrice": "4,330",
+    "lastPrice": "4,445",
+    "priceChange": "+65",
+    "volume": "13,592",
+    "raw": {
+     "tradeTime": "2026-10-20",
+     "openPrice": 4380,
+     "highPrice": 4517,
+     "lowPrice": 4330,
+     "lastPrice": 4445,
+     "priceChange": 65,
+     "volume": 13592
+    }
+   }
+  ],
+  "CAK27": [
+   {
+    "tradeTime": "10/21/2026",
+    "openPrice": "4,470",
+    "highPrice": "4,503",
+    "lowPrice": "4,377",
+    "lastPrice": "4,495",
+    "priceChange": "+15",
+    "volume": "3,841",
+    "raw": {
+     "tradeTime": "2026-10-21",
+     "openPrice": 4470,
+     "highPrice": 4503,
+     "lowPrice": 4377,
+     "lastPrice": 4495,
+     "priceChange": 15,
+     "volume": 3841
+    }
+   },
+   {
+    "tradeTime": "10/20/2026",
+    "openPrice": "4,406",
+    "highPrice": "4,537",
+    "lowPrice": "4,357",
+    "lastPrice": "4,480",
+    "priceChange": "+75",
+    "volume": "5,075",
+    "raw": {
+     "tradeTime": "2026-10-20",
+     "openPrice": 4406,
+     "highPrice": 4537,
+     "lowPrice": 4357,
+     "lastPrice": 4480,
+     "priceChange": 75,
+     "volume": 5075
+    }
+   }
+  ],
+  "CAN27": [
+   {
+    "tradeTime": "10/21/2026",
+    "openPrice": "4,495",
+    "highPrice": "4,523",
+    "lowPrice": "4,405",
+    "lastPrice": "4,520",
+    "priceChange": "+15",
+    "volume": "2,005",
+    "raw": {
+     "tradeTime": "2026-10-21",
+     "openPrice": 4495,
+     "highPrice": 4523,
+     "lowPrice": 4405,
+     "lastPrice": 4520,
+     "priceChange": 15,
+     "volume": 2005
+    }
+   },
+   {
+    "tradeTime": "10/20/2026",
+    "openPrice": "4,431",
+    "highPrice": "4,559",
+    "lowPrice": "4,376",
+    "lastPrice": "4,505",
+    "priceChange": "+74",
+    "volume": "3,010",
+    "raw": {
+     "tradeTime": "2026-10-20",
+     "openPrice": 4431,
+     "highPrice": 4559,
+     "lowPrice": 4376,
+     "lastPrice": 4505,
+     "priceChange": 74,
+     "volume": 3010
+    }
+   }
+  ],
+  "CAU27": [
+   {
+    "tradeTime": "10/21/2026",
+    "openPrice": "4,449",
+    "highPrice": "4,459",
+    "lowPrice": "4,349",
+    "lastPrice": "4,457",
+    "priceChange": "+8",
+    "volume": "968",
+    "raw": {
+     "tradeTime": "2026-10-21",
+     "openPrice": 4449,
+     "highPrice": 4459,
+     "lowPrice": 4349,
+     "lastPrice": 4457,
+     "priceChange": 8,
+     "volume": 968
+    }
+   },
+   {
+    "tradeTime": "10/20/2026",
+    "openPrice": "4,364",
+    "highPrice": "4,497",
+    "lowPrice": "4,315",
+    "lastPrice": "4,449",
+    "priceChange": "+78",
+    "volume": "1,265",
+    "raw": {
+     "tradeTime": "2026-10-20",
+     "openPrice": 4364,
+     "highPrice": 4497,
+     "lowPrice": 4315,
+     "lastPrice": 4449,
+     "priceChange": 78,
+     "volume": 1265
+    }
+   }
+  ],
+  "CAZ27": [
+   {
+    "tradeTime": "10/21/2026",
+    "openPrice": "4,366",
+    "highPrice": "4,371",
+    "lowPrice": "4,265",
+    "lastPrice": "4,364",
+    "priceChange": "+2",
+    "volume": "1,126",
+    "raw": {
+     "tradeTime": "2026-10-21",
+     "openPrice": 4366,
+     "highPrice": 4371,
+     "lowPrice": 4265,
+     "lastPrice": 4364,
+     "priceChange": 2,
+     "volume": 1126
+    }
+   },
+   {
+    "tradeTime": "10/20/2026",
+    "openPrice": "4,280",
+    "highPrice": "4,407",
+    "lowPrice": "4,228",
+    "lastPrice": "4,362",
+    "priceChange": "+74",
+    "volume": "792",
+    "raw": {
+     "tradeTime": "2026-10-20",
+     "openPrice": 4280,
+     "highPrice": 4407,
+     "lowPrice": 4228,
+     "lastPrice": 4362,
+     "priceChange": 74,
+     "volume": 792
+    }
+   }
+  ],
+  "CAH28": [
+   {
+    "tradeTime": "10/21/2026",
+    "openPrice": "4,351",
+    "highPrice": "4,387",
+    "lowPrice": "4,288",
+    "lastPrice": "4,384",
+    "priceChange": "+3",
+    "volume": "520",
+    "raw": {
+     "tradeTime": "2026-10-21",
+     "openPrice": 4351,
+     "highPrice": 4387,
+     "lowPrice": 4288,
+     "lastPrice": 4384,
+     "priceChange": 3,
+     "volume": 520
+    }
+   },
+   {
+    "tradeTime": "10/20/2026",
+    "openPrice": "4,308",
+    "highPrice": "4,425",
+    "lowPrice": "4,257",
+    "lastPrice": "4,381",
+    "priceChange": "+72",
+    "volume": "328",
+    "raw": {
+     "tradeTime": "2026-10-20",
+     "openPrice": 4308,
+     "highPrice": 4425,
+     "lowPrice": 4257,
+     "lastPrice": 4381,
+     "priceChange": 72,
+     "volume": 328
+    }
+   }
+  ],
+  "CAK28": [
+   {
+    "tradeTime": "10/21/2026",
+    "openPrice": "4,260",
+    "highPrice": "4,349",
+    "lowPrice": "4,257",
+    "lastPrice": "4,347",
+    "priceChange": "+8",
+    "volume": "178",
+    "raw": {
+     "tradeTime": "2026-10-21",
+     "openPrice": 4260,
+     "highPrice": 4349,
+     "lowPrice": 4257,
+     "lastPrice": 4347,
+     "priceChange": 8,
+     "volume": 178
+    }
+   },
+   {
+    "tradeTime": "10/20/2026",
+    "openPrice": "4,295",
+    "highPrice": "4,371",
+    "lowPrice": "4,295",
+    "lastPrice": "4,339",
+    "priceChange": "+70",
+    "volume": "61",
+    "raw": {
+     "tradeTime": "2026-10-20",
+     "openPrice": 4295,
+     "highPrice": 4371,
+     "lowPrice": 4295,
+     "lastPrice": 4339,
+     "priceChange": 70,
+     "volume": 61
+    }
+   }
+  ],
+  "CAN28": [
+   {
+    "tradeTime": "10/21/2026",
+    "openPrice": "4,219",
+    "highPrice": "4,320",
+    "lowPrice": "4,219",
+    "lastPrice": "4,316",
+    "priceChange": "+22",
+    "volume": "79",
+    "raw": {
+     "tradeTime": "2026-10-21",
+     "openPrice": 4219,
+     "highPrice": 4320,
+     "lowPrice": 4219,
+     "lastPrice": 4316,
+     "priceChange": 22,
+     "volume": 79
+    }
+   },
+   {
+    "tradeTime": "10/20/2026",
+    "openPrice": "4,259",
+    "highPrice": "4,319",
+    "lowPrice": "4,259",
+    "lastPrice": "4,294",
+    "priceChange": "+70",
+    "volume": "14",
+    "raw": {
+     "tradeTime": "2026-10-20",
+     "openPrice": 4259,
+     "highPrice": 4319,
+     "lowPrice": 4259,
+     "lastPrice": 4294,
+     "priceChange": 70,
+     "volume": 14
+    }
+   }
+  ],
+  "CAU28": [
+   {
+    "tradeTime": "10/21/2026",
+    "openPrice": "4,203",
+    "highPrice": "4,279",
+    "lowPrice": "4,203",
+    "lastPrice": "4,279",
+    "priceChange": "+32",
+    "volume": "30",
+    "raw": {
+     "tradeTime": "2026-10-21",
+     "openPrice": 4203,
+     "highPrice": 4279,
+     "lowPrice": 4203,
+     "lastPrice": 4279,
+     "priceChange": 32,
+     "volume": 30
+    }
+   },
+   {
+    "tradeTime": "10/20/2026",
+    "openPrice": "4,273",
+    "highPrice": "4,273",
+    "lowPrice": "4,247",
+    "lastPrice": "4,247",
+    "priceChange": "+68",
+    "volume": "7",
+    "raw": {
+     "tradeTime": "2026-10-20",
+     "openPrice": 4273,
+     "highPrice": 4273,
+     "lowPrice": 4247,
+     "lastPrice": 4247,
+     "priceChange": 68,
+     "volume": 7
+    }
+   }
+  ]
+ }
+}

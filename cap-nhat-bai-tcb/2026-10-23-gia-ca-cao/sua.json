@@ -1,0 +1,327 @@
+{
+ "bai1": {
+  "sua": [
+   {
+    "ngu_canh": "5,801 +114",
+    "tim": "+114",
+    "thay": "+42",
+    "nguon": "https://www.barchart.com/futures/quotes/CCZ26/futures-prices",
+    "ly_do": "Barchart CCZ26: thay đổi phiên 21/10/2026 so với phiên trước (dữ liệu cuối ngày của Barchart)"
+   },
+   {
+    "ngu_canh": "CCZ26 12/2026 5,801",
+    "tim": "5,801",
+    "thay": "5,843",
+    "nguon": "https://www.barchart.com/futures/quotes/CCZ26/futures-prices",
+    "ly_do": "Barchart CCZ26: giá chốt phiên 21/10/2026 (ICE)"
+   },
+   {
+    "ngu_canh": "5,921 +136",
+    "tim": "+136",
+    "thay": "+33",
+    "nguon": "https://www.barchart.com/futures/quotes/CCZ26/futures-prices",
+    "ly_do": "Barchart CCH27: thay đổi phiên 21/10/2026 so với phiên trước (dữ liệu cuối ngày của Barchart)"
+   },
+   {
+    "ngu_canh": "CCH27 3/2027 5,921",
+    "tim": "5,921",
+    "thay": "5,954",
+    "nguon": "https://www.barchart.com/futures/quotes/CCZ26/futures-prices",
+    "ly_do": "Barchart CCH27: giá chốt phiên 21/10/2026 (ICE)"
+   },
+   {
+    "ngu_canh": "5,979 +148",
+    "tim": "+148",
+    "thay": "+22",
+    "nguon": "https://www.barchart.com/futures/quotes/CCZ26/futures-prices",
+    "ly_do": "Barchart CCK27: thay đổi phiên 21/10/2026 so với phiên trước (dữ liệu cuối ngày của Barchart)"
+   },
+   {
+    "ngu_canh": "CCK27 5/2027 5,979",
+    "tim": "5,979",
+    "thay": "6,001",
+    "nguon": "https://www.barchart.com/futures/quotes/CCZ26/futures-prices",
+    "ly_do": "Barchart CCK27: giá chốt phiên 21/10/2026 (ICE)"
+   },
+   {
+    "ngu_canh": "5,999 +150",
+    "tim": "+150",
+    "thay": "+21",
+    "nguon": "https://www.barchart.com/futures/quotes/CCZ26/futures-prices",
+    "ly_do": "Barchart CCN27: thay đổi phiên 21/10/2026 so với phiên trước (dữ liệu cuối ngày của Barchart)"
+   },
+   {
+    "ngu_canh": "CCN27 7/2027 5,999",
+    "tim": "5,999",
+    "thay": "6,020",
+    "nguon": "https://www.barchart.com/futures/quotes/CCZ26/futures-prices",
+    "ly_do": "Barchart CCN27: giá chốt phiên 21/10/2026 (ICE)"
+   },
+   {
+    "ngu_canh": "5,990 +148",
+    "tim": "+148",
+    "thay": "+18",
+    "nguon": "https://www.barchart.com/futures/quotes/CCZ26/futures-prices",
+    "ly_do": "Barchart CCU27: thay đổi phiên 21/10/2026 so với phiên trước (dữ liệu cuối ngày của Barchart)"
+   },
+   {
+    "ngu_canh": "CCU27 9/2027 5,990",
+    "tim": "5,990",
+    "thay": "6,008",
+    "nguon": "https://www.barchart.com/futures/quotes/CCZ26/futures-prices",
+    "ly_do": "Barchart CCU27: giá chốt phiên 21/10/2026 (ICE)"
+   },
+   {
+    "ngu_canh": "5,934 +139",
+    "tim": "+139",
+    "thay": "+17",
+    "nguon": "https://www.barchart.com/futures/quotes/CCZ26/futures-prices",
+    "ly_do": "Barchart CCZ27: thay đổi phiên 21/10/2026 so với phiên trước (dữ liệu cuối ngày của Barchart)"
+   },
+   {
+    "ngu_canh": "CCZ27 12/2027 5,934",
+    "tim": "5,934",
+    "thay": "5,951",
+    "nguon": "https://www.barchart.com/futures/quotes/CCZ26/futures-prices",
+    "ly_do": "Barchart CCZ27: giá chốt phiên 21/10/2026 (ICE)"
+   },
+   {
+    "ngu_canh": "5,879 +128",
+    "tim": "+128",
+    "thay": "+16",
+    "nguon": "https://www.barchart.com/futures/quotes/CCZ26/futures-prices",
+    "ly_do": "Barchart CCH28: thay đổi phiên 21/10/2026 so với phiên trước (dữ liệu cuối ngày của Barchart)"
+   },
+   {
+    "ngu_canh": "CCH28 3/2028 5,879",
+    "tim": "5,879",
+    "thay": "5,895",
+    "nguon": "https://www.barchart.com/futures/quotes/CCZ26/futures-prices",
+    "ly_do": "Barchart CCH28: giá chốt phiên 21/10/2026 (ICE)"
+   },
+   {
+    "ngu_canh": "5,825 +114",
+    "tim": "+114",
+    "thay": "+22",
+    "nguon": "https://www.barchart.com/futures/quotes/CCZ26/futures-prices",
+    "ly_do": "Barchart CCK28: thay đổi phiên 21/10/2026 so với phiên trước (dữ liệu cuối ngày của Barchart)"
+   },
+   {
+    "ngu_canh": "CCK28 5/2028 5,825",
+    "tim": "5,825",
+    "thay": "5,847",
+    "nguon": "https://www.barchart.com/futures/quotes/CCZ26/futures-prices",
+    "ly_do": "Barchart CCK28: giá chốt phiên 21/10/2026 (ICE)"
+   },
+   {
+    "ngu_canh": "5,784 +100",
+    "tim": "+100",
+    "thay": "+28",
+    "nguon": "https://www.barchart.com/futures/quotes/CCZ26/futures-prices",
+    "ly_do": "Barchart CCN28: thay đổi phiên 21/10/2026 so với phiên trước (dữ liệu cuối ngày của Barchart)"
+   },
+   {
+    "ngu_canh": "CCN28 7/2028 5,784",
+    "tim": "5,784",
+    "thay": "5,812",
+    "nguon": "https://www.barchart.com/futures/quotes/CCZ26/futures-prices",
+    "ly_do": "Barchart CCN28: giá chốt phiên 21/10/2026 (ICE)"
+   },
+   {
+    "ngu_canh": "5,738 +90",
+    "tim": "+90",
+    "thay": "+33",
+    "nguon": "https://www.barchart.com/futures/quotes/CCZ26/futures-prices",
+    "ly_do": "Barchart CCU28: thay đổi phiên 21/10/2026 so với phiên trước (dữ liệu cuối ngày của Barchart)"
+   },
+   {
+    "ngu_canh": "CCU28 9/2028 5,738",
+    "tim": "5,738",
+    "thay": "5,771",
+    "nguon": "https://www.barchart.com/futures/quotes/CCZ26/futures-prices",
+    "ly_do": "Barchart CCU28: giá chốt phiên 21/10/2026 (ICE)"
+   },
+   {
+    "ngu_canh": "4,300 +47",
+    "tim": "+47",
+    "thay": "+40",
+    "nguon": "https://www.barchart.com/futures/quotes/CAZ26/futures-prices",
+    "ly_do": "Barchart CAZ26: thay đổi phiên 21/10/2026 so với phiên trước (dữ liệu cuối ngày của Barchart)"
+   },
+   {
+    "ngu_canh": "CAZ26 12/2026 4,300",
+    "tim": "4,300",
+    "thay": "4,340",
+    "nguon": "https://www.barchart.com/futures/quotes/CAZ26/futures-prices",
+    "ly_do": "Barchart CAZ26: giá chốt phiên 21/10/2026 (ICE)"
+   },
+   {
+    "ngu_canh": "4,445 +65",
+    "tim": "+65",
+    "thay": "+24",
+    "nguon": "https://www.barchart.com/futures/quotes/CAZ26/futures-prices",
+    "ly_do": "Barchart CAH27: thay đổi phiên 21/10/2026 so với phiên trước (dữ liệu cuối ngày của Barchart)"
+   },
+   {
+    "ngu_canh": "CAH27 3/2027 4,445",
+    "tim": "4,445",
+    "thay": "4,469",
+    "nguon": "https://www.barchart.com/futures/quotes/CAZ26/futures-prices",
+    "ly_do": "Barchart CAH27: giá chốt phiên 21/10/2026 (ICE)"
+   },
+   {
+    "ngu_canh": "4,480 +75",
+    "tim": "+75",
+    "thay": "+15",
+    "nguon": "https://www.barchart.com/futures/quotes/CAZ26/futures-prices",
+    "ly_do": "Barchart CAK27: thay đổi phiên 21/10/2026 so với phiên trước (dữ liệu cuối ngày của Barchart)"
+   },
+   {
+    "ngu_canh": "CAK27 5/2027 4,480",
+    "tim": "4,480",
+    "thay": "4,495",
+    "nguon": "https://www.barchart.com/futures/quotes/CAZ26/futures-prices",
+    "ly_do": "Barchart CAK27: giá chốt phiên 21/10/2026 (ICE)"
+   },
+   {
+    "ngu_canh": "4,505 +74",
+    "tim": "+74",
+    "thay": "+15",
+    "nguon": "https://www.barchart.com/futures/quotes/CAZ26/futures-prices",
+    "ly_do": "Barchart CAN27: thay đổi phiên 21/10/2026 so với phiên trước (dữ liệu cuối ngày của Barchart)"
+   },
+   {
+    "ngu_canh": "CAN27 7/2027 4,505",
+    "tim": "4,505",
+    "thay": "4,520",
+    "nguon": "https://www.barchart.com/futures/quotes/CAZ26/futures-prices",
+    "ly_do": "Barchart CAN27: giá chốt phiên 21/10/2026 (ICE)"
+   },
+   {
+    "ngu_canh": "4,449 +78",
+    "tim": "+78",
+    "thay": "+8",
+    "nguon": "https://www.barchart.com/futures/quotes/CAZ26/futures-prices",
+    "ly_do": "Barchart CAU27: thay đổi phiên 21/10/2026 so với phiên trước (dữ liệu cuối ngày của Barchart)"
+   },
+   {
+    "ngu_canh": "CAU27 9/2027 4,449",
+    "tim": "4,449",
+    "thay": "4,457",
+    "nguon": "https://www.barchart.com/futures/quotes/CAZ26/futures-prices",
+    "ly_do": "Barchart CAU27: giá chốt phiên 21/10/2026 (ICE)"
+   },
+   {
+    "ngu_canh": "4,362 +74",
+    "tim": "+74",
+    "thay": "+2",
+    "nguon": "https://www.barchart.com/futures/quotes/CAZ26/futures-prices",
+    "ly_do": "Barchart CAZ27: thay đổi phiên 21/10/2026 so với phiên trước (dữ liệu cuối ngày của Barchart)"
+   },
+   {
+    "ngu_canh": "CAZ27 12/2027 4,362",
+    "tim": "4,362",
+    "thay": "4,364",
+    "nguon": "https://www.barchart.com/futures/quotes/CAZ26/futures-prices",
+    "ly_do": "Barchart CAZ27: giá chốt phiên 21/10/2026 (ICE)"
+   },
+   {
+    "ngu_canh": "4,381 +72",
+    "tim": "+72",
+    "thay": "+3",
+    "nguon": "https://www.barchart.com/futures/quotes/CAZ26/futures-prices",
+    "ly_do": "Barchart CAH28: thay đổi phiên 21/10/2026 so với phiên trước (dữ liệu cuối ngày của Barchart)"
+   },
+   {
+    "ngu_canh": "CAH28 3/2028 4,381",
+    "tim": "4,381",
+    "thay": "4,384",
+    "nguon": "https://www.barchart.com/futures/quotes/CAZ26/futures-prices",
+    "ly_do": "Barchart CAH28: giá chốt phiên 21/10/2026 (ICE)"
+   },
+   {
+    "ngu_canh": "4,339 +70",
+    "tim": "+70",
+    "thay": "+8",
+    "nguon": "https://www.barchart.com/futures/quotes/CAZ26/futures-prices",
+    "ly_do": "Barchart CAK28: thay đổi phiên 21/10/2026 so với phiên trước (dữ liệu cuối ngày của Barchart)"
+   },
+   {
+    "ngu_canh": "CAK28 5/2028 4,339",
+    "tim": "4,339",
+    "thay": "4,347",
+    "nguon": "https://www.barchart.com/futures/quotes/CAZ26/futures-prices",
+    "ly_do": "Barchart CAK28: giá chốt phiên 21/10/2026 (ICE)"
+   },
+   {
+    "ngu_canh": "4,294 +70",
+    "tim": "+70",
+    "thay": "+22",
+    "nguon": "https://www.barchart.com/futures/quotes/CAZ26/futures-prices",
+    "ly_do": "Barchart CAN28: thay đổi phiên 21/10/2026 so với phiên trước (dữ liệu cuối ngày của Barchart)"
+   },
+   {
+    "ngu_canh": "CAN28 7/2028 4,294",
+    "tim": "4,294",
+    "thay": "4,316",
+    "nguon": "https://www.barchart.com/futures/quotes/CAZ26/futures-prices",
+    "ly_do": "Barchart CAN28: giá chốt phiên 21/10/2026 (ICE)"
+   },
+   {
+    "ngu_canh": "4,247 +68",
+    "tim": "+68",
+    "thay": "+32",
+    "nguon": "https://www.barchart.com/futures/quotes/CAZ26/futures-prices",
+    "ly_do": "Barchart CAU28: thay đổi phiên 21/10/2026 so với phiên trước (dữ liệu cuối ngày của Barchart)"
+   },
+   {
+    "ngu_canh": "CAU28 9/2028 4,247",
+    "tim": "4,247",
+    "thay": "4,279",
+    "nguon": "https://www.barchart.com/futures/quotes/CAZ26/futures-prices",
+    "ly_do": "Barchart CAU28: giá chốt phiên 21/10/2026 (ICE)"
+   },
+   {
+    "tim": "7,300 - 8,000",
+    "thay": "7,300 - 8,100",
+    "lan": 2,
+    "nguon": "https://banggianongsan.com/bang-gia-cacao-hom-nay/",
+    "ly_do": "banggianongsan 22/10/2026 (đăng 08:42), dòng \"Cacao tươi\", cột Giá mới"
+   },
+   {
+    "tim": "69,000 - 77,000",
+    "thay": "70,000 - 79,000",
+    "lan": 2,
+    "nguon": "https://banggianongsan.com/bang-gia-cacao-hom-nay/",
+    "ly_do": "banggianongsan 22/10/2026 (đăng 08:42), dòng \"Hạt cacao xô\", cột Giá mới"
+   },
+   {
+    "tim": "78,000 - 86,000",
+    "thay": "79,000 - 88,000",
+    "lan": 2,
+    "nguon": "https://banggianongsan.com/bang-gia-cacao-hom-nay/",
+    "ly_do": "banggianongsan 22/10/2026 (đăng 08:42), dòng \"Hạt cacao lên men loại I\", cột Giá mới"
+   },
+   {
+    "tim": "96,000 - 104,000",
+    "thay": "97,000 - 106,000",
+    "lan": 2,
+    "nguon": "https://banggianongsan.com/bang-gia-cacao-hom-nay/",
+    "ly_do": "banggianongsan 22/10/2026 (đăng 08:42), dòng \"Cacao lên men loại II\", cột Giá mới"
+   },
+   {
+    "tim": "103,000 - 114,000",
+    "thay": "104,000 - 116,000",
+    "lan": 2,
+    "nguon": "https://banggianongsan.com/bang-gia-cacao-hom-nay/",
+    "ly_do": "banggianongsan 22/10/2026 (đăng 08:42), dòng \"Cacao lên men loại III\", cột Giá mới"
+   }
+  ],
+  "can_duyet": [
+   "Bảng giá trong nước, cột \"Thay đổi\" của 5 dòng (Ca cao tươi, Hạt ca cao xô, Hạt ca cao lên men loại I, Ca cao lên men loại II, Ca cao lên men loại III): bài đang ghi một mức \"0 VND/kg\", nguồn banggianongsan 22/10/2026 ghi dạng khoảng: Cacao tươi \"▲ +0 ~ 1.000\" (tự tính từ bảng nguồn chỉ là 0 – 100), 4 dòng còn lại \"▲ +1.000 – 2.000\". Không ghi được đúng dạng một mức của bài → GIỮ NGUYÊN \"0 VND/kg\", cần duyệt cách ghi (vd \"+1,000 - +2,000 VND/kg\"). Dòng Bột ca cao nguyên chất nguồn ghi \"Không đổi\" → giữ \"0 VND/kg\" là đúng.",
+   "Bảng giá trong nước: cột \"Giá hiện tại\" theo cột \"Giá cũ\" của nguồn (trùng số bài đang ghi, không đổi); cột \"Giá mới dự kiến\" theo cột \"Giá mới\" (nguồn đăng 08:42 22/10/2026).",
+   "Giá thế giới: chạy lúc 14h18 ngày 22/10 (giờ VN), sàn New York và London chưa mở phiên 22/10 → số là giá chốt phiên 21/10/2026, lấy từ dữ liệu cuối ngày (historical) của Barchart qua Chromium; mỗi hợp đồng đã đối chiếu giá 21/10 = giá 20/10 (số bài đang ghi) + mức thay đổi. 4 kỳ hạn London đầu khớp bảng London của banggianongsan (4.340/+40, 4.469/+24, 4.495/+15, 4.520/+15).",
+   "banggianongsan có bảng New York 4 kỳ hạn nhưng số lệch Barchart (12/26: 5.799 so với 5,843) và cột Giá cũ vô lý (+37%) → không dùng cho giá New York."
+  ]
+ }
+}
