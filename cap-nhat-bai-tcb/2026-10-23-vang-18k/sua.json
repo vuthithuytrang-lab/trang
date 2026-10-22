@@ -1,0 +1,48 @@
+{
+ "bai1": {
+  "sua": [
+   {
+    "tim": "mua vào cao nhất khoảng 9.842 triệu VND/chỉ và bán ra thấp nhất khoảng 10.493 triệu VND/chỉ",
+    "thay": "mua vào cao nhất khoảng 9.820 triệu VND/chỉ và bán ra thấp nhất khoảng 10.493 triệu VND/chỉ",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "",
+    "ly_do": "tính từ bảng: giá mua cao nhất 9,820,000 đ/chỉ, giá bán thấp nhất 10,493,000 đ/chỉ",
+    "tinh_toan": true
+   },
+   {
+    "tim": "9,842,000 VND/chỉ",
+    "thay": "9,820,000 VND/chỉ",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://banggia.doji.vn/gold-price",
+    "ly_do": "DOJI – GIÁ NGUYÊN LIỆU 18K (mua vào), cập nhật 07:22 ngày 22/10/2026"
+   },
+   {
+    "tim": "10,508,600 VND/chỉ",
+    "thay": "10,508,500 VND/chỉ",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC (Nữ trang 75%) – Nữ trang 75% (bán ra), cập nhật 14:20:06 22/10/2026"
+   },
+   {
+    "tim": "9,528,600 VND/chỉ",
+    "thay": "9,528,500 VND/chỉ",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC (Nữ trang 75%) – Nữ trang 75% (mua vào), cập nhật 14:20:06 22/10/2026"
+   },
+   {
+    "tim": "Giá vàng 18K hôm nay 22/10/2026 là bao nhiêu?",
+    "thay": "Giá vàng 18K hôm nay 23/10/2026 là bao nhiêu?",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "",
+    "ly_do": "đổi ngày theo quy tắc ngày hôm sau (số ngày '22' trên web nằm trong thẻ in nghiêng nên bước dựng nền không tự đổi)"
+   }
+  ],
+  "can_duyet": []
+ }
+}
