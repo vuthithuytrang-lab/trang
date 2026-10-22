@@ -182,3 +182,4 @@ Rút ra từ các lỗi thật của bài đầu tiên "trái cây iqf" (04/10/2
 | Chìa mất khi phiên đóng | Chìa chỉ nằm trên máy tạm của phiên | Cất vào cài đặt kín của môi trường (việc còn mở trong `GHI-CHU.md`) |
 
 | Ảnh trong thân bài Wix không hiện (chỉ có khung trống) | Node ảnh ghi `src.url` — Wix không dựng ảnh từ URL | Import ảnh vào Wix Media rồi ghi node ảnh bằng `image.src.id` + `width` + `height` (phát hiện 16/10/2026; các bài Wix trước đó có thể bị — chờ Trang đồng ý mới sửa) |
+| Hai bài cùng nền tảng cách nhau < 3 giờ (2 giờ 58 phút, 22/10/2026) | Lịch cách đúng 3 giờ nhưng lượt trước đăng trễ vài phút | Trước khi đăng, lấy giờ đăng THẬT của bài cùng nền tảng gần nhất; chưa đủ 3 giờ thì chờ rồi mới bấm đăng |
