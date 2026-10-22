@@ -7,7 +7,7 @@
 | Bot Telegram `@ban_tin_marketing_bot` | ✅ Đang chạy |
 | Trang đã bấm START, lấy được chat id | ✅ Xong |
 | Bản tin mẫu (giọng vui, 4 mảng quan tâm) | ✅ Đã gửi thành công |
-| Lịch tự động 7h sáng hằng ngày | ✅ Đã tạo — `trig_0193PQKZuz27brzWJibGu2eN` |
+| Lịch tự động 7h sáng hằng ngày | ⛔ **Đã tắt 22/10/2026** theo yêu cầu của Trang — lịch không còn tồn tại |
 | File chìa `cong-cu/telegram.env` | ⏸️ **Chưa đưa lên kho** — chờ kho chuyển sang riêng tư |
 
 ## Vì sao còn kẹt

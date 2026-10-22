@@ -1,5 +1,8 @@
 # Bản tin Marketing sáng — tự động qua Telegram (Bài 5)
 
+> ⛔ **ĐÃ TẮT — 22/10/2026, theo yêu cầu của Trang.** Không còn lịch 7h sáng nào chạy
+> (kiểm tra danh sách lịch tự động ngày 22/10/2026). Đã bỏ khỏi case study. Đừng bật lại khi Trang chưa yêu cầu.
+
 ## Hạ tầng đã dựng
 
 | Thành phần | Giá trị |
