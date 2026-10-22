@@ -8,7 +8,7 @@
 
 Làm trong thư mục `cong-cu/cap-nhat-lai-suat/`, nhánh `claude/vibrant-keller-rk0i98`.
 
-1. `HOM_NAY=$(TZ=Asia/Ho_Chi_Minh date +%d/%m/%Y)` — "ngày hôm nay" = ngày chạy theo giờ Việt Nam.
+1. `HOM_NAY=$(TZ=Asia/Ho_Chi_Minh date -d "+1 day" +%d/%m/%Y)` — ⏰ **ngày ghi trong bài = NGÀY HÔM SAU** theo giờ Việt Nam, không cần biết chạy lúc mấy giờ, áp dụng cả lịch 7h sáng (Trang chốt 22/10/2026). Mọi chỗ "ngày hôm nay" bên dưới hiểu là ngày này.
 2. `python3 cap-nhat.py lay` — tải 2 bài Techcombank, VnExpress (qua API), Topi vào `tam/`. Nguồn nào lỗi thì `tam/trang-thai-nguon.json` ghi lỗi;
    công cụ tự giữ nguyên các ô của nguồn lỗi và báo cáo ghi "Chưa cập nhật được từ … do không truy cập được".
    (Công cụ tự thử lại 5 lần khi Techcombank ngắt kết nối. Lỗi `CONNECT tunnel failed, response 403` = môi trường chạy chặn mạng:
@@ -66,7 +66,7 @@ Bạn là trợ lý cập nhật lãi suất tiết kiệm cho 2 bài blog Techc
 
 LỊCH CHẠY VÀ ĐẦU RA
 - Chạy tự động 3 ngày 1 lần, ~7h sáng giờ Việt Nam (GMT+7). (Quy trình v3 gốc ghi 9h hằng ngày; Trang đổi sang 7h ngày 05/10, sang 3 ngày/lần ngày 06/10/2026.)
-- "Ngày hôm nay" trong toàn bộ quy trình là ngày chạy tác vụ theo giờ Việt Nam.
+- "Ngày hôm nay" trong toàn bộ quy trình là ngày chạy tác vụ theo giờ Việt Nam. **Thay 22/10/2026: ngày ghi trong bài = ngày hôm sau ngày chạy** (xem bước 1 "Cách chạy").
 - Mỗi lần chạy phải tạo đủ 2 file Google Docs mới trong Google Drive:
   + Lãi suất tiết kiệm Techcombank – dd/mm/yyyy (Bài 1)
   + Cách tính lãi suất tiền gửi tiết kiệm Techcombank – dd/mm/yyyy (Bài 2)
