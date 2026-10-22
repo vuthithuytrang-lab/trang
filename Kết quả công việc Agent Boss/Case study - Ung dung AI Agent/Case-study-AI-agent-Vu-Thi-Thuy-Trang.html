@@ -71,6 +71,26 @@ code{font-family:ui-monospace,Menlo,Consolas,monospace;background:#EAF0FE;paddin
 .thieu{margin-top:20px;background:#FFF7DB;border-left:5px solid var(--sg-vang);padding:12px 18px;font-size:14px}
 .thieu b{color:var(--sg-den)}
 .thieu ul{margin:6px 0 0;padding-left:20px}
+
+.dai{display:grid;grid-template-columns:1.3fr repeat(6,1fr);border:1px solid var(--sg-xam-vien);margin-top:22px}
+.dai div{padding:10px 14px;border-left:1px solid var(--sg-xam-vien)}
+.dai div:first-child{border-left:none}
+.dai .dau{background:var(--sg-xanh);color:#fff}
+.dai b{display:block;color:var(--sg-navy);font-size:24px;font-weight:800;line-height:1.2}
+.dai .dau b{color:#fff;font-size:17px}
+.dai span{font-size:12.5px;color:var(--sg-phu)}
+.dai .dau span{color:#fff;opacity:.9}
+.hai-cot{display:grid;grid-template-columns:1.1fr 1fr;gap:34px;margin-top:4px}
+ol.cach{margin:0;padding-left:20px;font-size:14px}
+ol.cach li{margin-bottom:6px}
+ol.cach b,ul.dung b{color:var(--sg-den)}
+ul.dung{margin:0 0 10px;padding-left:18px;font-size:14px}
+ul.dung li{margin-bottom:6px}
+.thieu-o{background:#FFF7DB;border-left:4px solid var(--sg-vang);padding:10px 14px;font-size:13.5px}
+.thieu-o b{display:block;color:var(--sg-cam);margin-bottom:2px}
+.chot{display:grid;grid-template-columns:170px 1fr;gap:20px;align-items:center;border:2px solid var(--sg-xanh);padding:14px 22px;margin-top:20px}
+.chot b{color:var(--sg-xanh);font-size:17px}
+.chot p{margin:0;font-size:15px}
 footer{margin-top:22px;padding-top:12px;border-top:1px solid var(--sg-xam-vien);display:flex;justify-content:space-between;gap:20px;font-size:12.5px;color:var(--sg-phu)}
 
 @media (max-width:900px){
@@ -82,6 +102,9 @@ footer{margin-top:22px;padding-top:12px;border-top:1px solid var(--sg-xam-vien);
   .meta div{padding:10px 10px 4px}
   .meta,.so,.the,.luat,.osakar,.osakar .phai{grid-template-columns:1fr 1fr}
   .osakar{grid-template-columns:1fr}
+  .dai{grid-template-columns:1fr 1fr}
+  .dai .dau{grid-column:1/-1}
+  .hai-cot,.chot{grid-template-columns:1fr;gap:10px}
   table,thead,tbody,tr,td,th{display:block}
   thead{display:none}
   tbody tr{border-bottom:2px solid var(--sg-xam-vien);margin-bottom:8px}
@@ -90,7 +113,7 @@ footer{margin-top:22px;padding-top:12px;border-top:1px solid var(--sg-xam-vien);
 @media print{
   html,body{background:#fff}
   .page{margin:0;max-width:none;padding:28px 34px}
-  .osakar,.luat,table tr,.the div{break-inside:avoid}
+  .osakar,.luat,table tr,.the div,.dai,.hai-cot,.chot{break-inside:avoid}
   .sang-trang{break-before:page;margin-top:0}
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
@@ -169,21 +192,46 @@ footer{margin-top:22px;padding-top:12px;border-top:1px solid var(--sg-xam-vien);
   <div><b>Title/Meta và alt ảnh</b><span>Công cụ title/meta đã chạy 22 bài, 635 từ khoá Techcombank, bắt được mô tả dài 170/165 ký tự. Thêm công cụ viết alt ảnh chuẩn SEO.</span></div>
 </section>
 
-<h2>Luật tôi đặt cho agent, rút ra từ sự cố thật</h2>
-<section class="luat">
-  <div><b>Không đăng dồn</b><span>Đăng dồn bị khóa: Tumblr bị hủy, WordPress phải gửi khiếu nại (30/09), Blogger chặn khoảng 20 tiếng. Từ đó mọi lịch đăng đều giãn cách.</span></div>
-  <div><b>Cập nhật số, không đổi chữ</b><span>Bài giá chỉ được đổi số, ngày, tháng. Không cập nhật được đúng dạng câu thì giữ nguyên và ghi “cần duyệt”.</span></div>
-  <div><b>Không bịa số</b><span>Nguồn không đọc được thì ghi ⚠️ vào ô, bỏ tích, báo lại. Thiếu dữ liệu thì để trống, không đoán.</span></div>
-  <div><b>Tôi duyệt cuối</b><span>Câu viết mới, bài đầu tiên của mỗi công thức, mọi thay đổi lớn đều chờ tôi duyệt rồi mới đóng gói hoặc đăng.</span></div>
+<section class="dai">
+  <div class="dau"><b>Hơn 1 tháng</b><span>làm cùng Claude Code</span></div>
+  <div><b>33</b><span>ngày có làm việc với AI</span></div>
+  <div><b>37</b><span>nhánh việc trong kho</span></div>
+  <div><b>489</b><span>lần lưu việc</span></div>
+  <div><b>13</b><span>bộ công cụ tự dựng</span></div>
+  <div><b>10</b><span>dự án khách hàng</span></div>
+  <div><b>2</b><span>skill lấy từ Kho Skill SEONGON</span></div>
 </section>
 
-<div class="thieu">
-  <b>Còn để trống vì chưa có số thật:</b>
-  <ul>
-    <li><b>Phần dùng Codex:</b> cần bổ sung, Codex làm việc gì, cho dự án nào, kết quả ra sao.</li>
-    <li><b>Số giờ tiết kiệm mỗi tuần:</b> cần bổ sung sau khi bấm giờ đối chiếu trước – sau.</li>
-  </ul>
-</div>
+<section class="hai-cot">
+  <div>
+    <h2>Cách làm để AI chạy được thật</h2>
+    <ol class="cach">
+      <li><b>Làm tay một lần, duyệt xong mới đóng gói.</b> Bài đầu của mỗi công thức tôi duyệt, rồi mới thành skill và thêm vào bảng Update.</li>
+      <li><b>Luật viết thành chữ, không nói miệng.</b> Mỗi lần sửa là một dòng trong hồ sơ vận hành: “chỉ đổi số, không đổi câu chữ”, “chạy từ 15h thì ghi ngày hôm sau”.</li>
+      <li><b>Máy chạy theo lịch, người duyệt ngoại lệ.</b> Tôi chỉ tích ô. Câu viết mới hay nguồn lỗi thì máy ghi “cần duyệt” để tôi xem.</li>
+      <li><b>Không đăng dồn.</b> Tumblr bị hủy, WordPress phải khiếu nại, Blogger chặn 20 tiếng. Từ đó mọi lịch đăng đều giãn cách.</li>
+      <li><b>Không bịa số, chìa khóa không vào kho.</b> Nguồn không đọc được thì ghi ⚠️ và bỏ tích. Chìa đăng nhập chỉ nằm trên máy, không lên GitHub.</li>
+    </ol>
+  </div>
+  <div>
+    <h2>AI dùng lại được</h2>
+    <ul class="dung">
+      <li><b>Bảng Update:</b> ai có quyền sheet thì tích ô là chạy, không cần biết công cụ bên dưới.</li>
+      <li><b>Kho Skill SEONGON:</b> lấy về <code>seo-audit</code> và <code>inlink-generator</code>, cài thêm <code>seo-analyst</code> để mọi phiên trong kho dùng được.</li>
+      <li><b>Khách hàng tự làm:</b> hướng dẫn Marcom Sun Life tự sửa lỗi SEO onpage, checklist kỹ thuật cho đội IT Sun Life.</li>
+      <li><b>Công cụ Title/Meta:</b> dán bài và từ khoá là chạy, dùng chung được cho cả team.</li>
+    </ul>
+    <div class="thieu-o">
+      <b>Chỗ còn thiếu</b>
+      Chưa đo ai trong team đang dùng công cụ nào và tiết kiệm bao nhiêu giờ mỗi tuần. Phần dùng Codex cũng cần bổ sung.
+    </div>
+  </div>
+</section>
+
+<section class="chot">
+  <b>Lời chốt của tôi</b>
+  <p>AI không thay tôi làm SEO. Nó nhận phần lặp: chép số, chèn link, đăng bài. Còn tôi dồn sức vào phần cần đầu óc. Trước đây tôi làm tay từng bài; giờ tôi dựng công cụ, rồi để công cụ làm.</p>
+</section>
 
 <footer>
   <span>Vũ Thị Thùy Trang · Kỹ thuật SEO · SEONGON — 10/2026</span>
