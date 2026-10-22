@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="vi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tối ưu SEO &amp; GEO — Phụ khoa có mùi hôi</title>
+<style>
+:root{--sg-xanh:#004AEF;--sg-xanh-sang:#0D53F0;--sg-navy:#002992;--sg-mint:#07EF9C;--sg-cyan:#0DD1FF;--sg-vang:#FFCE00;--sg-cam:#F68B1F;
+--sg-den:#151515;--sg-xam-nen:#F3F3F6;--sg-xam-vien:#DCDCDC;--mut:#5A6B66;
+--sg-chu:Gilroy,"Montserrat",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+--sg-dai-mau:linear-gradient(135deg,#002992 0%,#004AEF 55%,#0DD1FF 100%)}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--sg-den);font:16px/1.65 var(--sg-chu)}
+.w{max-width:1000px;margin:0 auto;padding:0 16px 60px}
+header{background:var(--sg-dai-mau);color:#fff;padding:26px 0 30px;margin-bottom:26px}
+header .w{padding-bottom:0}
+.logo{display:inline-block;background:#fff;border-radius:12px;padding:12px 16px;margin-bottom:18px}
+.logo img{width:170px;display:block}
+header h1{font-size:30px;line-height:1.25;margin:0 0 8px;font-weight:800}
+header .sub{font-size:14px;opacity:.92}
+h2{color:var(--sg-xanh);font-size:23px;margin:40px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--sg-xam-vien)}
+h2 .n{display:inline-block;background:var(--sg-xanh);color:#fff;border-radius:8px;padding:0 10px;margin-right:8px;font-size:18px}
+h3{font-size:18px;margin:22px 0 8px;color:var(--sg-navy)}
+.tw{overflow-x:auto;margin:10px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:600px}
+th,td{border:1px solid var(--sg-xam-vien);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--sg-xam-nen);color:var(--sg-navy);font-size:13px}
+.s{font-size:13px;color:var(--mut)}
+.box{background:var(--sg-xam-nen);border-left:4px solid var(--sg-xanh);border-radius:0 10px 10px 0;padding:14px 18px;margin:14px 0}
+.box.cam{border-left-color:var(--sg-cam)}
+.box b.t{display:block;margin-bottom:4px;color:var(--sg-navy)}
+.pill{display:inline-block;padding:0 9px;border-radius:20px;font-size:12px;font-weight:700;white-space:nowrap}
+.sai{background:#fdebd6;color:#8a4a07}.dung{background:#dff8ee;color:#05603f}.vua{background:#fff5cc;color:#6b5600}
+.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:16px 0}
+.kpi div{background:var(--sg-xam-nen);border-radius:12px;padding:14px}
+.kpi b{display:block;font-size:30px;color:var(--sg-xanh);line-height:1.1}
+.kpi b.m{color:#05a46b}
+/* bài viết */
+.art{border:1px solid var(--sg-xam-vien);border-radius:14px;padding:6px 26px 22px;margin-top:14px}
+.art h1{font-size:26px;color:var(--sg-navy);line-height:1.3;margin:20px 0 6px}
+.art h2{font-size:21px;border:0;margin:30px 0 8px;color:var(--sg-xanh)}
+.art .byline{font-size:13px;color:var(--mut)}
+.sum{background:#eef3ff;border:1px solid #c9d8ff;border-radius:12px;padding:14px 18px;margin:16px 0}
+.sum b.t{color:var(--sg-xanh);display:block;margin-bottom:4px;letter-spacing:.3px}
+.k1{background:#dbe6ff;border-radius:3px;padding:0 2px;font-weight:700}
+.k2{background:#d2fbeb;border-radius:3px;padding:0 2px;font-weight:700}
+.note{font-size:13px;color:var(--mut);font-style:italic}
+.cap{font-size:13px;color:var(--mut);background:var(--sg-xam-nen);padding:6px 10px;border-radius:6px;margin:6px 0 12px}
+.legend span{margin-right:12px}
+.bar{height:10px;background:var(--sg-xam-vien);border-radius:5px;overflow:hidden;min-width:90px}
+.bar i{display:block;height:100%;background:var(--sg-xanh)}
+.bar.af i{background:#05a46b}
+.art a{color:var(--sg-xanh);text-decoration:underline}
+footer{margin-top:40px;padding-top:12px;border-top:1px solid var(--sg-xam-vien);font-size:12.5px;color:var(--mut)}
+ol.ref li{font-size:13.5px;margin-bottom:4px}
+@media (max-width:600px){.art{padding:4px 14px 18px}header h1{font-size:25px}}
+@media print{header{-webkit-print-color-adjust:exact;print-color-adjust:exact}h2{break-after:avoid}tr,.box,.sum{break-inside:avoid}}
+</style></head><body>
+<header><div class="w">
+<div class="logo"><img src="data:image/webp;base64,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" alt="SEONGON"></div>
+<h1>Tối ưu SEO &amp; GEO: “Phụ khoa có mùi hôi”</h1>
+<div class="sub">Key chính: <b>phụ khoa có mùi hôi</b> · Biến thể: vùng kín có mùi hôi · Bài tham vấn: Khoa Sản – Phụ khoa, BV Đa khoa Hồng Ngọc · URL: hongngochospital.vn/vi/phu-khoa-co-mui-hoi · Người chạy: Vũ Thị Thùy Trang · 22/10/2026</div>
+</div></header>
+<div class="w">
+
+<div class="kpi">
+<div><b>15</b>điểm sai / thiếu / mâu thuẫn y khoa trong bài gốc</div>
+<div><b>44 → 55</b>ký tự tiêu đề, đúng mẫu Trang yêu cầu</div>
+<div><b>184 → 159</b>ký tự mô tả (chuẩn ≤ 160)</div>
+<div><b class="m">45 → 84</b>điểm khả năng được AI trích dẫn (ước tính)</div>
+</div>
+
+<div class="box cam"><b class="t">Việc quan trọng nhất trước khi đăng</b>
+① Bài gốc <b>xếp nấm Candida vào nhóm gây mùi hôi</b>, nhưng theo CDC và Cleveland Clinic (chính nguồn bài đang trích), nấm thường <b>không gây mùi</b> hoặc chỉ mùi rất nhẹ.
+② Mục FAQ trấn an người đọc rằng “mùi hôi nhưng không ngứa thường do lười vệ sinh”, trong khi đây chính là <b>dấu hiệu kinh điển của viêm âm đạo do vi khuẩn</b>.
+③ Bài ghi “ung thư cổ tử cung <b>giai đoạn đầu</b>” rồi liệt kê sụt cân, ra dịch nâu hôi. Thực tế giai đoạn sớm thường không có triệu chứng; các dấu hiệu đó thuộc giai đoạn muộn.
+④ Tiêu đề hứa “cách chữa” nhưng bài <b>không có phần điều trị</b>.
+Bản viết lại ở mục 6 đã sửa hết. Những chỗ đổi nội dung chuyên môn cần <b>bác sĩ tham vấn duyệt lại</b>.</div>
+
+<!-- 1 -->
+<h2><span class="n">1</span>Phân tích ý định tìm kiếm (Search Intent)</h2>
+<div class="tw"><table>
+<tr><th style="width:24%">Hạng mục</th><th>Phân tích</th></tr>
+<tr><td>Loại intent</td><td><b>Informational — chủ đạo</b> (người đọc muốn biết mùi hôi do đâu, có nguy hiểm không). Kèm <b>Commercial ngầm khá mạnh</b>: người đọc đang có triệu chứng thật, sau khi đọc dễ tìm nơi khám → cơ hội chuyển đổi sang dịch vụ khám phụ khoa Hồng Ngọc.</td></tr>
+<tr><td>Câu trả lời chính</td><td>Mùi hôi do nguyên nhân gì, và mùi nào là bình thường, mùi nào là bệnh.</td></tr>
+<tr><td>Thông tin bổ sung</td><td>Triệu chứng đi kèm của từng bệnh, cách chẩn đoán, cách chữa, cách phòng ngừa.</td></tr>
+<tr><td>So sánh</td><td>Phân biệt theo <b>kiểu mùi</b> (tanh cá, chua, kim loại, khai, thối) và theo <b>màu khí hư</b>; viêm do vi khuẩn khác nấm và trùng roi thế nào.</td></tr>
+<tr><td>Hướng dẫn</td><td>Tự đánh giá khi nào cần đi khám; vệ sinh đúng cách; chuẩn bị gì trước khi khám.</td></tr>
+<tr><td>Chân dung người đọc (tự xác định)</td><td>
+① <b>Phụ nữ 18–45 tuổi</b> vừa phát hiện vùng kín có mùi lạ, lo lắng, ngại hỏi người khác — nhóm chính.<br>
+② Phụ nữ <b>đã điều trị nhưng hay tái phát</b>.<br>
+③ <b>Mẹ bầu và mẹ sau sinh</b> lo sản dịch, mùi lạ.<br>
+④ Phụ nữ <b>tiền mãn kinh, mãn kinh</b>.<br>
+Đặc điểm chung: đọc trên điện thoại, tìm kiếm riêng tư, dễ tin mẹo dân gian, cần biết “có cần đi khám không”.</td></tr>
+</table></div>
+<h3>Câu hỏi người đọc thường hỏi thêm</h3>
+<ul>
+<li>Vùng kín có mùi tanh như cá là bệnh gì?</li><li>Vùng kín có mùi hôi nhưng không ngứa có sao không?</li>
+<li>Vùng kín có mùi hôi như trứng thối, mùi thối là bệnh gì?</li><li>Vùng kín có mùi chua có bình thường không?</li>
+<li>Sau khi quan hệ vùng kín có mùi tanh có sao không?</li><li>Dùng dung dịch vệ sinh có hết mùi hôi không?</li>
+<li>Bà bầu, sau sinh vùng kín có mùi hôi có nguy hiểm không?</li><li>Phụ khoa có mùi hôi có tự khỏi không, chữa bao lâu thì hết?</li>
+</ul>
+
+<!-- 2 -->
+<h2><span class="n">2</span>Bản đồ thực thể (Entity Map)</h2>
+<div class="tw"><table>
+<tr><th>Entity</th><th>Loại</th><th>Vai trò trong bài viết</th></tr>
+<tr><td><b>Mùi hôi vùng kín / phụ khoa có mùi hôi</b></td><td>Primary</td><td>Chủ thể chính — cần định nghĩa “mùi bình thường” và “mùi bất thường”</td></tr>
+<tr><td>Hệ vi sinh âm đạo, Lactobacillus, pH âm đạo (3,8–4,5)</td><td>Secondary</td><td>Cơ chế gốc: mất cân bằng vi khuẩn → mùi</td></tr>
+<tr><td>Viêm âm đạo do vi khuẩn (BV), amin (trimethylamine)</td><td>Secondary</td><td>Nguyên nhân phổ biến nhất của mùi tanh cá</td></tr>
+<tr><td>Trùng roi (Trichomonas vaginalis)</td><td>Secondary</td><td>Nguyên nhân lây qua đường tình dục, mùi hôi + khí hư vàng xanh có bọt</td></tr>
+<tr><td>Nấm Candida</td><td>Secondary</td><td>Cần đặt đúng vai: <b>thường không gây mùi</b> — dùng để phân biệt</td></tr>
+<tr><td>Viêm cổ tử cung, viêm vùng chậu (PID), lậu, chlamydia</td><td>Secondary</td><td>Nguyên nhân có biến chứng nặng — <b>bài gốc thiếu</b></td></tr>
+<tr><td>Lộ tuyến cổ tử cung</td><td>Related</td><td>Thường là thay đổi sinh lý; mùi khi có viêm kèm theo</td></tr>
+<tr><td>Dị vật âm đạo (tampon bị quên)</td><td>Related</td><td>Nguyên nhân mùi thối nồng — <b>bài gốc thiếu</b></td></tr>
+<tr><td>Ung thư cổ tử cung, HPV, tầm soát (Pap, HPV test)</td><td>Related</td><td>Nguyên nhân nguy hiểm, cần nói đúng giai đoạn</td></tr>
+<tr><td>Rò trực tràng – âm đạo, ung thư âm đạo</td><td>Related</td><td>Nguyên nhân hiếm — tăng độ phủ chuyên môn</td></tr>
+<tr><td>Thai kỳ, sản dịch, nhiễm trùng hậu sản</td><td>Related</td><td>Kịch bản người dùng riêng</td></tr>
+<tr><td>Khí hư, ngứa rát, thụt rửa, tampon, bao cao su</td><td>Supporting</td><td>Triệu chứng và thói quen — khớp câu hỏi người dùng</td></tr>
+<tr><td>Tiêu chuẩn Amsel, điểm Nugent, soi tươi, test KOH, xét nghiệm PCR/NAAT</td><td>Supporting</td><td>Phục vụ H2 “Chẩn đoán” theo yêu cầu</td></tr>
+<tr><td>Metronidazole, clindamycin, tinidazole, thuốc kháng nấm nhóm azole</td><td>Supporting</td><td>Phục vụ phần “cách chữa” (chỉ nêu tên nhóm thuốc, không nêu liều)</td></tr>
+<tr><td>CDC, WHO, Cleveland Clinic</td><td>Supporting</td><td>Nguồn bằng chứng</td></tr>
+<tr><td>ThS.BSCKII Nguyễn Văn Xuyên, BV Đa khoa Hồng Ngọc</td><td>Supporting</td><td>Chuyên gia tham vấn — tín hiệu uy tín</td></tr>
+</table></div>
+
+<!-- 3 -->
+<h2><span class="n">3</span>Độ phủ ngữ nghĩa (Semantic Coverage)</h2>
+<div class="tw"><table>
+<tr><th style="width:22%">Topic Cluster</th><th>Semantic Keywords</th><th style="width:16%">Intent</th></tr>
+<tr><td>Đồng nghĩa key chính</td><td>phụ khoa có mùi hôi, vùng kín có mùi hôi, âm đạo có mùi hôi, cô bé có mùi hôi, mùi hôi vùng kín phụ nữ</td><td>Informational</td></tr>
+<tr><td>Theo kiểu mùi</td><td>vùng kín có mùi tanh, mùi tanh như cá, mùi chua, mùi khai, mùi trứng thối, mùi thối, mùi kim loại, mùi hôi sau quan hệ</td><td>Informational</td></tr>
+<tr><td>Nguyên nhân</td><td>viêm âm đạo do vi khuẩn, trùng roi, viêm cổ tử cung, viêm lộ tuyến, quên tampon, ung thư cổ tử cung, mất cân bằng pH</td><td>Informational</td></tr>
+<tr><td>Triệu chứng đi kèm</td><td>khí hư màu xám, khí hư vàng xanh có bọt, khí hư bã đậu, ngứa rát, ra máu sau quan hệ, đau bụng dưới</td><td>Informational</td></tr>
+<tr><td>Chẩn đoán</td><td>khám phụ khoa, soi tươi dịch âm đạo, đo pH âm đạo, xét nghiệm PCR, Pap smear, xét nghiệm HPV</td><td>Informational / Commercial</td></tr>
+<tr><td>Điều trị</td><td>cách chữa vùng kín có mùi hôi, thuốc trị mùi hôi vùng kín, chữa mùi hôi vùng kín tại nhà, thuốc đặt âm đạo</td><td>Commercial</td></tr>
+<tr><td>Phòng ngừa</td><td>vệ sinh vùng kín đúng cách, không thụt rửa, dung dịch vệ sinh phụ nữ, đồ lót cotton</td><td>Informational</td></tr>
+<tr><td>Kịch bản người dùng</td><td>mang thai vùng kín có mùi hôi, sau sinh sản dịch có mùi hôi, sau kỳ kinh, sau quan hệ, tuổi dậy thì, mãn kinh</td><td>Informational</td></tr>
+<tr><td>Hành động tiếp theo</td><td>khám phụ khoa ở đâu, chi phí khám phụ khoa, bệnh viện khám phụ khoa Hà Nội</td><td>Commercial / Navigational</td></tr>
+</table></div>
+
+<!-- 4 -->
+<h2><span class="n">4</span>Phân tích lỗ hổng nội dung (Content Gap)</h2>
+<h3>4A. Kiểm chứng y khoa — những chỗ sai / thiếu / mâu thuẫn</h3>
+<p class="s">Đối chiếu với CDC (hướng dẫn điều trị bệnh lây qua đường tình dục 2021), WHO, và bài Cleveland Clinic “Vaginal odor” — chính nguồn bài gốc đang trích. Mình đã mở bài Cleveland Clinic ngày 22/10/2026 để đọc trực tiếp.</p>
+<div class="tw"><table>
+<tr><th style="width:4%">#</th><th style="width:24%">Bài gốc viết</th><th>Vấn đề</th><th style="width:24%">Sửa thành</th></tr>
+<tr><td>1</td><td>H3 “Phụ khoa có mùi hôi do nhiễm nấm Candida”; “mùi hôi nhẹ nhưng ngứa dữ dội”; chú thích ảnh “Nhiễm nấm Candida khiến vùng kín có mùi hôi”</td><td><span class="pill sai">Sai trọng tâm</span> Theo CDC, nấm Candida thường <b>không có mùi</b> hoặc mùi rất nhẹ. Cleveland Clinic cũng không xếp nấm vào nhóm gây mùi. Nêu nấm như một nguyên nhân gây mùi hôi dễ khiến người đọc tự mua thuốc nấm sai bệnh.</td><td>Đưa nấm vào mục “phân biệt”: ngứa nhiều, khí hư bã đậu, <b>thường không hôi</b></td></tr>
+<tr><td>2</td><td>FAQ: “mùi hôi nhưng không ngứa… thường xuất phát từ lười vệ sinh, thụt rửa…”</td><td><span class="pill sai">Trấn an sai</span> Mùi tanh, không ngứa là kiểu điển hình của viêm âm đạo do vi khuẩn (BV). Người đọc dễ chủ quan, không đi khám.</td><td>Mùi hôi không ngứa vẫn có thể là BV — cần khám nếu kéo dài</td></tr>
+<tr><td>3</td><td>H3 “Ung thư cổ tử cung <b>giai đoạn đầu</b>”: dịch nâu hôi khắm, sụt cân…; “dù hiếm gặp”</td><td><span class="pill sai">Sai</span> CDC và Hội Ung thư Mỹ: giai đoạn sớm <b>thường không có triệu chứng</b>; dịch hôi, đau vùng chậu, sụt cân là dấu hiệu giai đoạn muộn. Ung thư cổ tử cung cũng không hiếm: WHO xếp thứ 4 trong các ung thư ở phụ nữ (~660.000 ca mới năm 2022).</td><td>“Ung thư cổ tử cung” + nhấn mạnh tầm soát vì giai đoạn sớm không triệu chứng</td></tr>
+<tr><td>4</td><td>Lộ tuyến: “tế bào tuyến… phát triển <b>xâm lấn</b> ra ngoài”; dấu hiệu “đau bụng dưới, mỏi thắt lưng, rối loạn kinh nguyệt”</td><td><span class="pill sai">Sai</span> Lộ tuyến là vùng tế bào tuyến <b>lộ ra</b> mặt ngoài cổ tử cung, thường là thay đổi sinh lý (tuổi dậy thì, mang thai, dùng thuốc tránh thai), lành tính. Chữ “xâm lấn” là từ dùng cho ung thư. Đau bụng dưới, rối loạn kinh không phải dấu hiệu của lộ tuyến mà gợi ý viêm cổ tử cung, viêm vùng chậu.</td><td>Viết lại định nghĩa; tách viêm cổ tử cung / viêm vùng chậu thành mục riêng</td></tr>
+<tr><td>5</td><td>Trùng roi: “ngứa ngáy dữ dội”, “gây viêm ngược dòng thành viêm niệu đạo, viêm phần phụ”</td><td><span class="pill vua">Thiếu &amp; lệch</span> Theo CDC, khoảng 70% người nhiễm <b>không có triệu chứng</b> — bài không nhắc. Biến chứng được ghi nhận rõ: tăng nguy cơ lây nhiễm HIV, sinh non, trẻ nhẹ cân. Mối liên hệ với viêm phần phụ chưa rõ ràng.</td><td>Nêu tỉ lệ không triệu chứng và biến chứng có bằng chứng</td></tr>
+<tr><td>6</td><td>“Yếu tố sinh lý như vệ sinh không sạch sẽ, vệ sinh vùng kín sai cách”</td><td><span class="pill vua">Nhầm khái niệm</span> Đây là thói quen, không phải sinh lý. Nguyên nhân sinh lý thật: kỳ kinh (mùi kim loại), mồ hôi, sau quan hệ, thay đổi nội tiết.</td><td>Tách “sinh lý” và “thói quen”</td></tr>
+<tr><td>7</td><td>Bài không nhắc dị vật bị bỏ quên (tampon, bao cao su)</td><td><span class="pill sai">Thiếu nguyên nhân quan trọng</span> Cleveland Clinic: tampon bị quên gây mùi rất nồng như thịt thối — đúng câu hỏi “mùi thối là bệnh gì”.</td><td>Thêm mục dị vật</td></tr>
+<tr><td>8</td><td>FAQ mùi trứng thối: quy cho vi khuẩn kỵ khí, <b>nấm men</b>, trùng roi, viêm cổ tử cung…</td><td><span class="pill sai">Không có căn cứ</span> Không nguồn y khoa nào gắn “mùi trứng thối” với một bệnh cụ thể. Nấm men thường không gây mùi. Thiếu dị vật và ung thư — hai nguyên nhân gây mùi thối nồng.</td><td>Viết lại FAQ</td></tr>
+<tr><td>9</td><td>Thai kỳ: estrogen, progesterone, <b>prolactin</b>… thay đổi pH gây mùi lạ</td><td><span class="pill vua">Thêm chi tiết không có nguồn</span> Nguồn Cleveland Clinic chỉ nói chung là nội tiết và pH thay đổi; không nhắc prolactin.</td><td>Rút gọn đúng theo nguồn</td></tr>
+<tr><td>10</td><td>Sản dịch “có mùi hôi, mùi kim loại”</td><td><span class="pill sai">Thiếu cảnh báo</span> Sản dịch bình thường có mùi tanh nồng, mùi kim loại. Sản dịch <b>hôi thối</b>, kèm sốt, đau bụng là dấu hiệu nhiễm trùng hậu sản — phải đi khám ngay.</td><td>Thêm dấu hiệu nguy hiểm</td></tr>
+<tr><td>11</td><td>“Uống nhiều nước giúp âm đạo mềm mại hơn”</td><td><span class="pill sai">Không có trong nguồn</span> Cleveland Clinic chỉ nói thiếu nước làm nước tiểu đậm đặc, có mùi khai như amoniac.</td><td>Uống đủ nước để tránh mùi khai do nước tiểu đậm đặc</td></tr>
+<tr><td>12</td><td>Tiêu đề “Nguyên nhân và <b>cách chữa</b>”; mô tả “cách chữa <b>đơn giản</b>”</td><td><span class="pill sai">Hứa nhưng không có</span> Bài không có phần điều trị. “Đơn giản” gợi ý tự chữa tại nhà — rủi ro với nội dung y tế.</td><td>Thêm H2 cách chữa theo nguyên nhân</td></tr>
+<tr><td>13</td><td>Không có phần chẩn đoán, không có mục khi nào cần đi khám</td><td><span class="pill vua">Thiếu</span> Đúng 2 H2 Trang yêu cầu bổ sung.</td><td>Đã thêm</td></tr>
+<tr><td>14</td><td>BV “là nguyên nhân <b>cao</b> gây mùi hôi”</td><td><span class="pill vua">Diễn đạt</span> Câu chưa trọn nghĩa.</td><td>“nguyên nhân phổ biến nhất”</td></tr>
+<tr><td>15</td><td>Lỗi trình bày</td><td><span class="pill vua">Biên tập</span> “do <b>iêm</b> âm đạo” (thiếu chữ v); “Khoa sản” viết thường; link “Thăm[ khám phụ khoa]” lệch dấu cách; mô tả dài 184 ký tự.</td><td>Đã sửa</td></tr>
+</table></div>
+<p class="s"><span class="pill dung">Đã đúng</span> BV: mùi tanh cá rõ hơn sau quan hệ, khí hư loãng xám trắng, hay tái phát · Trùng roi: lây qua đường tình dục, khí hư vàng xanh có bọt · Nấm: khí hư bã đậu, yếu tố nguy cơ (mang thai, tiểu đường, kháng sinh) · Lời khuyên vệ sinh, không thụt rửa, đồ lót cotton, bao cao su, chất bôi trơn không mùi — khớp với Cleveland Clinic.</p>
+
+<h3>4B. Những phần bài còn thiếu</h3>
+<div class="tw"><table>
+<tr><th style="width:22%">Loại thiếu</th><th>Chi tiết</th></tr>
+<tr><td>Missing entities</td><td>Dị vật âm đạo, viêm vùng chậu, lậu / chlamydia, HPV và tầm soát, rò trực tràng – âm đạo, pH âm đạo, Lactobacillus</td></tr>
+<tr><td>Missing topics</td><td>Mùi nào là bình thường · Phân biệt theo kiểu mùi · <b>Chẩn đoán</b> · <b>Cách chữa theo từng nguyên nhân</b> · <b>Khi nào cần đi khám</b> · Mẹo dân gian có tác dụng không</td></tr>
+<tr><td>Missing questions</td><td>Mùi tanh sau quan hệ? Mùi chua có sao không? Dung dịch vệ sinh có hết mùi không? Có tự khỏi không? Bạn tình có cần điều trị?</td></tr>
+<tr><td>Missing statistics</td><td>Tỉ lệ BV (CDC), tỉ lệ trùng roi không triệu chứng (CDC), số ca trùng roi toàn cầu (WHO), số ca ung thư cổ tử cung (WHO), tỉ lệ BV tái phát</td></tr>
+<tr><td>Thiếu expert insight</td><td>Có tên bác sĩ nhưng không có lời bác sĩ nào</td></tr>
+<tr><td>Thiếu examples / case study</td><td>Bệnh viện đã có bài ca bệnh thật: <a href="https://hongngochospital.vn/vi/quan-he-ra-mau-nguoi-phu-nu-39-tuoi-phat-hien-ung-thu-co-tu-cung">“Quan hệ ra máu, người phụ nữ 39 tuổi phát hiện ung thư cổ tử cung”</a> — nên dẫn vào mục ung thư</td></tr>
+<tr><td>Thiếu link nội bộ</td><td>Cả bài chỉ có 1 link nội bộ (dịch vụ khám phụ khoa)</td></tr>
+</table></div>
+
+<!-- 5 -->
+<h2><span class="n">5</span>Đề xuất tăng giá trị thông tin (Information Gain)</h2>
+<div class="tw"><table>
+<tr><th style="width:22%">Loại</th><th>Đề xuất cụ thể</th><th style="width:16%">Trạng thái</th></tr>
+<tr><td>Comparison tables</td><td>① <b>Bảng “đọc mùi”</b>: kiểu mùi → ý nghĩa → có cần khám không (thứ người đọc thật sự cần, đối thủ ít có). ② Bảng nguyên nhân – mùi – khí hư – triệu chứng kèm. ③ Bảng chẩn đoán. ④ Bảng điều trị theo nguyên nhân.</td><td><span class="pill dung">Đã thêm</span></td></tr>
+<tr><td>Data / statistics</td><td>CDC: ~29% phụ nữ 14–49 tuổi ở Mỹ có BV; ~70% người nhiễm trùng roi không triệu chứng. WHO: 156 triệu ca trùng roi mới năm 2020; ~660.000 ca ung thư cổ tử cung mới năm 2022. BV tái phát trên 50% trong 12 tháng (Bradshaw 2006).</td><td><span class="pill dung">Đã thêm</span></td></tr>
+<tr><td>Step-by-step guide</td><td>Quy trình chẩn đoán 5 bước; danh sách tự kiểm “khi nào cần đi khám”; mục “đi khám ngay” cho tình huống khẩn.</td><td><span class="pill dung">Đã thêm</span></td></tr>
+<tr><td>Myth-busting</td><td>Xông hơi, đặt tỏi, lá trầu, dùng dung dịch thơm không chữa được nguyên nhân — nhiều trường hợp còn làm nặng hơn.</td><td><span class="pill dung">Đã thêm</span></td></tr>
+<tr><td>Expert insight</td><td>Khung trích lời bác sĩ — <b>cần bệnh viện cung cấp lời thật</b></td><td><span class="pill vua">Cần bổ sung</span></td></tr>
+<tr><td>Case study</td><td>Dẫn link bài ca bệnh ung thư cổ tử cung đã có; nên xin thêm 1 ca BV tái phát ẩn danh</td><td><span class="pill vua">Một phần</span></td></tr>
+</table></div>
+
+<!-- 6 -->
+<h2 id="n6"><span class="n">6</span>Bài viết đã tối ưu GEO</h2>
+<div class="tw"><table>
+<tr><th style="width:16%">Thành phần</th><th>Bản gốc</th><th>Bản tối ưu</th></tr>
+<tr><td>Title / H1</td><td>Nguyên nhân và cách chữa phụ khoa có mùi hôi <span class="s">(44 ký tự)</span></td><td><b>Phụ khoa (vùng kín) có mùi hôi: Nguyên nhân &amp; cách chữa</b> <span class="s">(55 ký tự — đúng mẫu Trang yêu cầu)</span></td></tr>
+<tr><td>Description</td><td>Phụ khoa có mùi hôi thường tạo ra do vi khuẩn phân hủy… cách chữa đơn giản. <span class="s">(184 ký tự — bị cắt)</span></td><td><b>Phụ khoa có mùi hôi tanh, khắm thường do viêm âm đạo do vi khuẩn, trùng roi, viêm cổ tử cung. Bác sĩ chỉ cách nhận biết mùi bất thường, chẩn đoán và cách chữa.</b> <span class="s">(159 ký tự)</span></td></tr>
+<tr><td>Link nội bộ</td><td>1 link</td><td><b>18 link</b> tới cụm viêm phụ khoa (chi tiết bảng ở cuối mục 8). Tất cả là đường dẫn thật, lấy từ sitemap hongngochospital.vn.</td></tr>
+</table></div>
+<p class="legend s">Tô màu để Trang dễ soát mật độ: <span><mark class="k1">key chính</mark></span><span><mark class="k2">biến thể “vùng kín có mùi hôi”</mark></span>. Chữ <u>gạch chân xanh</u> là link nội bộ. Khi đưa lên web thì bỏ tô màu.</p>
+
+<div class="art">
+<h1>Phụ khoa (vùng kín) có mùi hôi: Nguyên nhân &amp; cách chữa</h1>
+<div class="byline">Tham vấn chuyên môn: ThS.BSCKII.BSNT Nguyễn Văn Xuyên – Khoa Sản – Phụ khoa – Bệnh viện Đa khoa Hồng Ngọc – Phúc Trường Minh · Cập nhật: <i>[ngày cập nhật — cần bổ sung]</i></div>
+
+<p><b>Sapo:</b> <span class="k1">Phụ khoa có mùi hôi</span> khiến nhiều chị em mất tự tin, nhưng không phải mùi nào cũng là bệnh. Vùng kín khỏe mạnh vẫn có mùi chua nhẹ do lợi khuẩn. Mùi chỉ đáng lo khi trở nên nồng, tanh như cá, hôi thối hoặc kéo dài. Nguyên nhân thường gặp nhất là viêm âm đạo do vi khuẩn, tiếp theo là trùng roi, viêm cổ tử cung, dị vật bị bỏ quên và — hiếm hơn — ung thư cổ tử cung. Bài viết giúp bạn nhận biết mùi nào bình thường, mùi nào cần đi khám, cách bác sĩ chẩn đoán và cách chữa theo từng nguyên nhân.</p>
+
+<div class="sum"><b class="t">TÓM TẮT NHANH</b>
+<span class="k1">Phụ khoa có mùi hôi</span> là tình trạng vùng kín có mùi khác thường, nồng hoặc khó chịu. Nguyên nhân phổ biến nhất là viêm âm đạo do vi khuẩn (mùi tanh như cá, rõ hơn sau quan hệ), tiếp theo là trùng roi, viêm cổ tử cung và dị vật bị bỏ quên như tampon. Nấm Candida thường gây ngứa nhiều nhưng ít khi gây mùi hôi. Muốn chữa đúng cần đi khám để xác định nguyên nhân, vì mỗi nguyên nhân dùng một loại thuốc khác nhau.</div>
+
+<div class="box"><b class="t">Những điểm chính</b>
+<ul style="margin:0;padding-left:20px">
+<li>Mùi chua nhẹ là <b>bình thường</b>. Mùi tanh cá, hôi thối, hoặc mùi mới xuất hiện và kéo dài là <b>bất thường</b>.</li>
+<li><b>Mùi tanh như cá</b> thường gặp nhất trong viêm âm đạo do vi khuẩn và trùng roi.</li>
+<li><b>Mùi thối rất nồng</b> có thể do tampon bị quên hoặc bệnh lý cổ tử cung — cần khám ngay.</li>
+<li>Chẩn đoán dựa trên khám, đo pH và xét nghiệm dịch âm đạo. Điều trị bằng thuốc theo đúng nguyên nhân, <b>không tự mua thuốc</b>.</li>
+<li>Không thụt rửa, không dùng sản phẩm tạo mùi thơm — chúng làm mất cân bằng vi khuẩn và khiến mùi nặng hơn.</li>
+</ul></div>
+
+<h2>1. Phụ khoa có mùi hôi là gì? Mùi nào bình thường, mùi nào bất thường?</h2>
+<h3>Vì sao vùng kín có mùi?</h3>
+<p>Âm đạo nào cũng có mùi riêng. Mùi này đến từ hệ vi sinh âm đạo, trong đó lợi khuẩn Lactobacillus chiếm ưu thế và tạo acid lactic, giữ pH âm đạo ở mức acid khoảng 3,8–4,5. <span class="k2">Vùng kín có mùi hôi</span> khi hệ vi sinh này mất cân bằng: vi khuẩn có hại phát triển, tạo ra các hợp chất có mùi (như amin gây mùi tanh). Mùi cũng thay đổi theo chu kỳ kinh, sau vận động hay sau quan hệ.</p>
+<h3>Bảng nhận biết các kiểu mùi vùng kín</h3>
+<div class="tw"><table>
+<tr><th>Kiểu mùi</th><th>Ý nghĩa thường gặp</th><th>Có cần đi khám?</th></tr>
+<tr><td>Chua nhẹ (giống bánh mì men)</td><td>Bình thường — do lợi khuẩn Lactobacillus</td><td>Không</td></tr>
+<tr><td>Kim loại (giống đồng xu)</td><td>Trong hoặc ngay sau kỳ kinh; sản dịch sau sinh</td><td>Không, trừ khi kéo dài bất thường</td></tr>
+<tr><td>Khai (giống amoniac)</td><td>Nước tiểu đọng lại, cơ thể thiếu nước</td><td>Thường không; khám nếu kèm tiểu buốt</td></tr>
+<tr><td>Mồ hôi, hăng</td><td>Đổ nhiều mồ hôi khi căng thẳng, vận động</td><td>Không</td></tr>
+<tr><td><b>Tanh như cá</b>, rõ hơn sau quan hệ</td><td>Viêm âm đạo do vi khuẩn; trùng roi</td><td><b>Có</b></td></tr>
+<tr><td><b>Hôi thối rất nồng</b> (giống thịt ôi)</td><td>Tampon hoặc dị vật bị bỏ quên; bệnh lý cổ tử cung</td><td><b>Có — khám sớm</b></td></tr>
+<tr><td><b>Hôi kèm dịch lẫn máu</b></td><td>Viêm cổ tử cung, polyp, ung thư cổ tử cung</td><td><b>Có — khám sớm</b></td></tr>
+</table></div>
+<p class="note">Nguồn: Cleveland Clinic – Vaginal odor. Bảng chỉ để tham khảo, không dùng để tự chẩn đoán.</p>
+
+<h2>2. Nguyên nhân phụ khoa có mùi hôi là gì?</h2>
+<p>Nguyên nhân <span class="k1">phụ khoa có mùi hôi</span> chia thành hai nhóm: nhóm sinh lý, thói quen (thường thoáng qua, tự hết) và nhóm bệnh lý (cần điều trị). Xem thêm tổng quan về <a href="https://hongngochospital.vn/vi/nguyen-nhan-gay-benh-phu-khoa">nguyên nhân gây bệnh phụ khoa</a>.</p>
+
+<h3>2.1. Nguyên nhân sinh lý và thói quen sinh hoạt</h3>
+<ul>
+<li><b>Kỳ kinh nguyệt:</b> máu kinh làm dịch âm đạo có mùi kim loại.</li>
+<li><b>Mồ hôi:</b> vùng kín bí, ẩm khi vận động, mặc đồ chật.</li>
+<li><b>Sau quan hệ:</b> tinh dịch có tính kiềm làm thay đổi pH tạm thời, mùi có thể khác đi.</li>
+<li><b>Thiếu nước:</b> nước tiểu đậm đặc gây mùi khai.</li>
+<li><b>Thực phẩm có mùi mạnh</b> như tỏi, cá có thể làm mùi thay đổi.</li>
+<li><b>Thói quen chưa đúng:</b> thụt rửa, dùng xà phòng hoặc dung dịch có hương liệu, thay băng vệ sinh không đủ thường xuyên.</li>
+</ul>
+
+<h3>2.2. Viêm âm đạo do vi khuẩn (BV) – nguyên nhân phổ biến nhất</h3>
+<p>Viêm âm đạo do vi khuẩn (Bacterial Vaginosis – BV) xảy ra khi lợi khuẩn Lactobacillus suy giảm và vi khuẩn kỵ khí phát triển quá mức. Đây là nguyên nhân phổ biến nhất của <span class="k2">vùng kín có mùi hôi</span> ở phụ nữ trong độ tuổi sinh sản; theo CDC, khoảng 29% phụ nữ Mỹ 14–49 tuổi có BV. Dấu hiệu đặc trưng:</p>
+<ul>
+<li>Mùi tanh như cá, rõ hơn sau quan hệ hoặc sau kỳ kinh.</li>
+<li>Khí hư loãng, màu trắng xám, đồng nhất.</li>
+<li>Thường <b>không ngứa</b> hoặc chỉ ngứa rát nhẹ; nhiều người không có triệu chứng.</li>
+</ul>
+<p>BV rất dễ tái phát: một nghiên cứu theo dõi (Bradshaw và cộng sự, 2006) ghi nhận hơn một nửa số phụ nữ tái phát trong vòng 12 tháng sau điều trị. Khi mang thai, BV liên quan đến nguy cơ sinh non. Tìm hiểu thêm: <a href="https://hongngochospital.vn/vi/dau-hieu-mac-benh-phu-khoa">dấu hiệu mắc bệnh phụ khoa</a>.</p>
+
+<h3>2.3. Viêm âm đạo do trùng roi (Trichomonas)</h3>
+<p>Trùng roi Trichomonas vaginalis là ký sinh trùng lây qua quan hệ tình dục. WHO ước tính năm 2020 có khoảng 156 triệu ca mắc mới ở người 15–49 tuổi trên toàn cầu. Theo CDC, khoảng 70% người nhiễm không có triệu chứng; khi có, thường gặp:</p>
+<ul>
+<li>Khí hư vàng xanh, loãng, có bọt.</li>
+<li>Mùi hôi tanh.</li>
+<li>Ngứa, rát vùng kín, tiểu buốt, đau khi quan hệ.</li>
+</ul>
+<p>Trùng roi làm tăng nguy cơ lây nhiễm HIV; ở phụ nữ mang thai, bệnh liên quan đến sinh non và trẻ nhẹ cân. Cả hai vợ chồng (bạn tình) đều phải điều trị. Chi tiết: <a href="https://hongngochospital.vn/vi/benh-trung-roi-am-dao">bệnh trùng roi âm đạo</a>.</p>
+
+<h3>2.4. Nấm Candida – thường gây ngứa, ít khi gây mùi hôi</h3>
+<p>Nhiều người nghĩ nấm âm đạo gây mùi hôi, nhưng theo CDC, viêm âm đạo do nấm Candida thường <b>không có mùi hoặc chỉ mùi rất nhẹ</b>. Dấu hiệu nổi bật của nấm là ngứa nhiều, nóng rát, khí hư trắng đặc như bã đậu. Khoảng 75% phụ nữ bị nấm âm đạo ít nhất một lần trong đời. Nếu vùng kín vừa ngứa vừa có mùi tanh rõ, có thể bạn bị nhiễm phối hợp hoặc mắc bệnh khác — cần khám để xác định. Xem thêm: <a href="https://hongngochospital.vn/vi/ngua-vung-kin-nguyen-nhan-va-cach-dieu-tri">ngứa vùng kín: nguyên nhân và cách điều trị</a>.</p>
+
+<h3>2.5. Viêm cổ tử cung và viêm vùng chậu</h3>
+<p>Viêm cổ tử cung thường do vi khuẩn lây qua đường tình dục như lậu, chlamydia. Khi viêm lan lên tử cung, vòi trứng sẽ thành viêm vùng chậu – biến chứng có thể gây vô sinh, thai ngoài tử cung và đau vùng chậu mạn tính. Dấu hiệu: khí hư vàng, đục như mủ, có mùi hôi; ra máu sau quan hệ hoặc giữa kỳ kinh; đau bụng dưới; có thể sốt. Chi tiết: <a href="https://hongngochospital.vn/vi/viem-co-tu-cung-dau-hieu-phong-tranh-dieu-tri">viêm cổ tử cung: dấu hiệu, phòng tránh, điều trị</a>.</p>
+
+<h3>2.6. Lộ tuyến cổ tử cung</h3>
+<p>Lộ tuyến cổ tử cung là tình trạng vùng tế bào tuyến vốn nằm trong ống cổ tử cung lộ ra mặt ngoài cổ tử cung. Đây thường là thay đổi lành tính, hay gặp ở tuổi dậy thì, khi mang thai hoặc dùng thuốc tránh thai, và nhiều người không có triệu chứng. Vùng lộ tuyến có thể tiết nhiều khí hư hoặc ra máu sau quan hệ; mùi hôi thường xuất hiện khi có viêm nhiễm đi kèm. Tìm hiểu: <a href="https://hongngochospital.vn/vi/chua-viem-lo-tuyen-co-tu-cung">chữa viêm lộ tuyến cổ tử cung</a>.</p>
+
+<h3>2.7. Dị vật bị bỏ quên trong âm đạo</h3>
+<p>Tampon, cốc nguyệt san, bao cao su bị tuột hay bông gạc bị bỏ quên trong âm đạo có thể gây mùi hôi thối rất nồng, kèm khí hư nâu hoặc lẫn máu. Đây là nguyên nhân dễ bị bỏ sót nhưng chữa được nhanh: bác sĩ lấy dị vật ra và kiểm tra viêm nhiễm. Nếu không tự lấy ra được, hoặc có sốt, nổi ban, chóng mặt, cần đi khám ngay.</p>
+
+<h3>2.8. Ung thư cổ tử cung</h3>
+<p>Ung thư cổ tử cung là ung thư phổ biến thứ 4 ở phụ nữ trên thế giới, với khoảng 660.000 ca mới năm 2022 (WHO); hầu hết các ca liên quan đến nhiễm virus HPV kéo dài. Ở <b>giai đoạn sớm, bệnh thường không có triệu chứng</b>, vì vậy tầm soát định kỳ là cách phát hiện sớm duy nhất. Khi bệnh tiến triển, có thể xuất hiện dịch âm đạo hôi, lẫn máu hoặc màu nâu; chảy máu sau quan hệ, ngoài kỳ kinh hoặc sau mãn kinh; đau vùng chậu, sụt cân. Đọc thêm câu chuyện thật: <a href="https://hongngochospital.vn/vi/quan-he-ra-mau-nguoi-phu-nu-39-tuoi-phat-hien-ung-thu-co-tu-cung">quan hệ ra máu, người phụ nữ 39 tuổi phát hiện ung thư cổ tử cung</a>, và tìm hiểu <a href="https://hongngochospital.vn/vi/tam-soat-ung-thu-co-tu-cung">tầm soát ung thư cổ tử cung</a>.</p>
+<p>Hiếm hơn, mùi hôi còn có thể do ung thư âm đạo hoặc rò trực tràng – âm đạo (lỗ thông bất thường khiến phân lọt vào âm đạo, đôi khi xảy ra sau sinh khó).</p>
+
+<h3>2.9. Mùi hôi khi mang thai và sau sinh</h3>
+<p>Khi mang thai, nội tiết và pH âm đạo thay đổi, khí hư ra nhiều hơn, khứu giác cũng nhạy hơn nên mẹ bầu dễ nhận thấy mùi. Tuy nhiên, mùi tanh, khí hư đổi màu khi mang thai cần được khám vì viêm âm đạo do vi khuẩn và trùng roi đều liên quan đến sinh non. Xem: <a href="https://hongngochospital.vn/vi/nhiem-trung-am-dao-o-phu-nu-co-thai">nhiễm trùng âm đạo ở phụ nữ có thai</a>.</p>
+<p>Sau sinh, tử cung đào thải <a href="https://hongngochospital.vn/vi/san-dich">sản dịch</a> (máu, chất nhầy, mô) trong khoảng 4–6 tuần; sản dịch bình thường có mùi tanh nồng, mùi kim loại hoặc mùi ẩm mốc. Sản dịch <b>hôi thối</b>, kèm sốt, đau bụng dưới là dấu hiệu nhiễm trùng hậu sản — cần đi khám ngay.</p>
+
+<h3>Bảng so sánh nhanh các nguyên nhân</h3>
+<div class="tw"><table>
+<tr><th>Nguyên nhân</th><th>Mùi</th><th>Khí hư</th><th>Triệu chứng kèm</th></tr>
+<tr><td>Viêm âm đạo do vi khuẩn</td><td>Tanh như cá, rõ sau quan hệ</td><td>Loãng, trắng xám</td><td>Thường không ngứa</td></tr>
+<tr><td>Trùng roi</td><td>Hôi tanh</td><td>Vàng xanh, có bọt</td><td>Ngứa, rát, tiểu buốt; 70% không triệu chứng</td></tr>
+<tr><td>Nấm Candida</td><td>Thường không mùi</td><td>Trắng đặc như bã đậu</td><td>Ngứa nhiều, nóng rát</td></tr>
+<tr><td>Viêm cổ tử cung / vùng chậu</td><td>Hôi</td><td>Vàng đục như mủ</td><td>Ra máu sau quan hệ, đau bụng dưới, sốt</td></tr>
+<tr><td>Dị vật bị bỏ quên</td><td>Thối rất nồng</td><td>Nâu, lẫn máu</td><td>Khó chịu, có thể sốt</td></tr>
+<tr><td>Ung thư cổ tử cung (giai đoạn muộn)</td><td>Hôi</td><td>Lẫn máu, màu nâu</td><td>Chảy máu bất thường, đau vùng chậu, sụt cân</td></tr>
+</table></div>
+
+<h2>3. Chẩn đoán mùi hôi vùng kín như thế nào?</h2>
+<p>Để tìm đúng nguyên nhân <span class="k1">phụ khoa có mùi hôi</span>, bác sĩ kết hợp hỏi bệnh, khám và xét nghiệm. Quá trình thường gồm 5 bước:</p>
+<ol>
+<li><b>Hỏi bệnh sử:</b> mùi xuất hiện từ khi nào, kiểu mùi, màu khí hư, chu kỳ kinh, quan hệ tình dục, thuốc đang dùng, tiền sử từng điều trị.</li>
+<li><b>Khám phụ khoa bằng mỏ vịt:</b> quan sát âm đạo, cổ tử cung, khí hư, tìm dị vật.</li>
+<li><b>Đo pH dịch âm đạo:</b> pH trên 4,5 gợi ý viêm âm đạo do vi khuẩn hoặc trùng roi; nấm thường có pH bình thường.</li>
+<li><b>Xét nghiệm dịch âm đạo:</b> nhỏ dung dịch KOH để thử mùi tanh (test mùi); soi tươi dưới kính hiển vi tìm “tế bào clue” (gợi ý BV), trùng roi hoặc sợi nấm; nhuộm Gram tính điểm Nugent để chẩn đoán BV. Với trùng roi, lậu, chlamydia, CDC ưu tiên xét nghiệm sinh học phân tử (PCR/NAAT) vì soi tươi có thể bỏ sót hơn một nửa số ca.</li>
+<li><b>Kiểm tra cổ tử cung khi cần:</b> xét nghiệm tế bào cổ tử cung (Pap), <a href="https://hongngochospital.vn/vi/xet-nghiem-hpv">xét nghiệm HPV</a>, soi cổ tử cung; siêu âm nếu nghi viêm vùng chậu.</li>
+</ol>
+<div class="tw"><table>
+<tr><th>Xét nghiệm</th><th>Phát hiện</th></tr>
+<tr><td>Tiêu chuẩn Amsel (đủ 3/4: khí hư loãng đồng nhất, pH &gt; 4,5, test mùi dương tính, có tế bào clue)</td><td>Viêm âm đạo do vi khuẩn — làm ngay tại phòng khám</td></tr>
+<tr><td>Nhuộm Gram – điểm Nugent</td><td>Viêm âm đạo do vi khuẩn — tiêu chuẩn của phòng xét nghiệm</td></tr>
+<tr><td>Soi tươi, nuôi cấy</td><td>Nấm Candida, trùng roi</td></tr>
+<tr><td>PCR / NAAT</td><td>Trùng roi, lậu, chlamydia — độ nhạy cao nhất</td></tr>
+<tr><td>Pap, HPV, soi cổ tử cung</td><td>Tổn thương tiền ung thư, ung thư cổ tử cung</td></tr>
+</table></div>
+<p>Trước khi khám 24–48 giờ, không nên thụt rửa, đặt thuốc hay quan hệ để kết quả xét nghiệm chính xác. Xem thêm: <a href="https://hongngochospital.vn/vi/giai-dap-thac-mac-kham-phu-khoa-co-dau-khong">khám phụ khoa có đau không</a>.</p>
+
+<h2>4. Cách chữa phụ khoa có mùi hôi theo từng nguyên nhân</h2>
+<p>Cách chữa <span class="k1">phụ khoa có mùi hôi</span> hiệu quả nhất là điều trị đúng nguyên nhân. Mỗi bệnh dùng một loại thuốc khác nhau, nên bác sĩ chỉ kê đơn sau khi có chẩn đoán.</p>
+<div class="tw"><table>
+<tr><th>Nguyên nhân</th><th>Hướng điều trị (theo chỉ định bác sĩ)</th><th>Lưu ý</th></tr>
+<tr><td>Viêm âm đạo do vi khuẩn</td><td>Kháng sinh như metronidazole hoặc clindamycin, dạng uống hoặc đặt/bôi âm đạo</td><td>Dùng đủ liệu trình kể cả khi đã hết mùi. Theo CDC, không cần điều trị thường quy cho bạn tình nam</td></tr>
+<tr><td>Trùng roi</td><td>Thuốc diệt ký sinh trùng nhóm metronidazole hoặc tinidazole</td><td><b>Điều trị cả bạn tình</b>, kiêng quan hệ đến khi cả hai khỏi; CDC khuyên xét nghiệm lại trong vòng 3 tháng</td></tr>
+<tr><td>Nấm Candida</td><td>Thuốc kháng nấm nhóm azole, dạng đặt hoặc uống</td><td>Người bị tiểu đường cần kiểm soát đường huyết</td></tr>
+<tr><td>Viêm cổ tử cung, viêm vùng chậu</td><td>Kháng sinh theo tác nhân (lậu, chlamydia…)</td><td>Điều trị cả bạn tình; viêm vùng chậu nặng có thể phải nhập viện</td></tr>
+<tr><td>Lộ tuyến cổ tử cung</td><td>Thường không cần điều trị nếu không có triệu chứng; nếu khí hư nhiều, ra máu, có thể đốt điện, áp lạnh, laser</td><td>Cần làm Pap/HPV trước để loại trừ tổn thương ác tính</td></tr>
+<tr><td>Dị vật</td><td>Bác sĩ lấy dị vật, điều trị viêm nếu có</td><td>Không cố tự lấy nếu đau hoặc không thấy</td></tr>
+<tr><td>Ung thư cổ tử cung</td><td>Phẫu thuật, xạ trị, hóa trị tùy giai đoạn</td><td>Phát hiện càng sớm, kết quả điều trị càng tốt</td></tr>
+</table></div>
+<div class="box cam"><b class="t">Những cách “chữa mẹo” không nên làm</b>
+Tự mua kháng sinh hoặc thuốc đặt; thụt rửa sâu; xông hơi; đặt tỏi, lá trầu vào âm đạo; dùng dung dịch, nước hoa vùng kín để át mùi. Những cách này không chữa được nguyên nhân, dễ gây bỏng rát niêm mạc, làm mất lợi khuẩn và khiến bệnh tái phát nhiều hơn. Đọc thêm: <a href="https://hongngochospital.vn/vi/toi-chua-viem-am-dao-lieu-co-dung">tỏi chữa viêm âm đạo liệu có đúng</a>, <a href="https://hongngochospital.vn/vi/nhung-chu-y-khi-dung-thuoc-dat-am-dao">những chú ý khi dùng thuốc đặt âm đạo</a>.</div>
+<div class="box"><b class="t">Ý kiến bác sĩ</b><i>[Cần bổ sung: 1–2 câu nhận định thật của ThS.BSCKII Nguyễn Văn Xuyên — ví dụ về tình trạng chị em tự điều trị sai nguyên nhân thường gặp ở phòng khám. Không tự viết thay bác sĩ.]</i></div>
+
+<h2>5. Cách phòng ngừa vùng kín có mùi hôi</h2>
+<ul>
+<li><b>Vệ sinh đúng cách:</b> rửa bên ngoài (âm hộ) bằng nước ấm và xà phòng dịu nhẹ, không mùi; lau từ trước ra sau. Xem <a href="https://hongngochospital.vn/vi/dung-dung-dich-ve-sinh-phu-nu-the-nao-cho-dung">dùng dung dịch vệ sinh phụ nữ thế nào cho đúng</a>.</li>
+<li><b>Không thụt rửa âm đạo:</b> thụt rửa làm mất lợi khuẩn, tăng nguy cơ viêm âm đạo do vi khuẩn và viêm vùng chậu (CDC).</li>
+<li><b>Thay đồ sau khi tập luyện, bơi lội;</b> mặc đồ lót cotton, tránh quần quá bó.</li>
+<li><b>Thay băng vệ sinh, tampon đúng giờ</b> (tampon tối đa 8 tiếng theo khuyến cáo của FDA Hoa Kỳ) và kiểm tra đã lấy ra hết.</li>
+<li><b>Uống đủ nước</b> để nước tiểu không quá đậm đặc, tránh mùi khai.</li>
+<li><b>Quan hệ an toàn:</b> dùng bao cao su; nếu dùng chất bôi trơn, chọn loại không mùi, không vị.</li>
+<li><b>Tầm soát định kỳ:</b> <a href="https://hongngochospital.vn/vi/kham-phu-khoa">khám phụ khoa</a> 6–12 tháng/lần và tầm soát ung thư cổ tử cung theo lịch bác sĩ hẹn; tiêm <a href="https://hongngochospital.vn/vi/tiem-hpv-phong-ung-thu-co-tu-cung">vắc xin HPV</a> nếu trong độ tuổi khuyến cáo.</li>
+</ul>
+
+<h2>6. Khi nào cần đi khám?</h2>
+<p>Hãy đi khám nếu <span class="k2">vùng kín có mùi hôi</span> kèm một trong các dấu hiệu sau:</p>
+<ul>
+<li>Mùi mới xuất hiện, nồng, tanh như cá hoặc hôi thối, kéo dài hơn vài ngày.</li>
+<li>Khí hư đổi màu (xám, vàng, xanh), có bọt, đặc như mủ hoặc lẫn máu.</li>
+<li>Ngứa, rát, sưng đỏ vùng kín; đau khi quan hệ hoặc khi đi tiểu.</li>
+<li>Chảy máu sau quan hệ, giữa kỳ kinh hoặc sau mãn kinh.</li>
+<li>Đang mang thai, hoặc bạn tình được chẩn đoán bệnh lây qua đường tình dục.</li>
+<li>Đã điều trị nhưng mùi vẫn quay lại.</li>
+</ul>
+<div class="box cam"><b class="t">Cần đi khám ngay trong ngày</b>
+Sốt, đau bụng dưới dữ dội; nghi còn tampon hoặc dị vật trong âm đạo; sản dịch sau sinh hôi thối kèm sốt; chảy máu âm đạo nhiều.</div>
+
+<h2>Kết luận</h2>
+<p><span class="k1">Phụ khoa có mùi hôi</span> có thể chỉ là thay đổi sinh lý tạm thời, nhưng mùi tanh, hôi thối hoặc kéo dài thường là dấu hiệu của viêm âm đạo do vi khuẩn, trùng roi, viêm cổ tử cung, dị vật hoặc bệnh lý cổ tử cung. Cách chữa đúng là khám để xác định nguyên nhân và dùng thuốc theo chỉ định, thay vì che mùi hay tự mua thuốc.</p>
+<p>Khoa Sản – Phụ khoa, Bệnh viện Đa khoa Hồng Ngọc thăm khám riêng tư theo mô hình “1 bác sĩ – 1 người bệnh”, giúp chị em được chẩn đoán chính xác và điều trị an toàn. <a href="https://hongngochospital.vn/vi/dich-vu-kham-phu-khoa">Đặt lịch khám phụ khoa</a> để được tư vấn trực tiếp. <b>[CTA: nút đặt lịch / hotline — cần bổ sung]</b></p>
+
+<h2>Câu hỏi thường gặp về phụ khoa có mùi hôi</h2>
+<h3>Vùng kín có mùi hôi nhưng không ngứa có đáng lo không?</h3>
+<p>Có thể có. Mùi tanh nhưng không ngứa là kiểu điển hình của viêm âm đạo do vi khuẩn. Nếu mùi kéo dài vài ngày, rõ hơn sau quan hệ hoặc kèm khí hư loãng màu xám, chị em nên đi khám.</p>
+<h3>Vùng kín có mùi hôi như trứng thối hoặc mùi thối là bệnh gì?</h3>
+<p>Không có bệnh nào được nhận biết riêng bằng mùi trứng thối. Mùi thối rất nồng thường gặp khi tampon hoặc dị vật bị bỏ quên, viêm nhiễm nặng hoặc bệnh lý cổ tử cung, nên cần khám sớm. Thức ăn và mồ hôi chỉ làm mùi thay đổi nhẹ, tạm thời.</p>
+<h3>Sau khi quan hệ vùng kín có mùi tanh có sao không?</h3>
+<p>Tinh dịch có tính kiềm nên mùi vùng kín có thể thay đổi nhẹ trong thời gian ngắn. Nếu mùi tanh như cá lặp lại sau mỗi lần quan hệ, đó là dấu hiệu gợi ý viêm âm đạo do vi khuẩn và cần đi khám.</p>
+<h3>Vùng kín có mùi chua có bình thường không?</h3>
+<p>Mùi chua nhẹ là bình thường, do lợi khuẩn Lactobacillus tạo ra acid lactic. Chỉ cần khám khi mùi chua kèm ngứa nhiều, nóng rát hoặc khí hư trắng đặc như bã đậu (gợi ý nấm).</p>
+<h3>Dùng dung dịch vệ sinh có hết mùi hôi vùng kín không?</h3>
+<p>Dung dịch vệ sinh chỉ làm sạch bên ngoài, không chữa được nguyên nhân viêm nhiễm. Sản phẩm có hương liệu và thói quen thụt rửa còn làm mất lợi khuẩn, khiến mùi dễ quay lại.</p>
+<h3>Phụ khoa có mùi hôi có tự khỏi không?</h3>
+<p>Mùi do kỳ kinh, mồ hôi hoặc sau quan hệ thường tự hết sau vài ngày. Viêm âm đạo do vi khuẩn đôi khi tự hết nhưng dễ tái phát, còn trùng roi và viêm cổ tử cung phải điều trị bằng thuốc.</p>
+<h3>Bà bầu vùng kín có mùi hôi có nguy hiểm không?</h3>
+<p>Khí hư tăng lên khi mang thai là bình thường, nhưng mùi tanh hoặc khí hư đổi màu cần được khám sớm. Viêm âm đạo do vi khuẩn và trùng roi khi mang thai liên quan đến nguy cơ sinh non.</p>
+<h3>Bạn tình có cần điều trị cùng không?</h3>
+<p>Với trùng roi, lậu và chlamydia, bạn tình bắt buộc phải điều trị cùng lúc để tránh tái nhiễm. Với viêm âm đạo do vi khuẩn, CDC không khuyến cáo điều trị thường quy cho bạn tình nam.</p>
+
+
+<p class="note">Lưu ý: Bài viết chỉ mang tính chất tham khảo, không thay thế cho việc chẩn đoán và điều trị y khoa. Hãy tham khảo ý kiến bác sĩ chuyên khoa để được tư vấn cụ thể.</p>
+<p><b>Tài liệu tham khảo</b></p>
+<ol class="ref">
+<li>Cleveland Clinic – Vaginal Odor: Types, Causes, Diagnosis &amp; Treatment. my.clevelandclinic.org/health/symptoms/17905-vaginal-odor</li>
+<li>CDC – Sexually Transmitted Infections Treatment Guidelines, 2021: Bacterial Vaginosis; Trichomoniasis; Vulvovaginal Candidiasis; Cervicitis; Pelvic Inflammatory Disease.</li>
+<li>CDC – Bacterial Vaginosis Basic Fact Sheet; Trichomoniasis Basic Fact Sheet; Douching fact sheet.</li>
+<li>WHO – Trichomoniasis fact sheet; Cervical cancer fact sheet.</li>
+<li>Bradshaw CS và cs. High recurrence rates of bacterial vaginosis over the course of 12 months after oral metronidazole therapy. J Infect Dis 2006;193(11):1478–1486.</li>
+<li>American Cancer Society – Signs and Symptoms of Cervical Cancer.</li>
+<li>U.S. FDA – The Facts on Tampons and How to Use Them Safely.</li>
+</ol>
+</div>
+
+<!-- 7 -->
+<h2><span class="n">7</span>FAQ (bản để gắn Schema FAQPage)</h2>
+<p class="s">Mỗi câu trả lời 2–3 câu, đứng độc lập. Câu 1 và câu 2 thay cho 2 câu hỏi của bài gốc (đã sửa nội dung sai).</p>
+<h3>Vùng kín có mùi hôi nhưng không ngứa có đáng lo không?</h3>
+<p>Có thể có. Mùi tanh nhưng không ngứa là kiểu điển hình của viêm âm đạo do vi khuẩn. Nếu mùi kéo dài vài ngày, rõ hơn sau quan hệ hoặc kèm khí hư loãng màu xám, chị em nên đi khám.</p>
+<h3>Vùng kín có mùi hôi như trứng thối hoặc mùi thối là bệnh gì?</h3>
+<p>Không có bệnh nào được nhận biết riêng bằng mùi trứng thối. Mùi thối rất nồng thường gặp khi tampon hoặc dị vật bị bỏ quên, viêm nhiễm nặng hoặc bệnh lý cổ tử cung, nên cần khám sớm. Thức ăn và mồ hôi chỉ làm mùi thay đổi nhẹ, tạm thời.</p>
+<h3>Sau khi quan hệ vùng kín có mùi tanh có sao không?</h3>
+<p>Tinh dịch có tính kiềm nên mùi vùng kín có thể thay đổi nhẹ trong thời gian ngắn. Nếu mùi tanh như cá lặp lại sau mỗi lần quan hệ, đó là dấu hiệu gợi ý viêm âm đạo do vi khuẩn và cần đi khám.</p>
+<h3>Vùng kín có mùi chua có bình thường không?</h3>
+<p>Mùi chua nhẹ là bình thường, do lợi khuẩn Lactobacillus tạo ra acid lactic. Chỉ cần khám khi mùi chua kèm ngứa nhiều, nóng rát hoặc khí hư trắng đặc như bã đậu (gợi ý nấm).</p>
+<h3>Dùng dung dịch vệ sinh có hết mùi hôi vùng kín không?</h3>
+<p>Dung dịch vệ sinh chỉ làm sạch bên ngoài, không chữa được nguyên nhân viêm nhiễm. Sản phẩm có hương liệu và thói quen thụt rửa còn làm mất lợi khuẩn, khiến mùi dễ quay lại.</p>
+<h3>Phụ khoa có mùi hôi có tự khỏi không?</h3>
+<p>Mùi do kỳ kinh, mồ hôi hoặc sau quan hệ thường tự hết sau vài ngày. Viêm âm đạo do vi khuẩn đôi khi tự hết nhưng dễ tái phát, còn trùng roi và viêm cổ tử cung phải điều trị bằng thuốc.</p>
+<h3>Bà bầu vùng kín có mùi hôi có nguy hiểm không?</h3>
+<p>Khí hư tăng lên khi mang thai là bình thường, nhưng mùi tanh hoặc khí hư đổi màu cần được khám sớm. Viêm âm đạo do vi khuẩn và trùng roi khi mang thai liên quan đến nguy cơ sinh non.</p>
+<h3>Bạn tình có cần điều trị cùng không?</h3>
+<p>Với trùng roi, lậu và chlamydia, bạn tình bắt buộc phải điều trị cùng lúc để tránh tái nhiễm. Với viêm âm đạo do vi khuẩn, CDC không khuyến cáo điều trị thường quy cho bạn tình nam.</p>
+
+
+<!-- 8 -->
+<h2><span class="n">8</span>Điểm khả năng được AI trích dẫn</h2>
+<p class="s">Điểm ước tính theo kinh nghiệm GEO (không phải công cụ đo chính thức), mỗi tiêu chí 20 điểm.</p>
+<div class="tw"><table>
+<tr><th style="width:18%">Tiêu chí</th><th style="width:20%">Bài gốc</th><th style="width:20%">Bản tối ưu</th><th>Lý do &amp; cách cải thiện thêm</th></tr>
+<tr><td><b>Information Gain</b></td><td>6/20<div class="bar"><i style="width:30%"></i></div></td><td>16/20<div class="bar af"><i style="width:80%"></i></div></td><td>Bài gốc giống phần lớn bài đối thủ. Đã thêm bảng đọc mùi, bảng chẩn đoán, bảng điều trị theo nguyên nhân, mục chữa mẹo không nên làm. Lên 18–20 nếu có lời bác sĩ thật + 1 ca bệnh.</td></tr><tr><td><b>Semantic Coverage</b></td><td>11/20<div class="bar"><i style="width:55%"></i></div></td><td>18/20<div class="bar af"><i style="width:90%"></i></div></td><td>Đã thêm dị vật, viêm cổ tử cung / vùng chậu, HPV, rò, chẩn đoán, điều trị, khi nào đi khám, 8 câu hỏi thường gặp.</td></tr><tr><td><b>Authority</b></td><td>9/20<div class="bar"><i style="width:45%"></i></div></td><td>15/20<div class="bar af"><i style="width:75%"></i></div></td><td>Có tên bác sĩ nhưng chưa có lời bác sĩ, chưa có hộp hồ sơ. Bổ sung 2 thứ này + schema reviewedBy.</td></tr><tr><td><b>Structure</b></td><td>10/20<div class="bar"><i style="width:50%"></i></div></td><td>18/20<div class="bar af"><i style="width:90%"></i></div></td><td>Đã có tóm tắt nhanh, điểm chính, H2 dạng câu hỏi, bảng, quy trình đánh số, FAQ. Thêm mục lục.</td></tr><tr><td><b>Evidence</b></td><td>9/20<div class="bar"><i style="width:45%"></i></div></td><td>17/20<div class="bar af"><i style="width:85%"></i></div></td><td>Bài gốc có 1 nguồn nhưng chép sai / thêm ý ngoài nguồn ở 3 chỗ. Đã sửa và gắn 7 nguồn chính thống.</td></tr><tr><td><b>Tổng</b></td><td><b>45/100</b></td><td><b>84/100</b></td><td>Mức “dễ được AI trích dẫn” thường từ 80 trở lên.</td></tr>
+</table></div>
+
+<h3>Kế hoạch link nội bộ (cụm viêm phụ khoa)</h3>
+<p class="s">Tất cả đường dẫn lấy từ sitemap thật của hongngochospital.vn ngày 22/10/2026. Mình mới xác nhận đường dẫn có tồn tại; nội dung từng bài đoán theo tên đường dẫn — biên tập nên mở nhanh từng link kiểm lại trước khi đăng.</p>
+<div class="tw"><table>
+<tr><th>Anchor text</th><th>Đặt ở mục</th><th>URL đích</th></tr>
+<tr><td>nguyên nhân gây bệnh phụ khoa</td><td>2. Nguyên nhân phụ khoa có mùi hôi là gì?</td><td class="s">hongngochospital.vn/vi/nguyen-nhan-gay-benh-phu-khoa</td></tr><tr><td>dấu hiệu mắc bệnh phụ khoa</td><td>2.2. Viêm âm đạo do vi khuẩn (BV) – nguyên nhân phổ biến nhất</td><td class="s">hongngochospital.vn/vi/dau-hieu-mac-benh-phu-khoa</td></tr><tr><td>bệnh trùng roi âm đạo</td><td>2.3. Viêm âm đạo do trùng roi (Trichomonas)</td><td class="s">hongngochospital.vn/vi/benh-trung-roi-am-dao</td></tr><tr><td>ngứa vùng kín: nguyên nhân và cách điều trị</td><td>2.4. Nấm Candida – thường gây ngứa, ít khi gây mùi hôi</td><td class="s">hongngochospital.vn/vi/ngua-vung-kin-nguyen-nhan-va-cach-dieu-tri</td></tr><tr><td>viêm cổ tử cung: dấu hiệu, phòng tránh, điều trị</td><td>2.5. Viêm cổ tử cung và viêm vùng chậu</td><td class="s">hongngochospital.vn/vi/viem-co-tu-cung-dau-hieu-phong-tranh-dieu-tri</td></tr><tr><td>chữa viêm lộ tuyến cổ tử cung</td><td>2.6. Lộ tuyến cổ tử cung</td><td class="s">hongngochospital.vn/vi/chua-viem-lo-tuyen-co-tu-cung</td></tr><tr><td>quan hệ ra máu, người phụ nữ 39 tuổi phát hiện ung thư cổ tử cung</td><td>2.8. Ung thư cổ tử cung</td><td class="s">hongngochospital.vn/vi/quan-he-ra-mau-nguoi-phu-nu-39-tuoi-phat-hien-ung-thu-co-tu-cung</td></tr><tr><td>tầm soát ung thư cổ tử cung</td><td>2.8. Ung thư cổ tử cung</td><td class="s">hongngochospital.vn/vi/tam-soat-ung-thu-co-tu-cung</td></tr><tr><td>nhiễm trùng âm đạo ở phụ nữ có thai</td><td>2.9. Mùi hôi khi mang thai và sau sinh</td><td class="s">hongngochospital.vn/vi/nhiem-trung-am-dao-o-phu-nu-co-thai</td></tr><tr><td>sản dịch</td><td>2.9. Mùi hôi khi mang thai và sau sinh</td><td class="s">hongngochospital.vn/vi/san-dich</td></tr><tr><td>xét nghiệm HPV</td><td>3. Chẩn đoán mùi hôi vùng kín như thế nào?</td><td class="s">hongngochospital.vn/vi/xet-nghiem-hpv</td></tr><tr><td>khám phụ khoa có đau không</td><td>3. Chẩn đoán mùi hôi vùng kín như thế nào?</td><td class="s">hongngochospital.vn/vi/giai-dap-thac-mac-kham-phu-khoa-co-dau-khong</td></tr><tr><td>tỏi chữa viêm âm đạo liệu có đúng</td><td>4. Cách chữa phụ khoa có mùi hôi theo từng nguyên nhân</td><td class="s">hongngochospital.vn/vi/toi-chua-viem-am-dao-lieu-co-dung</td></tr><tr><td>những chú ý khi dùng thuốc đặt âm đạo</td><td>4. Cách chữa phụ khoa có mùi hôi theo từng nguyên nhân</td><td class="s">hongngochospital.vn/vi/nhung-chu-y-khi-dung-thuoc-dat-am-dao</td></tr><tr><td>dùng dung dịch vệ sinh phụ nữ thế nào cho đúng</td><td>5. Cách phòng ngừa vùng kín có mùi hôi</td><td class="s">hongngochospital.vn/vi/dung-dung-dich-ve-sinh-phu-nu-the-nao-cho-dung</td></tr><tr><td>khám phụ khoa</td><td>5. Cách phòng ngừa vùng kín có mùi hôi</td><td class="s">hongngochospital.vn/vi/kham-phu-khoa</td></tr><tr><td>vắc xin HPV</td><td>5. Cách phòng ngừa vùng kín có mùi hôi</td><td class="s">hongngochospital.vn/vi/tiem-hpv-phong-ung-thu-co-tu-cung</td></tr><tr><td>Đặt lịch khám phụ khoa</td><td>Kết luận</td><td class="s">hongngochospital.vn/vi/dich-vu-kham-phu-khoa</td></tr>
+</table></div>
+<p><b>Link ngược chiều (nên làm thêm):</b> từ các bài trong cụm trỏ về bài này với anchor “phụ khoa có mùi hôi” hoặc “vùng kín có mùi hôi”. Ưu tiên: <a href="https://hongngochospital.vn/vi/viem-phu-khoa-nen-an-gi">viêm phụ khoa nên ăn gì</a>, <a href="https://hongngochospital.vn/vi/bi-viem-phu-khoa-nen-lam-gi">bị viêm phụ khoa nên làm gì</a>, <a href="https://hongngochospital.vn/vi/viem-phu-khoa-nhe">viêm phụ khoa nhẹ</a>, <a href="https://hongngochospital.vn/vi/viem-phu-khoa-nang">viêm phụ khoa nặng</a>, <a href="https://hongngochospital.vn/vi/khi-hu-la-gi">khí hư là gì</a>, <a href="https://hongngochospital.vn/vi/meo-giup-vung-kin-thom-tho">mẹo giúp vùng kín thơm tho</a>, <a href="https://hongngochospital.vn/vi/me-bau-bi-viem-phu-khoa">mẹ bầu bị viêm phụ khoa</a>.</p>
+
+<h3>Gợi ý tối ưu thêm</h3>
+<ol>
+<li><b>Schema</b> (đoạn mã giúp Google và AI hiểu bài): <code>MedicalWebPage</code> + <code>FAQPage</code>, khai báo <code>reviewedBy</code> là bác sĩ tham vấn và <code>dateModified</code>.</li>
+<li><b>Hộp hồ sơ bác sĩ</b> có ảnh, chức danh, link trang bác sĩ trên web bệnh viện.</li>
+<li><b>Bảng “nhận biết các kiểu mùi”</b> nên làm bằng HTML, không chụp thành ảnh — đây là phần AI dễ trích dẫn nhất.</li>
+<li><b>Alt ảnh</b> chứa key tự nhiên, ví dụ: “vùng kín có mùi hôi tanh do viêm âm đạo do vi khuẩn”.</li>
+<li><b>Mục lục</b> nhảy đến từng H2.</li>
+<li><b>Bác sĩ duyệt</b> các chỗ đổi nội dung chuyên môn (mục 4A số 1–5, 8, 10) và phần tên thuốc ở mục cách chữa.</li>
+</ol>
+
+<footer>Nguồn đối chiếu chính: Cleveland Clinic (đọc trực tiếp ngày 22/10/2026), CDC STI Treatment Guidelines 2021, WHO. Mật độ đo trên phần thân bài tối ưu: key chính “phụ khoa có mùi hôi” 11 lần (1.6%), biến thể “vùng kín có mùi hôi” 7 lần (1.0%) / 3476 từ. Bản tối ưu thay đổi một số nhận định chuyên môn của bài gốc — cần bác sĩ tham vấn duyệt trước khi đăng.</footer>
+</div></body></html>
