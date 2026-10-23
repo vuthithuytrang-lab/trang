@@ -109,7 +109,7 @@ Agent đọc chìa từ file, gửi qua header `Authorization: Bearer <chìa>`, 
 | `khoa-hoc/` | Tiến độ khóa Agent Boss, mã nộp từng bài, sản phẩm đã làm |
 | `cong-cu/` | Công cụ dùng lại được — prompt SEO, bản tin tự động |
 | `BAO-MAT.md` | Danh sách chìa khóa đã lộ cần thu hồi |
-| `khach-hang/` | Web vệ tinh WordPress.com cho khách (AIG, VIB, Techcombank) — mã dán + script sinh mã |
+| `khach-hang/` | Web vệ tinh WordPress.com cho khách (AIG, VIB, Techcombank, Sun Life) — mã dán + script sinh mã |
 
 ## 7. Web vệ tinh WordPress.com — làm theo skill
 

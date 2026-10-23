@@ -1,0 +1,83 @@
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"},"blockGap":"0"}},"layout":{"type":"default"}} -->
+<div class="wp-block-group alignfull" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0"><!-- wp:html -->
+<div style="background:#ffffff;border-bottom:4px solid #FEBE10;padding:14px 20px;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;">
+<div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 28px;">
+<a href="/" style="display:flex;align-items:center;text-decoration:none;"><img src="https://www.sunlife.com/content/dam/sunlife/global/logos/sunlife/sunlife-logo-horizontal-rgb-primary-public.svg" alt="Logo Sun Life Việt Nam" width="150" height="38" style="width:150px;height:auto;display:block;" /></a>
+<div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-start;gap:6px 24px;font-size:15px;font-weight:600;">
+<a href="/#gioi-thieu" style="color:#003946;text-decoration:none;padding:4px 0;">Giới thiệu</a>
+<a href="/#giai-phap" style="color:#003946;text-decoration:none;padding:4px 0;">Giải pháp</a>
+<a href="/#dong-hanh" style="color:#003946;text-decoration:none;padding:4px 0;">Đồng hành</a>
+<a href="/tin-tuc/" style="color:#003946;text-decoration:none;padding:4px 0;">Tin tức</a>
+<a href="/#lien-he" style="color:#003946;text-decoration:none;padding:4px 0;">Liên hệ</a>
+<a href="https://www.sunlife.com.vn/vn/" target="_blank" rel="noopener" style="background:#FEBE10;color:#003946;text-decoration:none;padding:9px 18px;border-radius:999px;font-weight:700;">Website chính thức</a>
+</div>
+</div>
+</div>
+<div style="background:#003946;color:#ffffff;padding:clamp(44px,7vw,80px) 20px;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;">
+<div style="max-width:1200px;margin:0 auto;">
+<p style="margin:0 0 10px;color:#FEBE10;font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;">Tin tức &amp; Chia sẻ</p>
+<h1 style="margin:0 0 12px;color:#ffffff;font-size:clamp(30px,4.4vw,46px);line-height:1.15;font-weight:800;">Tin tức Sun Life Việt Nam</h1>
+<p style="margin:0;color:#ffffffd9;font-size:17px;max-width:660px;">Kiến thức bảo hiểm, đầu tư tích lũy và sống khỏe – cùng bạn xây dựng sự an tâm tài chính trọn&nbsp;đời.</p>
+</div>
+</div>
+<!-- /wp:html -->
+
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"56px","bottom":"72px","left":"20px","right":"20px"}},"color":{"background":"#fffbf0"}},"layout":{"type":"constrained","contentSize":"1200px"}} -->
+<div class="wp-block-group alignfull has-background" style="background-color:#fffbf0;padding-top:56px;padding-right:20px;padding-bottom:72px;padding-left:20px"><!-- wp:query {"queryId":7,"query":{"perPage":20,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false}} -->
+<div class="wp-block-query"><!-- wp:post-template {"style":{"spacing":{"blockGap":"28px"}},"layout":{"type":"grid","columnCount":4}} -->
+<!-- wp:post-featured-image {"isLink":true,"aspectRatio":"16/9","style":{"border":{"radius":"14px"}}} /-->
+
+<!-- wp:post-date {"style":{"color":{"text":"#9a6f00"},"typography":{"fontSize":"14px","fontWeight":"700"},"spacing":{"margin":{"top":"14px"}}}} /-->
+
+<!-- wp:post-title {"level":3,"isLink":true,"style":{"typography":{"fontSize":"20px","fontWeight":"800","lineHeight":"1.35"},"elements":{"link":{"color":{"text":"#003946"}}},"color":{"text":"#003946"},"spacing":{"margin":{"top":"6px","bottom":"8px"}}}} /-->
+
+<!-- wp:post-excerpt {"moreText":"Đọc tiếp →","excerptLength":28,"style":{"typography":{"fontSize":"15px"},"elements":{"link":{"color":{"text":"#003946"}}}}} /-->
+<!-- /wp:post-template -->
+
+<!-- wp:query-no-results -->
+<!-- wp:paragraph -->
+<p>Chưa có bài viết nào. Bài bạn đăng sẽ tự hiện ở đây.</p>
+<!-- /wp:paragraph -->
+<!-- /wp:query-no-results -->
+
+<!-- wp:query-pagination {"paginationArrow":"arrow","layout":{"type":"flex","justifyContent":"center"}} -->
+<!-- wp:query-pagination-previous {"label":"Trang trước"} /-->
+
+<!-- wp:query-pagination-numbers /-->
+
+<!-- wp:query-pagination-next {"label":"Trang sau"} /-->
+<!-- /wp:query-pagination --></div>
+<!-- /wp:query --></div>
+<!-- /wp:group -->
+
+<!-- wp:html -->
+<div style="background:#003946;border-top:4px solid #FEBE10;color:#ffffffcc;padding:52px 20px 0;font-size:15px;line-height:1.65;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;">
+<div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:32px 44px;padding-bottom:36px;">
+<div style="flex:1.6 1 300px;min-width:0;">
+<div style="display:inline-block;background:#ffffff;border-radius:10px;padding:12px 16px;margin-bottom:18px;"><img src="https://www.sunlife.com/content/dam/sunlife/global/logos/sunlife/sunlife-logo-horizontal-rgb-primary-public.svg" alt="Logo Sun Life" width="140" height="35" style="width:140px;height:auto;display:block;" /></div>
+<p style="margin:0 0 12px;">Sun Life là tập đoàn dịch vụ tài chính hàng đầu, giúp khách hàng đạt được sự an tâm tài chính trọn đời và sống khỏe mạnh hơn.</p>
+<p style="margin:0;">Thông tin liên hệ, sản phẩm và mạng lưới tại Việt Nam: <a href="https://www.sunlife.com.vn/vn/" target="_blank" rel="noopener" style="color:#FEBE10;text-decoration:none;font-weight:700;">sunlife.com.vn</a></p>
+</div>
+<div style="flex:1 1 170px;min-width:0;">
+<p style="margin:0 0 14px;color:#FEBE10;font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;">Giải pháp</p>
+<p style="margin:0 0 8px;"><a href="https://www.sunlife.com.vn/vn/" target="_blank" rel="noopener" style="color:#ffffffcc;text-decoration:none;">Bảo hiểm</a></p>
+<p style="margin:0 0 8px;"><a href="https://www.sunlife.com.vn/vn/" target="_blank" rel="noopener" style="color:#ffffffcc;text-decoration:none;">Đầu tư và tích lũy</a></p>
+<p style="margin:0 0 8px;"><a href="https://www.sunlife.com.vn/vn/" target="_blank" rel="noopener" style="color:#ffffffcc;text-decoration:none;">Sức khỏe</a></p>
+<p style="margin:0 0 8px;"><a href="https://www.sunlife.com.vn/vn/" target="_blank" rel="noopener" style="color:#ffffffcc;text-decoration:none;">Quản lý tài sản</a></p>
+</div>
+<div style="flex:1 1 170px;min-width:0;">
+<p style="margin:0 0 14px;color:#FEBE10;font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;">Sun Life Việt Nam</p>
+<p style="margin:0 0 8px;"><a href="https://www.sunlife.com.vn/vn/" target="_blank" rel="noopener" style="color:#ffffffcc;text-decoration:none;">Về Sun Life Việt Nam</a></p>
+<p style="margin:0 0 8px;"><a href="https://www.sunlife.com.vn/vn/" target="_blank" rel="noopener" style="color:#ffffffcc;text-decoration:none;">Sản phẩm</a></p>
+<p style="margin:0 0 8px;"><a href="https://www.sunlife.com.vn/vn/" target="_blank" rel="noopener" style="color:#ffffffcc;text-decoration:none;">Hỗ trợ khách hàng</a></p>
+<p style="margin:0 0 8px;"><a href="https://www.sunlife.com.vn/vn/" target="_blank" rel="noopener" style="color:#ffffffcc;text-decoration:none;">Liên hệ</a></p>
+</div>
+</div>
+<div style="max-width:1200px;margin:0 auto;border-top:1px solid #ffffff26;padding:18px 0 22px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;font-size:14px;color:#ffffff99;">
+<p style="margin:0;">© 2026 Sun Life Việt Nam</p>
+<p style="margin:0;">Website chính thức: <a href="https://www.sunlife.com.vn/vn/" target="_blank" rel="noopener" style="color:#ffffff;text-decoration:none;font-weight:700;border-bottom:2px solid #FEBE10;">www.sunlife.com.vn</a></p>
+</div>
+</div>
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->
