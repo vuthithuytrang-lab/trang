@@ -80,6 +80,7 @@ giả lập của khóa học, có bộ màu riêng, đừng trộn hai bên và
 | ~~`hoc.agentboss.vn`~~ | ✅ **ĐÃ MỞ từ 08/09/2026** — vào bình thường, chỉ cần chìa đúng | — |
 | YouTube (tải video) | `IpBlocked` — đã thử 7 cách | Chạy trên máy cá nhân; hoặc tìm bài báo/bản ghi nguồn khác |
 | ~~`techcombank.com`~~ | ✅ **ĐÃ MỞ từ 09/10/2026** — curl đọc được (trang chủ dựng bằng JS nên đọc trang con như /lien-he, /ve-chung-toi/ve-techcombank) | — |
+| `sunlife.com.vn` | 403 + captcha chống bot (DataDome) — cả curl lẫn trình duyệt thật; web.archive.org / archive.ph trả 429 (23/10/2026) | Logo + màu lấy từ `sunlife.com` (logo SVG: `#FEBE10`, `#003946`); nội dung VN nhờ Trang Ctrl+A → dán vào chat |
 | Desktop / Documents của Trang | bản web không thấy máy cá nhân | Nhờ Trang đính kèm file vào khung chat |
 
 | LibreOffice (xem thử file Word) | `source file could not be loaded` — hỏng cả với file mẫu gốc | Kiểm tra bằng python-docx + kiểm tra zip, không render được ảnh |
