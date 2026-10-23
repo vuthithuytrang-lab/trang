@@ -34,22 +34,23 @@ def header(home):
 '''
 
 def footer():
-    h = lambda t: f'<p style="margin:0 0 14px;color:{Y};font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;">{t}</p>'
-    li = lambda t: f'<p style="margin:0 0 8px;"><a href="{M}"{EXT} style="color:#ffffffcc;text-decoration:none;">{t}</a></p>'
+    # Nền sáng để logo gốc (chữ xanh đậm) đứng thẳng trên nền, không cần khung trắng
+    h = lambda t: f'<p style="margin:0 0 14px;color:{K};font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;">{t}</p>'
+    li = lambda t: f'<p style="margin:0 0 8px;"><a href="{M}"{EXT} style="color:{MUTED};text-decoration:none;">{t}</a></p>'
     col = lambda title, items: '<div style="flex:1 1 170px;min-width:0;">\n' + h(title) + "\n" + "\n".join(li(t) for t in items) + "\n</div>"
-    return f'''<div style="background:{K};border-top:4px solid {Y};color:#ffffffcc;padding:52px 20px 0;font-size:15px;line-height:1.65;{F}">
+    return f'''<div style="background:#fff6dc;border-top:4px solid {Y};color:{MUTED};padding:52px 20px 0;font-size:15px;line-height:1.65;{F}">
 <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:32px 44px;padding-bottom:36px;">
 <div style="flex:1.6 1 300px;min-width:0;">
-<div style="display:inline-block;background:#ffffff;border-radius:10px;padding:12px 16px;margin-bottom:18px;"><img src="{LOGO}" alt="Logo Sun Life" width="140" height="35" style="width:140px;height:auto;display:block;" /></div>
+<img src="{LOGO}" alt="Logo Sun Life" width="150" height="38" style="width:150px;height:auto;display:block;margin-bottom:18px;" />
 <p style="margin:0 0 12px;">Sun Life là tập đoàn dịch vụ tài chính hàng đầu, giúp khách hàng đạt được sự an tâm tài chính trọn đời và sống khỏe mạnh hơn.</p>
-<p style="margin:0;">Thông tin liên hệ, sản phẩm và mạng lưới tại Việt Nam: <a href="{M}"{EXT} style="color:{Y};text-decoration:none;font-weight:700;">sunlife.com.vn</a></p>
+<p style="margin:0;">Thông tin liên hệ, sản phẩm và mạng lưới tại Việt Nam: <a href="{M}"{EXT} style="color:{K};text-decoration:none;font-weight:800;border-bottom:2px solid {Y};">sunlife.com.vn</a></p>
 </div>
 {col("Giải pháp", ["Bảo hiểm", "Đầu tư và tích lũy", "Sức khỏe", "Quản lý tài sản"])}
 {col("Sun Life Việt Nam", ["Về Sun Life Việt Nam", "Sản phẩm", "Hỗ trợ khách hàng", "Liên hệ"])}
 </div>
-<div style="max-width:1200px;margin:0 auto;border-top:1px solid #ffffff26;padding:18px 0 22px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;font-size:14px;color:#ffffff99;">
+<div style="max-width:1200px;margin:0 auto;border-top:1px solid #00394626;padding:18px 0 22px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;font-size:14px;color:{MUTED};">
 <p style="margin:0;">© 2026 Sun Life Việt Nam</p>
-<p style="margin:0;">Website chính thức: <a href="{M}"{EXT} style="color:#ffffff;text-decoration:none;font-weight:700;border-bottom:2px solid {Y};">www.sunlife.com.vn</a></p>
+<p style="margin:0;">Website chính thức: <a href="{M}"{EXT} style="color:{K};text-decoration:none;font-weight:800;border-bottom:2px solid {Y};">www.sunlife.com.vn</a></p>
 </div>
 </div>
 '''
