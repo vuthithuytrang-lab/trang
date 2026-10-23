@@ -196,3 +196,16 @@ news = html_block(header(False) + news_top) + "\n" + news_query + "\n" + html_bl
     '<!-- /wp:group -->\n', encoding="utf-8")
 (D / "xem-truoc-trang-chu.html").write_text('<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sun Life Việt Nam – Xem trước</title></head><body style="margin:0;">' + home_inner + "</body></html>", encoding="utf-8")
 print("xong")
+
+# Mẫu "Single Posts" (trang chi tiết bài viết): đầu trang + bài viết + chân trang Sun Life
+single_main = (
+  '<!-- wp:group {"tagName":"main","style":{"spacing":{"margin":{"top":"0"},"padding":{"top":"48px","bottom":"64px","left":"20px","right":"20px"}}},"layout":{"type":"constrained","contentSize":"780px"}} -->\n'
+  '<main class="wp-block-group" style="margin-top:0;padding-top:48px;padding-right:20px;padding-bottom:64px;padding-left:20px">'
+  '<!-- wp:post-date {"style":{"color":{"text":"#9a6f00"},"typography":{"fontSize":"14px","fontWeight":"700"}}} /-->\n\n'
+  f'<!-- wp:post-title {{"level":1,"style":{{"color":{{"text":"{K}"}},"typography":{{"fontSize":"36px","fontWeight":"800","lineHeight":"1.25"}}}}}} /-->\n\n'
+  '<!-- wp:post-featured-image {"style":{"border":{"radius":"14px"}}} /-->\n\n'
+  '<!-- wp:post-content {"layout":{"type":"constrained"}} /-->\n\n'
+  '<!-- wp:paragraph -->\n<p><a href="/tin-tuc/">← Quay lại trang Tin tức</a></p>\n<!-- /wp:paragraph --></main>\n'
+  '<!-- /wp:group -->\n')
+(D / "HTML-MAU-BAI-VIET.txt").write_text(full_group(html_block(header(False)) + "\n" + single_main + "\n" + html_block(footer())), encoding="utf-8")
+print("xong bai viet")
