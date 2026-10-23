@@ -13,6 +13,7 @@ Lần mới: **copy `khach-hang/vib/tao-ma-html.py`** sang `khach-hang/<ten-thuo
 1. **2 mã hoàn chỉnh, DÁN THẲNG VÀO CHAT** trong khung ```html để Trang bấm copy — không chỉ gửi file.
    - **Mã 1 – Trang chủ**: tự đủ đầu trang + nội dung + chân trang.
    - **Mã 2 – Trang Tin tức**: tự đủ đầu trang + dải tiêu đề + lưới bài viết + chân trang.
+   - **Mã 3 – Mẫu "Single Posts"** (trang chi tiết bài viết): đầu trang + ngày/tiêu đề/ảnh/nội dung bài + "← Quay lại trang Tin tức" + chân trang. Không có mã này thì trang bài viết vẫn hiện chân trang mẫu "123 Example Street" (Sun Life 23/10/2026). Xem `khach-hang/sunlife/HTML-MAU-BAI-VIET.txt`; dán vào mẫu `single` (link `…postId=pub%2Fassembler%2F%2Fsingle`).
    - **Kèm 3 dòng mã mẫu "Pages"** (bên dưới) — bắt buộc, nếu không đầu trang/chân trang cũ của theme sẽ hiện chồng lên.
 2. **Mỗi mã chỉ dán 1 lần.** Trang ghét phải dán đi dán lại — gộp hết vào một khung.
 3. **Màu CHỈ lấy từ logo** (đo pixel bằng PIL, không đoán). Màu chính cho nền/tiêu đề, màu phụ chấm phá cho nút.
