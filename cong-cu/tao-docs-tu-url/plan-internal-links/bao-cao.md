@@ -261,3 +261,37 @@ ghi chú vẫn ở cột F; cột I là URL đích tỷ giá, anchor cặp bắt
 - **Dòng 453:** bài gần như toàn hướng dẫn từng bước → 2 link thuế TNCN đặt sau danh sách bước và ở mục thời hạn hoàn thuế, không chèn giữa các bước.
 - Vài anchor 1 chữ ("vay") hoặc xa chủ đề bài (VD "lãi suất chứng chỉ tiền gửi" trong bài ESG dòng 420, "xếp hạng tín dụng" trong bài trái phiếu doanh nghiệp dòng 464)
   — đã đặt ở chỗ hợp ngữ cảnh nhất có thể.
+
+---
+
+# Đợt 10 — các dòng còn trống sau khi sheet sắp xếp lại (23/10/2026)
+
+**Kết quả:** đã tạo file Docs cho **257 bài mới** (dòng 333 và dòng 380 → 766). Bài nào cũng đủ anchor, đúng nguyên văn sheet, kể cả chữ hoa/thường. Phần chèn được tô vàng và có ghi chú.
+Bài nào cũng đã mở lại trên Drive để so chữ với bản gốc. Link file đã ghi vào **cột K**, ghi chú vào **cột F**.
+Sau đợt này, cột K chỉ còn **dòng 60** để trống.
+
+**Bố cục sheet đổi:**
+- Sheet đã được sắp xếp lại theo ABC và chèn thêm khoảng 166 bài XF mới. Vì vậy các dòng trống nằm rải rác, không theo thứ tự như trước.
+- Cột mới: **I "Chèn XF"**. Link file Docs nay ở **cột K (FILE BLOG)**. Anchor cặp bắt đầu từ cột O.
+- Link của 509 bài cũ đã tự dời theo dòng mới, đã kiểm tra lại.
+
+**Quy tắc XF Tiết kiệm (theo yêu cầu Trang):**
+- Bài có ghi chú "XF Tiết kiệm" thì **không chèn anchor trang tỷ giá**. Các bài còn lại chạy bình thường.
+- **9 bài cũ** XF Tiết kiệm (dòng 42, 48, 75, 79, 80, 96, 97, 101, 103) trước đây có link tỷ giá đã được **làm lại**:
+  - link mới đã thay vào cột K, ghi chú mới đã thay vào cột F;
+  - 9 file cũ đã chuyển vào thùng rác Drive (vẫn khôi phục được trong 30 ngày).
+- Dòng 80: bài gốc trên web vốn đã có sẵn link "tỷ giá ưu đãi" tới trang tỷ giá. Link này được giữ nguyên vì không xoá link cũ, chỉ không chèn thêm link mới.
+
+**Link bài gốc lỗi:** trong đợt này không có bài nào mở lỗi. Dòng 333 (cách tạo mã QR) trước báo "Không tìm thấy trang", nay đã mở được. Bài này đã làm xong và ghi chú cũ đã được thay.
+
+**Cần Trang xem:**
+- **Dòng 60 (vàng là gì):** ô anchor tỷ giá nay để trống (trước là "tỷ giá USD hôm nay"), nên chưa làm. Chờ Trang xác nhận.
+- **Anchor trùng chữ khác đích:** dòng 607, 679, 684 có 2 anchor cùng chữ (VD "thuế thu nhập cá nhân") trỏ 2 URL khác nhau. Đã chèn thành 2 link riêng, đặt cách xa nhau.
+- **Chữ thường theo sheet:** "cic", "etax", "viettel", "thẻ Eco" được giữ đúng như sheet.
+- **Lỗi phía website, nên báo đội web:**
+  - trang đích `lai-suat-vay-mua-o-to` có thẻ title sai (nói về tỷ giá USD);
+  - bài `vay-the-chap-so-bao-hiem-xa-hoi` (dòng 734) có nội dung nói về vay thế chấp sổ đỏ, không khớp tiêu đề.
+- **Chỗ đã sửa lại để đúng quy tắc:**
+  - dòng 674: link "thủ tục xóa thế chấp" đã chuyển ra khỏi phần các bước;
+  - dòng 747: link "cách tiết kiệm tiền" đã chuyển ra khỏi đoạn định nghĩa.
+- **Anchor xa chủ đề bài:** một số anchor không sát chủ đề bài (VD "gửi tiết kiệm online" trong bài lỗi thẻ Visa ở dòng 670, "giá điện sinh hoạt" trong bài phí chung cư ở dòng 646). Đã đặt ở chỗ hợp ngữ cảnh nhất có thể.
