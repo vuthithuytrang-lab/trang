@@ -11,11 +11,11 @@ Trang thấy bản cài Windows + Service Account quá rắc rối. Chốt lại
 - Agent tự chạy lấy ngày (`lay_ngay.py` trong thư mục này — techcombank vào được từ máy chủ cloud) rồi ghi vào sheet.
   Trang không phải cài gì.
 
-## ⏸️ ĐÃ DỪNG (21/10/2026)
+## ▶️ CHẠY LẠI (23/10/2026)
 
-Trang nhờ dừng update publish từ 21/10/2026. Routine `trig_01QNyb6Qj58zr6aWAJv8WDD8` đã **tắt** (enabled=false),
-chưa xóa — muốn chạy lại chỉ cần `update_trigger` enabled=true. Sheet giữ nguyên dữ liệu đến cột 21/10 (AG–AH).
-Trang tự kiểm bằng Screaming Frog (Custom Extraction, xem `SCREAMING-FROG.md`).
+Dừng 21–22/10, Trang bật lại 23/10 sau khi thêm 12 URL (STT 43–54) vào cuối cột B — nay 54 URL.
+**Trang chỉ cần điền URL mới vào cột B** (hàng trống tiếp theo): lần chạy 19:00 đọc toàn bộ cột B nên tự kiểm cả link mới.
+Hướng dẫn Screaming Frog (Trang tự kiểm): `SCREAMING-FROG.md`.
 
 ## Tình trạng (05/10/2026 tối)
 
