@@ -8,3 +8,4 @@ chia-agent-boss.txt
 # Skill seo-audit — môi trường Python và credential Google, không commit
 .claude/skills/seo-audit/.venv/
 .claude/skills/seo-audit/credentials/
+__pycache__/
