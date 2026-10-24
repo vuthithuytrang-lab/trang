@@ -315,4 +315,8 @@ Sau đợt này, cột K chỉ còn **dòng 60** để trống.
 **38 dòng chị ghi "c sửa…", "c wording lại…"** = chị đã tự sửa trong file, không cần sửa thêm. Trang quyết định:
 - 11 dòng chưa bị đụng: 159, 160, 195, 224, 235, 297, 301, 303, 480, 482, 485.
 - 27 dòng em đã lỡ chỉnh thêm trước khi hiểu đúng note (19, 20, 21, 27, 32, 35, 36, 37, 41, 50, 55, 71, 72, 81, 92, 94, 95, 114, 115, 120, 149, 200, 210, 233, 250, 259, 306): **giữ bản đã sửa** theo lựa chọn của Trang. Bản của chị Lộc vẫn xem lại được trong Lịch sử phiên bản của từng file.
-- Cột M của 5 dòng 27, 32, 35, 36, 41 đã thêm câu xin lỗi và nói rõ đã chỉnh thêm vào bản chị sửa.
+- Cột M dòng 41 đã thêm câu xin lỗi và nói rõ đã chỉnh thêm vào bản chị sửa. Dòng 27, 32, 35, 36 không ghi vì chị Lộc đã chuyển sang "ok" và xoá ô M.
+
+**Sheet đổi trong lúc làm (lúc kiểm tra lại cuối đợt):**
+- Dòng 19, 20, 21, 27, 32, 35, 36, 50, 55 đã thành "ok".
+- Dòng 37 và 41 đổi từ "c sửa…" sang "cần sửa", trong file không có comment mới. Chờ chị Lộc nói rõ cần sửa gì.
