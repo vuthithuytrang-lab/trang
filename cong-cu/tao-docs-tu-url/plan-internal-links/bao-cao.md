@@ -295,3 +295,24 @@ Sau đợt này, cột K chỉ còn **dòng 60** để trống.
   - dòng 674: link "thủ tục xóa thế chấp" đã chuyển ra khỏi phần các bước;
   - dòng 747: link "cách tiết kiệm tiền" đã chuyển ra khỏi đoạn định nghĩa.
 - **Anchor xa chủ đề bài:** một số anchor không sát chủ đề bài (VD "gửi tiết kiệm online" trong bài lỗi thẻ Visa ở dòng 670, "giá điện sinh hoạt" trong bài phí chung cư ở dòng 646). Đã đặt ở chỗ hợp ngữ cảnh nhất có thể.
+
+## Đợt 11 — sửa theo duyệt của chị Lộc (24/10/2026)
+
+**Phạm vi:** 70 dòng có cột L (Chị Lộc duyệt) khác "ok". Sửa thẳng vào file Docs cũ ở cột K, giữ nguyên link file. Phản hồi ghi vào **cột M (KT phản hồi)**.
+
+**32 dòng chị ghi "cần sửa" hoặc góp ý cụ thể** — đã đọc comment, sửa trong file, mở lại kiểm tra (anchor đúng chữ, đúng link, tô vàng, có ghi chú đỏ, không vỡ chữ), rồi ghi phản hồi vào cột M:
+9, 10, 12, 16, 18, 22, 23, 24, 25, 26, 31, 45, 46, 54, 64, 77, 78, 88, 103, 117, 150, 163, 164, 170, 173, 174, 196, 211, 230, 232, 245, 474.
+
+**Cần chị Lộc / Trang quyết:**
+- Dòng 10: giữ anchor "1 triệu đô bằng bao nhiêu tiền Việt" theo sheet; nếu muốn đổi thành "1 đô…" thì cần sửa cột anchor.
+- Dòng 46: không sửa file. Ngưỡng doanh thu 100 triệu/năm là nội dung gốc, cần bên nội dung cập nhật theo văn bản mới.
+- Dòng 170: anchor tỷ giá "giá USD" chưa chèn được từ đợt đầu (câu ở cột I không có trong bài), cần chỗ chèn khác.
+- Dòng 211: phần so sánh trái phiếu với tiền gửi ở cuối bài là nội dung gốc, có thể cần solution duyệt.
+- Dòng 245: bài về mã QR không có ngữ cảnh ngoại tệ, đề xuất bỏ link tỷ giá hoặc đổi bài.
+- Dòng 474: giữ link "nộp tiền vào tài khoản", đã giải thích trong cột M.
+- Dòng 23, 54, 88: khi chuyển câu, comment của chị bị tách khỏi chữ (comment vẫn còn, chỉ không gắn vào đoạn nào).
+
+**38 dòng chị ghi "c sửa…", "c wording lại…"** = chị đã tự sửa trong file, không cần sửa thêm. Trang quyết định:
+- 11 dòng chưa bị đụng: 159, 160, 195, 224, 235, 297, 301, 303, 480, 482, 485.
+- 27 dòng em đã lỡ chỉnh thêm trước khi hiểu đúng note (19, 20, 21, 27, 32, 35, 36, 37, 41, 50, 55, 71, 72, 81, 92, 94, 95, 114, 115, 120, 149, 200, 210, 233, 250, 259, 306): **giữ bản đã sửa** theo lựa chọn của Trang. Bản của chị Lộc vẫn xem lại được trong Lịch sử phiên bản của từng file.
+- Cột M của 5 dòng 27, 32, 35, 36, 41 đã thêm câu xin lỗi và nói rõ đã chỉnh thêm vào bản chị sửa.
