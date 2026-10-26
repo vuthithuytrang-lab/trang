@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="vi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tối ưu SEO &amp; GEO — Ánh sáng màn hình</title>
+<style>
+:root{--sg-xanh:#004AEF;--sg-xanh-sang:#0D53F0;--sg-navy:#002992;--sg-mint:#07EF9C;--sg-cyan:#0DD1FF;--sg-vang:#FFCE00;--sg-cam:#F68B1F;
+--sg-den:#151515;--sg-xam-nen:#F3F3F6;--sg-xam-vien:#DCDCDC;--mut:#5A6B66;
+--sg-chu:Gilroy,"Montserrat",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+--sg-dai-mau:linear-gradient(135deg,#002992 0%,#004AEF 55%,#0DD1FF 100%)}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--sg-den);font:16px/1.65 var(--sg-chu)}
+.w{max-width:1000px;margin:0 auto;padding:0 16px 60px}
+header{background:var(--sg-dai-mau);color:#fff;padding:26px 0 30px;margin-bottom:26px}
+header .w{padding-bottom:0}
+.logo{display:inline-block;background:#fff;border-radius:12px;padding:12px 16px;margin-bottom:18px}
+.logo img{width:170px;display:block}
+header h1{font-size:30px;line-height:1.25;margin:0 0 8px;font-weight:800}
+header .sub{font-size:14px;opacity:.92}
+h2{color:var(--sg-xanh);font-size:23px;margin:40px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--sg-xam-vien)}
+h2 .n{display:inline-block;background:var(--sg-xanh);color:#fff;border-radius:8px;padding:0 10px;margin-right:8px;font-size:18px}
+h3{font-size:18px;margin:22px 0 8px;color:var(--sg-navy)}
+.tw{overflow-x:auto;margin:10px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:600px}
+th,td{border:1px solid var(--sg-xam-vien);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--sg-xam-nen);color:var(--sg-navy);font-size:13px}
+.s{font-size:13px;color:var(--mut)}
+.box{background:var(--sg-xam-nen);border-left:4px solid var(--sg-xanh);border-radius:0 10px 10px 0;padding:14px 18px;margin:14px 0}
+.box.cam{border-left-color:var(--sg-cam)}
+.box b.t{display:block;margin-bottom:4px;color:var(--sg-navy)}
+.pill{display:inline-block;padding:0 9px;border-radius:20px;font-size:12px;font-weight:700;white-space:nowrap}
+.sai{background:#fdebd6;color:#8a4a07}.dung{background:#dff8ee;color:#05603f}.vua{background:#fff5cc;color:#6b5600}
+.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:16px 0}
+.kpi div{background:var(--sg-xam-nen);border-radius:12px;padding:14px}
+.kpi b{display:block;font-size:30px;color:var(--sg-xanh);line-height:1.1}
+.kpi b.m{color:#05a46b}
+/* bài viết */
+.art{border:1px solid var(--sg-xam-vien);border-radius:14px;padding:6px 26px 22px;margin-top:14px}
+.art h1{font-size:26px;color:var(--sg-navy);line-height:1.3;margin:20px 0 6px}
+.art h2{font-size:21px;border:0;margin:30px 0 8px;color:var(--sg-xanh)}
+.art .byline{font-size:13px;color:var(--mut)}
+.sum{background:#eef3ff;border:1px solid #c9d8ff;border-radius:12px;padding:14px 18px;margin:16px 0}
+.sum b.t{color:var(--sg-xanh);display:block;margin-bottom:4px;letter-spacing:.3px}
+.k1{background:#dbe6ff;border-radius:3px;padding:0 2px;font-weight:700}
+.k2{background:#d2fbeb;border-radius:3px;padding:0 2px;font-weight:700}
+.note{font-size:13px;color:var(--mut);font-style:italic}
+.cap{font-size:13px;color:var(--mut);background:var(--sg-xam-nen);padding:6px 10px;border-radius:6px;margin:6px 0 12px}
+.legend span{margin-right:12px}
+.bar{height:10px;background:var(--sg-xam-vien);border-radius:5px;overflow:hidden;min-width:90px}
+.bar i{display:block;height:100%;background:var(--sg-xanh)}
+.bar.af i{background:#05a46b}
+.art a{color:var(--sg-xanh);text-decoration:underline}
+footer{margin-top:40px;padding-top:12px;border-top:1px solid var(--sg-xam-vien);font-size:12.5px;color:var(--mut)}
+ol.ref li{font-size:13.5px;margin-bottom:4px}
+@media (max-width:600px){.art{padding:4px 14px 18px}header h1{font-size:25px}}
+@media print{header{-webkit-print-color-adjust:exact;print-color-adjust:exact}h2{break-after:avoid}tr,.box,.sum{break-inside:avoid}}
+</style></head><body>
+<header><div class="w">
+<div class="logo"><img src="data:image/webp;base64,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" alt="SEONGON"></div>
+<h1>Tối ưu SEO &amp; GEO: “Ánh sáng màn hình bao nhiêu là tốt”</h1>
+<div class="sub">Key chính: <b>ánh sáng màn hình bao nhiêu là tốt</b> · Key phụ: không có · URL: hongngochospital.vn/vi/anh-sang-man-hinh-bao-nhieu-la-tot · Chuyên khoa: Mắt · Người chạy: Vũ Thị Thùy Trang · 26/10/2026</div>
+</div></header>
+<div class="w">
+
+<div class="kpi">
+<div><b>18</b>điểm sai / trích sai nguồn / chưa kiểm chứng trong bài gốc</div>
+<div><b>3 nguồn</b>mở đọc trực tiếp (AAO, Circadian Shield, nghiên cứu Dark Mode) — 2 nguồn bị trích lệch</div>
+<div><b>70 → 60 · 156 → 152</b>ký tự tiêu đề · mô tả</div>
+<div><b class="m">54 → 84</b>điểm khả năng được AI trích dẫn (ước tính)</div>
+</div>
+
+<div class="box cam"><b class="t">Việc quan trọng nhất trước khi đăng</b>
+① <b>Câu trả lời chính “100–150 nits (50–70%)” không khớp với chính nguồn bài trích.</b> Nguồn [1] ghi: phòng làm việc 300–500 lux → <b>150–250 nits</b>; phòng tối → <b>30–60 nits</b>; và <b>không hề nhắc mức “50–70%”</b>. Ngoài ra, phần trăm trên thanh trượt ứng với số nits khác nhau giữa các máy, nên “50–70%” không thể là con số chung.<br>
+② <b>Nguồn [1] là blog của một công ty bán phần mềm lọc ánh sáng xanh</b>, tự ghi “không phải thiết bị y tế, không phải lời khuyên y khoa”. Đây là nguồn yếu cho bài sức khỏe.<br>
+③ <b>Câu FAQ “Nên dùng kính chống ánh sáng xanh” trái với khuyến cáo của Viện Hàn lâm Nhãn khoa Hoa Kỳ (AAO)</b> — chính nguồn [3] của bài. AAO viết rõ: không cần mua kính chống ánh sáng xanh; ánh sáng xanh từ màn hình chưa từng được chứng minh gây hại mắt.<br>
+④ <b>Nghiên cứu Dark Mode (PMC12027292) bị trích sai:</b> nghiên cứu làm trên 30 người, chỉ đo tác động tức thời, và <b>không thấy khác biệt có ý nghĩa về mỏi mắt</b> giữa chế độ sáng và tối. Bài lại viết “giúp giảm mỏi mắt, khô mắt khi dùng thời gian dài”.</div>
+
+<!-- 1 -->
+<h2><span class="n">1</span>Phân tích ý định tìm kiếm (Search Intent)</h2>
+<div class="tw"><table>
+<tr><th style="width:24%">Hạng mục</th><th>Phân tích</th></tr>
+<tr><td>Loại intent</td><td><b>Informational — gần như 100%</b>, dạng “cần một con số + cách làm”. Người tìm thường đang cầm điện thoại hoặc ngồi trước máy tính, muốn chỉnh ngay. Commercial rất nhẹ (chỉ khi đã mỏi mắt kéo dài → đi khám).</td></tr>
+<tr><td>Câu trả lời chính</td><td>Để độ sáng bao nhiêu (phần trăm hoặc con số dễ hiểu) cho ban ngày, ban đêm, ngoài trời.</td></tr>
+<tr><td>Thông tin bổ sung</td><td>Vì sao quá sáng, quá tối đều mỏi mắt; ánh sáng xanh có hại không; ảnh hưởng giấc ngủ.</td></tr>
+<tr><td>So sánh</td><td>Điện thoại và máy tính khác nhau thế nào; chế độ tối và chế độ sáng; Night Shift và kính lọc ánh sáng xanh.</td></tr>
+<tr><td>Hướng dẫn</td><td>Thao tác cụ thể trên iPhone, Android, Windows, macOS — <b>bài gốc chưa có</b>.</td></tr>
+<tr><td>Chân dung người đọc (tự xác định)</td><td>
+① <b>Dân văn phòng, sinh viên 18–40 tuổi</b> nhìn màn hình 6–10 giờ/ngày, hay mỏi mắt, khô mắt — nhóm chính.<br>
+② Người <b>dùng điện thoại trước khi ngủ</b>, khó ngủ.<br>
+③ <b>Phụ huynh</b> lo con dùng máy tính bảng, điện thoại.<br>
+④ Người đang cân nhắc <b>mua kính chống ánh sáng xanh</b>.</td></tr>
+</table></div>
+<h3>Câu hỏi người đọc thường hỏi thêm</h3>
+<ul>
+<li>Độ sáng điện thoại bao nhiêu phần trăm là tốt cho mắt?</li><li>Để độ sáng màn hình 100% có hại mắt không?</li>
+<li>Dùng điện thoại trong bóng tối có hại mắt không?</li><li>Chế độ tối (Dark Mode) có tốt cho mắt hơn không?</li>
+<li>Có nên dùng kính chống ánh sáng xanh không?</li><li>Độ sáng tự động có tốt không?</li>
+<li>Night Shift có giúp ngủ ngon hơn không?</li>
+</ul>
+
+<!-- 2 -->
+<h2><span class="n">2</span>Bản đồ thực thể (Entity Map)</h2>
+<div class="tw"><table>
+<tr><th>Entity</th><th>Loại</th><th>Vai trò trong bài viết</th></tr>
+<tr><td><b>Độ sáng màn hình</b></td><td>Primary</td><td>Chủ thể — cần định nghĩa bằng đơn vị đo (nits) và cách người dùng thấy (thanh trượt %)</td></tr>
+<tr><td>Nits (cd/m²)</td><td>Secondary</td><td>Đơn vị đo độ sáng màn hình</td></tr>
+<tr><td>Lux</td><td>Secondary</td><td>Đơn vị đo độ sáng môi trường — vế còn lại của phép so sánh</td></tr>
+<tr><td>Mỏi mắt kỹ thuật số / hội chứng thị giác màn hình</td><td>Secondary</td><td>Hệ quả chính — đã có bài riêng trên web, chỉ tóm tắt và link</td></tr>
+<tr><td>Chớp mắt, khô mắt</td><td>Secondary</td><td>Cơ chế thật của mỏi mắt (AAO: chớp mắt giảm một nửa)</td></tr>
+<tr><td>Ánh sáng xanh, melatonin, nhịp sinh học</td><td>Secondary</td><td>Ảnh hưởng giấc ngủ — tách bạch với “hại mắt”</td></tr>
+<tr><td>Độ sáng tự động, Night Shift, Night Light, Eye Comfort Shield, Dark Mode</td><td>Related</td><td>Tính năng cụ thể — cần hướng dẫn bấm ở đâu</td></tr>
+<tr><td>Kính chống ánh sáng xanh</td><td>Related</td><td>Hiểu lầm phổ biến — cần nói đúng theo AAO và Cochrane</td></tr>
+<tr><td>Độ tương phản, cỡ chữ, chói lóa, đèn sau màn hình</td><td>Related</td><td>Yếu tố đi kèm độ sáng</td></tr>
+<tr><td>Quy tắc 20-20-20, khoảng cách nhìn, nước mắt nhân tạo</td><td>Supporting</td><td>Mẹo giảm mỏi mắt — link sang bài chuyên sâu</td></tr>
+<tr><td>Cận thị ở trẻ em, thời gian ngoài trời</td><td>Supporting</td><td>Đặt đúng vai (không phải do độ sáng màn hình)</td></tr>
+<tr><td>AAO, Cochrane, HCDC</td><td>Supporting</td><td>Nguồn bằng chứng</td></tr>
+<tr><td>PGS.TS Nguyễn Đức Anh, Trung tâm Mắt Hồng Ngọc</td><td>Supporting</td><td>Chuyên gia tham vấn — hồ sơ đã kiểm chứng</td></tr>
+</table></div>
+
+<!-- 3 -->
+<h2><span class="n">3</span>Độ phủ ngữ nghĩa (Semantic Coverage)</h2>
+<div class="tw"><table>
+<tr><th style="width:22%">Topic Cluster</th><th>Semantic Keywords</th><th style="width:16%">Intent</th></tr>
+<tr><td>Đồng nghĩa key chính</td><td>ánh sáng màn hình bao nhiêu là tốt, độ sáng màn hình bao nhiêu là tốt cho mắt, độ sáng điện thoại bao nhiêu là tốt, để độ sáng bao nhiêu phần trăm</td><td>Informational</td></tr>
+<tr><td>Theo thiết bị</td><td>độ sáng màn hình máy tính, độ sáng laptop, độ sáng iPhone, độ sáng Android, màn hình OLED</td><td>Informational</td></tr>
+<tr><td>Theo hoàn cảnh</td><td>độ sáng ban đêm, dùng điện thoại trong bóng tối, độ sáng ngoài trời, phòng làm việc</td><td>Informational</td></tr>
+<tr><td>Tính năng</td><td>độ sáng tự động, Night Shift, Night Light, Eye Comfort Shield, chế độ tối, giảm điểm trắng</td><td>Hướng dẫn</td></tr>
+<tr><td>Ảnh hưởng</td><td>mỏi mắt, khô mắt, đau đầu, chói mắt, mất ngủ, hội chứng thị giác màn hình</td><td>Informational</td></tr>
+<tr><td>Hiểu lầm</td><td>ánh sáng xanh có hại mắt không, kính chống ánh sáng xanh có tác dụng không, Dark Mode có tốt không</td><td>Informational</td></tr>
+<tr><td>Trả về bài khác</td><td>khoảng cách mắt và màn hình → /khoang-cach-giua-mat-va-man-hinh-may-tinh · cách chống mỏi mắt → /moi-mat-do-dung-may-tinh · khô mắt → /kho-mat-co-gay-bien-chung</td><td>—</td></tr>
+</table></div>
+
+<!-- 4 -->
+<h2><span class="n">4</span>Phân tích lỗ hổng nội dung (Content Gap)</h2>
+<h3>4A. Kiểm chứng — từng nguồn được mở đọc trực tiếp</h3>
+<p class="s">Đã mở: circadianshield.com (nguồn [1]), aao.org (nguồn [3], trang hiện ghi cập nhật 23/10/2026), nghiên cứu PMC12027292 (tra qua Europe PMC vì trang gốc chặn truy cập tự động), trang Khoa Mắt và hồ sơ PGS.TS Nguyễn Đức Anh trên hongngochospital.vn — ngày 26/10/2026.</p>
+<div class="tw"><table>
+<tr><th style="width:4%">#</th><th style="width:24%">Bài gốc viết</th><th>Đối chiếu</th><th style="width:24%">Xử lý</th></tr>
+<tr><td>1</td><td>Phòng 300–500 lux → “100–150 nits” [1]</td><td><span class="pill sai">Trích lệch nguồn</span> Nguồn [1] ghi: phòng làm việc tiêu chuẩn 300–500 lux → 150–250 nits; phòng làm việc ở nhà 150–300 lux → 100–180 nits; mẹo chính của nguồn là “khoảng 120 nits trong văn phòng bình thường”.</td><td>Dẫn đúng bảng của nguồn</td></tr>
+<tr><td>2</td><td>Phòng tối &lt; 50 lux → “40–80 nits”</td><td><span class="pill sai">Trích lệch nguồn</span> Nguồn ghi 30–60 nits; phòng hơi tối 50–150 lux → 50–100 nits.</td><td>Sửa</td></tr>
+<tr><td>3</td><td>“Tương đương 50–70% độ sáng”; ngoài trời “80–100% (&gt; 400–1000 nits)”</td><td><span class="pill sai">Không có nguồn</span> Nguồn [1] không nhắc phần trăm, không nói về điện thoại hay ngoài trời. Độ sáng tối đa khác nhau rất nhiều giữa các máy, thanh trượt cũng không tăng đều — 50% trên máy này khác 50% trên máy kia.</td><td>Bỏ quy đổi %, thay bằng mẹo “tờ giấy trắng” và độ sáng tự động</td></tr>
+<tr><td>4</td><td>Dùng circadianshield.com làm nguồn chính</td><td><span class="pill vua">Nguồn yếu</span> Blog của công ty bán phần mềm lọc ánh sáng xanh, tự ghi “not a medical device… not medical advice”.</td><td>Giữ làm tham khảo kỹ thuật, ghi rõ bản chất; bổ sung AAO, Cochrane</td></tr>
+<tr><td>5</td><td>“Màn hình quá sáng gây… <b>thoái hóa quang học</b>”</td><td><span class="pill sai">Sai</span> AAO: lượng ánh sáng xanh nhỏ từ màn hình chưa từng được chứng minh gây hại mắt; các nghiên cứu gây tổn thương làm trên tế bào và động vật, không mô phỏng điều kiện dùng màn hình thật.</td><td>Bỏ; thêm mục “ánh sáng xanh có làm hỏng mắt không”</td></tr>
+<tr><td>6</td><td>“Màn hình quá tối buộc mắt <b>gia tăng biên độ điều tiết</b>”</td><td><span class="pill vua">Sai cơ chế</span> Điều tiết phụ thuộc khoảng cách nhìn, không phụ thuộc độ sáng. Màn hình quá tối làm chữ kém tương phản, khiến ta nheo mắt, ghé sát, nhìn chằm chằm lâu hơn → mỏi. Theo AAO, nhìn trong điều kiện thiếu sáng gây mỏi nhưng không làm hỏng mắt.</td><td>Viết lại đúng cơ chế</td></tr>
+<tr><td>7</td><td>“Màn hình quá tối… giảm tần số chớp mắt”</td><td><span class="pill vua">Gán sai nguyên nhân</span> AAO: chớp mắt giảm còn khoảng một nửa (từ ~15 lần/phút) khi nhìn màn hình hoặc đọc gần — do tập trung nhìn, không phải do độ tối.</td><td>Sửa, dẫn số liệu AAO</td></tr>
+<tr><td>8</td><td>“Nghiên cứu PMC12027292 cho thấy Dark Mode giúp giảm mỏi mắt và khô mắt… khi sử dụng trong thời gian dài”</td><td><span class="pill sai">Trích sai</span> Nghiên cứu (IJERPH 2025, 30 người dùng máy tính bảng) đo <b>tác động tức thời</b>; <b>không có khác biệt có ý nghĩa về mỏi mắt</b> giữa hai chế độ; tác giả chỉ kết luận Dark Mode “có thể” giúp và cần nghiên cứu dài hạn.</td><td>Dẫn đúng kết quả</td></tr>
+<tr><td>9</td><td>FAQ: kính chống ánh sáng xanh — “<b>Nên sử dụng</b>”</td><td><span class="pill sai">Trái khuyến cáo</span> AAO: không cần chi tiền mua kính chống ánh sáng xanh. Tổng quan Cochrane 2023: kính lọc ánh sáng xanh có thể không giảm mỏi mắt so với kính thường; tác dụng lên giấc ngủ chưa rõ.</td><td>Đổi câu trả lời</td></tr>
+<tr><td>10</td><td>Chế độ bảo vệ mắt “giúp… cải thiện chất lượng giấc ngủ”</td><td><span class="pill vua">Quá mức</span> AAO khuyên bật chế độ ban đêm <b>và</b> tránh màn hình 1–2 giờ trước ngủ. Bằng chứng cho thấy giảm thời gian dùng màn hình buổi tối quan trọng hơn bật bộ lọc màu.</td><td>Diễn đạt đúng mức</td></tr>
+<tr><td>11</td><td>Hội chứng thị giác màn hình “làm tăng nguy cơ tiến triển cận thị”</td><td><span class="pill vua">Quá mức</span> Bằng chứng về cận thị chủ yếu ở trẻ em, liên quan nhìn gần nhiều và ít hoạt động ngoài trời — không phải do độ sáng màn hình.</td><td>Viết lại cho trẻ em, link bài phòng cận thị</td></tr>
+<tr><td>12</td><td>FAQ 7.3 dẫn nguồn “[8]”</td><td><span class="pill sai">Nguồn không tồn tại</span> Bài chỉ có 3 tài liệu tham khảo.</td><td>Sửa</td></tr>
+<tr><td>13</td><td>Nguồn [3] AAO “Published Dec. 05, 2025”</td><td><span class="pill vua">Cũ</span> Trang AAO hiện ghi ngày 23/10/2026.</td><td>Cập nhật ngày truy cập</td></tr>
+<tr><td>14</td><td>Hai hotline: 0911.858.626 (Trung tâm Mắt) và 0916.987.366 (bệnh viện)</td><td><span class="pill vua">Chưa kiểm chứng</span> Cả hai số không xuất hiện trên trang /khoa-mat. Hai số trong cùng một bài làm người đọc phân vân.</td><td>Giữ 1 số, bệnh viện xác nhận</td></tr>
+<tr><td>15</td><td>“Thiết bị… nhập khẩu hoàn toàn từ <b>Đức và Thụy Sĩ</b>”, “tiêu chuẩn quốc tế”</td><td><span class="pill vua">Chưa kiểm chứng</span> Trang Khoa Mắt không ghi nội dung này. Trang ghi: chuyên gia đến từ Việt Nam, Nhật Bản, Nga, Đức; hợp tác chuyển giao công nghệ với Tập đoàn Y tế Hoeikai (Nhật Bản).</td><td>Dùng thông tin trên trang khoa</td></tr>
+<tr><td>16</td><td>Mục mẹo: khoảng cách, nghỉ mắt, 20-20-20, hội chứng thị giác màn hình</td><td><span class="pill vua">Trùng bài khác</span> Website đã có /moi-mat-do-dung-may-tinh (07/10/2026), /khoang-cach-giua-mat-va-man-hinh-may-tinh (20/10/2026), /hoi-chung-thi-giac-do-may-tinh.</td><td>Rút gọn, link sang</td></tr>
+<tr><td>17</td><td>Tiêu đề 70 ký tự; mô tả hứa “bảo vệ thị lực tối ưu”</td><td><span class="pill vua">Kỹ thuật</span> Tiêu đề bị cắt; mô tả chứa con số 50–70% chưa có cơ sở.</td><td>Đã sửa</td></tr>
+<tr><td>18</td><td>Lỗi trình bày</td><td><span class="pill vua">Biên tập</span> “khiến mắt <b>mắt</b> phải”; “glocom<b>,đến</b>”; chú thích ảnh lặp 2 lần mỗi ảnh; dòng Facebook trống.</td><td>Đã sửa</td></tr>
+</table></div>
+<p class="s"><span class="pill dung">Đã đúng</span> Phòng làm việc thường 300–500 lux · Quá sáng hay quá tối so với môi trường đều gây khó chịu · Ánh sáng màn hình buổi tối ảnh hưởng nhịp sinh học, giấc ngủ (AAO) · Quy tắc 20-20-20 (HCDC) · Máy tính cách mắt 50–70 cm (AAO: khoảng 63 cm, một sải tay) · Độ sáng tự động hữu ích · Hồ sơ PGS.TS Nguyễn Đức Anh khớp trang bác sĩ (hơn 35 năm kinh nghiệm, nguyên Trưởng khoa Khúc xạ BV Mắt Trung ương).</p>
+
+<h3>4B. Những phần bài còn thiếu</h3>
+<div class="tw"><table>
+<tr><th style="width:22%">Loại thiếu</th><th>Chi tiết</th></tr>
+<tr><td>Missing topics</td><td><b>Vì sao phần trăm không phải con số chung</b> · <b>Cách tự kiểm tra bằng tờ giấy trắng</b> · <b>Thao tác trên iPhone, Android, Windows, macOS</b> · Ánh sáng xanh có hại mắt không · Khi nào cần đi khám mắt</td></tr>
+<tr><td>Missing entities</td><td>Nits, lux (chưa giải thích), độ tương phản, cỡ chữ, chói phản chiếu, đèn sau màn hình</td></tr>
+<tr><td>Missing questions</td><td>Dùng điện thoại trong bóng tối có hại mắt? Dark Mode có tốt hơn? Night Shift có giúp ngủ ngon?</td></tr>
+<tr><td>Missing evidence</td><td>Ý kiến tổ chức nhãn khoa chính thức (AAO); tổng quan Cochrane về kính lọc ánh sáng xanh</td></tr>
+<tr><td>Thiếu expert insight</td><td>Bác sĩ tham vấn có hồ sơ rất mạnh nhưng bài không có câu nói nào của bác sĩ</td></tr>
+</table></div>
+
+<!-- 5 -->
+<h2><span class="n">5</span>Đề xuất tăng giá trị thông tin (Information Gain)</h2>
+<div class="tw"><table>
+<tr><th style="width:22%">Loại</th><th>Đề xuất cụ thể</th><th style="width:16%">Trạng thái</th></tr>
+<tr><td>Nguyên tắc dễ nhớ</td><td><b>“Màn hình sáng ngang tờ giấy trắng đặt cạnh nó”</b> — trả lời được cho mọi thiết bị, mọi căn phòng; AI rất dễ trích.</td><td><span class="pill dung">Đã thêm</span></td></tr>
+<tr><td>Comparison tables</td><td>① Bảng độ sáng theo môi trường (lux → nits → cách làm thực tế). ② Bảng sự thật – hiểu lầm về ánh sáng xanh, Dark Mode, kính lọc.</td><td><span class="pill dung">Đã thêm</span></td></tr>
+<tr><td>Step-by-step guide</td><td>Đường dẫn cài đặt cụ thể trên iPhone, Android (Samsung), Windows, macOS.</td><td><span class="pill dung">Đã thêm</span></td></tr>
+<tr><td>Evidence</td><td>AAO (chớp mắt giảm một nửa; ánh sáng xanh không hại mắt; không cần kính lọc), Cochrane 2023, nghiên cứu Dark Mode trích đúng.</td><td><span class="pill dung">Đã thêm</span></td></tr>
+<tr><td>Expert insight</td><td>Khung trích lời PGS.TS Nguyễn Đức Anh — <b>cần lời thật</b></td><td><span class="pill vua">Cần bổ sung</span></td></tr>
+</table></div>
+
+<!-- Định hướng -->
+<h2 id="dh"><span class="n">★</span>Định hướng tối ưu (trước khi viết lại)</h2>
+<p class="s">Theo yêu cầu của Trang: 7 quyết định dưới đây là “khung” để viết lại bài ở mục 6.</p>
+<div class="tw"><table>
+<tr><th style="width:4%">#</th><th style="width:28%">Định hướng</th><th>Lý do</th></tr>
+<tr><td>1</td><td><b>Đổi câu trả lời chính</b> từ “50–70%” sang <b>nguyên tắc + bảng tham khảo</b>: màn hình sáng ngang môi trường; bảng nits theo độ sáng phòng dẫn đúng nguồn; bật độ sáng tự động.</td><td>Con số % không có nguồn và không đúng cho mọi máy. Câu trả lời dạng nguyên tắc vừa chính xác vừa dễ được AI trích.</td></tr>
+<tr><td>2</td><td><b>Gỡ các khẳng định trái khoa học:</b> thoái hóa quang học, kính chống ánh sáng xanh “nên dùng”, Dark Mode giảm mỏi mắt lâu dài.</td><td>Bài y tế (YMYL) có thông tin trái khuyến cáo AAO sẽ bị Google và AI hạ độ tin cậy.</td></tr>
+<tr><td>3</td><td><b>Tách hai vấn đề:</b> độ sáng → mỏi mắt, khó chịu; ánh sáng buổi tối → giấc ngủ.</td><td>Bài gốc trộn lẫn, khiến người đọc nghĩ ánh sáng xanh làm hỏng mắt.</td></tr>
+<tr><td>4</td><td><b>Thêm phần “bấm ở đâu”</b> cho 4 hệ điều hành.</td><td>Người tìm đang cầm máy và muốn chỉnh ngay — đây là thông tin mới mà đối thủ ít có.</td></tr>
+<tr><td>5</td><td><b>Rút gọn phần mẹo chống mỏi mắt</b>, link sang 3 bài sẵn có trên web.</td><td>Tránh 4 bài cùng website tranh nhau chủ đề “mỏi mắt khi dùng máy tính”.</td></tr>
+<tr><td>6</td><td><b>Thay nguồn yếu bằng nguồn mạnh:</b> AAO, Cochrane, HCDC; giữ nguồn [1] nhưng ghi rõ là tham khảo kỹ thuật.</td><td>Tăng điểm Evidence và Authority.</td></tr>
+<tr><td>7</td><td><b>Mục Trung tâm Mắt chỉ giữ thông tin kiểm chứng được</b>, 1 hotline, có “Khi nào cần đi khám mắt” làm cầu nối.</td><td>Giảm tính quảng cáo; cầu nối tự nhiên từ thông tin sang dịch vụ.</td></tr>
+</table></div>
+
+<!-- 6 -->
+<h2 id="n6"><span class="n">6</span>Bài viết đã tối ưu GEO</h2>
+<div class="tw"><table>
+<tr><th style="width:16%">Thành phần</th><th>Bản gốc</th><th>Bản tối ưu</th></tr>
+<tr><td>Title</td><td>Ánh sáng màn hình bao nhiêu là tốt? Cách điều chỉnh đúng để bảo vệ mắt <span class="s">(70 ký tự)</span></td><td><b>Ánh sáng màn hình bao nhiêu là tốt? Cách chỉnh để bảo vệ mắt</b> <span class="s">(60 ký tự)</span></td></tr>
+<tr><td>Description</td><td>…Khám phá ngay mức sáng lý tưởng (50 - 70%)… bảo vệ thị lực tối ưu. <span class="s">(156 ký tự)</span></td><td><b>Ánh sáng màn hình bao nhiêu là tốt cho mắt? Mức sáng gợi ý theo độ sáng phòng, cách chỉnh điện thoại, máy tính ngày và đêm, và sự thật về ánh sáng xanh.</b> <span class="s">(152 ký tự)</span></td></tr>
+<tr><td>Link nội bộ</td><td>1 link (trang Khoa Mắt)</td><td><b>6 link</b> — bảng ở cuối mục 8</td></tr>
+</table></div>
+<p class="legend s">Tô màu để Trang dễ soát mật độ: <span><mark class="k1">key chính</mark></span>. Chữ <u>gạch chân xanh</u> là link nội bộ.</p>
+
+<div class="art">
+<h1>Ánh sáng màn hình bao nhiêu là tốt? Cách chỉnh để bảo vệ mắt</h1>
+<div class="byline">Tham vấn chuyên môn: PGS.TS Nguyễn Đức Anh – Khoa Mắt – Bệnh viện Đa khoa Hồng Ngọc – Phúc Trường Minh · Cập nhật: <i>[ngày cập nhật — cần bổ sung]</i></div>
+
+<p><b>Sapo:</b> <span class="k1">Ánh sáng màn hình bao nhiêu là tốt</span>? Không có một con số phần trăm chung cho mọi máy, nhưng có một nguyên tắc dễ nhớ: <b>màn hình nên sáng ngang môi trường xung quanh</b> — trang trắng trên màn hình trông giống một tờ giấy trắng đặt cạnh nó. Trong phòng làm việc đủ đèn, mức này thường vào khoảng 120–250 nits; trong phòng tối chỉ khoảng 30–60 nits. Bài viết giải thích vì sao màn hình quá sáng hay quá tối đều làm mắt mỏi, cách chỉnh trên điện thoại và máy tính, và sự thật về ánh sáng xanh.</p>
+
+<div class="sum"><b class="t">TÓM TẮT NHANH</b>
+<span class="k1">Ánh sáng màn hình bao nhiêu là tốt</span>? Độ sáng tốt nhất là khi màn hình sáng ngang môi trường xung quanh, tức trang trắng trên màn hình trông như tờ giấy trắng đặt cạnh. Theo bảng tham khảo kỹ thuật, phòng làm việc 300–500 lux tương ứng khoảng 150–250 nits, phòng tối dưới 50 lux khoảng 30–60 nits; phần trăm trên thanh trượt khác nhau giữa các máy nên cách dễ nhất là bật độ sáng tự động. Màn hình quá sáng hay quá tối gây mỏi mắt, khó chịu nhưng không làm hỏng mắt; Viện Hàn lâm Nhãn khoa Hoa Kỳ (AAO) cho biết ánh sáng xanh từ màn hình chưa từng được chứng minh gây hại mắt.</div>
+
+<div class="box"><b class="t">Những điểm chính</b>
+<ul style="margin:0;padding-left:20px">
+<li>Nguyên tắc: <b>màn hình sáng ngang môi trường</b> — so với tờ giấy trắng đặt cạnh.</li>
+<li><b>Bật độ sáng tự động</b> là cách đơn giản nhất cho điện thoại, laptop.</li>
+<li>Buổi tối: giảm độ sáng, <b>bật đèn phòng</b>, bật Night Shift/Night Light và ngừng dùng màn hình 1–2 giờ trước khi ngủ.</li>
+<li>Mỏi mắt chủ yếu do <b>ít chớp mắt</b> và nhìn liên tục — nghỉ mắt theo quy tắc 20-20-20.</li>
+<li><b>Không cần mua kính chống ánh sáng xanh</b> để bảo vệ mắt (AAO).</li>
+</ul></div>
+
+<h2>1. Ánh sáng màn hình bao nhiêu là tốt cho mắt?</h2>
+<p>Độ sáng màn hình tốt cho mắt là độ sáng <b>ngang với ánh sáng môi trường</b>: không chói hơn hẳn căn phòng, cũng không tối đến mức phải nheo mắt. Khi hai mức sáng chênh nhau quá nhiều, mắt phải liên tục thích nghi mỗi lần nhìn từ màn hình ra xung quanh, gây khó chịu và nhanh mỏi.</p>
+<h3>Bảng độ sáng màn hình tham khảo theo môi trường</h3>
+<p>Độ sáng màn hình đo bằng <b>nits</b> (cd/m²); độ sáng căn phòng đo bằng <b>lux</b>. Bảng dưới đây dựa theo khuyến nghị kỹ thuật của Circadian Shield (nhà phát triển phần mềm hiển thị) — mang tính tham khảo, chưa phải khuyến cáo y khoa chính thức:</p>
+<div class="tw"><table>
+<tr><th>Môi trường</th><th>Độ sáng phòng</th><th>Độ sáng màn hình gợi ý</th><th>Làm thế nào trên thực tế</th></tr>
+<tr><td>Văn phòng rất sáng</td><td>Trên 500 lux</td><td>250–350 nits</td><td>Tăng độ sáng đến khi chữ rõ, không chói</td></tr>
+<tr><td>Văn phòng tiêu chuẩn</td><td>300–500 lux</td><td>150–250 nits</td><td>So với tờ giấy trắng đặt cạnh màn hình</td></tr>
+<tr><td>Phòng làm việc ở nhà</td><td>150–300 lux</td><td>100–180 nits</td><td>Giảm bớt, bật thêm đèn bàn nếu cần</td></tr>
+<tr><td>Buổi tối, phòng hơi tối</td><td>50–150 lux</td><td>50–100 nits</td><td>Bật Night Shift/Night Light, giảm độ sáng</td></tr>
+<tr><td>Phòng tối</td><td>Dưới 50 lux</td><td>30–60 nits</td><td>Giảm thấp nhất có thể và <b>bật đèn phòng</b> hoặc đèn sau màn hình</td></tr>
+<tr><td>Ngoài trời nắng</td><td>Trên 10.000 lux</td><td>Cao nhất máy cho phép</td><td>Tăng độ sáng hoặc tìm chỗ râm; không gây hại mắt</td></tr>
+</table></div>
+<h3>Vì sao không có con số phần trăm chung?</h3>
+<p>Mỗi thiết bị có độ sáng tối đa khác nhau — nhiều màn hình máy tính chỉ đạt vài trăm nits, trong khi điện thoại đời mới có thể sáng hơn 1.000 nits khi ra nắng. Thanh trượt độ sáng cũng không tăng đều theo phần trăm. Vì vậy 50% trên máy này có thể sáng gấp đôi 50% trên máy khác. Thay vì nhớ phần trăm, hãy dùng mẹo dưới đây.</p>
+<h3>Mẹo “tờ giấy trắng” để tự kiểm tra</h3>
+<ol>
+<li>Mở một trang có nền trắng (văn bản trống, trang web nền trắng).</li>
+<li>Đặt một tờ giấy trắng cạnh màn hình, dưới cùng ánh đèn phòng.</li>
+<li>Chỉnh độ sáng đến khi trang trắng trên màn hình trông sáng gần giống tờ giấy: không “phát sáng” hơn hẳn, cũng không xám tối hơn.</li>
+</ol>
+<p>Với điện thoại, cách đơn giản nhất là <b>bật độ sáng tự động</b>: cảm biến ánh sáng sẽ tự tăng giảm theo môi trường.</p>
+
+<h2>2. Màn hình quá sáng hay quá tối ảnh hưởng đến mắt như thế nào?</h2>
+<h3>Màn hình quá sáng so với môi trường</h3>
+<p>Khi màn hình sáng hơn hẳn căn phòng — nhất là dùng điện thoại trong bóng tối — mắt bị chói, nhức, khó tập trung, dễ đau đầu sau thời gian dài. Ánh sáng mạnh từ màn hình vào buổi tối còn ảnh hưởng đến giấc ngủ (xem mục 2.4).</p>
+<h3>Màn hình quá tối</h3>
+<p>Độ sáng quá thấp làm chữ kém tương phản, khiến ta vô thức nheo mắt, ghé sát và nhìn chằm chằm lâu hơn để đọc. Kết quả là mỏi mắt, nhìn mờ tạm thời, đau đầu. Theo AAO, nhìn trong điều kiện thiếu sáng gây mỏi nhưng không làm hỏng mắt — cảm giác khó chịu hết khi mắt được nghỉ.</p>
+<h3>Nhìn màn hình lâu làm giảm chớp mắt</h3>
+<p>AAO cho biết bình thường chúng ta chớp mắt khoảng 15 lần mỗi phút, nhưng con số này có thể giảm còn một nửa khi nhìn màn hình hoặc đọc gần. Ít chớp mắt khiến mắt khô, cộm, chảy nước mắt, nhìn mờ — nhóm triệu chứng thường gọi là mỏi mắt kỹ thuật số hay <a href="https://hongngochospital.vn/vi/hoi-chung-thi-giac-do-may-tinh">hội chứng thị giác do máy tính</a>. Đây là nguyên nhân chính gây mỏi mắt, không phải ánh sáng xanh.</p>
+<h3>Ánh sáng màn hình buổi tối và giấc ngủ</h3>
+<p>Ánh sáng, đặc biệt là ánh sáng xanh, làm giảm tiết melatonin — hormone giúp ngủ. Một nghiên cứu trên tạp chí PNAS (Chang và cộng sự, 2015) cho thấy đọc sách trên thiết bị phát sáng trước khi ngủ làm lâu vào giấc hơn và giảm melatonin so với đọc sách giấy. AAO khuyên bật chế độ ban đêm và tránh dùng màn hình 1–2 giờ trước khi ngủ.</p>
+<h3>Ánh sáng xanh từ màn hình có làm hỏng mắt không?</h3>
+<p>Không. AAO cho biết các nghiên cứu cho thấy ánh sáng xanh gây tổn thương đều làm trên tế bào và động vật, với cường độ không giống điều kiện dùng màn hình thật; lượng ánh sáng xanh nhỏ từ màn hình chưa từng được chứng minh gây hại mắt. Ánh nắng mặt trời mới là nguồn ánh sáng xanh và tia UV lớn hơn nhiều.</p>
+
+<h2>3. Cách chỉnh ánh sáng màn hình đúng để bảo vệ mắt</h2>
+<h3>Trên điện thoại</h3>
+<ul>
+<li><b>iPhone:</b> bật độ sáng tự động tại Cài đặt → Trợ năng → Màn hình &amp; cỡ chữ → Độ sáng tự động. Bật Night Shift tại Cài đặt → Màn hình &amp; Độ sáng → Night Shift, đặt lịch từ hoàng hôn đến bình minh.</li>
+<li><b>Android (ví dụ Samsung):</b> bật Độ sáng thích ứng tại Cài đặt → Màn hình. Bật Lá chắn bảo vệ mắt (Eye Comfort Shield) trong cùng mục. Tên mục có thể khác đôi chút tùy hãng.</li>
+<li>Tăng <b>cỡ chữ</b> nếu phải ghé sát để đọc — chữ to giúp đỡ mỏi hơn tăng độ sáng.</li>
+</ul>
+<h3>Trên máy tính</h3>
+<ul>
+<li><b>Windows:</b> Settings → System → Display: chỉnh Brightness, bật Night light và đặt lịch buổi tối.</li>
+<li><b>macOS:</b> System Settings → Displays: chỉnh độ sáng, bật Night Shift.</li>
+<li><b>Màn hình rời:</b> chỉnh Brightness và Contrast bằng nút trên màn hình; độ tương phản vừa phải giúp chữ sắc nét mà không chói.</li>
+<li><b>Giảm chói phản chiếu:</b> không đặt màn hình quay lưng hoặc đối diện cửa sổ; dùng đèn bàn chiếu vào bàn phím thay vì vào màn hình; cân nhắc tấm dán chống chói (AAO).</li>
+</ul>
+<h3>Chế độ tối (Dark Mode) có tốt hơn không?</h3>
+<p>Chế độ tối giúp màn hình dịu hơn khi dùng trong phòng tối. Tuy nhiên, bằng chứng còn hạn chế: một nghiên cứu năm 2025 trên 30 người dùng máy tính bảng không thấy khác biệt có ý nghĩa về mỏi mắt giữa chế độ sáng và tối ngay sau khi sử dụng. Hãy chọn chế độ bạn thấy dễ đọc hơn; trong phòng sáng, chữ đen trên nền trắng thường rõ hơn.</p>
+
+<h2>4. Những sai lầm thường gặp khi chỉnh ánh sáng màn hình</h2>
+<ul>
+<li><b>Để độ sáng cố định cả ngày:</b> mức vừa với buổi trưa sẽ quá chói lúc nửa đêm.</li>
+<li><b>Dùng điện thoại trong phòng tối hoàn toàn:</b> dù đã giảm độ sáng, chênh lệch vẫn lớn — nên bật một đèn nhỏ.</li>
+<li><b>Nghĩ rằng Night Shift là đủ để ngủ ngon:</b> bộ lọc màu chỉ hỗ trợ; giảm thời gian dùng màn hình trước khi ngủ mới là yếu tố chính.</li>
+<li><b>Chỉ chỉnh độ sáng mà quên cỡ chữ, khoảng cách và nghỉ mắt.</b></li>
+<li><b>Mua kính chống ánh sáng xanh thay cho việc nghỉ mắt:</b> AAO không khuyến nghị; tổng quan Cochrane 2023 cho thấy loại kính này có thể không giảm mỏi mắt.</li>
+</ul>
+
+<h2>5. Mẹo giảm mỏi mắt khi dùng điện thoại và máy tính lâu</h2>
+<ul>
+<li><b>Quy tắc 20-20-20:</b> cứ 20 phút, nhìn một vật cách khoảng 6 mét (20 feet) trong 20 giây (HCDC).</li>
+<li><b>Giữ khoảng cách:</b> máy tính cách mắt khoảng một sải tay (AAO: khoảng 63 cm), mắt nhìn hơi xuống. Chi tiết: <a href="https://hongngochospital.vn/vi/khoang-cach-giua-mat-va-man-hinh-may-tinh">khoảng cách giữa mắt và màn hình máy tính</a>.</li>
+<li><b>Chớp mắt có ý thức</b> và dùng nước mắt nhân tạo khi mắt khô (AAO).</li>
+<li><b>Đeo kính đúng độ</b> nếu có tật khúc xạ.</li>
+<li><b>Trẻ em:</b> tăng thời gian vui chơi ngoài trời và hạn chế nhìn gần liên tục giúp giảm nguy cơ cận thị — xem <a href="https://hongngochospital.vn/vi/cach-ngua-can-thi-o-tuoi-hoc-duong">cách ngừa cận thị ở tuổi học đường</a>.</li>
+</ul>
+<p>Xem thêm 9+ cách cụ thể tại bài <a href="https://hongngochospital.vn/vi/moi-mat-do-dung-may-tinh">cách chống mỏi mắt khi làm việc</a>.</p>
+
+<h2>6. Khi nào cần đi khám mắt?</h2>
+<p>Hãy đi khám nếu đã chỉnh độ sáng, nghỉ mắt đúng cách mà vẫn:</p>
+<ul>
+<li>Mỏi mắt, nhìn mờ, đau đầu kéo dài nhiều ngày.</li>
+<li>Khô, cộm, đỏ mắt thường xuyên — xem <a href="https://hongngochospital.vn/vi/kho-mat-co-gay-bien-chung">khô mắt có gây biến chứng không</a>.</li>
+<li>Nhìn đôi, thấy chớp sáng, mất một phần tầm nhìn — cần khám ngay.</li>
+<li>Trẻ hay nheo mắt, dụi mắt, ghé sát màn hình hoặc sách vở.</li>
+</ul>
+<div class="box"><b class="t">Ý kiến bác sĩ</b><i>[Cần bổ sung: 1–2 câu thật của PGS.TS Nguyễn Đức Anh — ví dụ về những trường hợp mỏi mắt kéo dài do tật khúc xạ chưa được chỉnh kính, hay khô mắt do nhìn màn hình. Không tự viết thay bác sĩ.]</i></div>
+
+<h2>7. Khám mắt tại Trung tâm Mắt Hồng Ngọc</h2>
+<p>Trung tâm Mắt – Bệnh viện Đa khoa Hồng Ngọc quy tụ các chuyên gia nhãn khoa đến từ Việt Nam, Nhật Bản, Nga, Đức và hợp tác chuyển giao công nghệ với Tập đoàn Y tế Hoeikai (Nhật Bản). Trung tâm thực hiện khám mắt tổng quát và chuyên sâu, đo khúc xạ, chụp cắt lớp võng mạc, phẫu thuật khúc xạ, phẫu thuật phaco, ghép giác mạc, điều trị glôcôm và khám mắt trẻ em.</p>
+<p>PGS.TS Nguyễn Đức Anh – người tham vấn bài viết – có hơn 35 năm kinh nghiệm, nguyên Trưởng khoa Khúc xạ Bệnh viện Mắt Trung ương, giảng viên cao cấp Bộ môn Mắt – Đại học Y Hà Nội.</p>
+<ul>
+<li><b>Địa chỉ:</b> Bệnh viện Đa khoa Hồng Ngọc – Phúc Trường Minh, số 8 Châu Văn Liêm, phường Từ Liêm, Hà Nội</li>
+<li><b>Hotline:</b> 0911.858.626 <i>[cần xác nhận — bài gốc có thêm số 0916.987.366]</i></li>
+<li><b>Thông tin khoa:</b> <a href="https://hongngochospital.vn/vi/khoa-mat">Khoa Mắt – Bệnh viện Hồng Ngọc</a></li>
+</ul>
+
+<h2>Kết luận</h2>
+<p><span class="k1">Ánh sáng màn hình bao nhiêu là tốt</span> không phụ thuộc vào một con số phần trăm, mà vào việc màn hình có sáng ngang môi trường hay không. Hãy bật độ sáng tự động, giảm độ sáng và bật đèn phòng vào buổi tối, nghỉ mắt theo quy tắc 20-20-20. Nếu mỏi mắt, nhìn mờ vẫn kéo dài, hãy đi khám để kiểm tra tật khúc xạ và khô mắt.</p>
+
+<h2>Câu hỏi thường gặp về ánh sáng màn hình</h2>
+<h3>Độ sáng điện thoại bao nhiêu phần trăm là tốt cho mắt?</h3>
+<p>Không có con số phần trăm chung vì mỗi điện thoại có độ sáng tối đa khác nhau. Cách tốt nhất là bật độ sáng tự động, hoặc chỉnh đến khi trang trắng trên màn hình trông như tờ giấy trắng đặt cạnh.</p>
+<h3>Để độ sáng màn hình 100% có hại mắt không?</h3>
+<p>Không gây hại cho mắt, và ngoài trời nắng thì cần độ sáng cao để nhìn rõ. Tuy nhiên, để 100% trong phòng tối hoặc ban đêm sẽ gây chói, mỏi mắt, đau đầu và có thể ảnh hưởng giấc ngủ.</p>
+<h3>Dùng điện thoại trong bóng tối có hại mắt không?</h3>
+<p>Không làm hỏng mắt, nhưng chênh lệch lớn giữa màn hình và căn phòng gây chói, mỏi mắt; ánh sáng màn hình buổi tối còn làm khó ngủ. Nên bật một đèn nhỏ trong phòng, giảm độ sáng và hạn chế dùng điện thoại 1–2 giờ trước khi ngủ.</p>
+<h3>Có nên dùng kính chống ánh sáng xanh không?</h3>
+<p>Không cần thiết. Viện Hàn lâm Nhãn khoa Hoa Kỳ (AAO) không khuyến nghị kính chống ánh sáng xanh, và tổng quan Cochrane 2023 cho thấy loại kính này có thể không giảm mỏi mắt. Nghỉ mắt định kỳ và giảm dùng màn hình buổi tối hiệu quả hơn.</p>
+<h3>Chế độ tối (Dark Mode) có tốt cho mắt hơn không?</h3>
+<p>Chế độ tối giúp màn hình dịu hơn trong phòng tối, nhưng bằng chứng về giảm mỏi mắt còn hạn chế. Một nghiên cứu năm 2025 trên 30 người không thấy khác biệt có ý nghĩa về mỏi mắt giữa chế độ sáng và tối; hãy chọn chế độ bạn thấy dễ đọc hơn.</p>
+<h3>Độ sáng tự động có tốt cho mắt không?</h3>
+<p>Có. Độ sáng tự động dùng cảm biến để tăng giảm độ sáng theo ánh sáng xung quanh, giúp màn hình luôn gần với môi trường mà không cần chỉnh tay. Đây là cách đơn giản nhất để giữ độ sáng phù hợp trên điện thoại và laptop.</p>
+
+
+<p class="note">Lưu ý: Thông tin trong bài viết chỉ mang tính chất tham khảo, không thay thế cho chẩn đoán hay tư vấn y khoa. Tình trạng mắt của mỗi người khác nhau, cần được bác sĩ chuyên khoa Mắt thăm khám trực tiếp.</p>
+<p><b>Tài liệu tham khảo</b></p>
+<ol class="ref">
+<li>American Academy of Ophthalmology – Digital Devices and Your Eyes (cập nhật 23/10/2026). aao.org/eye-health/tips-prevention/digital-devices-your-eyes</li>
+<li>Singh S và cs. Tổng quan hệ thống về kính lọc ánh sáng xanh (blue-light filtering spectacles). Cochrane Database of Systematic Reviews, 2023.</li>
+<li>Chang AM và cs. Evening use of light-emitting eReaders negatively affects sleep, circadian timing, and next-morning alertness. PNAS 2015;112(4):1232–1237.</li>
+<li>Immediate Effects of Light Mode and Dark Mode Features on Visual Fatigue in Tablet Users. Int J Environ Res Public Health 2025 (PMC12027292, PMID 40283833).</li>
+<li>HCDC – Quy tắc 20-20-20 giúp giảm mỏi mắt, phòng ngừa hoặc làm chậm tiến triển cận thị.</li>
+<li>Circadian Shield – Best Monitor Settings for Eye Health (tham khảo kỹ thuật, không phải nguồn y khoa).</li>
+</ol>
+</div>
+
+<!-- 7 -->
+<h2><span class="n">7</span>FAQ (bản để gắn Schema FAQPage)</h2>
+<p class="s">Mỗi câu trả lời 2–3 câu, đứng độc lập. Câu về kính chống ánh sáng xanh đã đổi hẳn nội dung so với bài gốc.</p>
+<h3>Độ sáng điện thoại bao nhiêu phần trăm là tốt cho mắt?</h3>
+<p>Không có con số phần trăm chung vì mỗi điện thoại có độ sáng tối đa khác nhau. Cách tốt nhất là bật độ sáng tự động, hoặc chỉnh đến khi trang trắng trên màn hình trông như tờ giấy trắng đặt cạnh.</p>
+<h3>Để độ sáng màn hình 100% có hại mắt không?</h3>
+<p>Không gây hại cho mắt, và ngoài trời nắng thì cần độ sáng cao để nhìn rõ. Tuy nhiên, để 100% trong phòng tối hoặc ban đêm sẽ gây chói, mỏi mắt, đau đầu và có thể ảnh hưởng giấc ngủ.</p>
+<h3>Dùng điện thoại trong bóng tối có hại mắt không?</h3>
+<p>Không làm hỏng mắt, nhưng chênh lệch lớn giữa màn hình và căn phòng gây chói, mỏi mắt; ánh sáng màn hình buổi tối còn làm khó ngủ. Nên bật một đèn nhỏ trong phòng, giảm độ sáng và hạn chế dùng điện thoại 1–2 giờ trước khi ngủ.</p>
+<h3>Có nên dùng kính chống ánh sáng xanh không?</h3>
+<p>Không cần thiết. Viện Hàn lâm Nhãn khoa Hoa Kỳ (AAO) không khuyến nghị kính chống ánh sáng xanh, và tổng quan Cochrane 2023 cho thấy loại kính này có thể không giảm mỏi mắt. Nghỉ mắt định kỳ và giảm dùng màn hình buổi tối hiệu quả hơn.</p>
+<h3>Chế độ tối (Dark Mode) có tốt cho mắt hơn không?</h3>
+<p>Chế độ tối giúp màn hình dịu hơn trong phòng tối, nhưng bằng chứng về giảm mỏi mắt còn hạn chế. Một nghiên cứu năm 2025 trên 30 người không thấy khác biệt có ý nghĩa về mỏi mắt giữa chế độ sáng và tối; hãy chọn chế độ bạn thấy dễ đọc hơn.</p>
+<h3>Độ sáng tự động có tốt cho mắt không?</h3>
+<p>Có. Độ sáng tự động dùng cảm biến để tăng giảm độ sáng theo ánh sáng xung quanh, giúp màn hình luôn gần với môi trường mà không cần chỉnh tay. Đây là cách đơn giản nhất để giữ độ sáng phù hợp trên điện thoại và laptop.</p>
+
+
+<!-- 8 -->
+<h2><span class="n">8</span>Điểm khả năng được AI trích dẫn</h2>
+<p class="s">Điểm ước tính theo kinh nghiệm GEO (không phải công cụ đo chính thức), mỗi tiêu chí 20 điểm.</p>
+<div class="tw"><table>
+<tr><th style="width:18%">Tiêu chí</th><th style="width:20%">Bài gốc</th><th style="width:20%">Bản tối ưu</th><th>Lý do &amp; cách cải thiện thêm</th></tr>
+<tr><td><b>Information Gain</b></td><td>8/20<div class="bar"><i style="width:40%"></i></div></td><td>16/20<div class="bar af"><i style="width:80%"></i></div></td><td>Đã thêm nguyên tắc “tờ giấy trắng”, bảng lux – nits – cách làm, vì sao % không phải con số chung, đường dẫn cài đặt 4 hệ điều hành. Lên 18+ nếu có lời bác sĩ thật và ảnh chụp cài đặt.</td></tr><tr><td><b>Semantic Coverage</b></td><td>13/20<div class="bar"><i style="width:65%"></i></div></td><td>17/20<div class="bar af"><i style="width:85%"></i></div></td><td>Đã phủ nits, lux, độ tương phản, chói phản chiếu, Dark Mode, kính lọc, giấc ngủ, trẻ em, khi nào đi khám.</td></tr><tr><td><b>Authority</b></td><td>12/20<div class="bar"><i style="width:60%"></i></div></td><td>16/20<div class="bar af"><i style="width:80%"></i></div></td><td>Bác sĩ tham vấn có hồ sơ mạnh, đã kiểm chứng. Thiếu lời bác sĩ; nên thêm hộp hồ sơ + schema reviewedBy.</td></tr><tr><td><b>Structure</b></td><td>15/20<div class="bar"><i style="width:75%"></i></div></td><td>18/20<div class="bar af"><i style="width:90%"></i></div></td><td>Bài gốc có tóm tắt và FAQ — điểm cộng. Đã thêm câu trả lời đầu bài, bảng, danh sách thao tác.</td></tr><tr><td><b>Evidence</b></td><td>6/20<div class="bar"><i style="width:30%"></i></div></td><td>17/20<div class="bar af"><i style="width:85%"></i></div></td><td>Bài gốc trích lệch 2/3 nguồn và có khẳng định trái AAO. Đã sửa, thêm AAO, Cochrane, PNAS, nghiên cứu Dark Mode trích đúng.</td></tr><tr><td><b>Tổng</b></td><td><b>54/100</b></td><td><b>84/100</b></td><td>Mức “dễ được AI trích dẫn” thường từ 80 trở lên.</td></tr>
+</table></div>
+
+<h3>Link nội bộ đi ra từ bài này</h3>
+<p class="s">Đường dẫn lấy từ sitemap thật của hongngochospital.vn; /khoa-mat, /moi-mat-do-dung-may-tinh, /khoang-cach…, /hoi-chung… đã mở đọc.</p>
+<div class="tw"><table>
+<tr><th>Anchor text</th><th>Đặt ở mục</th><th>URL đích</th></tr>
+<tr><td>hội chứng thị giác do máy tính</td><td>Nhìn màn hình lâu làm giảm chớp mắt</td><td class="s">hongngochospital.vn/vi/hoi-chung-thi-giac-do-may-tinh</td></tr><tr><td>khoảng cách giữa mắt và màn hình máy tính</td><td>5. Mẹo giảm mỏi mắt khi dùng điện thoại và máy tính lâu</td><td class="s">hongngochospital.vn/vi/khoang-cach-giua-mat-va-man-hinh-may-tinh</td></tr><tr><td>cách ngừa cận thị ở tuổi học đường</td><td>5. Mẹo giảm mỏi mắt khi dùng điện thoại và máy tính lâu</td><td class="s">hongngochospital.vn/vi/cach-ngua-can-thi-o-tuoi-hoc-duong</td></tr><tr><td>cách chống mỏi mắt khi làm việc</td><td>5. Mẹo giảm mỏi mắt khi dùng điện thoại và máy tính lâu</td><td class="s">hongngochospital.vn/vi/moi-mat-do-dung-may-tinh</td></tr><tr><td>khô mắt có gây biến chứng không</td><td>6. Khi nào cần đi khám mắt?</td><td class="s">hongngochospital.vn/vi/kho-mat-co-gay-bien-chung</td></tr><tr><td>Khoa Mắt – Bệnh viện Hồng Ngọc</td><td>7. Khám mắt tại Trung tâm Mắt Hồng Ngọc</td><td class="s">hongngochospital.vn/vi/khoa-mat</td></tr>
+</table></div>
+
+<h3>Gợi ý tối ưu thêm</h3>
+<ol>
+<li><b>Schema</b>: <code>MedicalWebPage</code> + <code>FAQPage</code> + <code>HowTo</code> (cho mục chỉnh cài đặt), <code>reviewedBy</code> PGS.TS Nguyễn Đức Anh.</li>
+<li><b>Ảnh chụp màn hình cài đặt</b> iPhone / Android / Windows, alt: “cách chỉnh độ sáng màn hình iPhone”.</li>
+<li><b>Ảnh minh họa mẹo tờ giấy trắng</b> — hình dễ nhớ, dễ được chia sẻ.</li>
+<li><b>Bài cũ /hoi-chung-thi-giac-do-may-tinh (2013)</b> nên được cập nhật hoặc gộp — nội dung đã hơn 10 năm.</li>
+<li><b>Thống nhất 1 hotline</b> cho Trung tâm Mắt trên toàn website.</li>
+<li><b>Bác sĩ duyệt</b> các chỗ đổi chuyên môn (mục 4A số 1–11).</li>
+</ol>
+
+<footer>Nguồn đối chiếu đã mở trực tiếp ngày 26/10/2026: aao.org, circadianshield.com, Europe PMC (PMC12027292), hongngochospital.vn (/khoa-mat, hồ sơ PGS.TS Nguyễn Đức Anh, 3 bài liên quan). Mật độ đo trên thân bài tối ưu (2.458 từ): “ánh sáng màn hình bao nhiêu là tốt” 5 lần (1.6%) · “độ sáng màn hình” 5 lần (0.8%) · “ánh sáng màn hình” 10 lần (1.6%).</footer>
+</div></body></html>
