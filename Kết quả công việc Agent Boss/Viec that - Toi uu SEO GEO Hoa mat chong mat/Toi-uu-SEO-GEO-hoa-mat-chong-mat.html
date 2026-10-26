@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="vi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tối ưu SEO &amp; GEO — Hoa mắt chóng mặt</title>
+<style>
+:root{--sg-xanh:#004AEF;--sg-xanh-sang:#0D53F0;--sg-navy:#002992;--sg-mint:#07EF9C;--sg-cyan:#0DD1FF;--sg-vang:#FFCE00;--sg-cam:#F68B1F;
+--sg-den:#151515;--sg-xam-nen:#F3F3F6;--sg-xam-vien:#DCDCDC;--mut:#5A6B66;
+--sg-chu:Gilroy,"Montserrat",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+--sg-dai-mau:linear-gradient(135deg,#002992 0%,#004AEF 55%,#0DD1FF 100%)}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--sg-den);font:16px/1.65 var(--sg-chu)}
+.w{max-width:1000px;margin:0 auto;padding:0 16px 60px}
+header{background:var(--sg-dai-mau);color:#fff;padding:26px 0 30px;margin-bottom:26px}
+header .w{padding-bottom:0}
+.logo{display:inline-block;background:#fff;border-radius:12px;padding:12px 16px;margin-bottom:18px}
+.logo img{width:170px;display:block}
+header h1{font-size:30px;line-height:1.25;margin:0 0 8px;font-weight:800}
+header .sub{font-size:14px;opacity:.92}
+h2{color:var(--sg-xanh);font-size:23px;margin:40px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--sg-xam-vien)}
+h2 .n{display:inline-block;background:var(--sg-xanh);color:#fff;border-radius:8px;padding:0 10px;margin-right:8px;font-size:18px}
+h3{font-size:18px;margin:22px 0 8px;color:var(--sg-navy)}
+.tw{overflow-x:auto;margin:10px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:600px}
+th,td{border:1px solid var(--sg-xam-vien);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--sg-xam-nen);color:var(--sg-navy);font-size:13px}
+.s{font-size:13px;color:var(--mut)}
+.box{background:var(--sg-xam-nen);border-left:4px solid var(--sg-xanh);border-radius:0 10px 10px 0;padding:14px 18px;margin:14px 0}
+.box.cam{border-left-color:var(--sg-cam)}
+.box b.t{display:block;margin-bottom:4px;color:var(--sg-navy)}
+.pill{display:inline-block;padding:0 9px;border-radius:20px;font-size:12px;font-weight:700;white-space:nowrap}
+.sai{background:#fdebd6;color:#8a4a07}.dung{background:#dff8ee;color:#05603f}.vua{background:#fff5cc;color:#6b5600}
+.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:16px 0}
+.kpi div{background:var(--sg-xam-nen);border-radius:12px;padding:14px}
+.kpi b{display:block;font-size:30px;color:var(--sg-xanh);line-height:1.1}
+.kpi b.m{color:#05a46b}
+/* bài viết */
+.art{border:1px solid var(--sg-xam-vien);border-radius:14px;padding:6px 26px 22px;margin-top:14px}
+.art h1{font-size:26px;color:var(--sg-navy);line-height:1.3;margin:20px 0 6px}
+.art h2{font-size:21px;border:0;margin:30px 0 8px;color:var(--sg-xanh)}
+.art .byline{font-size:13px;color:var(--mut)}
+.sum{background:#eef3ff;border:1px solid #c9d8ff;border-radius:12px;padding:14px 18px;margin:16px 0}
+.sum b.t{color:var(--sg-xanh);display:block;margin-bottom:4px;letter-spacing:.3px}
+.k1{background:#dbe6ff;border-radius:3px;padding:0 2px;font-weight:700}
+.k2{background:#d2fbeb;border-radius:3px;padding:0 2px;font-weight:700}
+.note{font-size:13px;color:var(--mut);font-style:italic}
+.cap{font-size:13px;color:var(--mut);background:var(--sg-xam-nen);padding:6px 10px;border-radius:6px;margin:6px 0 12px}
+.legend span{margin-right:12px}
+.bar{height:10px;background:var(--sg-xam-vien);border-radius:5px;overflow:hidden;min-width:90px}
+.bar i{display:block;height:100%;background:var(--sg-xanh)}
+.bar.af i{background:#05a46b}
+.art a{color:var(--sg-xanh);text-decoration:underline}
+footer{margin-top:40px;padding-top:12px;border-top:1px solid var(--sg-xam-vien);font-size:12.5px;color:var(--mut)}
+ol.ref li{font-size:13.5px;margin-bottom:4px}
+@media (max-width:600px){.art{padding:4px 14px 18px}header h1{font-size:25px}}
+@media print{header{-webkit-print-color-adjust:exact;print-color-adjust:exact}h2{break-after:avoid}tr,.box,.sum{break-inside:avoid}}
+</style></head><body>
+<header><div class="w">
+<div class="logo"><img src="data:image/webp;base64,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" alt="SEONGON"></div>
+<h1>Tối ưu SEO &amp; GEO: “Bị hoa mắt chóng mặt là bệnh gì”</h1>
+<div class="sub">Key chính: <b>bị hoa mắt chóng mặt là bệnh gì</b> · Key phụ: không có · URL: hongngochospital.vn/vi/hoa-mat-chong-mat-la-bieu-hien-benh-gi · Bác sĩ trên trang: TS.BS Đinh Thị Hoàng Anh (Khoa Mắt) · Người chạy: Vũ Thị Thùy Trang · 26/10/2026</div>
+</div></header>
+<div class="w">
+
+<div class="kpi">
+<div><b>21</b>điểm sai / trích sai nguồn / mâu thuẫn trong bài gốc</div>
+<div><b>5 nguồn</b>mở đọc trực tiếp — 4 nguồn không nói điều bài gán cho</div>
+<div><b>68 → 60</b>ký tự tiêu đề; mô tả viết mới 155 ký tự</div>
+<div><b class="m">56 → 84</b>điểm khả năng được AI trích dẫn (ước tính)</div>
+</div>
+
+<div class="box cam"><b class="t">Việc quan trọng nhất trước khi đăng</b>
+① <b>Tiêu đề và mục “nhóm bệnh lý về mắt” đi ngược câu trả lời của chính bài.</b> Bài viết đúng rằng hoa mắt chóng mặt “đa số KHÔNG” do mắt, nhưng tiêu đề lại là “Cảnh báo các bệnh lý về mắt tiềm ẩn”, và mục đầu tiên dành cho bệnh mắt. Người tìm kiếm và Google đều thấy lệch.<br>
+② <b>Nhiều nguồn trích không nói điều bài gán cho.</b> Nguồn [2] là bài giải phẫu <b>khớp bàn chân</b>. Healthdirect và NHS không nhắc gì về mắt hay nhãn áp. Cleveland Clinic không liệt kê “chóng mặt” trong glôcôm cấp. Bài AAO không nói nhìn màn hình làm “tối sầm khi đứng lên”.<br>
+③ <b>Hướng dẫn sơ cứu có chỗ chưa an toàn:</b> khuyên “uống ngay 1–2 cốc nước” cho mọi trường hợp — không được cho ăn uống khi nghi đột quỵ hoặc người bệnh lơ mơ (nguy cơ sặc).<br>
+④ <b>Khái niệm “thiếu máu não do thoái hóa đốt sống cổ”</b> và “stress gây co thắt mạch máu não” không có trong nguồn được trích và không phải chẩn đoán được y văn quốc tế công nhận như bài mô tả.<br>
+⑤ Bài thuộc lĩnh vực Thần kinh – Tim mạch – Tai Mũi Họng là chính, nhưng chỉ có <b>bác sĩ Khoa Mắt</b> đứng tên trên trang → nên có thêm bác sĩ Thần kinh đồng duyệt.</div>
+
+<!-- 1 -->
+<h2><span class="n">1</span>Phân tích ý định tìm kiếm (Search Intent)</h2>
+<div class="tw"><table>
+<tr><th style="width:24%">Hạng mục</th><th>Phân tích</th></tr>
+<tr><td>Loại intent</td><td><b>Informational — tự chẩn đoán.</b> Người tìm đang (hoặc vừa) bị hoa mắt chóng mặt, muốn biết “mình bị bệnh gì, có nguy hiểm không”. Commercial ngầm: khám khoa nào, ở đâu.</td></tr>
+<tr><td>Câu trả lời chính</td><td>Danh sách nguyên nhân thường gặp + <b>cách nhận ra nguyên nhân nào phù hợp với mình</b> (theo đặc điểm cơn).</td></tr>
+<tr><td>Thông tin bổ sung</td><td>Khi nào nguy hiểm, xử trí tại chỗ, thiếu chất gì, ăn gì, khám khoa nào.</td></tr>
+<tr><td>So sánh</td><td>Hoa mắt (choáng, sắp ngất) khác chóng mặt (quay cuồng) thế nào; tiền đình hay huyết áp hay thiếu máu.</td></tr>
+<tr><td>Hướng dẫn</td><td>Sơ cứu đúng theo từng kiểu; chuẩn bị gì khi đi khám.</td></tr>
+<tr><td>Góc riêng của trang này</td><td>Trang nằm trong cụm bài Khoa Mắt → giữ <b>góc “khi nào liên quan đến mắt”</b> làm điểm khác biệt, nhưng đặt <b>sau</b> câu trả lời tổng quát và nói đúng mức (mắt hiếm khi là nguyên nhân chính).</td></tr>
+<tr><td>Chân dung người đọc (tự xác định)</td><td>
+① <b>Người trưởng thành 25–55 tuổi</b> thỉnh thoảng choáng khi đứng dậy, đói, mệt — nhóm đông nhất.<br>
+② <b>Người cao tuổi</b> và con cái lo nguy cơ té ngã, đột quỵ.<br>
+③ <b>Phụ nữ</b> rong kinh, mang thai.<br>
+④ Người <b>cận, loạn thị, mới đổi kính</b> thắc mắc chóng mặt có phải do mắt.</td></tr>
+</table></div>
+<h3>Câu hỏi người đọc thường hỏi thêm</h3>
+<ul>
+<li>Hoa mắt chóng mặt có nguy hiểm không, khi nào cần đi cấp cứu?</li><li>Hoa mắt chóng mặt khám khoa nào?</li>
+<li>Hoa mắt chóng mặt thiếu chất gì, nên ăn gì?</li><li>Đứng lên bị tối sầm mặt là bệnh gì?</li>
+<li>Chóng mặt khi nằm, khi quay đầu là bệnh gì?</li><li>Cận thị, đeo kính sai độ có gây chóng mặt không?</li>
+<li>Có phải do thoái hóa đốt sống cổ không?</li>
+</ul>
+
+<!-- 2 -->
+<h2><span class="n">2</span>Bản đồ thực thể (Entity Map)</h2>
+<div class="tw"><table>
+<tr><th>Entity</th><th>Loại</th><th>Vai trò trong bài viết</th></tr>
+<tr><td><b>Hoa mắt</b> (choáng váng, cảm giác sắp ngất)</td><td>Primary</td><td>Định nghĩa rõ, tách khỏi chóng mặt</td></tr>
+<tr><td><b>Chóng mặt</b> (vertigo — cảm giác quay cuồng)</td><td>Primary</td><td>Định nghĩa rõ — gợi ý nguyên nhân khác hẳn</td></tr>
+<tr><td>Hệ tiền đình (tai trong)</td><td>Secondary</td><td>Nguyên nhân phổ biến nhất của chóng mặt (NHS)</td></tr>
+<tr><td>BPPV (sỏi tai), viêm dây thần kinh tiền đình, viêm mê đạo, Ménière, migraine tiền đình</td><td>Secondary</td><td>Bệnh cụ thể — cần mốc thời gian chính xác</td></tr>
+<tr><td>Tụt huyết áp tư thế, rối loạn nhịp tim, tăng huyết áp</td><td>Secondary</td><td>Nhóm tim mạch — sửa mô tả tăng huyết áp</td></tr>
+<tr><td>Đột quỵ, cơn thiếu máu não thoáng qua (TIA), tuần hoàn sau</td><td>Secondary</td><td>Nguyên nhân hiếm nhưng nguy hiểm — thay cho “thiếu máu não do thoái hóa cổ”</td></tr>
+<tr><td>Thiếu máu, hạ đường huyết, mất nước, thuốc</td><td>Secondary</td><td>Nhóm chuyển hóa – thuốc</td></tr>
+<tr><td>Song thị, kính sai độ, glôcôm góc đóng cấp, thực tế ảo / 3D</td><td>Related</td><td>Góc mắt — nói đúng mức</td></tr>
+<tr><td>Lo âu, cơn hoảng sợ, chóng mặt tư thế – tri giác dai dẳng (PPPD)</td><td>Related</td><td>Nguyên nhân thật thay cho “stress co thắt mạch não”</td></tr>
+<tr><td>BE FAST, 115</td><td>Supporting</td><td>Dấu hiệu đột quỵ, hành động cấp cứu</td></tr>
+<tr><td>Nghiệm pháp Dix–Hallpike, Epley, đo huyết áp nằm – đứng, Holter, MRI</td><td>Supporting</td><td>Chẩn đoán – điều trị</td></tr>
+<tr><td>NHS, NIDCD, Cleveland Clinic, AAO, Healthdirect, AHA</td><td>Supporting</td><td>Nguồn — trích đúng nội dung</td></tr>
+</table></div>
+
+<!-- 3 -->
+<h2><span class="n">3</span>Độ phủ ngữ nghĩa (Semantic Coverage)</h2>
+<div class="tw"><table>
+<tr><th style="width:22%">Topic Cluster</th><th>Semantic Keywords</th><th style="width:16%">Intent</th></tr>
+<tr><td>Đồng nghĩa key chính</td><td>bị hoa mắt chóng mặt là bệnh gì, hoa mắt chóng mặt là biểu hiện bệnh gì, hay bị chóng mặt là bệnh gì, xây xẩm mặt mày là bệnh gì</td><td>Informational</td></tr>
+<tr><td>Theo hoàn cảnh</td><td>đứng lên bị tối sầm mặt, chóng mặt khi nằm, chóng mặt khi quay đầu, chóng mặt buồn nôn, hoa mắt khi đói</td><td>Informational</td></tr>
+<tr><td>Nguyên nhân</td><td>rối loạn tiền đình, sỏi tai, Ménière, tụt huyết áp, thiếu máu, hạ đường huyết, rối loạn nhịp tim, đột quỵ</td><td>Informational</td></tr>
+<tr><td>Liên quan mắt</td><td>nhìn đôi chóng mặt, đeo kính sai độ chóng mặt, kính mới bị chóng mặt, glôcôm cấp, chóng mặt khi xem 3D</td><td>Informational</td></tr>
+<tr><td>Xử trí</td><td>bị chóng mặt phải làm sao, sơ cứu khi chóng mặt, hoa mắt chóng mặt uống gì</td><td>Hướng dẫn</td></tr>
+<tr><td>Chẩn đoán – khám</td><td>hoa mắt chóng mặt khám khoa nào, xét nghiệm gì, chụp MRI</td><td>Commercial</td></tr>
+<tr><td>Dinh dưỡng</td><td>hoa mắt chóng mặt thiếu chất gì, nên ăn gì</td><td>Informational</td></tr>
+<tr><td>Trả về bài khác</td><td>chóng mặt do tim mạch → /chong-mat · chóng mặt khi mang thai → /chong-mat-khi-mang-thai · đột quỵ → /benh-dot-quy</td><td>—</td></tr>
+</table></div>
+
+<!-- 4 -->
+<h2><span class="n">4</span>Phân tích lỗ hổng nội dung (Content Gap)</h2>
+<h3>4A. Kiểm chứng — từng nguồn được mở đọc trực tiếp</h3>
+<p class="s">Mở trực tiếp ngày 26/10/2026: Cleveland Clinic (glôcôm góc đóng), NIDCD (Ménière), Healthdirect (lightheadedness), NHS (vertigo), AAO (computer usage). Mayo Clinic, AHA, Stroke.org chặn truy cập tự động — đối chiếu theo khuyến cáo phổ biến của các tổ chức này.</p>
+<div class="tw"><table>
+<tr><th style="width:4%">#</th><th style="width:24%">Bài gốc viết</th><th>Đối chiếu</th><th style="width:24%">Xử lý</th></tr>
+<tr><td>1</td><td>Nguồn [2]: “Anatomy, bony pelvis and lower limb, foot joints”</td><td><span class="pill sai">Nguồn sai hoàn toàn</span> Bài giải phẫu khớp bàn chân, dùng để đỡ câu “mắt gửi tín hiệu sai lên não gây chóng mặt”.</td><td>Bỏ</td></tr>
+<tr><td>2</td><td>Hoa mắt “là dấu hiệu điển hình khi mắt căng thẳng quá mức hoặc nhãn áp tăng cao đột ngột” [3 Healthdirect]</td><td><span class="pill sai">Không có trong nguồn</span> Healthdirect mô tả lightheadedness do tụt huyết áp, mất nước, đứng dậy nhanh…, không nhắc mắt hay nhãn áp.</td><td>Bỏ phần gán cho mắt</td></tr>
+<tr><td>3</td><td>Chóng mặt xảy ra “khi tín hiệu hình ảnh từ đôi mắt sai lệch” [4 NHS]</td><td><span class="pill sai">Không có trong nguồn</span> NHS: “các vấn đề tai trong là nguyên nhân phổ biến nhất của chóng mặt” (BPPV, viêm mê đạo, viêm dây thần kinh tiền đình), cùng migraine.</td><td>Dẫn đúng NHS</td></tr>
+<tr><td>4</td><td>Glôcôm cấp: “hoa mắt… <b>chóng mặt</b> và nôn mửa liên tục”, “dễ nhầm rối loạn tiền đình”</td><td><span class="pill vua">Lệch nguồn</span> Cleveland Clinic: đau mắt dữ dội, nhìn mờ, quầng sáng, buồn nôn, nôn, đỏ mắt — không có chóng mặt. Buồn nôn và đau đầu mới là lý do dễ nhầm.</td><td>Sửa triệu chứng</td></tr>
+<tr><td>5</td><td>Hội chứng thị giác màn hình: “khi đột ngột đứng lên, mắt sẽ bị hoa, tối sầm” [8 AAO]</td><td><span class="pill sai">Không có trong nguồn</span> AAO chỉ nói kính thực tế ảo, phim 3D có thể gây chóng mặt do vấn đề lấy nét, cảm nhận chiều sâu. Tối sầm khi đứng dậy là do tụt huyết áp tư thế.</td><td>Sửa</td></tr>
+<tr><td>6</td><td>Ménière: chóng mặt “từ vài phút đến vài giờ”</td><td><span class="pill sai">Sai mốc</span> NIDCD: cơn chóng mặt kéo dài 20 phút đến 12 giờ.</td><td>Sửa</td></tr>
+<tr><td>7</td><td>Viêm dây thần kinh tiền đình “sau nhiễm virus (như cúm, <b>zona</b>)”</td><td><span class="pill vua">Dễ nhầm</span> Zona tai là bệnh khác (hội chứng Ramsay Hunt, thường kèm liệt mặt, giảm thính lực). Viêm dây thần kinh tiền đình thường sau nhiễm virus đường hô hấp.</td><td>Sửa ví dụ</td></tr>
+<tr><td>8</td><td>“Thiếu máu não… thường do <b>thoái hóa đốt sống cổ</b>… suy giảm trí nhớ, khó ngủ” [12]</td><td><span class="pill sai">Không có trong nguồn</span> Nguồn StatPearls về bệnh mạch máu não không nói vậy. Nguyên nhân mạch máu đáng lo là cơn thiếu máu não thoáng qua và đột quỵ (khởi phát đột ngột, kèm dấu hiệu thần kinh), không phải chóng mặt âm ỉ kèm mất ngủ.</td><td>Thay bằng TIA / đột quỵ; FAQ riêng về thoái hóa cổ</td></tr>
+<tr><td>9</td><td>Tăng huyết áp: “co thắt mạch máu não… đau đầu dữ dội, mặt đỏ, xây xẩm”</td><td><span class="pill vua">Quá mức</span> Hội Tim mạch Hoa Kỳ (AHA): tăng huyết áp thường không có triệu chứng. Chóng mặt hay gặp hơn do <b>thuốc hạ áp</b>; đau đầu dữ dội kèm huyết áp rất cao là cơn tăng huyết áp cấp cứu.</td><td>Sửa</td></tr>
+<tr><td>10</td><td>Song thị: chóng mặt “mỗi khi mở mắt”</td><td><span class="pill sai">Thiếu cảnh báo</span> Nhìn đôi <b>mới xuất hiện đột ngột</b> có thể là dấu hiệu đột quỵ hoặc liệt dây thần kinh sọ — NHS xếp “chóng mặt kèm nhìn đôi” vào nhóm phải cấp cứu.</td><td>Thêm cảnh báo</td></tr>
+<tr><td>11</td><td>Tật khúc xạ: “cận, viễn, loạn… các cơ ở mắt phải gồng lên điều tiết”</td><td><span class="pill vua">Chưa chính xác</span> Cận thị không chỉnh kính không làm tăng điều tiết; viễn thị mới gây gắng sức điều tiết. Thường gặp hơn: chóng mặt vài ngày khi mới đeo kính hoặc kính đa tròng.</td><td>Viết lại</td></tr>
+<tr><td>12</td><td>Stress “gây co thắt mạch máu não”; ngồi văn phòng “thoái hóa cột sống cổ, chèn ép động mạch đốt sống thân nền” [18 MedlinePlus]</td><td><span class="pill sai">Không có trong nguồn</span> MedlinePlus không nói vậy. Liên hệ đúng: lo âu, cơn hoảng sợ có thể gây choáng váng; chóng mặt tư thế – tri giác dai dẳng (PPPD).</td><td>Thay</td></tr>
+<tr><td>13</td><td>Sơ cứu: “uống ngay 1–2 cốc nước”, “nằm kê đầu thấp gác chân cao” cho mọi trường hợp</td><td><span class="pill sai">Chưa an toàn</span> Kê chân cao phù hợp với cảm giác sắp ngất. Không cho ăn uống khi nghi đột quỵ, lơ mơ, khó nuốt. Người chóng mặt quay nên nằm yên ở tư thế dễ chịu nhất.</td><td>Tách xử trí theo kiểu triệu chứng</td></tr>
+<tr><td>14</td><td>“Khoa Mắt được đặt ở vai trò tuyến đầu”</td><td><span class="pill vua">Mâu thuẫn</span> Chính bài kết luận đa số không do mắt. Tuyến đầu hợp lý là Thần kinh / Nội tổng quát; khám Mắt khi có nhìn đôi, nhìn mờ, đau mắt.</td><td>Sửa thứ tự</td></tr>
+<tr><td>15</td><td>Kết luận: “hoàn toàn không phải triệu chứng thoáng qua… mà là hồi chuông cảnh báo bệnh lý nguy hiểm”</td><td><span class="pill vua">Mâu thuẫn</span> Mục 5 của chính bài viết “phần lớn các trường hợp là lành tính”. Câu kết gây hoang mang không cần thiết.</td><td>Viết lại cân bằng</td></tr>
+<tr><td>16</td><td>Tiêu đề “Cảnh báo các bệnh lý về mắt tiềm ẩn”</td><td><span class="pill sai">Lệch ý định</span> Hứa nội dung về mắt trong khi câu trả lời đúng là đa số không do mắt.</td><td>Đổi tiêu đề</td></tr>
+<tr><td>17</td><td>Mô tả gửi kèm là đoạn sapo bị cắt “Do đó,…”</td><td><span class="pill vua">Kỹ thuật</span> Trang đang chạy có mô tả khác, ổn hơn. Cần thống nhất 1 bản.</td><td>Viết mô tả mới</td></tr>
+<tr><td>18</td><td>Bổ sung chất: “thiếu vitamin C (giảm hấp thu sắt)” là nguyên nhân hoa mắt</td><td><span class="pill vua">Gián tiếp</span> Vitamin C hỗ trợ hấp thu sắt, nhưng không phải nguyên nhân trực tiếp. Nguyên nhân chính: thiếu sắt, thiếu B12 (thiếu máu, tổn thương thần kinh), mất nước, hạ đường huyết.</td><td>Sửa FAQ</td></tr>
+<tr><td>19</td><td>Hai hotline 0919.489.258 – 0916.987.366</td><td><span class="pill vua">Chưa kiểm chứng</span> Cùng số 0916.987.366 đã xuất hiện ở bài Ánh sáng màn hình.</td><td>Bệnh viện xác nhận</td></tr>
+<tr><td>20</td><td>Nguồn cũ, định dạng lỗi</td><td><span class="pill vua">Biên tập</span> MedlinePlus ghi “(1999)”, “(N.d.-f)”, “(N.d.-g)”…; nguồn mang thai 2012.</td><td>Chuẩn hóa</td></tr>
+<tr><td>21</td><td>Chỉ bác sĩ Khoa Mắt đứng tên</td><td><span class="pill vua">E-E-A-T</span> Nội dung chủ yếu là Thần kinh, Tim mạch, Tai Mũi Họng.</td><td>Thêm bác sĩ Thần kinh đồng duyệt</td></tr>
+</table></div>
+<p class="s"><span class="pill dung">Đã đúng</span> Hoa mắt chóng mặt là triệu chứng, không phải bệnh · Phân biệt hoa mắt và chóng mặt · BPPV cơn ngắn dưới 1 phút khi đổi tư thế đầu · Viêm dây thần kinh tiền đình không giảm thính lực · Tụt huyết áp tư thế · Hạ đường huyết · Thuốc, rượu · Người cao tuổi dễ té ngã · Mang thai · Nhóm dấu hiệu đột quỵ cần cấp cứu · Không tự dùng “thuốc bổ não” · Nghiệm pháp Epley cho BPPV.</p>
+
+<h3>4B. Những phần bài còn thiếu</h3>
+<div class="tw"><table>
+<tr><th style="width:22%">Loại thiếu</th><th>Chi tiết</th></tr>
+<tr><td>Missing topics</td><td><b>Bảng tra theo đặc điểm cơn</b> (kéo dài bao lâu, xảy ra khi nào, kèm gì) · <b>Khám khoa nào</b> · <b>Bác sĩ chẩn đoán thế nào</b> (đo huyết áp nằm – đứng, Dix–Hallpike…) · Migraine tiền đình · Lo âu</td></tr>
+<tr><td>Missing entities</td><td>Viêm mê đạo, migraine tiền đình, TIA, PPPD, BE FAST, nghiệm pháp Dix–Hallpike</td></tr>
+<tr><td>Missing questions</td><td>Khám khoa nào? Có nguy hiểm không? Có phải do thoái hóa đốt sống cổ? Kính mới bị chóng mặt có sao?</td></tr>
+<tr><td>Missing statistics</td><td>Không có số liệu nào về tần suất</td></tr>
+<tr><td>Thiếu expert insight</td><td>Không có lời bác sĩ</td></tr>
+</table></div>
+
+<!-- 5 -->
+<h2><span class="n">5</span>Đề xuất tăng giá trị thông tin (Information Gain)</h2>
+<div class="tw"><table>
+<tr><th style="width:22%">Loại</th><th>Đề xuất cụ thể</th><th style="width:16%">Trạng thái</th></tr>
+<tr><td>Comparison tables</td><td>① <b>Bảng tra nhanh theo đặc điểm cơn</b> → nguyên nhân gợi ý → mức độ khẩn — phần AI dễ trích nhất. ② Bảng hoa mắt và chóng mặt. ③ Bảng “khám khoa nào”.</td><td><span class="pill dung">Đã thêm</span></td></tr>
+<tr><td>Step-by-step guide</td><td>Sơ cứu tách theo kiểu triệu chứng (sắp ngất / quay cuồng / nghi đột quỵ); quy tắc 15–15 cho hạ đường huyết.</td><td><span class="pill dung">Đã thêm</span></td></tr>
+<tr><td>Myth-busting</td><td>Thoái hóa đốt sống cổ, “thuốc bổ não”, “do mắt yếu” — nói đúng mức.</td><td><span class="pill dung">Đã thêm</span></td></tr>
+<tr><td>Evidence</td><td>Dẫn đúng NHS, NIDCD, Cleveland Clinic, AAO, Healthdirect; bỏ nguồn lạc đề.</td><td><span class="pill dung">Đã thêm</span></td></tr>
+<tr><td>Expert insight</td><td>Lời TS.BS Đinh Thị Hoàng Anh về các ca nhìn đôi, glôcôm cấp bị nhầm; lời bác sĩ Thần kinh về đột quỵ — <b>cần lời thật</b></td><td><span class="pill vua">Cần bổ sung</span></td></tr>
+</table></div>
+
+<!-- Định hướng -->
+<h2 id="dh"><span class="n">★</span>Định hướng tối ưu (trước khi viết lại)</h2>
+<div class="tw"><table>
+<tr><th style="width:4%">#</th><th style="width:30%">Định hướng</th><th>Lý do</th></tr>
+<tr><td>1</td><td><b>Trả lời thẳng ngay đầu bài:</b> hoa mắt chóng mặt là triệu chứng; nguyên nhân thường gặp nhất là tiền đình, tụt huyết áp tư thế, thiếu máu, hạ đường huyết, thuốc; mắt hiếm khi là nguyên nhân chính.</td><td>Đúng ý định tìm kiếm, đúng y văn, khớp với kết luận vốn đúng của bài gốc.</td></tr>
+<tr><td>2</td><td><b>Đổi tiêu đề</b> sang “Nguyên nhân, khi nào do mắt” — giữ góc mắt làm điểm khác biệt nhưng không hứa quá.</td><td>Tiêu đề cũ lệch câu trả lời; góc mắt vẫn giữ được vị trí trong cụm bài Khoa Mắt.</td></tr>
+<tr><td>3</td><td><b>Thêm bảng tra theo đặc điểm cơn</b> (vài giây khi đứng dậy, dưới 1 phút khi quay đầu, 20 phút – 12 giờ kèm ù tai…).</td><td>Thông tin mới, giúp người đọc tự định hướng; AI dễ trích nguyên khối.</td></tr>
+<tr><td>4</td><td><b>Chuyển mục “bệnh về mắt” xuống sau</b> các nhóm phổ biến, viết lại đúng nguồn, thêm cảnh báo nhìn đôi đột ngột.</td><td>Sắp xếp theo tần suất; sửa 4 khẳng định trích sai nguồn.</td></tr>
+<tr><td>5</td><td><b>Sửa sơ cứu cho an toàn</b>, tách 3 tình huống; thêm BE FAST.</td><td>Thông tin sơ cứu sai trong bài y tế là rủi ro thật cho người đọc.</td></tr>
+<tr><td>6</td><td><b>Thêm “Khám khoa nào” và “Bác sĩ chẩn đoán thế nào”</b>; đưa Thần kinh / Nội lên tuyến đầu.</td><td>Câu hỏi thực tế của người đọc; cầu nối sang dịch vụ bệnh viện.</td></tr>
+<tr><td>7</td><td><b>Làm sạch nguồn:</b> bỏ nguồn lạc đề, sửa định dạng; đề xuất thêm bác sĩ Thần kinh đồng duyệt.</td><td>Tăng Evidence và Authority.</td></tr>
+</table></div>
+
+<!-- 6 -->
+<h2 id="n6"><span class="n">6</span>Bài viết đã tối ưu GEO</h2>
+<div class="tw"><table>
+<tr><th style="width:16%">Thành phần</th><th>Bản gốc</th><th>Bản tối ưu</th></tr>
+<tr><td>Title</td><td>Bị hoa mắt chóng mặt là bệnh gì? Cảnh báo các bệnh lý về mắt tiềm ẩn <span class="s">(68 ký tự)</span></td><td><b>Bị hoa mắt chóng mặt là bệnh gì? Nguyên nhân, khi nào do mắt</b> <span class="s">(60 ký tự)</span></td></tr>
+<tr><td>Description</td><td>Đoạn sapo bị cắt “…Do đó,…”</td><td><b>Bị hoa mắt chóng mặt là bệnh gì? Thường do tiền đình, huyết áp, thiếu máu, hạ đường huyết; hiếm khi do mắt. Cách phân biệt, xử trí và dấu hiệu cần cấp cứu.</b> <span class="s">(155 ký tự)</span></td></tr>
+<tr><td>Link nội bộ</td><td>0 link</td><td><b>7 link</b> — bảng ở cuối mục 8</td></tr>
+</table></div>
+<p class="legend s">Tô màu để Trang dễ soát mật độ: <span><mark class="k1">key chính</mark></span>. Chữ <u>gạch chân xanh</u> là link nội bộ.</p>
+
+<div class="art">
+<h1>Bị hoa mắt chóng mặt là bệnh gì? Nguyên nhân, khi nào do mắt</h1>
+<div class="byline">Tham vấn chuyên môn: TS.BS Đinh Thị Hoàng Anh – Trưởng khoa Mắt – Bệnh viện Đa khoa Hồng Ngọc – Phúc Trường Minh · <i>[đề xuất thêm: bác sĩ Khoa Thần kinh đồng duyệt]</i> · Cập nhật: <i>[ngày cập nhật — cần bổ sung]</i></div>
+
+<p><b>Sapo:</b> <span class="k1">Bị hoa mắt chóng mặt là bệnh gì</span>? Hoa mắt chóng mặt không phải một bệnh mà là triệu chứng. Nguyên nhân thường gặp nhất là rối loạn tiền đình ở tai trong, tụt huyết áp khi đứng dậy, thiếu máu, hạ đường huyết và tác dụng phụ của thuốc; ít gặp hơn nhưng nguy hiểm là rối loạn nhịp tim và đột quỵ. Bệnh về mắt hiếm khi là nguyên nhân chính, nhưng nhìn đôi, đeo kính sai độ hay glôcôm cấp có thể đi kèm. Bài viết giúp bạn nhận ra nguyên nhân qua đặc điểm cơn, biết cách xử trí và khi nào phải cấp cứu.</p>
+
+<div class="sum"><b class="t">TÓM TẮT NHANH</b>
+<span class="k1">Bị hoa mắt chóng mặt là bệnh gì</span>? Đây là triệu chứng của nhiều nguyên nhân khác nhau: thường gặp nhất là bệnh tiền đình tai trong (sỏi tai, viêm dây thần kinh tiền đình, Ménière), tụt huyết áp tư thế, thiếu máu, hạ đường huyết, mất nước và tác dụng phụ của thuốc. Hoa mắt (choáng, sắp ngất) thường liên quan huyết áp, đường huyết, thiếu máu; chóng mặt quay cuồng thường do tai trong. Bệnh về mắt hiếm khi là nguyên nhân chính. Cần gọi cấp cứu 115 nếu chóng mặt đột ngột kèm méo miệng, yếu liệt một bên, nói khó, nhìn đôi hoặc mất thị lực, đau đầu dữ dội, đau ngực hay ngất.</div>
+
+<div class="box"><b class="t">Những điểm chính</b>
+<ul style="margin:0;padding-left:20px">
+<li><b>Hoa mắt</b> (tối sầm, sắp ngất) và <b>chóng mặt</b> (quay cuồng) gợi ý nguyên nhân khác nhau.</li>
+<li><b>Thời gian cơn</b> là manh mối quan trọng: vài giây khi đứng dậy, dưới 1 phút khi quay đầu, 20 phút – 12 giờ kèm ù tai…</li>
+<li>Tai trong là nguyên nhân phổ biến nhất của chóng mặt quay cuồng (NHS).</li>
+<li>Mắt hiếm khi là nguyên nhân chính; nhìn đôi mới xuất hiện đột ngột là dấu hiệu cấp cứu.</li>
+<li>Không cho ăn uống khi nghi đột quỵ; không tự mua thuốc tiền đình, “thuốc bổ não”.</li>
+</ul></div>
+
+<h2>1. Hoa mắt và chóng mặt khác nhau thế nào?</h2>
+<p>Hai từ này hay được dùng lẫn, nhưng mô tả hai cảm giác khác nhau — phân biệt đúng giúp bác sĩ tìm ra nguyên nhân nhanh hơn.</p>
+<div class="tw"><table>
+<tr><th>Cảm giác</th><th>Mô tả</th><th>Nguyên nhân hay gặp</th></tr>
+<tr><td><b>Hoa mắt, choáng váng</b></td><td>Xây xẩm, tối sầm mặt, bồng bềnh, bủn rủn, cảm giác sắp ngất; có thể kèm nhìn mờ, vã mồ hôi, buồn nôn trong vài giây đến vài phút (Healthdirect)</td><td>Tụt huyết áp, mất nước, hạ đường huyết, thiếu máu, rối loạn nhịp tim, thuốc</td></tr>
+<tr><td><b>Chóng mặt quay cuồng</b></td><td>Cảm giác bản thân hoặc mọi vật xung quanh quay, nghiêng; thường kèm buồn nôn, mất thăng bằng</td><td>Tai trong: sỏi tai, viêm dây thần kinh tiền đình, viêm mê đạo, Ménière; migraine; hiếm hơn là đột quỵ</td></tr>
+<tr><td><b>Mất thăng bằng</b></td><td>Đứng đi loạng choạng, không vững nhưng không thấy quay</td><td>Bệnh thần kinh, thần kinh ngoại biên do tiểu đường, thị lực kém ở người cao tuổi, thuốc</td></tr>
+</table></div>
+
+<h2>2. Bị hoa mắt chóng mặt là bệnh gì? Tra nhanh theo đặc điểm cơn</h2>
+<p>Hãy để ý cơn hoa mắt chóng mặt xuất hiện lúc nào, kéo dài bao lâu và kèm triệu chứng gì. Bảng dưới đây chỉ để định hướng, không thay thế chẩn đoán của bác sĩ.</p>
+<div class="tw"><table>
+<tr><th>Đặc điểm</th><th>Nguyên nhân gợi ý</th><th>Mức độ</th></tr>
+<tr><td>Tối sầm vài giây ngay khi đứng dậy</td><td>Tụt huyết áp tư thế</td><td>Thường lành tính; khám nếu lặp lại, ngất</td></tr>
+<tr><td>Quay cuồng dưới 1 phút khi quay đầu, trở mình, cúi ngửa</td><td>Chóng mặt tư thế kịch phát lành tính (sỏi tai – BPPV)</td><td>Lành tính, chữa được</td></tr>
+<tr><td>Quay cuồng liên tục nhiều ngày, nôn, nghe bình thường</td><td>Viêm dây thần kinh tiền đình</td><td>Khám sớm</td></tr>
+<tr><td>Quay cuồng kèm giảm thính lực đột ngột</td><td>Viêm mê đạo; cần loại trừ nguyên nhân khác</td><td>Khám ngay</td></tr>
+<tr><td>Cơn 20 phút – 12 giờ, kèm ù tai, đầy tai, nghe kém (NIDCD)</td><td>Bệnh Ménière</td><td>Khám chuyên khoa</td></tr>
+<tr><td>Chóng mặt kèm đau đầu kiểu migraine, sợ ánh sáng</td><td>Migraine tiền đình</td><td>Khám thần kinh</td></tr>
+<tr><td>Hoa mắt, vã mồ hôi, run, đói cồn cào</td><td>Hạ đường huyết</td><td>Xử trí ngay</td></tr>
+<tr><td>Hoa mắt khi gắng sức, da xanh, mệt, khó thở</td><td>Thiếu máu</td><td>Khám, xét nghiệm máu</td></tr>
+<tr><td>Hoa mắt kèm hồi hộp, tim đập nhanh hoặc chậm bất thường, ngất</td><td>Rối loạn nhịp tim</td><td><b>Khám ngay</b></td></tr>
+<tr><td>Bắt đầu sau khi dùng thuốc mới hoặc tăng liều</td><td>Tác dụng phụ thuốc (hạ áp, an thần, chống trầm cảm…)</td><td>Hỏi bác sĩ kê đơn</td></tr>
+<tr><td>Đột ngột, kèm méo miệng, yếu liệt, nói khó, nhìn đôi, đi loạng choạng</td><td>Đột quỵ, cơn thiếu máu não thoáng qua</td><td><b>Cấp cứu 115</b></td></tr>
+</table></div>
+
+<h3>2.1. Bệnh tiền đình – tai trong</h3>
+<p>Theo Dịch vụ Y tế Quốc gia Anh (NHS), các vấn đề ở tai trong là nguyên nhân phổ biến nhất của chóng mặt quay cuồng.</p>
+<ul>
+<li><b>Chóng mặt tư thế kịch phát lành tính (sỏi tai):</b> các tinh thể canxi nhỏ trong tai trong rơi sai vị trí, gây cơn quay cuồng dữ dội nhưng ngắn, thường dưới 1 phút, khi xoay đầu, trở mình, cúi ngửa cổ.</li>
+<li><b>Viêm dây thần kinh tiền đình:</b> thường sau nhiễm virus đường hô hấp; chóng mặt dữ dội, nôn, mất thăng bằng kéo dài nhiều ngày nhưng thính lực bình thường. Nếu kèm giảm thính lực, gọi là viêm mê đạo.</li>
+<li><b>Bệnh Ménière:</b> theo Viện Quốc gia về Điếc và Rối loạn Giao tiếp Hoa Kỳ (NIDCD), cơn chóng mặt kéo dài 20 phút đến 12 giờ, kèm ù tai, cảm giác đầy tai và nghe kém, thường ở một bên.</li>
+<li><b>Migraine tiền đình:</b> chóng mặt đi kèm hoặc thay cho cơn đau nửa đầu, có thể kèm sợ ánh sáng, tiếng ồn.</li>
+</ul>
+<h3>2.2. Tim mạch – huyết áp</h3>
+<ul>
+<li><b>Tụt huyết áp tư thế:</b> đứng dậy nhanh từ tư thế nằm hoặc ngồi khiến máu chưa kịp lên não, gây tối sầm vài giây. Hay gặp khi mất nước, người cao tuổi, người dùng thuốc hạ áp.</li>
+<li><b>Rối loạn nhịp tim:</b> tim đập quá nhanh, quá chậm hoặc không đều làm giảm lượng máu lên não, gây choáng, có thể ngất — cần khám ngay. Xem thêm: <a href="https://hongngochospital.vn/vi/chong-mat">chóng mặt do bệnh lý tim mạch</a>.</li>
+<li><b>Tăng huyết áp:</b> theo Hội Tim mạch Hoa Kỳ (AHA), tăng huyết áp thường không có triệu chứng. Chóng mặt ở người tăng huyết áp hay do thuốc hạ áp làm tụt huyết áp. Huyết áp rất cao kèm đau đầu dữ dội, nhìn mờ là tình huống cấp cứu.</li>
+</ul>
+<h3>2.3. Thần kinh</h3>
+<p><b>Đột quỵ và cơn thiếu máu não thoáng qua</b> ở vùng tuần hoàn phía sau não có thể gây chóng mặt đột ngột, thường kèm nhìn đôi, nói khó, đi loạng choạng, yếu tê một bên. Đây là nguyên nhân hiếm nhưng nguy hiểm nhất. Tìm hiểu: <a href="https://hongngochospital.vn/vi/benh-dot-quy">bệnh đột quỵ</a>.</p>
+<p>Lưu ý: khái niệm “thiểu năng tuần hoàn não do thoái hóa đốt sống cổ” rất phổ biến ở Việt Nam, nhưng thoái hóa cổ hiếm khi là nguyên nhân thật của chóng mặt. Đừng tự quy kết và tự mua thuốc — cần bác sĩ khám để không bỏ sót nguyên nhân khác.</p>
+<h3>2.4. Máu, chuyển hóa và thuốc</h3>
+<ul>
+<li><b>Thiếu máu:</b> thiếu sắt, rong kinh, xuất huyết tiêu hóa khiến máu chở ít oxy; hoa mắt khi gắng sức, da xanh, mệt, khó thở.</li>
+<li><b>Hạ đường huyết:</b> nhịn đói, ăn kiêng quá mức, dùng thuốc tiểu đường quá liều; hoa mắt, vã mồ hôi, run, đói cồn cào, tim đập nhanh.</li>
+<li><b>Mất nước:</b> nắng nóng, sốt, tiêu chảy, uống ít nước. Xem: <a href="https://hongngochospital.vn/vi/xay-xam-mat-may-khi-ra-troi-nang">xây xẩm mặt mày khi ra trời nắng</a>.</li>
+<li><b>Thuốc và rượu:</b> thuốc hạ áp, an thần, chống trầm cảm, dùng nhiều thuốc cùng lúc, uống rượu bia.</li>
+</ul>
+<h3>2.5. Lo âu, căng thẳng</h3>
+<p>Lo âu và cơn hoảng sợ có thể gây choáng váng, hồi hộp, thở nhanh. Một số người bị chóng mặt kéo dài sau một đợt bệnh tiền đình dù tai trong đã hồi phục — tình trạng gọi là chóng mặt tư thế – tri giác dai dẳng (PPPD), cải thiện với bài tập tiền đình và điều trị tâm lý.</p>
+
+<h2>3. Khi nào hoa mắt chóng mặt liên quan đến mắt?</h2>
+<p>Thị giác cùng tai trong và cảm giác cơ thể giúp não giữ thăng bằng, nên một số vấn đề ở mắt có thể góp phần gây chóng mặt. Tuy nhiên, mắt hiếm khi là nguyên nhân chính. Những tình huống cần nghĩ đến mắt:</p>
+<h3>Nhìn đôi (song thị)</h3>
+<p>Thấy hai hình của cùng một vật khiến não khó định hướng, gây chóng mặt, buồn nôn. <b>Nhìn đôi mới xuất hiện đột ngột là dấu hiệu cấp cứu</b> — có thể do đột quỵ hoặc liệt dây thần kinh vận nhãn; NHS xếp “chóng mặt kèm nhìn đôi” vào nhóm phải đi cấp cứu ngay.</p>
+<h3>Mới đổi kính, kính sai độ, kính đa tròng</h3>
+<p>Nhiều người thấy chóng mặt, khó chịu vài ngày đầu khi mới đeo kính hoặc kính đa tròng — thường hết khi mắt quen. Nếu kéo dài hơn 1–2 tuần, cần kiểm tra lại độ kính và cách lắp kính. Viễn thị, loạn thị chưa chỉnh kính chủ yếu gây mỏi mắt, nhức đầu hơn là chóng mặt.</p>
+<h3>Kính thực tế ảo, phim 3D</h3>
+<p>Viện Hàn lâm Nhãn khoa Hoa Kỳ (AAO) cho biết một số người bị đau đầu, chóng mặt khi dùng kính thực tế ảo hoặc xem phim 3D, có thể do vấn đề về lấy nét hay cảm nhận chiều sâu — nên khám mắt nếu xảy ra thường xuyên.</p>
+<h3>Glôcôm góc đóng cấp (cườm nước cấp)</h3>
+<p>Theo Cleveland Clinic, đây là cấp cứu nhãn khoa với đau mắt dữ dội, đỏ mắt, nhìn mờ, thấy quầng sáng quanh đèn, buồn nôn và nôn. Vì buồn nôn, đau đầu nổi bật, người bệnh dễ tưởng là bệnh dạ dày hoặc “rối loạn tiền đình” mà bỏ lỡ thời gian cứu thị lực. Đau mắt kèm nhìn mờ đột ngột cần đến cơ sở có chuyên khoa Mắt ngay.</p>
+<h3>Mỏi mắt do màn hình</h3>
+<p>Nhìn màn hình lâu gây mỏi mắt, khô mắt, nhức đầu, nhưng không gây ngất hay tối sầm khi đứng dậy. Xem cách giảm mỏi mắt: <a href="https://hongngochospital.vn/vi/anh-sang-man-hinh-bao-nhieu-la-tot">ánh sáng màn hình bao nhiêu là tốt</a>.</p>
+<div class="box"><b class="t">Ý kiến bác sĩ</b><i>[Cần bổ sung: 1–2 câu thật của TS.BS Đinh Thị Hoàng Anh — ví dụ về ca glôcôm cấp hoặc nhìn đôi bị nhầm với rối loạn tiền đình. Không tự viết thay bác sĩ.]</i></div>
+
+<h2>4. Ai dễ bị hoa mắt chóng mặt?</h2>
+<ul>
+<li><b>Người cao tuổi:</b> tiền đình, mạch máu, thị lực suy giảm; dùng nhiều thuốc. Chóng mặt làm tăng nguy cơ té ngã, gãy xương (Viện Lão hóa Quốc gia Hoa Kỳ – NIA).</li>
+<li><b>Người bệnh tiểu đường:</b> dễ hạ đường huyết khi dùng thuốc; biến chứng thần kinh ngoại biên làm giảm cảm giác bàn chân, khó giữ thăng bằng.</li>
+<li><b>Người bệnh tim mạch, đang dùng thuốc hạ áp.</b></li>
+<li><b>Phụ nữ mang thai:</b> thay đổi nội tiết làm giãn mạch; nằm ngửa ở tháng cuối, tử cung chèn tĩnh mạch chủ dưới. Xem: <a href="https://hongngochospital.vn/vi/chong-mat-khi-mang-thai">chóng mặt khi mang thai</a>.</li>
+<li><b>Phụ nữ rong kinh, cường kinh:</b> dễ thiếu máu thiếu sắt.</li>
+<li><b>Người thường xuyên lo âu, mất ngủ, uống ít nước, bỏ bữa.</b></li>
+</ul>
+
+<h2>5. Bị hoa mắt chóng mặt phải làm sao?</h2>
+<p>Việc đầu tiên luôn là <b>dừng mọi hoạt động, ngồi hoặc nằm xuống ngay</b> để tránh té ngã; không lái xe, không leo cầu thang. Sau đó xử trí theo kiểu triệu chứng:</p>
+<div class="tw"><table>
+<tr><th>Tình huống</th><th>Nên làm</th></tr>
+<tr><td><b>Choáng, tối sầm, cảm giác sắp ngất</b></td><td>Nằm xuống, kê chân cao hơn tim; nới lỏng quần áo. Khi đỡ, ngồi dậy từ từ, chờ 1–2 phút rồi mới đứng, có người dìu.</td></tr>
+<tr><td><b>Nghi hạ đường huyết</b> (vã mồ hôi, run, đói) và <b>còn tỉnh táo, nuốt được</b></td><td>Ăn hoặc uống khoảng 15 g đường nhanh (nửa cốc nước ngọt, nước trái cây, vài viên kẹo); sau 15 phút nếu chưa đỡ thì lặp lại (quy tắc 15–15 của Hiệp hội Đái tháo đường Hoa Kỳ).</td></tr>
+<tr><td><b>Chóng mặt quay cuồng</b></td><td>Nằm yên ở tư thế dễ chịu nhất, nơi yên tĩnh; mở mắt nhìn một điểm cố định; tránh xoay đầu đột ngột.</td></tr>
+<tr><td><b>Nghi đột quỵ</b> (méo miệng, yếu liệt, nói khó, nhìn đôi) hoặc <b>lơ mơ</b></td><td>Gọi 115 ngay. <b>Không cho ăn uống</b>, không cho uống thuốc — nguy cơ sặc. Ghi lại thời điểm bắt đầu triệu chứng.</td></tr>
+</table></div>
+<p>Không tự uống thuốc hạ áp, thuốc tiền đình hay “thuốc bổ não” khi chưa rõ nguyên nhân — thuốc có thể làm tụt huyết áp hoặc che lấp dấu hiệu bệnh nặng.</p>
+
+<h2>6. Dấu hiệu hoa mắt chóng mặt cần cấp cứu ngay</h2>
+<p>Gọi 115 hoặc đến cơ sở cấp cứu gần nhất nếu hoa mắt chóng mặt <b>xuất hiện đột ngột</b> kèm một trong các dấu hiệu sau. Hiệp hội Đột quỵ Hoa Kỳ dùng quy tắc <b>BE FAST</b> để nhận biết đột quỵ:</p>
+<ul>
+<li><b>B – Balance (thăng bằng):</b> đột ngột mất thăng bằng, đi loạng choạng.</li>
+<li><b>E – Eyes (mắt):</b> đột ngột nhìn mờ, mất thị lực một hoặc hai mắt, nhìn đôi.</li>
+<li><b>F – Face (mặt):</b> méo miệng, xệ một bên mặt.</li>
+<li><b>A – Arm (tay):</b> yếu, tê một bên tay hoặc chân.</li>
+<li><b>S – Speech (lời nói):</b> nói khó, nói ngọng, không hiểu lời người khác.</li>
+<li><b>T – Time (thời gian):</b> gọi cấp cứu ngay, ghi lại thời điểm khởi phát.</li>
+</ul>
+<p>Các dấu hiệu khác cần cấp cứu: đau đầu dữ dội đột ngột chưa từng có; đau thắt ngực, khó thở; tim đập rất nhanh hoặc rất chậm; ngất, lú lẫn; giảm thính lực đột ngột kèm chóng mặt (NHS).</p>
+
+<h2>7. Hoa mắt chóng mặt khám khoa nào, chẩn đoán thế nào?</h2>
+<div class="tw"><table>
+<tr><th>Triệu chứng nổi bật</th><th>Nên khám</th></tr>
+<tr><td>Chóng mặt chưa rõ nguyên nhân, kèm đau đầu, tê yếu</td><td>Thần kinh hoặc Nội tổng quát (khám đầu tiên)</td></tr>
+<tr><td>Quay cuồng khi đổi tư thế, kèm ù tai, nghe kém</td><td>Tai Mũi Họng</td></tr>
+<tr><td>Hồi hộp, đánh trống ngực, ngất, đang dùng thuốc tim mạch</td><td>Tim mạch</td></tr>
+<tr><td>Nhìn đôi, nhìn mờ, đau mắt, mới đổi kính</td><td>Mắt</td></tr>
+<tr><td>Mệt, da xanh, rong kinh</td><td>Nội tổng quát, xét nghiệm máu</td></tr>
+</table></div>
+<p>Tùy triệu chứng, bác sĩ có thể: đo huyết áp ở tư thế nằm và đứng; xét nghiệm công thức máu, đường huyết; làm điện tim, Holter điện tim; nghiệm pháp Dix–Hallpike để phát hiện sỏi tai; đo thính lực; khám mắt (thị lực, nhãn áp, vận nhãn, đáy mắt); chụp CT hoặc MRI sọ não khi nghi đột quỵ. Hãy ghi lại cơn chóng mặt của bạn (lúc nào, bao lâu, kèm gì, thuốc đang dùng) để bác sĩ chẩn đoán nhanh hơn.</p>
+
+<h2>8. Điều trị theo nguyên nhân</h2>
+<div class="tw"><table>
+<tr><th>Nguyên nhân</th><th>Hướng điều trị</th></tr>
+<tr><td>Sỏi tai (BPPV)</td><td>Nghiệm pháp tái định vị (như nghiệm pháp Epley) do bác sĩ thực hiện; bài tập tại nhà theo hướng dẫn</td></tr>
+<tr><td>Viêm dây thần kinh tiền đình</td><td>Thuốc giảm triệu chứng ngắn ngày, sau đó tập phục hồi chức năng tiền đình</td></tr>
+<tr><td>Ménière</td><td>Giảm muối, thuốc theo chỉ định, theo dõi thính lực (NIDCD)</td></tr>
+<tr><td>Tụt huyết áp tư thế</td><td>Uống đủ nước, đứng dậy từ từ, bác sĩ xem lại thuốc đang dùng</td></tr>
+<tr><td>Thiếu máu</td><td>Tìm nguyên nhân (rong kinh, xuất huyết tiêu hóa…), bổ sung sắt theo chỉ định</td></tr>
+<tr><td>Rối loạn nhịp tim</td><td>Thuốc, can thiệp hoặc thiết bị theo chỉ định tim mạch</td></tr>
+<tr><td>Nguyên nhân tại mắt</td><td>Chỉnh lại kính; điều trị nguyên nhân nhìn đôi; glôcôm góc đóng cấp cần hạ nhãn áp khẩn cấp và laser mống mắt</td></tr>
+</table></div>
+
+<h2>9. Khám hoa mắt chóng mặt tại Bệnh viện Đa khoa Hồng Ngọc</h2>
+<p>Vì nguyên nhân hoa mắt chóng mặt có thể nằm ở nhiều cơ quan, Bệnh viện Đa khoa Hồng Ngọc phối hợp các chuyên khoa Thần kinh, Tim mạch, Tai Mũi Họng và Mắt, cùng hệ thống chụp CT, MRI để chẩn đoán. Trung tâm Mắt do TS.BS Đinh Thị Hoàng Anh – Trưởng khoa Mắt cơ sở Phúc Trường Minh – phụ trách, thăm khám các nguyên nhân tại mắt như nhìn đôi, glôcôm, tật khúc xạ. Tìm hiểu thêm: <a href="https://hongngochospital.vn/vi/khoa-mat">Khoa Mắt</a>, <a href="https://hongngochospital.vn/vi/chuyen-khoa-tim-mach-bv-hong-ngoc">chuyên khoa Tim mạch</a>.</p>
+<ul>
+<li><b>Địa chỉ:</b> Bệnh viện Đa khoa Hồng Ngọc – Phúc Trường Minh, số 8 Châu Văn Liêm, phường Từ Liêm, Hà Nội</li>
+<li><b>Hotline:</b> 0919.489.258 <i>[cần xác nhận — bài gốc có thêm số 0916.987.366]</i>; cấp cứu 1900 636 555</li>
+</ul>
+
+<h2>Kết luận</h2>
+<p><span class="k1">Bị hoa mắt chóng mặt là bệnh gì</span> phụ thuộc vào đặc điểm cơn: phần lớn trường hợp do tai trong, tụt huyết áp, thiếu máu, hạ đường huyết hoặc thuốc, và điều trị được khi tìm đúng nguyên nhân. Bệnh về mắt hiếm khi là nguyên nhân chính nhưng cần nghĩ đến khi có nhìn đôi, đau mắt, nhìn mờ. Nếu cơn lặp lại hoặc kéo dài, hãy đi khám thay vì tự mua thuốc; nếu kèm dấu hiệu BE FAST, gọi 115 ngay.</p>
+
+<h2>Câu hỏi thường gặp về hoa mắt chóng mặt</h2>
+<h3>Hoa mắt chóng mặt có nguy hiểm không?</h3>
+<p>Phần lớn trường hợp lành tính, như tụt huyết áp khi đứng dậy, sỏi tai hay hạ đường huyết nhẹ. Cần gọi cấp cứu khi hoa mắt chóng mặt đột ngột kèm méo miệng, yếu liệt, nói khó, nhìn đôi, đau ngực hoặc ngất; cơn lặp lại nhiều lần cũng cần đi khám.</p>
+<h3>Đứng lên bị tối sầm mặt là bệnh gì?</h3>
+<p>Thường là tụt huyết áp tư thế: máu chưa kịp lên não khi đứng dậy nhanh, gây tối sầm vài giây. Uống đủ nước và đứng dậy từ từ giúp hạn chế; nên đi khám nếu xảy ra thường xuyên, có ngất, hoặc ở người cao tuổi, người dùng thuốc hạ áp.</p>
+<h3>Hoa mắt chóng mặt thiếu chất gì?</h3>
+<p>Thường gặp nhất là thiếu sắt và thiếu vitamin B12 gây thiếu máu; thiếu B12 còn ảnh hưởng thần kinh và thăng bằng. Mất nước và hạ đường huyết do bỏ bữa cũng gây hoa mắt. Nên xét nghiệm máu trước khi tự bổ sung.</p>
+<h3>Hoa mắt chóng mặt nên ăn gì?</h3>
+<p>Ăn đủ bữa, uống đủ nước; bổ sung thực phẩm giàu sắt (thịt đỏ, gan, các loại đậu, rau lá xanh đậm) kèm trái cây giàu vitamin C giúp hấp thu sắt, và thực phẩm giàu B12 (trứng, sữa, cá, thịt). Ăn uống chỉ hỗ trợ, không thay thế điều trị nguyên nhân.</p>
+<h3>Hoa mắt chóng mặt nên khám khoa nào?</h3>
+<p>Nên khám Thần kinh hoặc Nội tổng quát trước. Khám Tai Mũi Họng nếu kèm ù tai, nghe kém; Tim mạch nếu hồi hộp, ngất; Mắt nếu nhìn đôi, nhìn mờ, đau mắt.</p>
+<h3>Chóng mặt có phải do thoái hóa đốt sống cổ không?</h3>
+<p>Hiếm khi. Thoái hóa cột sống cổ rất phổ biến ở người trưởng thành nhưng hiếm khi là nguyên nhân thật của chóng mặt; tự quy kết dễ bỏ sót nguyên nhân tai trong, tim mạch hay thần kinh. Cần bác sĩ khám để tìm đúng nguyên nhân.</p>
+<h3>Cận thị, đeo kính sai độ có gây chóng mặt không?</h3>
+<p>Kính mới hoặc kính đa tròng có thể gây chóng mặt vài ngày đầu khi mắt chưa quen. Nếu kéo dài hơn 1–2 tuần nên kiểm tra lại độ kính; cận thị chưa chỉnh kính chủ yếu gây nhìn mờ, mỏi mắt hơn là chóng mặt.</p>
+
+
+<p class="note">Lưu ý: Thông tin trong bài viết chỉ mang tính chất tham khảo, không thay thế cho chẩn đoán hay tư vấn y khoa. Người bệnh cần được bác sĩ chuyên khoa thăm khám trực tiếp.</p>
+<p><b>Tài liệu tham khảo</b></p>
+<ol class="ref">
+<li>NHS – Vertigo. nhs.uk/conditions/vertigo</li>
+<li>Healthdirect Australia – Lightheadedness. healthdirect.gov.au/lightheadedness</li>
+<li>NIDCD – Ménière’s Disease. nidcd.nih.gov/health/menieres-disease</li>
+<li>Cleveland Clinic – Angle-Closure Glaucoma. my.clevelandclinic.org/health/diseases/angle-closure-glaucoma</li>
+<li>American Academy of Ophthalmology – Computers, Digital Devices and Eye Strain. aao.org/eye-health/tips-prevention/computer-usage</li>
+<li>Mayo Clinic – Dizziness; Benign paroxysmal positional vertigo; Orthostatic hypotension; Hypoglycemia.</li>
+<li>American Heart Association – What are the symptoms of high blood pressure?</li>
+<li>American Stroke Association – Stroke symptoms (BE FAST).</li>
+<li>American Diabetes Association – Hypoglycemia (quy tắc 15–15).</li>
+<li>National Institute on Aging – Falls and fractures in older adults.</li>
+<li>Merck Manual (Consumer Version) – Double Vision.</li>
+<li>NHLBI – Anemia; Arrhythmias.</li>
+</ol>
+</div>
+
+<!-- 7 -->
+<h2><span class="n">7</span>FAQ (bản để gắn Schema FAQPage)</h2>
+<p class="s">Mỗi câu trả lời 2–3 câu, đứng độc lập. Giữ 2 câu của bài gốc (thiếu chất gì, nên ăn gì) đã sửa; thêm 5 câu mới.</p>
+<h3>Hoa mắt chóng mặt có nguy hiểm không?</h3>
+<p>Phần lớn trường hợp lành tính, như tụt huyết áp khi đứng dậy, sỏi tai hay hạ đường huyết nhẹ. Cần gọi cấp cứu khi hoa mắt chóng mặt đột ngột kèm méo miệng, yếu liệt, nói khó, nhìn đôi, đau ngực hoặc ngất; cơn lặp lại nhiều lần cũng cần đi khám.</p>
+<h3>Đứng lên bị tối sầm mặt là bệnh gì?</h3>
+<p>Thường là tụt huyết áp tư thế: máu chưa kịp lên não khi đứng dậy nhanh, gây tối sầm vài giây. Uống đủ nước và đứng dậy từ từ giúp hạn chế; nên đi khám nếu xảy ra thường xuyên, có ngất, hoặc ở người cao tuổi, người dùng thuốc hạ áp.</p>
+<h3>Hoa mắt chóng mặt thiếu chất gì?</h3>
+<p>Thường gặp nhất là thiếu sắt và thiếu vitamin B12 gây thiếu máu; thiếu B12 còn ảnh hưởng thần kinh và thăng bằng. Mất nước và hạ đường huyết do bỏ bữa cũng gây hoa mắt. Nên xét nghiệm máu trước khi tự bổ sung.</p>
+<h3>Hoa mắt chóng mặt nên ăn gì?</h3>
+<p>Ăn đủ bữa, uống đủ nước; bổ sung thực phẩm giàu sắt (thịt đỏ, gan, các loại đậu, rau lá xanh đậm) kèm trái cây giàu vitamin C giúp hấp thu sắt, và thực phẩm giàu B12 (trứng, sữa, cá, thịt). Ăn uống chỉ hỗ trợ, không thay thế điều trị nguyên nhân.</p>
+<h3>Hoa mắt chóng mặt nên khám khoa nào?</h3>
+<p>Nên khám Thần kinh hoặc Nội tổng quát trước. Khám Tai Mũi Họng nếu kèm ù tai, nghe kém; Tim mạch nếu hồi hộp, ngất; Mắt nếu nhìn đôi, nhìn mờ, đau mắt.</p>
+<h3>Chóng mặt có phải do thoái hóa đốt sống cổ không?</h3>
+<p>Hiếm khi. Thoái hóa cột sống cổ rất phổ biến ở người trưởng thành nhưng hiếm khi là nguyên nhân thật của chóng mặt; tự quy kết dễ bỏ sót nguyên nhân tai trong, tim mạch hay thần kinh. Cần bác sĩ khám để tìm đúng nguyên nhân.</p>
+<h3>Cận thị, đeo kính sai độ có gây chóng mặt không?</h3>
+<p>Kính mới hoặc kính đa tròng có thể gây chóng mặt vài ngày đầu khi mắt chưa quen. Nếu kéo dài hơn 1–2 tuần nên kiểm tra lại độ kính; cận thị chưa chỉnh kính chủ yếu gây nhìn mờ, mỏi mắt hơn là chóng mặt.</p>
+
+
+<!-- 8 -->
+<h2><span class="n">8</span>Điểm khả năng được AI trích dẫn</h2>
+<p class="s">Điểm ước tính theo kinh nghiệm GEO (không phải công cụ đo chính thức), mỗi tiêu chí 20 điểm.</p>
+<div class="tw"><table>
+<tr><th style="width:18%">Tiêu chí</th><th style="width:20%">Bài gốc</th><th style="width:20%">Bản tối ưu</th><th>Lý do &amp; cách cải thiện thêm</th></tr>
+<tr><td><b>Information Gain</b></td><td>9/20<div class="bar"><i style="width:45%"></i></div></td><td>16/20<div class="bar af"><i style="width:80%"></i></div></td><td>Đã thêm bảng tra theo đặc điểm cơn, bảng khám khoa nào, sơ cứu theo tình huống, BE FAST, góc mắt nói đúng mức. Lên 18+ khi có lời bác sĩ thật.</td></tr><tr><td><b>Semantic Coverage</b></td><td>15/20<div class="bar"><i style="width:75%"></i></div></td><td>18/20<div class="bar af"><i style="width:90%"></i></div></td><td>Bài gốc đã phủ rộng. Đã thêm viêm mê đạo, migraine tiền đình, TIA, PPPD, chẩn đoán, điều trị.</td></tr><tr><td><b>Authority</b></td><td>10/20<div class="bar"><i style="width:50%"></i></div></td><td>15/20<div class="bar af"><i style="width:75%"></i></div></td><td>Chỉ có bác sĩ Khoa Mắt cho chủ đề chủ yếu Thần kinh. Thêm bác sĩ Thần kinh đồng duyệt, hộp hồ sơ, schema.</td></tr><tr><td><b>Structure</b></td><td>15/20<div class="bar"><i style="width:75%"></i></div></td><td>18/20<div class="bar af"><i style="width:90%"></i></div></td><td>Bài gốc có tóm tắt và FAQ. Đã đưa câu trả lời lên đầu, sắp xếp theo tần suất, thêm 4 bảng.</td></tr><tr><td><b>Evidence</b></td><td>7/20<div class="bar"><i style="width:35%"></i></div></td><td>17/20<div class="bar af"><i style="width:85%"></i></div></td><td>Bài gốc có 26 nguồn nhưng nhiều nguồn không nói điều được gán (1 nguồn lạc đề hoàn toàn). Đã dẫn đúng từng nguồn.</td></tr><tr><td><b>Tổng</b></td><td><b>56/100</b></td><td><b>84/100</b></td><td>Mức “dễ được AI trích dẫn” thường từ 80 trở lên.</td></tr>
+</table></div>
+
+<h3>Link nội bộ đi ra từ bài này</h3>
+<p class="s">Đường dẫn lấy từ sitemap thật của hongngochospital.vn ngày 26/10/2026; /chong-mat và /khoa-mat đã mở đọc, các trang còn lại đoán nội dung theo tên đường dẫn.</p>
+<div class="tw"><table>
+<tr><th>Anchor text</th><th>Đặt ở mục</th><th>URL đích</th></tr>
+<tr><td>chóng mặt do bệnh lý tim mạch</td><td>2.2. Tim mạch – huyết áp</td><td class="s">hongngochospital.vn/vi/chong-mat</td></tr><tr><td>bệnh đột quỵ</td><td>2.3. Thần kinh</td><td class="s">hongngochospital.vn/vi/benh-dot-quy</td></tr><tr><td>xây xẩm mặt mày khi ra trời nắng</td><td>2.4. Máu, chuyển hóa và thuốc</td><td class="s">hongngochospital.vn/vi/xay-xam-mat-may-khi-ra-troi-nang</td></tr><tr><td>ánh sáng màn hình bao nhiêu là tốt</td><td>Mỏi mắt do màn hình</td><td class="s">hongngochospital.vn/vi/anh-sang-man-hinh-bao-nhieu-la-tot</td></tr><tr><td>chóng mặt khi mang thai</td><td>4. Ai dễ bị hoa mắt chóng mặt?</td><td class="s">hongngochospital.vn/vi/chong-mat-khi-mang-thai</td></tr><tr><td>Khoa Mắt</td><td>9. Khám hoa mắt chóng mặt tại Bệnh viện Đa khoa Hồng Ngọc</td><td class="s">hongngochospital.vn/vi/khoa-mat</td></tr><tr><td>chuyên khoa Tim mạch</td><td>9. Khám hoa mắt chóng mặt tại Bệnh viện Đa khoa Hồng Ngọc</td><td class="s">hongngochospital.vn/vi/chuyen-khoa-tim-mach-bv-hong-ngoc</td></tr>
+</table></div>
+
+<h3>Gợi ý tối ưu thêm</h3>
+<ol>
+<li><b>Thêm bác sĩ Thần kinh đồng duyệt</b> và hiển thị cả hai bác sĩ trong hộp tác giả — bài chủ yếu thuộc lĩnh vực Thần kinh.</li>
+<li><b>Schema</b>: <code>MedicalWebPage</code> + <code>FAQPage</code>, <code>reviewedBy</code>, <code>dateModified</code>.</li>
+<li><b>Bảng “tra nhanh theo đặc điểm cơn”</b> làm bằng HTML, đặt gần đầu bài; ô BE FAST làm nổi bật.</li>
+<li><b>Bài /chong-mat (2023)</b> đang lấy góc tim mạch — nên cập nhật và đặt link 2 chiều với bài này.</li>
+<li><b>Thống nhất hotline</b> trên các bài thuộc Khoa Mắt.</li>
+<li><b>Bác sĩ duyệt</b> các chỗ đổi chuyên môn (mục 4A số 2–15).</li>
+</ol>
+
+<footer>Nguồn đối chiếu đã mở trực tiếp ngày 26/10/2026: NHS, Healthdirect, NIDCD, Cleveland Clinic, AAO; hongngochospital.vn (bài đang chạy, /chong-mat, /khoa-mat). Mật độ đo trên thân bài tối ưu (3.303 từ): “bị hoa mắt chóng mặt là bệnh gì” 5 lần (1.2%) · “hoa mắt chóng mặt” 21 lần (2.5%).</footer>
+</div></body></html>
