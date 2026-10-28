@@ -1,0 +1,51 @@
+URL: https://topkinhdoanh.net/ban-lai-ngoai-te-con-du/
+TITLE: Bán lại ngoại tệ còn dư sau chuyến đi nước ngoài
+TCB_LINKS: ['https://techcombank.com/cong-cu-tien-ich/ty-gia']
+
+# 
+
+Sau mỗi chuyến du lịch hay công tác nước ngoài, nhiều người còn giữ lại một khoản ngoại tệ chưa dùng hết. Bài viết phân tích loại tỷ giá áp dụng khi bán lại, ảnh hưởng của mệnh giá tờ tiền và cách chuẩn bị để số tiền Việt nhận về sát với dự tính.
+
+## 1. Tỷ giá mua vào là căn cứ khi bán ngoại tệ cho ngân hàng
+
+Điểm cần nắm đầu tiên là chiều của giao dịch, vì chiều giao dịch quyết định cột tỷ giá được áp dụng.
+
+Bảng tỷ giá của ngân hàng luôn có hai chiều là mua vào và bán ra, được ghi theo góc nhìn của ngân hàng. Khi bạn mang ngoại tệ đến bán, ngân hàng là bên mua vào, do đó mức giá áp dụng là giá mua vào. Mức giá này thấp hơn giá bán ra mà bạn đã trả khi mua ngoại tệ trước chuyến đi.
+
+Nhiều người dùng con số bán ra đã thấy lúc mua để ước tính số tiền nhận lại, vì vậy kết quả thực tế thường thấp hơn dự tính ban đầu. Giả sử giá mua vào thấp hơn giá bán ra khoảng 1%, một khoản ngoại tệ mua vào rồi bán lại ngay trong cùng ngày sẽ giảm tương ứng khoảng 1% giá trị khi quy đổi về tiền Việt.
+
+Yếu tố thứ hai là hình thức giao dịch. Khi tra cứu tỷ giá USD trên bảng niêm yết, bạn sẽ thấy giá mua vào tiền mặt và giá mua vào chuyển khoản được tách thành hai cột riêng. Giá mua chuyển khoản thường cao hơn giá mua tiền mặt, do giao dịch chuyển khoản không phát sinh chi phí kiểm đếm, bảo quản và vận chuyển tiền giấy. Với ngoại tệ tiền mặt còn dư sau chuyến đi, cột cần đối chiếu là giá mua vào tiền mặt.
+
+Khi bán ngoại tệ cho ngân hàng, mức giá được áp dụng là tỷ giá mua vào.
+
+## 2. Mệnh giá và tình trạng tờ tiền ảnh hưởng đến mức quy đổi
+
+Bên cạnh tỷ giá, đặc điểm của chính những tờ tiền bạn đang giữ cũng tác động trực tiếp đến số tiền Việt nhận về.
+
+Với đô la Mỹ, nhiều ngân hàng niêm yết giá mua tiền mặt theo từng nhóm mệnh giá: nhóm mệnh giá nhỏ (1 và 2), nhóm mệnh giá trung bình (5, 10 và 20), nhóm mệnh giá lớn (50 và 100). Nhóm mệnh giá lớn thường được mua với giá cao hơn, vì chi phí kiểm đếm, phân loại và vận chuyển tính trên mỗi đơn vị giá trị thấp hơn so với tiền lẻ. Như vậy, với cùng một tổng giá trị, một tập tiền gồm nhiều tờ mệnh giá nhỏ có thể quy đổi được ít tiền Việt hơn một tập tiền gồm vài tờ mệnh giá lớn.
+
+Từ đặc điểm này, cách sắp xếp hợp lý là ưu tiên dùng các tờ mệnh giá nhỏ cho những khoản chi nhỏ trong những ngày cuối của chuyến đi, như phí đi lại, ăn uống hoặc tiền boa. Những tờ mệnh giá lớn còn lại khi về nước sẽ được quy đổi với mức giá có lợi hơn.
+
+Tình trạng vật lý của tờ tiền cũng là tiêu chí ngân hàng xem xét khi mua vào. Các tờ tiền được tiếp nhận thuận lợi thường đáp ứng những điều kiện sau:
+
+Còn nguyên vẹn, không rách, không bị viết, đóng dấu hoặc dán băng keo
+
+Thuộc phiên bản đang lưu hành, vì một số phiên bản phát hành từ lâu có thể được áp dụng mức giá mua riêng
+
+Được giữ phẳng, khô ráo trong ví hoặc phong bì suốt hành trình
+
+## 3. Chuẩn bị trước khi bán lại để số tiền nhận về sát với dự tính
+
+Một vài bước chuẩn bị trước khi đến quầy giúp bạn chủ động về số tiền nhận lại.
+
+Bước đầu tiên là tra cứu bảng tỷ giá và sử dụng công cụ chuyển đổi tiền tệ trực tuyến của ngân hàng. Các công cụ này cho phép nhập số tiền, chọn loại ngoại tệ, chiều giao dịch và hình thức tiền mặt hoặc chuyển khoản, sau đó hiển thị số tiền Việt tương ứng để tham khảo. Chẳng hạn, khi cần biết khoản USD còn dư tương đương bao nhiêu tiền Việt, bạn chọn đúng nhóm mệnh giá đang giữ và chiều giao dịch bán tiền mặt để có con số sát với thực tế.
+
+Bước tiếp theo là cân nhắc thời điểm bán. Với khoản ngoại tệ nhỏ, chênh lệch tỷ giá giữa các ngày thường không đáng kể. Với khoản lớn hơn, bạn có thể theo dõi bảng tỷ giá trong vài ngày để nắm xu hướng trước khi giao dịch.
+
+Bạn cũng nên xem xét có cần bán ngay hay không. Nếu đã có kế hoạch cho một chuyến đi khác dùng cùng loại ngoại tệ trong thời gian gần, việc giữ lại khoản tiền này giúp tránh phải chịu chênh lệch mua – bán hai lần: một lần khi bán lại hiện tại và một lần khi mua lại cho chuyến đi sau.
+
+Khi giao dịch tại quầy, bạn cần mang theo giấy tờ tùy thân như căn cước công dân hoặc hộ chiếu, đồng thời phân loại sẵn tiền theo mệnh giá để quá trình kiểm đếm diễn ra nhanh hơn.
+
+Chuẩn bị trước khi giao dịch giúp số tiền Việt nhận về sát với dự tính.
+
+Số tiền Việt nhận về khi bán lại ngoại tệ phụ thuộc vào ba nhóm yếu tố: cột tỷ giá mua vào được áp dụng, mệnh giá cùng tình trạng của tờ tiền và mức độ chuẩn bị trước khi giao dịch. Nắm rõ các yếu tố này giúp bạn ước tính sát số tiền thực nhận và sắp xếp chi tiêu ngoại tệ hợp lý ngay từ trong chuyến đi.

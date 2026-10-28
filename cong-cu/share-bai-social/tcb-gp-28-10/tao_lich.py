@@ -35,7 +35,7 @@ https://congngheaz.com/doi-tien-du-lich-chau-a/
 https://congngheaz.com/phi-ung-tuyen-du-hoc/
 https://topshare.vn/dung-cong-cu-chuyen-doi-tien-te-truc-tuyen-de-co-con-so-quy-doi-sat-voi-giao-dich-thuc-te/""".split()
 
-ds = [{"so": i + 1, "dong_sheet": 9 + i, "url": u} for i, u in enumerate(URLS)]
+ds = [{"so": i + 1, "dong_sheet": 9 + 3 * i, "url": u} for i, u in enumerate(URLS)]
 json.dump(ds, open(os.path.join(HERE, "danh-sach.json"), "w"), ensure_ascii=False, indent=1)
 
 
@@ -57,15 +57,14 @@ def chuoi(start, n, lo, hi, dem=True):
     return out
 
 
-bat_dau = datetime(2026, 10, 29, 9, 0, tzinfo=VN)
+bat_dau = datetime(2026, 10, 29, 3, 10, tzinfo=VN)  # Trang chốt: đăng dần từ ngay bây giờ (02:49 29/10)
 lich = []
 # WordPress: ~5 tiếng/bài (4h50–5h25), chạy cả ngày lẫn đêm nhưng né 0h–6h
-wp, t = [], bat_dau + timedelta(minutes=random.randint(0, 15))
+wp, t = [], bat_dau
 for _ in ds:
-    if t.hour < 6: t = t.replace(hour=6, minute=random.randint(10, 50))
     wp.append(t); t += timedelta(minutes=random.randint(290, 325))
-wix = chuoi(bat_dau + timedelta(minutes=random.randint(20, 30)), len(ds), 52, 72)
-ma = chuoi(bat_dau + timedelta(minutes=random.randint(45, 55)), len(ds), 52, 72)
+wix = chuoi(bat_dau + timedelta(minutes=18), len(ds), 52, 72, dem=False)
+ma = chuoi(bat_dau + timedelta(minutes=40), len(ds), 52, 72, dem=False)
 for i, x in enumerate(ds):
     for nen, g in (("wp", wp[i]), ("wix", wix[i]), ("ma", ma[i])):
         lich.append({"so": x["so"], "nen": nen, "gio": g.isoformat(timespec="minutes")})

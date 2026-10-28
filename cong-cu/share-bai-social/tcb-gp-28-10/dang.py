@@ -134,6 +134,12 @@ def cmd_check(so, nen, quiet=False):
         bad = set(re.findall(r"</?([a-z0-9]+)", s)) - {"p", "h2", "h3", "ul", "ol", "li", "strong", "a"}
         if bad: errs.append(f"thẻ không cho phép: {bad}")
         if re.search(r"<h2[^>]*>\s*(kết luận|tóm lại|tổng kết)", s, re.I): errs.append("có mục kết luận/tóm tắt")
+        cau = lambda t: {" ".join(c.split()) for c in re.split(r"(?<=[.!?:])\s+", t) if len(c.split()) > 6}
+        mine = cau(plain(s))
+        src = os.path.join(HERE, "nguon", f"{int(so):02d}.txt")
+        if os.path.exists(src) and mine & cau(open(src).read()): errs.append(f"chép câu bài gốc: {list(mine & cau(open(src).read()))[:2]}")
+        other = bai_path(so, "wix" if nen == "wp" else "wp")
+        if os.path.exists(other) and mine & cau(plain(open(other).read())): errs.append("trùng câu với bản nền tảng kia")
     low = plain(s).lower()
     for ok in OK_NHAT: low = low.replace(ok, "")
     for b in BANNED:
