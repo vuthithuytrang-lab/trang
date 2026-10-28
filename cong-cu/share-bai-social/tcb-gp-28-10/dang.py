@@ -284,7 +284,9 @@ def cmd_dang(so, nen):
             st3, r3 = req("PATCH", f"https://www.wixapis.com/blog/v3/draft-posts/{post['id']}?fieldsets=URL", H,
                           {"draftPost": {"id": post["id"], "memberId": k["member_id"], "seoSlug": m["slug"]}, "action": "UPDATE_PUBLICATION"})
             if st3 != 200: p("⚠ đổi slug Wix lỗi", st3, str(r3)[:200])
-            u = (r3.get("draftPost", {}) if isinstance(r3, dict) else {}).get("url") or post.get("url") or {}
+            time.sleep(3)
+            st4, r4 = req("GET", f"https://www.wixapis.com/blog/v3/posts/{post['id']}?fieldsets=URL", H)
+            u = (r4.get("post", {}) if isinstance(r4, dict) else {}).get("url") or post.get("url") or {}
             link = (u.get("base", "") + urllib.parse.quote(u.get("path", ""))) if u else None
             # trang Wix cần vài chục giây mới mở được link mới — thử lại tối đa ~2 phút
             stc = None
