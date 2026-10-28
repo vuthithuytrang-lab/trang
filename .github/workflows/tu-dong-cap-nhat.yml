@@ -1,48 +1,96 @@
 name: Cập nhật bài TCB tự động (không cần Claude)
-# Mỗi giờ (7h35–17h35 giờ VN, thứ 2–7) chạy công thức 9 bài vàng / cà phê / xăng dầu trên máy chủ miễn phí của GitHub,
-# để sẵn file HTML ở nhánh "tu-dong-ket-qua". Apps Script trong Google Sheets "Update" lấy về tạo Google Docs khi có bài được tích.
+# CHỈ CHẠY KHI CÓ NGƯỜI BẤM (Trang dặn 28/10/2026): app / Sheet "Update" tích ô → Apps Script ghi phiếu yêu cầu
+# (file yeu-cau-tu-dong.json trong thư mục Drive chung). Việc "kiem" vài phút liếc phiếu 1 lần: không có phiếu mới → dừng
+# ngay (vài giây, miễn phí); có phiếu mới → việc "chay" chạy đúng các bài trong phiếu, đăng kết quả lên nhánh tu-dong-ket-qua.
 on:
   schedule:
-    - cron: '35 0-10 * * 1-6'
+    - cron: '*/5 * * * *'
   workflow_dispatch:
-  push:
-    branches: [claude/vibrant-keller-rk0i98]
-    paths: [.github/workflows/tu-dong-cap-nhat.yml, cong-cu/tu-dong/*.sh, cong-cu/tu-dong/*.py]
+    inputs:
+      bai: { description: 'Mã bài, cách nhau bằng dấu cách (để trống = đọc phiếu)', required: false, default: '' }
 permissions:
   contents: write
 concurrency: { group: tu-dong-cap-nhat, cancel-in-progress: false }
+env:
+  PHIEU: https://drive.usercontent.google.com/download?id=1wrO0bArJtokvfFvOzFNFqvJhrLrPD2VI&export=download
+  KET_QUA: https://raw.githubusercontent.com/${{ github.repository }}/tu-dong-ket-qua/trang-thai.json
 jobs:
+  kiem:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    outputs:
+      bai: ${{ steps.p.outputs.bai }}
+      ma: ${{ steps.p.outputs.ma }}
+    steps:
+      - id: p
+        env: { BAI_TAY: '${{ inputs.bai }}' }
+        # phiếu nằm ở thư mục Drive ai có link cũng sửa được → coi là dữ liệu lạ: chỉ nhận mã bài có trong danh sách,
+        # mã phiếu đúng dạng yc-<số>; không bao giờ đưa chữ trong phiếu vào câu lệnh
+        run: |
+          curl -sfL -m 30 "$PHIEU" -o phieu.json || echo '{}' > phieu.json
+          curl -sfL -m 30 "$KET_QUA?t=$(date +%s)" -o tt.json || echo '{}' > tt.json
+          python3 - <<'EOF' >> $GITHUB_OUTPUT
+          import json, os, re, time, datetime as d
+          HOP_LE = {'gia-ca-phe', 'gia-xang-dau', 'vang-24k', 'vang-14k', 'vang-18k', 'vang-10k', '1-chi-vang', 'vang-16k', 'vang-610'}
+          tay = [b for b in os.environ.get('BAI_TAY', '').split() if b in HOP_LE]
+          if tay:
+              print('bai=' + ' '.join(tay)); print('ma=tay-%d' % time.time()); raise SystemExit
+          try:
+              p = json.load(open('phieu.json')); tt = json.load(open('tt.json'))
+          except Exception:
+              raise SystemExit
+          if not isinstance(p, dict) or not isinstance(tt, dict):
+              raise SystemExit
+          ma = str(p.get('ma', ''))
+          bai = [b for b in p.get('bai', []) if isinstance(b, str) and b in HOP_LE] if isinstance(p.get('bai'), list) else []
+          moi = re.fullmatch(r'yc-\d{10,16}', ma) and bai and tt.get('_yeu_cau') != ma
+          if moi:
+              tuoi = time.time() - int(ma[3:]) / 1000
+              moi = 0 <= tuoi < 3 * 3600                 # phiếu quá cũ thì bỏ (giờ lấy từ chính mã phiếu)
+          if moi:
+              print('bai=' + ' '.join(sorted(set(bai))))
+              print('ma=' + ma)
+          EOF
+          cat $GITHUB_OUTPUT
   chay:
+    needs: kiem
+    if: needs.kiem.outputs.bai != ''
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
-        with: { ref: claude/vibrant-keller-rk0i98 }   # công thức mới nhất nằm ở nhánh này; nhánh chính chỉ giữ file hẹn giờ
+        with: { ref: claude/vibrant-keller-rk0i98 }   # công thức mới nhất nằm ở nhánh này; nhánh chính chỉ giữ file lịch
       - name: Cài trình duyệt
         run: |
           npm i -g playwright@1.48.2
           npx -y playwright@1.48.2 install --with-deps chromium
           echo "NODE_PATH=$(npm root -g)" >> $GITHUB_ENV
-      - name: Chạy 9 bài có công thức
+      - name: Chạy các bài trong phiếu
+        env: { BAI: '${{ needs.kiem.outputs.bai }}' }
         run: |
           mkdir -p ket-qua
-          for m in vang-24k vang-14k vang-18k vang-10k vang-16k vang-610 1-chi-vang gia-ca-phe gia-xang-dau; do
+          for m in $BAI; do
+            [ -d cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/$m ] || continue
             timeout 600 bash cong-cu/tu-dong/chay.sh $m ket-qua > ket-qua/$m.log 2>&1 || echo "LỖI $m" >> ket-qua/$m.log
             echo "::group::$m"; cat ket-qua/$m.log; echo "::endgroup::"
           done
           # nguồn có lúc không hiện bảng (PNJ…) → nghỉ 1 phút rồi chạy lại bài đó 1 lần; lần sau đọc đủ nguồn thì dùng lần sau
-          sleep 60
-          for m in vang-24k vang-14k vang-18k vang-10k vang-16k vang-610 1-chi-vang gia-xang-dau; do
+          for m in $BAI; do
+            [ -f ket-qua/$m.log ] && [ $m != gia-ca-phe ] || continue
             grep -qE 'KHÔNG ĐỌC ĐƯỢC|KHÔNG đọc được|LỖI' ket-qua/$m.log || continue
+            sleep 30
             timeout 600 bash cong-cu/tu-dong/chay.sh $m lai > lai-$m.log 2>&1 || echo "LỖI $m" >> lai-$m.log
             echo "::group::chạy lại $m"; cat lai-$m.log; echo "::endgroup::"
             if grep -q '^XONG' lai-$m.log && ! grep -qE 'KHÔNG ĐỌC ĐƯỢC|KHÔNG đọc được|^LỖI' lai-$m.log; then
               rm -rf ket-qua/$m; mv lai/$m ket-qua/$m; mv lai-$m.log ket-qua/$m.log
             fi
           done
-          python3 -I cong-cu/tu-dong/tong_hop.py ket-qua xuat
       - name: Đăng kết quả lên nhánh tu-dong-ket-qua
+        env: { MA: '${{ needs.kiem.outputs.ma }}' }
         run: |
+          git clone -q --depth 1 -b tu-dong-ket-qua "https://github.com/${{ github.repository }}.git" xuat || mkdir -p xuat
+          rm -rf xuat/.git
+          python3 -I cong-cu/tu-dong/tong_hop.py ket-qua xuat "$MA"
           cd xuat
           git init -q -b tu-dong-ket-qua
           git config user.name "Cập nhật tự động"
