@@ -1,0 +1,43 @@
+{
+  "bai1": {
+    "sua": [
+      {"tim": "139,000", "thay": "140,000",
+       "nguon": "https://banggianongsan.com/bang-gia-tieu/",
+       "ly_do": "Hồ Tiêu Đắk Lắk – Giá cũ: nguồn ghi 140.000 (đăng 08:32 28/10/2026)"},
+      {"tim": "138,500", "thay": "140,000",
+       "nguon": "https://banggianongsan.com/bang-gia-tieu/",
+       "ly_do": "Hồ Tiêu Đắk Lắk – Giá mới: nguồn ghi 140.000 (28/10/2026); giatieu.com 28/10/2026 cũng ghi Đắk Lắk 140,000"},
+      {"tim": "-500 đ", "lan": "tat_ca", "thay": "Không đổi",
+       "nguon": "https://banggianongsan.com/bang-gia-tieu/",
+       "ly_do": "Cột Thay đổi của Gia Lai, Đồng Nai, TP. Hồ Chí Minh, Đắk Lắk: nguồn ghi 'Không đổi' (28/10/2026)"},
+      {"tim": "140,000", "lan": 2, "thay": "139,000",
+       "nguon": "https://banggianongsan.com/bang-gia-tieu/",
+       "ly_do": "Hồ Tiêu Lâm Đồng (Đắk Nông cũ sáp nhập) – Giá mới: nguồn ghi 139.000 (28/10/2026); giatieu.com 28/10/2026 cũng ghi Đắk Nông 139,000"},
+      {"ngu_canh": "139,000 Không đổi Hồ Tiêu Đắk Lắk", "tim": "Không đổi", "thay": "-1,000 đ",
+       "nguon": "https://banggianongsan.com/bang-gia-tieu/",
+       "ly_do": "Hồ Tiêu Lâm Đồng – Thay đổi: nguồn ghi ▼ -1.000 đ (140.000 → 139.000); viết theo dạng '-500 đ' của bài, không kèm %"},
+      {"ngu_canh": "Gia Lai (đ/kg) 137,500", "tim": "137,500", "thay": "137,000",
+       "nguon": "https://banggianongsan.com/bang-gia-tieu/",
+       "ly_do": "Hồ Tiêu Gia Lai – Giá cũ: nguồn ghi 137.000 (28/10/2026); Giá mới 137,000 giữ nguyên (khớp nguồn + giatieu.com)"},
+      {"ngu_canh": "Đồng Nai (đ/kg) 137,500", "tim": "137,500", "thay": "137,000",
+       "nguon": "https://banggianongsan.com/bang-gia-tieu/",
+       "ly_do": "Hồ Tiêu Đồng Nai – Giá cũ: nguồn ghi 137.000 (28/10/2026); Giá mới 137,000 giữ nguyên (khớp nguồn)"},
+      {"tim": "138,000", "thay": "137,500",
+       "nguon": "https://banggianongsan.com/bang-gia-tieu/",
+       "ly_do": "Hồ Tiêu TP. Hồ Chí Minh – Giá cũ: nguồn ghi 137.500 (28/10/2026); Giá mới 137,500 giữ nguyên (khớp nguồn)"},
+      {"tim": "6.769", "lan": "tat_ca", "thay": "6.850",
+       "nguon": "https://banggianongsan.com/bang-gia-tieu/",
+       "ly_do": "Indonesia - Black Pepper – Giá cũ và Giá mới: bảng 'Thị trường xuất khẩu' ghi 6,850 → 6,850 Không đổi (28/10/2026); bảng đầu trang cũng ghi Tiêu Đen Indonesia 6.850 (nguồn đã hết tự mâu thuẫn như 22/10)"},
+      {"tim": "9.268", "lan": "tat_ca", "thay": "9.354",
+       "nguon": "https://banggianongsan.com/bang-gia-tieu/",
+       "ly_do": "Indonesia - White Pepper – Giá cũ và Giá mới: bảng 'Thị trường xuất khẩu' ghi 9,354 → 9,354 Không đổi (28/10/2026); bảng đầu trang cũng ghi Tiêu Trắng Indonesia 9.354"}
+    ],
+    "can_duyet": [
+      "Bảng giá hồ tiêu trong nước – Lâm Đồng (Đắk Nông cũ sáp nhập): đã ghi theo banggianongsan.com (28/10/2026): Giá cũ 140,000 → Giá mới 139,000, Thay đổi -1,000 đ. giatieu.com/gia-tieu-hom-nay (28/10/2026) cũng ghi Đắk Nông 139,000 nhưng Thay đổi 0 (tức hôm trước đã là 139,000) → hai nguồn khác nhau ở Giá cũ / Thay đổi, cần người xem lại.",
+      "Bảng giá hồ tiêu trong nước – Đồng Nai và TP. Hồ Chí Minh: chỉ banggianongsan.com có đúng tên vùng này (giatieu.com ghi Bình Phước 137,000 / Bà Rịa - Vũng Tàu 137,500, thay đổi 0 – khớp với số đã ghi). 3 dòng Tiêu Đen VN 500 g/l 5.950, 550 g/l 5.995, Tiêu Trắng VN 8,450 giữ nguyên (nguồn ghi như bài, Không đổi).",
+      "Bảng giá hồ tiêu tại các thị trường xuất khẩu: Brazil 5.800, Malaysia 9.100 / 12.000, Viet Nam 5.950 / 5.995 / 8.450 giữ nguyên (nguồn ghi như bài, Không đổi). giatieu.com/gia-tieu-truc-tuyen: bảng giá thế giới trống ('Hệ thống đang bận', đã thử cả trình duyệt Chromium) nên chỉ có 1 nguồn cho bảng này.",
+      "Bảng giá hồ tiêu nội địa Ấn Độ: GIỮ NGUYÊN (71.300 / 68.300 / 69.300, Không đổi) – khớp banggianongsan.com (71,300 / 68,300 / 69,300, Không đổi, 28/10/2026). giatieu.com/gia-tieu-truc-tuyen ghi GARBLED 71,400, Gram/lít 68,400, UNGARBLED 69,400 (thay đổi 0) – lệch 100 Rupee mỗi loại như các lần trước → cần người chọn nguồn.",
+      "Mục 3: '9 tháng đầu năm 2026, Việt Nam xuất khẩu 215,733 tấn, tăng 15.4% về lượng nhưng giá trị tăng 10.2%' – 3 nguồn không có số liệu xuất khẩu này, giữ nguyên."
+    ]
+  }
+}
