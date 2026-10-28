@@ -1,7 +1,7 @@
 # Cập nhật bài TCB tự động — không cần Claude, không tốn token
 
 Dựng 28/10/2026 theo yêu cầu của Trang: *"app chạy bình thường mỗi khi tôi bấm update và không tốn token"*,
-*"không đặt lịch chạy mà khi tôi bấm bạn sẽ chạy"*. Danh sách bài tự động: `danh-sach.json` (đoạn cuối link bài → mã công thức) — Apps Script và GitHub đọc file này mỗi lần chạy, **thêm bài mới chỉ cần sửa file này + `chay.sh`, không phải dán lại mã**. Hiện có **11 bài**: vàng 24K/14K/18K/10K/16K/610,
+*"không đặt lịch chạy mà khi tôi bấm bạn sẽ chạy"*. Danh sách bài tự động: `danh-sach.json` (đoạn cuối link bài → mã công thức) — Apps Script và GitHub đọc file này mỗi lần chạy, **thêm bài mới chỉ cần sửa file này + `chay.sh`, không phải dán lại mã**. Hiện có **cả 23 bài** (29/10/2026): vàng 24K/14K/18K/10K/16K/610,
 1 chỉ vàng, cà phê, xăng dầu, 2 bài lãi suất (`lai-suat-1`, `lai-suat-2` — công cụ `cong-cu/cap-nhat-lai-suat`, thêm 28/10/2026).
 
 ## Đường đi khi bấm
@@ -21,12 +21,13 @@ Dựng 28/10/2026 theo yêu cầu của Trang: *"app chạy bình thường mỗ
 
 Không có chìa khóa nào: GitHub chỉ đọc web + phiếu công khai; Apps Script đọc kết quả qua link công khai `raw.githubusercontent.com`.
 Tab `app`: A STT · B tên file · C link · D lúc · E `dang_chay` / `xong` / `Cần xem lại: …` / `⚠️ Lỗi: …`; `H1` = nhịp "Máy tự động chạy lúc …"
-(Claude dùng ô này để biết máy đang bật → lịch Claude mỗi giờ bỏ qua 11 bài tự động).
+(Claude dùng ô này để biết máy đang bật → lịch Claude mỗi giờ bỏ qua mọi bài tự động).
 
 ## Giới hạn — nói thật với Trang
 
 - Từ lúc bấm đến khi có file: khoảng 10–20 phút (GitHub liếc phiếu 5 phút/lần, có lúc trễ hơn; chạy 1–2 phút/bài).
-- 12 bài mới (nhôm, lúa gạo, ca cao, tiêu…) vẫn cần Claude — muốn miễn phí phải đóng gói công thức từng bài.
+- Nguồn chặn máy đọc (Barchart) → bảng thế giới của bài đồng, thép giữ nguyên + "Cần xem lại"; giá ca cao thế giới lấy giá khớp gần nhất của ICE (không phải giá chốt phiên).
+- Bài mới thêm vào Sheet: phải viết công thức (`cong-thuc/<mã>/`) + thêm vào `danh-sach.json` thì mới miễn phí; chưa có thì Claude chạy (tốn token).
 - Nguồn bị chặn (giacaphe.com — giá cà phê thế giới) → bảng đó giữ số cũ, ô Sheet có ghi chú "Cần xem lại".
 
 ## Cài đặt (1 lần)
