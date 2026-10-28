@@ -20,6 +20,9 @@ Người dùng thường **không rành kỹ thuật**: nói lời thường, t�
 > cấu trúc câu và cách trình bày của bài: câu ghi khoảng "Khoảng X đến Y" vẫn phải là khoảng (không rút thành 1 mức),
 > không thêm chữ như "(theo PNJ)", không đổi tên riêng (vd "tỷ giá Techcombank" giữ nguyên — muốn số đúng thì tìm nguồn tỷ giá
 > Techcombank). Không đủ nguồn để cập nhật đúng dạng của bài → **giữ nguyên chỗ đó** và ghi `can_duyet`.
+>
+> ⛔ **MỌI GIÁ / LÃI SUẤT TRONG BÀI ĐỀU PHẢI CẬP NHẬT** (Trang dặn 29/10/2026): không chỉ trong bảng — cả đoạn văn, hỏi đáp (FAQ),
+> tóm tắt, ví dụ tính. Một con số giá/lãi suất cũ còn sót trong bài là lỗi.
 
 1. **Đọc nội dung mới nhất của bài TCB** — mỗi lần chạy tải lại bài từ web (`lay` xóa sạch file cũ), rồi đọc trọn bằng `xem`.
    Không dùng bản cũ, không dùng trí nhớ.
@@ -102,8 +105,11 @@ Quy tắc phán đoán (bắt buộc):
   để sửa nội dung gắn với văn bản → `can_duyet`.
 - **Nguồn Techcombank không đọc được** (trang vẽ bằng JavaScript, bị chặn, đã thử công cụ đọc web của bạn): vẫn làm tiếp phần còn lại,
   giữ nguyên mọi thông tin về Techcombank, ghi rõ ở đầu báo cáo bằng `--ghi-chu` và nói với người dùng.
-- Ví dụ minh họa / phép tính mẫu trong bài (vd "gửi 100 triệu, lãi 6%…") là giả định, **không cập nhật** trừ khi người dùng yêu cầu
-  (chỉ kiểm tra phép tính đúng; sai thì ghi `can_duyet`).
+- ⛔ **Mọi giá / lãi suất có trong bài đều phải cập nhật** (Trang dặn 29/10/2026) — không chỉ bảng: cả đoạn văn, tóm tắt đầu bài,
+  phần hỏi đáp (FAQ), danh sách gạch đầu dòng, ví dụ tính. Đọc hết bài, liệt kê **từng** con số giá/lãi suất, đối chiếu với nguồn.
+  Ví dụ tính dùng giá/lãi suất hiện hành (vd "mua nhẫn 1.2 chỉ theo giá bán PNJ…", "gửi 100 triệu kỳ hạn 12 tháng tại X") →
+  thay giá/lãi suất mới và **tính lại kết quả** (đặt `"tinh_toan": true`, giữ nguyên câu). Chỉ số liệu giả định nói rõ ("giả sử 6%")
+  hoặc số cần dữ liệu quá khứ mà không có nguồn (so với 7 ngày trước…) mới giữ nguyên + ghi `can_duyet`.
 
 ## Bước 4 – Ghi các chỗ sửa vào `cap-nhat/sua.json` và áp
 
