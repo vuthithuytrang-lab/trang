@@ -1,7 +1,7 @@
 # Bảng điều khiển cập nhật bài — Google Sheets "Update"
 
 Sheet: https://docs.google.com/spreadsheets/d/1pG0TA0nwiOkF086eAhbukUJ375oZRfuJpQy4bEUiVck/edit (tab đầu tiên, sheetId 0)
-Trang tích ô **"Chạy update"** → lần kiểm tra tự động kế tiếp (mỗi giờ, 8h–18h thứ 2–6) sẽ cập nhật bài đó,
+Ai có quyền sửa Sheet (không cần tài khoản Claude) tích ô **"Chạy update"** → lần kiểm tra tự động kế tiếp (lịch `trig_01G2khUNPPGokGp6wFBSQCGD`, phút thứ 5 mỗi giờ 8h–18h, thứ 2–7, dựng 28/10/2026) sẽ cập nhật bài đó,
 dán link file Docs vào cột ngày hôm nay, rồi bỏ tích. Dựng ngày 07/10/2026.
 
 ## Cấu trúc sheet (giữ nguyên, đừng đổi)
@@ -35,6 +35,7 @@ Bài làm lần đầu chưa đóng gói thì **chưa** thêm vào bảng.
 2. Ngày hôm nay `TZ=Asia/Ho_Chi_Minh`. Tìm cột có tiêu đề = hôm nay (tiêu đề là số ngày kiểu Sheets, xem `formattedValue` dạng `d/m`).
    Chưa có → chèn 1 cột tại F (`insertDimension` COLUMNS start 5 end 6, `inheritFromBefore: false`),
    ghi F1 = số ngày Sheets của hôm nay (`numberValue` = số ngày kể từ 30/12/1899) với `numberFormat` `DATE` pattern `d/m`, in đậm, căn giữa.
+   Ghi ngay `⏳ Đang chạy…` vào ô (dòng × cột hôm nay) của từng dòng được tích, để người tích biết Claude đã nhận.
 3. Với từng dòng cần chạy, chọn cách làm:
    - URL là bài giá cà phê (`gia-ca-phe-hom-nay`) → `../cong-thuc/gia-ca-phe/README.md`.
    - URL là bài giá xăng dầu (`gia-xang-dau-hom-nay`) → `../cong-thuc/gia-xang-dau/README.md`.
@@ -75,5 +76,5 @@ Bài làm lần đầu chưa đóng gói thì **chưa** thêm vào bảng.
 
 ## Giới hạn cần nói thật với Trang
 
-- Không bắt được "ngay lúc tích": chạy theo lịch mỗi giờ (8h–18h, thứ 2–6). Muốn chạy ngay → nhắn Claude "chạy bảng update".
+- Không bắt được "ngay lúc tích": chạy theo lịch mỗi giờ (8h05–18h05, thứ 2–7). Muốn chạy ngay → nhắn Claude "chạy bảng update".
 - Bài chạy sau 15h: giá thế giới trong bài giá cà phê là giá đang giao dịch (không có "s"), xem công thức giá cà phê.
