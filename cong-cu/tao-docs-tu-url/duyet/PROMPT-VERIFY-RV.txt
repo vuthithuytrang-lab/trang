@@ -1,0 +1,9 @@
+Read-only verification of Google Docs that were just edited. Do NOT edit any doc, sheet or file in Drive.
+W = <thư mục nháp của phiên>/  (chép docchk.py, docdiff.py, tohtml.py từ cong-cu/tao-docs-tu-url/duyet/ vào W)
+Groups: __GROUPS__ (each W/rv/<group>/rows.json lists rows with docid; W/rv/<group>/report.json says what the editor changed; W/rv/<group>/prev/r<row>.html is the version BEFORE the edit).
+Load tool via ToolSearch "select:mcp__Google_Drive__download_file_content".
+For each row: download_file_content(fileId=docid, exportMimeType="text/html") — the result is saved to a file; then run
+  python3 -I W/docchk.py W/rv/<group>/rows.json <row> <saved file>
+  python3 -I W/docdiff.py W/rv/<group>/prev/r<row>.html <saved file>
+Check: docchk prints OK (if it reports THIẾU for a link that is merely split into two <a> tags with the same URL by a comment anchor, treat as OK and say so); every docdiff change corresponds to a change listed in report.json; no word is broken/garbled (dropped or duplicated letters, merged words, stray characters), no unintended deletion of original article text, red notes "[Nội dung gốc trước khi chèn: ...]" consistent (a note only after a paragraph that was changed).
+Final message JSON only: [{"row": N, "group": "vNN", "docchk": "OK|...", "problems": ["<exact problem with the quoted text>"], "ok": true|false}]

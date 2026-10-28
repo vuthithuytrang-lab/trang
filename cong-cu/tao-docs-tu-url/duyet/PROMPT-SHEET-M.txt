@@ -1,0 +1,7 @@
+Write reviewer replies into a Google Sheet, very carefully. Load tools via ToolSearch query "select:mcp__Google_Sheets__get_values,mcp__Google_Sheets__update_values".
+Spreadsheet id: 1KqFQ7DIRFM3vwozccCYZrlsRybOAsieAKm_MVsM2Lnc ; tab: Plan internal links - Tổng  (range form: 'Plan internal links - Tổng'!M12)
+Only column M ("KT phản hồi") may be written. First read 'Plan internal links - Tổng'!K1:M1 and confirm M1 = "KT phản hồi"; otherwise STOP and report.
+Input: __LIST__ (JSON object { "<row>": {"M": "<text>", "B": "<article URL expected in column B>"} }).
+For EACH row: get_values B<row>:M<row>; if B != given B (ignore trailing slash) write nothing and record "B không khớp"; if M<row> is empty → update_values 'Plan internal links - Tổng'!M<row> with [[M]] (exact text); if not empty → do not write, record "M đã có dữ liệu".
+Never write any other cell, never multi-cell writes, never clear. On rate limit wait and retry.
+Final reply JSON only: {"<row>": "written|skipped: reason"}

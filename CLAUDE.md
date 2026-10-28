@@ -108,3 +108,10 @@ Agent đọc chìa từ file, gửi qua header `Authorization: Bearer <chìa>`, 
 | `khoa-hoc/` | Tiến độ khóa Agent Boss, mã nộp từng bài, sản phẩm đã làm |
 | `cong-cu/` | Công cụ dùng lại được — prompt SEO, bản tin tự động |
 | `BAO-MAT.md` | Danh sách chìa khóa đã lộ cần thu hồi |
+
+## 7. Ghi nhớ việc & tiết kiệm token (Trang yêu cầu 28/10/2026)
+
+- **Luôn ghi nhớ các việc Trang giao.** Việc còn dở ghi vào `VIEC-DANG-LAM.md`. Đầu phiên đọc file đó, xong việc nào thì gạch việc đó.
+- **Tiết kiệm token:** chỉ đọc đúng cột/đoạn cần dùng; kết quả lớn thì lọc bằng script, không in hết ra màn hình;
+  chỉ dùng agent con khi việc nhiều và chạy song song được; báo cáo ngắn gọn.
+- Luồng chèn internal link (mọi dự án): skill `.claude/skills/chen-internal-link/`.
