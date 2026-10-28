@@ -53,7 +53,19 @@ Cách công cụ làm (`cap-nhat.py`):
 - Chỉ tô lại màu ở bảng có chú thích "Màu xanh … màu đỏ …" ngay bên dưới (Bài 1, cả tại quầy và online). Bài 2 không có chú thích này → không tô màu.
 - Từng cột kỳ hạn, bỏ dòng Techcombank: số cao nhất → chữ xanh đậm, thấp nhất → chữ đỏ đậm, còn lại → chữ thường. Bằng nhau thì tô hết.
 - Ô nào đổi màu (xanh → thường, thường → xanh, …) thì tô vàng và ghi ở mục **4b** của báo cáo. Ô giữ nguyên màu thì không đụng tới.
-- Một bài không có ô lãi suất / màu nào đổi → báo cáo của bài đó chỉ còn link + "Không có thay đổi lãi suất".
+- Một bài không có ô lãi suất / màu nào đổi → báo cáo của bài đó chỉ còn link + "Không có thay đổi lãi suất"
+  (kèm danh sách "Lãi suất ngoài bảng cần người duyệt kiểm tra" nếu có).
+
+## Lãi suất ngoài bảng (Trang dặn 29/10/2026)
+
+Mọi lãi suất trong bài đều phải cập nhật, không chỉ trong bảng (đoạn văn, hỏi đáp, tóm tắt, ví dụ). `dung` tự rà **từng câu** ngoài bảng so sánh
+có con số `x%` hoặc kết quả ví dụ tính tiền, chỉ đổi con số (tô vàng, viết theo kiểu số cũ), ghi ở mục **4c** báo cáo:
+- Tự sửa (tính từ bảng vừa cập nhật, đúng bảng online/tại quầy mà câu nói tới, hoặc bảng duy nhất của bài): "cao nhất / thấp nhất [kỳ hạn N tháng] … X%"
+  (nếu câu nêu tên ngân hàng thì ngân hàng đó phải vẫn giữ mức này), "kỳ hạn N tháng … từ X đến Y%", "kỳ hạn N tháng tại <ngân hàng> … X%".
+  Điều kiện: số cũ trong câu khớp đúng bảng cũ trên web (chứng tỏ câu lấy số từ bảng) và số mới không dưới 1%/năm.
+- Giữ nguyên + ghi "Ngoài bảng – …" ở mục 8: lãi suất / ví dụ tính của Techcombank (chỉ sửa theo techcombank.com), mức gắn văn bản pháp luật,
+  số giả định ("giả sử"), câu nhắc nhiều kỳ hạn, khoảng chênh online − tại quầy khi số liệu nhiễu (có ngân hàng online thấp hơn, chênh > 1 điểm),
+  ví dụ tính tiền theo lãi suất ngân hàng khác (ghi lãi suất mới, cần tính lại), câu không khớp bảng cũ, ngân hàng giữ mức cao nhất đã đổi.
 
 ---
 

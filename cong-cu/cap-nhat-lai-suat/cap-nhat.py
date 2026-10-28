@@ -154,13 +154,14 @@ def dung(hom_nay):
     json.dump(kq, open(TAM + 'ket-qua.json', 'w'), ensure_ascii=False, indent=1)
     for ma, b in kq['bai'].items():
         print(ma, b.get('loi') or f"{len(b['sua'])} ô sửa, {len(b['gan_nhat'])} ô theo kỳ hạn gần nhất, "
-                                    f"{len(b['chinh_thuc'])} ô trường hợp B, đổi ngày/tháng: {b['doi_ngay']}")
+                                    f"{len(b['chinh_thuc'])} ô trường hợp B, {len(b['ngoai_bang'])} số ngoài bảng, "
+                                    f"đổi ngày/tháng: {b['doi_ngay']}")
 
 
 def dung_bai(ma, cfg, hom_nay, vne, topi):
     thang_nay = hom_nay[3:]
     src = open(f'{TAM}{ma}.html', encoding='utf-8').read()
-    ghi = {'doi_mau': [], 'sua': [], 'gan_nhat': [], 'gan_nhat_trung': [], 'chinh_thuc': [], 'gach': [], 'can_duyet': [], 'doi_ngay': []}
+    ghi = {'doi_mau': [], 'sua': [], 'gan_nhat': [], 'gan_nhat_trung': [], 'chinh_thuc': [], 'gach': [], 'can_duyet': [], 'doi_ngay': [], 'ngoai_bang': []}
 
     def to_vang(x, dam=None):
         return f'<span style="{VANG}{";font-weight:400" if dam is False else ""}">{x}</span>'
@@ -376,7 +377,10 @@ def dung_bai(ma, cfg, hom_nay, vne, topi):
                 ghi['sua'].append([bang, ten, k, cu, gt, nguon])
         return row
 
+    bang_cu = doc_bang_so(body)
     body = re.sub(r'<table.*?</table>', sua_bang, body, flags=re.S)
+    # lãi suất ngoài bảng so sánh (đoạn văn, hỏi đáp, ví dụ): tính lại từ bảng vừa cập nhật, không chắc thì ghi cần duyệt
+    body = sua_ngoai_bang(body, bang_cu, doc_bang_so(body), cfg, ghi, to_vang)
 
     # ----- kẻ bảng giống file mẫu: viền xám nhạt, cột tên ngân hàng 92.5pt, cột kỳ hạn 51.3pt -----
     TD = 'border:1px solid #ddd'
@@ -417,6 +421,232 @@ def dung_bai(ma, cfg, hom_nay, vne, topi):
     ghi['ten_file'] = f'{cfg["ten_file"]} – {hom_nay}'
     ghi['kich_thuoc'] = len(g)
     return ghi
+
+
+# ============ SỐ LÃI SUẤT NGOÀI BẢNG SO SÁNH (Trang dặn 29/10/2026) ============
+# Mọi lãi suất trong bài đều phải cập nhật, không chỉ trong bảng: đoạn văn, hỏi đáp, tóm tắt, ví dụ tính.
+# Chỉ đổi con số, giữ nguyên câu. Câu nào không tính được rõ ràng từ bảng vừa cập nhật -> giữ nguyên + ghi cần duyệt.
+SO_LS = re.compile(r'(?<![\d.,])(\d{1,2}(?:[.,]\d{1,3})?)(?:\s*%)?(\s*(?:-|–|đến)\s*)(\d{1,2}(?:[.,]\d{1,3})?)\s*%'
+                   r'|(?<![\d.,])(\d{1,2}(?:[.,]\d{1,3})?)\s*%')
+TIEN = re.compile(r'\d{1,3}(?:[.,]\d{3}){2,}')          # số tiền kiểu 100,000,000 / 21.370.000 (ví dụ tính)
+PHAP_LUAT = re.compile(r'Quyết định|Thông tư|Nghị định|/QĐ-|/TT-|NHNN')
+GIA_DINH = re.compile(r'giả sử|giả định', re.I)
+
+
+def la_bang_so_sanh(tb):
+    return bool(re.search(r'Ngân hàng\s*</b>', tb)) and 'Techcombank' in tb
+
+
+def khoa_bang(truoc):
+    """Bảng tại quầy hay online, theo chữ ngay phía trên bảng (cùng cách với phần sửa bảng)."""
+    truoc = chu(truoc)[-400:].lower()
+    h = truoc.rfind('online'), truoc.rfind('tại quầy')
+    return 'online' if h[0] > h[1] else 'quay'
+
+
+def doc_bang_so(body):
+    """{'quay'|'online': {tên: {kỳ: số}}} của các bảng so sánh lãi suất (bỏ dòng Techcombank, bỏ ô "-")."""
+    out = {}
+    for m in re.finditer(r'<table.*?</table>', body, re.S):
+        if not la_bang_so_sanh(m.group(0)):
+            continue
+        hang = re.findall(r'<tr.*?</tr>', m.group(0), re.S)
+        cot = [re.sub(r'\D', '', chu(c)) for c in re.findall(r'<td[^>]*>.*?</td>', hang[0], re.S)]
+        bang = {}
+        for row in hang[1:]:
+            cells = [chu(c) for c in re.findall(r'<td[^>]*>.*?</td>', row, re.S)]
+            ten = cells[0].replace(' (', '(').replace('(', ' (')
+            if ten != 'Techcombank':
+                bang[ten] = {k: so(v) for k, v in zip(cot[1:], cells[1:]) if k in THU_TU and so(v) is not None}
+        out.setdefault(khoa_bang(body[:m.start()]), bang)
+    return out
+
+
+def tach_chu(h):
+    """Chữ thuần của đoạn HTML + vị trí từng ký tự trong HTML, để sửa đúng con số mà không đụng thẻ.
+    Cuối đoạn/mục (</p>, </li>, </hN>, <br>) thành xuống dòng để không ghép câu của hai đoạn."""
+    plain, pos = [], []
+    for m in re.finditer(r'<[^>]+>|&#?\w+;|[^<&]+|[<&]', h):
+        t = m.group(0)
+        if len(t) > 1 and t[0] == '<':
+            if re.match(r'</(?:p|li|h\d|div)\b|<br', t):
+                plain.append('\n'); pos.append(m.start())
+        elif len(t) > 1 and t[0] == '&':
+            plain.append((html.unescape(t).replace('\xa0', ' ') or ' ')[0]); pos.append(m.start())
+        else:
+            plain.extend(t); pos.extend(range(m.start(), m.end()))
+    return ''.join(plain), pos
+
+
+def cau(plain):
+    """Các câu (đầu, cuối) trong chữ thuần: tách ở xuống dòng và ở . ! ? có khoảng trắng phía sau (số 6.5 không bị tách)."""
+    ra, dau = [], 0
+    for i, c in enumerate(plain):
+        if c == '\n' or (c in '.!?' and (i + 1 == len(plain) or plain[i + 1].isspace())):
+            if plain[dau:i + 1].strip():
+                ra.append((dau, i + 1))
+            dau = i + 1
+    if plain[dau:].strip():
+        ra.append((dau, len(plain)))
+    return ra
+
+
+def viet_nhu(v, cu):
+    """Viết số mới theo kiểu số cũ cùng chỗ: cùng dấu thập phân, ít nhất bằng số chữ số thập phân cũ (6.0 -> 7.0, 6.50 -> 6.80),
+    không làm tròn bớt chữ số của nguồn (0.1 -> 0.25)."""
+    tp = ',' if ',' in cu else '.'
+    n = len(re.split(r'[.,]', cu)[1]) if re.search(r'[.,]', cu) else 0
+    s = ('%.4f' % v).rstrip('0').rstrip('.')
+    if (len(s.split('.')[1]) if '.' in s else 0) < n:
+        s = '%.*f' % (n, v)
+    return s.replace('.', tp)
+
+
+def ten_trong_cau(t, bang):
+    """Tên ngân hàng (theo tên dòng trong bảng) được nhắc trong câu; nhận cả tên ghép chắc chắn ở TEN."""
+    ra = set()
+    for ten in bang:
+        for bien in {ten, *TEN.get(ten, ())}:
+            if re.search(r'(?<!\w)' + re.escape(bien) + r'(?!\w)', t):
+                ra.add(ten)
+    return ra
+
+
+def chenh_online_quay(bang):
+    """Chênh lệch online − tại quầy cho từng cặp ngân hàng–kỳ hạn có ở cả hai bảng (ghép tên CBBank = VCB Neo (CBBank))."""
+    chuan = lambda x: TEN.get(x, (x,))[0]
+    q = {chuan(t): v for t, v in bang['quay'].items()}
+    return sorted(round(o[k] - q[chuan(t)][k], 2) for t, o in bang['online'].items() if chuan(t) in q
+                  for k in o if k in q[chuan(t)])
+
+
+def sua_ngoai_bang(body, bang_cu, bang_moi, cfg, ghi, to_vang):
+    """Rà mọi câu ngoài bảng so sánh có lãi suất (x%) hoặc kết quả ví dụ tính tiền. Tự sửa các dạng tính được chắc chắn
+    từ bảng vừa cập nhật; còn lại giữ nguyên và ghi 'Ngoài bảng – …' vào cần duyệt."""
+    vd_tcb = [False]   # đang trong ví dụ tính tại Techcombank: từ câu "Ví dụ …" có số tiền/lãi suất và nhắc Techcombank tới đề mục kế tiếp
+    bang_dung = {k: v for k, v in bang_moi.items() if k in cfg['bang']}
+
+    def duyet(t, ly_do):
+        ghi['can_duyet'].append(f'Ngoài bảng – "{rut_gon(t)}": {ly_do}')
+
+    def xu_ly_cau(t, so_ls, co_tien):
+        """Trả về [(chỉ số con số trong so_ls, số mới dạng float)] để sửa, hoặc None (đã ghi cần duyệt / không cần sửa)."""
+        th = t.lower()
+        if PHAP_LUAT.search(t):
+            return duyet(t, 'mức lãi suất gắn với văn bản pháp luật – chỉ sửa theo nguồn chính thức về văn bản đó, giữ nguyên.')
+        if 'Techcombank' in t or vd_tcb[0]:
+            return duyet(t, 'lãi suất/ví dụ tính của Techcombank – chỉ sửa theo techcombank.com (biểu lãi suất chính thức), giữ nguyên.')
+        if GIA_DINH.search(t):
+            return duyet(t, 'số giả định nói rõ trong câu – giữ nguyên.')
+        if not so_ls:
+            return duyet(t, 'kết quả ví dụ tính tiền – không rõ lãi suất căn cứ, giữ nguyên.')
+        if 'online' in th and 'quầy' in th and re.search(r'cao hơn|thấp hơn|chênh', th):
+            if 'quay' not in bang_moi or 'online' not in bang_moi:
+                return duyet(t, 'so sánh online với tại quầy nhưng bài không có đủ hai bảng để tính, giữ nguyên.')
+            c = chenh_online_quay(bang_moi)
+            duong = [x for x in c if x > 0]
+            if len(so_ls) == 1 and so_ls[0][0] == 'khoang' and duong and min(c) >= 0 and max(c) <= 1:
+                return [(0, (min(duong), max(duong)))]
+            p = lambda q: c[int(q * (len(c) - 1))]
+            return duyet(t, f'khoảng chênh online − tại quầy không tính gọn được từ 2 bảng mới: {len(c)} cặp ngân hàng–kỳ hạn, '
+                            f'online cao hơn {len(duong)}, bằng {sum(x == 0 for x in c)}, thấp hơn {sum(x < 0 for x in c)}; '
+                            f'chênh từ {c[0]:g} đến {c[-1]:g}, nửa giữa {p(.25):g}–{p(.75):g} điểm %. Giữ nguyên.')
+        # bảng căn cứ: câu nói rõ online / tại quầy; không nói thì bài chỉ có 1 bảng mới dùng được
+        key = 'online' if 'online' in th and 'quầy' not in th else 'quay' if 'quầy' in th and 'online' not in th else \
+            next(iter(bang_dung)) if len(bang_dung) == 1 else None
+        if key not in bang_dung or key not in bang_cu:
+            return duyet(t, 'không rõ câu nói về bảng tại quầy hay online, giữ nguyên.')
+        moi, cu = bang_dung[key], bang_cu[key]
+        ky = sorted(set(re.findall(r'(\d{1,2})\s*tháng', t)) & set(THU_TU), key=int)
+        if len(ky) > 1:
+            return duyet(t, f'câu nhắc nhiều kỳ hạn ({", ".join(ky)} tháng) – không tự ghép số với kỳ hạn, giữ nguyên.')
+        cot = lambda b: [v.get(ky[0]) for v in b.values()] if ky else [x for v in b.values() for x in v.values()]
+        gom = lambda b: [x for x in cot(b) if x is not None]
+        ten = ten_trong_cau(t, moi)
+        if ('cao nhất' in th) != ('thấp nhất' in th) and len(so_ls) == 1 and so_ls[0][0] == 'mot':
+            f = max if 'cao nhất' in th else min
+            v_cu, v_moi = f(gom(cu)), f(gom(moi))
+            dat = {n for n, v in moi.items() if (v.get(ky[0]) if ky else f(v.values(), default=None)) == v_moi}
+            de_xuat = f'{viet_nhu(v_moi, so_ls[0][1])}%/năm ({", ".join(sorted(dat))})'
+            if so(so_ls[0][1]) != v_cu:
+                return duyet(t, f'số trong câu ({so_ls[0][1]}) không khớp bảng cũ ({v_cu:g}) – không rõ câu lấy số từ đâu. Theo bảng mới: {de_xuat}.')
+            if v_moi < 1:
+                return duyet(t, f'theo bảng mới là {de_xuat} – dưới 1%/năm, số bất thường trên nguồn, không tự đưa vào câu.')
+            if ten and not ten <= dat:
+                return duyet(t, f'ngân hàng có mức này đã đổi – theo bảng mới: {de_xuat}. Không tự đổi tên ngân hàng trong câu.')
+            return [(0, v_moi)]
+        if ky and len(so_ls) == 1 and so_ls[0][0] == 'khoang' and not ten:
+            r_cu, r_moi = (min(gom(cu)), max(gom(cu))), (min(gom(moi)), max(gom(moi)))
+            if (so(so_ls[0][1]), so(so_ls[0][2])) != r_cu:
+                return duyet(t, f'khoảng trong câu không khớp bảng cũ ({r_cu[0]:g}–{r_cu[1]:g}). Theo bảng mới kỳ hạn {ky[0]} tháng: '
+                                f'{r_moi[0]:g}–{r_moi[1]:g}%/năm.')
+            if r_moi[0] < 1:
+                return duyet(t, f'theo bảng mới kỳ hạn {ky[0]} tháng: {r_moi[0]:g}–{r_moi[1]:g}%/năm, đầu dưới dưới 1%/năm là số bất thường '
+                                f'trên nguồn – không tự chọn cách lọc, giữ nguyên.')
+            return [(0, r_moi)]
+        if ky and len(ten) == 1 and len(so_ls) == 1 and so_ls[0][0] == 'mot':
+            n = ten.pop()
+            v_cu, v_moi = cu.get(n, {}).get(ky[0]), moi[n].get(ky[0])
+            if v_moi is None or so(so_ls[0][1]) != v_cu or v_moi < 1:
+                return duyet(t, f'số trong câu không khớp ô {n} – {ky[0]} tháng của bảng cũ ({v_cu}), bảng mới ghi {v_moi}. Giữ nguyên.')
+            if co_tien and v_moi != v_cu:
+                return duyet(t, f'ví dụ tính tiền theo lãi suất {n} – {ky[0]} tháng: lãi suất mới {v_moi:g}%/năm, cần tính lại kết quả. Giữ nguyên.')
+            return [(0, v_moi)]
+        return duyet(t, 'chưa có cách tính tự động cho câu dạng này, giữ nguyên.')
+
+    def sua_khoi(h):
+        plain, pos = tach_chu(h)
+        thay = []                                         # (đầu, cuối trong HTML, chữ mới)
+        for a, b in cau(plain):
+            t = plain[a:b].strip()
+            if re.match(r'Ví dụ', t) and (TIEN.search(t) or SO_LS.search(t)):    # mở đầu một ví dụ tính (có tiền / lãi suất)
+                vd_tcb[0] = 'Techcombank' in t
+            so_ls = [('khoang', m.group(1), m.group(3), m.start(1) + a, m.start(3) + a) if m.group(1) else
+                     ('mot', m.group(4), m.start(4) + a) for m in SO_LS.finditer(plain[a:b])]
+            co_tien = bool(TIEN.search(t))
+            if not so_ls and not (co_tien and '=' in t):
+                continue
+            kq = xu_ly_cau(t, so_ls, co_tien)
+            for i, v in kq or []:
+                x = so_ls[i]
+                cap = [(x[1], x[3], v[0]), (x[2], x[4], v[1])] if x[0] == 'khoang' else [(x[1], x[2], v)]
+                for cu_s, d, gia in cap:
+                    moi_s = viet_nhu(gia, cu_s)
+                    if so(moi_s) == so(cu_s):
+                        continue
+                    if pos[d + len(cu_s) - 1] - pos[d] != len(cu_s) - 1:
+                        duyet(t, f'số {cu_s} nằm vắt qua định dạng, không thay được – số mới {moi_s}.')
+                        continue
+                    thay.append((pos[d], pos[d] + len(cu_s), moi_s))
+                    ghi['ngoai_bang'].append([rut_gon(t), cu_s, moi_s])
+        for d, c, moi_s in sorted(thay, reverse=True):
+            h = h[:d] + to_vang(moi_s) + h[c:]
+        return h
+
+    phan = re.split(r'(<table.*?</table>)', body, flags=re.S)
+    for i, p in enumerate(phan):
+        if p.startswith('<table'):
+            if la_bang_so_sanh(p):
+                continue
+            o = [chu(x) for x in re.findall(r'<td[^>]*>.*?</td>', p, re.S)]
+            ls = [x for x in o if re.fullmatch(r'\d{1,2}[.,]\d{1,3}', x)] if 'Lãi suất' in chu(p) else []
+            if ls:
+                duyet(' | '.join(o[:4]), f'bảng ví dụ có {len(ls)} ô lãi suất ({", ".join(dict.fromkeys(ls))}) cùng các số tiền tính theo đó – '
+                      + ('lãi suất Techcombank, chỉ sửa theo techcombank.com' if vd_tcb[0] else 'chưa có cách tính tự động')
+                      + ', giữ nguyên.')
+            continue
+        # từng đề mục / đoạn / mục danh sách, đúng thứ tự trong bài
+        def khoi(m):
+            if re.match(r'<h\d', m.group(0)):
+                vd_tcb[0] = False
+            return sua_khoi(m.group(0))
+        phan[i] = re.sub(r'<(h[1-6]|p|li)\b[^>]*>.*?</\1>', khoi, p, flags=re.S)
+    return ''.join(phan)
+
+
+def rut_gon(t, n=110):
+    t = re.sub(r'\s+', ' ', t).strip()
+    return t if len(t) <= n else t[:n - 1] + '…'
 
 
 # ======================= SOÁT =======================
@@ -461,9 +691,13 @@ def bao_cao(hom_nay, links, them):
             L += [b['loi'], '']
             continue
         k = lambda x: f'{x} tháng'
-        if not (b['sua'] or b['gan_nhat'] or b['chinh_thuc'] or b.get('doi_mau')):
+        nb = b.get('ngoai_bang', [])
+        if not (b['sua'] or b['gan_nhat'] or b['chinh_thuc'] or b.get('doi_mau') or nb):
             # Trang dặn: lãi suất không đổi thì chỉ cần báo không thay đổi
             L += [f'**Link file:** [{b["ten_file"]}]({link})', '', '**Không có thay đổi lãi suất.**', '']
+            con = [x for x in b['can_duyet'] if x.startswith('Ngoài bảng')]
+            if con:      # quy tắc 29/10/2026: lãi suất ngoài bảng chưa tự cập nhật được vẫn phải báo để người duyệt xem
+                L += ['**Lãi suất ngoài bảng cần người duyệt kiểm tra:**', ''] + [f'- {x}' for x in con] + ['']
             continue
         L += [f'**1. Link file:** [{b["ten_file"]}]({link})', '', '**2. Ngày tháng đã đổi:**', '']
         L += [f'- {x}' for x in b['doi_ngay']] or ['- Ngày, tháng trong bài đã đúng, không đổi.']
@@ -478,6 +712,8 @@ def bao_cao(hom_nay, links, them):
         dm = b.get('doi_mau', [])
         L += ['', f'**4b. Ô đổi màu cao nhất / thấp nhất ({len(dm)} ô, đều tô vàng):**', '']
         L += [f'- Bảng {c[0]} – {c[1]} – {k(c[2])}: {c[3]} — {c[4]} → {c[5]}' for c in dm] or ['- Không có.']
+        L += ['', f'**4c. Lãi suất ngoài bảng đã sửa – đoạn văn, hỏi đáp, ví dụ ({len(nb)} số, đều tô vàng):**', '']
+        L += [f'- "{c[0]}": {c[1]} → {c[2]} (tính từ bảng vừa cập nhật)' for c in nb] or ['- Không có.']
         L += ['', f'**5. Ô lấy theo kỳ hạn gần nhất – Trường hợp A ({len(b["gan_nhat"])} ô):**', '']
         L += [f'- Bảng {c[0]} – {c[1]} – {k(c[2])}: {c[3]} → {c[4]} (lấy theo kỳ hạn {c[5]} tháng)' for c in b['gan_nhat']] or ['- Không có.']
         if b['gan_nhat_trung']:
@@ -496,7 +732,8 @@ def bao_cao(hom_nay, links, them):
             if tre > 3:
                 cu.append(f'Dữ liệu VnExpress cũ {tre} ngày (cập nhật đến {n["vne_ngay"]}); kỳ hạn ngắn có thể đã đổi mà VnExpress chưa cập nhật.')
         L += [f'- {x}' for x in cu + b['can_duyet'] + bat_thuong(b)] or ['- Không có.']
-        L += ['', f'**9.** Có thay đổi: {len(b["sua"]) + len(b["gan_nhat"]) + len(b["chinh_thuc"])} ô lãi suất, {len(dm)} ô đổi màu.']
+        L += ['', f'**9.** Có thay đổi: {len(b["sua"]) + len(b["gan_nhat"]) + len(b["chinh_thuc"])} ô lãi suất, {len(dm)} ô đổi màu, '
+                  f'{len(nb)} số ngoài bảng.']
     p = f'bao-cao/{hom_nay[6:]}-{hom_nay[3:5]}-{hom_nay[:2]}.md'
     open(p, 'w').write('\n'.join(L) + '\n')
     print('\n'.join(L))
