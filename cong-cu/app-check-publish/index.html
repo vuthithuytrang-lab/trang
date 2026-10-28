@@ -74,6 +74,10 @@ h2{margin:0 0 6px;font-size:18px;font-weight:700}
 .chuthich{font-size:13px;color:var(--chu-phu);margin:0 0 12px}
 ol.cach{margin:0;padding-left:20px;display:grid;gap:6px;font-size:14px}
 .chan{font-size:12px;color:var(--chu-phu)}
+details.cai summary{cursor:pointer;font-weight:700;font-size:16px}
+details.cai pre{margin:12px 0 0;max-height:260px;overflow:auto;background:var(--nen);border:1px solid var(--vien);border-radius:10px;padding:12px;font-size:12px;line-height:1.45}
+.trangthai{display:grid;gap:4px;font-size:13px;color:var(--chu-phu)}
+.trangthai b{color:var(--chu);font-weight:600}
 .chan a{color:var(--xanh)}
 @media (prefers-reduced-motion:no-preference){.nut,.loc button{transition:background .15s,opacity .15s}}
 </style>
@@ -113,6 +117,7 @@ ol.cach{margin:0;padding-left:20px;display:grid;gap:6px;font-size:14px}
       </div>
     </div>
     <p class="tb" id="tb-kiem" role="status"></p>
+    <div class="trangthai" id="trangthai" style="margin-top:10px"></div>
   </section>
 
   <div class="bang">
@@ -138,21 +143,285 @@ ol.cach{margin:0;padding-left:20px;display:grid;gap:6px;font-size:14px}
       <h2>App này làm gì</h2>
       <ol class="cach">
         <li>Đọc thẳng sheet “Theo dõi publish TCB”, tự làm mới mỗi phút.</li>
-        <li>Mỗi tối 19:00 máy tự kiểm 1 lần. Từ 18:00 trở đi, bài phải sang <b>ngày mai</b> mới tính là đã cập nhật.</li>
-        <li>Bấm <b>Kiểm tra ngay</b> để Claude mở lại toàn bộ link, ghi kết quả mới vào sheet. Mất khoảng 2–3 phút, bảng tự hiện số mới.</li>
-        <li>Ô hồng là trang còn để ngày cũ, giống màu trong sheet.</li>
+        <li>Việc kiểm do máy chủ Google chạy ngay trong sheet: miễn phí, không cần Claude.</li>
+        <li>Mỗi tối khoảng 19:00 máy tự kiểm rồi nhắn Lark: hết thì “Done”, còn thiếu thì soạn sẵn tin gửi chị Tú Anh kèm danh sách link.</li>
+        <li>Bấm <b>Kiểm tra ngay</b>: trong vòng 5 phút máy kiểm, ghi vào sheet và nhắn Lark.</li>
+        <li>Từ 18:00 trở đi, bài phải sang <b>ngày mai</b> mới tính là đã cập nhật. Ô hồng là trang còn để ngày cũ.</li>
       </ol>
       <p class="chan" style="margin-top:12px"><a href="https://docs.google.com/spreadsheets/d/11YEh1C_oB23FX3AwOupR4P00xaIAMB8jfXY21zCqzgI/edit" target="_blank" rel="noopener">Mở Google Sheet gốc ↗</a></p>
     </section>
   </div>
+
+  <section class="the" aria-label="Cài máy tự kiểm">
+    <details class="cai" id="khoi-cai">
+      <summary>Mã cài máy tự kiểm (chỉ dùng 1 lần)</summary>
+      <p class="chuthich" style="margin-top:10px">Dán toàn bộ mã này vào Google Sheet → Tiện ích mở rộng → Apps Script. Claude sẽ hướng dẫn từng bước trong chat.</p>
+      <button type="button" class="nut" id="nut-chep">Sao chép mã</button>
+      <p class="tb" id="tb-chep" role="status"></p>
+      <pre id="ma-gs-hien"></pre>
+    </details>
+  </section>
 </div>
 
+<script type="text/plain" id="ma-gs">/**
+ * Check Publish TCB — chạy ngay trong Google Sheet "Theo dõi publish TCB" (Apps Script).
+ * Chạy trên máy chủ Google: miễn phí, không cần Claude, không tốn token.
+ *
+ * - Mỗi tối khoảng 19:00 (giờ VN) tự mở từng link ở cột B, đọc ngày đang hiện, ghi vào cặp cột
+ *   "dd/mm/yyyy | Kiểm tra lúc". Từ 18:00 trở đi so với NGÀY MAI (bài phải sang ngày hôm sau từ tối).
+ * - Xong gửi tin vào Lark: hết thì "Done", còn thiếu thì soạn sẵn tin nhờ chị Tú Anh publish lại.
+ * - App Check Publish ghi yêu cầu vào tab "Điều khiển" ô B1 → trong vòng 5 phút máy tự kiểm.
+ * - Menu "Check publish" trên thanh công cụ của sheet: Kiểm tra ngay, cài link Lark, bật/tắt lịch.
+ */
+
+var TAB = 'Untitled';
+var TAB_DK = 'Điều khiển';
+var TZ = 'Asia/Ho_Chi_Minh';
+var GIO_CHUYEN_NGAY = 18;
+var GIO_TU_KIEM = 19;
+var UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36';
+
+function onOpen() {
+  SpreadsheetApp.getUi().createMenu('Check publish')
+    .addItem('Kiểm tra ngay', 'kiemTay')
+    .addSeparator()
+    .addItem('Bước 1 · Cài link Lark', 'caiLark')
+    .addItem('Bước 2 · Bật lịch tự động', 'batLich')
+    .addSeparator()
+    .addItem('Gửi thử tin Lark', 'guiThu')
+    .addItem('Tắt lịch tự động', 'tatLich')
+    .addToUi();
+}
+
+/* ---------- Các nút trong menu ---------- */
+
+function kiemTay() {
+  var kq = kiem_();
+  SpreadsheetApp.getUi().alert(kq ? kq.tomTat + '\n\nLark: ' + kq.lark : 'Đang có một lần kiểm khác chạy, thử lại sau 1 phút.');
+}
+
+function caiLark() {
+  var ui = SpreadsheetApp.getUi();
+  var tl = ui.prompt('Cài link Lark',
+    'Dán link webhook của bot Lark (bắt đầu bằng https://open.larksuite.com/open-apis/bot/...).\n' +
+    'Link được cất kín trong sheet này, không hiện ra ở ô nào.', ui.ButtonSet.OK_CANCEL);
+  if (tl.getSelectedButton() !== ui.Button.OK) return;
+  var url = tl.getResponseText().trim();
+  if (!/^https:\/\/[^\s]+\/open-apis\/bot\/v2\/hook\/[\w-]+$/.test(url)) {
+    ui.alert('Link chưa đúng dạng. Link đúng trông như: https://open.larksuite.com/open-apis/bot/v2/hook/xxxxxxxx');
+    return;
+  }
+  PropertiesService.getScriptProperties().setProperty('LARK_WEBHOOK', url);
+  var kq = guiLark_('Check publish TCB đã kết nối Lark thành công.');
+  ui.alert(kq === 'ok' ? 'Đã lưu. Bạn mở Lark xem có tin nhắn thử chưa nhé.' : 'Đã lưu nhưng gửi thử chưa được: ' + kq);
+}
+
+function guiThu() {
+  var kq = guiLark_('Tin nhắn thử từ Check publish TCB.');
+  SpreadsheetApp.getUi().alert(kq === 'ok' ? 'Đã gửi tin thử vào Lark.' : 'Chưa gửi được: ' + kq);
+}
+
+function batLich() {
+  tatLich_();
+  ScriptApp.newTrigger('kiemTheoLich').timeBased().atHour(GIO_TU_KIEM).nearMinute(0).everyDays(1).inTimezone(TZ).create();
+  ScriptApp.newTrigger('xuLyYeuCau').timeBased().everyMinutes(5).create();
+  bangDieuKhien_();
+  SpreadsheetApp.getUi().alert('Đã bật. Mỗi tối khoảng 19:00 máy tự kiểm và nhắn Lark.\nNút "Kiểm tra ngay" trên app sẽ chạy trong vòng 5 phút.');
+}
+
+function tatLich() {
+  tatLich_();
+  SpreadsheetApp.getUi().alert('Đã tắt lịch tự động. Bấm "Bước 2 · Bật lịch tự động" để bật lại.');
+}
+
+/* ---------- Chạy theo lịch ---------- */
+
+function kiemTheoLich() { kiem_(); }
+
+/** Mỗi 5 phút: app có bấm "Kiểm tra ngay" (ghi giờ vào Điều khiển!B1) thì kiểm. */
+function xuLyYeuCau() {
+  var dk = bangDieuKhien_();
+  var yc = String(dk.getRange('B1').getDisplayValue()).trim();
+  if (!yc) return;
+  dk.getRange('B1').setValue('');
+  kiem_();
+}
+
+/* ---------- Phần chính ---------- */
+
+function kiem_() {
+  var lock = LockService.getScriptLock();
+  if (!lock.tryLock(2000)) return null;
+  try {
+    var ss = SpreadsheetApp.getActive();
+    var sh = ss.getSheetByName(TAB);
+    var bay = new Date();
+    var gio = Number(Utilities.formatDate(bay, TZ, 'H'));
+    var ngay = new Date(bay.getTime() + (gio >= GIO_CHUYEN_NGAY ? 86400000 : 0));
+    var nhanNgay = Utilities.formatDate(ngay, TZ, 'dd/MM/yyyy');
+    var soNgay = Number(Utilities.formatDate(ngay, TZ, 'yyyyMMdd'));
+    var gioKiem = Utilities.formatDate(bay, TZ, 'HH:mm dd/MM/yyyy');
+
+    var soHang = sh.getLastRow();
+    var tieuDe = sh.getRange(1, 1, 1, Math.max(2, sh.getLastColumn())).getDisplayValues()[0];
+    var hang = soHang > 1 ? sh.getRange(2, 1, soHang - 1, 2).getDisplayValues() : [];
+
+    // Cặp cột của ngày cần kiểm: có rồi thì ghi đè, chưa có thì thêm bên phải (C, E, G...)
+    var c = tieuDe.indexOf(nhanNgay, 2);
+    if (c < 0) {
+      var n = tieuDe.length;
+      while (n > 2 && !String(tieuDe[n - 1]).trim()) n--;
+      c = Math.max(2, n);
+      if (c % 2) c++;
+    }
+    if (c + 2 > sh.getMaxColumns()) sh.insertColumnsAfter(sh.getMaxColumns(), c + 2 - sh.getMaxColumns() + 10);
+    if (c !== 2) sh.getRange(1, 3, Math.max(soHang, 2), 2)
+      .copyTo(sh.getRange(1, c + 1, Math.max(soHang, 2), 2), SpreadsheetApp.CopyPasteType.PASTE_FORMAT, false);
+
+    var urls = hang.map(function (r) { return String(r[1]).trim(); });
+    var kq = layNgay_(urls);
+
+    var giaTri = [[nhanNgay, 'Kiểm tra lúc']];
+    var xong = 0, tre = [], loi = [], tong = 0;
+    kq.forEach(function (o, i) {
+      if (o.bo) { giaTri.push(['', '']); return; }
+      tong++;
+      if (o.loi) { giaTri.push([o.loi, gioKiem]); loi.push(urls[i]); return; }
+      if (!o.ngay) { giaTri.push(['Không có ngày', gioKiem]); loi.push(urls[i]); return; }
+      giaTri.push([o.chu, gioKiem]);
+      if (o.so >= soNgay) xong++; else tre.push(urls[i]);
+    });
+    var vung = sh.getRange(1, c + 1, giaTri.length, 2);
+    vung.setNumberFormat('@');
+    vung.setValues(giaTri);
+
+    var tomTat = 'Kiểm lúc ' + gioKiem + ' (so với ngày ' + nhanNgay + '): đã cập nhật ' + xong + '/' + tong +
+      ', chưa cập nhật ' + tre.length + ', lỗi ' + loi.length + '.';
+
+    var tin;
+    if (!tre.length && !loi.length) {
+      tin = 'Done';
+    } else {
+      var ds = tre.concat(loi);
+      tin = 'Chị Tú Anh ơi team đã check và thấy còn ' + ds.length +
+        ' bài chưa được publish nhờ chị publish lại giúp team ạ.\nDanh sách url chưa publish tại đây:\n' + ds.join('\n');
+    }
+    var lark = guiLark_(tin);
+
+    var dk = bangDieuKhien_();
+    dk.getRange('B2:B4').setValues([[gioKiem], [tomTat], [lark === 'ok' ? 'Đã gửi Lark' : 'Chưa gửi Lark: ' + lark]]);
+    return {tomTat: tomTat, lark: lark === 'ok' ? 'đã gửi' : lark};
+  } finally {
+    lock.releaseLock();
+  }
+}
+
+/** Mở từng link (10 link một lượt), trang lỗi mạng thì thử lại 1 lần. */
+function layNgay_(urls) {
+  var out = urls.map(function (u) { return /^https?:\/\//.test(u) ? null : {bo: true}; });
+  for (var lan = 0; lan < 2; lan++) {
+    var can = [];
+    out.forEach(function (o, i) { if (!o || o.loi) can.push(i); });
+    if (!can.length) break;
+    if (lan) Utilities.sleep(4000);
+    for (var k = 0; k < can.length; k += 10) {
+      var nhom = can.slice(k, k + 10);
+      var yc = nhom.map(function (i) { return yeuCau_(urls[i]); });
+      var tl;
+      try {
+        tl = UrlFetchApp.fetchAll(yc);
+      } catch (e) {  // một link hỏng làm cả lượt lỗi → mở riêng từng link
+        tl = yc.map(function (r) { try { return UrlFetchApp.fetch(r.url, r); } catch (e2) { return null; } });
+      }
+      tl.forEach(function (r, j) {
+        var i = nhom[j];
+        if (!r) { out[i] = {loi: 'Lỗi: không vào được'}; return; }
+        var ma = r.getResponseCode();
+        if (ma !== 200) { out[i] = {loi: 'Lỗi: ' + ma}; return; }
+        out[i] = tachNgay_(urls[i], r.getContentText('UTF-8')) || {ngay: false};
+      });
+    }
+  }
+  return out;
+}
+
+function yeuCau_(url) {
+  return {
+    url: url + (url.indexOf('?') < 0 ? '?' : '&') + '_kiem=' + Math.floor(Math.random() * 1e9),  // vượt bản lưu tạm
+    muteHttpExceptions: true, followRedirects: true,
+    headers: {'User-Agent': UA, 'Accept-Language': 'vi-VN,vi;q=0.9', 'Cache-Control': 'no-cache', 'Pragma': 'no-cache'}
+  };
+}
+
+/** Blog: ngày ISO trong khung dưới tiêu đề bài. Trang khác: dd/mm/yyyy trong <title>, hoặc "(dd/mm)". */
+function tachNgay_(url, html) {
+  var d, m, y;
+  if (url.indexOf('/thong-tin/blog/') >= 0) {
+    var a = html.match(/article-header-body--date[^>]*>\s*(\d{4})-(\d{2})-(\d{2})/);
+    if (!a) return null;
+    y = +a[1]; m = +a[2]; d = +a[3];
+  } else {
+    var t = (html.match(/<title[^>]*>([\s\S]*?)<\/title>/i) || [])[1] || '';
+    var b = t.match(/(?:^|[^\d\/])(\d{1,2})\/(\d{1,2})\/(\d{4})(?![\d])/);
+    if (b) { d = +b[1]; m = +b[2]; y = +b[3]; }
+    else {
+      var c = t.match(/\((\d{1,2})\/(\d{1,2})\)/);
+      if (!c) return null;
+      d = +c[1]; m = +c[2];
+      var nam = Number(Utilities.formatDate(new Date(), TZ, 'yyyy'));
+      var homNay = new Date(nam, Number(Utilities.formatDate(new Date(), TZ, 'M')) - 1, Number(Utilities.formatDate(new Date(), TZ, 'd')));
+      y = [nam - 1, nam, nam + 1].reduce(function (tot, n) {
+        return Math.abs(new Date(n, m - 1, d) - homNay) < Math.abs(new Date(tot, m - 1, d) - homNay) ? n : tot;
+      }, nam);
+    }
+  }
+  if (m < 1 || m > 12 || d < 1 || d > 31) return null;
+  var p = function (x) { return (x < 10 ? '0' : '') + x; };
+  return {ngay: true, chu: p(d) + '/' + p(m) + '/' + y, so: y * 10000 + m * 100 + d};
+}
+
+function guiLark_(text) {
+  var url = PropertiesService.getScriptProperties().getProperty('LARK_WEBHOOK');
+  if (!url) return 'chưa cài link Lark (menu Check publish → Bước 1)';
+  try {
+    var r = UrlFetchApp.fetch(url, {
+      method: 'post', contentType: 'application/json', muteHttpExceptions: true,
+      payload: JSON.stringify({msg_type: 'text', content: {text: text}})
+    });
+    var body = {};
+    try { body = JSON.parse(r.getContentText()); } catch (e) {}
+    if (r.getResponseCode() === 200 && (body.code === 0 || body.StatusCode === 0)) return 'ok';
+    return 'Lark trả lời ' + r.getResponseCode() + ' ' + (body.msg || r.getContentText()).toString().slice(0, 150);
+  } catch (e) {
+    return 'không gửi được (' + e.message + ')';
+  }
+}
+
+function bangDieuKhien_() {
+  var ss = SpreadsheetApp.getActive();
+  var dk = ss.getSheetByName(TAB_DK);
+  if (!dk) {
+    dk = ss.insertSheet(TAB_DK);
+    dk.getRange('A1:A4').setValues([['Yêu cầu kiểm tra (app ghi vào đây)'], ['Lần kiểm gần nhất'], ['Kết quả'], ['Lark']]);
+    dk.getRange('A1:A4').setFontWeight('bold');
+    dk.setColumnWidth(1, 260); dk.setColumnWidth(2, 520);
+  }
+  return dk;
+}
+
+function tatLich_() {
+  ScriptApp.getProjectTriggers().forEach(function (t) {
+    var f = t.getHandlerFunction();
+    if (f === 'kiemTheoLich' || f === 'xuLyYeuCau') ScriptApp.deleteTrigger(t);
+  });
+}
+</script>
 <script>
 (function(){
   var SHEET = "11YEh1C_oB23FX3AwOupR4P00xaIAMB8jfXY21zCqzgI";
   var TAB = "Untitled";
-  var TRIGGER = "trig_01QNyb6Qj58zr6aWAJv8WDD8";
-  var GS = "Google Sheets", CCR = "Claude Code Remote";
+  var GS = "Google Sheets";
+  var DK = "'Điều khiển'!A1:B4";
   var INPUT = {spreadsheetId: SHEET, range: TAB + "!A1:ZZ"};
 
   var $ = function(id){ return document.getElementById(id); };
@@ -267,6 +536,22 @@ ol.cach{margin:0;padding-left:20px;display:grid;gap:6px;font-size:14px}
           baoLoi(ev.error, $("capnhat"));
         }
       }, {refetchInterval: 60000, cache: {staleTime: 30000, gcTime: 600000}});
+      mcp.watchTool(GS, "get_values", {spreadsheetId: SHEET, range: DK}, function(ev){
+        var tt = $("trangthai");
+        tt.textContent = "";
+        if (ev.type !== "data") {
+          if (ev.error && ev.error.code === "tool_error") tt.textContent = "Máy tự kiểm chưa được cài (chưa có tab “Điều khiển”).";
+          return;
+        }
+        var v = (ev.result && ev.result.payload && ev.result.payload.values) || [];
+        var lay = function(i){ return v[i] && v[i][1] ? String(v[i][1]) : ""; };
+        if (lay(0)) { var d0 = document.createElement("div"); d0.textContent = "Đang chờ máy kiểm: " + lay(0); tt.appendChild(d0); }
+        [["Máy kiểm gần nhất", 1], ["Kết quả", 2], ["Lark", 3]].forEach(function(x){
+          if (!lay(x[1])) return;
+          var d = document.createElement("div"); var b = document.createElement("b");
+          b.textContent = x[0] + ": "; d.appendChild(b); d.appendChild(document.createTextNode(lay(x[1]))); tt.appendChild(d);
+        });
+      }, {refetchInterval: 60000, cache: {staleTime: 30000, gcTime: 600000}});
     });
   }
 
@@ -283,23 +568,23 @@ ol.cach{margin:0;padding-left:20px;display:grid;gap:6px;font-size:14px}
     }, function(e){ baoLoi(e, tb); });
   });
 
-  var nghiDen = 0;
   $("nut-kiem").addEventListener("click", function(){
     if (!mcp) return;
     var btn = this, tb = $("tb-kiem");
+    var gio = new Date().toLocaleString("vi-VN", {timeZone: "Asia/Ho_Chi_Minh"});
     btn.disabled = true; tb.className = "tb"; tb.textContent = "Đang gửi yêu cầu kiểm tra…";
-    mcp.callTool(CCR, "fire_trigger", {
-      trigger_id: TRIGGER,
-      text: "Trang bấm nút \"Kiểm tra ngay\" trên app Check Publish: kiểm tra ngay, chạy cap_nhat_sheet.py với --ep (không bỏ qua), ghi vào sheet như thường lệ."
-    }, {cache: false}).then(function(){
+    mcp.callTool(GS, "update_values", {spreadsheetId: SHEET, range: "'Điều khiển'!B1", values: [["App yêu cầu lúc " + gio]]}, {cache: false}).then(function(){
       tb.className = "tb ok";
-      tb.textContent = "Đã gửi. Claude đang mở lại từng link, khoảng 2–3 phút nữa bảng sẽ tự hiện số mới.";
-      nghiDen = Date.now() + 180000;
-      setTimeout(function(){ btn.disabled = false; }, 180000);
-      [90000, 180000, 240000].forEach(function(ms){
+      tb.textContent = "Đã gửi. Trong vòng 5 phút máy sẽ kiểm, ghi vào sheet và nhắn Lark. Bảng tự hiện số mới.";
+      setTimeout(function(){ btn.disabled = false; }, 120000);
+      [180000, 330000, 420000].forEach(function(ms){
         setTimeout(function(){ mcp.invalidate(GS, "get_values").catch(function(){}); }, ms);
       });
-    }, function(e){ btn.disabled = false; baoLoi(e, tb); });
+    }, function(e){
+      btn.disabled = false;
+      if (e && e.code === "tool_error") { tb.className = "tb err"; tb.textContent = "Chưa có tab “Điều khiển” trong sheet: máy tự kiểm chưa được cài. Xem phần mã cài ở cuối trang."; return; }
+      baoLoi(e, tb);
+    });
   });
 
   $("nut-them").addEventListener("click", function(){
@@ -331,6 +616,16 @@ ol.cach{margin:0;padding-left:20px;display:grid;gap:6px;font-size:14px}
       btn.disabled = false;
       mcp.invalidate(GS, "get_values").catch(function(){});
     }, function(e){ btn.disabled = false; baoLoi(e, tb); });
+  });
+
+  $("ma-gs-hien").textContent = $("ma-gs").textContent;
+  $("nut-chep").addEventListener("click", function(){
+    var t = $("ma-gs").textContent, tb = $("tb-chep");
+    var chon = function(){ var r = document.createRange(); r.selectNodeContents($("ma-gs-hien")); var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r); };
+    try {
+      navigator.clipboard.writeText(t).then(function(){ tb.className = "tb ok"; tb.textContent = "Đã sao chép mã."; },
+        function(){ chon(); tb.className = "tb"; tb.textContent = "Đã bôi đen mã, bấm Ctrl + C (Mac: Cmd + C) để sao chép."; });
+    } catch (e) { chon(); tb.className = "tb"; tb.textContent = "Đã bôi đen mã, bấm Ctrl + C (Mac: Cmd + C) để sao chép."; }
   });
 
   batDau();
