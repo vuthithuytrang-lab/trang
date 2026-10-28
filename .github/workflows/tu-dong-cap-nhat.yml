@@ -83,11 +83,11 @@ jobs:
           # nguồn có lúc không hiện bảng (PNJ…) → nghỉ 1 phút rồi chạy lại bài đó 1 lần; lần sau đọc đủ nguồn thì dùng lần sau
           for m in $BAI; do
             [ -f ket-qua/$m.log ] && [ $m != gia-ca-phe ] || continue
-            grep -qE 'KHÔNG ĐỌC ĐƯỢC|KHÔNG đọc được|LỖI' ket-qua/$m.log || continue
+            grep -qE 'KHÔNG ĐỌC ĐƯỢC|KHÔNG đọc được|không đọc được|LỖI|Error' ket-qua/$m.log || continue
             sleep 30
             timeout 600 bash cong-cu/tu-dong/chay.sh $m lai > lai-$m.log 2>&1 || echo "LỖI $m" >> lai-$m.log
             echo "::group::chạy lại $m"; cat lai-$m.log; echo "::endgroup::"
-            if grep -q '^XONG' lai-$m.log && ! grep -qE 'KHÔNG ĐỌC ĐƯỢC|KHÔNG đọc được|^LỖI' lai-$m.log; then
+            if grep -q '^XONG' lai-$m.log && ! grep -qE 'KHÔNG ĐỌC ĐƯỢC|KHÔNG đọc được|không đọc được|^LỖI|Error' lai-$m.log; then
               rm -rf ket-qua/$m; mv lai/$m ket-qua/$m; mv lai-$m.log ket-qua/$m.log
             fi
           done
