@@ -113,6 +113,7 @@ Agent đọc chìa từ file, gửi qua header `Authorization: Bearer <chìa>`, 
 | `cong-cu/cap-nhat-lai-suat/` | **Việc định kỳ (tự chạy ~7h sáng, 3 ngày/lần)**: cập nhật lãi suất 2 bài blog Techcombank — đọc `QUY-TRINH.md` trước |
 | `cong-cu/skill-cap-nhat-bai-tcb/` | **Skill đóng gói** (+ công thức giá vàng/cà phê/xăng dầu + bảng điều khiển Google Sheets "Update") cập nhật bài Techcombank bất kỳ (đọc bài mới nhất + nguồn tham khảo, sửa chỗ lỗi thời, viết số theo bài, tô vàng → Google Docs). Gửi Claude khác dùng được (file `.zip`) — tách riêng, không ảnh hưởng việc định kỳ ở trên |
 | `cong-cu/app-cap-nhat/` | **App "Cập nhật bài Techcombank"** (https://claude.ai/artifact/C1pHcHu6DLgx8xi4zNQnoN) — Trang tích bài, bấm nút → lịch `trig_01XnxuNegqxBM5eUEatsweng` đánh thức phiên này. Đọc `README.md` để biết phải làm gì khi thức dậy |
+| `cong-cu/tu-dong/` | **Tự động không cần Claude** (28/10/2026): GitHub Actions chạy công thức 9 bài mỗi giờ → Apps Script trong Sheet "Update" tạo Docs khi có ô tích. Đọc `README.md` |
 | `BAO-MAT.md` | Danh sách chìa khóa đã lộ cần thu hồi |
 | `cap-nhat-bai-tcb/` | Kết quả từng lần cập nhật bài TCB (cấu hình, danh sách sửa, báo cáo) |
 
