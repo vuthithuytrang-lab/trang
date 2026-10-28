@@ -11,6 +11,14 @@ Trang thấy bản cài Windows + Service Account quá rắc rối. Chốt lại
 - Agent tự chạy lấy ngày (`lay_ngay.py` trong thư mục này — techcombank vào được từ máy chủ cloud) rồi ghi vào sheet.
   Trang không phải cài gì.
 
+## 🔁 CHUYỂN SANG APPS SCRIPT (28/10/2026) — không tốn token
+
+Việc kiểm + báo Lark giờ do **Apps Script gắn trong chính sheet** chạy (`cong-cu/app-check-publish/apps-script.gs`):
+19:00 tự kiểm (bỏ qua nếu trong ngày đã kiểm thấy đủ), gõ UD/UP trong nhóm Lark "Check publish TCB" hoặc bấm
+"Kiểm tra ngay" trên app (ghi `Điều khiển!B1`) → chạy trong ~1 phút. Lark nhận "Done" hoặc tin nhờ chị Tú Anh kèm list URL.
+Chạy thử 17:43 28/10: 54/54, đã gửi Lark. Routine Claude `trig_01QNyb6Qj58zr6aWAJv8WDD8` **đã tắt** (enabled=false).
+Nghe lệnh UD cần ứng dụng Lark "Check publish TCB" (đang chờ admin duyệt) + menu Bước 3 (App ID/Secret).
+
 ## ▶️ CHẠY LẠI (23/10/2026)
 
 Dừng 21–22/10, Trang bật lại 23/10 sau khi thêm 12 URL (STT 43–54) vào cuối cột B — nay 54 URL.
