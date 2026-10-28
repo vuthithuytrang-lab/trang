@@ -9,7 +9,7 @@
  *     dán link vào cột hôm nay, bỏ tích.
  *  3. Dòng được tích nhưng chưa có công thức tự động → để nguyên, Claude xử lý như cũ.
  *
- * Cài lần đầu: dán file này vào Apps Script, chọn hàm "caiDat" → Chạy → Cho phép. Xong.
+ * Cài lần đầu: Sheet "Update" → Tiện ích mở rộng → Apps Script → dán file này → Lưu → chọn hàm "caiDat" → Chạy → Cho phép.
  */
 const CAU_HINH = {
   SHEET_ID: '1pG0TA0nwiOkF086eAhbukUJ375oZRfuJpQy4bEUiVck',
@@ -24,12 +24,6 @@ const CONG_THUC = {
   '1-chi-vang-bao-nhieu-tien': '1-chi-vang', 'gia-vang-16k-hom-nay': 'vang-16k', 'vang-610-la-vang-gi': 'vang-610',
 };
 const TZ = 'Asia/Ho_Chi_Minh';
-
-function onOpen() {
-  SpreadsheetApp.getUi().createMenu('⚡ Cập nhật tự động')
-    .addItem('Chạy ngay các dòng đã tích', 'kiemTra')
-    .addToUi();
-}
 
 /** Chạy 1 lần khi cài: tạo lịch 10 phút/lần. */
 function caiDat() {
@@ -61,14 +55,15 @@ function chay_() {
   const trangThai = JSON.parse(UrlFetchApp.fetch(CAU_HINH.KHO + 'trang-thai.json?t=' + Date.now()).getContentText());
   const homNay = new Date();
   const ngayMai = Utilities.formatDate(new Date(homNay.getTime() + 864e5), TZ, 'dd/MM/yyyy');
-  const cot = cotHomNay_(sh, homNay);
+  let cot = 0;
   const emails = ss.getSheetByName('Hướng dẫn').getRange('B11:B20').getValues().flat()
     .map(x => String(x).trim()).filter(x => /@/.test(x));
 
   for (const c of can) {
     const tt = trangThai[c.ma];
     const tuoi = tt ? (Date.now() - new Date(tt.luc).getTime()) / 6e4 : 1e9;
-    if (!tt || tt.ngay !== ngayMai || tuoi > CAU_HINH.TUOI_TOI_DA_PHUT) continue;  // chưa có bản mới, đợi lần sau
+    if (!tt || tuoi > CAU_HINH.TUOI_TOI_DA_PHUT || (tt.ok && tt.ngay !== ngayMai)) continue;  // chưa có bản mới, đợi lần sau
+    cot = cot || cotHomNay_(sh, homNay);
     const o = sh.getRange(c.dong, cot);
     try {
       if (!tt.ok) throw new Error(tt.loi || 'công thức chạy lỗi');
@@ -90,14 +85,13 @@ function chay_() {
 
 /** Cột có tiêu đề = hôm nay; chưa có thì chèn tại F (ngày mới nhất ở F). */
 function cotHomNay_(sh, homNay) {
-  const d = Utilities.formatDate(homNay, TZ, 'yyyy-MM-dd');
-  const f1 = sh.getRange(1, 6).getValue();
-  if (f1 instanceof Date && Utilities.formatDate(f1, TZ, 'yyyy-MM-dd') === d) return 6;
+  if (sh.getRange(1, 6).getDisplayValue() === Utilities.formatDate(homNay, TZ, 'd/M')) return 6;
   sh.insertColumnBefore(6);
   sh.getRange(1, 7, sh.getMaxRows(), 1).copyTo(sh.getRange(1, 6, sh.getMaxRows(), 1), SpreadsheetApp.CopyPasteType.PASTE_FORMAT, false);
   sh.getRange(1, 6, sh.getMaxRows(), 1).clearContent();
-  const [y, m, dd] = d.split('-').map(Number);
-  sh.getRange(1, 6).setValue(new Date(y, m - 1, dd)).setNumberFormat('d/m').setFontWeight('bold').setHorizontalAlignment('center');
+  const [y, m, d] = Utilities.formatDate(homNay, TZ, 'yyyy-M-d').split('-').map(Number);
+  const soNgay = Date.UTC(y, m - 1, d) / 864e5 + 25569;      // số ngày kiểu Sheets (tính từ 30/12/1899)
+  sh.getRange(1, 6).setValue(soNgay).setNumberFormat('d/m').setFontWeight('bold').setHorizontalAlignment('center');
   return 6;
 }
 
