@@ -1,0 +1,140 @@
+{
+ "1": [
+  "gia-ca-phe",
+  "Giá cà phê",
+  "Nông sản",
+  "gia-ca-phe-hom-nay"
+ ],
+ "2": [
+  "gia-xang-dau",
+  "Giá xăng dầu",
+  "Năng lượng",
+  "gia-xang-dau-hom-nay"
+ ],
+ "3": [
+  "vang-24k",
+  "Vàng 24K",
+  "Vàng",
+  "vang-24k"
+ ],
+ "4": [
+  "vang-14k",
+  "Vàng 14K",
+  "Vàng",
+  "vang-14k-gia-hom-nay"
+ ],
+ "5": [
+  "vang-18k",
+  "Vàng 18K",
+  "Vàng",
+  "vang-18k"
+ ],
+ "6": [
+  "vang-10k",
+  "Vàng 10K",
+  "Vàng",
+  "vang-10k"
+ ],
+ "7": [
+  "1-chi-vang",
+  "1 chỉ vàng bao nhiêu tiền",
+  "Vàng",
+  "1-chi-vang-bao-nhieu-tien"
+ ],
+ "8": [
+  "vang-16k",
+  "Vàng 16K",
+  "Vàng",
+  "gia-vang-16k-hom-nay"
+ ],
+ "9": [
+  "vang-610",
+  "Vàng 610",
+  "Vàng",
+  "vang-610-la-vang-gi"
+ ],
+ "10": [
+  "lai-suat-tiet-kiem",
+  "Lãi suất tiết kiệm (Bài 1)",
+  "Lãi suất",
+  "lai-suat-tiet-kiem"
+ ],
+ "11": [
+  "cach-tinh-lai-suat",
+  "Cách tính lãi suất (Bài 2)",
+  "Lãi suất",
+  "cach-tinh-lai-suat-tien-gui-tiet-kiem"
+ ],
+ "12": [
+  "gia-nhom",
+  "Giá nhôm",
+  "Kim loại",
+  "gia-nhom"
+ ],
+ "13": [
+  "gia-lua-gao",
+  "Giá lúa gạo",
+  "Nông sản",
+  "gia-lua-gao-hom-nay"
+ ],
+ "14": [
+  "gia-kim-loai",
+  "Giá kim loại thế giới",
+  "Kim loại",
+  "gia-kim-loai-the-gioi"
+ ],
+ "15": [
+  "gia-ca-cao",
+  "Giá ca cao",
+  "Nông sản",
+  "gia-ca-cao"
+ ],
+ "16": [
+  "gia-dieu",
+  "Giá điều",
+  "Nông sản",
+  "gia-dieu-hom-nay"
+ ],
+ "17": [
+  "gia-dong",
+  "Giá đồng",
+  "Kim loại",
+  "gia-dong-hom-nay"
+ ],
+ "18": [
+  "gia-thep",
+  "Giá thép",
+  "Kim loại",
+  "gia-thep-hom-nay"
+ ],
+ "19": [
+  "gia-ca-phe-dak-lak",
+  "Giá cà phê Đắk Lắk",
+  "Nông sản",
+  "gia-ca-phe-dak-lak-hom-nay"
+ ],
+ "20": [
+  "gia-ca-phe-luan-don",
+  "Giá cà phê sàn Luân Đôn",
+  "Nông sản",
+  "gia-ca-phe-san-luan-don-hom-nay"
+ ],
+ "21": [
+  "gia-gas",
+  "Giá gas",
+  "Năng lượng",
+  "gia-gas-hom-nay"
+ ],
+ "22": [
+  "gia-dau-the-gioi",
+  "Giá dầu thế giới",
+  "Năng lượng",
+  "gia-dau-the-gioi"
+ ],
+ "23": [
+  "gia-tieu",
+  "Giá tiêu",
+  "Nông sản",
+  "gia-tieu-hom-nay"
+ ]
+}

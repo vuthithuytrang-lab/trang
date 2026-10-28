@@ -112,6 +112,7 @@ Agent đọc chìa từ file, gửi qua header `Authorization: Bearer <chìa>`, 
 | `cong-cu/` | Công cụ dùng lại được — prompt SEO, bản tin tự động |
 | `cong-cu/cap-nhat-lai-suat/` | **Việc định kỳ (tự chạy ~7h sáng, 3 ngày/lần)**: cập nhật lãi suất 2 bài blog Techcombank — đọc `QUY-TRINH.md` trước |
 | `cong-cu/skill-cap-nhat-bai-tcb/` | **Skill đóng gói** (+ công thức giá vàng/cà phê/xăng dầu + bảng điều khiển Google Sheets "Update") cập nhật bài Techcombank bất kỳ (đọc bài mới nhất + nguồn tham khảo, sửa chỗ lỗi thời, viết số theo bài, tô vàng → Google Docs). Gửi Claude khác dùng được (file `.zip`) — tách riêng, không ảnh hưởng việc định kỳ ở trên |
+| `cong-cu/app-cap-nhat/` | **App "Cập nhật bài Techcombank"** (https://claude.ai/artifact/C1pHcHu6DLgx8xi4zNQnoN) — Trang tích bài, bấm nút → lịch `trig_01XnxuNegqxBM5eUEatsweng` đánh thức phiên này. Đọc `README.md` để biết phải làm gì khi thức dậy |
 | `BAO-MAT.md` | Danh sách chìa khóa đã lộ cần thu hồi |
 | `cap-nhat-bai-tcb/` | Kết quả từng lần cập nhật bài TCB (cấu hình, danh sách sửa, báo cáo) |
 
@@ -131,6 +132,7 @@ Agent đọc chìa từ file, gửi qua header `Authorization: Bearer <chìa>`, 
 | ⛔ Quy tắc nội dung cho mọi bài TCB | **Cập nhật, không thay đổi nội dung** (Trang dặn 14/10/2026): chỉ đổi số/ngày/tháng; giữ nguyên câu chữ, dạng câu ("Khoảng X đến Y" vẫn là khoảng), không thêm "(theo …)", không đổi tên riêng. Không làm được đúng dạng → giữ nguyên + ghi cần duyệt |
 | ⏰ Quy tắc ngày cho mọi bài TCB | **Trang nhắn update → LUÔN ghi ngày hôm sau, không cần biết mấy giờ** (Trang chốt 21/10/2026, thay quy tắc 15h cũ) — trong bài + tên file (vd chạy 9h sáng 8/10 → 9/10). Cột ngày trong Sheet vẫn là ngày chạy. Lịch tự chạy lãi suất 7h sáng cũng ghi ngày hôm sau (Trang chốt 22/10/2026) |
 | "Update lãi suất" / dòng lãi suất trong Sheet "Update" (dòng 10–11) | `cong-cu/cap-nhat-lai-suat/QUY-TRINH.md` — 2 bài lãi suất, nguồn VnExpress + Topi |
+| Yêu cầu từ app "Cập nhật bài TCB" (lịch `trig_01XnxuNegqxBM5eUEatsweng` gửi "Mã yêu cầu: … Bài: …") | `cong-cu/app-cap-nhat/README.md` — báo "đang chạy" lên app, chạy từng bài, ghi link lên app + Sheet |
 | "Chạy bảng update" / lịch tự động mỗi giờ | `cong-cu/skill-cap-nhat-bai-tcb/bang-dieu-khien/README.md` — Google Sheets "Update", **chỉ chạy đúng các dòng đã tích** (Trang dặn 20/10/2026 — đỡ tốn token) |
 | Giá nhôm, lúa gạo, kim loại thế giới, ca cao, điều, đồng, thép, cà phê Đắk Lắk, cà phê sàn Luân Đôn, gas, dầu thế giới (dòng 12–22 Sheet "Update", thêm 20/10/2026), tiêu (dòng 23, thêm 21/10/2026) | Chưa có công thức → `cap-nhat-bai-tcb/SKILL.md` với nguồn ở cột D; chạy ổn thì đóng gói thành công thức |
 | Đóng gói xong quy trình 1 bài mới | **Tự thêm dòng vào Google Sheets "Update"** theo mục "Thêm bài mới vào bảng" trong `bang-dieu-khien/README.md` — Trang không phải tự điền |
