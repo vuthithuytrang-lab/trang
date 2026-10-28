@@ -1,0 +1,65 @@
+{
+ "bai1": {
+  "sua": [
+   {
+    "tim": "bán ra hiện dao động từ khoảng 10.493 triệu VND/chỉ",
+    "thay": "bán ra hiện dao động từ khoảng 10.403 triệu VND/chỉ",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "",
+    "ly_do": "tính từ bảng: giá mua cao nhất 9,694,000 đ/chỉ, giá bán thấp nhất 10,403,500 đ/chỉ",
+    "tinh_toan": true
+   },
+   {
+    "tim": "mua vào cao nhất khoảng 9.820 triệu VND/chỉ và bán ra thấp nhất khoảng 10.493 triệu VND/chỉ",
+    "thay": "mua vào cao nhất khoảng 9.694 triệu VND/chỉ và bán ra thấp nhất khoảng 10.403 triệu VND/chỉ",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "",
+    "ly_do": "tính từ bảng: giá mua cao nhất 9,694,000 đ/chỉ, giá bán thấp nhất 10,403,500 đ/chỉ",
+    "tinh_toan": true
+   },
+   {
+    "tim": "9,620,000 VND/chỉ",
+    "thay": "9,694,000 VND/chỉ",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://banggia.doji.vn/gold-price",
+    "ly_do": "DOJI – GIÁ NGUYÊN LIỆU 18K (mua vào), cập nhật 07:08 ngày 28/10/2026"
+   },
+   {
+    "tim": "10,366,000 VND/chỉ",
+    "thay": "10,403,500 VND/chỉ",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC (Nữ trang 75%) – Nữ trang 75% (bán ra), cập nhật 14:05:03 28/10/2026"
+   },
+   {
+    "tim": "9,380,000 VND/chỉ",
+    "thay": "9,423,500 VND/chỉ",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC (Nữ trang 75%) – Nữ trang 75% (mua vào), cập nhật 14:05:03 28/10/2026"
+   },
+   {
+    "tim": "10,350,000 VND/chỉ",
+    "thay": "10,440,000 VND/chỉ",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – Vàng 750 (18K) (bán ra), cập nhật 28/10/2026 10:53:46"
+   },
+   {
+    "tim": "9,360,000 VND/chỉ",
+    "thay": "9,450,000 VND/chỉ",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – Vàng 750 (18K) (mua vào), cập nhật 28/10/2026 10:53:46"
+   }
+  ],
+  "can_duyet": []
+ }
+}
