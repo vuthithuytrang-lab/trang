@@ -55,6 +55,12 @@ cuộc trò chuyện) **và email vuthithuytrang@seongon.com** (cùng nhóm Lark
 Không gửi sang máy khác, phiên khác, email khác, kênh khác. Routine mới: bắn vào đúng phiên Trang đang dùng,
 không bật thông báo email/Slack sang địa chỉ khác. Trước khi thêm bất kỳ nơi nhận mới nào → hỏi Trang.
 
+### Lưu lại mọi việc — Trang chốt 28/10/2026
+
+Đầu phiên: đọc `NHAT-KY-CONG-VIEC.md` để biết việc nào đã làm, kết quả ở đâu, việc nào còn dở — **không chạy lại
+việc đã có kết quả**. Làm xong mỗi việc: thêm 1 dòng vào nhật ký (làm gì · kết quả ở đâu · cách chạy lại · còn dở gì),
+commit + push. Dữ liệu thô / nội dung có thể nhạy cảm (repo public) → **hỏi Trang "có lưu không?"** trước khi lưu.
+
 ## 3. Chuẩn sản phẩm bàn giao
 
 - Sản phẩm xem được là **file HTML tự viết** (không phụ thuộc thư viện ngoài), tiếng Việt đủ dấu.
@@ -117,4 +123,5 @@ Agent đọc chìa từ file, gửi qua header `Authorization: Bearer <chìa>`, 
 | `cong-cu/theo-doi-publish-techcombank/` | Theo dõi ngày publish 35 URL Techcombank 08:00/20:00, ghi Google Sheet, báo Telegram — đọc `HUONG-DAN.md` |
 | `.claude/skills/theo-doi-publish/` | Skill cài/chạy theo dõi publish TCB cho người khác trong team — bản zip + hướng dẫn cài ở `cong-cu/skill-theo-doi-publish/` |
 | `cong-cu/app-check-publish/` | App check publish (Artifact https://claude.ai/artifact/MR7LzabxHN8S1gfQ6PeKGq) — đọc sheet TCB qua kết nối Google Sheets, việc kiểm + báo Lark do Apps Script trong sheet chạy (`apps-script.gs`, không tốn token); nút Kiểm tra ngay ghi `Điều khiển!B1` hoặc gõ UD/UP trong nhóm Lark → máy kiểm trong ~1 phút; routine Claude 19:00 đã tắt từ 28/10 |
+| `NHAT-KY-CONG-VIEC.md` | Nhật ký mọi việc đã làm + nơi để kết quả — đọc đầu phiên |
 | `BAO-MAT.md` | Danh sách chìa khóa đã lộ cần thu hồi |
