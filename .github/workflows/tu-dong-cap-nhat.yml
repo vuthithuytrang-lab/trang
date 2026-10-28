@@ -29,6 +29,16 @@ jobs:
             timeout 600 bash cong-cu/tu-dong/chay.sh $m ket-qua > ket-qua/$m.log 2>&1 || echo "LỖI $m" >> ket-qua/$m.log
             echo "::group::$m"; cat ket-qua/$m.log; echo "::endgroup::"
           done
+          # nguồn có lúc không hiện bảng (PNJ…) → nghỉ 1 phút rồi chạy lại bài đó 1 lần; lần sau đọc đủ nguồn thì dùng lần sau
+          sleep 60
+          for m in vang-24k vang-14k vang-18k vang-10k vang-16k vang-610 1-chi-vang gia-xang-dau; do
+            grep -qE 'KHÔNG ĐỌC ĐƯỢC|KHÔNG đọc được|LỖI' ket-qua/$m.log || continue
+            timeout 600 bash cong-cu/tu-dong/chay.sh $m lai > lai-$m.log 2>&1 || echo "LỖI $m" >> lai-$m.log
+            echo "::group::chạy lại $m"; cat lai-$m.log; echo "::endgroup::"
+            if grep -q '^XONG' lai-$m.log && ! grep -qE 'KHÔNG ĐỌC ĐƯỢC|KHÔNG đọc được|^LỖI' lai-$m.log; then
+              rm -rf ket-qua/$m; mv lai/$m ket-qua/$m; mv lai-$m.log ket-qua/$m.log
+            fi
+          done
           python3 -I cong-cu/tu-dong/tong_hop.py ket-qua xuat
       - name: Đăng kết quả lên nhánh tu-dong-ket-qua
         run: |
