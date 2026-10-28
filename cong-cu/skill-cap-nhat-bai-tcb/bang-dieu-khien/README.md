@@ -29,6 +29,9 @@ Bài làm lần đầu chưa đóng gói thì **chưa** thêm vào bảng.
 
 ⛔ **Cập nhật, không thay đổi nội dung** (Trang dặn 14/10/2026): chỉ đổi số/ngày/tháng; giữ nguyên câu chữ và dạng câu của bài (khoảng vẫn là khoảng, không thêm "(theo …)", không đổi tên riêng). Không cập nhật được đúng dạng → giữ nguyên + ghi cần duyệt. **Mọi giá / lãi suất có trong bài đều phải cập nhật — cả đoạn văn, phần hỏi đáp (FAQ), ví dụ tính, tóm tắt — không chỉ trong bảng** (Trang dặn 29/10/2026). Số nào không có nguồn để tính lại (vd so với 7 ngày trước) → giữ nguyên + ghi cần duyệt.
 
+0. **9 bài tự động (dòng 2–10: cà phê, xăng dầu, vàng 24K/14K/18K/10K, 1 chỉ vàng, vàng 16K, vàng 610) — KHÔNG chạy nếu máy tự động đang bật**
+   (Trang chốt 28/10/2026: không tốn token). Đọc ô `app!H1`: có chữ "Máy tự động chạy lúc HH:mm dd/MM/yyyy" cách đây ≤ 10 phút → bỏ qua các dòng đó
+   (Apps Script lo, xem `cong-cu/tu-dong/README.md`). Không có / cũ hơn → máy chưa cài hoặc hỏng → chạy như bình thường và nhắc Trang.
 1. Đọc `A1:Z200` của tab đầu. Dòng nào ô E = TRUE và B có link → cần chạy. **Không có dòng nào → dừng ngay, không làm gì thêm.**
    ⛔ **Chỉ chạy đúng các dòng được tích** (Trang dặn 20/10/2026, để đỡ tốn token): dòng không tích thì không đọc bài, không lấy nguồn,
    không tạo Docs — kể cả khi Trang nhắn chung chung "update giá".
@@ -68,6 +71,7 @@ Bài làm lần đầu chưa đóng gói thì **chưa** thêm vào bảng.
    `textFormatRuns` = `[{"startIndex":0,"format":{"link":{"uri":"<link Docs>"}}}]`
    (fields `userEnteredValue,textFormatRuns`). Ô đã có link của lần chạy trước cùng ngày → ghi đè bằng link mới.
    Lỗi không tạo được file → ghi `⚠️ Lỗi: <lý do ngắn>` thay cho link.
+5b. Ghi thêm vào tab `app` (dòng = STT + 1): `A`=STT, `B`=tên file, `C`=link Docs, `D`=giờ `HH:mm dd/MM`, `E`=`xong` / `Cần xem lại: …` / `⚠️ Lỗi: …` — app trên claude.ai đọc tab này để hiện link.
 6. Bỏ tích: E của dòng đó = FALSE (`update_values`, giữ nguyên ô tích). **Luôn bỏ tích**, kể cả khi lỗi, để không chạy lặp mỗi giờ.
 7. Lưu kết quả vào repo `cap-nhat-bai-tcb/<yyyy-mm-dd>-<tên ngắn>/` (cau-hinh.json, sua.json, bao-cao.md…), commit + push
    lên nhánh `claude/vibrant-keller-rk0i98` (luồng giá vàng đã gộp vào đây ngày 14/10/2026).

@@ -1,21 +1,24 @@
 /**
  * Cập nhật bài Techcombank TỰ ĐỘNG — chạy trên máy chủ Google, không cần Claude, không tốn token.
+ * Chỉ chạy khi có người tích ô (Trang dặn 28/10/2026: không đặt lịch chạy, bấm mới chạy).
  *
- * Cách hoạt động:
- *  1. Máy chủ miễn phí của GitHub (GitHub Actions) chạy công thức của từng bài mỗi giờ:
- *     đọc bài mới nhất, lấy giá từ nguồn, sửa số + ngày, tô vàng → để sẵn file HTML ở nhánh "tu-dong-ket-qua".
- *  2. Script này (chạy 10 phút/lần dưới tài khoản Google của Trang) xem Sheet "Update":
- *     dòng nào được tích mà có bản dựng sẵn mới → tạo Google Docs trong thư mục chung, chia sẻ quyền sửa,
- *     dán link vào cột hôm nay, bỏ tích.
- *  3. Dòng được tích nhưng chưa có công thức tự động → để nguyên, Claude xử lý như cũ.
+ * Cách hoạt động (mỗi phút xem Sheet 1 lần — chỉ đọc, không tốn gì):
+ *  1. Có dòng được tích (từ app hoặc tích tay trong Sheet) → ghi "⏳ Đang chạy…" vào cột hôm nay
+ *     và ghi phiếu yêu cầu (file yeu-cau-tu-dong.json trong thư mục Drive chung).
+ *  2. Máy chủ miễn phí của GitHub thấy phiếu mới → chạy công thức đúng các bài đó: đọc bài mới nhất, lấy giá,
+ *     sửa số + ngày, tô vàng → để kết quả ở nhánh "tu-dong-ket-qua".
+ *  3. Có kết quả mới → tạo Google Docs trong thư mục chung, chia sẻ quyền sửa, dán link vào Sheet + tab "app", bỏ tích.
+ *  Dòng được tích nhưng chưa có công thức tự động → để nguyên, Claude xử lý như cũ.
  *
  * Cài lần đầu: Sheet "Update" → Tiện ích mở rộng → Apps Script → dán file này → Lưu → chọn hàm "caiDat" → Chạy → Cho phép.
  */
 const CAU_HINH = {
   SHEET_ID: '1pG0TA0nwiOkF086eAhbukUJ375oZRfuJpQy4bEUiVck',
   THU_MUC_ID: '1FXvxKb6TvSsbMeK6I3utnLvRZ4Y_vXxI',          // "Cập nhật bài Techcombank (Claude)"
+  PHIEU_ID: '1wrO0bArJtokvfFvOzFNFqvJhrLrPD2VI',            // yeu-cau-tu-dong.json — máy chủ GitHub đọc file này
   KHO: 'https://raw.githubusercontent.com/vuthithuytrang-lab/trang/tu-dong-ket-qua/',
-  TUOI_TOI_DA_PHUT: 150,                                     // bản dựng cũ hơn → chờ lần chạy sau
+  CHO_TOI_DA_PHUT: 45,                                       // quá lâu chưa có kết quả → báo lỗi, bỏ tích
+  TAB_APP: 'app',                                            // tab app đọc: A STT · B tên file · C link · D lúc · E ghi chú
 };
 // đoạn cuối link bài TCB → mã công thức tự động
 const CONG_THUC = {
@@ -25,11 +28,11 @@ const CONG_THUC = {
 };
 const TZ = 'Asia/Ho_Chi_Minh';
 
-/** Chạy 1 lần khi cài: tạo lịch 10 phút/lần. */
+/** Chạy 1 lần khi cài: mỗi phút xem Sheet 1 lần. */
 function caiDat() {
   ScriptApp.getProjectTriggers().filter(t => t.getHandlerFunction() === 'kiemTra')
     .forEach(t => ScriptApp.deleteTrigger(t));
-  ScriptApp.newTrigger('kiemTra').timeBased().everyMinutes(10).create();
+  ScriptApp.newTrigger('kiemTra').timeBased().everyMinutes(1).create();
   DriveApp.getFolderById(CAU_HINH.THU_MUC_ID);              // để Google hỏi quyền Drive ngay lúc cài
   kiemTra();
 }
@@ -43,44 +46,87 @@ function kiemTra() {
 function chay_() {
   const ss = SpreadsheetApp.openById(CAU_HINH.SHEET_ID);
   const sh = ss.getSheets()[0];
+  const app = tabApp_(ss);
+  const homNay = new Date();
+  app.getRange('H1').setValue('Máy tự động chạy lúc ' + Utilities.formatDate(homNay, TZ, 'HH:mm dd/MM/yyyy'));
+
   const du = sh.getRange(1, 1, sh.getLastRow(), 5).getValues();
-  const can = [];
+  const tich = [];
   for (let r = 1; r < du.length; r++) {
     if (du[r][4] !== true || !du[r][1]) continue;
     const ma = CONG_THUC[String(du[r][1]).trim().replace(/\/+$/, '').split('/').pop()];
-    if (ma) can.push({ dong: r + 1, ma });
+    if (ma) tich.push({ dong: r + 1, stt: du[r][0], ma });
   }
-  if (!can.length) return;
+  const kho = PropertiesService.getScriptProperties();
+  const cho = JSON.parse(kho.getProperty('cho') || '{}');   // mã bài → lúc thấy được tích lần đầu
+  Object.keys(cho).forEach(ma => { if (!tich.some(t => t.ma === ma)) delete cho[ma]; });   // đã bỏ tích tay
+  if (!tich.length) { kho.setProperty('cho', '{}'); return; }
 
-  const trangThai = JSON.parse(UrlFetchApp.fetch(CAU_HINH.KHO + 'trang-thai.json?t=' + Date.now()).getContentText());
-  const homNay = new Date();
-  const ngayMai = Utilities.formatDate(new Date(homNay.getTime() + 864e5), TZ, 'dd/MM/yyyy');
   let cot = 0;
-  const emails = ss.getSheetByName('Hướng dẫn').getRange('B11:B20').getValues().flat()
-    .map(x => String(x).trim()).filter(x => /@/.test(x));
+  const cotNay = () => (cot = cot || cotHomNay_(sh, homNay));
+  for (const t of tich) if (!cho[t.ma]) {
+    cho[t.ma] = homNay.toISOString();
+    sh.getRange(t.dong, cotNay()).setValue('⏳ Đang chạy…');
+    ghiApp_(app, t.stt, ['', '', Utilities.formatDate(homNay, TZ, 'HH:mm dd/MM'), 'dang_chay']);
+  }
 
-  for (const c of can) {
-    const tt = trangThai[c.ma];
-    const tuoi = tt ? (Date.now() - new Date(tt.luc).getTime()) / 6e4 : 1e9;
-    if (!tt || tuoi > CAU_HINH.TUOI_TOI_DA_PHUT || (tt.ok && tt.ngay !== ngayMai)) continue;  // chưa có bản mới, đợi lần sau
-    cot = cot || cotHomNay_(sh, homNay);
-    const o = sh.getRange(c.dong, cot);
+  const trangThai = JSON.parse(UrlFetchApp.fetch(CAU_HINH.KHO + 'trang-thai.json?t=' + Date.now(),
+    { muteHttpExceptions: true }).getContentText() || '{}');
+  const ngayMai = Utilities.formatDate(new Date(homNay.getTime() + 864e5), TZ, 'dd/MM/yyyy');
+  let emails = null;
+  for (const t of tich) {
+    const tt = trangThai[t.ma];
+    const moi = tt && new Date(tt.luc) > new Date(cho[t.ma]) && (!tt.ok || tt.ngay === ngayMai);
+    const quaLau = (homNay - new Date(cho[t.ma])) / 6e4 > CAU_HINH.CHO_TOI_DA_PHUT;
+    if (!moi && !quaLau) continue;
+    const o = sh.getRange(t.dong, cotNay());
     try {
+      if (!moi) throw new Error('máy chủ chưa chạy xong sau ' + CAU_HINH.CHO_TOI_DA_PHUT + ' phút – tích lại để thử lại');
       if (!tt.ok) throw new Error(tt.loi || 'công thức chạy lỗi');
-      const html = UrlFetchApp.fetch(CAU_HINH.KHO + c.ma + '.html?t=' + Date.now()).getContentText('UTF-8');
+      const html = UrlFetchApp.fetch(CAU_HINH.KHO + t.ma + '.html?t=' + Date.now()).getContentText('UTF-8');
       let ten = tt.ten;
       if (DriveApp.getFolderById(CAU_HINH.THU_MUC_ID).getFilesByName(ten).hasNext())
         ten += ' (cập nhật ' + Utilities.formatDate(homNay, TZ, "HH'h'mm") + ')';
       const id = taoDocs_(ten, html);
+      emails = emails || ss.getSheetByName('Hướng dẫn').getRange('B11:B20').getValues().flat()
+        .map(x => String(x).trim()).filter(x => /@/.test(x));
       emails.forEach(e => chiaSe_(id, e));
       const link = 'https://docs.google.com/document/d/' + id + '/edit';
       o.setRichTextValue(SpreadsheetApp.newRichTextValue().setText(ten).setLinkUrl(link).build());
       o.setNote(tt.can_duyet ? 'Cần xem lại: ' + tt.can_duyet : null);
+      ghiApp_(app, t.stt, [ten, link, Utilities.formatDate(homNay, TZ, 'HH:mm dd/MM'), tt.can_duyet ? 'Cần xem lại: ' + tt.can_duyet : 'xong']);
     } catch (e) {
-      o.setValue('⚠️ Lỗi: ' + String(e.message || e).slice(0, 150));
+      const loi = '⚠️ Lỗi: ' + String(e.message || e).slice(0, 150);
+      o.setValue(loi);
+      ghiApp_(app, t.stt, ['', '', Utilities.formatDate(homNay, TZ, 'HH:mm dd/MM'), loi]);
     }
-    sh.getRange(c.dong, 5).setValue(false);                  // luôn bỏ tích để không chạy lặp
+    sh.getRange(t.dong, 5).setValue(false);                  // luôn bỏ tích để không chạy lặp
+    delete cho[t.ma];
   }
+  kho.setProperty('cho', JSON.stringify(cho));
+
+  // bài còn chờ mà phiếu hiện tại chưa nhắc tới → ghi phiếu mới cho máy chủ GitHub
+  const conCho = Object.keys(cho);
+  if (!conCho.length) return;
+  const fPhieu = DriveApp.getFileById(CAU_HINH.PHIEU_ID);
+  const phieu = JSON.parse(fPhieu.getBlob().getDataAsString() || '{}');
+  const daCo = phieu.ma && phieu.ma !== trangThai._yeu_cau &&
+    conCho.every(ma => (phieu.bai || []).indexOf(ma) >= 0 && new Date(phieu.luc) >= new Date(cho[ma]));
+  if (!daCo) fPhieu.setContent(JSON.stringify({ ma: 'yc-' + homNay.getTime(), luc: homNay.toISOString(), bai: conCho }));
+}
+
+/** Tab "app" — app trên claude.ai đọc tab này để hiện trạng thái + link. Dòng = STT + 1 (giống tab đầu). */
+function tabApp_(ss) {
+  let t = ss.getSheetByName(CAU_HINH.TAB_APP);
+  if (!t) {
+    t = ss.insertSheet(CAU_HINH.TAB_APP);
+    t.getRange('A1:E1').setValues([['STT', 'Tên file', 'Link', 'Lúc', 'Trạng thái / ghi chú']]).setFontWeight('bold');
+  }
+  return t;
+}
+function ghiApp_(t, stt, giaTri) {
+  const n = Number(stt);
+  if (n > 0) t.getRange(n + 1, 1, 1, 5).setValues([[n].concat(giaTri)]);
 }
 
 /** Cột có tiêu đề = hôm nay; chưa có thì chèn tại F (ngày mới nhất ở F). */
