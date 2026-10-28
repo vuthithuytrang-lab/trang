@@ -3,7 +3,8 @@ from bs4 import BeautifulSoup, NavigableString, Tag
 from urllib.parse import urljoin
 import os
 SP=os.environ.get('SP','./')  # thư mục chứa urls.txt, raw/, out/
-BASE='https://techcombank.com'
+BASE=os.environ.get('BASE','https://techcombank.com')
+SEL=os.environ.get('SEL','.article-text')  # Okamura (Wix): [data-hook="post-description"]
 J='text-align:justify;'
 def strip_acc(t):
     t=t.replace('đ','d').replace('Đ','D')
@@ -28,7 +29,9 @@ def clean(node):
         if t.name=='img':
             src=t.get('src') or t.get('data-src')
             if not src or src.startswith('data:') or src.endswith('.svg'): t.decompose(); continue
-            attrs['src']=urljoin(BASE,src); attrs['width']='500'
+            src=urljoin(BASE,src)
+            if 'static.wixstatic.com/media/' in src and '/v1/' in src: src=src.split('/v1/')[0]  # Wix: bỏ ảnh mờ thu nhỏ, lấy ảnh gốc
+            attrs['src']=src; attrs['width']='500'
         if t.name in ('td','th') :
             for k in ('colspan','rowspan'):
                 if t.get(k): attrs[k]=t[k]
@@ -57,7 +60,7 @@ def clean(node):
                 nx['style']='text-align:center;'
     return node
 def article(s):
-    a=s.select_one('.article-text')
+    a=s.select_one(SEL)
     if a: return a
     return None
 def product(s):

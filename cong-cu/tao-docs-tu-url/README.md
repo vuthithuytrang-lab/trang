@@ -92,3 +92,15 @@ Giới hạn đã gặp: công cụ Drive không tạo được comment, và `sh
 - Bộ soát bắt buộc trước khi tải lên: `kiemtra.py` (anchor nguyên văn + tô vàng + 25%), `linkcu.py` (không mất link gốc),
   `cautruc.py` (không mất bảng/hàng/gạch đầu dòng/ảnh). Sau khi tải lên: xuất PDF và so chữ (`verify.py`).
 - Google Docs biến "NT$; … NT$" thành công thức toán → chen.py tự bọc mỗi dấu $ trong span riêng.
+
+---
+
+## Dự án Okamura — inlink (từ 28/10/2026)
+
+- Sheet: `1xKnPX-uf7av3FpSocVjy9wKJiNeygrsZLVmdcMC7np8`, tab **"Trang tính146"**.
+- Cột: D Từ khoá chính (= tên file) · E Landingpage (URL bài) · L/M, N/O, P/Q = 3 cặp anchor/URL · R Tình trạng · **S Fie Blog** (link file).
+  H/I (Big Content), J/K (Danh mục) hiện trống.
+- Chỉ làm dòng R ≠ "Đã done" và S trống. R = "-" (dòng 9, bàn văn phòng) coi như bỏ qua.
+- Thư mục Drive: **Okamura - Inlink - File blog** — https://drive.google.com/drive/folders/1dfPI34Qf5mFI1ALHl5vWU8MUKrqVnwiU
+- Site Wix: dựng bằng `BASE=https://www.okamura.com.vn SEL='[data-hook="post-description"]' python3 build.py` (không chạy prep.py);
+  build.py tự đổi ảnh mờ của Wix sang ảnh gốc. Bổ sung cho worker: `okamura/BO-SUNG-OKAMURA.md`.

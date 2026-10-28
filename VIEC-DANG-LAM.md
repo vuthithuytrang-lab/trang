@@ -2,6 +2,10 @@
 
 Cập nhật: 28/10/2026
 
+## Okamura inlink (28/10/2026)
+- [ ] 35 dòng (12–46) đang tạo file → ghi cột S. Dòng 47 (trang chủ) không có anchor nào → bỏ qua, báo Trang.
+- [ ] Trang mở quyền "Bất kỳ ai có link – Người chỉnh sửa" cho thư mục Okamura - Inlink - File blog (công cụ không tự mở được).
+
 ## Plan internal links — Techcombank
 - [ ] **Dòng 43 (vàng là gì)**: sheet chỉ có URL tỷ giá, ô anchor trống (cần 1 link) → chờ Trang đưa anchor rồi mới tạo file.
 - [ ] **Góp ý chị Lộc**: TẠM DỪNG. Các dòng chị ghi "cần sửa" thì **không tự vào sửa** (Trang báo luồng đang có vấn đề, 28/10/2026). Chờ Trang mở lại.
