@@ -5,8 +5,10 @@
  * - Mỗi tối khoảng 19:00 (giờ VN) tự mở từng link ở cột B, đọc ngày đang hiện, ghi vào cặp cột
  *   "dd/mm/yyyy | Kiểm tra lúc". Từ 18:00 trở đi so với NGÀY MAI (bài phải sang ngày hôm sau từ tối).
  * - Xong gửi tin vào Lark: hết thì "Done", còn thiếu thì soạn sẵn tin nhờ chị Tú Anh publish lại.
- * - App Check Publish ghi yêu cầu vào tab "Điều khiển" ô B1 → trong vòng 5 phút máy tự kiểm.
- * - Menu "Check publish" trên thanh công cụ của sheet: Kiểm tra ngay, cài link Lark, bật/tắt lịch.
+ * - Gõ "UD" vào nhóm Lark → trong khoảng 1 phút máy kiểm và trả lời ngay trong nhóm.
+ * - Trong ngày đã có lần kiểm thấy đủ hết (UD / Kiểm tra ngay) thì lần tự kiểm 19:00 bỏ qua, không nhắn.
+ * - App Check Publish ghi yêu cầu vào tab "Điều khiển" ô B1 → trong khoảng 1 phút máy tự kiểm.
+ * - Menu "Check publish" trên thanh công cụ của sheet: Kiểm tra ngay, cài Lark, bật/tắt lịch.
  */
 
 var TAB = 'Untitled';
@@ -14,6 +16,7 @@ var TAB_DK = 'Điều khiển';
 var TZ = 'Asia/Ho_Chi_Minh';
 var GIO_CHUYEN_NGAY = 18;
 var GIO_TU_KIEM = 19;
+var LARK_API = 'https://open.larksuite.com/open-apis';
 var UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36';
 
 function onOpen() {
@@ -22,6 +25,7 @@ function onOpen() {
     .addSeparator()
     .addItem('Bước 1 · Cài link Lark', 'caiLark')
     .addItem('Bước 2 · Bật lịch tự động', 'batLich')
+    .addItem('Bước 3 · Cài nhận lệnh UD từ Lark', 'caiUD')
     .addSeparator()
     .addItem('Gửi thử tin Lark', 'guiThu')
     .addItem('Tắt lịch tự động', 'tatLich')
@@ -59,9 +63,10 @@ function guiThu() {
 function batLich() {
   tatLich_();
   ScriptApp.newTrigger('kiemTheoLich').timeBased().atHour(GIO_TU_KIEM).nearMinute(0).everyDays(1).inTimezone(TZ).create();
-  ScriptApp.newTrigger('xuLyYeuCau').timeBased().everyMinutes(5).create();
+  ScriptApp.newTrigger('moiPhut').timeBased().everyMinutes(1).create();
   bangDieuKhien_();
-  SpreadsheetApp.getUi().alert('Đã bật. Mỗi tối khoảng 19:00 máy tự kiểm và nhắn Lark.\nNút "Kiểm tra ngay" trên app sẽ chạy trong vòng 5 phút.');
+  SpreadsheetApp.getUi().alert('Đã bật. Mỗi tối khoảng ' + GIO_TU_KIEM + ':00 máy tự kiểm và nhắn Lark ' +
+    '(bỏ qua nếu trong ngày đã kiểm thấy đủ).\nGõ "UD" trong nhóm Lark hoặc bấm "Kiểm tra ngay" trên app: máy chạy trong khoảng 1 phút.');
 }
 
 function tatLich() {
@@ -69,17 +74,104 @@ function tatLich() {
   SpreadsheetApp.getUi().alert('Đã tắt lịch tự động. Bấm "Bước 2 · Bật lịch tự động" để bật lại.');
 }
 
+/** Bước 3: cất App ID + App Secret của ứng dụng Lark, tìm nhóm có bot, thử đọc tin. */
+function caiUD() {
+  var ui = SpreadsheetApp.getUi();
+  var a = ui.prompt('Cài nhận lệnh UD (1/2)', 'Dán App ID của ứng dụng Lark (bắt đầu bằng cli_...).', ui.ButtonSet.OK_CANCEL);
+  if (a.getSelectedButton() !== ui.Button.OK) return;
+  var b = ui.prompt('Cài nhận lệnh UD (2/2)', 'Dán App Secret của ứng dụng Lark.\nĐược cất kín trong sheet này, không hiện ra ở ô nào.', ui.ButtonSet.OK_CANCEL);
+  if (b.getSelectedButton() !== ui.Button.OK) return;
+  var pr = PropertiesService.getScriptProperties();
+  pr.setProperties({LARK_APP_ID: a.getResponseText().trim(), LARK_APP_SECRET: b.getResponseText().trim()});
+  CacheService.getScriptCache().remove('LARK_TOKEN');
+  try {
+    var nhom = goiLark_('GET', '/im/v1/chats?page_size=50').data.items || [];
+    if (!nhom.length) { ui.alert('Đã lưu, nhưng bot của ứng dụng chưa ở trong nhóm nào. Thêm bot vào nhóm "Check publish TCB" rồi bấm lại Bước 3.'); return; }
+    var chon = nhom.filter(function (n) { return /check\s*publish/i.test(n.name || ''); })[0] || nhom[0];
+    pr.setProperty('LARK_CHAT_ID', chon.chat_id);
+    pr.setProperty('LARK_DA_DOC', String(Date.now()));  // chỉ nghe tin gửi từ bây giờ
+    ui.alert('Xong. Máy sẽ nghe lệnh UD trong nhóm "' + chon.name + '".\nNhớ bấm "Bước 2 · Bật lịch tự động" nếu chưa bật.');
+  } catch (e) {
+    ui.alert('Đã lưu nhưng chưa kết nối được Lark: ' + e.message);
+  }
+}
+
 /* ---------- Chạy theo lịch ---------- */
 
-function kiemTheoLich() { kiem_(); }
-
-/** Mỗi 5 phút: app có bấm "Kiểm tra ngay" (ghi giờ vào Điều khiển!B1) thì kiểm. */
-function xuLyYeuCau() {
-  var dk = bangDieuKhien_();
-  var yc = String(dk.getRange('B1').getDisplayValue()).trim();
-  if (!yc) return;
-  dk.getRange('B1').setValue('');
+/** Tự kiểm buổi tối — bỏ qua nếu trong ngày đã có lần kiểm thấy đủ hết. */
+function kiemTheoLich() {
+  var homNay = Utilities.formatDate(new Date(), TZ, 'yyyyMMdd');
+  if (PropertiesService.getScriptProperties().getProperty('DONE_NGAY') === homNay) {
+    bangDieuKhien_().getRange('B4').setValue('Bỏ qua lần tự kiểm tối ' + Utilities.formatDate(new Date(), TZ, 'dd/MM') + ' vì trong ngày đã kiểm thấy đủ');
+    return;
+  }
   kiem_();
+}
+
+/** Mỗi phút: có lệnh UD trong nhóm Lark, hoặc app bấm "Kiểm tra ngay" (Điều khiển!B1), thì kiểm. */
+function moiPhut() {
+  var can = false;
+  var dk = bangDieuKhien_();
+  if (String(dk.getRange('B1').getDisplayValue()).trim()) { dk.getRange('B1').setValue(''); can = true; }
+  if (ngheLark_()) can = true;
+  if (can) {
+    guiLark_('Đang check publish, khoảng 1–2 phút nữa có kết quả.');
+    kiem_();
+  }
+}
+function xuLyYeuCau() { moiPhut(); }  // tên cũ, giữ cho lịch cài trước đó
+
+/** Đọc tin mới trong nhóm Lark; có tin "UD" của người (không phải bot) thì trả về true. */
+function ngheLark_() {
+  var pr = PropertiesService.getScriptProperties();
+  var chat = pr.getProperty('LARK_CHAT_ID');
+  if (!chat || !pr.getProperty('LARK_APP_ID')) return false;
+  var tu = Number(pr.getProperty('LARK_DA_DOC') || Date.now());
+  var co = false, moiNhat = tu;
+  try {
+    var kq = goiLark_('GET', '/im/v1/messages?container_id_type=chat&container_id=' + encodeURIComponent(chat) +
+      '&start_time=' + Math.floor(tu / 1000) + '&sort_type=ByCreateTimeAsc&page_size=50');
+    (kq.data.items || []).forEach(function (m) {
+      var t = Number(m.create_time);
+      if (t <= tu) return;
+      if (t > moiNhat) moiNhat = t;
+      if (!m.sender || m.sender.sender_type !== 'user' || m.msg_type !== 'text') return;
+      var chu = '';
+      try { chu = JSON.parse(m.body.content).text || ''; } catch (e) {}
+      chu = chu.replace(/@_user_\d+|@_all/g, '').trim().toUpperCase();
+      if (chu === 'UD') co = true;
+    });
+  } catch (e) {
+    bangDieuKhien_().getRange('B5').setValue('Lỗi nghe Lark lúc ' + Utilities.formatDate(new Date(), TZ, 'HH:mm dd/MM') + ': ' + e.message);
+    return false;
+  }
+  pr.setProperty('LARK_DA_DOC', String(moiNhat));
+  return co;
+}
+
+function goiLark_(cach, duong) {
+  var r = UrlFetchApp.fetch(LARK_API + duong, {
+    method: cach.toLowerCase(), muteHttpExceptions: true,
+    headers: {Authorization: 'Bearer ' + tokenLark_()}
+  });
+  var body = JSON.parse(r.getContentText() || '{}');
+  if (body.code !== 0) throw new Error((body.msg || ('HTTP ' + r.getResponseCode())) + ' (mã ' + body.code + ')');
+  return body;
+}
+
+function tokenLark_() {
+  var cache = CacheService.getScriptCache();
+  var tk = cache.get('LARK_TOKEN');
+  if (tk) return tk;
+  var pr = PropertiesService.getScriptProperties();
+  var r = UrlFetchApp.fetch(LARK_API + '/auth/v3/tenant_access_token/internal', {
+    method: 'post', contentType: 'application/json', muteHttpExceptions: true,
+    payload: JSON.stringify({app_id: pr.getProperty('LARK_APP_ID'), app_secret: pr.getProperty('LARK_APP_SECRET')})
+  });
+  var b = JSON.parse(r.getContentText() || '{}');
+  if (b.code !== 0) throw new Error('App ID/Secret chưa đúng: ' + (b.msg || r.getResponseCode()));
+  cache.put('LARK_TOKEN', b.tenant_access_token, Math.min(5400, (b.expire || 7200) - 300));
+  return b.tenant_access_token;
 }
 
 /* ---------- Phần chính ---------- */
@@ -142,6 +234,7 @@ function kiem_() {
         ' bài chưa được publish nhờ chị publish lại giúp team ạ.\nDanh sách url chưa publish tại đây:\n' + ds.join('\n');
     }
     var lark = guiLark_(tin);
+    if (tin === 'Done') PropertiesService.getScriptProperties().setProperty('DONE_NGAY', Utilities.formatDate(bay, TZ, 'yyyyMMdd'));
 
     var dk = bangDieuKhien_();
     dk.getRange('B2:B4').setValues([[gioKiem], [tomTat], [lark === 'ok' ? 'Đã gửi Lark' : 'Chưa gửi Lark: ' + lark]]);
@@ -237,8 +330,8 @@ function bangDieuKhien_() {
   var dk = ss.getSheetByName(TAB_DK);
   if (!dk) {
     dk = ss.insertSheet(TAB_DK);
-    dk.getRange('A1:A4').setValues([['Yêu cầu kiểm tra (app ghi vào đây)'], ['Lần kiểm gần nhất'], ['Kết quả'], ['Lark']]);
-    dk.getRange('A1:A4').setFontWeight('bold');
+    dk.getRange('A1:A5').setValues([['Yêu cầu kiểm tra (app ghi vào đây)'], ['Lần kiểm gần nhất'], ['Kết quả'], ['Lark'], ['Nghe lệnh UD']]);
+    dk.getRange('A1:A5').setFontWeight('bold');
     dk.setColumnWidth(1, 260); dk.setColumnWidth(2, 520);
   }
   return dk;
@@ -247,6 +340,6 @@ function bangDieuKhien_() {
 function tatLich_() {
   ScriptApp.getProjectTriggers().forEach(function (t) {
     var f = t.getHandlerFunction();
-    if (f === 'kiemTheoLich' || f === 'xuLyYeuCau') ScriptApp.deleteTrigger(t);
+    if (f === 'kiemTheoLich' || f === 'xuLyYeuCau' || f === 'moiPhut') ScriptApp.deleteTrigger(t);
   });
 }
