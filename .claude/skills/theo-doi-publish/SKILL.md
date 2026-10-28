@@ -104,8 +104,8 @@ Rồi hỏi 2 câu: (a) mở sheet có thấy lỗi hiển thị gì không, (b)
 5. Báo người dùng: `tom_tat` + STT và link các trang chưa cập nhật / lỗi.
    Trang lỗi mạng: script đã tự thử lại; vẫn lỗi thì thử lại riêng trang đó một lần nữa trước khi báo.
 
-**Quy tắc ngày (giờ Việt Nam):** từ **18:00** trở đi, so với **NGÀY MAI** và ghi vào cặp cột ngày mai
-(bài phải chuyển sang ngày hôm sau từ tối; chưa chuyển là chậm). Trước 18:00 so với hôm nay.
+**Quy tắc ngày (giờ Việt Nam):** từ **13:00** trở đi, so với **NGÀY MAI** và ghi vào cặp cột ngày mai
+(bài phải chuyển sang ngày hôm sau mới tính Done; chưa chuyển là chậm). Trước 13:00 so với hôm nay.
 
 **Cách đọc ngày:**
 - Link có `/thong-tin/blog/`: đọc khung `div.article-header-body--date` dưới tiêu đề bài (dạng ISO).

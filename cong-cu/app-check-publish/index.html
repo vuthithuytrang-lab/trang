@@ -147,7 +147,7 @@ details.cai pre{margin:12px 0 0;max-height:260px;overflow:auto;background:var(--
         <li>Mỗi tối khoảng 19:00 máy tự kiểm rồi nhắn Lark: hết thì “Done”, còn thiếu thì soạn sẵn tin gửi chị Tú Anh kèm danh sách link.</li>
         <li>Gõ <b>UD</b> hoặc <b>UP</b> (hoa thường đều được) trong nhóm Lark, hoặc bấm <b>Kiểm tra ngay</b>: khoảng 1–2 phút sau máy kiểm xong, ghi vào sheet và trả lời trong nhóm.</li>
         <li>Trong ngày đã kiểm thấy đủ hết thì tối đó máy không kiểm và không nhắn nữa.</li>
-        <li>Từ 18:00 trở đi, bài phải sang <b>ngày mai</b> mới tính là đã cập nhật. Ô hồng là trang còn để ngày cũ.</li>
+        <li>Từ 13:00 trở đi, bài phải sang <b>ngày mai</b> mới tính là đã cập nhật (đổi giờ ở tab “Điều khiển” ô B6). Ô hồng là trang còn để ngày cũ.</li>
       </ol>
       <p class="chan" style="margin-top:12px"><a href="https://docs.google.com/spreadsheets/d/11YEh1C_oB23FX3AwOupR4P00xaIAMB8jfXY21zCqzgI/edit" target="_blank" rel="noopener">Mở Google Sheet gốc ↗</a></p>
     </section>
@@ -169,7 +169,8 @@ details.cai pre{margin:12px 0 0;max-height:260px;overflow:auto;background:var(--
  * Chạy trên máy chủ Google: miễn phí, không cần Claude, không tốn token.
  *
  * - Mỗi tối khoảng 19:00 (giờ VN) tự mở từng link ở cột B, đọc ngày đang hiện, ghi vào cặp cột
- *   "dd/mm/yyyy | Kiểm tra lúc". Từ 18:00 trở đi so với NGÀY MAI (bài phải sang ngày hôm sau từ tối).
+ *   "dd/mm/yyyy | Kiểm tra lúc". Từ 13:00 trở đi so với NGÀY MAI (bài phải sang ngày hôm sau mới tính là Done).
+ *   Đổi giờ này ở tab "Điều khiển" ô B6, không cần sửa mã.
  * - Xong gửi tin vào Lark: hết thì "Done", còn thiếu thì soạn sẵn tin nhờ chị Tú Anh publish lại.
  * - Gõ "UD" hoặc "UP" (hoa thường đều được) vào nhóm Lark → trong khoảng 1 phút máy kiểm và trả lời ngay trong nhóm.
  * - Trong ngày đã có lần kiểm thấy đủ hết (UD / Kiểm tra ngay) thì lần tự kiểm 19:00 bỏ qua, không nhắn.
@@ -180,7 +181,7 @@ details.cai pre{margin:12px 0 0;max-height:260px;overflow:auto;background:var(--
 var TAB = 'Untitled';
 var TAB_DK = 'Điều khiển';
 var TZ = 'Asia/Ho_Chi_Minh';
-var GIO_CHUYEN_NGAY = 18;
+var GIO_CHUYEN_NGAY = 13;  // mặc định; tab "Điều khiển" ô B6 ghi giờ khác thì theo ô đó
 var GIO_TU_KIEM = 19;
 var LARK_API = 'https://open.larksuite.com/open-apis';
 var UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36';
@@ -350,7 +351,9 @@ function kiem_() {
     var sh = ss.getSheetByName(TAB);
     var bay = new Date();
     var gio = Number(Utilities.formatDate(bay, TZ, 'H'));
-    var ngay = new Date(bay.getTime() + (gio >= GIO_CHUYEN_NGAY ? 86400000 : 0));
+    var gioCN = Number(bangDieuKhien_().getRange('B6').getDisplayValue());
+    if (!(gioCN >= 0 && gioCN <= 24)) gioCN = GIO_CHUYEN_NGAY;
+    var ngay = new Date(bay.getTime() + (gio >= gioCN ? 86400000 : 0));
     var nhanNgay = Utilities.formatDate(ngay, TZ, 'dd/MM/yyyy');
     var soNgay = Number(Utilities.formatDate(ngay, TZ, 'yyyyMMdd'));
     var gioKiem = Utilities.formatDate(bay, TZ, 'HH:mm dd/MM/yyyy');
@@ -496,9 +499,12 @@ function bangDieuKhien_() {
   var dk = ss.getSheetByName(TAB_DK);
   if (!dk) {
     dk = ss.insertSheet(TAB_DK);
-    dk.getRange('A1:A5').setValues([['Yêu cầu kiểm tra (app ghi vào đây)'], ['Lần kiểm gần nhất'], ['Kết quả'], ['Lark'], ['Nghe lệnh UD']]);
-    dk.getRange('A1:A5').setFontWeight('bold');
     dk.setColumnWidth(1, 260); dk.setColumnWidth(2, 520);
+  }
+  if (!dk.getRange('A6').getDisplayValue()) {  // bổ sung nhãn cho tab tạo từ bản cũ
+    dk.getRange('A1:A6').setValues([['Yêu cầu kiểm tra (app ghi vào đây)'], ['Lần kiểm gần nhất'], ['Kết quả'], ['Lark'], ['Nghe lệnh UD'],
+      ['Từ giờ này, bài phải sang NGÀY MAI mới tính Done']]).setFontWeight('bold');
+    if (!dk.getRange('B6').getDisplayValue()) dk.getRange('B6').setValue(GIO_CHUYEN_NGAY);
   }
   return dk;
 }

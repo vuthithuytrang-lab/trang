@@ -5,7 +5,7 @@ Mỗi ngày một cặp cột. Đã có cặp cột của ngày cần kiểm th�
 chưa có thì thêm cặp mới bên phải. Ô có ngày nhỏ hơn ngày ở tiêu đề được sheet tự tô hồng
 (luật định dạng có điều kiện đã cài sẵn).
 
-Từ 18:00 trở đi (lần kiểm 19:00), ngày cần kiểm là NGÀY MAI: nội dung phải chuyển sang ngày hôm sau
+Từ 13:00 trở đi (Trang chốt 28/10; trước đó 18:00), ngày cần kiểm là NGÀY MAI: nội dung phải chuyển sang ngày hôm sau
 từ tối, chưa chuyển là chậm (Trang chốt 06/10/2026). Kết quả ghi vào cặp cột của ngày mai.
 
 Lần kiểm sáng và trưa (00:00–17:59) được BỎ QUA nếu lần kiểm gần nhất ghi vào cột hôm nay (kể cả lần
@@ -30,7 +30,7 @@ from datetime import datetime, timedelta, timezone
 
 import lay_ngay
 
-GIO_CHUYEN_NGAY = 18  # từ giờ này, trang phải hiện ngày mai mới tính là đã cập nhật
+GIO_CHUYEN_NGAY = 13  # từ giờ này, trang phải hiện ngày mai mới tính là đã cập nhật (Trang chốt 28/10: 13:00)
 GIO_BO_QUA = (0, 18)  # lần 08:00 và 13:00 — bỏ qua nếu lần kiểm trước (tối qua/sáng nay) đã đủ
 
 

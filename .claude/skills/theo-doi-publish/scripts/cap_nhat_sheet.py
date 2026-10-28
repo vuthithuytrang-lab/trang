@@ -4,7 +4,7 @@ Bố cục tab: STT | URL | dd/mm/yyyy | Kiểm tra lúc | dd/mm/yyyy | Kiểm t
 Mỗi ngày một cặp cột. Đã có cặp cột của ngày cần kiểm thì ghi đè, chưa có thì thêm cặp mới bên phải
 (chép định dạng từ C:D). Ô có ngày nhỏ hơn ngày ở tiêu đề được sheet tự tô hồng (luật cài bởi cai_sheet.py).
 
-Giờ Việt Nam. Từ 18:00 trở đi, ngày cần kiểm là NGÀY MAI (bài phải chuyển sang ngày hôm sau từ tối,
+Giờ Việt Nam. Từ 13:00 trở đi, ngày cần kiểm là NGÀY MAI (bài phải chuyển sang ngày hôm sau từ tối,
 chưa chuyển là chậm) và kết quả ghi vào cặp cột của ngày mai.
 Lần kiểm 00:00–17:59 được BỎ QUA nếu cột hôm nay đã thấy đủ hết URL đúng ngày (thêm --ep để luôn kiểm).
 
@@ -23,7 +23,7 @@ from datetime import datetime, timedelta, timezone
 
 import lay_ngay
 
-GIO_CHUYEN_NGAY = 18  # từ giờ này, trang phải hiện ngày mai mới tính là đã cập nhật
+GIO_CHUYEN_NGAY = 13  # từ giờ này, trang phải hiện ngày mai mới tính là đã cập nhật (Trang chốt 28/10: 13:00)
 GIO_BO_QUA = (0, 18)  # lần kiểm sáng/trưa — bỏ qua nếu cột hôm nay đã đủ
 
 
