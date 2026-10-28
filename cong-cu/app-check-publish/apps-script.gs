@@ -5,7 +5,7 @@
  * - Mỗi tối khoảng 19:00 (giờ VN) tự mở từng link ở cột B, đọc ngày đang hiện, ghi vào cặp cột
  *   "dd/mm/yyyy | Kiểm tra lúc". Từ 18:00 trở đi so với NGÀY MAI (bài phải sang ngày hôm sau từ tối).
  * - Xong gửi tin vào Lark: hết thì "Done", còn thiếu thì soạn sẵn tin nhờ chị Tú Anh publish lại.
- * - Gõ "UD" vào nhóm Lark → trong khoảng 1 phút máy kiểm và trả lời ngay trong nhóm.
+ * - Gõ "UD" hoặc "UP" (hoa thường đều được) vào nhóm Lark → trong khoảng 1 phút máy kiểm và trả lời ngay trong nhóm.
  * - Trong ngày đã có lần kiểm thấy đủ hết (UD / Kiểm tra ngay) thì lần tự kiểm 19:00 bỏ qua, không nhắn.
  * - App Check Publish ghi yêu cầu vào tab "Điều khiển" ô B1 → trong khoảng 1 phút máy tự kiểm.
  * - Menu "Check publish" trên thanh công cụ của sheet: Kiểm tra ngay, cài Lark, bật/tắt lịch.
@@ -139,7 +139,7 @@ function ngheLark_() {
       var chu = '';
       try { chu = JSON.parse(m.body.content).text || ''; } catch (e) {}
       chu = chu.replace(/@_user_\d+|@_all/g, '').trim().toUpperCase();
-      if (chu === 'UD') co = true;
+      if (chu === 'UD' || chu === 'UP') co = true;  // không phân biệt hoa thường: ud, Ud, up, UP...
     });
   } catch (e) {
     bangDieuKhien_().getRange('B5').setValue('Lỗi nghe Lark lúc ' + Utilities.formatDate(new Date(), TZ, 'HH:mm dd/MM') + ': ' + e.message);
