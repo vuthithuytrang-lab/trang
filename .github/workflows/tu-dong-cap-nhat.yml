@@ -31,7 +31,7 @@ jobs:
           curl -sfL -m 30 "$KET_QUA?t=$(date +%s)" -o tt.json || echo '{}' > tt.json
           python3 - <<'EOF' >> $GITHUB_OUTPUT
           import json, os, re, time, datetime as d
-          HOP_LE = {'gia-ca-phe', 'gia-xang-dau', 'vang-24k', 'vang-14k', 'vang-18k', 'vang-10k', '1-chi-vang', 'vang-16k', 'vang-610'}
+          HOP_LE = {'gia-ca-phe', 'gia-xang-dau', 'vang-24k', 'vang-14k', 'vang-18k', 'vang-10k', '1-chi-vang', 'vang-16k', 'vang-610', 'lai-suat-1', 'lai-suat-2'}
           tay = [b for b in os.environ.get('BAI_TAY', '').split() if b in HOP_LE]
           if tay:
               print('bai=' + ' '.join(tay)); print('ma=tay-%d' % time.time()); raise SystemExit
@@ -70,7 +70,7 @@ jobs:
         run: |
           mkdir -p ket-qua
           for m in $BAI; do
-            [ -d cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/$m ] || continue
+            [ -d cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/$m ] || [[ $m == lai-suat-[12] ]] || continue
             timeout 600 bash cong-cu/tu-dong/chay.sh $m ket-qua > ket-qua/$m.log 2>&1 || echo "LỖI $m" >> ket-qua/$m.log
             echo "::group::$m"; cat ket-qua/$m.log; echo "::endgroup::"
           done
