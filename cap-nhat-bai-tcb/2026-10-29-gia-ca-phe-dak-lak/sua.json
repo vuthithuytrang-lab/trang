@@ -1,0 +1,33 @@
+{
+  "bai1": {
+    "sua": [
+      {"ngu_canh": "đang được tham khảo ở mức khoảng 91,400 VND/kg", "tim": "91,400", "thay": "89,000", "giu_nguyen_so": true,
+       "nguon": "https://giacaphe.com/gia-ca-phe-dak-lak/",
+       "ly_do": "giacaphe.com Đắk Lắk ngày 28/10/2026 (ngày mới nhất trên nguồn): 89,000 đ/kg, +200 (số hiển thị bằng CSS, đọc qua Chromium)"},
+      {"tim": "22/10/2026 91,400 -400", "thay": "28/10/2026 89,000 +200", "giu_nguyen_so": true,
+       "nguon": "https://giacaphe.com/gia-ca-phe-dak-lak/", "ly_do": "Bảng giá theo ngày, dòng 28/10/2026: 89,000 / +200"},
+      {"tim": "21/10/2026 91,800 -2,000", "thay": "27/10/2026 88,800 -700", "giu_nguyen_so": true,
+       "nguon": "https://giacaphe.com/gia-ca-phe-dak-lak/", "ly_do": "Bảng giá theo ngày, dòng 27/10/2026: 88,800 / -700"},
+      {"tim": "20/10/2026 93,200 +800", "thay": "24/10/2026 89,500 -1,300", "giu_nguyen_so": true,
+       "nguon": "https://giacaphe.com/gia-ca-phe-dak-lak/", "ly_do": "Bảng giá theo ngày, dòng 24/10/2026: 89,500 / -1,300 (nguồn không có 25 và 26/10)"},
+      {"tim": "19/10/2026 93,000 +200", "thay": "23/10/2026 90,800 -600", "giu_nguyen_so": true,
+       "nguon": "https://giacaphe.com/gia-ca-phe-dak-lak/", "ly_do": "Bảng giá theo ngày, dòng 23/10/2026: 90,800 / -600"},
+      {"tim": "17/10/2026 92,800 +1,000", "thay": "22/10/2026 91,400 -400", "giu_nguyen_so": true,
+       "nguon": "https://giacaphe.com/gia-ca-phe-dak-lak/", "ly_do": "Bảng giá theo ngày, dòng 22/10/2026: 91,400 / -400"},
+      {"tim": "Lâm Đồng khoảng 90,800 VND/kg", "thay": "Lâm Đồng khoảng 88,500 VND/kg", "giu_nguyen_so": true,
+       "nguon": "https://giacaphe.com/gia-ca-phe-lam-dong/", "ly_do": "giacaphe.com Lâm Đồng ngày 28/10/2026: 88,500 đ/kg"},
+      {"tim": "Gia Lai khoảng 91,400 VND/kg", "thay": "Gia Lai khoảng 89,000 VND/kg", "giu_nguyen_so": true,
+       "nguon": "https://giacaphe.com/gia-ca-phe-gia-lai/", "ly_do": "giacaphe.com Gia Lai ngày 28/10/2026: 89,000 đ/kg"},
+      {"tim": "Đắk Nông khoảng 91,500 VND/kg", "thay": "Đắk Nông khoảng 89,300 VND/kg", "giu_nguyen_so": true,
+       "nguon": "https://giacaphe.com/gia-ca-phe-dak-nong/", "ly_do": "giacaphe.com Đắk Nông ngày 28/10/2026: 89,300 đ/kg"}
+    ],
+    "can_duyet": [
+      "Ngày trong bài ghi 29/10/2026 (quy tắc ngày hôm sau) nhưng nguồn giacaphe.com lúc chạy (khoảng 14:05 ngày 28/10) mới có số đến 28/10/2026 → mọi số giá trong bài là số ngày 28/10/2026.",
+      "Đoạn 7: \"tăng khoảng 200 VND/kg so với phiên trước\" giữ nguyên — nay đã khớp nguồn (Đắk Lắk 28/10/2026 tăng 200 đ/kg, 88,800 → 89,000).",
+      "Đoạn 28: câu \"giá Đắk Lắk đang ở mức tương đối cao\" giữ nguyên, nhưng với số mới Đắk Lắk 89,000 = Gia Lai 89,000, thấp hơn Đắk Nông 89,300, chỉ cao hơn Lâm Đồng 88,500 → câu có thể không còn đúng, cần duyệt.",
+      "Đoạn 8: câu \"Dưới đây là bảng thông tin được trích xuất và kẻ lại y hệt theo hình ảnh bạn cung cấp:\" có sẵn trên bài web (giống câu trả lời của AI sót lại) – không sửa, nên báo nhóm web xem lại.",
+      "Bảng giá theo ngày: đã dời 5 dòng thành 5 ngày gần nhất trên nguồn (22, 23, 24, 27, 28/10; nguồn không có 25 và 26/10).",
+      "Số Đắk Lắk trên giacaphe.com được giấu bằng CSS, phải đọc bằng Chromium; chuỗi giá Đắk Lắk 7 ngày vẫn trùng hệt Gia Lai – nên liếc lại nguồn."
+    ]
+  }
+}
