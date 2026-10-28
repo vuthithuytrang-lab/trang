@@ -1,0 +1,91 @@
+{
+ "bai1": {
+  "sua": [
+   {
+    "tim": "-2100",
+    "thay": "-1700",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe/",
+    "ly_do": "Lâm Đồng: 88,500 đ/kg, thay đổi -1,700 (Nhà Bè Agri, cập nhật 13:47 28/10/2026)"
+   },
+   {
+    "tim": "90,200",
+    "thay": "88,500",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe/",
+    "ly_do": "Lâm Đồng: 88,500 đ/kg, thay đổi -1,700 (Nhà Bè Agri, cập nhật 13:47 28/10/2026)"
+   },
+   {
+    "tim": "-3000",
+    "thay": "-1800",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe/",
+    "ly_do": "Gia Lai: 89,000 đ/kg, thay đổi -1,800 (Nhà Bè Agri, cập nhật 13:47 28/10/2026)"
+   },
+   {
+    "tim": "90,000",
+    "thay": "89,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe/",
+    "ly_do": "Gia Lai: 89,000 đ/kg, thay đổi -1,800 (Nhà Bè Agri, cập nhật 13:47 28/10/2026)"
+   },
+   {
+    "tim": "0",
+    "thay": "-2800",
+    "lan": 26,
+    "giu_nguyen_so": true,
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe/",
+    "ly_do": "Đắk Lắk: 89,000 đ/kg, thay đổi -2,800 (Nhà Bè Agri, cập nhật 13:47 28/10/2026)"
+   },
+   {
+    "tim": "91,000",
+    "thay": "89,000",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe/",
+    "ly_do": "Đắk Lắk: 89,000 đ/kg, thay đổi -2,800 (Nhà Bè Agri, cập nhật 13:47 28/10/2026)"
+   },
+   {
+    "tim": "-1000",
+    "thay": "-1700",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe/",
+    "ly_do": "Đắk Nông: 89,300 đ/kg, thay đổi -1,700 (Nhà Bè Agri, cập nhật 13:47 28/10/2026)"
+   },
+   {
+    "tim": "91,000",
+    "thay": "89,300",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe/",
+    "ly_do": "Đắk Nông: 89,300 đ/kg, thay đổi -1,700 (Nhà Bè Agri, cập nhật 13:47 28/10/2026)"
+   },
+   {
+    "tim": "-3000",
+    "thay": "-1800",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe/",
+    "ly_do": "Tây Nguyên: 89,000 đ/kg, thay đổi -1,800 (Nhà Bè Agri, cập nhật 13:47 28/10/2026)"
+   },
+   {
+    "tim": "90,800",
+    "thay": "89,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe/",
+    "ly_do": "Tây Nguyên: 89,000 đ/kg, thay đổi -1,800 (Nhà Bè Agri, cập nhật 13:47 28/10/2026)"
+   }
+  ],
+  "can_duyet": [
+   "Bài gốc trên web có lỗi chính tả \"Tây Nuy\" (đúng: \"Tây Nguyên\") – theo quy tắc không sửa câu chữ, chỉ báo lại.",
+   "Bảng giá Robusta London và Arabica New York: KHÔNG cập nhật được – giacaphe.com chặn bằng màn kiểm tra chống bot của Cloudflare (đã thử 3 lần lúc ~14:08–14:12 ngày 28/10/2026). Giữ nguyên số cũ trong bài (chỉ đổi ngày); nhờ Trang kiểm tra/điền giá thế giới trước khi đăng.",
+   "Bảng trong nước: Nhà Bè Agri (13:47 28/10/2026) ghi mức thay đổi Đắk Lắk -2800 và Gia Lai -1800, trong khi so với số cũ trong bài (91,000 → 89,000; 90,000 → 89,000) chỉ giảm 2,000 và 1,000 — đã ghi đúng như nguồn, nhờ Trang xem lại."
+  ]
+ }
+}
