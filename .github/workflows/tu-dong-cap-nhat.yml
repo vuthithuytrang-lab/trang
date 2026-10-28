@@ -14,6 +14,7 @@ concurrency: { group: tu-dong-cap-nhat, cancel-in-progress: false }
 env:
   PHIEU: https://drive.usercontent.google.com/download?id=1wrO0bArJtokvfFvOzFNFqvJhrLrPD2VI&export=download
   KET_QUA: https://raw.githubusercontent.com/${{ github.repository }}/tu-dong-ket-qua/trang-thai.json
+  DANH_SACH: https://raw.githubusercontent.com/${{ github.repository }}/claude/vibrant-keller-rk0i98/cong-cu/tu-dong/danh-sach.json
 jobs:
   kiem:
     runs-on: ubuntu-latest
@@ -28,10 +29,15 @@ jobs:
         # mã phiếu đúng dạng yc-<số>; không bao giờ đưa chữ trong phiếu vào câu lệnh
         run: |
           curl -sfL -m 30 "$PHIEU" -o phieu.json || echo '{}' > phieu.json
+          curl -sfL -m 30 "$DANH_SACH?t=$(date +%s)" -o ds.json || echo '{}' > ds.json
           curl -sfL -m 30 "$KET_QUA?t=$(date +%s)" -o tt.json || echo '{}' > tt.json
           python3 - <<'EOF' >> $GITHUB_OUTPUT
           import json, os, re, time, datetime as d
           HOP_LE = {'gia-ca-phe', 'gia-xang-dau', 'vang-24k', 'vang-14k', 'vang-18k', 'vang-10k', '1-chi-vang', 'vang-16k', 'vang-610', 'lai-suat-1', 'lai-suat-2'}
+          try:   # danh sách bài tự động mới nhất trong kho (chỉ nhận mã gồm chữ thường, số, gạch ngang)
+              HOP_LE |= {v for v in json.load(open('ds.json')).values() if isinstance(v, str) and re.fullmatch(r'[a-z0-9-]{2,40}', v)}
+          except Exception:
+              pass
           tay = [b for b in os.environ.get('BAI_TAY', '').split() if b in HOP_LE]
           if tay:
               print('bai=' + ' '.join(tay)); print('ma=tay-%d' % time.time()); raise SystemExit

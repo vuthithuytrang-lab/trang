@@ -20,8 +20,10 @@ const CAU_HINH = {
   CHO_TOI_DA_PHUT: 45,                                       // quá lâu chưa có kết quả → báo lỗi, bỏ tích
   TAB_APP: 'app',                                            // tab app đọc: A STT · B tên file · C link · D lúc · E ghi chú
 };
-// đoạn cuối link bài TCB → mã công thức tự động
-const CONG_THUC = {
+// đoạn cuối link bài TCB → mã công thức tự động. Danh sách mới nhất đọc từ kho (cong-cu/tu-dong/danh-sach.json) mỗi lần chạy,
+// nên thêm bài tự động mới KHÔNG cần dán lại mã; danh sách dưới đây chỉ dùng khi không đọc được kho.
+const DANH_SACH = 'https://raw.githubusercontent.com/vuthithuytrang-lab/trang/claude/vibrant-keller-rk0i98/cong-cu/tu-dong/danh-sach.json';
+const CONG_THUC_DU_PHONG = {
   'gia-ca-phe-hom-nay': 'gia-ca-phe', 'gia-xang-dau-hom-nay': 'gia-xang-dau', 'vang-24k': 'vang-24k',
   'vang-14k-gia-hom-nay': 'vang-14k', 'vang-18k': 'vang-18k', 'vang-10k': 'vang-10k',
   '1-chi-vang-bao-nhieu-tien': '1-chi-vang', 'gia-vang-16k-hom-nay': 'vang-16k', 'vang-610-la-vang-gi': 'vang-610',
@@ -51,6 +53,8 @@ function chay_() {
   const homNay = new Date();
   app.getRange('H1').setValue('Máy tự động chạy lúc ' + Utilities.formatDate(homNay, TZ, 'HH:mm dd/MM/yyyy'));
 
+  let CONG_THUC = CONG_THUC_DU_PHONG;
+  try { CONG_THUC = JSON.parse(UrlFetchApp.fetch(DANH_SACH + '?t=' + Date.now()).getContentText()); } catch (e) {}
   const du = sh.getRange(1, 1, sh.getLastRow(), 5).getValues();
   const tich = [];
   for (let r = 1; r < du.length; r++) {

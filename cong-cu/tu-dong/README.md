@@ -1,7 +1,7 @@
 # Cập nhật bài TCB tự động — không cần Claude, không tốn token
 
 Dựng 28/10/2026 theo yêu cầu của Trang: *"app chạy bình thường mỗi khi tôi bấm update và không tốn token"*,
-*"không đặt lịch chạy mà khi tôi bấm bạn sẽ chạy"*. Áp dụng cho **11 bài có công thức**: vàng 24K/14K/18K/10K/16K/610,
+*"không đặt lịch chạy mà khi tôi bấm bạn sẽ chạy"*. Danh sách bài tự động: `danh-sach.json` (đoạn cuối link bài → mã công thức) — Apps Script và GitHub đọc file này mỗi lần chạy, **thêm bài mới chỉ cần sửa file này + `chay.sh`, không phải dán lại mã**. Hiện có **11 bài**: vàng 24K/14K/18K/10K/16K/610,
 1 chỉ vàng, cà phê, xăng dầu, 2 bài lãi suất (`lai-suat-1`, `lai-suat-2` — công cụ `cong-cu/cap-nhat-lai-suat`, thêm 28/10/2026).
 
 ## Đường đi khi bấm
