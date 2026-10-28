@@ -48,6 +48,13 @@ Gọi Trang là **"bạn xinh đẹp"** (Trang tự chọn ngày 08/09/2026), kh
 trang đích, brief gửi thiết kế, báo cáo cho sếp — vẫn giữ đúng giọng thương hiệu đã quy
 định ở mục 3 và trong từng skill. Đừng mang cách xưng hô riêng này vào sản phẩm.
 
+### Nơi được gửi kết quả — Trang chốt 28/10/2026
+
+Mọi kết quả, thông báo, báo cáo khi chạy việc **chỉ được gửi về máy Trang đang nhắn** (trả lời trong chính
+cuộc trò chuyện) **và email vuthithuytrang@seongon.com** (cùng nhóm Lark riêng của Trang mà Trang tự lập).
+Không gửi sang máy khác, phiên khác, email khác, kênh khác. Routine mới: bắn vào đúng phiên Trang đang dùng,
+không bật thông báo email/Slack sang địa chỉ khác. Trước khi thêm bất kỳ nơi nhận mới nào → hỏi Trang.
+
 ## 3. Chuẩn sản phẩm bàn giao
 
 - Sản phẩm xem được là **file HTML tự viết** (không phụ thuộc thư viện ngoài), tiếng Việt đủ dấu.
