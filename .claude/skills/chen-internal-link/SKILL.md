@@ -37,8 +37,10 @@ Cột của sheet hay bị đổi chỗ → **luôn đọc hàng 1 trước mỗ
 1. Đọc cột URL + cột FILE (jq/python trên file kết quả đã lưu, đừng in cả cột ra màn hình) → danh sách dòng có URL mà FILE trống.
 2. Theo README mục "Plan internal links": tải bài → `prep.py` → `build.py` → `plan.json` → `chen.py` → soát `soat.py`,
    `kiemtra.py`, `linkcu.py`, `cautruc.py` → tải lên Drive (`create_file` text/html, đúng thư mục) → `verify.py`.
-3. Ghi link file vào cột FILE, ghi chú "Đủ x/N anchor…" vào cột Ghi chú (ô trống).
-4. Thêm dòng vào `tien-do.csv` (khớp theo URL, không theo số dòng — sheet hay bị sắp xếp lại), thêm mục "Đợt N" vào `bao-cao.md`, commit + push.
+3. **Agent tải lên gõ lại nội dung nên có thể sót chữ** → sau khi tải, xuất từng file và so từng chữ với bản gốc
+   (`duyet/docdiff.py` + `duyet/docchk.py`), sai thì sửa thẳng trong file. Tải xong lô nào gắn link lô đó vào sheet ngay (Trang muốn thấy dần).
+4. Ghi link file vào cột FILE, ghi chú "Đủ x/N anchor…" vào cột Ghi chú (ô trống).
+5. Thêm dòng vào `tien-do.csv` (khớp theo URL, không theo số dòng — sheet hay bị sắp xếp lại), thêm mục "Đợt N" vào `bao-cao.md`, commit + push.
 
 ## 3. Luồng B — sửa theo góp ý người duyệt
 

@@ -3,8 +3,9 @@
 Cập nhật: 28/10/2026
 
 ## Okamura inlink (28/10/2026)
-- [ ] 35 dòng (12–46) đang tạo file → ghi cột S. Dòng 47 (trang chủ) không có anchor nào → bỏ qua, báo Trang.
-- [ ] Trang mở quyền "Bất kỳ ai có link – Người chỉnh sửa" cho thư mục Okamura - Inlink - File blog (công cụ không tự mở được).
+- [x] 35 dòng (12–46) đã tạo file, ghi cột S (28/10/2026). Dòng 47 (trang chủ) không có anchor → bỏ qua.
+- [ ] Chờ Trang xác nhận URL /tu-van-phong/oc (thực chất là trang pin OC) cho dòng 45, 46.
+- [x] Trang đã mở quyền thư mục Okamura - Inlink - File blog.
 
 ## Plan internal links — Techcombank
 - [ ] **Dòng 43 (vàng là gì)**: sheet chỉ có URL tỷ giá, ô anchor trống (cần 1 link) → chờ Trang đưa anchor rồi mới tạo file.
