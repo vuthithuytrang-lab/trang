@@ -1,10 +1,55 @@
 URL: https://vntime.org/phan-bo-hop-ly-giua-tien-mat-ngoai-te-va-the-khi-chi-tieu-o-nuoc-ngoai.html
-TITLE: Phân bổ hợp lý giữa tiền mặt ngoại tệ và thẻ khi chi tiêu ở nước ngoài - VNTime
-TCB_LINKS: ['https://techcombank.com/cong-cu-tien-ich/ty-gia']
+TITLE: Phân bổ hợp lý giữa tiền mặt ngoại tệ và thẻ khi chi tiêu ở nước ngoài
+GHI CHÚ: trích tay, vài chữ 'USD' bị mất do là link
 
-### 
-Đọc hiểu chi phí thực của một khoản vay trước khi ký hợp đồng
+Tiền mặt ngoại tệ và thẻ thanh toán quốc tế là hai phương tiện chi tiêu chính của du khách khi ra nước ngoài, mỗi phương tiện có đặc điểm và chi phí riêng. Bài viết phân tích loại chi tiêu phù hợp với từng phương tiện, cách xác định tỷ lệ phân bổ và cách chuẩn bị trước chuyến đi.
 
-by nguoidung23
- 26 Tháng 10, 2026
- 0
+1. Đặc điểm và chi phí của từng phương tiện thanh toán
+
+2. Loại chi tiêu phù hợp với từng phương tiện
+
+3. Chuẩn bị trước chuyến đi và điều chỉnh trong thời gian lưu trú
+
+1. Đặc điểm và chi phí của từng phương tiện thanh toán
+
+Hiểu rõ cách mỗi phương tiện được quy đổi và tính phí là cơ sở để phân bổ chi tiêu hợp lý.
+
+Với tiền mặt ngoại tệ, chi phí quy đổi được xác định ngay tại thời điểm bạn mua ngoại tệ trước chuyến đi. Ngân hàng áp dụng giá bán ra tiền mặt, và sau đó mọi khoản chi bằng tiền mặt không phát sinh thêm phí. Ưu điểm của tiền mặt là chi phí được biết trước, được chấp nhận ở hầu hết các điểm bán nhỏ lẻ, và phù hợp với những nơi chưa phổ biến thanh toán điện tử. Hạn chế là cần bảo quản cẩn thận và phần dư cuối chuyến đi phải quy đổi lại theo giá mua vào, thấp hơn giá bán ra lúc mua.
+
+Với thẻ thanh toán quốc tế, mỗi giao dịch được quy đổi theo tỷ giá tại thời điểm quyết toán, kèm phí chuyển đổi ngoại tệ theo biểu phí của thẻ. Ưu điểm của thẻ là không cần mang nhiều tiền mặt, phù hợp với các khoản chi lớn và có sẵn lịch sử giao dịch để đối chiếu. Hạn chế là chi phí thực tế chỉ được xác định sau khi giao dịch được quyết toán, và một số điểm bán nhỏ có thể không chấp nhận thẻ.
+
+hoặc tỷ giá của đồng tiền tại điểm đến trên bảng niêm yết của ngân hàng để so sánh chi phí giữa hai phương tiện. Phần chi bằng tiền mặt tính theo giá bán ra tiền mặt, còn phần chi qua thẻ tính theo giá chuyển khoản tham khảo cộng phí chuyển đổi.
+
+2. Loại chi tiêu phù hợp với từng phương tiện
+
+Không có tỷ lệ phân bổ chung cho mọi chuyến đi, nhưng có thể dựa vào tính chất của từng khoản chi để chọn phương tiện.
+
+Các khoản chi phù hợp với tiền mặt thường có giá trị nhỏ và phát sinh tại các điểm bán nhỏ lẻ:
+
+Ăn uống tại quán nhỏ, chợ địa phương và hàng rong
+
+Phương tiện đi lại như taxi truyền thống, xe buýt hoặc vé tham quan tại các điểm nhỏ
+
+Tiền boa cho nhân viên phục vụ tại các quốc gia có thói quen này
+
+Các khoản chi phù hợp với thẻ thường có giá trị lớn hoặc phát sinh tại khách sạn, trung tâm thương mại, nhà hàng lớn và các dịch vụ đặt trực tuyến. Với khách sạn và dịch vụ thuê xe, thẻ còn được dùng để đặt cọc hoặc bảo lãnh, điều mà tiền mặt khó thực hiện.
+
+Tỷ lệ phân bổ cụ thể còn phụ thuộc vào mức độ phổ biến của thanh toán điện tử tại điểm đến. Ở những quốc gia mà thẻ được chấp nhận rộng rãi, phần tiền mặt có thể chỉ chiếm một tỷ lệ nhỏ trong tổng chi tiêu. Ở những nơi tiền mặt vẫn chiếm ưu thế, tỷ lệ tiền mặt cần cao hơn. Thông tin này có thể tham khảo từ trang du lịch chính thức của điểm đến hoặc kinh nghiệm của người từng đến trong thời gian gần.
+
+Mỗi loại chi tiêu ở nước ngoài phù hợp với một phương tiện thanh toán khác nhau.
+
+3. Chuẩn bị trước chuyến đi và điều chỉnh trong thời gian lưu trú
+
+Sau khi xác định tỷ lệ phân bổ, khâu chuẩn bị giúp bạn sử dụng cả hai phương tiện một cách thuận lợi.
+
+Với phần tiền mặt, bạn có thể mua đồng tiền của điểm đến tại Việt Nam nếu ngân hàng có giao dịch loại tiền đó. Với điểm đến dùng đồng tiền ít phổ biến, đồng
+
+thường là lựa chọn mang theo để quy đổi tiếp tại nơi đến, nhờ được chấp nhận tại hầu hết quầy đổi tiền quốc tế. Nên chuẩn bị tiền mặt gồm cả mệnh giá nhỏ để thuận tiện cho các khoản chi lặt vặt.
+
+Với phần chi qua thẻ, bạn nên kiểm tra thẻ đã được kích hoạt giao dịch quốc tế, hạn mức còn đủ và tra cứu phí chuyển đổi ngoại tệ. Mang theo hai thẻ thuộc hai tổ chức thẻ khác nhau, cất ở hai nơi riêng, giúp bạn luôn có phương án thay thế.
+
+Trong thời gian lưu trú, việc ghi chép chi tiêu hằng ngày cho cả tiền mặt và thẻ giúp bạn điều chỉnh tỷ lệ kịp thời. Nếu tiền mặt được dùng nhanh hơn dự kiến, bạn có thể chuyển một số khoản sang thanh toán thẻ. Nếu tiền mặt còn nhiều vào những ngày cuối, nên ưu tiên dùng tiền mặt cho các khoản chi còn lại để hạn chế phần dư phải quy đổi lại.
+
+Chuẩn bị trước và điều chỉnh trong chuyến đi giúp tỷ lệ tiền mặt và thẻ luôn hợp lý.
+
+Phân bổ hợp lý giữa tiền mặt ngoại tệ và thẻ giúp bạn tận dụng ưu điểm của từng phương tiện: tiền mặt cho các khoản nhỏ lẻ với chi phí biết trước, thẻ cho các khoản lớn với sự tiện lợi và an tâm. Khi chuẩn bị đầy đủ và điều chỉnh linh hoạt trong chuyến đi, chi tiêu ở nước ngoài trở nên chủ động và rõ ràng hơn.
