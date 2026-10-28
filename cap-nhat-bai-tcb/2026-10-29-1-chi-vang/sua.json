@@ -1,0 +1,874 @@
+{
+ "bai1": {
+  "sua": [
+   {
+    "tim": "Giá vàng thế giới ngày 29/10/2026 giao dịch quanh ngưỡng 4,096.15 USD/ounce (tương đương khoảng 128,500,698 VND/lượng quy đổi theo tỷ giá Techcombank",
+    "thay": "Giá vàng thế giới ngày 29/10/2026 giao dịch quanh ngưỡng 4,033.33 USD/ounce (tương đương khoảng 126,559,143 VND/lượng quy đổi theo tỷ giá Techcombank",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://giavang.org/the-gioi/",
+    "ly_do": "giavang.org 14:08:32 28/10/2026: 4,033.33 USD/ounce × 1.20565303 ounce/lượng × 26,026 đ/USD (Techcombank bán chuyển khoản USD (50,100), 2026-10-28T14:02:15.890Z) = 126,559,143 VND/lượng"
+   },
+   {
+    "tim": "4,595,000",
+    "thay": "4,635,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – \"Vàng 333 (8K)\", cập nhật 28/10/2026 10:53:46"
+   },
+   {
+    "tim": "3,605,000",
+    "thay": "3,645,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – \"Vàng 333 (8K)\", cập nhật 28/10/2026 10:53:46"
+   },
+   {
+    "tim": "8,073,000",
+    "thay": "8,143,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – \"Vàng 585 (14K)\", cập nhật 28/10/2026 10:53:46"
+   },
+   {
+    "tim": "7,083,000",
+    "thay": "7,153,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – \"Vàng 585 (14K)\", cập nhật 28/10/2026 10:53:46"
+   },
+   {
+    "tim": "8,418,000",
+    "thay": "8,491,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – \"Vàng 610 (14.6K)\", cập nhật 28/10/2026 10:53:46"
+   },
+   {
+    "tim": "7,428,000",
+    "thay": "7,501,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – \"Vàng 610 (14.6K)\", cập nhật 28/10/2026 10:53:46"
+   },
+   {
+    "tim": "8,970,000",
+    "thay": "9,048,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – \"Vàng 650 (15.6K)\", cập nhật 28/10/2026 10:53:46"
+   },
+   {
+    "tim": "7,980,000",
+    "thay": "8,058,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – \"Vàng 650 (15.6K)\", cập nhật 28/10/2026 10:53:46"
+   },
+   {
+    "tim": "9,384,000",
+    "thay": "9,466,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – \"Vàng 680 (16.3K)\", cập nhật 28/10/2026 10:53:46"
+   },
+   {
+    "tim": "8,394,000",
+    "thay": "8,476,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – \"Vàng 680 (16.3K)\", cập nhật 28/10/2026 10:53:46"
+   },
+   {
+    "tim": "10,350,000",
+    "thay": "10,440,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – \"Vàng 750 (18K)\", cập nhật 28/10/2026 10:53:46"
+   },
+   {
+    "tim": "8,360,000",
+    "thay": "9,450,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – \"Vàng 750 (18K)\", cập nhật 28/10/2026 10:53:46"
+   },
+   {
+    "tim": "12,641,000",
+    "thay": "12,751,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – \"Vàng 916 (22K)\", cập nhật 28/10/2026 10:53:46"
+   },
+   {
+    "tim": "12,021,000",
+    "thay": "12,131,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – \"Vàng 916 (22K)\", cập nhật 28/10/2026 10:53:46"
+   },
+   {
+    "tim": "13,662,000",
+    "thay": "13,781,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – \"Vàng nữ trang 99\", cập nhật 28/10/2026 10:53:46"
+   },
+   {
+    "tim": "13,042,000",
+    "thay": "13,161,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – \"Vàng nữ trang 99\", cập nhật 28/10/2026 10:53:46"
+   },
+   {
+    "tim": "13,600,000",
+    "thay": "13,809,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – \"Vàng nữ trang 9920\", cập nhật 28/10/2026 10:53:46"
+   },
+   {
+    "tim": "13,070,000",
+    "thay": "13,189,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – \"Vàng nữ trang 9920\", cập nhật 28/10/2026 10:53:46"
+   },
+   {
+    "tim": "13,768,000",
+    "thay": "13,906,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – \"Vàng nữ trang 999\", cập nhật 28/10/2026 10:53:46"
+   },
+   {
+    "tim": "13,336,000",
+    "thay": "13,456,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – \"Vàng nữ trang 999\", cập nhật 28/10/2026 10:53:46"
+   },
+   {
+    "tim": "13,800,000",
+    "thay": "13,920,000",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – \"Vàng nữ trang 999.9\", cập nhật 28/10/2026 10:53:46"
+   },
+   {
+    "tim": "13,350,000",
+    "thay": "13,470,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – \"Vàng nữ trang 999.9\", cập nhật 28/10/2026 10:53:46"
+   },
+   {
+    "tim": "14,140,000",
+    "thay": "14,100,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – \"Vàng PNJ - Phượng Hoàng\", cập nhật 28/10/2026 10:53:46"
+   },
+   {
+    "tim": "13,840,000",
+    "thay": "13,700,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – \"Vàng PNJ - Phượng Hoàng\", cập nhật 28/10/2026 10:53:46"
+   },
+   {
+    "tim": "14,060,000",
+    "thay": "14,100,000",
+    "lan": 5,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – \"Vàng Phúc Lộc Tài 999.9\", cập nhật 28/10/2026 10:53:46"
+   },
+   {
+    "tim": "13,760,000",
+    "thay": "13,700,000",
+    "lan": 5,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – \"Vàng Phúc Lộc Tài 999.9\", cập nhật 28/10/2026 10:53:46"
+   },
+   {
+    "tim": "14,060,000",
+    "thay": "14,100,000",
+    "lan": 4,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – \"Vàng Kim Bảo 999.9\", cập nhật 28/10/2026 10:53:46"
+   },
+   {
+    "tim": "13,760,000",
+    "thay": "13,700,000",
+    "lan": 4,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – \"Vàng Kim Bảo 999.9\", cập nhật 28/10/2026 10:53:46"
+   },
+   {
+    "tim": "14,060,000",
+    "thay": "14,100,000",
+    "lan": 3,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – \"Nhẫn Trơn PNJ 999.9\", cập nhật 28/10/2026 10:53:46"
+   },
+   {
+    "tim": "13,760,000",
+    "thay": "13,700,000",
+    "lan": 3,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – \"Nhẫn Trơn PNJ 999.9\", cập nhật 28/10/2026 10:53:46"
+   },
+   {
+    "tim": "14,060,000",
+    "thay": "14,270,000",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – \"Vàng miếng SJC 999.9\", cập nhật 28/10/2026 10:53:46"
+   },
+   {
+    "tim": "13,760,000",
+    "thay": "13,970,000",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – \"Vàng miếng SJC 999.9\", cập nhật 28/10/2026 10:53:46"
+   },
+   {
+    "tim": "4,966,000",
+    "thay": "5,004,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://banggia.doji.vn/gold-price",
+    "ly_do": "DOJI – \"GIÁ NGUYÊN LIỆU 10K\", cập nhật 07:09 ngày 28/10/2026"
+   },
+   {
+    "tim": "7,345,000",
+    "thay": "7,402,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://banggia.doji.vn/gold-price",
+    "ly_do": "DOJI – \"GIÁ NGUYÊN LIỆU 14K\", cập nhật 07:09 ngày 28/10/2026"
+   },
+   {
+    "tim": "9,620,000",
+    "thay": "9,694,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://banggia.doji.vn/gold-price",
+    "ly_do": "DOJI – \"GIÁ NGUYÊN LIỆU 18K\", cập nhật 07:09 ngày 28/10/2026"
+   },
+   {
+    "tim": "14,110,000",
+    "thay": "14,160,000",
+    "lan": 3,
+    "giu_nguyen_so": true,
+    "nguon": "https://banggia.doji.vn/gold-price",
+    "ly_do": "DOJI – \"NHẪN TRÒN 9999 HƯNG THỊNH VƯỢNG\", cập nhật 07:09 ngày 28/10/2026"
+   },
+   {
+    "tim": "13,710,000",
+    "thay": "13,760,000",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://banggia.doji.vn/gold-price",
+    "ly_do": "DOJI – \"NHẪN TRÒN 9999 HƯNG THỊNH VƯỢNG\", cập nhật 07:09 ngày 28/10/2026"
+   },
+   {
+    "tim": "13,850,000",
+    "thay": "13,950,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://banggia.doji.vn/gold-price",
+    "ly_do": "DOJI – \"NỮ TRANG 9999\", cập nhật 07:09 ngày 28/10/2026"
+   },
+   {
+    "tim": "13,450,000",
+    "thay": "13,550,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://banggia.doji.vn/gold-price",
+    "ly_do": "DOJI – \"NỮ TRANG 9999\", cập nhật 07:09 ngày 28/10/2026"
+   },
+   {
+    "tim": "14,110,000",
+    "thay": "14,160,000",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://banggia.doji.vn/gold-price",
+    "ly_do": "DOJI – \"KIM TT/AVPL\", cập nhật 07:09 ngày 28/10/2026"
+   },
+   {
+    "tim": "13,710,000",
+    "thay": "13,760,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://banggia.doji.vn/gold-price",
+    "ly_do": "DOJI – \"KIM TT/AVPL\", cập nhật 07:09 ngày 28/10/2026"
+   },
+   {
+    "tim": "14,170,000",
+    "thay": "14,270,000",
+    "lan": 4,
+    "giu_nguyen_so": true,
+    "nguon": "https://banggia.doji.vn/gold-price",
+    "ly_do": "DOJI – \"VÀNG MIẾNG SJC\", cập nhật 07:09 ngày 28/10/2026"
+   },
+   {
+    "tim": "13,870,000",
+    "thay": "13,970,000",
+    "lan": 4,
+    "giu_nguyen_so": true,
+    "nguon": "https://banggia.doji.vn/gold-price",
+    "ly_do": "DOJI – \"VÀNG MIẾNG SJC\", cập nhật 07:09 ngày 28/10/2026"
+   },
+   {
+    "tim": "12,800,000",
+    "thay": "12,900,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://phuquygroup.vn/",
+    "ly_do": "PHUQUY – \"Vàng 999.0 phi SJC\", cập nhật 14:04 28/10/2026"
+   },
+   {
+    "tim": "12,850,000",
+    "thay": "12,950,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://phuquygroup.vn/",
+    "ly_do": "PHUQUY – \"Vàng 999.9 phi SJC\", cập nhật 14:04 28/10/2026"
+   },
+   {
+    "tim": "13,622,000",
+    "thay": "13,720,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://phuquygroup.vn/",
+    "ly_do": "PHUQUY – \"Vàng trang sức 98\", cập nhật 14:04 28/10/2026"
+   },
+   {
+    "tim": "13,230,000",
+    "thay": "13,328,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://phuquygroup.vn/",
+    "ly_do": "PHUQUY – \"Vàng trang sức 98\", cập nhật 14:04 28/10/2026"
+   },
+   {
+    "tim": "13,761,000",
+    "thay": "13,860,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://phuquygroup.vn/",
+    "ly_do": "PHUQUY – \"Vàng trang sức 99\", cập nhật 14:04 28/10/2026"
+   },
+   {
+    "tim": "13,365,000",
+    "thay": "13,464,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://phuquygroup.vn/",
+    "ly_do": "PHUQUY – \"Vàng trang sức 99\", cập nhật 14:04 28/10/2026"
+   },
+   {
+    "tim": "13,890,000",
+    "thay": "13,990,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://phuquygroup.vn/",
+    "ly_do": "PHUQUY – \"Vàng trang sức 999\", cập nhật 14:04 28/10/2026"
+   },
+   {
+    "tim": "13,490,000",
+    "thay": "13,590,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://phuquygroup.vn/",
+    "ly_do": "PHUQUY – \"Vàng trang sức 999\", cập nhật 14:04 28/10/2026"
+   },
+   {
+    "tim": "14,020,000",
+    "thay": "14,000,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://phuquygroup.vn/",
+    "ly_do": "PHUQUY – \"Vàng trang sức 999.9\", cập nhật 14:04 28/10/2026"
+   },
+   {
+    "tim": "13,570,000",
+    "thay": "13,600,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://phuquygroup.vn/",
+    "ly_do": "PHUQUY – \"Vàng trang sức 999.9\", cập nhật 14:04 28/10/2026"
+   },
+   {
+    "tim": "14,060,000",
+    "thay": "14,110,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://phuquygroup.vn/",
+    "ly_do": "PHUQUY – \"Phú quý 1 lượng 99.9\", cập nhật 14:04 28/10/2026"
+   },
+   {
+    "tim": "13,760,000",
+    "thay": "13,810,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://phuquygroup.vn/",
+    "ly_do": "PHUQUY – \"Phú quý 1 lượng 99.9\", cập nhật 14:04 28/10/2026"
+   },
+   {
+    "tim": "14,070,000",
+    "thay": "14,120,000",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://phuquygroup.vn/",
+    "ly_do": "PHUQUY – \"Phú Quý 1 Lượng 999.9\", cập nhật 14:04 28/10/2026"
+   },
+   {
+    "tim": "13,770,000",
+    "thay": "13,820,000",
+    "lan": 3,
+    "giu_nguyen_so": true,
+    "nguon": "https://phuquygroup.vn/",
+    "ly_do": "PHUQUY – \"Phú Quý 1 Lượng 999.9\", cập nhật 14:04 28/10/2026"
+   },
+   {
+    "tim": "14,070,000",
+    "thay": "14,120,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://phuquygroup.vn/",
+    "ly_do": "PHUQUY – \"Nhẫn tròn Phú Quý 999.9\", cập nhật 14:04 28/10/2026"
+   },
+   {
+    "tim": "13,770,000",
+    "thay": "13,820,000",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://phuquygroup.vn/",
+    "ly_do": "PHUQUY – \"Nhẫn tròn Phú Quý 999.9\", cập nhật 14:04 28/10/2026"
+   },
+   {
+    "tim": "14,170,000",
+    "thay": "14,270,000",
+    "lan": 3,
+    "giu_nguyen_so": true,
+    "nguon": "https://phuquygroup.vn/",
+    "ly_do": "PHUQUY – \"Vàng miếng SJC\", cập nhật 14:04 28/10/2026"
+   },
+   {
+    "tim": "13,770,000",
+    "thay": "13,820,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://phuquygroup.vn/",
+    "ly_do": "PHUQUY – \"Vàng miếng SJC\", cập nhật 14:04 28/10/2026"
+   },
+   {
+    "tim": "Vàng Rồng Thăng Long niêm yết giá 14,110,000 VND 1 chỉ vào ngày 28.10.2026",
+    "thay": "Vàng Rồng Thăng Long niêm yết giá 14,040,000 VND 1 chỉ vào ngày 29.10.2026",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/bao-tin-minh-chau/",
+    "ly_do": "chú thích ảnh: giá bán trang sức Rồng Thăng Long 999.9 hôm nay"
+   },
+   {
+    "tim": "12,300,000",
+    "thay": "12,330,000",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/bao-tin-minh-chau/",
+    "ly_do": "BTMC – \"Vàng Thị Trường Vàng 999.9 (24k)\", cập nhật 14:05:03 28/10/2026"
+   },
+   {
+    "tim": "13,960,000",
+    "thay": "14,020,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/bao-tin-minh-chau/",
+    "ly_do": "BTMC – \"Vàng BTMC Trang sức bằng Vàng Rồng Thăng Long 99.9 (24k)\", cập nhật 14:05:03 28/10/2026"
+   },
+   {
+    "tim": "13,460,000",
+    "thay": "13,520,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/bao-tin-minh-chau/",
+    "ly_do": "BTMC – \"Vàng BTMC Trang sức bằng Vàng Rồng Thăng Long 99.9 (24k)\", cập nhật 14:05:03 28/10/2026"
+   },
+   {
+    "tim": "13,980,000",
+    "thay": "14,040,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/bao-tin-minh-chau/",
+    "ly_do": "BTMC – \"Vàng BTMC Trang sức bằng Vàng Rồng Thăng Long 999.9 (24k)\", cập nhật 14:05:03 28/10/2026"
+   },
+   {
+    "tim": "13,480,000",
+    "thay": "13,540,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/bao-tin-minh-chau/",
+    "ly_do": "BTMC – \"Vàng BTMC Trang sức bằng Vàng Rồng Thăng Long 999.9 (24k)\", cập nhật 14:05:03 28/10/2026"
+   },
+   {
+    "tim": "14,170,000",
+    "thay": "14,270,000",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/bao-tin-minh-chau/",
+    "ly_do": "BTMC – \"Vàng SJC Vàng miếng 999.9 (24k)\", cập nhật 14:05:03 28/10/2026"
+   },
+   {
+    "tim": "13,680,000",
+    "thay": "13,740,000",
+    "lan": 3,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/bao-tin-minh-chau/",
+    "ly_do": "BTMC – \"Vàng SJC Vàng miếng 999.9 (24k)\", cập nhật 14:05:03 28/10/2026"
+   },
+   {
+    "tim": "12,300,000",
+    "thay": "12,330,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/bao-tin-minh-chau/",
+    "ly_do": "BTMC – \"Quà Mừng Vàng Quà mừng bản vị vàng 999.9 (24k)\", cập nhật 14:05:03 28/10/2026"
+   },
+   {
+    "tim": "14,080,000",
+    "thay": "14,140,000",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/bao-tin-minh-chau/",
+    "ly_do": "BTMC – \"VRTL Nhẫn tròn trơn 999.9 (24k)\", cập nhật 14:05:03 28/10/2026"
+   },
+   {
+    "tim": "13,680,000",
+    "thay": "13,740,000",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/bao-tin-minh-chau/",
+    "ly_do": "BTMC – \"VRTL Nhẫn tròn trơn 999.9 (24k)\", cập nhật 14:05:03 28/10/2026"
+   },
+   {
+    "tim": "14,080,000",
+    "thay": "14,140,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/bao-tin-minh-chau/",
+    "ly_do": "BTMC – \"VRTL Vàng miếng 999.9 (24k)\", cập nhật 14:05:03 28/10/2026"
+   },
+   {
+    "tim": "13,680,000",
+    "thay": "13,740,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/bao-tin-minh-chau/",
+    "ly_do": "BTMC – \"VRTL Vàng miếng 999.9 (24k)\", cập nhật 14:05:03 28/10/2026"
+   },
+   {
+    "tim": "Vàng miếng SJC vẫn có giá trên 14 vào ngày 28.10.2026",
+    "thay": "Vàng miếng SJC vẫn có giá trên 14 vào ngày 29.10.2026",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "",
+    "ly_do": "chú thích ảnh: ngày = hôm nay (giá bán SJC vẫn trên 14 triệu/chỉ)"
+   },
+   {
+    "tim": "5,770,200",
+    "thay": "5,791,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – \"Nữ trang 41,7%\", cập nhật 14:05:03 28/10/2026"
+   },
+   {
+    "tim": "4,790,200",
+    "thay": "4,811,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – \"Nữ trang 41,7%\", cập nhật 14:05:03 28/10/2026"
+   },
+   {
+    "tim": "8,061,200",
+    "thay": "8,090,400",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – \"Nữ trang 58,3%\", cập nhật 14:05:03 28/10/2026"
+   },
+   {
+    "tim": "7,081,200",
+    "thay": "7,110,400",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – \"Nữ trang 58,3%\", cập nhật 14:05:03 28/10/2026"
+   },
+   {
+    "tim": "8,433,800",
+    "thay": "8,464,300",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – \"Nữ trang 61%\", cập nhật 14:05:03 28/10/2026"
+   },
+   {
+    "tim": "7,453,800",
+    "thay": "7,484,300",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – \"Nữ trang 61%\", cập nhật 14:05:03 28/10/2026"
+   },
+   {
+    "tim": "9,399,900",
+    "thay": "9,433,900",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – \"Nữ trang 68%\", cập nhật 14:05:03 28/10/2026"
+   },
+   {
+    "tim": "8,419,900",
+    "thay": "8,453,900",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – \"Nữ trang 68%\", cập nhật 14:05:03 28/10/2026"
+   },
+   {
+    "tim": "10,366,000",
+    "thay": "10,403,500",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – \"Nữ trang 75%\", cập nhật 14:05:03 28/10/2026"
+   },
+   {
+    "tim": "9,386,000",
+    "thay": "9,423,500",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – \"Nữ trang 75%\", cập nhật 14:05:03 28/10/2026"
+   },
+   {
+    "tim": "13,663,400",
+    "thay": "13,712,900",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – \"Nữ trang 99%\", cập nhật 14:05:03 28/10/2026"
+   },
+   {
+    "tim": "12,963,400",
+    "thay": "13,012,900",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – \"Nữ trang 99%\", cập nhật 14:05:03 28/10/2026"
+   },
+   {
+    "tim": "13,800,000",
+    "thay": "13,850,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – \"Nữ trang 99,99%\", cập nhật 14:05:03 28/10/2026"
+   },
+   {
+    "tim": "13,300,000",
+    "thay": "13,350,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – \"Nữ trang 99,99%\", cập nhật 14:05:03 28/10/2026"
+   },
+   {
+    "tim": "13,900,000",
+    "thay": "13,960,000",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – \"Vàng nhẫn SJC 99,99% 0.5 chỉ, 0.3 chỉ\", cập nhật 14:05:03 28/10/2026"
+   },
+   {
+    "tim": "13,500,000",
+    "thay": "13,550,000",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – \"Vàng nhẫn SJC 99,99% 0.5 chỉ, 0.3 chỉ\", cập nhật 14:05:03 28/10/2026"
+   },
+   {
+    "tim": "13,900,000",
+    "thay": "13,950,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – \"Vàng nhẫn SJC 99,99% 1 chỉ, 2 chỉ, 5 chỉ\", cập nhật 14:05:03 28/10/2026"
+   },
+   {
+    "tim": "13,500,000",
+    "thay": "13,550,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – \"Vàng nhẫn SJC 99,99% 1 chỉ, 2 chỉ, 5 chỉ\", cập nhật 14:05:03 28/10/2026"
+   },
+   {
+    "tim": "14,173,000",
+    "thay": "14,273,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – \"Vàng SJC 0.5 chỉ, 1 chỉ, 2 chỉ\", cập nhật 14:05:03 28/10/2026"
+   },
+   {
+    "tim": "13,870,000",
+    "thay": "13,970,000",
+    "lan": 3,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – \"Vàng SJC 0.5 chỉ, 1 chỉ, 2 chỉ\", cập nhật 14:05:03 28/10/2026"
+   },
+   {
+    "tim": "14,172,000",
+    "thay": "14,272,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – \"Vàng SJC 5 chỉ\", cập nhật 14:05:03 28/10/2026"
+   },
+   {
+    "tim": "13,870,000",
+    "thay": "13,970,000",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – \"Vàng SJC 5 chỉ\", cập nhật 14:05:03 28/10/2026"
+   },
+   {
+    "tim": "14,170,000",
+    "thay": "14,270,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – \"Vàng SJC 1L, 10L, 1KG\", cập nhật 14:05:03 28/10/2026"
+   },
+   {
+    "tim": "13,870,000",
+    "thay": "13,970,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – \"Vàng SJC 1L, 10L, 1KG\", cập nhật 14:05:03 28/10/2026"
+   },
+   {
+    "tim": "5,870,000",
+    "thay": "5,907,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://huythanhjewelry.vn/gia-vang-hom-nay",
+    "ly_do": "HUYTHANH – \"Giá nguyên liệu 10K\", cập nhật 10:58 ngày 28/10/2026"
+   },
+   {
+    "tim": "5,583,000",
+    "thay": "5,620,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://huythanhjewelry.vn/gia-vang-hom-nay",
+    "ly_do": "HUYTHANH – \"Giá nguyên liệu 10K\", cập nhật 10:58 ngày 28/10/2026"
+   },
+   {
+    "tim": "8,254,000",
+    "thay": "8,307,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://huythanhjewelry.vn/gia-vang-hom-nay",
+    "ly_do": "HUYTHANH – \"Giá nguyên liệu 14K\", cập nhật 10:58 ngày 28/10/2026"
+   },
+   {
+    "tim": "7,825,000",
+    "thay": "7,904,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://huythanhjewelry.vn/gia-vang-hom-nay",
+    "ly_do": "HUYTHANH – \"Giá nguyên liệu 14K\", cập nhật 10:58 ngày 28/10/2026"
+   },
+   {
+    "tim": "10,583,000",
+    "thay": "10,650,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://huythanhjewelry.vn/gia-vang-hom-nay",
+    "ly_do": "HUYTHANH – \"Giá nguyên liệu 18K\", cập nhật 10:58 ngày 28/10/2026"
+   },
+   {
+    "tim": "10,067,000",
+    "thay": "10,133,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://huythanhjewelry.vn/gia-vang-hom-nay",
+    "ly_do": "HUYTHANH – \"Giá nguyên liệu 18K\", cập nhật 10:58 ngày 28/10/2026"
+   },
+   {
+    "tim": "12,925,000",
+    "thay": "13,007,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://huythanhjewelry.vn/gia-vang-hom-nay",
+    "ly_do": "HUYTHANH – \"Giá nguyên liệu 22K\", cập nhật 10:58 ngày 28/10/2026"
+   },
+   {
+    "tim": "12,558,000",
+    "thay": "12,641,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://huythanhjewelry.vn/gia-vang-hom-nay",
+    "ly_do": "HUYTHANH – \"Giá nguyên liệu 22K\", cập nhật 10:58 ngày 28/10/2026"
+   }
+  ],
+  "can_duyet": [
+   "DOJI không còn dòng \"KNT + KTT + Kim Giáp\" – lấy dòng \"KIM TT/AVPL\" (kim thần tài/ An Vượng Phát Lộc).",
+   "PNJ không có \"990\" – lấy dòng \"Vàng nữ trang 9920\"."
+  ]
+ }
+}
