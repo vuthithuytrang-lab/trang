@@ -17,6 +17,7 @@ jobs:
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
+        with: { ref: claude/vibrant-keller-rk0i98 }   # công thức mới nhất nằm ở nhánh này; nhánh chính chỉ giữ file hẹn giờ
       - name: Cài trình duyệt
         run: |
           npm i -g playwright@1.48.2

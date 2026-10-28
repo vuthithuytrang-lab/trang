@@ -8,11 +8,22 @@ Bảng: Thương hiệu | Loại vàng 14K | Mua vào | Bán ra — đơn vị T
 viết dấu chấm thập phân, bỏ số 0 cuối (73.669, 73.99, 85).
 Khoảng giá tóm tắt (2 đoạn) tính trên SJC + PNJ như bài gốc: thấp nhất giá mua – cao nhất giá bán; theo chỉ = /10, làm tròn 2 số lẻ;
 chênh lệch mua–bán = thấp nhất – cao nhất của (bán − mua) từng thương hiệu, làm tròn 1 số lẻ.
+Mục 2 (ví dụ nhẫn 1.2 chỉ): giá bán tham khảo = cận trên của khoảng tóm tắt (cao nhất giá bán SJC + PNJ, đ/chỉ, đúng số nguồn),
+tính lại "Giá trị phần vàng" và "Tổng giá trị"; tiền công / tiền đá là số giả định → giữ nguyên.
+Đoạn "Xu hướng": lịch sử giá PNJ Vàng 585 (14K) (khóa "_lich_su_pnj" trong gia-14k.json, giá đóng phiên) → ngày = phiên mới nhất,
+chênh so với phiên trước (triệu/lượng), % 7 ngày, % 1 tháng, % so với cùng kỳ; chữ chỉ chiều (giảm/tăng, cao/thấp hơn) đổi theo dấu.
+Thiếu lịch sử → như cũ: giữ nguyên số + trả lại ngày gốc, ghi cần duyệt.
 """
 import argparse, html, json, re, sys, unicodedata
 
 THUONG_HIEU = {'sjc': 'sjc', 'pnj': 'pnj', 'huy thanh': 'huythanh'}
 TOM_TAT = ['sjc', 'pnj']
+RE_XH = re.compile(r'(của PNJ ngày )(\d{1,2}/\d{1,2}/\d{4})( )(giảm|tăng)( khoảng )([\d.]+)( triệu VND/lượng so với phiên trước\. '
+                   r'Trong 7 ngày gần đây, mức )(giảm|tăng)( khoảng )([\d.]+)(%; trong 1 tháng, mức )(giảm|tăng)( khoảng )([\d.]+)'
+                   r'(%\. So với cùng kỳ năm trước, giá vẫn )(cao|thấp)( hơn khoảng )([\d.]+)(%)')
+RE_VD = re.compile(r'(Giá vàng 14K bán ra tham khảo: )([\d,]+)( VND / chỉ)')
+RE_GT = re.compile(r'(Giá trị phần vàng: )([\d.]+)( chỉ x )([\d,]+)( = )([\d,]+)( VND)')
+RE_TONG = re.compile(r'(Tổng giá trị món trang sức: )([\d,]+)( \+ )([\d,]+)( \(tiền công\) \+ )([\d,]+)( \(tiền đá\) = )([\d,]+)( VND)')
 
 
 def nfc(s):
@@ -46,6 +57,18 @@ def gon(x, le):
     return s.rstrip('0').rstrip('.') if '.' in s else s
 
 
+def so_le(cu, x):
+    """viết x với đúng số chữ số thập phân như số cũ (0.64 → 2 số lẻ, 1.1 → 1 số lẻ)"""
+    n = len(cu.split('.')[1]) if '.' in cu else 0
+    return f'{x:.{n}f}'
+
+
+def ngay_goc(path):
+    goc = re.sub(r'\s+', ' ', html.unescape(re.sub(r'<[^>]+>', ' ', open(path, encoding='utf-8').read())))
+    mg = re.search(r'của PNJ ngày (\d{1,2}/\d{1,2}/\d{4})', goc)
+    return mg.group(1) if mg else None
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--xem', required=True)
@@ -54,13 +77,16 @@ def main():
     ap.add_argument('--ra')
     ap.add_argument('--kiem', action='store_true')
     ap.add_argument('--bo-to-ngay-xu-huong', metavar='BAI_MIN_HTML',
-                    help='sau lệnh sua: bỏ tô vàng ở ngày gốc của đoạn Xu hướng (ngày được trả lại, không phải chỗ mới)')
+                    help='sau lệnh sua: bỏ tô vàng ở ngày đoạn Xu hướng NẾU ngày đó trùng ngày gốc của bài (--goc) – không phải chỗ mới')
     a = ap.parse_args()
     if a.bo_to_ngay_xu_huong:
         p = a.bo_to_ngay_xu_huong
         h = open(p, encoding='utf-8').read()
         m = re.search(r'của PNJ ngày (<span style="background-color:#ffff00">(?:<span[^>]*>\d+</span>|[/\d])+</span>)', h)
-        if m:
+        goc = ngay_goc(a.goc) if a.goc else None
+        if m and a.goc and re.sub(r'<[^>]+>', '', m.group(1)) != goc:
+            print('Ngày đoạn Xu hướng đã đổi so với bài gốc (', goc, '→', re.sub(r'<[^>]+>', '', m.group(1)), ') – giữ tô vàng')
+        elif m:
             sach = re.sub(r'<[^>]+>', '', m.group(1))
             h = h.replace(m.group(0), 'của PNJ ngày ' + sach, 1)
             open(p, 'w', encoding='utf-8').write(h)
@@ -82,7 +108,7 @@ def main():
             x['tinh_toan'] = True
         sua.append(x)
 
-    luong = {k: (v['mua'] * 10 / 1e6, v['ban'] * 10 / 1e6) for k, v in gia.items() if v}
+    luong = {k: (v['mua'] * 10 / 1e6, v['ban'] * 10 / 1e6) for k, v in gia.items() if v and not k.startswith('_')}
 
     # 1) Bảng giá theo thương hiệu
     for i, (chu, vt, la_o) in enumerate(dong):
@@ -127,21 +153,73 @@ def main():
     else:
         can.append('Thiếu giá SJC hoặc PNJ – không tính lại được khoảng giá tóm tắt, giữ nguyên.')
 
-    # 3) Đoạn "Xu hướng": không có nguồn lịch sử -> trả lại ngày gốc để không ghi số cũ thành "hôm nay"
-    if a.goc:
-        goc = re.sub(r'\s+', ' ', html.unescape(re.sub(r'<[^>]+>', ' ', open(a.goc, encoding='utf-8').read())))
-        mg = re.search(r'của PNJ ngày (\d{1,2}/\d{1,2}/\d{4})', goc)
+    # 3) Mục 2 – ví dụ nhẫn: giá bán tham khảo = cận trên khoảng tóm tắt (cao nhất giá bán SJC + PNJ, đ/chỉ)
+    vd = [(chu, vt, R.search(chu)) for chu, vt, _ in dong for R in (RE_VD, RE_GT, RE_TONG) if R.search(chu)]
+    if vd and all(k in gia and gia[k] for k in TOM_TAT):
+        ma = max(TOM_TAT, key=lambda k: gia[k]['ban'])
+        p = gia[ma]['ban']
+        ly0 = (f'giá bán tham khảo = cận trên khoảng giá tóm tắt (cao nhất giá bán SJC + PNJ) = {ma.upper()} '
+               f'{gia[ma]["san_pham"]} {p:,} đ/chỉ (cập nhật {gia[ma]["cap_nhat"]})')
+        gt = None
+        for chu, vt, m in sorted(vd, key=lambda x: x[1]):
+            g = list(m.groups())
+            if m.re is RE_VD:
+                g[1] = f'{p:,}'
+                them(m.group(0), vt + m.start(), ''.join(g), gia[ma]['nguon'], ly0)
+            elif m.re is RE_GT:
+                gt = round(float(g[1]) * p)
+                g[3], g[5] = f'{p:,}', f'{gt:,}'
+                them(m.group(0), vt + m.start(), ''.join(g), gia[ma]['nguon'], f'{g[1]} chỉ × {p:,} = {gt:,} đ; ' + ly0, tinh=True)
+            elif gt is not None:
+                cong, da = int(g[3].replace(',', '')), int(g[5].replace(',', ''))
+                g[1], g[7] = f'{gt:,}', f'{gt + cong + da:,}'
+                them(m.group(0), vt + m.start(), ''.join(g), gia[ma]['nguon'],
+                     f'giá trị phần vàng {gt:,} + tiền công {cong:,} + tiền đá {da:,} (giả định của bài, giữ nguyên) = {gt + cong + da:,} đ', tinh=True)
+    elif vd:
+        can.append('Mục 2 (ví dụ nhẫn 1.2 chỉ): thiếu giá bán SJC hoặc PNJ – giữ nguyên số cũ.')
+
+    # 4) Đoạn "Xu hướng": lịch sử giá PNJ 585 (giá đóng phiên). Thiếu lịch sử → trả lại ngày gốc, giữ số cũ.
+    ls = gia.get('_lich_su_pnj')
+    xh = [(chu, vt, RE_XH.search(chu)) for chu, vt, _ in dong if RE_XH.search(chu)]
+    if xh and ls:
+        mc = ls['moc']
+        b0 = mc['moi_nhat']['ban'] / 1e6
+        def pt(k):
+            return (b0 / (mc[k]['ban'] / 1e6) - 1) * 100
+        d1 = b0 - mc['phien_truoc']['ban'] / 1e6
+        for chu, vt, m in xh:
+            g = list(m.groups())
+            cu = list(g)
+            g[1] = mc['moi_nhat']['ngay']
+            for i_chieu, i_so, x, chu_am, chu_duong in ((3, 5, d1, 'giảm', 'tăng'), (7, 9, pt('7_ngay'), 'giảm', 'tăng'),
+                                                         (11, 13, pt('1_thang'), 'giảm', 'tăng'), (15, 17, pt('cung_ky'), 'thấp', 'cao')):
+                v = so_le(cu[i_so], abs(x))
+                if float(v) != 0:
+                    g[i_chieu] = chu_am if x < 0 else chu_duong
+                g[i_so] = v
+                if float(v) == 0:
+                    can.append(f'Đoạn Xu hướng: mức thay đổi làm tròn bằng 0 ({x:+.3f}) – giữ chữ "{cu[i_chieu]}", nên đọc lại câu.')
+            doi_chieu = [f'"{cu[i]}" → "{g[i]}"' for i in (3, 7, 11, 15) if cu[i] != g[i]]
+            ly = (f'PNJ {ls["san_pham"]} giá bán đóng phiên (triệu VND/lượng): {mc["moi_nhat"]["ngay"]} {gon(b0, 3)}; '
+                  f'phiên trước {mc["phien_truoc"]["ngay"]} {gon(mc["phien_truoc"]["ban"] / 1e6, 3)} ({d1:+.3f}); '
+                  f'7 ngày {mc["7_ngay"]["ngay"]} {gon(mc["7_ngay"]["ban"] / 1e6, 3)} ({pt("7_ngay"):+.2f}%); '
+                  f'1 tháng {mc["1_thang"]["ngay"]} {gon(mc["1_thang"]["ban"] / 1e6, 3)} ({pt("1_thang"):+.2f}%); '
+                  f'cùng kỳ {mc["cung_ky"]["ngay"]} {gon(mc["cung_ky"]["ban"] / 1e6, 3)} ({pt("cung_ky"):+.2f}%)')
+            them(m.group(0), vt + m.start(), ''.join(g), ls['nguon'], ly, tinh=True)
+            if doi_chieu and m.group(0) != ''.join(g):
+                can.append('Đoạn "1.1. Xu hướng giá vàng 14K gần đây": chữ chỉ chiều đổi theo số mới ' + ', '.join(doi_chieu) + ' – đọc lại câu.')
+        if gia.get('pnj') and gia['pnj']['ban'] * 10 != mc['moi_nhat']['ban']:
+            can.append(f'Đoạn Xu hướng: giá bán đóng phiên trong lịch sử PNJ ({mc["moi_nhat"]["ban"]:,} đ/lượng, {mc["moi_nhat"]["luc"]}) '
+                       f'khác giá bảng PNJ hiện tại ({gia["pnj"]["ban"] * 10:,} đ/lượng) – PNJ có thể vừa đổi giá sau phiên ghi lịch sử.')
+    elif a.goc:
+        mg = ngay_goc(a.goc)
         for chu, vt, _ in dong:
             m = re.search(r'của PNJ ngày (\d{1,2}/\d{1,2}/\d{4})', chu)
             if m and mg:
-                them(m.group(0), vt + m.start(), f'của PNJ ngày {mg.group(1)}', '',
-                     'đoạn xu hướng giữ số liệu cũ (không có nguồn lịch sử giá) nên giữ đúng ngày gốc của số liệu')
-                can.append(f'Đoạn "1.1. Xu hướng giá vàng 14K gần đây": không có nguồn lịch sử giá PNJ để tính lại '
-                           f'(so với phiên trước / 7 ngày / 1 tháng / cùng kỳ) – giữ nguyên số và ngày gốc {mg.group(1)}. '
-                           'Cần bạn quyết: bỏ đoạn này, giữ nguyên, hay đưa nguồn có lịch sử giá.')
-    if re.search(r'Giá vàng 14K bán ra tham khảo: [\d,]+ VND', van):
-        can.append('Mục 2 (ví dụ cách tính nhẫn 1.2 chỉ): là phép tính minh họa – theo quy tắc không tự cập nhật. '
-                   'Nếu muốn khớp giá hôm nay: giá bán PNJ 14K hiện ' + (f'{gia["pnj"]["ban"]:,}' if gia.get('pnj') else '?') + ' đ/chỉ.')
+                them(m.group(0), vt + m.start(), f'của PNJ ngày {mg}', '',
+                     'đoạn xu hướng giữ số liệu cũ (không đọc được lịch sử giá PNJ) nên giữ đúng ngày gốc của số liệu')
+                can.append(f'Đoạn "1.1. Xu hướng giá vàng 14K gần đây": không đọc được lịch sử giá PNJ (hoặc câu đã đổi dạng) để tính lại '
+                           f'(so với phiên trước / 7 ngày / 1 tháng / cùng kỳ) – giữ nguyên số và ngày gốc {mg}.')
 
     if a.kiem:
         print('Soát:', 'khớp hết' if not lech else f'{len(lech)} chỗ lệch: ' + '; '.join(lech))

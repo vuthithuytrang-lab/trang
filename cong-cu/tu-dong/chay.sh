@@ -41,7 +41,7 @@ case $MA in
   *) echo "Chưa có công thức cho $MA"; exit 2 ;;
 esac
 buoc $P $SKILL sua cap-nhat/cau-hinh.json cap-nhat/sua.json
-[ $MA = vang-14k ] && buoc $P $CT/tao_sua.py --xem - --gia - --bo-to-ngay-xu-huong cap-nhat/tam/bai1.min.html
+[ $MA = vang-14k ] && buoc $P $CT/tao_sua.py --xem - --gia - --goc cap-nhat/tam/bai1.html --bo-to-ngay-xu-huong cap-nhat/tam/bai1.min.html
 $P $SKILL xem cap-nhat/cau-hinh.json bai1 > $X2
 $P $CT/tao_sua.py --kiem --xem $X2 "${KIEM[@]}" | tee cap-nhat/kiem.txt
 cp cap-nhat/tam/bai1.min.html "$W/bai.html"
