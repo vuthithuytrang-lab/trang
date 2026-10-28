@@ -282,13 +282,20 @@ def cmd_dang(so, nen):
         link = None
         if ok:
             st3, r3 = req("PATCH", f"https://www.wixapis.com/blog/v3/draft-posts/{post['id']}?fieldsets=URL", H,
-                          {"draftPost": {"id": post["id"], "seoSlug": m["slug"]}, "action": "UPDATE_PUBLICATION"})
+                          {"draftPost": {"id": post["id"], "memberId": k["member_id"], "seoSlug": m["slug"]}, "action": "UPDATE_PUBLICATION"})
+            if st3 != 200: p("⚠ đổi slug Wix lỗi", st3, str(r3)[:200])
             u = (r3.get("draftPost", {}) if isinstance(r3, dict) else {}).get("url") or post.get("url") or {}
-            link = (u.get("base", "") + u.get("path", "")) if u else None
-            time.sleep(3)
-            if link:
-                stc, _ = req("GET", link)
-                ok = stc == 200
+            link = (u.get("base", "") + urllib.parse.quote(u.get("path", ""))) if u else None
+            # trang Wix cần vài chục giây mới mở được link mới — thử lại tối đa ~2 phút
+            stc = None
+            for _ in range(12):
+                time.sleep(10)
+                try:
+                    stc, _ = req("GET", link)
+                except Exception as e:
+                    stc = str(e)
+                if stc == 200: break
+            if stc != 200: p("⚠ chưa mở được link Wix:", stc)
         rec = {"so": int(so), "nen": "wix", "ok": ok, "http": st, "link": link, "id": post.get("id"), "anh": bool(media)}
         if not ok: rec["loi"] = str(r)[:300]
     else:
