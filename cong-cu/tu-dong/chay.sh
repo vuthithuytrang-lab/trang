@@ -56,7 +56,15 @@ case $MA in
     THEM=(); [ $MA = vang-14k ] && THEM=(--goc cap-nhat/tam/bai1.html)
     buoc $P $CT/tao_sua.py --xem $X --gia $G "${THEM[@]}" --ra cap-nhat/sua.json
     KIEM=(--gia $G "${THEM[@]}") ;;
-  *) echo "Chưa có công thức cho $MA"; exit 2 ;;
+  *)                                                      # khung chung cho công thức mới (thêm từ 29/10/2026)
+    [ -f $CT/tao_sua.py ] || { echo "Chưa có công thức cho $MA"; exit 2; }
+    G=cap-nhat/gia.json
+    if [ -f $CT/lay_gia.js ]; then buoc node $CT/lay_gia.js $G
+    elif [ -f $CT/lay_gia.py ]; then buoc $P $CT/lay_gia.py $G; fi
+    buoc $P $SKILL dung cap-nhat/cau-hinh.json $N
+    $P $SKILL xem cap-nhat/cau-hinh.json bai1 > $X
+    buoc $P $CT/tao_sua.py --xem $X --gia $G --goc cap-nhat/tam/bai1.html --ra cap-nhat/sua.json
+    KIEM=(--gia $G --goc cap-nhat/tam/bai1.html) ;;
 esac
 buoc $P $SKILL sua cap-nhat/cau-hinh.json cap-nhat/sua.json
 [ $MA = vang-14k ] && buoc $P $CT/tao_sua.py --xem - --gia - --goc cap-nhat/tam/bai1.html --bo-to-ngay-xu-huong cap-nhat/tam/bai1.min.html
