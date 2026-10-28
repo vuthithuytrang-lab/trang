@@ -109,4 +109,5 @@ Agent đọc chìa từ file, gửi qua header `Authorization: Bearer <chìa>`, 
 | `cong-cu/` | Công cụ dùng lại được — prompt SEO, bản tin tự động |
 | `cong-cu/theo-doi-publish-techcombank/` | Theo dõi ngày publish 35 URL Techcombank 08:00/20:00, ghi Google Sheet, báo Telegram — đọc `HUONG-DAN.md` |
 | `.claude/skills/theo-doi-publish/` | Skill cài/chạy theo dõi publish TCB cho người khác trong team — bản zip + hướng dẫn cài ở `cong-cu/skill-theo-doi-publish/` |
+| `cong-cu/app-check-publish/` | App check publish (Artifact https://claude.ai/artifact/MR7LzabxHN8S1gfQ6PeKGq) — đọc sheet TCB qua kết nối Google Sheets, nút Kiểm tra ngay bắn routine `trig_01QNyb6Qj58zr6aWAJv8WDD8` (chạy `--ep`), ô thêm link |
 | `BAO-MAT.md` | Danh sách chìa khóa đã lộ cần thu hồi |
