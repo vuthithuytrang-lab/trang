@@ -4,3 +4,11 @@ cong-cu/telegram.env
 *.key
 *.token
 chia-agent-boss.txt
+
+# share-bai-social — mật khẩu/token các nền tảng, KHÔNG BAO GIỜ commit
+*.local.json
+.env
+.env.*
+.claude/settings.local.json
+node_modules/
+*.log

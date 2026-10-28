@@ -1,0 +1,60 @@
+# Project: <Tên dự án của bạn> — đăng bài tự động lên nhiều nền tảng
+
+> Đây là file MẪU. Copy thành `.claude/CLAUDE.md` rồi sửa theo dự án của bạn.
+> Agent `share-bai-social` đọc file này để biết: dùng sheet nào, cột nào là gì, nền tảng nào dùng tài khoản nào.
+> Không ghi mật khẩu/token vào đây — chúng nằm trong các file `*-accounts.local.json`.
+
+## Sheet của dự án
+
+- Sheet-key (tên khai trong `google-sheets-social/sheets-accounts.local.json`): `ten-du-an-share-social`
+- Spreadsheet ID: `<ID lấy từ URL sheet: docs.google.com/spreadsheets/d/<ID>/edit>`
+- Tab: `<Tên tab>`
+
+## Cấu trúc sheet — chọn 1 trong 2 kiểu
+
+### Kiểu A — mỗi nền tảng 1 CỘT (agent gọi là "Layout A")
+
+- Dòng `<n>` = header thật; dữ liệu bắt đầu từ dòng `<n+1>` (điền số dòng thật của bạn).
+- Cột `B` = Key chính (từ khóa), cột `C` = Link đăng (URL bài gốc), cột `E` = Duyệt share (ô tích TRUE/FALSE).
+- Các cột nền tảng bật auto-publish: `G` Blogger, `H` Wordpress, `J` GG Group, `M` Mastodon, `O` Tumblr, `Z` Wix.
+- Ô tiêu đề của mỗi cột nền tảng nên gắn HYPERLINK tới trang thật của tài khoản đó
+  (vd `https://tenblog.blogspot.com`) — agent dựa vào đây để biết đăng bằng tài khoản nào.
+  Nếu header không có hyperlink → phải khai bảng "Account key" bên dưới.
+
+### Kiểu B — mỗi nền tảng 1 DÒNG (agent gọi là "Layout B")
+
+- Cột `B` = Key chính, `C` = Link bài gốc, `D` = tên nền tảng của dòng đó, `E` = Link đã share.
+- Mỗi từ khóa trải nhiều dòng liên tiếp; các dòng sau chỉ điền D/E (B/C để trống = cùng bài với dòng trên).
+
+## Account key (nền tảng → tài khoản nào trong file `*-accounts.local.json`)
+
+| Nền tảng | Skill | Account key |
+|---|---|---|
+| Blogger | `share-bai-blogger` | `tenblog.blogspot.com` |
+| Wordpress.com | `share-bai-wp` | `tenblog.wordpress.com` |
+| GG Group | `share-bai-ggr` | `ten-nhom@googlegroups.com` |
+| Tumblr | `share-bai-tumblr` | `tenblog.tumblr.com` |
+| Mastodon | `share-bai-mastodon` | `tenban@mastodon.social` |
+| Wix | `share-bai-wix` | `tenban.wixsite.com/ten-site` |
+| Webflow | `share-bai-webflow` | `ten-site-webflow` |
+
+## Quy tắc viết bài riêng cho dự án (tuỳ chọn)
+
+- Từ/cụm từ CẤM dùng: ...
+- Thông tin bắt buộc ghi đúng nguyên văn: ...
+- Cách gọi tên thương hiệu: ...
+
+## Gotcha quan trọng — Google OAuth (giữ nguyên mục này)
+
+**KHÔNG dùng chung 1 OAuth Client ID cho nhiều skill.** Google giới hạn tối đa 50 refresh_token còn hiệu lực
+cho mỗi cặp (Client ID, tài khoản Google) — vượt quá, token cũ nhất bị vô hiệu hoá im lặng.
+→ `share-bai-blogger`, `share-bai-ggr`, `google-sheets-social` mỗi skill tạo 1 Client ID RIÊNG
+(có thể chung 1 Google Cloud project). Đồng thời chuyển OAuth consent screen sang **In production**
+(nếu để "Testing", token tự hết hạn sau 7 ngày).
+
+## Quy ước chung
+
+- Mọi `*-accounts.local.json` chứa bí mật thật — KHÔNG commit, KHÔNG dán vào báo cáo.
+- Ảnh nguồn bị chặn hotlink → bỏ ảnh, vẫn đăng bài không ảnh.
+- Windows/Git-Bash: tham số có dấu tiếng Việt truyền cho curl → pre-encode bằng
+  `node -e "encodeURIComponent(...)"`; upload ảnh bằng `curl -F` → đổi path bằng `cygpath -w`.
