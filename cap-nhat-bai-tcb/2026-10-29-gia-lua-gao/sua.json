@@ -1,0 +1,58 @@
+{
+ "bai1": {
+  "sua": [
+   {
+    "tim": "Gạo NL CL 555 8,800 - 8,850 8,800 - 8,850 Không đổi",
+    "thay": "Gạo NL CL 555 8,900 - 9,000 8,950 - 9,100 +50 đến +100 đ",
+    "giu_nguyen_so": true,
+    "nguon": "https://banggianongsan.com/gia-lua-gao-hom-nay/",
+    "ly_do": "Bảng giá lúa gạo mới nhất 28/10/2026 (đăng 09:17): Gạo NL CL 555 giá cũ 8.900 – 9.000, giá mới 8.950 – 9.100, ▲+50 ~ +100 đ (viết theo kiểu bài: '+100 đến 0 đ')"
+   },
+   {
+    "tim": "Gạo NL IR 504 8,750 - 8,850 8,750 - 8,850 Không đổi",
+    "thay": "Gạo NL IR 504 8,900 - 9,000 8,950 - 9,100 +50 đến +100 đ",
+    "giu_nguyen_so": true,
+    "nguon": "https://banggianongsan.com/gia-lua-gao-hom-nay/",
+    "ly_do": "Bảng 28/10/2026: Gạo NL IR 504 giá cũ 8.900 – 9.000, giá mới 8.950 – 9.100, ▲+50 ~ +100 đ"
+   },
+   {
+    "tim": "Lúa Đài Thơm 8 6,300 - 6,500 6,400 - 6,500 +100 đến 0 đ",
+    "thay": "Lúa Đài Thơm 8 6,300 - 6,500 6,300 - 6,500 Không đổi",
+    "giu_nguyen_so": true,
+    "nguon": "https://banggianongsan.com/gia-lua-gao-hom-nay/",
+    "ly_do": "Bảng 28/10/2026: Lúa Đài Thơm 8 giá cũ 6.300 – 6.500, giá mới 6.300 – 6.500, 0 đ (Không đổi)"
+   },
+   {
+    "tim": "Lúa OM 5451 6,000 - 6,200 6,000 - 6,200 Không đổi",
+    "thay": "Lúa OM 5451 6,100 - 6,200 6,100 - 6,200 Không đổi",
+    "giu_nguyen_so": true,
+    "nguon": "https://banggianongsan.com/gia-lua-gao-hom-nay/",
+    "ly_do": "Bảng 28/10/2026: Lúa OM 5451 6.100 – 6.200 / 6.100 – 6.200, không đổi"
+   },
+   {
+    "ngu_canh": "Lúa OM 34 5,800 - 5,900 5,800 - 5,900 Không đổi",
+    "tim": "5,800 - 5,900",
+    "thay": "5,900 - 6,000",
+    "lan": "tat_ca",
+    "giu_nguyen_so": true,
+    "nguon": "https://banggianongsan.com/gia-lua-gao-hom-nay/",
+    "ly_do": "Bảng 28/10/2026: Lúa OM 34 5.900 – 6.000 / 5.900 – 6.000, không đổi"
+   },
+   {
+    "tim": "Lúa tươi IR 504 5,900 - 6,000 5,900 - 6,000 Không đổi",
+    "thay": "Lúa tươi IR 504 5,900 - 6,100 5,900 - 6,100 Không đổi",
+    "giu_nguyen_so": true,
+    "nguon": "https://banggianongsan.com/gia-lua-gao-hom-nay/",
+    "ly_do": "Bảng 28/10/2026: Lúa tươi IR 504 5.900 – 6.100 / 5.900 – 6.100, không đổi"
+   }
+  ],
+  "can_duyet": [
+   "Nguồn chính banggianongsan.com: dùng bảng 'Bảng giá lúa gạo mới nhất - 28/10/2026' (đăng 09:17 28/10/2026) – chưa có bảng 29/10/2026. Các dòng gạo, nếp, lúa còn lại đã so từng dòng, trùng nguồn → giữ nguyên.",
+   "Cột 'Thay đổi' của Gạo NL CL 555 và Gạo NL IR 504: nguồn ghi '▲+50 ~ +100 đ', đã viết theo kiểu sẵn có của bài ('+100 đến 0 đ') thành '+50 đến +100 đ' – cần duyệt cách ghi.",
+   "Bảng lúa – dòng Lúa Nàng Hoa 9: nguồn 28/10/2026 để trống giá mới ('Chưa có dữ liệu giá mới'), giá cũ 6.000 – 6.200 trùng bài → giữ nguyên cả dòng, cần duyệt.",
+   "Mục 2 – Bảng giá lúa gạo thế giới (Thái Lan 5% tấm 455 - 459 / -4; Thái Lan 100% tấm 381 - 385 / -1; Ấn Độ 100% tấm 326 - 330 / +3; Ấn Độ gạo đồ 5% tấm 381 - 385 / Chưa có dữ liệu): nguồn chính banggianongsan.com không có giá gạo thế giới; số trong bài trùng bài vietbao.vn ngày 08/10/2026 (riêng Ấn Độ 5% vietbao ghi 382 - 386) – nguồn CŨ, chỉ đối chiếu → giữ nguyên số, chỉ đổi ngày tiêu đề mục theo quy tắc; cần nguồn giá gạo thế giới mới.",
+   "Nguồn có thêm Lúa tươi DS1 (5.900 – 6.000), Tấm thơm (9.400 – 9.500 → 9.600 – 9.800), Cám (7.850 – 8.100 → 7.750 – 8.150) nhưng bài không có các dòng này → không thêm (quy tắc không thay đổi nội dung).",
+   "Câu chữ bài gốc: đoạn 'Tồn kho và dự trữ lương thực' có nội dung lặp gần nguyên văn đoạn 'Nhu cầu tiêu thụ và nhập khẩu' – không sửa câu chữ, chỉ báo lại."
+  ]
+ }
+}
