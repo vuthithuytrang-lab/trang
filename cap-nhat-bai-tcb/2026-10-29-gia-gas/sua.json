@@ -1,0 +1,10 @@
+{
+  "bai1": {
+    "sua": [],
+    "can_duyet": [
+      "Bảng 1.2, 2 dòng PV GAS (Hà Nội 642,004 / 2,407,515; TP. Hồ Chí Minh 662,081 / 2,482,819): vẫn không đọc được nguồn https://pvgaslpg.com.vn/vi/gas-price/ (curl: connection reset; Chromium báo 'upstream request failed') → giữ nguyên số cũ, nhờ Trang chụp màn hình trang giá PV GAS.",
+      "Đầu tháng 11 giá gas thường điều chỉnh: lần chạy này (28/10) pgas.com.vn vẫn ghi 'Giá gas tháng 10/2026', saigonpetro.com.vn vẫn ghi giá từ 01.10.2026 → giữ nguyên toàn bộ giá. Câu 'sau đợt điều chỉnh đầu tháng 10' giữ nguyên vì đúng với nguồn hiện tại; lần chạy sau ngày 01/11 cần kiểm tra lại cả bảng giá và câu này.",
+      "Bài có nhắc thương hiệu Pacific Petro (sapo, mục 1.2) nhưng không có dòng giá Pacific Petro và không có nguồn Pacific Petro → không có gì để cập nhật, chỉ báo lại."
+    ]
+  }
+}
