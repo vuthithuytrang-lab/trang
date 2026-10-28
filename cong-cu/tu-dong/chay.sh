@@ -10,6 +10,24 @@ cp "$CT/cau-hinh.json" cap-nhat/
 N=$(TZ=Asia/Ho_Chi_Minh date -d "+1 day" +%d/%m/%Y)     # luôn ghi ngày hôm sau (Trang chốt 21/10/2026)
 P="python3 -I"; X=cap-nhat/xem.txt; X2=cap-nhat/xem2.txt
 buoc(){ echo "▶ $*"; "$@"; }
+case $MA in
+  lai-suat-1|lai-suat-2)                                  # 2 bài lãi suất: công cụ riêng cong-cu/cap-nhat-lai-suat
+    SO=${MA#lai-suat-}; cp "$GOC/../cap-nhat-lai-suat/cap-nhat.py" .
+    buoc $P cap-nhat.py lay && buoc $P cap-nhat.py dung $N || { echo "LỖI công cụ lãi suất"; exit 1; }
+    [ $SO = 1 ] && TEN="Lãi suất tiết kiệm Techcombank" || TEN="Cách tính lãi suất tiền gửi tiết kiệm Techcombank"
+    python3 -I - "$SO" <<'PY'
+import json, sys
+k = json.load(open('tam/ket-qua.json')); b = k['bai'].get('bai' + sys.argv[1], {})
+if b.get('loi'):
+    print('LỖI:', b['loi']); sys.exit(1)
+for x in [f'Chưa cập nhật được từ {n} do không truy cập được' for n in k.get('loi_nguon', [])] + b.get('can_duyet', []):
+    print('  cần duyệt:', x)
+PY
+    [ $? = 0 ] || exit 1
+    echo "bai1 $TEN – $N: 0 bảng lãi suất"                # dòng tên file cho tong_hop.py
+    cp tam/bai$SO.min.html "$W/bai.html"
+    echo "XONG $MA ngày $N"; exit 0 ;;
+esac
 buoc $P $SKILL lay cap-nhat/cau-hinh.json
 case $MA in
   gia-ca-phe)

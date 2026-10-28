@@ -29,7 +29,7 @@ Bài làm lần đầu chưa đóng gói thì **chưa** thêm vào bảng.
 
 ⛔ **Cập nhật, không thay đổi nội dung** (Trang dặn 14/10/2026): chỉ đổi số/ngày/tháng; giữ nguyên câu chữ và dạng câu của bài (khoảng vẫn là khoảng, không thêm "(theo …)", không đổi tên riêng). Không cập nhật được đúng dạng → giữ nguyên + ghi cần duyệt. **Mọi giá / lãi suất có trong bài đều phải cập nhật — cả đoạn văn, phần hỏi đáp (FAQ), ví dụ tính, tóm tắt — không chỉ trong bảng** (Trang dặn 29/10/2026). Số nào không có nguồn để tính lại (vd so với 7 ngày trước) → giữ nguyên + ghi cần duyệt.
 
-0. **9 bài tự động (dòng 2–10: cà phê, xăng dầu, vàng 24K/14K/18K/10K, 1 chỉ vàng, vàng 16K, vàng 610) — KHÔNG chạy nếu máy tự động đang bật**
+0. **11 bài tự động (dòng 2–12: cà phê, xăng dầu, vàng 24K/14K/18K/10K, 1 chỉ vàng, vàng 16K, vàng 610, 2 bài lãi suất) — KHÔNG chạy nếu máy tự động đang bật**
    (Trang chốt 28/10/2026: không tốn token). Đọc ô `app!H1`: có chữ "Máy tự động chạy lúc HH:mm dd/MM/yyyy" cách đây ≤ 10 phút → bỏ qua các dòng đó
    (Apps Script lo, xem `cong-cu/tu-dong/README.md`). Không có / cũ hơn → máy chưa cài hoặc hỏng → chạy như bình thường và nhắc Trang.
 1. Đọc `A1:Z200` của tab đầu. Dòng nào ô E = TRUE và B có link → cần chạy. **Không có dòng nào → dừng ngay, không làm gì thêm.**

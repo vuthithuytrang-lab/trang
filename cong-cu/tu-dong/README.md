@@ -1,8 +1,8 @@
 # Cập nhật bài TCB tự động — không cần Claude, không tốn token
 
 Dựng 28/10/2026 theo yêu cầu của Trang: *"app chạy bình thường mỗi khi tôi bấm update và không tốn token"*,
-*"không đặt lịch chạy mà khi tôi bấm bạn sẽ chạy"*. Áp dụng cho **9 bài có công thức**: vàng 24K/14K/18K/10K/16K/610,
-1 chỉ vàng, cà phê, xăng dầu.
+*"không đặt lịch chạy mà khi tôi bấm bạn sẽ chạy"*. Áp dụng cho **11 bài có công thức**: vàng 24K/14K/18K/10K/16K/610,
+1 chỉ vàng, cà phê, xăng dầu, 2 bài lãi suất (`lai-suat-1`, `lai-suat-2` — công cụ `cong-cu/cap-nhat-lai-suat`, thêm 28/10/2026).
 
 ## Đường đi khi bấm
 
@@ -21,12 +21,12 @@ Dựng 28/10/2026 theo yêu cầu của Trang: *"app chạy bình thường mỗ
 
 Không có chìa khóa nào: GitHub chỉ đọc web + phiếu công khai; Apps Script đọc kết quả qua link công khai `raw.githubusercontent.com`.
 Tab `app`: A STT · B tên file · C link · D lúc · E `dang_chay` / `xong` / `Cần xem lại: …` / `⚠️ Lỗi: …`; `H1` = nhịp "Máy tự động chạy lúc …"
-(Claude dùng ô này để biết máy đang bật → lịch Claude mỗi giờ bỏ qua 9 bài tự động).
+(Claude dùng ô này để biết máy đang bật → lịch Claude mỗi giờ bỏ qua 11 bài tự động).
 
 ## Giới hạn — nói thật với Trang
 
 - Từ lúc bấm đến khi có file: khoảng 10–20 phút (GitHub liếc phiếu 5 phút/lần, có lúc trễ hơn; chạy 1–2 phút/bài).
-- Bài lãi suất và 12 bài mới (nhôm, lúa gạo, ca cao, tiêu…) vẫn cần Claude — muốn miễn phí phải đóng gói công thức từng bài.
+- 12 bài mới (nhôm, lúa gạo, ca cao, tiêu…) vẫn cần Claude — muốn miễn phí phải đóng gói công thức từng bài.
 - Nguồn bị chặn (giacaphe.com — giá cà phê thế giới) → bảng đó giữ số cũ, ô Sheet có ghi chú "Cần xem lại".
 
 ## Cài đặt (1 lần)

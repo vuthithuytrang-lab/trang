@@ -25,6 +25,7 @@ const CONG_THUC = {
   'gia-ca-phe-hom-nay': 'gia-ca-phe', 'gia-xang-dau-hom-nay': 'gia-xang-dau', 'vang-24k': 'vang-24k',
   'vang-14k-gia-hom-nay': 'vang-14k', 'vang-18k': 'vang-18k', 'vang-10k': 'vang-10k',
   '1-chi-vang-bao-nhieu-tien': '1-chi-vang', 'gia-vang-16k-hom-nay': 'vang-16k', 'vang-610-la-vang-gi': 'vang-610',
+  'lai-suat-tiet-kiem': 'lai-suat-1', 'cach-tinh-lai-suat-tien-gui-tiet-kiem': 'lai-suat-2',
 };
 const TZ = 'Asia/Ho_Chi_Minh';
 
