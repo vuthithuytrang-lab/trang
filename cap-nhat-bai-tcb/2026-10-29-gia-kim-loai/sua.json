@@ -1,0 +1,142 @@
+{
+ "bai1": {
+  "sua": [
+   {
+    "ngu_canh": "Vàng 127,739,367 +0.06",
+    "tim": "+0.06",
+    "thay": "+0.03",
+    "nguon": "https://www.thitruonghanghoa.com/gia-kim-loai",
+    "ly_do": "Thay đổi (%) dòng Vàng – nguồn (bảng Giá kim loại, lấy 14h08 28/10/2026): 125.606.371 VNĐ / lượng, ▲0.03%"
+   },
+   {
+    "ngu_canh": "Bạc 1,752,640 -0.04",
+    "tim": "-0.04",
+    "thay": "-0.11",
+    "nguon": "https://www.thitruonghanghoa.com/gia-kim-loai",
+    "ly_do": "Thay đổi (%) dòng Bạc – nguồn (bảng Giá kim loại, lấy 14h08 28/10/2026): 1.675.219 VNĐ / lượng, ▼0.11%"
+   },
+   {
+    "ngu_canh": "Đồng 368,108,870 +0.45",
+    "tim": "+0.45",
+    "thay": "+0.10",
+    "nguon": "https://www.thitruonghanghoa.com/gia-kim-loai",
+    "ly_do": "Thay đổi (%) dòng Đồng – nguồn (bảng Giá kim loại, lấy 14h08 28/10/2026): 377.992.801 VNĐ / tấn, ▲0.10%"
+   },
+   {
+    "ngu_canh": "Bạch kim 49,957,585 -0.10",
+    "tim": "-0.10",
+    "thay": "+0.01",
+    "nguon": "https://www.thitruonghanghoa.com/gia-kim-loai",
+    "ly_do": "Thay đổi (%) dòng Bạch kim – nguồn (bảng Giá kim loại, lấy 14h08 28/10/2026): 47.903.903 VNĐ / lượng, ▲0.01%"
+   },
+   {
+    "ngu_canh": "Niken 416,095,875 +0.16",
+    "tim": "+0.16",
+    "thay": "+0.33",
+    "nguon": "https://www.thitruonghanghoa.com/gia-kim-loai",
+    "ly_do": "Thay đổi (%) dòng Niken – nguồn (bảng Giá kim loại, lấy 14h08 28/10/2026): Nickel 404.693.550 VNĐ / tấn, ▲0.33%"
+   },
+   {
+    "ngu_canh": "Chì 49,289,288 +0.17",
+    "tim": "+0.17",
+    "thay": "+0.02",
+    "nguon": "https://www.thitruonghanghoa.com/gia-kim-loai",
+    "ly_do": "Thay đổi (%) dòng Chì – nguồn (bảng Giá kim loại, lấy 14h08 28/10/2026): 49.940.631 VNĐ / tấn, ▲0.02%"
+   },
+   {
+    "ngu_canh": "Nhôm 77,966,550 -0.07",
+    "tim": "-0.07",
+    "thay": "-0.01",
+    "nguon": "https://www.thitruonghanghoa.com/gia-kim-loai",
+    "ly_do": "Thay đổi (%) dòng Nhôm – nguồn (bảng Giá kim loại, lấy 14h08 28/10/2026): 80.111.750 VNĐ / tấn, ▼0.01%"
+   },
+   {
+    "ngu_canh": "Kẽm 96,249,825 +0.07",
+    "tim": "+0.07",
+    "thay": "+0.16",
+    "nguon": "https://www.thitruonghanghoa.com/gia-kim-loai",
+    "ly_do": "Thay đổi (%) dòng Kẽm – nguồn (bảng Giá kim loại, lấy 14h08 28/10/2026): 99.684.860 VNĐ / tấn, ▲0.16%"
+   },
+   {
+    "ngu_canh": "Quặng sắt 62% Fe 2,350,744 -0.01",
+    "tim": "-0.01",
+    "thay": "-0.09",
+    "nguon": "https://www.thitruonghanghoa.com/gia-kim-loai",
+    "ly_do": "Thay đổi (%) dòng Quặng sắt 62% Fe – nguồn (bảng Giá kim loại, lấy 14h08 28/10/2026): 2.343.915 VNĐ / dmtu, ▼0.09%"
+   },
+   {
+    "ngu_canh": "Thiếc 1,328,267,250 +0.79",
+    "tim": "+0.79",
+    "thay": "+0.99",
+    "nguon": "https://www.thitruonghanghoa.com/gia-kim-loai",
+    "ly_do": "Thay đổi (%) dòng Thiếc – nguồn (bảng Giá kim loại, lấy 14h08 28/10/2026): 1.318.406.823 VNĐ / tấn, ▲0.99%"
+   },
+   {
+    "tim": "127,739,367",
+    "thay": "125,606,371",
+    "nguon": "https://www.thitruonghanghoa.com/gia-kim-loai",
+    "ly_do": "Giá dòng Vàng – nguồn (bảng Giá kim loại, lấy 14h08 28/10/2026): 125.606.371 VNĐ / lượng, ▲0.03%"
+   },
+   {
+    "tim": "1,752,640",
+    "thay": "1,675,219",
+    "nguon": "https://www.thitruonghanghoa.com/gia-kim-loai",
+    "ly_do": "Giá dòng Bạc – nguồn (bảng Giá kim loại, lấy 14h08 28/10/2026): 1.675.219 VNĐ / lượng, ▼0.11%"
+   },
+   {
+    "tim": "368,108,870",
+    "thay": "377,992,801",
+    "nguon": "https://www.thitruonghanghoa.com/gia-kim-loai",
+    "ly_do": "Giá dòng Đồng – nguồn (bảng Giá kim loại, lấy 14h08 28/10/2026): 377.992.801 VNĐ / tấn, ▲0.10%"
+   },
+   {
+    "tim": "49,957,585",
+    "thay": "47,903,903",
+    "nguon": "https://www.thitruonghanghoa.com/gia-kim-loai",
+    "ly_do": "Giá dòng Bạch kim – nguồn (bảng Giá kim loại, lấy 14h08 28/10/2026): 47.903.903 VNĐ / lượng, ▲0.01%"
+   },
+   {
+    "tim": "416,095,875",
+    "thay": "404,693,550",
+    "nguon": "https://www.thitruonghanghoa.com/gia-kim-loai",
+    "ly_do": "Giá dòng Niken – nguồn (bảng Giá kim loại, lấy 14h08 28/10/2026): Nickel 404.693.550 VNĐ / tấn, ▲0.33%"
+   },
+   {
+    "tim": "49,289,288",
+    "thay": "49,940,631",
+    "nguon": "https://www.thitruonghanghoa.com/gia-kim-loai",
+    "ly_do": "Giá dòng Chì – nguồn (bảng Giá kim loại, lấy 14h08 28/10/2026): 49.940.631 VNĐ / tấn, ▲0.02%"
+   },
+   {
+    "tim": "77,966,550",
+    "thay": "80,111,750",
+    "nguon": "https://www.thitruonghanghoa.com/gia-kim-loai",
+    "ly_do": "Giá dòng Nhôm – nguồn (bảng Giá kim loại, lấy 14h08 28/10/2026): 80.111.750 VNĐ / tấn, ▼0.01%"
+   },
+   {
+    "tim": "96,249,825",
+    "thay": "99,684,860",
+    "nguon": "https://www.thitruonghanghoa.com/gia-kim-loai",
+    "ly_do": "Giá dòng Kẽm – nguồn (bảng Giá kim loại, lấy 14h08 28/10/2026): 99.684.860 VNĐ / tấn, ▲0.16%"
+   },
+   {
+    "tim": "2,350,744",
+    "thay": "2,343,915",
+    "nguon": "https://www.thitruonghanghoa.com/gia-kim-loai",
+    "ly_do": "Giá dòng Quặng sắt 62% Fe – nguồn (bảng Giá kim loại, lấy 14h08 28/10/2026): 2.343.915 VNĐ / dmtu, ▼0.09%"
+   },
+   {
+    "tim": "1,328,267,250",
+    "thay": "1,318,406,823",
+    "nguon": "https://www.thitruonghanghoa.com/gia-kim-loai",
+    "ly_do": "Giá dòng Thiếc – nguồn (bảng Giá kim loại, lấy 14h08 28/10/2026): 1.318.406.823 VNĐ / tấn, ▲0.99%"
+   }
+  ],
+  "can_duyet": [
+   "Bảng trên web TCB (trước khi sửa) ghi Thiếc +0.79, khác số mình đã làm bản 23/10/2026 (+0.97) – có vẻ web đã chỉnh tay/gõ đảo số; lần này thay bằng số nguồn mới +0.99.",
+   "Giá nguồn cập nhật theo thời gian thực (lấy lúc 14h08 giờ VN 28/10/2026), có thể khác khi mở lại trang. Đã dùng số trong bảng Kim loại, không dùng dải chạy chữ đầu trang.",
+   "Tiêu đề cột ghi \"Giá (VND/lượng)\" nhưng nguồn niêm yết Đồng, Niken, Chì, Nhôm, Kẽm, Thiếc theo VNĐ/tấn và Quặng sắt theo VNĐ/dmtu – giữ nguyên tiêu đề cột như bài (đã có dòng Lưu ý về đơn vị).",
+   "Các mốc năm trong phần phân tích (năm 2025, đầu năm 2026, đầu tư khoáng sản giảm 9% năm 2025, World Bank…) – nguồn không đề cập, giữ nguyên."
+  ]
+ }
+}
