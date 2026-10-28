@@ -1,0 +1,41 @@
+name: Cập nhật bài TCB tự động (không cần Claude)
+# Mỗi giờ (7h35–17h35 giờ VN, thứ 2–7) chạy công thức 9 bài vàng / cà phê / xăng dầu trên máy chủ miễn phí của GitHub,
+# để sẵn file HTML ở nhánh "tu-dong-ket-qua". Apps Script trong Google Sheets "Update" lấy về tạo Google Docs khi có bài được tích.
+on:
+  schedule:
+    - cron: '35 0-10 * * 1-6'
+  workflow_dispatch:
+  push:
+    branches: [claude/vibrant-keller-rk0i98]
+    paths: [.github/workflows/tu-dong-cap-nhat.yml, cong-cu/tu-dong/*.sh, cong-cu/tu-dong/*.py]
+permissions:
+  contents: write
+concurrency: { group: tu-dong-cap-nhat, cancel-in-progress: false }
+jobs:
+  chay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cài trình duyệt
+        run: |
+          npm i -g playwright@1.48.2
+          npx -y playwright@1.48.2 install --with-deps chromium
+          echo "NODE_PATH=$(npm root -g)" >> $GITHUB_ENV
+      - name: Chạy 9 bài có công thức
+        run: |
+          mkdir -p ket-qua
+          for m in vang-24k vang-14k vang-18k vang-10k vang-16k vang-610 1-chi-vang gia-ca-phe gia-xang-dau; do
+            timeout 600 bash cong-cu/tu-dong/chay.sh $m ket-qua > ket-qua/$m.log 2>&1 || echo "LỖI $m" >> ket-qua/$m.log
+            echo "::group::$m"; cat ket-qua/$m.log; echo "::endgroup::"
+          done
+          python3 -I cong-cu/tu-dong/tong_hop.py ket-qua xuat
+      - name: Đăng kết quả lên nhánh tu-dong-ket-qua
+        run: |
+          cd xuat
+          git init -q -b tu-dong-ket-qua
+          git config user.name "Cập nhật tự động"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          git commit -qm "Kết quả $(TZ=Asia/Ho_Chi_Minh date '+%H:%M %d/%m/%Y')"
+          git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" tu-dong-ket-qua
