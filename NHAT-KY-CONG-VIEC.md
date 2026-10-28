@@ -21,5 +21,5 @@
 | 28/10/2026 | App Check Publish + chuyển việc kiểm sang Apps Script (không tốn token) + báo Lark ("Done" / tin nhờ chị Tú Anh kèm list URL) | `cong-cu/app-check-publish/` | Chờ admin Lark duyệt app "Check publish TCB" → thêm bot vào nhóm → menu Bước 3 (App ID/Secret) để lệnh UD/UP chạy |
 | 28/10/2026 | Quy tắc: sau 13:00 bài phải sang ngày mai mới tính Done (đổi ở `Điều khiển!B6`); trong ngày đã Done thì bỏ lần 19:00 | Apps Script + `cap_nhat_sheet.py` | — |
 | 28/10/2026 | Quy tắc: kết quả chỉ gửi về máy Trang + vuthithuytrang@seongon.com | CLAUDE.md | Trang tự xem: chế độ chia sẻ app, repo public, tài khoản Claude dùng chung |
-| 10/10/2026 | baotinmanhhai.vn: gợi ý 301 cho 17 URL 404 | — | Trang dừng giữa chừng, chưa làm |
+| trước 15/10/2026 | baotinmanhhai.vn: gợi ý 301 cho 17 URL 404 | — | Trang dừng giữa chừng, chưa làm |
 | 15/10/2026 | Sheet "Update": tạo bản 15/10 cho 9 bài | `update1510/` (nháp, không lưu kho) | Trang dừng giữa chừng, đã lỗi thời |
