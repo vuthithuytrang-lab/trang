@@ -1,0 +1,40 @@
+{
+ "bai1": {
+  "sua": [
+   {
+    "tim": "69,000 - 77,000",
+    "thay": "70,000 - 79,000",
+    "lan": "tat_ca",
+    "nguon": "https://banggianongsan.com/bang-gia-cacao-hom-nay/",
+    "ly_do": "banggianongsan 28/10/2026 (đăng 08:36), dòng \"Hạt cacao xô\": cột Giá cũ và Giá mới đều 70.000 - 79.000 → cả cột \"Giá hiện tại\" và \"Giá mới dự kiến\""
+   },
+   {
+    "tim": "78,000 - 86,000",
+    "thay": "79,000 - 88,000",
+    "lan": "tat_ca",
+    "nguon": "https://banggianongsan.com/bang-gia-cacao-hom-nay/",
+    "ly_do": "banggianongsan 28/10/2026 (đăng 08:36), dòng \"Hạt cacao lên men loại I\": cột Giá cũ và Giá mới đều 79.000 - 88.000 → cả cột \"Giá hiện tại\" và \"Giá mới dự kiến\""
+   },
+   {
+    "tim": "96,000 - 104,000",
+    "thay": "97,000 - 106,000",
+    "lan": "tat_ca",
+    "nguon": "https://banggianongsan.com/bang-gia-cacao-hom-nay/",
+    "ly_do": "banggianongsan 28/10/2026 (đăng 08:36), dòng \"Cacao lên men loại II\": cột Giá cũ và Giá mới đều 97.000 - 106.000 → cả cột \"Giá hiện tại\" và \"Giá mới dự kiến\""
+   },
+   {
+    "tim": "103,000 - 114,000",
+    "thay": "104,000 - 116,000",
+    "lan": "tat_ca",
+    "nguon": "https://banggianongsan.com/bang-gia-cacao-hom-nay/",
+    "ly_do": "banggianongsan 28/10/2026 (đăng 08:36), dòng \"Cacao lên men loại III\": cột Giá cũ và Giá mới đều 104.000 - 116.000 → cả cột \"Giá hiện tại\" và \"Giá mới dự kiến\""
+   }
+  ],
+  "can_duyet": [
+   "Giá thế giới (2 bảng New York và London, 20 hợp đồng): KHÔNG cập nhật được. Barchart lần này chặn: trang báo \"The request could not be satisfied\" (CloudFront), dữ liệu cuối ngày (historical API) trả 403 Forbidden cho cả 20 mã; tải thường cũng lỗi HTTP 202. → GIỮ NGUYÊN số đang có trên bài (giá chốt phiên 21/10/2026). Tiêu đề mục \"Bảng giá ca cao thế giới 29/10/2026\" đã đổi ngày theo quy tắc nhưng số bên dưới vẫn là số cũ → cần duyệt / cập nhật tay từ Barchart.",
+   "banggianongsan 28/10/2026 có bảng London 4 kỳ hạn (12/26: 4.250 ▲+90; 03/27: 4.344 ▲+81; 05/27: 4.359 ▲+71; 07/27: 4.378 ▲+66) nhưng không ghi ngày phiên và chỉ có 4/10 hợp đồng → không dùng để tránh bảng trộn số của hai phiên khác nhau. Bảng New York của nguồn này tiếp tục vô lý (cột Giá cũ chênh +31% đến +38%) → không dùng.",
+   "Bảng giá trong nước, cột \"Thay đổi\" dòng Ca cao tươi: nguồn ghi dạng khoảng \"▲ +0 ~ 100\" (7.300 – 8.000 → 7.300 – 8.100), bài ghi một mức \"0 VND/kg\" → GIỮ NGUYÊN, cần duyệt cách ghi. 5 dòng còn lại nguồn ghi \"Không đổi\" → \"0 VND/kg\" đúng.",
+   "Bảng giá trong nước: cột \"Giá hiện tại\" theo cột \"Giá cũ\", cột \"Giá mới dự kiến\" theo cột \"Giá mới\" của nguồn (đăng 08:36 28/10/2026). Dòng Ca cao tươi (7,300 - 8,000 / 7,300 - 8,100) và Bột ca cao nguyên chất (173,000 - 219,000) trùng nguồn, không đổi."
+  ]
+ }
+}
