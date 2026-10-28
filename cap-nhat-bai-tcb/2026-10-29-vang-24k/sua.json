@@ -1,0 +1,71 @@
+{
+ "bai1": {
+  "sua": [
+   {
+    "tim": "14,210,000",
+    "thay": "14,140,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/bao-tin-minh-chau/",
+    "ly_do": "Bảo Tín Minh Châu – Nhẫn tròn trơn 999.9 (24k) (bán ra), cập nhật 14:05:03 28/10/2026"
+   },
+   {
+    "tim": "13,810,000",
+    "thay": "13,740,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/bao-tin-minh-chau/",
+    "ly_do": "Bảo Tín Minh Châu – Nhẫn tròn trơn 999.9 (24k) (mua vào), cập nhật 14:05:03 28/10/2026"
+   },
+   {
+    "tim": "14,230,000",
+    "thay": "14,270,000",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://banggia.doji.vn/gold-price",
+    "ly_do": "DOJI – VÀNG MIẾNG SJC (bán ra), cập nhật 07:08 ngày 28/10/2026"
+   },
+   {
+    "tim": "13,930,000",
+    "thay": "13,970,000",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://banggia.doji.vn/gold-price",
+    "ly_do": "DOJI – VÀNG MIẾNG SJC (mua vào), cập nhật 07:08 ngày 28/10/2026"
+   },
+   {
+    "tim": "14,140,000",
+    "thay": "14,100,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – Nhẫn Trơn PNJ 999.9 (bán ra), cập nhật 28/10/2026 10:53:46"
+   },
+   {
+    "tim": "13,840,000",
+    "thay": "13,700,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – Nhẫn Trơn PNJ 999.9 (mua vào), cập nhật 28/10/2026 10:53:46"
+   },
+   {
+    "tim": "14,230,000",
+    "thay": "14,270,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – Vàng SJC 1L, 10L, 1KG (bán ra), cập nhật 14:05:03 28/10/2026"
+   },
+   {
+    "tim": "13,930,000",
+    "thay": "13,970,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – Vàng SJC 1L, 10L, 1KG (mua vào), cập nhật 14:05:03 28/10/2026"
+   }
+  ],
+  "can_duyet": []
+ }
+}
