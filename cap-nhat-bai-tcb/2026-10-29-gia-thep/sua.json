@@ -1,0 +1,92 @@
+{
+ "bai1": {
+  "sua": [
+   {
+    "ngu_canh": "V7V26 10/2026 488.00 -3.50",
+    "tim": "488.00 -3.50",
+    "thay": "487.00 0.00",
+    "giu_nguyen_so": true,
+    "nguon": "https://www.barchart.com/futures/quotes/V7V26/overview (trang bảng futures-prices không hiện bảng nên đọc từng hợp đồng bằng Chromium)",
+    "ly_do": "Barchart V7V26: giá thanh toán (settlement, 's') phiên 27/10/2026 = 487.00, thay đổi unch (Previous Close 487.00) → ghi 0.00 theo kiểu số có dấu, 2 chữ số thập phân của bài"
+   },
+   {
+    "ngu_canh": "V7X26 11/2026 486.50 +1.00",
+    "tim": "486.50 +1.00",
+    "thay": "481.50 -1.50",
+    "giu_nguyen_so": true,
+    "nguon": "https://www.barchart.com/futures/quotes/V7X26/overview (trang bảng futures-prices không hiện bảng nên đọc từng hợp đồng bằng Chromium)",
+    "ly_do": "Barchart V7X26: giá thanh toán (settlement, 's') phiên 27/10/2026 = 481.50, thay đổi -1.50"
+   },
+   {
+    "ngu_canh": "V7Z26 12/2026 487.00 +0.50",
+    "tim": "487.00 +0.50",
+    "thay": "483.00 -1.25",
+    "giu_nguyen_so": true,
+    "nguon": "https://www.barchart.com/futures/quotes/V7Z26/overview (trang bảng futures-prices không hiện bảng nên đọc từng hợp đồng bằng Chromium)",
+    "ly_do": "Barchart V7Z26: giá thanh toán (settlement, 's') phiên 27/10/2026 = 483.00, thay đổi -1.25"
+   },
+   {
+    "ngu_canh": "V7F27 1/2027 492.50 -0.50",
+    "tim": "492.50 -0.50",
+    "thay": "486.00 -2.50",
+    "giu_nguyen_so": true,
+    "nguon": "https://www.barchart.com/futures/quotes/V7F27/overview (trang bảng futures-prices không hiện bảng nên đọc từng hợp đồng bằng Chromium)",
+    "ly_do": "Barchart V7F27: giá thanh toán (settlement, 's') phiên 27/10/2026 = 486.00, thay đổi -2.50"
+   },
+   {
+    "ngu_canh": "V7G27 2/2027 496.00 -0.50",
+    "tim": "496.00 -0.50",
+    "thay": "489.00 0.00",
+    "giu_nguyen_so": true,
+    "nguon": "https://www.barchart.com/futures/quotes/V7G27/overview (trang bảng futures-prices không hiện bảng nên đọc từng hợp đồng bằng Chromium)",
+    "ly_do": "Barchart V7G27: giá thanh toán (settlement, 's') phiên 27/10/2026 = 489.00, thay đổi unch (Previous Close 489.00) → ghi 0.00 theo kiểu số có dấu, 2 chữ số thập phân của bài"
+   },
+   {
+    "ngu_canh": "V7H27 3/2027 498.00 -0.50",
+    "tim": "498.00 -0.50",
+    "thay": "493.00 -1.00",
+    "giu_nguyen_so": true,
+    "nguon": "https://www.barchart.com/futures/quotes/V7H27/overview (trang bảng futures-prices không hiện bảng nên đọc từng hợp đồng bằng Chromium)",
+    "ly_do": "Barchart V7H27: giá thanh toán (settlement, 's') phiên 27/10/2026 = 493.00, thay đổi -1.00"
+   },
+   {
+    "ngu_canh": "V7J27 4/2027 503.50 -0.50",
+    "tim": "503.50 -0.50",
+    "thay": "499.00 -0.50",
+    "giu_nguyen_so": true,
+    "nguon": "https://www.barchart.com/futures/quotes/V7J27/overview (trang bảng futures-prices không hiện bảng nên đọc từng hợp đồng bằng Chromium)",
+    "ly_do": "Barchart V7J27: giá thanh toán (settlement, 's') phiên 27/10/2026 = 499.00, thay đổi -0.50"
+   },
+   {
+    "ngu_canh": "V7K27 5/2027 503.50 -0.50",
+    "tim": "503.50 -0.50",
+    "thay": "499.00 -0.50",
+    "giu_nguyen_so": true,
+    "nguon": "https://www.barchart.com/futures/quotes/V7K27/overview (trang bảng futures-prices không hiện bảng nên đọc từng hợp đồng bằng Chromium)",
+    "ly_do": "Barchart V7K27: giá thanh toán (settlement, 's') phiên 27/10/2026 = 499.00, thay đổi -0.50"
+   },
+   {
+    "ngu_canh": "V7M27 6/2027 503.50 -0.50",
+    "tim": "503.50 -0.50",
+    "thay": "499.00 -0.50",
+    "giu_nguyen_so": true,
+    "nguon": "https://www.barchart.com/futures/quotes/V7M27/overview (trang bảng futures-prices không hiện bảng nên đọc từng hợp đồng bằng Chromium)",
+    "ly_do": "Barchart V7M27: giá thanh toán (settlement, 's') phiên 27/10/2026 = 499.00, thay đổi -0.50"
+   },
+   {
+    "ngu_canh": "V7N27 7/2027 506.50 -0.50",
+    "tim": "506.50 -0.50",
+    "thay": "501.50 -1.00",
+    "giu_nguyen_so": true,
+    "nguon": "https://www.barchart.com/futures/quotes/V7N27/overview (trang bảng futures-prices không hiện bảng nên đọc từng hợp đồng bằng Chromium)",
+    "ly_do": "Barchart V7N27: giá thanh toán (settlement, 's') phiên 27/10/2026 = 501.50, thay đổi -1.00"
+   }
+  ],
+  "can_duyet": [
+   "Bảng giá thép thế giới: giá Barchart là giá thanh toán phiên 27/10/2026 (giờ Mỹ) – phiên mới nhất có số khi chạy lúc 14h07 ngày 28/10/2026 (giờ VN); bài ghi ngày 29/10/2026 theo quy tắc ngày hôm sau. Bài không ghi chữ 's' sau giá nên giữ nguyên cách ghi không có 's'.",
+   "Bảng giá thép thế giới: V7V26 và V7G27 Barchart ghi 'unch' (không đổi so với phiên trước, Previous Close = giá thanh toán) → cột Thay đổi ghi 0.00 theo kiểu số của bài; nhờ duyệt cách ghi này (có thể muốn ghi khác).",
+   "Bảng giá thép thế giới: V7V26 (hợp đồng tháng 10/2026) đáo hạn 30/10/2026 nhưng Barchart vẫn hiện V7V26 với giá phiên 27/10/2026, chưa chuyển kỳ → giữ nguyên các mã hợp đồng V7V26…V7N27 (V7Q27 – 8/2027 có giá 505.00 -0.50 nếu sau này cần thêm/chuyển kỳ).",
+   "Bảng giá thép trong nước: bảng steelonline.vn ngày 28-10-2026 (bảng mới nhất; trang 29-10-2026 chưa có số) cho đúng các khoảng giá đang có trong bài (thấp nhất – cao nhất ở tab đầu tiên của mỗi thương hiệu: VNĐ/kg và VNĐ/cây), không đổi so với bảng 22-10-2026 → không sửa ô nào. Lưu ý: Hòa Phát, Việt Đức, Thép VAS, Pomina có nhiều tab miền, bài chỉ theo tab đầu (Hòa Phát tab 2: 14,720 - 15,120 / 106,278 - 843,129)."
+  ]
+ }
+}
