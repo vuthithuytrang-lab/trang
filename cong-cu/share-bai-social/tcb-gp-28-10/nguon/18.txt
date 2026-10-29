@@ -1,0 +1,27 @@
+URL: https://baothainguyen.vn/han-che-chi-phi-chenh-lech-khi-doi-ngoai-te-qua-lai-nhieu-lan
+TITLE: Hạn chế chi phí chênh lệch khi đổi ngoại tệ qua lại nhiều lần - Báo và Phát thanh, truyền hình Thái Nguyên
+TCB_LINKS: ['https://techcombank.com/cong-cu-tien-ich/ty-gia']
+
+Mỗi lần đổi tiền Việt sang ngoại tệ hoặc đổi ngược lại đều phát sinh một khoản chênh lệch giữa giá mua vào và giá bán ra. Bài viết phân tích cách khoản chênh lệch này cộng dồn qua nhiều lần quy đổi và các cách sắp xếp giao dịch để giảm số lần đổi không cần thiết.
+#### 1. Chênh lệch mua – bán là chi phí của mỗi lần quy đổi
+Mọi giao dịch đổi ngoại tệ tại ngân hàng đều gắn với hai mức giá khác nhau cho hai chiều, và phần chênh lệch giữa hai mức giá này chính là chi phí của giao dịch.
+Khi bạn mua ngoại tệ, ngân hàng áp dụng giá bán ra. Khi bạn bán ngoại tệ, ngân hàng áp dụng giá mua vào, luôn thấp hơn giá bán ra cùng thời điểm. Nếu bạn mua một khoản ngoại tệ rồi bán lại ngay trong ngày, số tiền Việt nhận về sẽ ít hơn số tiền đã bỏ ra, dù tỷ giá thị trường không thay đổi. Khoản thiếu hụt đó là chi phí chênh lệch.
+Mức chênh lệch khác nhau giữa các loại ngoại tệ và giữa hình thức tiền mặt với chuyển khoản. Với các ngoại tệ được giao dịch nhiều như đô la Mỹ hay euro, khoảng cách giữa hai chiều thường hẹp hơn.
+Với các ngoại tệ ít giao dịch, khoảng cách thường rộng hơn. Giao dịch tiền mặt thường có chênh lệch lớn hơn giao dịch chuyển khoản, do chi phí kiểm đếm và vận chuyển tiền giấy.
+Khi tra giá USD hôm nay trên bảng tỷ giá của ngân hàng, bạn có thể tự tính mức chênh lệch bằng cách lấy giá bán ra trừ giá mua vào cùng hình thức, rồi chia cho giá bán ra. Tỷ lệ này cho biết phần trăm giá trị giảm đi nếu một khoản tiền được mua rồi bán lại ngay. Giả sử tỷ lệ chênh lệch là 1%, một khoản tiền đi qua hai vòng mua – bán sẽ giảm khoảng 2% giá trị, dù tỷ giá thị trường giữ nguyên trong suốt thời gian đó.
+#### 2. Những tình huống khiến chênh lệch bị cộng dồn
+Một lần quy đổi có chi phí nhỏ, nhưng khi cùng một khoản tiền đi qua nhiều lần quy đổi, tổng chi phí tăng lên đáng kể.
+Chênh lệch mua – bán bị cộng dồn khi một khoản tiền được đổi qua lại nhiều lần.
+Tình huống thường gặp đầu tiên là quy đổi qua đồng tiền trung gian. Ví dụ, mua đô la Mỹ tại Việt Nam rồi mang sang Nhật Bản để đổi lấy yên. Khoản tiền này chịu chênh lệch hai lần: một lần tại ngân hàng ở Việt Nam và một lần tại quầy đổi tiền ở Nhật Bản. Nếu ngân hàng tại Việt Nam có giao dịch yên Nhật, việc tra giá yên hôm nay và mua trực tiếp yên giúp khoản tiền chỉ chịu chênh lệch một lần.
+Tình huống thứ hai là đổi dư rồi bán lại. Khi mua nhiều ngoại tệ hơn nhu cầu thực tế cho một chuyến đi, phần dư sau chuyến đi phải bán lại theo giá mua vào, nghĩa là phần tiền này đã chịu chênh lệch trọn một vòng mà không được sử dụng. Với tiền xu ngoại tệ, phần dư thường không được ngân hàng trong nước mua lại, nên giá trị của chúng chỉ có thể được dùng ngay tại điểm đến.
+Tình huống thứ ba là các chuyến đi liên tiếp dùng cùng một loại ngoại tệ. Nếu sau mỗi chuyến bạn bán lại toàn bộ ngoại tệ còn dư, rồi lại mua mới cho chuyến tiếp theo vài tháng sau, mỗi vòng mua – bán đều phát sinh chênh lệch.
+#### 3. Sắp xếp giao dịch để giảm số lần quy đổi
+Phần lớn chi phí chênh lệch có thể giảm bớt bằng việc lên kế hoạch giao dịch hợp lý ngay từ đầu.
+Một số nguyên tắc giúp giảm số lần quy đổi:
+- Mua trực tiếp đồng tiền của điểm đến khi ngân hàng có giao dịch loại tiền đó, hạn chế đi qua đồng tiền trung gian
+- Ước tính sát nhu cầu tiền mặt, dùng thẻ cho phần chi lớn để giảm lượng tiền mặt dư
+- Giữ lại ngoại tệ còn dư khi đã có kế hoạch cho chuyến đi tiếp theo dùng cùng loại tiền.
+Sắp xếp giao dịch hợp lý giúp giảm số lần quy đổi và chi phí chênh lệch đi kèm.
+Với gia đình thường xuyên có khoản chi bằng một loại ngoại tệ, như gửi tiền cho người thân hoặc thanh toán dịch vụ định kỳ, việc giữ một khoản ngoại tệ trong tài khoản để dùng dần cũng giúp tránh quy đổi qua lại nhiều lần. Khoản tiền này nên được xác định theo nhu cầu chi tiêu thực tế, không mang mục đích chờ đợi biến động tỷ giá.
+Cuối cùng, khi buộc phải quy đổi, hình thức chuyển khoản thường có chênh lệch thấp hơn tiền mặt. Vì vậy, với các khoản chi có thể thanh toán bằng chuyển khoản như học phí hay đặt phòng, chọn hình thức này giúp giảm chi phí quy đổi so với việc mua tiền mặt rồi nộp lại.
+Chênh lệch giữa giá mua vào và giá bán ra là chi phí gắn với mỗi lần đổi ngoại tệ, và chi phí này tăng lên khi cùng một khoản tiền được quy đổi nhiều lần. Khi chọn đúng đồng tiền cần mua, ước tính sát nhu cầu và giữ lại ngoại tệ cho các khoản chi đã có kế hoạch, bạn có thể giảm đáng kể phần chi phí ít được chú ý này.

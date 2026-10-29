@@ -1,0 +1,52 @@
+URL: https://baotayninh.vn/ly-do-so-tien-hoan-ve-the-khac-voi-so-da-thanh-toan-trong-cac-giao-dich-ngoai-te-350944.html
+TITLE: Lý do số tiền hoàn về thẻ khác với số đã thanh toán trong các giao dịch ngoại tệ
+
+Khi hủy vé máy bay, trả lại hàng mua từ nước ngoài hoặc hủy đặt phòng, khoản hoàn tiền bằng ngoại tệ về thẻ thường không khớp với số tiền Việt đã bị ghi nợ trước đó. Bài viết giải thích các nguyên nhân tạo ra chênh lệch này và cách theo dõi một giao dịch hoàn tiền từ đầu đến cuối.
+
+1. Giao dịch hoàn tiền được quy đổi ở một thời điểm khác
+
+Nguyên nhân chính của chênh lệch là giao dịch thanh toán ban đầu và giao dịch hoàn tiền được quy đổi theo 2 mức tỷ giá ở 2 thời điểm khác nhau.
+
+Khi bạn thanh toán bằng thẻ cho một đơn vị bán hàng ở nước ngoài, giao dịch được quy đổi sang tiền Việt theo tỷ giá tại thời điểm quyết toán, cộng phí chuyển đổi ngoại tệ. Khi đơn vị bán hàng hoàn tiền, họ hoàn lại đúng số tiền bằng ngoại tệ đã thu. Số ngoại tệ này được quy đổi ngược sang tiền Việt theo tỷ giá tại thời điểm giao dịch hoàn tiền được quyết toán, có thể cách lần thanh toán đầu vài tuần hoặc vài tháng.
+
+Ví dụ, bạn thanh toán một vé máy bay niêm yết bằng
+
+và sau đó hủy vé. Nếu trong khoảng thời gian giữa 2 giao dịch, tỷ giá giảm, số tiền Việt hoàn về sẽ thấp hơn số đã trả. Nếu tỷ giá tăng, số tiền hoàn về có thể cao hơn. Chênh lệch do tỷ giá có thể theo cả 2 chiều. Với các khoản hoàn tiền có giá trị lớn, mức chênh lệch này có thể đáng kể, vì vậy cần được tính đến khi quyết định hủy một dịch vụ đã thanh toán.
+
+Ngoài yếu tố thời gian, chiều của giao dịch cũng ảnh hưởng. Giao dịch thanh toán và giao dịch hoàn tiền có thể được quy đổi theo hai mức giá khác nhau của tổ chức thẻ hoặc ngân hàng phát hành, tương tự như giá bán ra và giá mua vào tại quầy giao dịch.
+
+2. Phí chuyển đổi ngoại tệ và các khoản phí không được hoàn
+
+Bên cạnh tỷ giá, các khoản phí đi kèm giao dịch ban đầu cũng góp phần tạo ra chênh lệch.
+
+Một số khoản phí phát sinh khi thanh toán không được hoàn lại cùng giao dịch hoàn tiền
+
+Phí chuyển đổi ngoại tệ của giao dịch thanh toán ban đầu được tính theo biểu phí của thẻ. Khi có giao dịch hoàn tiền, việc khoản phí này có được hoàn lại hay không phụ thuộc vào chính sách của ngân hàng phát hành thẻ. Bạn nên tra cứu điều khoản sử dụng thẻ hoặc liên hệ ngân hàng để biết rõ.
+
+Ở phía người bán, một số chính sách hoàn tiền chỉ hoàn lại một phần giá trị, chẳng hạn khấu trừ phí hủy vé, phí xử lý đơn hàng hoặc phí vận chuyển trả hàng. Những khoản khấu trừ này được tính bằng ngoại tệ trước khi hoàn, nên số ngoại tệ hoàn về đã ít hơn số đã thanh toán.
+
+Tổng hợp lại, số tiền Việt hoàn về thẻ chịu ảnh hưởng của các yếu tố sau:
+
+Số ngoại tệ thực hoàn sau khi người bán khấu trừ phí theo chính sách
+
+Tỷ giá tại thời điểm giao dịch hoàn tiền được quyết toán
+
+Chính sách hoàn hoặc không hoàn phí chuyển đổi ngoại tệ của ngân hàng phát hành
+
+3. Theo dõi và đối chiếu một giao dịch hoàn tiền
+
+Một giao dịch hoàn tiền bằng ngoại tệ có thể kéo dài từ vài ngày đến vài tuần, nên việc lưu giữ thông tin và đối chiếu là cần thiết.
+
+Khi yêu cầu hoàn tiền, bạn nên lưu lại email xác nhận của người bán, trong đó ghi rõ số tiền hoàn bằng ngoại tệ và ngày thực hiện. Đồng thời, ghi lại số tiền Việt đã bị ghi nợ trong giao dịch ban đầu và phí chuyển đổi kèm theo, lấy từ sao kê thẻ.
+
+Đối chiếu giao dịch hoàn tiền với chứng từ gốc giúp nắm rõ số tiền thực nhận lại
+
+Khi khoản hoàn tiền xuất hiện trên sao kê, bạn có thể ước tính mức tỷ giá đã được áp dụng bằng cách chia số tiền Việt nhận được cho số ngoại tệ được hoàn. So sánh con số này với tỷ giá niêm yết của ngân hàng tại cùng thời điểm giúp bạn hiểu rõ nguồn gốc chênh lệch. Với giao dịch bằng đồng euro, bạn tra
+
+tại ngày hoàn tiền để đối chiếu theo cách tương tự.
+
+Nếu sau một khoảng thời gian dài mà khoản hoàn tiền chưa xuất hiện trên sao kê, bạn có thể liên hệ người bán để xác nhận giao dịch đã được thực hiện, rồi liên hệ ngân hàng phát hành thẻ để tra soát. Việc có sẵn mã giao dịch, ngày thực hiện và số tiền giúp quá trình tra soát diễn ra nhanh hơn.
+
+Với các khoản thanh toán có khả năng hủy cao, như vé máy bay hoặc đặt phòng chưa chắc chắn, bạn có thể ưu tiên các lựa chọn hủy linh hoạt hoặc thanh toán sau, để giảm khả năng phát sinh chênh lệch do hoàn tiền.
+
+Số tiền hoàn về thẻ trong giao dịch ngoại tệ khác với số đã thanh toán do tỷ giá ở 2 thời điểm quy đổi khác nhau, phí chuyển đổi ngoại tệ và các khoản khấu trừ theo chính sách của người bán. Hiểu rõ các yếu tố này và lưu giữ đầy đủ thông tin giao dịch giúp bạn đối chiếu chính xác và chủ động khi cần tra soát./.
