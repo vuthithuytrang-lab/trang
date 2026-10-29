@@ -1,4 +1,20 @@
 {
- "wp": {"tu_khoa": "thuê bao dịch vụ số trả bằng ngoại tệ", "title": "Thuê bao dịch vụ số trả bằng ngoại tệ: cách giữ ngân sách ổn định", "slug": "thue-bao-dich-vu-so-tra-bang-ngoai-te-ngan-sach", "mo_ta": "Vì sao phí thuê bao bằng ngoại tệ thay đổi mỗi tháng và cách rà soát, chọn chu kỳ thanh toán để ngân sách gia đình ổn định."},
- "wix": {"tu_khoa": "thuê bao dịch vụ số trả bằng ngoại tệ", "title": "Kiểm soát phí đăng ký ứng dụng tính bằng đô la trong chi tiêu gia đình", "slug": "kiem-soat-phi-dang-ky-ung-dung-tinh-bang-do-la", "mo_ta": "Lập danh sách, gộp gói trùng, chọn gói tháng hay năm: cách kiểm soát các khoản đăng ký ứng dụng trả bằng ngoại tệ."}
+ "wp": {
+  "tu_khoa": "thuê bao dịch vụ số trả bằng ngoại tệ",
+  "title": "Thuê bao dịch vụ số trả bằng ngoại tệ: cách giữ ngân sách ổn định",
+  "slug": "thue-bao-dich-vu-so-tra-bang-ngoai-te-ngan-sach",
+  "mo_ta": "Vì sao phí thuê bao bằng ngoại tệ thay đổi mỗi tháng và cách rà soát, chọn chu kỳ thanh toán để ngân sách gia đình ổn định."
+ },
+ "wix": {
+  "tu_khoa": "thuê bao dịch vụ số trả bằng ngoại tệ",
+  "title": "Kiểm soát phí đăng ký ứng dụng tính bằng đô la trong chi tiêu gia đình",
+  "slug": "kiem-soat-phi-dang-ky-ung-dung-tinh-bang-do-la",
+  "mo_ta": "Lập danh sách, gộp gói trùng, chọn gói tháng hay năm: cách kiểm soát các khoản đăng ký ứng dụng trả bằng ngoại tệ."
+ },
+ "wf": {
+  "tu_khoa": "thuê bao dịch vụ số trả bằng ngoại tệ",
+  "title": "Hỏi đáp: quản lý thuê bao dịch vụ số trả bằng ngoại tệ mỗi tháng",
+  "slug": "hoi-dap-quan-ly-thue-bao-dich-vu-so-tra-bang-ngoai-te",
+  "mo_ta": "Giải đáp vì sao phí thuê bao bằng ngoại tệ thay đổi mỗi tháng, cách ước tính, gộp gói và chọn trả theo tháng hay năm."
+ }
 }
