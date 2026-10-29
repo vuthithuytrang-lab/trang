@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="vi">
 <head>
-<!-- phien-ban: 202610291906 -->
+<!-- phien-ban: 202610291909 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Cập nhật lãi suất Techcombank</title>
@@ -129,8 +129,9 @@ function tai(i){
     + html[b.ma].replace(/^[\s\S]*?<body[^>]*>|<\/body>[\s\S]*$/g, "") + '</body></html>';
   var a = document.createElement("a");
   a.href = URL.createObjectURL(new Blob(["﻿", doc], {type:"application/msword"}));
-  a.download = (t.ten || b.ten).replace(/[\\\/:*?"<>|]/g, "-") + ".doc";
-  document.body.appendChild(a); a.click(); a.remove();
+  // tên file không dấu: vài trình duyệt bỏ tên có dấu, tải về thành "download"
+  a.download = (t.ten || b.ten).normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[đĐ]/g, "d").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") + ".doc";
+  document.body.appendChild(a); a.click(); setTimeout(function(){ URL.revokeObjectURL(a.href); a.remove(); }, 2000);
   bao("Đã tải file Word. Muốn thành Google Docs: kéo file vào Google Drive → mở bằng Google Docs.");
 }
 function xem(i, nut){
