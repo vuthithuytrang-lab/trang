@@ -1,4 +1,20 @@
 {
- "wp": {"tu_khoa": "quản lý thu nhập bằng đô la Mỹ", "title": "Quản lý thu nhập bằng đô la Mỹ khi làm việc từ xa cho đối tác ngoại", "slug": "quan-ly-thu-nhap-bang-do-la-my-lam-viec-tu-xa", "mo_ta": "Cách nhận tiền từ đối tác nước ngoài, chọn thời điểm quy đổi sang tiền Việt và ghi chép thu nhập bằng đô la Mỹ cho rõ ràng."},
- "wix": {"tu_khoa": "quản lý thu nhập bằng đô la Mỹ", "title": "Freelancer nhận lương bằng đô la: nhận, đổi và ghi chép thế nào", "slug": "freelancer-nhan-luong-bang-do-la-nhan-doi-ghi-chep", "mo_ta": "Ba việc giúp người làm tự do nhận thu nhập bằng đô la Mỹ quản lý tiền rõ ràng: chọn cách nhận, chia phần quy đổi và ghi chép."}
+ "wp": {
+  "tu_khoa": "quản lý thu nhập bằng đô la Mỹ",
+  "title": "Quản lý thu nhập bằng đô la Mỹ khi làm việc từ xa cho đối tác ngoại",
+  "slug": "quan-ly-thu-nhap-bang-do-la-my-lam-viec-tu-xa",
+  "mo_ta": "Cách nhận tiền từ đối tác nước ngoài, chọn thời điểm quy đổi sang tiền Việt và ghi chép thu nhập bằng đô la Mỹ cho rõ ràng."
+ },
+ "wix": {
+  "tu_khoa": "quản lý thu nhập bằng đô la Mỹ",
+  "title": "Freelancer nhận lương bằng đô la: nhận, đổi và ghi chép thế nào",
+  "slug": "freelancer-nhan-luong-bang-do-la-nhan-doi-ghi-chep",
+  "mo_ta": "Ba việc giúp người làm tự do nhận thu nhập bằng đô la Mỹ quản lý tiền rõ ràng: chọn cách nhận, chia phần quy đổi và ghi chép."
+ },
+ "wf": {
+  "tu_khoa": "quản lý thu nhập bằng đô la Mỹ",
+  "title": "Hỏi đáp: quản lý thu nhập bằng đô la Mỹ khi làm việc từ xa",
+  "slug": "hoi-dap-quan-ly-thu-nhap-bang-do-la-my",
+  "mo_ta": "Giải đáp cách nhận tiền từ đối tác nước ngoài, đổi ngay hay giữ đô, chia thu nhập và ghi chép thu nhập bằng đô la Mỹ."
+ }
 }
