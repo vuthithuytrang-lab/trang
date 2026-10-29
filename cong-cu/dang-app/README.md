@@ -21,10 +21,11 @@ GitHub Pages của repo này, nhánh `gh-pages`, **miễn phí**, ai có link c�
   Số liệu đổi hằng ngày (`du-lieu.json`) chỉ vào `gh-pages`, app trên Netlify đọc số liệu từ GitHub Pages (có `access-control-allow-origin: *`).
   Lý do: gói miễn phí Netlify tính lượt theo mỗi lần đăng; vượt mức thì trang **tạm dừng** đến tháng sau, không trừ tiền (chưa nhập thẻ).
 - Tài khoản Netlify: Trang đã đăng ký bằng GitHub `vuthithuytrang-lab` (29/10/2026).
-- **Việc Trang còn làm, 1 lần** (chưa xong lúc ghi):
-  1. Add new project → Import a Git repository → **GitHub** → cho phép (chọn kho `trang`).
-  2. Chọn kho **trang** → **Branch to deploy = `netlify`**, các ô khác để trống → **Deploy**.
-  3. Project configuration → **Change project name** → `vttt-sn`.
+- **Việc Trang còn làm, 1 lần** (chưa xong lúc ghi), gửi Trang đúng 2 link:
+  1. Tạo chìa: https://github.com/settings/personal-access-tokens/new?name=vttt-sn&description=Nut+Chay+cap+nhat&target_name=vuthithuytrang-lab&actions=write
+     → Repository access: **Only select repositories → trang** → Generate token → bấm nút chép chìa (KHÔNG dán vào chat).
+  2. https://app.netlify.com/start → **GitHub** → kho **trang** → Branch to deploy **`netlify`**, Project name **`vttt-sn`**,
+     Add environment variables: key **`GITHUB_TOKEN`**, value = dán chìa → **Deploy**.
   Xong thì Claude kiểm tra `https://vttt-sn.netlify.app/` và thêm bước kiểm tra Netlify vào `dang.sh`.
 - **Nút "Chạy cập nhật" chạy ngay** (29/10/2026): trang gọi hàm `netlify-goc/netlify/functions/chay.mjs` (chỉ có ở nhánh `netlify`),
   hàm dùng chìa `GITHUB_TOKEN` (biến môi trường Netlify) bấm `tu-dong-cap-nhat.yml` → bài mới lên nhánh `tu-dong-ket-qua` → trang hiện nút Chép / Tải Word.
