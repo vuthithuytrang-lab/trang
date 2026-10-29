@@ -1,0 +1,10 @@
+URL: https://baophutho.vn/chon-loc-thong-tin-ty-gia-hang-ngay-phu-hop-voi-khoan-chi-ngoai-te-cua-gia-dinh-262905.htm
+TITLE: Chọn lọc thông tin tỷ giá hằng ngày phù hợp với khoản chi ngoại tệ của gia đình
+TCB_LINKS: ['https://techcombank.com/cong-cu-tien-ich/ty-gia']
+
+### 
+                        {title}
+
+                        {publish}
+
+{head}
