@@ -1,4 +1,20 @@
 {
- "wp": {"tu_khoa": "thanh toán thẻ bằng ngoại tệ", "title": "Thanh toán thẻ bằng ngoại tệ: vì sao sao kê khác số tự quy đổi", "slug": "thanh-toan-the-bang-ngoai-te-vi-sao-sao-ke-khac", "mo_ta": "Giải thích tỷ giá quyết toán, phí chuyển đổi ngoại tệ và cách tự ước tính số tiền Việt thực trả khi thanh toán thẻ bằng ngoại tệ."},
- "wix": {"tu_khoa": "thanh toán thẻ bằng ngoại tệ", "title": "Số tiền Việt thực trả khi quẹt thẻ ở nước ngoài được tính thế nào", "slug": "so-tien-viet-thuc-tra-khi-quet-the-o-nuoc-ngoai", "mo_ta": "Hai thành phần tạo nên số tiền ghi nợ khi quẹt thẻ ngoại tệ và công thức ba bước để ước tính trước khi thanh toán."}
+ "wp": {
+  "tu_khoa": "thanh toán thẻ bằng ngoại tệ",
+  "title": "Thanh toán thẻ bằng ngoại tệ: vì sao sao kê khác số tự quy đổi",
+  "slug": "thanh-toan-the-bang-ngoai-te-vi-sao-sao-ke-khac",
+  "mo_ta": "Giải thích tỷ giá quyết toán, phí chuyển đổi ngoại tệ và cách tự ước tính số tiền Việt thực trả khi thanh toán thẻ bằng ngoại tệ."
+ },
+ "wix": {
+  "tu_khoa": "thanh toán thẻ bằng ngoại tệ",
+  "title": "Số tiền Việt thực trả khi quẹt thẻ ở nước ngoài được tính thế nào",
+  "slug": "so-tien-viet-thuc-tra-khi-quet-the-o-nuoc-ngoai",
+  "mo_ta": "Hai thành phần tạo nên số tiền ghi nợ khi quẹt thẻ ngoại tệ và công thức ba bước để ước tính trước khi thanh toán."
+ },
+ "wf": {
+  "tu_khoa": "thanh toán thẻ bằng ngoại tệ",
+  "title": "Hỏi đáp: số tiền Việt thực trả khi quẹt thẻ bằng ngoại tệ",
+  "slug": "hoi-dap-so-tien-viet-thuc-tra-khi-quet-the-ngoai-te",
+  "mo_ta": "Giải đáp các thắc mắc thường gặp về tỷ giá quyết toán, phí chuyển đổi và cách tự ước tính số tiền Việt khi quẹt thẻ bằng ngoại tệ."
+ }
 }
