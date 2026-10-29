@@ -44,3 +44,9 @@ App gắn sẵn **link file Docs mới nhất** của từng bài trong `DS` (tr
 Thư mục Drive đã mở "Bất kỳ ai có đường liên kết", nên người lạ mở file được.
 ⚠️ **Mỗi lần Claude chạy xong một đợt**: cập nhật `ten_file/link/luc` trong `DS` của `app.html` rồi đăng lại (Artifact cùng file). Bấm chạy thì vẫn cần đăng nhập claude.ai + kết nối Google Sheets
 (hoặc dùng trang app Google trong `cong-cu/tu-dong/google-apps-script/Code.gs` sau khi Trang cài).
+
+## Trang web công khai riêng, tách khỏi Claude (29/10/2026)
+
+**https://vuthithuytrang-lab.github.io/trang/** — GitHub Pages (miễn phí), đăng từ nhánh `gh-pages` của kho. Ai có link cũng xem + mở file Docs, không cần đăng nhập.
+Nguồn: `web/index.html` + `web/du-lieu.json` (danh sách bài, `link`/`luc`/`ghi_chu` bản mới nhất, `nut_chay` = link trang chạy Google Apps Script — để trống thì nút chạy tắt) + `web/logo.webp` (logo gốc).
+⚠️ **Mỗi lần chạy xong một đợt**: cập nhật `web/du-lieu.json` → chép 3 file sang nhánh `gh-pages` → push (GitHub đăng lại sau ~1 phút). Khi Trang cài Apps Script + triển khai Ứng dụng web: điền link vào `nut_chay`.

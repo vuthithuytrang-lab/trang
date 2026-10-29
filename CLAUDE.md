@@ -113,6 +113,7 @@ Agent đọc chìa từ file, gửi qua header `Authorization: Bearer <chìa>`, 
 | `cong-cu/cap-nhat-lai-suat/` | **Việc định kỳ (tự chạy ~7h sáng, 3 ngày/lần)**: cập nhật lãi suất 2 bài blog Techcombank — đọc `QUY-TRINH.md` trước |
 | `cong-cu/skill-cap-nhat-bai-tcb/` | **Skill đóng gói** (+ công thức giá vàng/cà phê/xăng dầu + bảng điều khiển Google Sheets "Update") cập nhật bài Techcombank bất kỳ (đọc bài mới nhất + nguồn tham khảo, sửa chỗ lỗi thời, viết số theo bài, tô vàng → Google Docs). Gửi Claude khác dùng được (file `.zip`) — tách riêng, không ảnh hưởng việc định kỳ ở trên |
 | `cong-cu/app-cap-nhat/` | **App "Cập nhật bài Techcombank"** (https://claude.ai/artifact/C1pHcHu6DLgx8xi4zNQnoN) — Trang tích bài, bấm nút → app tích ô trong Sheet "Update" qua kết nối Google Sheets (từ 28/10/2026, không gọi Claude nữa); cả 23 bài do `cong-cu/tu-dong/` lo (miễn phí), Claude chỉ là dự phòng khi máy tự động chưa bật |
+| `cong-cu/app-cap-nhat/web/` | **Trang web công khai** https://vuthithuytrang-lab.github.io/trang/ (nhánh `gh-pages`, 29/10/2026) — ai cũng xem/mở file Docs mới nhất; sau mỗi đợt chạy cập nhật `du-lieu.json` + đăng lại (xem README của app) |
 | `cong-cu/tu-dong/` | **Tự động không cần Claude, không tốn token** (28/10/2026): bấm app / tích Sheet → Apps Script ghi phiếu → GitHub Actions chạy công thức **cả 23 bài** → Apps Script tạo Docs. Chỉ chạy khi có người bấm. Đọc `README.md` |
 | `BAO-MAT.md` | Danh sách chìa khóa đã lộ cần thu hồi |
 | `cap-nhat-bai-tcb/` | Kết quả từng lần cập nhật bài TCB (cấu hình, danh sách sửa, báo cáo) |
