@@ -61,6 +61,13 @@ không bật thông báo email/Slack sang địa chỉ khác. Trước khi thêm
 việc đã có kết quả**. Làm xong mỗi việc: thêm 1 dòng vào nhật ký (làm gì · kết quả ở đâu · cách chạy lại · còn dở gì),
 commit + push. Dữ liệu thô / nội dung có thể nhạy cảm (repo public) → **hỏi Trang "có lưu không?"** trước khi lưu.
 
+### Khi Trang nhắn "check" / "check publish" trong chat — Trang chốt 29/10/2026
+
+KHÔNG tự chạy Python mở 54 link (tốn token). Làm: ghi 1 dòng yêu cầu vào `'Điều khiển'!B1` của sheet
+"Theo dõi publish TCB" (spreadsheetId `11YEh1C_oB23FX3AwOupR4P00xaIAMB8jfXY21zCqzgI`) → đợi ~2 phút (Apps Script chạy
+mỗi phút, tự kiểm + nhắn Lark) → đọc `'Điều khiển'!B2:B5` và cột ngày mới nhất → báo Trang trong chat: số đã cập nhật,
+STT + link chưa cập nhật/lỗi. Chỉ khi Apps Script không chạy (B2 không đổi sau 4 phút) mới dùng `cap_nhat_sheet.py --ep`.
+
 ## 3. Chuẩn sản phẩm bàn giao
 
 - Sản phẩm xem được là **file HTML tự viết** (không phụ thuộc thư viện ngoài), tiếng Việt đủ dấu.
