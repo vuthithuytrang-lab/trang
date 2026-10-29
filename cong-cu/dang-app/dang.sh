@@ -28,7 +28,8 @@ git commit -qm "Đăng app $TEN (phiên bản $PB)"
 git push -q origin HEAD:gh-pages
 # Netlify (vttt-sn.netlify.app) đăng từ nhánh netlify = bản sao gh-pages, chỉ đẩy khi đăng app
 # (số liệu đổi hằng ngày chỉ vào gh-pages → Netlify không phải đăng lại, đỡ tốn lượt miễn phí)
-git push -qf origin HEAD:refs/heads/netlify
+cp -r "$GOC/cong-cu/dang-app/netlify-goc/." .     # + cấu hình & hàm nút chạy, chỉ ở nhánh netlify
+git add -A && git commit -qm "Cấu hình Netlify (nút chạy)" && git push -qf origin HEAD:refs/heads/netlify
 
 # 3. Chờ web thật lên đúng phiên bản
 for i in $(seq 1 12); do

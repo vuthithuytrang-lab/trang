@@ -99,9 +99,9 @@ footer{font-size:12px;color:var(--muted)}
   <a class="btn" id="run" href="#" aria-disabled="true">Chạy cập nhật</a>
 </div></div>
 <script>
-// Nút chạy: gửi yêu cầu (mã bài) lên kênh ntfy công khai → GitHub Actions liếc kênh 5 phút/lần, chạy công thức,
-// ghi bài mới lên nhánh tu-dong-ket-qua → trang này đọc về cho chép / tải. Không chìa khóa nào nằm trong trang.
-var NTFY = "https://ntfy.sh/sn-tcb-cap-nhat-vttt-8q2m";
+// Nút chạy: gửi mã bài cho hàm Netlify (giữ chìa GitHub trong Netlify, không nằm trong trang) → GitHub Actions chạy ngay,
+// ghi bài mới lên nhánh tu-dong-ket-qua → trang này đọc về cho chép / tải.
+var HAM = /netlify\.app$/.test(location.hostname) ? "/.netlify/functions/chay" : "https://vttt-sn.netlify.app/.netlify/functions/chay";
 var KQ = "https://raw.githubusercontent.com/vuthithuytrang-lab/trang/tu-dong-ket-qua/";
 var DU_LIEU = /github\.io$/.test(location.hostname) ? "du-lieu.json" : "https://vuthithuytrang-lab.github.io/trang/du-lieu.json";
 var du = {bai: []}, kq = {}, chon = {}, nhom = "", yc = null, hen = null;
@@ -142,7 +142,7 @@ function render(){
   var n = Object.keys(chon).length, run = $("#run"), c = dem("chay");
   run.setAttribute("aria-disabled", n ? "false" : "true");
   run.textContent = n ? "Chạy cập nhật (" + n + " bài)" : "Chạy cập nhật";
-  if (!$("#msg").dataset.giu) $("#msg").textContent = c ? "Đang chạy " + c + " bài – máy nhận yêu cầu trong khoảng 5–15 phút, mỗi bài 1–2 phút. Trang tự làm mới, không cần bấm lại."
+  if (!$("#msg").dataset.giu) $("#msg").textContent = c ? "Đang chạy " + c + " bài – mỗi bài 1–2 phút. Trang tự làm mới, không cần bấm lại."
     : (n ? "Đã chọn " + n + " bài – bấm Chạy cập nhật." : "Tích bài cần cập nhật rồi bấm Chạy cập nhật.");
   $("#ft").textContent = "Danh sách cập nhật: " + (du.cap_nhat || "–") + ". Bản mới máy chạy miễn phí trên GitHub; ghi chú \"Cần xem lại\" nên được người phụ trách duyệt trước khi đăng.";
   clearTimeout(hen); if (c) hen = setTimeout(taiKq, 30000);
@@ -193,16 +193,15 @@ $("#run").addEventListener("click", function(e){
   if (this.getAttribute("aria-disabled") === "true") return;
   var ids = du.bai.filter(function(b){ return chon[b.thu_tu]; }).map(function(b){ return b.id; });
   var run = this; run.setAttribute("aria-disabled", "true"); run.textContent = "Đang gửi…";
-  fetch(NTFY, {method: "POST", body: JSON.stringify({bai: ids})}).then(function(r){
-    if (!r.ok) throw 0;
-    return r.json();
+  fetch(HAM, {method: "POST", headers: {"content-type": "application/json"}, body: JSON.stringify({bai: ids})}).then(function(r){
+    return r.json().catch(function(){ return {}; }).then(function(j){ if (!r.ok || !j.ok) throw (j.loi || ("lỗi " + r.status)); return j; });
   }).then(function(j){
     var cu = yc && Date.now() / 1000 - yc.t < 3600 ? yc.bai : [];
-    yc = {t: (j && j.time) || Math.floor(Date.now() / 1000), bai: cu.concat(ids)};
+    yc = {t: j.luc || Math.floor(Date.now() / 1000), bai: cu.concat(j.bai || ids)};
     try { localStorage.setItem("yeu_cau", JSON.stringify(yc)); } catch (e) {}
-    chon = {}; bao("Đã gửi yêu cầu " + ids.length + " bài. Máy nhận trong khoảng 5–15 phút, mỗi bài 1–2 phút – cứ để trang mở, xong sẽ hiện nút Chép.");
+    chon = {}; bao("Đã gửi yêu cầu " + ids.length + " bài. Máy bắt đầu sau khoảng 1 phút, mỗi bài 1–2 phút – cứ để trang mở, xong sẽ hiện nút Chép.");
     render();
-  }).catch(function(){ bao("Gửi yêu cầu không được – kiểm tra mạng rồi bấm lại."); render(); });
+  }).catch(function(l){ bao(typeof l === "string" ? "Chưa chạy được: " + l + ". Nhờ người phụ trách kiểm tra." : "Gửi yêu cầu không được – kiểm tra mạng rồi bấm lại."); render(); });
 });
 fetch(DU_LIEU + "?t=" + Date.now()).then(function(r){ return r.json(); }).then(function(d){ du = d; render(); return taiKq(); })
   .catch(function(){ $("#list").innerHTML = '<div class="empty">Chưa tải được danh sách – tải lại trang (Ctrl + R, Mac: Cmd + R).</div>'; });

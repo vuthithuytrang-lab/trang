@@ -26,6 +26,11 @@ GitHub Pages của repo này, nhánh `gh-pages`, **miễn phí**, ai có link c�
   2. Chọn kho **trang** → **Branch to deploy = `netlify`**, các ô khác để trống → **Deploy**.
   3. Project configuration → **Change project name** → `vttt-sn`.
   Xong thì Claude kiểm tra `https://vttt-sn.netlify.app/` và thêm bước kiểm tra Netlify vào `dang.sh`.
+- **Nút "Chạy cập nhật" chạy ngay** (29/10/2026): trang gọi hàm `netlify-goc/netlify/functions/chay.mjs` (chỉ có ở nhánh `netlify`),
+  hàm dùng chìa `GITHUB_TOKEN` (biến môi trường Netlify) bấm `tu-dong-cap-nhat.yml` → bài mới lên nhánh `tu-dong-ket-qua` → trang hiện nút Chép / Tải Word.
+  Lịch `*/5` của GitHub **không tin được** (kho ít hoạt động → thực tế ~6 tiếng/lần), nên không dựa vào lịch để chạy theo yêu cầu.
+  Chìa: Trang tạo ở github.com → Settings → Developer settings → Fine-grained tokens, chỉ kho `trang`, quyền **Actions: Read and write**;
+  dán thẳng vào Netlify → Project configuration → Environment variables, key `GITHUB_TOKEN`. **Không dán vào chat.**
 - Đừng bấm: ô "Claude Agent / Build now" (tốn lượt), nút Upgrade, mục Usage & billing.
 
 ⚠️ Thư mục app chỉ để giao diện. Số liệu máy tự ghi (vd `lai-suat/du-lieu/`) nằm riêng trên `gh-pages` — đừng để file số liệu trong thư mục app, kẻo đăng lại app ghi đè số mới bằng số cũ.
