@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cập nhật bài Techcombank</title>
+<meta name="description" content="Danh sách 23 bài blog Techcombank và bản cập nhật Google Docs mới nhất.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Be+Vietnam+Pro:wght@400;600&display=swap">
+<style>
+/* Trang công khai (GitHub Pages) — ai có link cũng xem được, không cần đăng nhập.
+   Dữ liệu đọc từ du-lieu.json cùng thư mục; Claude cập nhật file này sau mỗi đợt chạy. */
+:root{
+  --bg:#F3F3F6; --card:#FFFFFF; --fg:#151515; --muted:#5A6B66; --line:#DCDCDC;
+  --brand:#004AEF; --brand-ink:#002992; --mint:#07EF9C; --amber:#FFCE00; --orange:#F68B1F; --cyan:#0DD1FF;
+  --chip:#E8EDFB; --sel:#EAF0FF;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0B1430; --card:#111D42; --fg:#EEF2FF; --muted:#9AA9C9; --line:#24335F;
+  --brand:#4F86FF; --brand-ink:#BFD0FF; --chip:#1B2A57; --sel:#172B62; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0B1430; --card:#111D42; --fg:#EEF2FF; --muted:#9AA9C9; --line:#24335F;
+  --brand:#4F86FF; --brand-ink:#BFD0FF; --chip:#1B2A57; --sel:#172B62; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.55 "Be Vietnam Pro","Montserrat",-apple-system,"Segoe UI",Roboto,Arial,sans-serif;padding:20px 16px 110px}
+.wrap{max-width:980px;margin:0 auto;display:grid;gap:18px}
+header{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center;justify-content:space-between}
+h1{font:800 clamp(24px,4vw,32px)/1.15 Gilroy,"Montserrat",Arial,sans-serif;margin:0;color:var(--brand-ink);text-wrap:balance}
+.lead{margin:4px 0 0;color:var(--muted);max-width:62ch}
+.logo{background:#FFFFFF;border-radius:10px;padding:10px 14px;display:inline-flex}.logo img{width:170px;height:auto;display:block}
+.stats{display:flex;flex-wrap:wrap;gap:10px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-variant-numeric:tabular-nums}
+.stat b{font:800 20px Montserrat,Arial,sans-serif;margin-right:6px;color:var(--brand)}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.pill{font:600 13px "Be Vietnam Pro",Arial,sans-serif;border:1px solid var(--line);background:var(--card);color:var(--fg);border-radius:999px;padding:6px 12px;cursor:pointer}
+.pill[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:#FFFFFF}
+.pill:focus-visible,.btn:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--cyan);outline-offset:2px}
+.spacer{flex:1}
+.list{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.row{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:4px 12px;align-items:center;padding:12px 14px;border-top:1px solid var(--line);cursor:pointer}
+.row:first-child{border-top:0}.row.on{background:var(--sel)}
+.row input{width:18px;height:18px;accent-color:var(--brand);margin:0}
+.name{font-weight:600;min-width:0}
+.group{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.chip{font:600 12px "Be Vietnam Pro",Arial,sans-serif;border-radius:999px;padding:3px 10px;white-space:nowrap;background:var(--chip)}
+.chip.xong{background:color-mix(in srgb,var(--mint) 28%,transparent)}
+.chip.loi{background:color-mix(in srgb,var(--orange) 35%,transparent)}
+.meta{grid-column:2/4;display:flex;flex-wrap:wrap;gap:4px 14px;color:var(--muted);font-size:13px;min-width:0}
+.meta a{color:var(--brand);font-weight:600;text-decoration:none}.meta a:hover{text-decoration:underline}
+.note{flex-basis:100%}
+.empty{padding:28px 16px;color:var(--muted);text-align:center}
+.bar{position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:1px solid var(--line);padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));z-index:5}
+.bar-in{max-width:980px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
+#msg{flex:1;min-width:0;font-size:14px}
+.btn{font:700 15px Montserrat,Arial,sans-serif;background:var(--brand);color:#FFFFFF;border:0;border-radius:10px;padding:12px 22px;cursor:pointer;text-decoration:none}
+.btn[aria-disabled="true"]{opacity:.45;cursor:not-allowed}
+footer{font-size:12px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1>Cập nhật bài Techcombank</h1>
+      <p class="lead">Danh sách bài blog và bản cập nhật Google Docs mới nhất (đã tô vàng chỗ đổi). Ai có link cũng xem và mở file được, không cần đăng nhập.</p>
+    </div>
+    <span class="logo"><img src="logo.webp" alt="SEONGON" width="170" height="47"></span>
+  </header>
+  <div class="stats" id="stats"></div>
+  <div class="toolbar" role="toolbar" aria-label="Lọc theo nhóm">
+    <button class="pill" data-g="" aria-pressed="true">Tất cả</button>
+    <button class="pill" data-g="Vàng" aria-pressed="false">Vàng</button>
+    <button class="pill" data-g="Nông sản" aria-pressed="false">Nông sản</button>
+    <button class="pill" data-g="Kim loại" aria-pressed="false">Kim loại</button>
+    <button class="pill" data-g="Năng lượng" aria-pressed="false">Năng lượng</button>
+    <button class="pill" data-g="Lãi suất" aria-pressed="false">Lãi suất</button>
+    <span class="spacer"></span>
+    <button class="pill" id="all">Chọn tất cả</button>
+    <button class="pill" id="none">Bỏ chọn</button>
+  </div>
+  <div class="list" id="list"><div class="empty">Đang tải danh sách bài…</div></div>
+  <footer id="ft"></footer>
+</div>
+<div class="bar"><div class="bar-in">
+  <div id="msg" aria-live="polite">Chưa chọn bài nào.</div>
+  <a class="btn" id="run" href="#" aria-disabled="true">Chạy cập nhật</a>
+</div></div>
+<script>
+var du = {bai: [], nut_chay: ""}, chon = {}, nhom = "";
+function $(s){ return document.querySelector(s); }
+function esc(s){ return String(s == null ? "" : s).replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]; }); }
+function trangThai(b){
+  if (/^⚠️/.test(b.ghi_chu || "")) return ["loi", "Lỗi"];
+  if (b.link) return ["xong", "Đã xong"];
+  return ["", "Chưa có bản mới"];
+}
+function render(){
+  var ds = du.bai.filter(function(b){ return !nhom || b.nhom === nhom; });
+  $("#list").innerHTML = ds.map(function(b){
+    var t = trangThai(b), on = !!chon[b.thu_tu];
+    return '<label class="row' + (on ? ' on' : '') + '"><input type="checkbox" data-s="' + b.thu_tu + '"' + (on ? ' checked' : '') + '>'
+      + '<span class="name">' + esc(b.ten) + ' <span class="group">· ' + esc(b.nhom) + '</span></span>'
+      + '<span class="chip ' + t[0] + '">' + t[1] + '</span><span class="meta">'
+      + (b.link ? '<span>' + esc(b.luc) + '</span><a target="_blank" rel="noopener" href="' + esc(b.link) + '">Mở file Docs ↗</a>' : '<span>Chưa có bản mới</span>')
+      + '<a target="_blank" rel="noopener" href="' + esc(b.url) + '">Bài trên web ↗</a>'
+      + (b.ghi_chu && b.ghi_chu !== 'xong' ? '<span class="note">' + (t[0] === 'loi' ? '' : 'Ghi chú: ') + esc(String(b.ghi_chu).replace(/^Cần xem lại: /, '').slice(0, 180)) + (String(b.ghi_chu).length > 180 ? '…' : '') + '</span>' : '')
+      + '</span></label>';
+  }).join("") || '<div class="empty">Nhóm này chưa có bài.</div>';
+  var dem = function(k){ return du.bai.filter(function(b){ return trangThai(b)[0] === k; }).length; };
+  $("#stats").innerHTML = '<span class="stat"><b>' + du.bai.length + '</b>bài</span><span class="stat"><b>' + dem("xong") + '</b>đã xong</span><span class="stat"><b>' + dem("loi") + '</b>lỗi</span>';
+  var n = Object.keys(chon).length, run = $("#run");
+  if (du.nut_chay){
+    run.setAttribute("aria-disabled", n ? "false" : "true");
+    run.href = n ? du.nut_chay : "#";
+    run.target = "_blank";
+    run.textContent = n ? "Chạy cập nhật (" + n + " bài)" : "Chạy cập nhật";
+    $("#msg").textContent = n ? "Đã chọn " + n + " bài – bấm Chạy cập nhật, trang chạy sẽ mở ra để xác nhận." : "Chưa chọn bài nào.";
+  } else {
+    run.setAttribute("aria-disabled", "true");
+    $("#msg").textContent = n ? "Đã chọn " + n + " bài. Nút chạy sẽ bật khi máy tự động được cài xong – hiện nhờ người phụ trách chạy." : "Chưa chọn bài nào.";
+  }
+  $("#ft").textContent = "Cập nhật lần cuối: " + (du.cap_nhat || "–") + ". File Docs nằm trong thư mục Google Drive chung, ai có link cũng mở được.";
+}
+$("#list").addEventListener("change", function(e){ var s = e.target.getAttribute("data-s"); if (!s) return; if (e.target.checked) chon[s] = 1; else delete chon[s]; render(); });
+document.querySelectorAll("[data-g]").forEach(function(b){ b.addEventListener("click", function(){ nhom = b.getAttribute("data-g"); document.querySelectorAll("[data-g]").forEach(function(x){ x.setAttribute("aria-pressed", String(x === b)); }); render(); }); });
+$("#all").onclick = function(){ du.bai.forEach(function(b){ if (!nhom || b.nhom === nhom) chon[b.thu_tu] = 1; }); render(); };
+$("#none").onclick = function(){ chon = {}; render(); };
+$("#run").addEventListener("click", function(e){ if (this.getAttribute("aria-disabled") === "true") e.preventDefault(); });
+fetch("du-lieu.json?t=" + Date.now()).then(function(r){ return r.json(); }).then(function(d){ du = d; render(); })
+  .catch(function(){ $("#list").innerHTML = '<div class="empty">Chưa tải được danh sách – tải lại trang (Cmd + R).</div>'; });
+</script>
+</body>
+</html>
