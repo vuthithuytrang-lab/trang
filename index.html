@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Cập nhật bài Techcombank</title>
 <meta name="description" content="Danh sách 23 bài blog Techcombank và bản cập nhật Google Docs mới nhất.">
-<!-- phien-ban: 202610291852 -->
+<!-- phien-ban: 202610291915 -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Cập nhật bài Techcombank">
 <meta property="og:description" content="Danh sách 23 bài blog Techcombank và bản cập nhật Google Docs mới nhất – ai có link cũng mở được.">
@@ -53,6 +53,11 @@ h1{font:800 clamp(24px,4vw,32px)/1.15 Gilroy,"Montserrat",Arial,sans-serif;margi
 .chip{font:600 12px "Be Vietnam Pro",Arial,sans-serif;border-radius:999px;padding:3px 10px;white-space:nowrap;background:var(--chip)}
 .chip.xong{background:color-mix(in srgb,var(--mint) 28%,transparent)}
 .chip.loi{background:color-mix(in srgb,var(--orange) 35%,transparent)}
+.chip.chay{background:color-mix(in srgb,var(--amber) 40%,transparent)}
+.moi{grid-column:2/4;display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;font-size:13px;color:var(--muted)}
+.mini{font:600 12px "Be Vietnam Pro",Arial,sans-serif;border:1px solid var(--brand);background:transparent;color:var(--brand);border-radius:8px;padding:4px 10px;cursor:pointer}
+.mini.chinh{background:var(--brand);color:#FFFFFF}
+.mini:focus-visible{outline:3px solid var(--cyan);outline-offset:2px}
 .meta{grid-column:2/4;display:flex;flex-wrap:wrap;gap:4px 14px;color:var(--muted);font-size:13px;min-width:0}
 .meta a{color:var(--brand);font-weight:600;text-decoration:none}.meta a:hover{text-decoration:underline}
 .note{flex-basis:100%}
@@ -70,7 +75,7 @@ footer{font-size:12px;color:var(--muted)}
   <header>
     <div>
       <h1>Cập nhật bài Techcombank</h1>
-      <p class="lead">Danh sách bài blog và bản cập nhật Google Docs mới nhất (đã tô vàng chỗ đổi). Ai có link cũng xem và mở file được, không cần đăng nhập.</p>
+      <p class="lead">Tích bài cần cập nhật rồi bấm <b>Chạy cập nhật</b> – máy tự lấy giá / lãi suất mới, miễn phí. Có bản mới thì bấm <b>Chép</b> rồi dán vào Google Docs (giữ tô vàng), hoặc <b>Tải Word</b>. Ai có link cũng dùng được, không cần đăng nhập.</p>
     </div>
     <span class="logo"><img src="logo.webp" alt="SEONGON" width="170" height="47"></span>
   </header>
@@ -94,10 +99,23 @@ footer{font-size:12px;color:var(--muted)}
   <a class="btn" id="run" href="#" aria-disabled="true">Chạy cập nhật</a>
 </div></div>
 <script>
-var du = {bai: [], nut_chay: ""}, chon = {}, nhom = "";
+// Nút chạy: gửi yêu cầu (mã bài) lên kênh ntfy công khai → GitHub Actions liếc kênh 5 phút/lần, chạy công thức,
+// ghi bài mới lên nhánh tu-dong-ket-qua → trang này đọc về cho chép / tải. Không chìa khóa nào nằm trong trang.
+var NTFY = "https://ntfy.sh/sn-tcb-cap-nhat-vttt-8q2m";
+var KQ = "https://raw.githubusercontent.com/vuthithuytrang-lab/trang/tu-dong-ket-qua/";
+var DU_LIEU = /github\.io$/.test(location.hostname) ? "du-lieu.json" : "https://vuthithuytrang-lab.github.io/trang/du-lieu.json";
+var du = {bai: []}, kq = {}, chon = {}, nhom = "", yc = null, hen = null;
+try { yc = JSON.parse(localStorage.getItem("yeu_cau") || "null"); } catch (e) {}
 function $(s){ return document.querySelector(s); }
 function esc(s){ return String(s == null ? "" : s).replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]; }); }
+function gio(iso){ var d = new Date(iso); return isNaN(d) ? "" : d.toLocaleString("vi-VN", {hour:"2-digit", minute:"2-digit", day:"2-digit", month:"2-digit", timeZone:"Asia/Ho_Chi_Minh"}); }
+function k(b){ return kq[b.id] || null; }
+function dangChay(b){ var x = k(b); return !!(yc && yc.bai.indexOf(b.id) >= 0 && (!x || Date.parse(x.luc) / 1000 < yc.t) && Date.now() / 1000 - yc.t < 3600); }
 function trangThai(b){
+  if (dangChay(b)) return ["chay", "Đang chạy…"];
+  var x = k(b);
+  if (x && x.ok) return ["xong", "Có bản mới"];
+  if (x && x.loi) return ["loi", "Lỗi"];
   if (/^⚠️/.test(b.ghi_chu || "")) return ["loi", "Lỗi"];
   if (b.link) return ["xong", "Đã xong"];
   return ["", "Chưa có bản mới"];
@@ -105,39 +123,89 @@ function trangThai(b){
 function render(){
   var ds = du.bai.filter(function(b){ return !nhom || b.nhom === nhom; });
   $("#list").innerHTML = ds.map(function(b){
-    var t = trangThai(b), on = !!chon[b.thu_tu];
+    var t = trangThai(b), on = !!chon[b.thu_tu], x = k(b);
+    var ghi = x ? (x.can_duyet || x.loi || "") : (b.ghi_chu && b.ghi_chu !== "xong" ? String(b.ghi_chu).replace(/^Cần xem lại: /, "") : "");
     return '<label class="row' + (on ? ' on' : '') + '"><input type="checkbox" data-s="' + b.thu_tu + '"' + (on ? ' checked' : '') + '>'
       + '<span class="name">' + esc(b.ten) + ' <span class="group">· ' + esc(b.nhom) + '</span></span>'
-      + '<span class="chip ' + t[0] + '">' + t[1] + '</span><span class="meta">'
-      + (b.link ? '<span>' + esc(b.luc) + '</span><a target="_blank" rel="noopener" href="' + esc(b.link) + '">Mở file Docs ↗</a>' : '<span>Chưa có bản mới</span>')
+      + '<span class="chip ' + t[0] + '">' + t[1] + '</span>'
+      + (x && x.ok ? '<span class="moi">Bản mới (máy chạy ' + esc(gio(x.luc)) + ', ngày trong bài ' + esc(x.ngay) + '): '
+          + '<button class="mini chinh" data-chep="' + esc(b.id) + '">Chép để dán vào Docs</button><button class="mini" data-tai="' + esc(b.id) + '">Tải Word</button></span>' : '')
+      + '<span class="meta">'
+      + (b.link ? '<span>Docs ' + esc(b.luc) + '</span><a target="_blank" rel="noopener" href="' + esc(b.link) + '">Mở file Docs ↗</a>' : '')
       + '<a target="_blank" rel="noopener" href="' + esc(b.url) + '">Bài trên web ↗</a>'
-      + (b.ghi_chu && b.ghi_chu !== 'xong' ? '<span class="note">' + (t[0] === 'loi' ? '' : 'Ghi chú: ') + esc(String(b.ghi_chu).replace(/^Cần xem lại: /, '').slice(0, 180)) + (String(b.ghi_chu).length > 180 ? '…' : '') + '</span>' : '')
+      + (ghi ? '<span class="note">Ghi chú: ' + esc(String(ghi).replace(/\n/g, " / ").slice(0, 180)) + (String(ghi).length > 180 ? '…' : '') + '</span>' : '')
       + '</span></label>';
   }).join("") || '<div class="empty">Nhóm này chưa có bài.</div>';
-  var dem = function(k){ return du.bai.filter(function(b){ return trangThai(b)[0] === k; }).length; };
-  $("#stats").innerHTML = '<span class="stat"><b>' + du.bai.length + '</b>bài</span><span class="stat"><b>' + dem("xong") + '</b>đã xong</span><span class="stat"><b>' + dem("loi") + '</b>lỗi</span>';
-  var n = Object.keys(chon).length, run = $("#run");
-  if (du.nut_chay){
-    run.setAttribute("aria-disabled", n ? "false" : "true");
-    run.href = n ? du.nut_chay : "#";
-    run.target = "_blank";
-    run.textContent = n ? "Chạy cập nhật (" + n + " bài)" : "Chạy cập nhật";
-    $("#msg").textContent = n ? "Đã chọn " + n + " bài – bấm Chạy cập nhật, trang chạy sẽ mở ra để xác nhận." : "Chưa chọn bài nào.";
-  } else {
-    run.setAttribute("aria-disabled", "true");
-    $("#msg").textContent = n ? "Đã chọn " + n + " bài. Nút chạy sẽ bật khi máy tự động được cài xong – hiện nhờ người phụ trách chạy." : "Chưa chọn bài nào.";
-  }
-  $("#ft").textContent = "Cập nhật lần cuối: " + (du.cap_nhat || "–") + ". File Docs nằm trong thư mục Google Drive chung, ai có link cũng mở được.";
+  var dem = function(s){ return du.bai.filter(function(b){ return trangThai(b)[0] === s; }).length; };
+  $("#stats").innerHTML = '<span class="stat"><b>' + du.bai.length + '</b>bài</span><span class="stat"><b>' + dem("xong") + '</b>đã xong</span>'
+    + (dem("chay") ? '<span class="stat"><b>' + dem("chay") + '</b>đang chạy</span>' : '') + '<span class="stat"><b>' + dem("loi") + '</b>lỗi</span>';
+  var n = Object.keys(chon).length, run = $("#run"), c = dem("chay");
+  run.setAttribute("aria-disabled", n ? "false" : "true");
+  run.textContent = n ? "Chạy cập nhật (" + n + " bài)" : "Chạy cập nhật";
+  if (!$("#msg").dataset.giu) $("#msg").textContent = c ? "Đang chạy " + c + " bài – máy nhận yêu cầu trong khoảng 5–15 phút, mỗi bài 1–2 phút. Trang tự làm mới, không cần bấm lại."
+    : (n ? "Đã chọn " + n + " bài – bấm Chạy cập nhật." : "Tích bài cần cập nhật rồi bấm Chạy cập nhật.");
+  $("#ft").textContent = "Danh sách cập nhật: " + (du.cap_nhat || "–") + ". Bản mới máy chạy miễn phí trên GitHub; ghi chú \"Cần xem lại\" nên được người phụ trách duyệt trước khi đăng.";
+  clearTimeout(hen); if (c) hen = setTimeout(taiKq, 30000);
 }
+function taiKq(){
+  return fetch(KQ + "trang-thai.json?t=" + Date.now()).then(function(r){ return r.json(); }).then(function(d){ kq = d || {}; render(); }).catch(function(){ render(); });
+}
+function layBai(id){ return fetch(KQ + id + ".html?t=" + Date.now()).then(function(r){ if (!r.ok) throw 0; return r.text(); }); }
+function bao(s){ var m = $("#msg"); m.textContent = s; m.dataset.giu = 1; setTimeout(function(){ delete m.dataset.giu; }, 8000); }
+function chep(id){
+  layBai(id).then(function(h){
+    var xong = function(){ bao("Đã chép. Mở Google Docs (docs.new) rồi bấm Ctrl + V (Mac: Cmd + V)."); };
+    var cu = function(){
+      var d = document.createElement("div"); d.contentEditable = "true"; d.style.cssText = "position:fixed;left:-9999px;top:0"; d.innerHTML = h; document.body.appendChild(d);
+      var r = document.createRange(); r.selectNodeContents(d); var s = getSelection(); s.removeAllRanges(); s.addRange(r);
+      var ok = false; try { ok = document.execCommand("copy"); } catch (e) {}
+      s.removeAllRanges(); d.remove(); ok ? xong() : bao("Trình duyệt không cho chép – bấm Tải Word thay thế.");
+    };
+    if (window.ClipboardItem && navigator.clipboard && navigator.clipboard.write) {
+      var tam = document.createElement("div"); tam.innerHTML = h;
+      navigator.clipboard.write([new ClipboardItem({"text/html": new Blob([h], {type:"text/html"}), "text/plain": new Blob([tam.innerText], {type:"text/plain"})})]).then(xong, cu);
+    } else cu();
+  }).catch(function(){ bao("Chưa tải được bản mới – thử lại sau ít phút."); });
+}
+function tai(id){
+  layBai(id).then(function(h){
+    var x = kq[id] || {}, a = document.createElement("a");
+    var doc = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word"><head><meta charset="utf-8"></head><body>'
+      + h.replace(/^[\s\S]*?<body[^>]*>|<\/body>[\s\S]*$/g, "") + '</body></html>';
+    a.href = URL.createObjectURL(new Blob(["﻿", doc], {type:"application/msword"}));
+    // tên file không dấu: vài trình duyệt bỏ tên có dấu, tải về thành "download"
+    a.download = (x.ten || id).normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[đĐ]/g, "d").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") + ".doc";
+    document.body.appendChild(a); a.click(); setTimeout(function(){ URL.revokeObjectURL(a.href); a.remove(); }, 2000);
+    bao("Đã tải file Word. Muốn thành Google Docs: kéo file vào Google Drive → mở bằng Google Docs.");
+  }).catch(function(){ bao("Chưa tải được bản mới – thử lại sau ít phút."); });
+}
+$("#list").addEventListener("click", function(e){
+  var n = e.target.closest("button"); if (!n) return;
+  e.preventDefault(); e.stopPropagation();
+  if (n.dataset.chep) chep(n.dataset.chep); else if (n.dataset.tai) tai(n.dataset.tai);
+});
 $("#list").addEventListener("change", function(e){ var s = e.target.getAttribute("data-s"); if (!s) return; if (e.target.checked) chon[s] = 1; else delete chon[s]; render(); });
 document.querySelectorAll("[data-g]").forEach(function(b){ b.addEventListener("click", function(){ nhom = b.getAttribute("data-g"); document.querySelectorAll("[data-g]").forEach(function(x){ x.setAttribute("aria-pressed", String(x === b)); }); render(); }); });
 $("#all").onclick = function(){ du.bai.forEach(function(b){ if (!nhom || b.nhom === nhom) chon[b.thu_tu] = 1; }); render(); };
 $("#none").onclick = function(){ chon = {}; render(); };
-$("#run").addEventListener("click", function(e){ if (this.getAttribute("aria-disabled") === "true") e.preventDefault(); });
-// Bản Netlify chỉ đổi khi sửa app (đỡ tốn lượt miễn phí); số liệu luôn đọc từ GitHub Pages, nơi Claude cập nhật sau mỗi đợt chạy
-var DU_LIEU = /github\.io$/.test(location.hostname) ? "du-lieu.json" : "https://vuthithuytrang-lab.github.io/trang/du-lieu.json";
-fetch(DU_LIEU + "?t=" + Date.now()).then(function(r){ return r.json(); }).then(function(d){ du = d; render(); })
-  .catch(function(){ $("#list").innerHTML = '<div class="empty">Chưa tải được danh sách – tải lại trang (Cmd + R).</div>'; });
+$("#run").addEventListener("click", function(e){
+  e.preventDefault();
+  if (this.getAttribute("aria-disabled") === "true") return;
+  var ids = du.bai.filter(function(b){ return chon[b.thu_tu]; }).map(function(b){ return b.id; });
+  var run = this; run.setAttribute("aria-disabled", "true"); run.textContent = "Đang gửi…";
+  fetch(NTFY, {method: "POST", body: JSON.stringify({bai: ids})}).then(function(r){
+    if (!r.ok) throw 0;
+    return r.json();
+  }).then(function(j){
+    var cu = yc && Date.now() / 1000 - yc.t < 3600 ? yc.bai : [];
+    yc = {t: (j && j.time) || Math.floor(Date.now() / 1000), bai: cu.concat(ids)};
+    try { localStorage.setItem("yeu_cau", JSON.stringify(yc)); } catch (e) {}
+    chon = {}; bao("Đã gửi yêu cầu " + ids.length + " bài. Máy nhận trong khoảng 5–15 phút, mỗi bài 1–2 phút – cứ để trang mở, xong sẽ hiện nút Chép.");
+    render();
+  }).catch(function(){ bao("Gửi yêu cầu không được – kiểm tra mạng rồi bấm lại."); render(); });
+});
+fetch(DU_LIEU + "?t=" + Date.now()).then(function(r){ return r.json(); }).then(function(d){ du = d; render(); return taiKq(); })
+  .catch(function(){ $("#list").innerHTML = '<div class="empty">Chưa tải được danh sách – tải lại trang (Ctrl + R, Mac: Cmd + R).</div>'; });
 </script>
 </body>
 </html>
