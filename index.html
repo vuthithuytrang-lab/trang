@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Cập nhật bài Techcombank</title>
 <meta name="description" content="Danh sách 23 bài blog Techcombank và bản cập nhật Google Docs mới nhất.">
-<!-- phien-ban: 202610291918 -->
+<!-- phien-ban: 202610300259 -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Cập nhật bài Techcombank">
 <meta property="og:description" content="Danh sách 23 bài blog Techcombank và bản cập nhật Google Docs mới nhất – ai có link cũng mở được.">
@@ -201,7 +201,7 @@ $("#run").addEventListener("click", function(e){
     try { localStorage.setItem("yeu_cau", JSON.stringify(yc)); } catch (e) {}
     chon = {}; bao("Đã gửi yêu cầu " + ids.length + " bài. Máy bắt đầu sau khoảng 1 phút, mỗi bài 1–2 phút – cứ để trang mở, xong sẽ hiện nút Chép.");
     render();
-  }).catch(function(l){ bao(typeof l === "string" ? "Chưa chạy được: " + l + ". Nhờ người phụ trách kiểm tra." : "Gửi yêu cầu không được – kiểm tra mạng rồi bấm lại."); render(); });
+  }).catch(function(l){ bao(typeof l === "string" ? "Chưa chạy được: " + l + ". Nhờ người phụ trách kiểm tra." : "Nút chạy chưa bật xong (đang chờ cài đặt lần đầu). Bản mới nhất vẫn xem / chép / tải được ở từng bài."); render(); });
 });
 fetch(DU_LIEU + "?t=" + Date.now()).then(function(r){ return r.json(); }).then(function(d){ du = d; render(); return taiKq(); })
   .catch(function(){ $("#list").innerHTML = '<div class="empty">Chưa tải được danh sách – tải lại trang (Ctrl + R, Mac: Cmd + R).</div>'; });
