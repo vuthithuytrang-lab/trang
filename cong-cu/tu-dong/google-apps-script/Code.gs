@@ -30,6 +30,9 @@ const CONG_THUC_DU_PHONG = {
   'lai-suat-tiet-kiem': 'lai-suat-1', 'cach-tinh-lai-suat-tien-gui-tiet-kiem': 'lai-suat-2',
 };
 const TZ = 'Asia/Ho_Chi_Minh';
+// Mỗi bài 1 file Docs CỐ ĐỊNH (Trang chốt 29/10/2026): lần sau chép nội dung mới đè vào chính file đó, link không đổi,
+// bản cũ vẫn xem được trong Lịch sử phiên bản của Docs. Danh sách mã bài → id file ở kho (file-co-dinh.json).
+const FILE_CO_DINH = 'https://raw.githubusercontent.com/vuthithuytrang-lab/trang/claude/vibrant-keller-rk0i98/cong-cu/tu-dong/file-co-dinh.json';
 
 /** Chạy 1 lần khi cài: mỗi phút xem Sheet 1 lần. */
 function caiDat() {
@@ -89,10 +92,8 @@ function chay_() {
       if (!moi) throw new Error('máy chủ chưa chạy xong sau ' + CAU_HINH.CHO_TOI_DA_PHUT + ' phút – tích lại để thử lại');
       if (!tt.ok) throw new Error(tt.loi || 'công thức chạy lỗi');
       const html = UrlFetchApp.fetch(CAU_HINH.KHO + t.ma + '.html?t=' + Date.now()).getContentText('UTF-8');
-      let ten = tt.ten;
-      if (DriveApp.getFolderById(CAU_HINH.THU_MUC_ID).getFilesByName(ten).hasNext())
-        ten += ' (cập nhật ' + Utilities.formatDate(homNay, TZ, "HH'h'mm") + ')';
-      const id = taoDocs_(ten, html);
+      const ten = tt.ten;
+      const id = ghiDocs_(t.ma, ten, html);
       emails = emails || ss.getSheetByName('Hướng dẫn').getRange('B11:B20').getValues().flat()
         .map(x => String(x).trim()).filter(x => /@/.test(x));
       emails.forEach(e => chiaSe_(id, e));
@@ -144,6 +145,37 @@ function cotHomNay_(sh, homNay) {
   const soNgay = Date.UTC(y, m - 1, d) / 864e5 + 25569;      // số ngày kiểu Sheets (tính từ 30/12/1899)
   sh.getRange(1, 6).setValue(soNgay).setNumberFormat('d/m').setFontWeight('bold').setHorizontalAlignment('center');
   return 6;
+}
+
+/** File cố định của bài: còn dùng được → chép nội dung mới đè vào (đổi tên theo ngày mới); chưa có / đã xóa → tạo file mới và nhớ lại. */
+function ghiDocs_(ma, ten, html) {
+  const kho = PropertiesService.getScriptProperties();
+  const ds = JSON.parse(kho.getProperty('fileCoDinh') || '{}');
+  if (!ds[ma]) {
+    try { ds[ma] = JSON.parse(UrlFetchApp.fetch(FILE_CO_DINH + '?t=' + Date.now()).getContentText())[ma]; } catch (e) {}
+  }
+  if (ds[ma]) {
+    try {
+      if (!DriveApp.getFileById(ds[ma]).isTrashed()) { ghiDe_(ds[ma], ten, html); return ds[ma]; }
+    } catch (e) {}
+  }
+  ds[ma] = taoDocs_(ten, html);
+  kho.setProperty('fileCoDinh', JSON.stringify(ds));
+  return ds[ma];
+}
+
+/** Chép HTML mới đè vào file Google Docs có sẵn (giữ nguyên id/link, Docs lưu bản cũ trong Lịch sử phiên bản). */
+function ghiDe_(id, ten, html) {
+  const ranh = 'ranh' + Date.now();
+  const meta = JSON.stringify({ name: ten });
+  const than = '--' + ranh + '\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n' + meta +
+    '\r\n--' + ranh + '\r\nContent-Type: text/html; charset=UTF-8\r\n\r\n' + html + '\r\n--' + ranh + '--';
+  const r = UrlFetchApp.fetch('https://www.googleapis.com/upload/drive/v3/files/' + id + '?uploadType=multipart&supportsAllDrives=true', {
+    method: 'patch', contentType: 'multipart/related; boundary=' + ranh,
+    payload: Utilities.newBlob(than).setContentType('multipart/related').getBytes(),
+    headers: { Authorization: 'Bearer ' + ScriptApp.getOAuthToken() }, muteHttpExceptions: true,
+  });
+  if (r.getResponseCode() !== 200) throw new Error('Drive ' + r.getResponseCode() + ': ' + r.getContentText().slice(0, 100));
 }
 
 /** Tải HTML lên Drive, Google tự chuyển thành Google Docs (giữ tô vàng, bảng, ảnh). */
