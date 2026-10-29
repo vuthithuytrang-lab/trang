@@ -247,6 +247,9 @@ def da_dang():
 def cmd_dang(so, nen):
     if any(r["so"] == int(so) and r["nen"] == nen and r.get("ok") for r in da_dang()):
         sys.exit(f"bài {so} {nen} đã đăng rồi — bỏ qua")
+    gio = next((e["gio"] for e in json.load(open(os.path.join(HERE, "lich.json"))) if e["so"] == int(so) and e["nen"] == nen), None)
+    if gio and datetime.fromisoformat(gio) > datetime.now(VN) and not os.environ.get("CHO_PHEP_SOM"):
+        sys.exit(f"chưa đến giờ ({gio}) — không đăng sớm")
     if cmd_check(so, nen, quiet=True):
         sys.exit("bài chưa đạt soát: " + "; ".join(cmd_check(so, nen, quiet=True)))
     x = item(so); m = meta(so).get(nen, {}); body = open(bai_path(so, nen)).read()
