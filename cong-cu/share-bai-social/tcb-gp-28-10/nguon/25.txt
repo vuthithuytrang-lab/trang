@@ -1,0 +1,108 @@
+URL: https://congngheaz.com/doi-tien-du-lich-chau-a/
+TITLE: Đổi tiền du lịch châu Á: đổi trực tiếp hay mang USD?
+TCB_LINKS: ['https://techcombank.com/cong-cu-tien-ich/ty-gia']
+
+Với các điểm đến châu Á như Hàn Quốc, Đài Loan hay Ấn Độ, đồng tiền địa phương không phải lúc nào cũng sẵn có tại Việt Nam. Bài viết phân tích hai cách chuẩn bị phổ biến, cách tính chi phí của từng cách và tiêu chí lựa chọn theo đặc điểm chuyến đi.
+
+Mục lục
+										Toggle
+
+## 1. Hai cách chuẩn bị tiền cho điểm đến dùng đồng tiền ít phổ biến
+
+Khi đồng tiền của điểm đến ít được giao dịch tại Việt Nam, người đi thường cân nhắc giữa đổi trực tiếp tại Việt Nam và mang một ngoại tệ trung gian để đổi tiếp tại nơi đến.
+
+### Cách 1: Đổi trực tiếp tiền địa phương tại Việt Nam
+
+Cách thứ nhất là đổi trực tiếp đồng tiền địa phương tại Việt Nam, nếu ngân hàng hoặc đơn vị được phép có niêm yết và có sẵn loại tiền đó. Ưu điểm của cách này là có tiền để chi tiêu ngay khi đến nơi, không cần tìm điểm đổi tiền. Tuy nhiên, với đồng tiền ít giao dịch, khoảng chênh lệch giữa giá mua vào và bán ra thường rộng hơn so với các ngoại tệ phổ biến, do chi phí lưu giữ và vận chuyển loại tiền này cao hơn.
+
+### Cách 2: Mang đô la Mỹ làm tiền trung gian
+
+Cách thứ hai là mua đô la Mỹ tại Việt Nam, sau đó đổi sang đồng tiền địa phương tại điểm đến. Đô la Mỹ được chấp nhận rộng rãi tại các điểm đổi tiền ở hầu hết quốc gia châu Á, và khoảng chênh lệch mua bán đô la tại Việt Nam thường hẹp. Đổi lại, khoản tiền phải qua hai lần quy đổi, mỗi lần đều phát sinh chênh lệch.
+
+												Đổi trực tiếp tại Việt Nam
+												Mang USD, đổi tại điểm đến
+
+												Số lần quy đổi
+												1 lần
+												2 lần
+
+												Chênh lệch mua – bán
+												Thường rộng với đồng tiền ít giao dịch
+												Hẹp ở chiều VND → USD, tùy nơi ở chiều USD → tiền địa phương
+
+												Có tiền ngay khi đến
+												Có
+												Phải tìm điểm đổi tiền
+
+												Tiền thừa khi về nước
+												Khó bán lại
+												USD dễ bán lại
+
+Để so sánh hai cách, trước tiên cần biết chi phí ở chiều thứ nhất của cách trung gian. Bạn có thể tra tỷ giá USD hôm nay ở cột bán ra tiền mặt để biết số tiền Việt cần bỏ ra cho mỗi đô la Mỹ mang theo.
+									Có hai cách chuẩn bị tiền cho điểm đến dùng đồng tiền ít phổ biến tại Việt Nam.
+
+## 2. Cách tính và so sánh chi phí của hai phương án
+
+Để chọn cách phù hợp, cần quy cả hai phương án về cùng một thước đo là số tiền Việt bỏ ra cho cùng một lượng tiền địa phương.
+
+Đổi trực tiếp: tiền Việt cần bỏ ra = số tiền địa phương cần dùng × giá bán ra của đồng tiền đó tại Việt Nam.
+
+Qua đô la Mỹ (2 bước):
+
+Số USD cần mua = số tiền địa phương ÷ tỷ giá đổi USD sang tiền địa phương tại điểm đến.
+
+Tiền Việt cần bỏ ra = số USD đó × giá bán ra USD tại Việt Nam.
+
+Hai phép tính này làm nhanh bằng máy tính online hoặc máy tính trên điện thoại. Ví dụ dưới đây chỉ dùng số giả định để minh họa cách tính, không phải tỷ giá thực tế:
+
+												Cần 1.000.000 đơn vị tiền địa phương
+												Phép tính
+												Tiền Việt bỏ ra
+
+												Đổi trực tiếp (giá bán giả định 20 đồng/đơn vị)
+												1.000.000 × 20
+												20.000.000 đ
+
+												Qua USD (tại điểm đến 1 USD = 1.300 đơn vị; giá bán USD tại Việt Nam giả định 25.500 đ)
+												1.000.000 ÷ 1.300 ≈ 769,23 USD
+769,23 × 25.500
+												≈ 19.615.385 đ
+
+Giả sử chênh lệch mua bán của đồng tiền địa phương tại Việt Nam cao hơn tổng chênh lệch của hai lần đổi qua đô la Mỹ, cách trung gian sẽ có lợi hơn. Ngược lại, nếu điểm đổi tiền tại nơi đến áp dụng mức chênh lệch rộng, cách đổi trực tiếp lại hợp lý hơn. Vì mức chênh lệch tại điểm đến khác nhau theo từng nơi, bạn có thể tham khảo trước kinh nghiệm của người đã đi hoặc tỷ giá niêm yết tại sân bay và trung tâm thành phố.
+
+Ngoài chênh lệch tỷ giá, nên tính thêm các yếu tố sau:
+
+Thời gian và công sức tìm điểm đổi tiền uy tín tại nơi đến
+
+Phí dịch vụ, nếu có, tại các điểm đổi tiền
+
+Lượng tiền mặt thực sự cần dùng, vì nhiều nơi tại châu Á đã phổ biến thanh toán thẻ và quét mã QR
+
+## 3. Lựa chọn phù hợp theo đặc điểm chuyến đi
+
+Không có một cách đổi tiền phù hợp cho mọi chuyến đi, vì vậy lựa chọn nên dựa trên độ dài, lịch trình và thói quen chi tiêu của từng người.
+									Cách đổi tiền phù hợp phụ thuộc vào độ dài, điểm đến và thói quen chi tiêu của chuyến đi.
+
+												Kiểu chuyến đi
+												Cách nên chọn
+
+												Ngắn ngày, ít dùng tiền mặt
+												Đổi trực tiếp một khoản vừa đủ tại Việt Nam
+
+												Dài ngày, chi tiền mặt nhiều
+												Mang USD, đổi dần tại điểm đến
+
+												Đi qua nhiều quốc gia
+												Mang USD làm đồng tiền trung gian
+
+Với chuyến đi ngắn ngày và lượng tiền mặt cần dùng nhỏ, đổi trực tiếp một khoản vừa đủ tại Việt Nam giúp tiết kiệm thời gian, phần chênh lệch phát sinh không đáng kể. Với chuyến đi dài ngày, chi tiêu tiền mặt nhiều hoặc đi qua nhiều quốc gia, mang đô la Mỹ làm đồng tiền trung gian giúp linh hoạt hơn, vì phần chưa dùng đến vẫn giữ được giá trị và dễ bán lại khi về nước.
+
+Một cách kết hợp phổ biến là đổi trực tiếp một khoản nhỏ tiền địa phương để chi tiêu trong ngày đầu, mang thêm đô la Mỹ dự phòng, còn phần lớn chi tiêu dùng thẻ quốc tế. Trước ngày khởi hành, tra lại tỉ giá USD hôm nay giúp bạn chốt số đô la cần mua theo ngân sách đã lập.
+
+Khi đã đổi tiền tại điểm đến, nên giữ biên lai giao dịch để đối chiếu và chỉ đổi theo nhu cầu từng giai đoạn, tránh đổi dư nhiều tiền địa phương khó bán lại tại Việt Nam.
+
+## Kết luận
+
+Chuẩn bị tiền cho điểm đến dùng đồng tiền ít phổ biến trở nên đơn giản hơn khi bạn quy hai phương án về cùng một thước đo tiền Việt, tính đủ chênh lệch của mỗi lần quy đổi và lựa chọn theo độ dài cũng như thói quen chi tiêu của chuyến đi. Cách tiếp cận này giúp chi phí đổi tiền nằm trong dự tính và việc chi tiêu tại nơi đến thuận lợi hơn.
+
+												Ban biên tập Công nghệ AZ
