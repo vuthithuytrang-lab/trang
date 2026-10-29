@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Cập nhật bài Techcombank</title>
 <meta name="description" content="Danh sách 23 bài blog Techcombank và bản cập nhật Google Docs mới nhất.">
-<!-- phien-ban: 202610300259 -->
+<!-- phien-ban: 202610300305 -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Cập nhật bài Techcombank">
 <meta property="og:description" content="Danh sách 23 bài blog Techcombank và bản cập nhật Google Docs mới nhất – ai có link cũng mở được.">
@@ -128,8 +128,9 @@ function render(){
     return '<label class="row' + (on ? ' on' : '') + '"><input type="checkbox" data-s="' + b.thu_tu + '"' + (on ? ' checked' : '') + '>'
       + '<span class="name">' + esc(b.ten) + ' <span class="group">· ' + esc(b.nhom) + '</span></span>'
       + '<span class="chip ' + t[0] + '">' + t[1] + '</span>'
-      + (x && x.ok ? '<span class="moi">Bản mới (máy chạy ' + esc(gio(x.luc)) + ', ngày trong bài ' + esc(x.ngay) + '): '
-          + '<button class="mini chinh" data-chep="' + esc(b.id) + '">Chép để dán vào Docs</button><button class="mini" data-tai="' + esc(b.id) + '">Tải Word</button></span>' : '')
+      + '<span class="moi">' + (dangChay(b) ? '<span>Đang chạy – mỗi bài 1–3 phút…</span>' : '<button class="mini" data-chay="' + esc(b.id) + '">↻ Chạy bài này</button>')
+      + (x && x.ok ? '<span>Bản mới (máy chạy ' + esc(gio(x.luc)) + ', ngày trong bài ' + esc(x.ngay) + '):</span>'
+          + '<button class="mini chinh" data-chep="' + esc(b.id) + '">Chép để dán vào Docs</button><button class="mini" data-tai="' + esc(b.id) + '">Tải Word</button>' : '') + '</span>'
       + '<span class="meta">'
       + (b.link ? '<span>Docs ' + esc(b.luc) + '</span><a target="_blank" rel="noopener" href="' + esc(b.link) + '">Mở file Docs ↗</a>' : '')
       + '<a target="_blank" rel="noopener" href="' + esc(b.url) + '">Bài trên web ↗</a>'
@@ -142,7 +143,7 @@ function render(){
   var n = Object.keys(chon).length, run = $("#run"), c = dem("chay");
   run.setAttribute("aria-disabled", n ? "false" : "true");
   run.textContent = n ? "Chạy cập nhật (" + n + " bài)" : "Chạy cập nhật";
-  if (!$("#msg").dataset.giu) $("#msg").textContent = c ? "Đang chạy " + c + " bài – mỗi bài 1–2 phút. Trang tự làm mới, không cần bấm lại."
+  if (!$("#msg").dataset.giu) $("#msg").textContent = c ? "Đang chạy " + c + " bài – mỗi bài 1–3 phút. Trang tự làm mới, không cần bấm lại."
     : (n ? "Đã chọn " + n + " bài – bấm Chạy cập nhật." : "Tích bài cần cập nhật rồi bấm Chạy cập nhật.");
   $("#ft").textContent = "Danh sách cập nhật: " + (du.cap_nhat || "–") + ". Bản mới máy chạy miễn phí trên GitHub; ghi chú \"Cần xem lại\" nên được người phụ trách duyệt trước khi đăng.";
   clearTimeout(hen); if (c) hen = setTimeout(taiKq, 30000);
@@ -182,26 +183,29 @@ function tai(id){
 $("#list").addEventListener("click", function(e){
   var n = e.target.closest("button"); if (!n) return;
   e.preventDefault(); e.stopPropagation();
-  if (n.dataset.chep) chep(n.dataset.chep); else if (n.dataset.tai) tai(n.dataset.tai);
+  if (n.dataset.chep) chep(n.dataset.chep); else if (n.dataset.tai) tai(n.dataset.tai); else if (n.dataset.chay) guiChay([n.dataset.chay], n);
 });
 $("#list").addEventListener("change", function(e){ var s = e.target.getAttribute("data-s"); if (!s) return; if (e.target.checked) chon[s] = 1; else delete chon[s]; render(); });
 document.querySelectorAll("[data-g]").forEach(function(b){ b.addEventListener("click", function(){ nhom = b.getAttribute("data-g"); document.querySelectorAll("[data-g]").forEach(function(x){ x.setAttribute("aria-pressed", String(x === b)); }); render(); }); });
 $("#all").onclick = function(){ du.bai.forEach(function(b){ if (!nhom || b.nhom === nhom) chon[b.thu_tu] = 1; }); render(); };
 $("#none").onclick = function(){ chon = {}; render(); };
-$("#run").addEventListener("click", function(e){
-  e.preventDefault();
-  if (this.getAttribute("aria-disabled") === "true") return;
-  var ids = du.bai.filter(function(b){ return chon[b.thu_tu]; }).map(function(b){ return b.id; });
-  var run = this; run.setAttribute("aria-disabled", "true"); run.textContent = "Đang gửi…";
+function guiChay(ids, nut){
+  if (nut) { nut.setAttribute("aria-disabled", "true"); nut.disabled = true; }
+  bao("Đang gửi yêu cầu " + ids.length + " bài…");
   fetch(HAM, {method: "POST", headers: {"content-type": "application/json"}, body: JSON.stringify({bai: ids})}).then(function(r){
     return r.json().catch(function(){ return {}; }).then(function(j){ if (!r.ok || !j.ok) throw (j.loi || ("lỗi " + r.status)); return j; });
   }).then(function(j){
     var cu = yc && Date.now() / 1000 - yc.t < 3600 ? yc.bai : [];
     yc = {t: j.luc || Math.floor(Date.now() / 1000), bai: cu.concat(j.bai || ids)};
     try { localStorage.setItem("yeu_cau", JSON.stringify(yc)); } catch (e) {}
-    chon = {}; bao("Đã gửi yêu cầu " + ids.length + " bài. Máy bắt đầu sau khoảng 1 phút, mỗi bài 1–2 phút – cứ để trang mở, xong sẽ hiện nút Chép.");
+    chon = {}; bao("Đã gửi yêu cầu " + ids.length + " bài. Máy bắt đầu sau khoảng 1 phút, mỗi bài 1–3 phút – cứ để trang mở, xong sẽ hiện nút Chép.");
     render();
   }).catch(function(l){ bao(typeof l === "string" ? "Chưa chạy được: " + l + ". Nhờ người phụ trách kiểm tra." : "Nút chạy chưa bật xong (đang chờ cài đặt lần đầu). Bản mới nhất vẫn xem / chép / tải được ở từng bài."); render(); });
+}
+$("#run").addEventListener("click", function(e){
+  e.preventDefault();
+  if (this.getAttribute("aria-disabled") === "true") return;
+  guiChay(du.bai.filter(function(b){ return chon[b.thu_tu]; }).map(function(b){ return b.id; }), this);
 });
 fetch(DU_LIEU + "?t=" + Date.now()).then(function(r){ return r.json(); }).then(function(d){ du = d; render(); return taiKq(); })
   .catch(function(){ $("#list").innerHTML = '<div class="empty">Chưa tải được danh sách – tải lại trang (Ctrl + R, Mac: Cmd + R).</div>'; });
