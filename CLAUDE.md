@@ -39,6 +39,7 @@ Cụ thể hóa thành 8 quy tắc:
    không tự điền. Nếu thiếu dữ liệu thì để trống và ghi "cần bổ sung".
 7. **Luôn hỏi 2 câu sau khi giao sản phẩm:** (a) nhìn có lỗi hiển thị gì không, (b) có ưng không, muốn chỉnh gì.
 8. **Ưu tiên phương án miễn phí hoặc rẻ nhất.**
+9. **Nhờ Trang bấm gì thì luôn gửi kèm link bấm thẳng vào đúng trang đó** (Trang dặn 29/10/2026) — không bắt Trang tự tìm menu.
 
 ### Cách xưng hô
 
