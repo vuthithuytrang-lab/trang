@@ -90,6 +90,7 @@ function caiUD() {
     if (!nhom.length) { ui.alert('Đã lưu, nhưng bot của ứng dụng chưa ở trong nhóm nào. Thêm bot vào nhóm "Check publish TCB" rồi bấm lại Bước 3.'); return; }
     var chon = nhom.filter(function (n) { return /check\s*publish/i.test(n.name || ''); })[0] || nhom[0];
     pr.setProperty('LARK_CHAT_ID', chon.chat_id);
+    pr.setProperty('LARK_TEN_NHOM', chon.name || '');
     pr.setProperty('LARK_DA_DOC', String(Date.now()));  // chỉ nghe tin gửi từ bây giờ
     ui.alert('Xong. Máy sẽ nghe lệnh UD trong nhóm "' + chon.name + '".\nNhớ bấm "Bước 2 · Bật lịch tự động" nếu chưa bật.');
   } catch (e) {
@@ -125,16 +126,27 @@ function xuLyYeuCau() { moiPhut(); }  // tên cũ, giữ cho lịch cài trướ
 /** Đọc tin mới trong nhóm Lark; có tin "UD" của người (không phải bot) thì trả về true. */
 function ngheLark_() {
   var pr = PropertiesService.getScriptProperties();
+  var gio = Utilities.formatDate(new Date(), TZ, 'HH:mm dd/MM');
+  if (!pr.getProperty('LARK_APP_ID')) { ghiNghe_('Chưa cài App ID/Secret (menu Check publish → Bước 3)'); return false; }
   var chat = pr.getProperty('LARK_CHAT_ID');
-  if (!chat || !pr.getProperty('LARK_APP_ID')) return false;
-  var tu = Number(pr.getProperty('LARK_DA_DOC') || Date.now());
-  var co = false, moiNhat = tu;
   try {
+    if (!chat) {  // bot vào nhóm sau Bước 3 → tự tìm nhóm, không cần làm lại Bước 3
+      var nhom = goiLark_('GET', '/im/v1/chats?page_size=50').data.items || [];
+      var chon = nhom.filter(function (n) { return /check\s*publish/i.test(n.name || ''); })[0] || nhom[0];
+      if (!chon) { ghiNghe_(gio + ': bot "Check publish TCB" chưa ở trong nhóm Lark nào. Thêm bot vào nhóm (⋯ → Bots → Add Bot).'); return false; }
+      chat = chon.chat_id;
+      pr.setProperty('LARK_CHAT_ID', chat);
+      pr.setProperty('LARK_TEN_NHOM', chon.name || '');
+      if (!pr.getProperty('LARK_DA_DOC')) pr.setProperty('LARK_DA_DOC', String(Date.now()));
+    }
+    var tu = Number(pr.getProperty('LARK_DA_DOC') || Date.now());
+    var co = false, moiNhat = tu, soTin = 0;
     var kq = goiLark_('GET', '/im/v1/messages?container_id_type=chat&container_id=' + encodeURIComponent(chat) +
       '&start_time=' + Math.floor(tu / 1000) + '&sort_type=ByCreateTimeAsc&page_size=50');
     (kq.data.items || []).forEach(function (m) {
       var t = Number(m.create_time);
       if (t <= tu) return;
+      soTin++;
       if (t > moiNhat) moiNhat = t;
       if (!m.sender || m.sender.sender_type !== 'user' || m.msg_type !== 'text') return;
       var chu = '';
@@ -142,13 +154,17 @@ function ngheLark_() {
       chu = chu.replace(/@_user_\d+|@_all/g, '').trim().toUpperCase();
       if (chu === 'UD' || chu === 'UP') co = true;  // không phân biệt hoa thường: ud, Ud, up, UP...
     });
+    pr.setProperty('LARK_DA_DOC', String(moiNhat));
+    ghiNghe_('Đang nghe nhóm "' + (pr.getProperty('LARK_TEN_NHOM') || 'Lark') + '" · lần đọc gần nhất ' + gio +
+      (soTin ? ' · ' + soTin + ' tin mới' + (co ? ' · có lệnh UP/UD' : '') : ''));
+    return co;
   } catch (e) {
-    bangDieuKhien_().getRange('B5').setValue('Lỗi nghe Lark lúc ' + Utilities.formatDate(new Date(), TZ, 'HH:mm dd/MM') + ': ' + e.message);
+    ghiNghe_('Lỗi nghe Lark lúc ' + gio + ': ' + e.message);
     return false;
   }
-  pr.setProperty('LARK_DA_DOC', String(moiNhat));
-  return co;
 }
+
+function ghiNghe_(chu) { bangDieuKhien_().getRange('B5').setValue(chu); }
 
 function goiLark_(cach, duong) {
   var r = UrlFetchApp.fetch(LARK_API + duong, {
