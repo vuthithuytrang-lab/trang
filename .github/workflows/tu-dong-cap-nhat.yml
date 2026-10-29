@@ -10,7 +10,7 @@ on:
       bai: { description: 'Mã bài, cách nhau bằng dấu cách (để trống = đọc phiếu)', required: false, default: '' }
 permissions:
   contents: write
-concurrency: { group: tu-dong-cap-nhat, cancel-in-progress: false }
+# Không khóa cả workflow: nhiều người bấm cùng lúc thì các lượt chạy song song, bước đăng tự thử lại khi đụng nhau.
 env:
   PHIEU: https://drive.usercontent.google.com/download?id=1wrO0bArJtokvfFvOzFNFqvJhrLrPD2VI&export=download
   KET_QUA: https://raw.githubusercontent.com/${{ github.repository }}/tu-dong-ket-qua/trang-thai.json
@@ -23,6 +23,7 @@ jobs:
     outputs:
       bai: ${{ steps.p.outputs.bai }}
       ma: ${{ steps.p.outputs.ma }}
+      ds: ${{ steps.p.outputs.ds }}
     steps:
       - id: p
         env: { BAI_TAY: '${{ inputs.bai }}' }
@@ -42,7 +43,7 @@ jobs:
               pass
           tay = [b for b in os.environ.get('BAI_TAY', '').split() if b in HOP_LE]
           if tay:
-              print('bai=' + ' '.join(tay)); print('ma=tay-%d' % time.time()); raise SystemExit
+              print('bai=' + ' '.join(tay)); print('ds=' + json.dumps(sorted(set(tay)))); print('ma=tay-%d' % time.time()); raise SystemExit
           try:
               tt = json.load(open('tt.json'))
           except Exception:
@@ -65,7 +66,7 @@ jobs:
               if hop:
                   nt_bai |= hop; nt_moi = max(nt_moi, t)
           if nt_bai:
-              print('bai=' + ' '.join(sorted(nt_bai))); print('ma=nt-%d' % nt_moi); raise SystemExit
+              print('bai=' + ' '.join(sorted(nt_bai))); print('ds=' + json.dumps(sorted(nt_bai))); print('ma=nt-%d' % nt_moi); raise SystemExit
           # 2) phiếu Drive do Apps Script ghi
           try:
               p = json.load(open('phieu.json'))
@@ -81,14 +82,20 @@ jobs:
               moi = 0 <= tuoi < 3 * 3600                 # phiếu quá cũ thì bỏ (giờ lấy từ chính mã phiếu)
           if moi:
               print('bai=' + ' '.join(sorted(set(bai))))
+              print('ds=' + json.dumps(sorted(set(bai))))
               print('ma=' + ma)
           EOF
           cat $GITHUB_OUTPUT
   chay:
+    # mỗi bài 1 máy riêng chạy song song → bấm bao nhiêu bài thì mỗi bài vẫn xong trong ~2–3 phút
     needs: kiem
     if: needs.kiem.outputs.bai != ''
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        ma: ${{ fromJSON(needs.kiem.outputs.ds) }}
     steps:
       - uses: actions/checkout@v4
         with: { ref: claude/vibrant-keller-rk0i98 }   # công thức mới nhất nằm ở nhánh này; nhánh chính chỉ giữ file lịch
@@ -97,36 +104,48 @@ jobs:
           npm i -g playwright@1.48.2
           npx -y playwright@1.48.2 install --with-deps chromium
           echo "NODE_PATH=$(npm root -g)" >> $GITHUB_ENV
-      - name: Chạy các bài trong phiếu
-        env: { BAI: '${{ needs.kiem.outputs.bai }}' }
+      - name: Chạy bài
+        env: { MA: '${{ matrix.ma }}' }
         run: |
           mkdir -p ket-qua
-          for m in $BAI; do
-            [ -d cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/$m ] || [[ $m == lai-suat-[12] ]] || continue
-            timeout 600 bash cong-cu/tu-dong/chay.sh $m ket-qua > ket-qua/$m.log 2>&1 || echo "LỖI $m" >> ket-qua/$m.log
-            echo "::group::$m"; cat ket-qua/$m.log; echo "::endgroup::"
-          done
-          # nguồn có lúc không hiện bảng (PNJ…) → nghỉ 1 phút rồi chạy lại bài đó 1 lần; lần sau đọc đủ nguồn thì dùng lần sau
-          for m in $BAI; do
-            [ -f ket-qua/$m.log ] && [ $m != gia-ca-phe ] || continue
-            grep -qE 'KHÔNG ĐỌC ĐƯỢC|KHÔNG đọc được|không đọc được|LỖI|Error' ket-qua/$m.log || continue
-            sleep 30
-            timeout 600 bash cong-cu/tu-dong/chay.sh $m lai > lai-$m.log 2>&1 || echo "LỖI $m" >> lai-$m.log
-            echo "::group::chạy lại $m"; cat lai-$m.log; echo "::endgroup::"
-            if grep -q '^XONG' lai-$m.log && ! grep -qE 'KHÔNG ĐỌC ĐƯỢC|KHÔNG đọc được|không đọc được|^LỖI|Error' lai-$m.log; then
-              rm -rf ket-qua/$m; mv lai/$m ket-qua/$m; mv lai-$m.log ket-qua/$m.log
+          [ -d cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/$MA ] || [[ $MA == lai-suat-[12] ]] || { echo "LỖI không có công thức $MA" > ket-qua/$MA.log; exit 0; }
+          timeout 420 bash cong-cu/tu-dong/chay.sh $MA ket-qua > ket-qua/$MA.log 2>&1 || echo "LỖI $MA" >> ket-qua/$MA.log
+          cat ket-qua/$MA.log
+          # nguồn có lúc không hiện bảng (PNJ…) → nghỉ 20 giây chạy lại 1 lần; lần sau đọc đủ nguồn thì dùng lần sau
+          if [ $MA != gia-ca-phe ] && grep -qE 'KHÔNG ĐỌC ĐƯỢC|KHÔNG đọc được|không đọc được|LỖI|Error' ket-qua/$MA.log; then
+            sleep 20
+            timeout 420 bash cong-cu/tu-dong/chay.sh $MA lai > lai.log 2>&1 || echo "LỖI $MA" >> lai.log
+            echo "::group::chạy lại"; cat lai.log; echo "::endgroup::"
+            if grep -q '^XONG' lai.log && ! grep -qE 'KHÔNG ĐỌC ĐƯỢC|KHÔNG đọc được|không đọc được|^LỖI|Error' lai.log; then
+              rm -rf ket-qua/$MA; mv lai/$MA ket-qua/$MA; mv lai.log ket-qua/$MA.log
             fi
-          done
+          fi
+          find ket-qua -mindepth 2 ! -name bai.html -type f -delete   # chỉ giữ bai.html + log cho bước đăng
+      - uses: actions/upload-artifact@v4
+        with: { name: 'kq-${{ matrix.ma }}', path: ket-qua/, retention-days: 1 }
+  dang:
+    needs: [kiem, chay]
+    if: always() && needs.kiem.outputs.bai != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: claude/vibrant-keller-rk0i98 }
+      - uses: actions/download-artifact@v4
+        with: { pattern: 'kq-*', merge-multiple: true, path: ket-qua }
       - name: Đăng kết quả lên nhánh tu-dong-ket-qua
         env: { MA: '${{ needs.kiem.outputs.ma }}' }
         run: |
-          git clone -q --depth 1 -b tu-dong-ket-qua "https://github.com/${{ github.repository }}.git" xuat || mkdir -p xuat
-          rm -rf xuat/.git
-          python3 -I cong-cu/tu-dong/tong_hop.py ket-qua xuat "$MA"
-          cd xuat
-          git init -q -b tu-dong-ket-qua
-          git config user.name "Cập nhật tự động"
-          git config user.email "actions@users.noreply.github.com"
-          git add -A
-          git commit -qm "Kết quả $(TZ=Asia/Ho_Chi_Minh date '+%H:%M %d/%m/%Y')"
-          git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" tu-dong-ket-qua
+          git config --global user.name "Cập nhật tự động"
+          git config --global user.email "actions@users.noreply.github.com"
+          for lan in 1 2 3 4 5; do                      # nhiều lượt cùng đăng → lấy bản mới nhất, gộp, đăng lại
+            rm -rf xuat
+            git clone -q --depth 1 -b tu-dong-ket-qua "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" xuat
+            python3 -I cong-cu/tu-dong/tong_hop.py ket-qua xuat "$MA"
+            git -C xuat add -A
+            git -C xuat diff --cached --quiet && exit 0
+            git -C xuat commit -qm "Kết quả $(TZ=Asia/Ho_Chi_Minh date '+%H:%M %d/%m/%Y')"
+            git -C xuat push -q origin tu-dong-ket-qua && exit 0
+            sleep $((lan * 5))
+          done
+          exit 1
