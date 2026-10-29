@@ -134,7 +134,9 @@ document.querySelectorAll("[data-g]").forEach(function(b){ b.addEventListener("c
 $("#all").onclick = function(){ du.bai.forEach(function(b){ if (!nhom || b.nhom === nhom) chon[b.thu_tu] = 1; }); render(); };
 $("#none").onclick = function(){ chon = {}; render(); };
 $("#run").addEventListener("click", function(e){ if (this.getAttribute("aria-disabled") === "true") e.preventDefault(); });
-fetch("du-lieu.json?t=" + Date.now()).then(function(r){ return r.json(); }).then(function(d){ du = d; render(); })
+// Bản Netlify chỉ đổi khi sửa app (đỡ tốn lượt miễn phí); số liệu luôn đọc từ GitHub Pages, nơi Claude cập nhật sau mỗi đợt chạy
+var DU_LIEU = /github\.io$/.test(location.hostname) ? "du-lieu.json" : "https://vuthithuytrang-lab.github.io/trang/du-lieu.json";
+fetch(DU_LIEU + "?t=" + Date.now()).then(function(r){ return r.json(); }).then(function(d){ du = d; render(); })
   .catch(function(){ $("#list").innerHTML = '<div class="empty">Chưa tải được danh sách – tải lại trang (Cmd + R).</div>'; });
 </script>
 </body>

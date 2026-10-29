@@ -26,6 +26,9 @@ cd "$TAM"; git add -A
 git diff --cached --quiet && { echo "Không có gì thay đổi. $WEB"; exit 0; }
 git commit -qm "Đăng app $TEN (phiên bản $PB)"
 git push -q origin HEAD:gh-pages
+# Netlify (cong-cu-sn.netlify.app) đăng từ nhánh netlify = bản sao gh-pages, chỉ đẩy khi đăng app
+# (số liệu đổi hằng ngày chỉ vào gh-pages → Netlify không phải đăng lại, đỡ tốn lượt miễn phí)
+git push -qf origin HEAD:refs/heads/netlify
 
 # 3. Chờ web thật lên đúng phiên bản
 for i in $(seq 1 12); do

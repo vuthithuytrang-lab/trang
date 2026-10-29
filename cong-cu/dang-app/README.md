@@ -13,6 +13,20 @@ GitHub Pages của repo này, nhánh `gh-pages`, **miễn phí**, ai có link c�
 | Cập nhật bài Techcombank (gốc trang) | https://vuthithuytrang-lab.github.io/trang/ |
 | App mới tên `<ten>` | `https://vuthithuytrang-lab.github.io/trang/<ten>/` |
 
+## Netlify, theo luồng anh Tuấn (Trang chọn 29/10/2026, miễn phí)
+
+- Tên trang đã chọn: **`cong-cu-sn`** → `https://cong-cu-sn.netlify.app/` (app TCB ở gốc, app mới ở `/<ten>/`).
+- Netlify đăng từ **nhánh `netlify`** = bản sao `gh-pages`. `dang.sh` đẩy cả hai nhánh, nên Netlify chỉ đăng lại khi **sửa app**.
+  Số liệu đổi hằng ngày (`du-lieu.json`) chỉ vào `gh-pages`, app trên Netlify đọc số liệu từ GitHub Pages (có `access-control-allow-origin: *`).
+  Lý do: gói miễn phí Netlify tính lượt theo mỗi lần đăng; vượt mức thì trang **tạm dừng** đến tháng sau, không trừ tiền (chưa nhập thẻ).
+- Tài khoản Netlify: Trang đã đăng ký bằng GitHub `vuthithuytrang-lab` (29/10/2026).
+- **Việc Trang còn làm, 1 lần** (chưa xong lúc ghi):
+  1. Add new project → Import a Git repository → **GitHub** → cho phép (chọn kho `trang`).
+  2. Chọn kho **trang** → **Branch to deploy = `netlify`**, các ô khác để trống → **Deploy**.
+  3. Project configuration → **Change project name** → `cong-cu-sn`.
+  Xong thì Claude kiểm tra `https://cong-cu-sn.netlify.app/` và thêm bước kiểm tra Netlify vào `dang.sh`.
+- Đừng bấm: ô "Claude Agent / Build now" (tốn lượt), nút Upgrade, mục Usage & billing.
+
 ## Cách đăng (Claude tự làm, Trang không phải làm gì)
 
 1. Làm app trong 1 thư mục có `index.html` (vd `cong-cu/<ten-app>/web/`), theo cẩm nang thương hiệu SEONGON.

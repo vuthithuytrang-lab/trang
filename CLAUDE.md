@@ -115,7 +115,7 @@ Agent đọc chìa từ file, gửi qua header `Authorization: Bearer <chìa>`, 
 | `cong-cu/app-cap-nhat/` | **App "Cập nhật bài Techcombank"** (https://claude.ai/artifact/C1pHcHu6DLgx8xi4zNQnoN) — Trang tích bài, bấm nút → app tích ô trong Sheet "Update" qua kết nối Google Sheets (từ 28/10/2026, không gọi Claude nữa); cả 23 bài do `cong-cu/tu-dong/` lo (miễn phí), Claude chỉ là dự phòng khi máy tự động chưa bật |
 | `cong-cu/app-cap-nhat/web/` | **Trang web công khai** https://vuthithuytrang-lab.github.io/trang/ (nhánh `gh-pages`, 29/10/2026) — ai cũng xem/mở file Docs mới nhất; sau mỗi đợt chạy cập nhật `du-lieu.json` + đăng lại (xem README của app) |
 | `cong-cu/tu-dong/` | **Tự động không cần Claude, không tốn token** (28/10/2026): bấm app / tích Sheet → Apps Script ghi phiếu → GitHub Actions chạy công thức **cả 23 bài** → Apps Script tạo Docs. Chỉ chạy khi có người bấm. Đọc `README.md` |
-| `cong-cu/dang-app/` | **Đăng app công khai (bộ cài chung, 29/10/2026)** — mọi app làm cho Trang mà cần người khác dùng: `bash cong-cu/dang-app/dang.sh <thư mục app> <tên>` → `https://vuthithuytrang-lab.github.io/trang/<tên>/` (miễn phí, tự soát rò rỉ, tự kiểm tra web thật). Tên miền riêng: xem README |
+| `cong-cu/dang-app/` | **Đăng app công khai (bộ cài chung, 29/10/2026)** — mọi app làm cho Trang mà cần người khác dùng: `bash cong-cu/dang-app/dang.sh <thư mục app> <tên>` → `https://vuthithuytrang-lab.github.io/trang/<tên>/` + Netlify `https://cong-cu-sn.netlify.app/<tên>/` (theo luồng anh Tuấn; miễn phí, tự soát rò rỉ, tự kiểm tra web thật). Tên miền riêng: xem README |
 | `BAO-MAT.md` | Danh sách chìa khóa đã lộ cần thu hồi |
 | `cap-nhat-bai-tcb/` | Kết quả từng lần cập nhật bài TCB (cấu hình, danh sách sửa, báo cáo) |
 
