@@ -325,7 +325,8 @@ def cmd_dang(so, nen):
               "publish-date": datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
               "reading-time": f"({max(3, round(len(plain(body_html := open(bai_path(so, 'wf')).read()).split()) / 220))} phút đọc)",
               k["fields"]["body"]: body_html}
-        if image: fd[k["fields"]["image"]] = image
+        fd["client-name"] = "Techcombank Việt Nam"
+        if image: fd[k["fields"]["image"]] = image; fd["blog-single-image"] = image
         st, r = req("POST", f"https://api.webflow.com/v2/collections/{k['collection_id']}/items/live", H,
                     {"isArchived": False, "isDraft": False, "fieldData": fd})
         ok = st in (200, 201, 202) and isinstance(r, dict) and r.get("id")
