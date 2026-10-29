@@ -168,3 +168,89 @@ function chiaSe_(id, email) {
     headers: { Authorization: 'Bearer ' + ScriptApp.getOAuthToken() },
   });
 }
+
+/* ===================== TRANG APP CHO MỌI NGƯỜI (không cần tài khoản Claude) =====================
+ * Triển khai 1 lần: Apps Script → Triển khai → Tùy chọn triển khai mới → Loại: Ứng dụng web →
+ * Thực thi dưới dạng: Tôi · Người có quyền truy cập: Bất kỳ ai → Triển khai → copy link "Ứng dụng web".
+ * Ai có link đều mở được, tích bài, bấm "Chạy cập nhật" → trang tích ô trong Sheet (máy tự động lo phần còn lại).
+ */
+function doGet() {
+  return HtmlService.createHtmlOutput(TRANG_APP_)
+    .setTitle('Cập nhật bài Techcombank')
+    .addMetaTag('viewport', 'width=device-width, initial-scale=1');
+}
+
+/** Danh sách bài + trạng thái cho trang app. */
+function layDanhSach() {
+  const ss = SpreadsheetApp.openById(CAU_HINH.SHEET_ID);
+  const sh = ss.getSheets()[0];
+  const du = sh.getRange(1, 1, sh.getLastRow(), 6).getDisplayValues();
+  const app = ss.getSheetByName(CAU_HINH.TAB_APP);
+  const ttApp = app ? app.getRange(1, 1, Math.max(app.getLastRow(), 1), 5).getDisplayValues() : [];
+  const theoStt = {};
+  ttApp.slice(1).forEach(r => { if (Number(r[0])) theoStt[Number(r[0])] = r; });
+  let mienPhi = CONG_THUC_DU_PHONG;
+  try { mienPhi = JSON.parse(UrlFetchApp.fetch(DANH_SACH + '?t=' + Date.now()).getContentText()); } catch (e) {}
+  const homNay = Utilities.formatDate(new Date(), TZ, 'd/M');
+  return du.slice(1).filter(r => Number(r[0]) && r[1]).map(r => {
+    const a = theoStt[Number(r[0])] || [];
+    const duoi = String(r[1]).trim().replace(/\/+$/, '').split('/').pop();
+    return { stt: Number(r[0]), ten: String(r[2]).trim(), url: r[1], tich: r[4] === 'TRUE',
+             mienPhi: !!mienPhi[duoi], tenFile: a[1] || '', link: a[2] || '', luc: a[3] || '', ghiChu: a[4] || '',
+             homNay: du[0][5] === homNay ? r[5] : '' };
+  });
+}
+
+/** Tích ô "Chạy update" cho các STT được chọn (chỉ cột E, chỉ dòng có bài). */
+function tichBai(dsStt) {
+  const sh = SpreadsheetApp.openById(CAU_HINH.SHEET_ID).getSheets()[0];
+  const du = sh.getRange(1, 1, sh.getLastRow(), 2).getValues();
+  let n = 0;
+  (dsStt || []).slice(0, 50).forEach(stt => {
+    const r = du.findIndex((row, i) => i > 0 && Number(row[0]) === Number(stt) && row[1]);
+    if (r > 0) { sh.getRange(r + 1, 5).setValue(true); n++; }
+  });
+  return n;
+}
+
+const TRANG_APP_ = `<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{--xanh:#004AEF;--navy:#002992;--mint:#07EF9C;--nen:#F3F3F6;--vien:#DCDCDC;--chu:#151515;--phu:#5A6B66;--cam:#F68B1F;--vang:#FFCE00}
+*{box-sizing:border-box}body{margin:0;background:var(--nen);color:var(--chu);font:15px/1.55 "Be Vietnam Pro",Arial,sans-serif;padding:20px 16px 110px}
+.w{max-width:900px;margin:0 auto}h1{font:800 clamp(22px,4vw,30px)/1.2 Montserrat,Arial,sans-serif;color:var(--navy);margin:0 0 4px}
+.dau{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;justify-content:space-between;margin-bottom:14px}
+.logo{background:#fff;border-radius:10px;padding:8px 12px}.logo img{width:160px;display:block}
+p.l{margin:0;color:var(--phu);max-width:60ch}
+.ds{background:#fff;border:1px solid var(--vien);border-radius:12px;overflow:hidden}
+label.d{display:grid;grid-template-columns:24px 1fr auto;gap:2px 12px;align-items:center;padding:11px 14px;border-top:1px solid var(--vien);cursor:pointer}
+label.d:first-child{border-top:0}label.d.on{background:#EAF0FF}input{width:18px;height:18px;accent-color:var(--xanh)}
+.t{font-weight:600}.mp{font-size:11px;background:#d4fbe9;border-radius:99px;padding:1px 8px;margin-left:6px;font-weight:600}
+.c{font-size:12px;font-weight:600;border-radius:99px;padding:3px 10px;background:#E8EDFB;white-space:nowrap}
+.c.xong{background:#c9f9e4}.c.cho{background:#fff0b3}.c.loi{background:#fde0c4}
+.m{grid-column:2/4;font-size:13px;color:var(--phu);display:flex;flex-wrap:wrap;gap:2px 14px}.m a{color:var(--xanh);font-weight:600;text-decoration:none}
+.bar{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--vien);padding:12px 16px}
+.bi{max-width:900px;margin:0 auto;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+#msg{flex:1;min-width:0;font-size:14px}button{font:700 15px Montserrat,Arial,sans-serif;background:var(--xanh);color:#fff;border:0;border-radius:10px;padding:12px 22px;cursor:pointer}
+button[disabled]{opacity:.45;cursor:default}
+</style></head><body><div class="w">
+<div class="dau"><div><h1>Cập nhật bài Techcombank</h1><p class="l">Tích bài cần cập nhật rồi bấm <b>Chạy cập nhật</b>. Khoảng 10–20 phút sau, link file Google Docs hiện ngay tại đây. Ngày ghi trong bài là ngày hôm sau.</p></div>
+<span class="logo"><img alt="SEONGON" src="https://raw.githubusercontent.com/vuthithuytrang-lab/trang/claude/vibrant-keller-rk0i98/cong-cu/nhan-dien-thuong-hieu/logo-goc/SEONGON-logo-ngang.webp"></span></div>
+<div class="ds" id="ds"><div style="padding:24px;text-align:center;color:#5A6B66">Đang tải danh sách bài…</div></div></div>
+<div class="bar"><div class="bi"><div id="msg">Chưa chọn bài nào.</div><button id="chay" disabled>Chạy cập nhật</button></div></div>
+<script>
+var ds=[],chon={},dangGui=false;
+function e(s){return String(s||'').replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function tt(b){if(b.tich)return['cho','Đang chạy'];if(/^⚠️/.test(b.ghiChu))return['loi','Lỗi'];if(/^Cần xem lại/.test(b.ghiChu))return['loi','Cần xem lại'];if(b.link||b.homNay)return['xong','Đã xong'];return['','Sẵn sàng']}
+function ve(){document.getElementById('ds').innerHTML=ds.map(function(b){var t=tt(b),on=chon[b.stt];
+return '<label class="d'+(on?' on':'')+'"><input type="checkbox" data-s="'+b.stt+'"'+(on?' checked':'')+'><span class="t">'+e(b.ten)+(b.mienPhi?'<span class="mp">Miễn phí</span>':'')+'</span><span class="c '+t[0]+'">'+t[1]+'</span>'
++'<span class="m">'+(b.link?'<span>'+e(b.luc)+'</span><a target="_blank" href="'+e(b.link)+'">Mở file Docs ↗</a>':(b.homNay&&!/^⏳/.test(b.homNay)?'<span>Hôm nay: '+e(b.homNay)+'</span>':'<span>Chưa có bản mới</span>'))
++'<a target="_blank" href="'+e(b.url)+'">Bài trên web ↗</a>'+(/^(⚠️|Cần xem lại)/.test(b.ghiChu)?'<span style="flex-basis:100%">'+e(b.ghiChu.slice(0,300))+'</span>':'')+'</span></label>'}).join('');
+var n=Object.keys(chon).length;var bt=document.getElementById('chay');if(!dangGui){bt.disabled=!n;bt.textContent=n?'Chạy cập nhật ('+n+' bài)':'Chạy cập nhật'}}
+function tai(){google.script.run.withSuccessHandler(function(d){ds=d;ve()}).withFailureHandler(function(){document.getElementById('msg').textContent='Chưa tải được danh sách – thử tải lại trang.'}).layDanhSach()}
+document.getElementById('ds').addEventListener('change',function(ev){var s=ev.target.getAttribute('data-s');if(!s)return;if(ev.target.checked)chon[s]=1;else delete chon[s];document.getElementById('msg').textContent=Object.keys(chon).length?'Đã chọn '+Object.keys(chon).length+' bài.':'Chưa chọn bài nào.';ve()});
+document.getElementById('chay').onclick=function(){var s=Object.keys(chon);if(!s.length||dangGui)return;dangGui=true;var bt=this;bt.disabled=true;bt.textContent='Đang gửi…';
+google.script.run.withSuccessHandler(function(n){dangGui=false;chon={};document.getElementById('msg').textContent='Đã gửi '+n+' bài. Khoảng 10–20 phút sau link file sẽ hiện ở đây.';tai()})
+.withFailureHandler(function(err){dangGui=false;document.getElementById('msg').textContent='Chưa gửi được: '+err.message;ve()}).tichBai(s.map(Number))};
+tai();setInterval(tai,60000);
+</script></body></html>`;

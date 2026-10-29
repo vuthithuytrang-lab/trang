@@ -36,6 +36,11 @@ Tab `app`: A STT · B tên file · C link · D lúc · E `dang_chay` / `xong` / 
 2. Trang: Sheet "Update" → **Tiện ích mở rộng → Apps Script** → xóa chữ có sẵn → dán `google-apps-script/Code.gs` → Lưu
    → chọn hàm `caiDat` → **Chạy** → **Cho phép**.
 
+## Trang app cho mọi người (không cần tài khoản Claude)
+
+`Code.gs` có thêm `doGet` → triển khai thành **Ứng dụng web** (Thực thi dưới dạng: Tôi · Bất kỳ ai) → ai có link cũng tích bài + bấm chạy được
+(app trên claude.ai chỉ bấm được với người có tài khoản Claude + kết nối Google Sheets + quyền sửa Sheet).
+
 ## Chạy thử tay
 
 Actions → "Cập nhật bài TCB tự động" → Run workflow, ô `bai` = `vang-24k gia-xang-dau`.
