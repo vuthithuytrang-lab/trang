@@ -23,6 +23,7 @@ WP_SITE = "nganhangtechcombank3.wordpress.com"
 WIX_KEY = "tuanytyma.wixsite.com/techcombank-blogs"
 MA_KEY = "techcombankvietnam@mastodon.social"
 WF_KEY = "techcombank-blog-site-2026.webflow.io"
+BL_KEY = "nganhangtechcombank-2026.blogspot.com"
 BANNED = ["nhất", "số 1", "số một", "hàng đầu", "duy nhất"]
 OK_NHAT = ["chậm nhất", "sớm nhất", "thứ nhất", "mới nhất", "ít nhất", "gần nhất", "nhất định", "thống nhất", "cập nhật", "duy nhất một", "đồng nhất"]
 
@@ -31,9 +32,9 @@ _ctx = ssl.create_default_context(cafile="/root/.ccr/ca-bundle.crt") if os.path.
 
 def keys(name):
     f = {"wp": "share-bai-wp/wp-accounts.local.json", "wix": "share-bai-wix/wix-accounts.local.json",
-         "ma": "share-bai-mastodon/mastodon-accounts.local.json", "wf": "share-bai-webflow/webflow-accounts.local.json"}[name]
+         "ma": "share-bai-mastodon/mastodon-accounts.local.json", "wf": "share-bai-webflow/webflow-accounts.local.json", "bl": "share-bai-blogger/blogger-accounts.local.json"}[name]
     d = json.load(open(os.path.join(KEYS, f)))
-    return d[{"wp": WP_SITE, "wix": WIX_KEY, "ma": MA_KEY, "wf": WF_KEY}[name]]
+    return d[{"wp": WP_SITE, "wix": WIX_KEY, "ma": MA_KEY, "wf": WF_KEY, "bl": BL_KEY}[name]]
 
 
 def req(method, url, headers=None, body=None, timeout=60):
@@ -80,7 +81,7 @@ def item(so):
 
 
 def bai_path(so, nen):
-    return os.path.join(HERE, "bai", f"{int(so):02d}", {"wp": "wp.html", "wix": "wix.html", "ma": "ma.txt", "wf": "wf.html"}[nen])
+    return os.path.join(HERE, "bai", f"{int(so):02d}", {"wp": "wp.html", "wix": "wix.html", "ma": "ma.txt", "wf": "wf.html", "bl": "bl.html"}[nen])
 
 
 def meta(so):
@@ -139,7 +140,7 @@ def cmd_check(so, nen, quiet=False):
         mine = cau(plain(s))
         src = os.path.join(HERE, "nguon", f"{int(so):02d}.txt")
         if os.path.exists(src) and mine & cau(open(src).read()): errs.append(f"chép câu bài gốc: {list(mine & cau(open(src).read()))[:2]}")
-        for o in {"wp", "wix", "wf"} - {nen}:
+        for o in {"wp", "wix", "wf", "bl"} - {nen}:
             other = bai_path(so, o)
             if os.path.exists(other) and mine & cau(plain(open(other).read())): errs.append(f"trùng câu với bản {o}")
     low = plain(s).lower()
@@ -169,6 +170,10 @@ def cmd_anh(so, nen):
         for y in range(H): d.line([(0, y), (W, y)], fill=(8, 28 + y // 30, 64 + y // 12))
         d.rectangle([0, 0, 18, H], fill=(56, 132, 255))
         x0, y0 = 80, 90
+    elif nen == "bl":  # kiểu 4: nền xanh lục đậm, khối chữ có gạch chân
+        for y in range(H): d.line([(0, y), (W, y)], fill=(6, 46 + y // 30, 60 + y // 18))
+        d.rectangle([90, H - 120, 420, H - 112], fill=(120, 230, 200))
+        x0, y0 = 90, 95
     elif nen == "wf":  # kiểu 3: nền xanh tím, thanh ngang trên cùng
         for y in range(H): d.line([(0, y), (W, y)], fill=(20 + y // 40, 24, 70 + y // 10))
         d.rectangle([0, 0, W, 14], fill=(110, 200, 255))
@@ -340,6 +345,23 @@ def cmd_dang(so, nen):
                 if stc == 200: break
             if stc != 200: p("⚠ chưa mở được link Webflow:", stc)
         rec = {"so": int(so), "nen": "wf", "ok": bool(ok), "http": st, "link": link, "id": r.get("id") if isinstance(r, dict) else None, "anh": bool(image)}
+        if not ok: rec["loi"] = str(r)[:300]
+    elif nen == "bl":
+        import base64
+        k = keys("bl")
+        st, r = req("POST", "https://oauth2.googleapis.com/token", {"Content-Type": "application/x-www-form-urlencoded"},
+                    urllib.parse.urlencode({"client_id": k["client_id"], "client_secret": k["client_secret"],
+                                            "refresh_token": k["refresh_token"], "grant_type": "refresh_token"}).encode())
+        if st != 200: sys.exit(f"làm mới chìa Blogger lỗi {st}: {str(r)[:200]} — cần Trang bấm Cho phép lại")
+        H = {"Authorization": "Bearer " + r["access_token"]}
+        img = cmd_anh(so, "bl")
+        b64 = base64.b64encode(open(img, "rb").read()).decode()
+        parts = body.split("</p>", 1)
+        html_out = parts[0] + "</p>\n" + f'<p><img src="data:image/png;base64,{b64}" alt="{html.escape(m["title"])}" style="max-width:100%;height:auto"></p>' + (parts[1] if len(parts) > 1 else "")
+        st, r = req("POST", f"https://www.googleapis.com/blogger/v3/blogs/{k['blog_id']}/posts/", H,
+                    {"kind": "blogger#post", "title": m["title"], "content": html_out})
+        ok = st == 200 and isinstance(r, dict) and r.get("status") == "LIVE"
+        rec = {"so": int(so), "nen": "bl", "ok": ok, "http": st, "link": r.get("url") if ok else None, "id": r.get("id") if isinstance(r, dict) else None, "anh": True}
         if not ok: rec["loi"] = str(r)[:300]
     else:
         k = keys("ma")
