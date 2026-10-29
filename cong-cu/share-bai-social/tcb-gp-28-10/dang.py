@@ -22,6 +22,7 @@ VN = timezone(timedelta(hours=7))
 WP_SITE = "nganhangtechcombank3.wordpress.com"
 WIX_KEY = "tuanytyma.wixsite.com/techcombank-blogs"
 MA_KEY = "techcombankvietnam@mastodon.social"
+WF_KEY = "techcombank-blog-site-2026.webflow.io"
 BANNED = ["nhất", "số 1", "số một", "hàng đầu", "duy nhất"]
 OK_NHAT = ["chậm nhất", "sớm nhất", "thứ nhất", "mới nhất", "ít nhất", "gần nhất", "nhất định", "thống nhất", "cập nhật", "duy nhất một", "đồng nhất"]
 
@@ -30,9 +31,9 @@ _ctx = ssl.create_default_context(cafile="/root/.ccr/ca-bundle.crt") if os.path.
 
 def keys(name):
     f = {"wp": "share-bai-wp/wp-accounts.local.json", "wix": "share-bai-wix/wix-accounts.local.json",
-         "ma": "share-bai-mastodon/mastodon-accounts.local.json"}[name]
+         "ma": "share-bai-mastodon/mastodon-accounts.local.json", "wf": "share-bai-webflow/webflow-accounts.local.json"}[name]
     d = json.load(open(os.path.join(KEYS, f)))
-    return d[{"wp": WP_SITE, "wix": WIX_KEY, "ma": MA_KEY}[name]]
+    return d[{"wp": WP_SITE, "wix": WIX_KEY, "ma": MA_KEY, "wf": WF_KEY}[name]]
 
 
 def req(method, url, headers=None, body=None, timeout=60):
@@ -79,7 +80,7 @@ def item(so):
 
 
 def bai_path(so, nen):
-    return os.path.join(HERE, "bai", f"{int(so):02d}", {"wp": "wp.html", "wix": "wix.html", "ma": "ma.txt"}[nen])
+    return os.path.join(HERE, "bai", f"{int(so):02d}", {"wp": "wp.html", "wix": "wix.html", "ma": "ma.txt", "wf": "wf.html"}[nen])
 
 
 def meta(so):
@@ -138,8 +139,9 @@ def cmd_check(so, nen, quiet=False):
         mine = cau(plain(s))
         src = os.path.join(HERE, "nguon", f"{int(so):02d}.txt")
         if os.path.exists(src) and mine & cau(open(src).read()): errs.append(f"chép câu bài gốc: {list(mine & cau(open(src).read()))[:2]}")
-        other = bai_path(so, "wix" if nen == "wp" else "wp")
-        if os.path.exists(other) and mine & cau(plain(open(other).read())): errs.append("trùng câu với bản nền tảng kia")
+        for o in {"wp", "wix", "wf"} - {nen}:
+            other = bai_path(so, o)
+            if os.path.exists(other) and mine & cau(plain(open(other).read())): errs.append(f"trùng câu với bản {o}")
     low = plain(s).lower()
     for ok in OK_NHAT: low = low.replace(ok, "")
     for b in BANNED:
@@ -167,6 +169,11 @@ def cmd_anh(so, nen):
         for y in range(H): d.line([(0, y), (W, y)], fill=(8, 28 + y // 30, 64 + y // 12))
         d.rectangle([0, 0, 18, H], fill=(56, 132, 255))
         x0, y0 = 80, 90
+    elif nen == "wf":  # kiểu 3: nền xanh tím, thanh ngang trên cùng
+        for y in range(H): d.line([(0, y), (W, y)], fill=(20 + y // 40, 24, 70 + y // 10))
+        d.rectangle([0, 0, W, 14], fill=(110, 200, 255))
+        d.ellipse([W - 260, H - 260, W + 120, H + 120], outline=(90, 140, 230), width=4)
+        x0, y0 = 90, 100
     else:             # kiểu 2: khung viền, chữ căn giữa
         for y in range(H): d.line([(0, y), (W, y)], fill=(4, 40 + y // 25, 78 - y // 20))
         d.rounded_rectangle([40, 40, W - 40, H - 40], radius=28, outline=(120, 180, 255), width=3)
@@ -302,6 +309,36 @@ def cmd_dang(so, nen):
                 if stc == 200: break
             if stc != 200: p("⚠ chưa mở được link Wix:", stc)
         rec = {"so": int(so), "nen": "wix", "ok": ok, "http": st, "link": link, "id": post.get("id"), "anh": bool(media)}
+        if not ok: rec["loi"] = str(r)[:300]
+    elif nen == "wf":
+        import hashlib
+        k = keys("wf"); H = {"Authorization": "Bearer " + k["api_token"]}
+        img = cmd_anh(so, "wf"); data = open(img, "rb").read(); image = None
+        st, r = req("POST", f"https://api.webflow.com/v2/sites/{k['site_id']}/assets", H,
+                    {"fileName": m["slug"] + ".png", "fileHash": hashlib.md5(data).hexdigest()})
+        if st in (200, 201, 202) and isinstance(r, dict) and r.get("uploadUrl"):
+            body, ct = multipart(r.get("uploadDetails", {}), {"file": (m["slug"] + ".png", data, "image/png")})
+            st2, _ = req("POST", r["uploadUrl"], {"Content-Type": ct}, body, timeout=120)
+            if st2 in (200, 201, 204): image = {"fileId": r["id"], "url": r.get("hostedUrl") or r.get("assetUrl"), "alt": m["title"]}
+        if not image: p("⚠ tải ảnh Webflow lỗi", st, str(r)[:200])
+        fd = {"name": m["title"], "slug": m["slug"], "description": m.get("mo_ta", ""),
+              "publish-date": datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
+              "reading-time": f"({max(3, round(len(plain(body_html := open(bai_path(so, 'wf')).read()).split()) / 220))} phút đọc)",
+              k["fields"]["body"]: body_html}
+        if image: fd[k["fields"]["image"]] = image
+        st, r = req("POST", f"https://api.webflow.com/v2/collections/{k['collection_id']}/items/live", H,
+                    {"isArchived": False, "isDraft": False, "fieldData": fd})
+        ok = st in (200, 201, 202) and isinstance(r, dict) and r.get("id")
+        link = f"https://{WF_KEY}/blog/{(r.get('fieldData') or {}).get('slug', m['slug'])}" if ok else None
+        if ok:
+            stc = None
+            for _ in range(12):
+                time.sleep(10)
+                try: stc, _ = req("GET", link)
+                except Exception as e: stc = str(e)
+                if stc == 200: break
+            if stc != 200: p("⚠ chưa mở được link Webflow:", stc)
+        rec = {"so": int(so), "nen": "wf", "ok": bool(ok), "http": st, "link": link, "id": r.get("id") if isinstance(r, dict) else None, "anh": bool(image)}
         if not ok: rec["loi"] = str(r)[:300]
     else:
         k = keys("ma")

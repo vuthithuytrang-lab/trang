@@ -1,4 +1,20 @@
 {
- "wp": {"tu_khoa": "bán lại ngoại tệ còn dư", "title": "Bán lại ngoại tệ còn dư: cách để tiền Việt nhận về sát dự tính", "slug": "ban-lai-ngoai-te-con-du-sat-du-tinh", "mo_ta": "Tỷ giá nào được áp dụng, mệnh giá tờ tiền ảnh hưởng ra sao và cần chuẩn bị gì trước khi bán lại ngoại tệ còn dư."},
- "wix": {"tu_khoa": "bán lại ngoại tệ còn dư", "title": "Còn dư ngoại tệ sau chuyến đi: 3 điều cần biết trước khi bán lại", "slug": "con-du-ngoai-te-sau-chuyen-di-3-dieu-can-biet", "mo_ta": "Ba nhóm yếu tố quyết định số tiền Việt nhận về khi bán lại ngoại tệ: cột tỷ giá, mệnh giá tờ tiền và bước chuẩn bị."}
+ "wp": {
+  "tu_khoa": "bán lại ngoại tệ còn dư",
+  "title": "Bán lại ngoại tệ còn dư: cách để tiền Việt nhận về sát dự tính",
+  "slug": "ban-lai-ngoai-te-con-du-sat-du-tinh",
+  "mo_ta": "Tỷ giá nào được áp dụng, mệnh giá tờ tiền ảnh hưởng ra sao và cần chuẩn bị gì trước khi bán lại ngoại tệ còn dư."
+ },
+ "wix": {
+  "tu_khoa": "bán lại ngoại tệ còn dư",
+  "title": "Còn dư ngoại tệ sau chuyến đi: 3 điều cần biết trước khi bán lại",
+  "slug": "con-du-ngoai-te-sau-chuyen-di-3-dieu-can-biet",
+  "mo_ta": "Ba nhóm yếu tố quyết định số tiền Việt nhận về khi bán lại ngoại tệ: cột tỷ giá, mệnh giá tờ tiền và bước chuẩn bị."
+ },
+ "wf": {
+  "tu_khoa": "bán lại ngoại tệ còn dư",
+  "title": "Checklist 6 việc trước khi bán lại ngoại tệ còn dư sau chuyến đi",
+  "slug": "checklist-ban-lai-ngoai-te-con-du-sau-chuyen-di",
+  "mo_ta": "Sáu việc nên làm để số tiền Việt nhận về sát dự tính khi bán lại ngoại tệ còn dư: đọc đúng cột giá, chọn tờ tiền, tra cứu, cân nhắc giữ lại."
+ }
 }
