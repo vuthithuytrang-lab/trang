@@ -11,6 +11,7 @@ GitHub Pages của repo này, nhánh `gh-pages`, **miễn phí**, ai có link c�
 | App | Link |
 |---|---|
 | Cập nhật bài Techcombank (gốc trang) | https://vuthithuytrang-lab.github.io/trang/ |
+| Cập nhật lãi suất (`lai-suat`) | https://vuthithuytrang-lab.github.io/trang/lai-suat/ |
 | App mới tên `<ten>` | `https://vuthithuytrang-lab.github.io/trang/<ten>/` |
 
 ## Netlify, theo luồng anh Tuấn (Trang chọn 29/10/2026, miễn phí)
@@ -26,6 +27,8 @@ GitHub Pages của repo này, nhánh `gh-pages`, **miễn phí**, ai có link c�
   3. Project configuration → **Change project name** → `vttt-sn`.
   Xong thì Claude kiểm tra `https://vttt-sn.netlify.app/` và thêm bước kiểm tra Netlify vào `dang.sh`.
 - Đừng bấm: ô "Claude Agent / Build now" (tốn lượt), nút Upgrade, mục Usage & billing.
+
+⚠️ Thư mục app chỉ để giao diện. Số liệu máy tự ghi (vd `lai-suat/du-lieu/`) nằm riêng trên `gh-pages` — đừng để file số liệu trong thư mục app, kẻo đăng lại app ghi đè số mới bằng số cũ.
 
 ## Cách đăng (Claude tự làm, Trang không phải làm gì)
 
