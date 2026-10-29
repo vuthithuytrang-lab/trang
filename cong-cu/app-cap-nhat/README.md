@@ -37,3 +37,10 @@ Thêm dòng vào Sheet "Update" như cũ, rồi `ArtifactData set bai/<mã>` v�
 | `dang_chay` | Đang chạy |
 | `xong` | Đã xong |
 | `loi` | Cần xem lại |
+
+## Người lạ / chưa đăng nhập vẫn xem được (29/10/2026)
+
+App gắn sẵn **link file Docs mới nhất** của từng bài trong `DS` (trường `ten_file`, `link`, `luc`) — ai mở link app (kể cả ẩn danh) cũng thấy "Đã xong" + "Mở file Docs".
+Thư mục Drive đã mở "Bất kỳ ai có đường liên kết", nên người lạ mở file được.
+⚠️ **Mỗi lần Claude chạy xong một đợt**: cập nhật `ten_file/link/luc` trong `DS` của `app.html` rồi đăng lại (Artifact cùng file). Bấm chạy thì vẫn cần đăng nhập claude.ai + kết nối Google Sheets
+(hoặc dùng trang app Google trong `cong-cu/tu-dong/google-apps-script/Code.gs` sau khi Trang cài).
