@@ -1,0 +1,43 @@
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py lay cap-nhat/cau-hinh.json
+bai1 ok
+▶ node /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/gia-ca-phe-dak-lak/lay_gia.js cap-nhat/gia.json
+giacaphe Đắk Lắk  29/10/2026 88,400 (-600) | 7 ngày | cập nhật 9:38 29/10/2026
+giacaphe Lâm Đồng 29/10/2026 88,000 (-500) | 7 ngày | cập nhật 9:38 29/10/2026
+giacaphe Gia Lai  29/10/2026 88,300 (-700) | 7 ngày | cập nhật 9:38 29/10/2026
+giacaphe Đắk Nông 29/10/2026 88,500 (-800) | 7 ngày | cập nhật 9:38 29/10/2026
+Nhà Bè   Đắk Lắk  29/10/2026 88,400 | cập nhật 16:07 29/10/2026
+Nhà Bè   Lâm Đồng 29/10/2026 88,000 | cập nhật 16:07 29/10/2026
+Nhà Bè   Gia Lai  29/10/2026 88,300 | cập nhật 16:07 29/10/2026
+Nhà Bè   Đắk Nông 29/10/2026 88,500 | cập nhật 16:07 29/10/2026
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py dung cap-nhat/cau-hinh.json 30/10/2026
+bai1 Giá cà phê Đắk Lắk hôm nay: Biến động thị trường và góc nhìn cho nhà đầu tư – 30/10/2026: 0 bảng lãi suất [], 0 ô sửa, 0 ô kỳ hạn gần nhất, 0 ô '-', 0 ô đổi màu, đổi ngày/tháng: 5
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/gia-ca-phe-dak-lak/tao_sua.py --xem cap-nhat/xem.txt --gia cap-nhat/gia.json --goc cap-nhat/tam/bai1.html --ra cap-nhat/sua.json
+19 chỗ cần đổi, 5 mục cần duyệt → cap-nhat/sua.json
+   Đắk Nông khoảng 89,300 VND/kg → Đắk Nông khoảng 88,500 VND/kg
+   Gia Lai khoảng 89,000 VND/kg → Gia Lai khoảng 88,300 VND/kg
+   Lâm Đồng khoảng 88,500 VND/kg → Lâm Đồng khoảng 88,000 VND/kg
+   -400 → -600
+   91,400 → 90,800
+   22/10/2026 → 23/10/2026
+   -600 → -1,300
+   90,800 → 89,500
+   23/10/2026 → 24/10/2026
+   -1,300 → -700
+   89,500 → 88,800
+   24/10/2026 → 27/10/2026
+   -700 → +200
+   88,800 → 89,000
+   27/10/2026 → 28/10/2026
+   +200 → -600
+   89,000 → 88,400
+   28/10/2026 → 29/10/2026
+   tại Đắk Lắk đang được tham khảo ở mức khoảng 91,400 VND/kg, tăng khoản → tại Đắk Lắk đang được tham khảo ở mức khoảng 88,400 VND/kg, giảm khoản
+  cần duyệt: Bảng giá theo ngày: 5 dòng = 5 ngày mới nhất trên giacaphe.com (29/10/2026, 28/10/2026, 27/10/2026, 24/10/2026, 23/10/2026); nguồn không ghi ngày nghỉ (chủ nhật, ngày không giao dịch) nên các ngày có thể không liền nhau.
+  cần duyệt: Đoạn giá Đắk Lắk: chữ chỉ chiều đổi "tăng" → "giảm" theo nguồn (-600 đ/kg so với phiên trước) – đọc lại câu.
+  cần duyệt: Câu "giá Đắk Lắk đang ở mức tương đối cao" giữ nguyên, nhưng với số mới Đắk Lắk 88,400 thấp hơn Đắk Nông 88,500 → câu có thể không còn đúng, cần duyệt.
+  cần duyệt: Ngày trong bài ghi 30/10/2026 (quy tắc ngày hôm sau) nhưng số mới nhất trên nguồn là ngày 29/10/2026 → mọi số giá trong bài là số ngày 29/10/2026.
+  cần duyệt: Câu "Dưới đây là bảng thông tin được trích xuất và kẻ lại y hệt theo hình ảnh bạn cung cấp:" có sẵn trên bài web (giống câu trả lời của AI sót lại) – không sửa, nên báo nhóm web xem lại.
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py sua cap-nhat/cau-hinh.json cap-nhat/sua.json
+bai1: sửa được 19/19 chỗ
+Soát: khớp hết
+XONG gia-ca-phe-dak-lak ngày 30/10/2026

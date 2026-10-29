@@ -1,0 +1,12 @@
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py lay cap-nhat/cau-hinh.json
+bai1 ok
+▶ node /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/vang-10k/lay_gia_10k.js cap-nhat/gia.json
+pnj Vàng 416 (10K) | mua 4,801,000 | bán 5,791,000 đ/chỉ | cập nhật 29/10/2026 08:32:41
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py dung cap-nhat/cau-hinh.json 30/10/2026
+bai1 Vàng 10K là gì? Vàng 10k bao nhiêu 1 chỉ – 30/10/2026: 0 bảng lãi suất [], 0 ô sửa, 0 ô kỳ hạn gần nhất, 0 ô '-', 0 ô đổi màu, đổi ngày/tháng: 5
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/vang-10k/tao_sua.py --xem cap-nhat/xem.txt --gia cap-nhat/gia.json --ra cap-nhat/sua.json
+0 chỗ cần đổi, 0 mục cần duyệt → cap-nhat/sua.json
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py sua cap-nhat/cau-hinh.json cap-nhat/sua.json
+bai1: sửa được 0/0 chỗ
+Soát: khớp hết
+XONG vang-10k ngày 30/10/2026

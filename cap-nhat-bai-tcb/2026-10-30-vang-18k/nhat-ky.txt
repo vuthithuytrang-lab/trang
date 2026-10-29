@@ -1,0 +1,18 @@
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py lay cap-nhat/cau-hinh.json
+bai1 ok
+▶ node /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/vang-18k/lay_gia_18k.js cap-nhat/gia.json
+pnj   Vàng 750 (18K) | mua 9,450,000 | bán 10,440,000 đ/chỉ | cập nhật 29/10/2026 08:32:41
+sjc   Nữ trang 75% | mua 9,401,000 | bán 10,381,000 đ/chỉ | cập nhật 16:05:03 29/10/2026
+doji  GIÁ NGUYÊN LIỆU 18K | mua 9,694,000 | bán - đ/chỉ | cập nhật 09:08 ngày 29/10/2026
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py dung cap-nhat/cau-hinh.json 30/10/2026
+bai1 Vàng 18K là gì? Giá vàng 18k hôm nay – 30/10/2026: 0 bảng lãi suất [], 0 ô sửa, 0 ô kỳ hạn gần nhất, 0 ô '-', 0 ô đổi màu, đổi ngày/tháng: 7
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/vang-18k/tao_sua.py --xem cap-nhat/xem.txt --gia cap-nhat/gia.json --ra cap-nhat/sua.json
+4 chỗ cần đổi, 0 mục cần duyệt → cap-nhat/sua.json
+   bán ra hiện dao động từ khoảng 10.403 triệu VND/chỉ → bán ra hiện dao động từ khoảng 10.381 triệu VND/chỉ
+   mua vào cao nhất khoảng 9.694 triệu VND/chỉ và bán ra thấp n → mua vào cao nhất khoảng 9.694 triệu VND/chỉ và bán ra thấp n
+   10,403,500 VND/chỉ → 10,381,000 VND/chỉ
+   9,423,500 VND/chỉ → 9,401,000 VND/chỉ
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py sua cap-nhat/cau-hinh.json cap-nhat/sua.json
+bai1: sửa được 4/4 chỗ
+Soát: khớp hết
+XONG vang-18k ngày 30/10/2026

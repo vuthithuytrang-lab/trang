@@ -1,0 +1,171 @@
+{
+ "bai1": {
+  "sua": [
+   {
+    "tim": "+0.99",
+    "thay": "-1.45",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.thitruonghanghoa.com/gia-kim-loai",
+    "ly_do": "Thay đổi (%) dòng Thiếc – nguồn Thiếc (TIN): \"1.310.172.261\" VNĐ / tấn, thay đổi \"1.45%\" (arrow_downward), lấy lúc 16h08 giờ VN 29/10/2026 (nguồn cập nhật theo thời gian thực)"
+   },
+   {
+    "tim": "1,318,406,823",
+    "thay": "1,310,172,261",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.thitruonghanghoa.com/gia-kim-loai",
+    "ly_do": "Giá dòng Thiếc – nguồn Thiếc (TIN): \"1.310.172.261\" VNĐ / tấn, thay đổi \"1.45%\" (arrow_downward), lấy lúc 16h08 giờ VN 29/10/2026 (nguồn cập nhật theo thời gian thực)"
+   },
+   {
+    "tim": "-0.09",
+    "thay": "-0.06",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.thitruonghanghoa.com/gia-kim-loai",
+    "ly_do": "Thay đổi (%) dòng Quặng sắt 62% Fe – nguồn Quặng sắt 62% Fe (IRON ORE): \"2.343.053\" VNĐ / dmtu, thay đổi \"0.06%\" (arrow_downward), lấy lúc 16h08 giờ VN 29/10/2026 (nguồn cập nhật theo thời gian thực)"
+   },
+   {
+    "tim": "2,343,915",
+    "thay": "2,343,053",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.thitruonghanghoa.com/gia-kim-loai",
+    "ly_do": "Giá dòng Quặng sắt 62% Fe – nguồn Quặng sắt 62% Fe (IRON ORE): \"2.343.053\" VNĐ / dmtu, thay đổi \"0.06%\" (arrow_downward), lấy lúc 16h08 giờ VN 29/10/2026 (nguồn cập nhật theo thời gian thực)"
+   },
+   {
+    "tim": "+0.16",
+    "thay": "+0.13",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.thitruonghanghoa.com/gia-kim-loai",
+    "ly_do": "Thay đổi (%) dòng Kẽm – nguồn Kẽm (ZINC): \"100.394.788\" VNĐ / tấn, thay đổi \"0.13%\" (arrow_upward), lấy lúc 16h08 giờ VN 29/10/2026 (nguồn cập nhật theo thời gian thực)"
+   },
+   {
+    "tim": "99,684,860",
+    "thay": "100,394,788",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.thitruonghanghoa.com/gia-kim-loai",
+    "ly_do": "Giá dòng Kẽm – nguồn Kẽm (ZINC): \"100.394.788\" VNĐ / tấn, thay đổi \"0.13%\" (arrow_upward), lấy lúc 16h08 giờ VN 29/10/2026 (nguồn cập nhật theo thời gian thực)"
+   },
+   {
+    "tim": "-0.01",
+    "thay": "-0.19",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.thitruonghanghoa.com/gia-kim-loai",
+    "ly_do": "Thay đổi (%) dòng Nhôm – nguồn Nhôm (ALUMINUM): \"79.015.397\" VNĐ / tấn, thay đổi \"0.19%\" (arrow_downward), lấy lúc 16h08 giờ VN 29/10/2026 (nguồn cập nhật theo thời gian thực)"
+   },
+   {
+    "tim": "80,111,750",
+    "thay": "79,015,397",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.thitruonghanghoa.com/gia-kim-loai",
+    "ly_do": "Giá dòng Nhôm – nguồn Nhôm (ALUMINUM): \"79.015.397\" VNĐ / tấn, thay đổi \"0.19%\" (arrow_downward), lấy lúc 16h08 giờ VN 29/10/2026 (nguồn cập nhật theo thời gian thực)"
+   },
+   {
+    "tim": "+0.02",
+    "thay": "+0.03",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.thitruonghanghoa.com/gia-kim-loai",
+    "ly_do": "Thay đổi (%) dòng Chì – nguồn Chì (LEAD): \"49.382.363\" VNĐ / tấn, thay đổi \"0.03%\" (arrow_upward), lấy lúc 16h08 giờ VN 29/10/2026 (nguồn cập nhật theo thời gian thực)"
+   },
+   {
+    "tim": "49,940,631",
+    "thay": "49,382,363",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.thitruonghanghoa.com/gia-kim-loai",
+    "ly_do": "Giá dòng Chì – nguồn Chì (LEAD): \"49.382.363\" VNĐ / tấn, thay đổi \"0.03%\" (arrow_upward), lấy lúc 16h08 giờ VN 29/10/2026 (nguồn cập nhật theo thời gian thực)"
+   },
+   {
+    "tim": "+0.33",
+    "thay": "-0.30",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.thitruonghanghoa.com/gia-kim-loai",
+    "ly_do": "Thay đổi (%) dòng Niken – nguồn Nickel (NICKEL): \"403.149.798\" VNĐ / tấn, thay đổi \"0.30%\" (arrow_downward), lấy lúc 16h08 giờ VN 29/10/2026 (nguồn cập nhật theo thời gian thực)"
+   },
+   {
+    "tim": "404,693,550",
+    "thay": "403,149,798",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.thitruonghanghoa.com/gia-kim-loai",
+    "ly_do": "Giá dòng Niken – nguồn Nickel (NICKEL): \"403.149.798\" VNĐ / tấn, thay đổi \"0.30%\" (arrow_downward), lấy lúc 16h08 giờ VN 29/10/2026 (nguồn cập nhật theo thời gian thực)"
+   },
+   {
+    "tim": "+0.01",
+    "thay": "-0.03",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.thitruonghanghoa.com/gia-kim-loai",
+    "ly_do": "Thay đổi (%) dòng Bạch kim – nguồn Bạch kim (PLATINUM): \"46.979.957\" VNĐ / lượng, thay đổi \"0.03%\" (arrow_downward), lấy lúc 16h08 giờ VN 29/10/2026 (nguồn cập nhật theo thời gian thực)"
+   },
+   {
+    "tim": "47,903,903",
+    "thay": "46,979,957",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.thitruonghanghoa.com/gia-kim-loai",
+    "ly_do": "Giá dòng Bạch kim – nguồn Bạch kim (PLATINUM): \"46.979.957\" VNĐ / lượng, thay đổi \"0.03%\" (arrow_downward), lấy lúc 16h08 giờ VN 29/10/2026 (nguồn cập nhật theo thời gian thực)"
+   },
+   {
+    "tim": "+0.10",
+    "thay": "-0.05",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.thitruonghanghoa.com/gia-kim-loai",
+    "ly_do": "Thay đổi (%) dòng Đồng – nguồn Đồng (COPPER): \"375.490.338\" VNĐ / tấn, thay đổi \"0.05%\" (arrow_downward), lấy lúc 16h08 giờ VN 29/10/2026 (nguồn cập nhật theo thời gian thực)"
+   },
+   {
+    "tim": "377,992,801",
+    "thay": "375,490,338",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.thitruonghanghoa.com/gia-kim-loai",
+    "ly_do": "Giá dòng Đồng – nguồn Đồng (COPPER): \"375.490.338\" VNĐ / tấn, thay đổi \"0.05%\" (arrow_downward), lấy lúc 16h08 giờ VN 29/10/2026 (nguồn cập nhật theo thời gian thực)"
+   },
+   {
+    "tim": "-0.11",
+    "thay": "+0.08",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.thitruonghanghoa.com/gia-kim-loai",
+    "ly_do": "Thay đổi (%) dòng Bạc – nguồn Bạc (SILVER / XAG USD): \"1.647.288\" VNĐ / lượng, thay đổi \"0.08%\" (arrow_upward), lấy lúc 16h08 giờ VN 29/10/2026 (nguồn cập nhật theo thời gian thực)"
+   },
+   {
+    "tim": "1,675,219",
+    "thay": "1,647,288",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.thitruonghanghoa.com/gia-kim-loai",
+    "ly_do": "Giá dòng Bạc – nguồn Bạc (SILVER / XAG USD): \"1.647.288\" VNĐ / lượng, thay đổi \"0.08%\" (arrow_upward), lấy lúc 16h08 giờ VN 29/10/2026 (nguồn cập nhật theo thời gian thực)"
+   },
+   {
+    "tim": "+0.03",
+    "thay": "-0.01",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.thitruonghanghoa.com/gia-kim-loai",
+    "ly_do": "Thay đổi (%) dòng Vàng – nguồn Vàng (GOLD / XAU USD): \"125.469.874\" VNĐ / lượng, thay đổi \"0.01%\" (arrow_downward), lấy lúc 16h08 giờ VN 29/10/2026 (nguồn cập nhật theo thời gian thực)"
+   },
+   {
+    "tim": "125,606,371",
+    "thay": "125,469,874",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.thitruonghanghoa.com/gia-kim-loai",
+    "ly_do": "Giá dòng Vàng – nguồn Vàng (GOLD / XAU USD): \"125.469.874\" VNĐ / lượng, thay đổi \"0.01%\" (arrow_downward), lấy lúc 16h08 giờ VN 29/10/2026 (nguồn cập nhật theo thời gian thực)"
+   }
+  ],
+  "can_duyet": [
+   "Giá nguồn chạy theo thời gian thực, lấy lúc 16h08 giờ VN 29/10/2026; mở lại trang nguồn có thể thấy số khác. Đã dùng số trong \"Bảng giá Kim loại\", không dùng dải chạy chữ đầu trang.",
+   "Tiêu đề cột ghi \"Giá (VND/lượng)\" nhưng nguồn niêm yết Đồng, Niken, Chì, Nhôm, Kẽm, Thiếc theo VNĐ/tấn và Quặng sắt theo VNĐ/dmtu – giữ nguyên tiêu đề cột như bài (bài đã có dòng Lưu ý về đơn vị).",
+   "Các mốc năm trong phần phân tích (năm 2025, đầu năm 2026, đầu tư khoáng sản giảm 9% năm 2025, World Bank…) – nguồn không đề cập, giữ nguyên."
+  ]
+ }
+}

@@ -1,0 +1,19 @@
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py lay cap-nhat/cau-hinh.json
+bai1 ok
+▶ node /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/gia-dau-the-gioi/lay_gia.js cap-nhat/gia.json
+brent UKOIL 109.73 USD/thùng | −1.02 (−0.92%) | Tính đến ngày hôm nay 09:08 GMT | Thị trường mở cửa
+wti   USOIL 100.7 USD/thùng | −1.25 (−1.23%) | Tính đến ngày hôm nay 09:08 GMT | Thị trường mở cửa
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py dung cap-nhat/cau-hinh.json 30/10/2026
+bai1 Cập nhật giá dầu thế giới hôm nay – 30/10/2026: 0 bảng lãi suất [], 0 ô sửa, 0 ô kỳ hạn gần nhất, 0 ô '-', 0 ô đổi màu, đổi ngày/tháng: 5
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/gia-dau-the-gioi/tao_sua.py --xem cap-nhat/xem.txt --gia cap-nhat/gia.json --goc cap-nhat/tam/bai1.html --ra cap-nhat/sua.json
+4 chỗ cần đổi, 2 mục cần duyệt → cap-nhat/sua.json
+   +1.67 USD (+1.67%) → -1.25 USD (-1.23%)
+   101.88 → 100.70
+   +1.70 USD (+1.55%) → -1.02 USD (-0.92%)
+   111.43 → 109.73
+  cần duyệt: Giá Brent/WTI là giá giao dịch trong phiên trên TradingView (Tính đến ngày hôm nay 09:08 GMT, lấy lúc 2026-10-29 09:08 GMT, thị trường mở cửa) nên còn thay đổi; bài ghi ngày hôm sau theo quy tắc ghi ngày.
+  cần duyệt: Đoạn mô tả đầu bài (sapo) nhắc "diễn biến 5 ngày gần đây" nhưng bài không có bảng 5 ngày – giữ nguyên câu chữ, không thêm bảng.
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py sua cap-nhat/cau-hinh.json cap-nhat/sua.json
+bai1: sửa được 4/4 chỗ
+Soát: khớp hết
+XONG gia-dau-the-gioi ngày 30/10/2026

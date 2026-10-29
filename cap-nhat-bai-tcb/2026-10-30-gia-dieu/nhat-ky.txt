@@ -1,0 +1,25 @@
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py lay cap-nhat/cau-hinh.json
+bai1 ok
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/gia-dieu/lay_gia.py cap-nhat/gia.json
+banggianongsan: 12 dòng, cập nhật 08:34 29/10/2026 – Thị trường chưa ghi nhận biến động mới. Các vùng thu mua lớn vẫn duy trì mặt bằn
+  Điều tươi Đắk Lắk (vnđ/kg)               cũ ['25000', '30000'] | mới ['25000', '30000'] | Không đổi
+  Điều tươi Đắk Nông (vnđ/kg)              cũ ['25000', '30000'] | mới ['25000', '30000'] | Không đổi
+  Điều tươi Gia Lai (vnđ/kg)               cũ ['25000', '30000'] | mới ['25000', '30000'] | Không đổi
+  Điều tươi Kon Tum (vnđ/kg)               cũ ['25000', '30000'] | mới ['25000', '30000'] | Không đổi
+  Điều tươi Lâm Đồng (vnđ/kg)              cũ ['25000', '30000'] | mới ['25000', '30000'] | Không đổi
+  Điều tươi Bình Phước (vnđ/kg)            cũ ['25000', '30000'] | mới ['25000', '30000'] | Không đổi
+  Điều tươi Vũng Tàu (vnđ/kg)              cũ ['30000', '35000'] | mới ['30000', '35000'] | Không đổi
+  Điều nhân trắng W240 (240 hạt/kg)        cũ ['290000', '380000'] | mới ['290000', '380000'] | Không đổi
+  Điều nhân trắng W320 (320 hạt/kg)        cũ ['230000', '320000'] | mới ['230000', '320000'] | Không đổi
+  Điều nhân trắng W450 (450 hạt/kg)        cũ ['185000', '260000'] | mới ['185000', '260000'] | Không đổi
+  Hạt điều nhân trắng W240 (USD/kg)        cũ ['10.5', '12.8'] | mới ['10.5', '12.8'] | Không đổi
+  Hạt điều nhân trắng W320 (USD/kg)        cũ ['8.5', '10.8'] | mới ['8.5', '10.8'] | Không đổi
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py dung cap-nhat/cau-hinh.json 30/10/2026
+bai1 Giá điều hôm nay: Cập nhật thị trường trong nước, thế giới & các yếu tố tác động – 30/10/2026: 0 bảng lãi suất [], 0 ô sửa, 0 ô kỳ hạn gần nhất, 0 ô '-', 0 ô đổi màu, đổi ngày/tháng: 6
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/gia-dieu/tao_sua.py --xem cap-nhat/xem.txt --gia cap-nhat/gia.json --goc cap-nhat/tam/bai1.html --ra cap-nhat/sua.json
+0 chỗ cần đổi, 0 mục cần duyệt → cap-nhat/sua.json
+  bảng giá: 12 dòng trong bài, nguồn cập nhật 08:34 29/10/2026
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py sua cap-nhat/cau-hinh.json cap-nhat/sua.json
+bai1: sửa được 0/0 chỗ
+Soát: khớp hết
+XONG gia-dieu ngày 30/10/2026

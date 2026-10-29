@@ -1,0 +1,36 @@
+{
+ "bai1": {
+  "sua": [
+   {
+    "tim": "tiêu thế giới 30/10/2026",
+    "thay": "tiêu thế giới 29/10/2026",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "",
+    "ly_do": "nguồn không đọc được nên giữ ngày gốc của bài"
+   }
+  ],
+  "can_duyet": [
+   "Dòng \"Indonesia - Black Pepper\": không có trong banggianongsan.com – giữ nguyên 6.850 / 6.850 / Không đổi.",
+   "Dòng \"Indonesia - White Pepper\": không có trong banggianongsan.com – giữ nguyên 9.354 / 9.354 / Không đổi.",
+   "Dòng \"Brazil Black - Pepper ASTA 570\": không có trong banggianongsan.com – giữ nguyên 5.800 / 5.800 / Không đổi.",
+   "Dòng \"Malaysia - Black Pepper ASTA\": không có trong banggianongsan.com – giữ nguyên 9.100 / 9.100 / Không đổi.",
+   "Dòng \"Malaysia - White Pepper ASTA\": không có trong banggianongsan.com – giữ nguyên 12.000 / 12.000 / Không đổi.",
+   "Dòng \"Viet Nam - Black Pepper 500 g/l\": không có trong banggianongsan.com – giữ nguyên 5.950 / 5.950 / Không đổi.",
+   "Dòng \"Viet Nam - Black Pepper 550 g/l\": không có trong banggianongsan.com – giữ nguyên 5.995 / 5.995 / Không đổi.",
+   "Dòng \"Viet Nam - White Pepper ASTA\": không có trong banggianongsan.com – giữ nguyên 8.450 / 8.450 / Không đổi.",
+   "Dòng \"Garbled\": không có trong banggianongsan.com – giữ nguyên 71.300 / 71.300 / Không đổi.",
+   "Dòng \"Gram/lit\": không có trong banggianongsan.com – giữ nguyên 68.300 / 68.300 / Không đổi.",
+   "Dòng \"Ungarbled\": không có trong banggianongsan.com – giữ nguyên 69.300 / 69.300 / Không đổi.",
+   "Bảng giá hồ tiêu trong nước – Hồ Tiêu Gia Lai (đ/kg): 2 nguồn cùng ngày lệch Giá mới – banggianongsan 137,000, giatieu.com (Gia Lai) 136,000 → giữ nguyên cả dòng, cần người chọn nguồn.",
+   "Bảng giá hồ tiêu trong nước – Hồ Tiêu Đồng Nai (đ/kg): 2 nguồn cùng ngày lệch Giá mới – banggianongsan 137,000, giatieu.com (Bình Phước) 136,000 → giữ nguyên cả dòng, cần người chọn nguồn.",
+   "Bảng giá hồ tiêu trong nước – Hồ Tiêu TP. Hồ Chí Minh (đ/kg): 2 nguồn cùng ngày lệch Giá mới – banggianongsan 137,500, giatieu.com (Bà Rịa - Vũng Tàu) 136,500 → giữ nguyên cả dòng, cần người chọn nguồn.",
+   "Bảng giá hồ tiêu trong nước – Hồ Tiêu Lâm Đồng (Đắk Nông cũ sáp nhập) (đ/kg): 2 nguồn cùng ngày lệch Giá mới – banggianongsan 139,000, giatieu.com (Đắk Nông) 137,500 → giữ nguyên cả dòng, cần người chọn nguồn.",
+   "Bảng giá hồ tiêu trong nước – Hồ Tiêu Đắk Lắk (đ/kg): 2 nguồn cùng ngày lệch Giá mới – banggianongsan 140,000, giatieu.com (Đắk Lắk) 138,500 → giữ nguyên cả dòng, cần người chọn nguồn.",
+   "banggianongsan.com không có bảng \"Giá hồ tiêu tại các thị trường xuất khẩu\" – các dòng bảng này giữ nguyên.",
+   "banggianongsan.com không có bảng \"Giá hồ tiêu nội địa Ấn Độ\" – các dòng bảng này giữ nguyên.",
+   "giatieu.com/gia-tieu-truc-tuyen: bảng giá thế giới trống (\"Hệ thống đang bận\") hoặc không đọc được – bảng xuất khẩu chỉ có 1 nguồn (banggianongsan).",
+   "Mục 3: \"9 tháng đầu năm 2026, Việt Nam xuất khẩu 215,733 tấn, tăng 15.4% về lượng nhưng giá trị tăng 10.2%, cho thấy giá bình quân cũng ảnh hưởng đến kim ngạch\" – 3 nguồn không có số liệu xuất khẩu này, giữ nguyên."
+  ]
+ }
+}

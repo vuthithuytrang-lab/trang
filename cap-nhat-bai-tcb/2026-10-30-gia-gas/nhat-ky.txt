@@ -1,0 +1,18 @@
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py lay cap-nhat/cau-hinh.json
+bai1 ok
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/gia-gas/lay_gia.py cap-nhat/gia.json
+  (pvgaslpg.com.vn: máy chủ thiếu chứng chỉ trung gian – đã bổ sung từ http://crt.sectigo.com/SectigoPublicServerAuthenticationCADVR36.crt, vẫn kiểm tra đầy đủ)
+pgas: GIÁ GAS THÁNG 10/2026 (5 tỉnh/thành) – Hà Nội 12kg 598.752/48kg 2.472.768; Hải Phòng 12kg 598.104/48kg 2.571.264; Đà Nẵng 12kg 609.000/48kg 2.352.000; Hồ Chí Minh 12kg 592.000/48kg 2.365.000; Cần Thơ 12kg 580.000/48kg 2.320.000
+pvgas: GIÁ BÁN LẺ GAS THÁNG 10/2026 (34 tỉnh/thành) – Hà Nội 12kg 642.004/45kg 2.407.515; Hồ Chí Minh 12kg 662.081/45kg 2.482.819
+saigon: từ 01/10/2026 – Chai gas SP loại 45 kg: 2.256.500 đ; Chai gas SP loại 12 kg (màu xám, đỏ, xanh lam, xanh lá): 601.500 đ
+gaspetrolimex (đối chiếu, không dùng): Bình Gas petrolimex 12kg van ngang 644.112; Bình gas Petrolimex 12kg van chụp 644.112; Bình gas công nghiệp Petrolimex 48kg 2.576.448
+→ cap-nhat/gia.json
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py dung cap-nhat/cau-hinh.json 30/10/2026
+bai1 Cập nhật giá gas hôm nay – 30/10/2026: 0 bảng lãi suất [], 0 ô sửa, 0 ô kỳ hạn gần nhất, 0 ô '-', 0 ô đổi màu, đổi ngày/tháng: 6
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/gia-gas/tao_sua.py --xem cap-nhat/xem.txt --gia cap-nhat/gia.json --goc cap-nhat/tam/bai1.html --ra cap-nhat/sua.json
+0 chỗ cần đổi, 1 mục cần duyệt → cap-nhat/sua.json
+  cần duyệt: Bài có nhắc thương hiệu Pacific Petro nhưng không có dòng giá Pacific Petro và không có nguồn Pacific Petro – không có gì để cập nhật, chỉ báo lại.
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py sua cap-nhat/cau-hinh.json cap-nhat/sua.json
+bai1: sửa được 0/0 chỗ
+Soát: khớp hết
+XONG gia-gas ngày 30/10/2026

@@ -1,0 +1,20 @@
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py lay cap-nhat/cau-hinh.json
+bai1 ok
+▶ node /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/1-chi-vang/lay_bang.js cap-nhat/bang-nguon.json
+huythanh  7 dòng, cập nhật 13:14 ngày 29/10/2026
+sjc       45 dòng, cập nhật 16:05:03 29/10/2026
+btmc      30 dòng, cập nhật 16:05:07 29/10/2026
+phuquy    13 dòng, cập nhật 16:02 29/10/2026
+doji      19 dòng, cập nhật 09:08 ngày 29/10/2026
+pnj       21 dòng, cập nhật 29/10/2026 08:32:41
+thegioi   7 dòng, cập nhật 16:07:53 29/10/2026
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py dung cap-nhat/cau-hinh.json 30/10/2026
+bai1 1 chỉ vàng bao nhiêu tiền? Giá vàng 24K, 18K, 9999 hôm nay – 30/10/2026: 0 bảng lãi suất [], 0 ô sửa, 0 ô kỳ hạn gần nhất, 0 ô '-', 0 ô đổi màu, đổi ngày/tháng: 15
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/1-chi-vang/tao_sua.py --xem cap-nhat/xem.txt --nguon cap-nhat/bang-nguon.json --ra cap-nhat/sua.json
+34 chỗ cần đổi, 2 mục cần duyệt → cap-nhat/sua.json
+  cần duyệt: DOJI không còn dòng "KNT + KTT + Kim Giáp" – lấy dòng "KIM TT/AVPL" (kim thần tài/ An Vượng Phát Lộc).
+  cần duyệt: PNJ không có "990" – lấy dòng "Vàng nữ trang 9920".
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py sua cap-nhat/cau-hinh.json cap-nhat/sua.json
+bai1: sửa được 34/34 chỗ
+Soát: khớp hết
+XONG 1-chi-vang ngày 30/10/2026

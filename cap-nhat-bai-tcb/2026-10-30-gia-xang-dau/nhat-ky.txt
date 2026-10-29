@@ -1,0 +1,23 @@
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py lay cap-nhat/cau-hinh.json
+bai1 ok
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/gia-xang-dau/lay_gia.py cap-nhat
+Thông cáo Petrolimex mới nhất: Petrolimex điều chỉnh giá xăng dầu từ 15 giờ 00 phút ngày 29.10.2026
+   https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi/petrolimex-dieu-chinh-gia-xang-dau-tu-15-gio-00-phut-ngay-29-10-2026.html
+  Ảnh bảng giá (PHẢI mở ra đối chiếu): cap-nhat/tam/plx-gia.jpg
+Mặt hàng         | Petrolimex V1/V2 (Topi)  | PVOIL (Topi) | Mipec V1/V2
+E10 RON 95-V     | 26,530/27,060            | -            | -
+E10 RON 95-III   | 25,730/26,240            | 25,730       | 25,210/25,710
+E5 RON 92-II     | 26,020/26,540            | 26,020       | 25,360/25,860
+DO 0,001S-V      | 31,640/32,270            | 31,640       | 30,950/31,560
+DO 0,05S-II      | 30,240/30,840            | 30,240       | 29,550/30,140
+Dầu hỏa 2-K      | 30,650/31,260            | -            | -
+→ cap-nhat/gia.json
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py dung cap-nhat/cau-hinh.json 30/10/2026
+bai1 Giá xăng dầu hôm nay bao nhiêu 1 lít mới nhất – 30/10/2026: 0 bảng lãi suất [], 0 ô sửa, 0 ô kỳ hạn gần nhất, 0 ô '-', 0 ô đổi màu, đổi ngày/tháng: 5
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/gia-xang-dau/tao_sua.py --xem cap-nhat/xem.txt --gia cap-nhat/gia.json --ra cap-nhat/sua.json
+20 chỗ cần đổi, 1 mục cần duyệt → cap-nhat/sua.json
+  cần duyệt: Mục 5 trong bài gốc đánh số 5.1 rồi nhảy sang 5.3 (không có 5.2) – không sửa, chỉ báo lại.
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py sua cap-nhat/cau-hinh.json cap-nhat/sua.json
+bai1: sửa được 20/20 chỗ
+Soát: khớp hết
+XONG gia-xang-dau ngày 30/10/2026

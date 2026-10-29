@@ -1,0 +1,18 @@
+{
+ "bai1": {
+  "sua": [
+   {
+    "tim": "30/10/2026",
+    "thay": "29/10/2026",
+    "giu_nguyen_so": true,
+    "nguon": "",
+    "ly_do": "nguồn bảng giá thép thế giới lỗi → giữ ngày của bài gốc ở tiêu đề mục, không ghi ngày mới cho giá cũ",
+    "ngu_canh": "1. Bảng giá thép thế giới hôm nay 30/10/2026"
+   }
+  ],
+  "can_duyet": [
+   "Bảng giá thép thế giới: Barchart không đọc được (trang chặn máy chủ tự động, trả HTTP 202/403) – giữ nguyên toàn bộ giá và mức thay đổi cũ, giữ ngày cũ ở tiêu đề mục 1. Nhờ người cập nhật tay.",
+   "Bảng giá thép trong nước: dùng bảng steelonline.vn ngày 29-10-2026 (trang mới nhất có số); khoảng giá = thấp nhất – cao nhất mọi ô VNĐ/kg và VNĐ/cây ở tab đầu tiên của mỗi hãng."
+  ]
+ }
+}

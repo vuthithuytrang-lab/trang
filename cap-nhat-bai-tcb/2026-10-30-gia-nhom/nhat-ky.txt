@@ -1,0 +1,41 @@
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py lay cap-nhat/cau-hinh.json
+bai1 ok
+▶ node /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/gia-nhom/lay_gia.js cap-nhat/gia.json
+tradingview: 60 hợp đồng, As of today at 01:00 GMT
+  ALIV2026 2026-10-28 3,285.25 +1.96% (D)
+  ALIX2026 2026-11-25 3,287.00 -0.22% (D)
+  ALIZ2026 2026-12-29 3,231.00 -0.30% (D)
+  ALIF2027 2027-01-27 3,183.00 +0.24% (D)
+  ALIG2027 2027-02-24 3,163.75 -0.28% (D)
+  ALIH2027 2027-03-29 3,159.00 -0.33% (D)
+  ALIJ2027 2027-04-28 3,147.50 -0.56% (D)
+  ALIK2027 2027-05-26 3,148.00 -0.51% (D)
+  ALIM2027 2027-06-28 3,135.75 -0.45% (D)
+  ALIN2027 2027-07-28 3,145.75 -0.45% (D)
+  ALIQ2027 2027-08-27 3,166.25 -0.45% (D)
+  ALIU2027 2027-09-28 3,175.50 -0.45% (D)
+quangphong: cập nhật ngày 29/10/2026
+  Nhôm thanh, đặc nguyên chất, nhôm đà: 67.000 - 90.000 đ/kg
+  Nhôm trắng, thỏi, hợp kim, Xingfa: 65.000 - 89.000 đ/kg
+  Nhôm xám, phôi nhôm: 62.000 - 72.000 đ/kg
+  Nhôm vụn, mạt nhôm, ba dớ nhôm: 58.000 - 69.000 đ/kg
+  Giá nhôm vụn: 55.000 - 67.000 đ/kg
+  Nhôm dẻo, lon bia, nhôm dây: 65.000 - 75.000 đ/kg
+  Nhôm máy: 75.000 - 95.000 đ/kg
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py dung cap-nhat/cau-hinh.json 30/10/2026
+bai1 Giá nhôm hôm nay: Bảng giá cập nhật và các yếu tố ảnh hưởng đến thị trường – 30/10/2026: 0 bảng lãi suất [], 0 ô sửa, 0 ô kỳ hạn gần nhất, 0 ô '-', 0 ô đổi màu, đổi ngày/tháng: 8
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/gia-nhom/tao_sua.py --xem cap-nhat/xem.txt --gia cap-nhat/gia.json --goc cap-nhat/tam/bai1.html --ra cap-nhat/sua.json
+9 chỗ cần đổi, 0 mục cần duyệt → cap-nhat/sua.json
+   ALIN2027 3,160 +0.59% → ALIN2027 3,145 -0.45%
+   ALIM2027 3,150 +0.59% → ALIM2027 3,135 -0.45%
+   ALIK2027 3,164 +1.33% → ALIK2027 3,148 -0.51%
+   ALIJ2027 3,165 +1.63% → ALIJ2027 3,147 -0.56%
+   ALIH2027 3,169 +1.92% → ALIH2027 3,159 -0.33%
+   ALIG2027 3,172 +1.94% → ALIG2027 3,163 -0.28%
+   ALIF2027 3,185 +0.07% → ALIF2027 3,183 +0.24%
+   ALIZ2026 3,240 +1.90% → ALIZ2026 3,231 -0.30%
+   ALIX2026 3,294 +1.96% → ALIX2026 3,287 -0.22%
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py sua cap-nhat/cau-hinh.json cap-nhat/sua.json
+bai1: sửa được 9/9 chỗ
+Soát: khớp hết
+XONG gia-nhom ngày 30/10/2026

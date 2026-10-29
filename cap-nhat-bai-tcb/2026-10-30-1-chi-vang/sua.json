@@ -1,0 +1,282 @@
+{
+ "bai1": {
+  "sua": [
+   {
+    "tim": "Giá vàng thế giới ngày 30/10/2026 giao dịch quanh ngưỡng 4,033.33 USD/ounce (tương đương khoảng 126,559,143 VND/lượng quy đổi theo tỷ giá Techcombank",
+    "thay": "Giá vàng thế giới ngày 30/10/2026 giao dịch quanh ngưỡng 4,030.25 USD/ounce (tương đương khoảng 126,379,893 VND/lượng quy đổi theo tỷ giá Techcombank",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://giavang.org/the-gioi/",
+    "ly_do": "giavang.org 16:07:53 29/10/2026: 4,030.25 USD/ounce × 1.20565303 ounce/lượng × 26,009 đ/USD (Techcombank bán chuyển khoản USD (50,100), 2026-10-29T16:02:16.136Z) = 126,379,893 VND/lượng"
+   },
+   {
+    "tim": "8,048,000",
+    "thay": "9,048,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.pnj.com.vn/site/gia-vang",
+    "ly_do": "PNJ – \"Vàng 650 (15.6K)\", cập nhật 29/10/2026 08:32:41"
+   },
+   {
+    "tim": "14,160,000",
+    "thay": "14,150,000",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://banggia.doji.vn/gold-price",
+    "ly_do": "DOJI – \"NHẪN TRÒN 9999 HƯNG THỊNH VƯỢNG\", cập nhật 09:08 ngày 29/10/2026"
+   },
+   {
+    "tim": "13,760,000",
+    "thay": "13,750,000",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://banggia.doji.vn/gold-price",
+    "ly_do": "DOJI – \"NHẪN TRÒN 9999 HƯNG THỊNH VƯỢNG\", cập nhật 09:08 ngày 29/10/2026"
+   },
+   {
+    "tim": "14,160,000",
+    "thay": "14,150,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://banggia.doji.vn/gold-price",
+    "ly_do": "DOJI – \"KIM TT/AVPL\", cập nhật 09:08 ngày 29/10/2026"
+   },
+   {
+    "tim": "13,760,000",
+    "thay": "13,750,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://banggia.doji.vn/gold-price",
+    "ly_do": "DOJI – \"KIM TT/AVPL\", cập nhật 09:08 ngày 29/10/2026"
+   },
+   {
+    "tim": "Vàng Rồng Thăng Long niêm yết giá 14,110,000 VND 1 chỉ vào ngày 29.10.2026",
+    "thay": "Vàng Rồng Thăng Long niêm yết giá 14,040,000 VND 1 chỉ vào ngày 30.10.2026",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/bao-tin-minh-chau/",
+    "ly_do": "chú thích ảnh: giá bán trang sức Rồng Thăng Long 999.9 hôm nay"
+   },
+   {
+    "tim": "Vàng miếng SJC vẫn có giá trên 14 vào ngày 29.10.2026",
+    "thay": "Vàng miếng SJC vẫn có giá trên 14 vào ngày 30.10.2026",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "",
+    "ly_do": "chú thích ảnh: ngày = hôm nay (giá bán SJC vẫn trên 14 triệu/chỉ)"
+   },
+   {
+    "tim": "5,791,200",
+    "thay": "5,778,500",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – \"Nữ trang 41,7%\", cập nhật 16:05:03 29/10/2026"
+   },
+   {
+    "tim": "4,811,000",
+    "thay": "4,798,500",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – \"Nữ trang 41,7%\", cập nhật 16:05:03 29/10/2026"
+   },
+   {
+    "tim": "8,090,200",
+    "thay": "8,072,900",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – \"Nữ trang 58,3%\", cập nhật 16:05:03 29/10/2026"
+   },
+   {
+    "tim": "7,110,400",
+    "thay": "7,092,900",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – \"Nữ trang 58,3%\", cập nhật 16:05:03 29/10/2026"
+   },
+   {
+    "tim": "8,464,800",
+    "thay": "8,446,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – \"Nữ trang 61%\", cập nhật 16:05:03 29/10/2026"
+   },
+   {
+    "tim": "7,484,300",
+    "thay": "7,466,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – \"Nữ trang 61%\", cập nhật 16:05:03 29/10/2026"
+   },
+   {
+    "tim": "9,433,900",
+    "thay": "9,413,500",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – \"Nữ trang 68%\", cập nhật 16:05:03 29/10/2026"
+   },
+   {
+    "tim": "8,453,900",
+    "thay": "8,433,500",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – \"Nữ trang 68%\", cập nhật 16:05:03 29/10/2026"
+   },
+   {
+    "tim": "10,403,000",
+    "thay": "10,381,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – \"Nữ trang 75%\", cập nhật 16:05:03 29/10/2026"
+   },
+   {
+    "tim": "9,423,500",
+    "thay": "9,401,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – \"Nữ trang 75%\", cập nhật 16:05:03 29/10/2026"
+   },
+   {
+    "tim": "13,712,400",
+    "thay": "13,683,200",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – \"Nữ trang 99%\", cập nhật 16:05:03 29/10/2026"
+   },
+   {
+    "tim": "13,012,900",
+    "thay": "12,983,200",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – \"Nữ trang 99%\", cập nhật 16:05:03 29/10/2026"
+   },
+   {
+    "tim": "13,850,000",
+    "thay": "13,820,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – \"Nữ trang 99,99%\", cập nhật 16:05:03 29/10/2026"
+   },
+   {
+    "tim": "13,350,000",
+    "thay": "13,320,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – \"Nữ trang 99,99%\", cập nhật 16:05:03 29/10/2026"
+   },
+   {
+    "tim": "13,960,000",
+    "thay": "13,930,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – \"Vàng nhẫn SJC 99,99% 0.5 chỉ, 0.3 chỉ\", cập nhật 16:05:03 29/10/2026"
+   },
+   {
+    "tim": "13,550,000",
+    "thay": "13,520,000",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – \"Vàng nhẫn SJC 99,99% 0.5 chỉ, 0.3 chỉ\", cập nhật 16:05:03 29/10/2026"
+   },
+   {
+    "tim": "13,950,000",
+    "thay": "13,920,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – \"Vàng nhẫn SJC 99,99% 1 chỉ, 2 chỉ, 5 chỉ\", cập nhật 16:05:03 29/10/2026"
+   },
+   {
+    "tim": "13,550,000",
+    "thay": "13,520,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://webgia.com/gia-vang/sjc/",
+    "ly_do": "SJC – \"Vàng nhẫn SJC 99,99% 1 chỉ, 2 chỉ, 5 chỉ\", cập nhật 16:05:03 29/10/2026"
+   },
+   {
+    "tim": "5,907,000",
+    "thay": "5,886,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://huythanhjewelry.vn/gia-vang-hom-nay",
+    "ly_do": "HUYTHANH – \"Giá nguyên liệu 10K\", cập nhật 13:14 ngày 29/10/2026"
+   },
+   {
+    "tim": "5,620,000",
+    "thay": "5,600,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://huythanhjewelry.vn/gia-vang-hom-nay",
+    "ly_do": "HUYTHANH – \"Giá nguyên liệu 10K\", cập nhật 13:14 ngày 29/10/2026"
+   },
+   {
+    "tim": "8,307,000",
+    "thay": "8,278,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://huythanhjewelry.vn/gia-vang-hom-nay",
+    "ly_do": "HUYTHANH – \"Giá nguyên liệu 14K\", cập nhật 13:14 ngày 29/10/2026"
+   },
+   {
+    "tim": "7,904,000",
+    "thay": "7,875,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://huythanhjewelry.vn/gia-vang-hom-nay",
+    "ly_do": "HUYTHANH – \"Giá nguyên liệu 14K\", cập nhật 13:14 ngày 29/10/2026"
+   },
+   {
+    "tim": "10,650,000",
+    "thay": "10,613,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://huythanhjewelry.vn/gia-vang-hom-nay",
+    "ly_do": "HUYTHANH – \"Giá nguyên liệu 18K\", cập nhật 13:14 ngày 29/10/2026"
+   },
+   {
+    "tim": "10,133,000",
+    "thay": "10,096,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://huythanhjewelry.vn/gia-vang-hom-nay",
+    "ly_do": "HUYTHANH – \"Giá nguyên liệu 18K\", cập nhật 13:14 ngày 29/10/2026"
+   },
+   {
+    "tim": "13,007,000",
+    "thay": "12,961,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://huythanhjewelry.vn/gia-vang-hom-nay",
+    "ly_do": "HUYTHANH – \"Giá nguyên liệu 22K\", cập nhật 13:14 ngày 29/10/2026"
+   },
+   {
+    "tim": "12,641,000",
+    "thay": "12,595,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://huythanhjewelry.vn/gia-vang-hom-nay",
+    "ly_do": "HUYTHANH – \"Giá nguyên liệu 22K\", cập nhật 13:14 ngày 29/10/2026"
+   }
+  ],
+  "can_duyet": [
+   "DOJI không còn dòng \"KNT + KTT + Kim Giáp\" – lấy dòng \"KIM TT/AVPL\" (kim thần tài/ An Vượng Phát Lộc).",
+   "PNJ không có \"990\" – lấy dòng \"Vàng nữ trang 9920\"."
+  ]
+ }
+}

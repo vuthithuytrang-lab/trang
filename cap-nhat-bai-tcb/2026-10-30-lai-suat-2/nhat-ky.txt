@@ -1,0 +1,20 @@
+cp: cannot stat '/home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/lai-suat-2/cau-hinh.json': No such file or directory
+▶ python3 -I cap-nhat.py lay
+bai1.html ok
+bai2.html ok
+topi.html ok
+vne-offline.json ok
+vne-online.json ok
+▶ python3 -I cap-nhat.py dung 30/10/2026
+bai1 62 ô sửa, 11 ô theo kỳ hạn gần nhất, 0 ô trường hợp B, 0 số ngoài bảng, đổi ngày/tháng: ['Tiêu đề: 29/10/2026 → 30/10/2026', 'Sapo: 29/10/2026 → 30/10/2026', 'Ngày đăng: 29/10/2026 → 30/10/2026']
+bai2 0 ô sửa, 0 ô theo kỳ hạn gần nhất, 0 ô trường hợp B, 0 số ngoài bảng, đổi ngày/tháng: ['Tiêu đề: 29/10/2026 → 30/10/2026', 'Sapo: 29/10/2026 → 30/10/2026', 'Ngày đăng: 29/10/2026 → 30/10/2026']
+  cần duyệt: Ngoài bảng – "Kỳ hạn | Lãi suất %/năm | Cách tính lãi | Số tiền lãi nhận được": bảng ví dụ có 8 ô lãi suất (4.30, 4.60, 6.30, 6.50, 5.60) cùng các số tiền tính theo đó – lãi suất Techcombank, chỉ sửa theo techcombank.com, giữ nguyên.
+  cần duyệt: Ngoài bảng – "Ví dụ: Khách hàng Private gửi tiết kiệm 100,000,000 VND vào sản phẩm Tiết kiệm thường bằng hình thức trực tuy…": lãi suất/ví dụ tính của Techcombank – chỉ sửa theo techcombank.com (biểu lãi suất chính thức), giữ nguyên.
+  cần duyệt: Ngoài bảng – "Số tiền nhận được = 100,000,000 x (1 + 6.40%/1) ^ (1 x 5) = 136,366,640 VND": lãi suất/ví dụ tính của Techcombank – chỉ sửa theo techcombank.com (biểu lãi suất chính thức), giữ nguyên.
+  cần duyệt: Ngoài bảng – "Năm | Lãi suất %/năm | Cách tính lãi | Số tiền lãi nhận được": bảng ví dụ có 5 ô lãi suất (6.40) cùng các số tiền tính theo đó – lãi suất Techcombank, chỉ sửa theo techcombank.com, giữ nguyên.
+  cần duyệt: Ngoài bảng – "Trường hợp khách hàng hưởng lãi trước kỳ hạn: Khách hàng được hưởng mức lãi suất 0.05%/năm.": lãi suất/ví dụ tính của Techcombank – chỉ sửa theo techcombank.com (biểu lãi suất chính thức), giữ nguyên.
+  cần duyệt: Ngoài bảng – "Số tiền lãi = 100,000,000 x 0.05% x 156/365 = 21,370 VND.": lãi suất/ví dụ tính của Techcombank – chỉ sửa theo techcombank.com (biểu lãi suất chính thức), giữ nguyên.
+  cần duyệt: Ngoài bảng – "Như vậy, tổng số tiền khách hàng nhận về là 100,000,000 + 21,370 = 100,021,370 VND.": lãi suất/ví dụ tính của Techcombank – chỉ sửa theo techcombank.com (biểu lãi suất chính thức), giữ nguyên.
+  cần duyệt: Ngoài bảng – "Lưu ý: Lãi suất không kỳ hạn dao động từ 0.05%/năm đến tối đa 0.5%/năm (theo Quyết định 1121/QĐ-NHNN năm 2023…": mức lãi suất gắn với văn bản pháp luật – chỉ sửa theo nguồn chính thức về văn bản đó, giữ nguyên.
+bai1 Cách tính lãi suất tiền gửi tiết kiệm Techcombank – 30/10/2026: 0 bảng lãi suất
+XONG lai-suat-2 ngày 30/10/2026

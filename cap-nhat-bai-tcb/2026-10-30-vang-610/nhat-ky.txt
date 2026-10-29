@@ -1,0 +1,15 @@
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py lay cap-nhat/cau-hinh.json
+bai1 ok
+▶ node /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/vang-610/lay_gia_610.js cap-nhat/gia.json
+pnj       Vàng 610 (14.6K) | mua 7,501,000 | bán 8,491,000 đ/chỉ | cập nhật 29/10/2026 08:32:41
+sjc       Nữ trang 61% | mua 7,466,000 | bán 8,446,000 đ/chỉ | cập nhật 16:05:03 29/10/2026
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py dung cap-nhat/cau-hinh.json 30/10/2026
+bai1 Vàng 610 là vàng gì? Giá vàng 610 hôm nay bao nhiêu 1 chỉ – 30/10/2026: 0 bảng lãi suất [], 0 ô sửa, 0 ô kỳ hạn gần nhất, 0 ô '-', 0 ô đổi màu, đổi ngày/tháng: 3
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/vang-610/tao_sua.py --xem cap-nhat/xem.txt --gia cap-nhat/gia.json --ra cap-nhat/sua.json
+2 chỗ cần đổi, 0 mục cần duyệt → cap-nhat/sua.json
+   Giá bán ra: Khoảng 8,464,000 VND/chỉ đến 8,491,000 VND/chỉ → Giá bán ra: Khoảng 8,446,000 VND/chỉ đến 8,491,000 VND/chỉ
+   Giá mua vào: Khoảng 7,484,000 VND/chỉ đến 7,501,000 VND/chỉ → Giá mua vào: Khoảng 7,466,000 VND/chỉ đến 7,501,000 VND/chỉ
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py sua cap-nhat/cau-hinh.json cap-nhat/sua.json
+bai1: sửa được 2/2 chỗ
+Soát: khớp hết
+XONG vang-610 ngày 30/10/2026

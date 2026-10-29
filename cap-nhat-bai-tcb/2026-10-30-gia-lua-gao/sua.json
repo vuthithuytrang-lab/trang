@@ -1,0 +1,80 @@
+{
+ "bai1": {
+  "sua": [
+   {
+    "tim": "Chưa có dữ liệu",
+    "thay": "Không đổi",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://vietfood.org.vn/gia-gao-xuat-khau-cua-cac-nuoc-tren-the-gioi-ngay-27-10-2026/",
+    "ly_do": "Ấn Độ Gạo đồ 5% tấm – thay đổi = giá 27/10/2026 (378 - 382) − giá kỳ trước 26/10/2026 (ẤN ĐỘ | Gạo đồ 5% Stxd | 378 | 382) = +0 / +0. VFA (vietfood.org.vn, số liệu Oryza) bản tin 27/10/2026, nguồn ghi: ẤN ĐỘ | Gạo đồ 5% Stxd | 378 | 382",
+    "tinh_toan": true
+   },
+   {
+    "tim": "381 - 385",
+    "thay": "378 - 382",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://vietfood.org.vn/gia-gao-xuat-khau-cua-cac-nuoc-tren-the-gioi-ngay-27-10-2026/",
+    "ly_do": "Ấn Độ Gạo đồ 5% tấm – giá. VFA (vietfood.org.vn, số liệu Oryza) bản tin 27/10/2026, nguồn ghi: ẤN ĐỘ | Gạo đồ 5% Stxd | 378 | 382"
+   },
+   {
+    "tim": "+3",
+    "thay": "+2",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://vietfood.org.vn/gia-gao-xuat-khau-cua-cac-nuoc-tren-the-gioi-ngay-27-10-2026/",
+    "ly_do": "Ấn Độ Gạo 100% tấm – thay đổi = giá 27/10/2026 (330 - 334) − giá kỳ trước 26/10/2026 (ẤN ĐỘ | 100% tấm Stxd | 328 | 332) = +2 / +2. VFA (vietfood.org.vn, số liệu Oryza) bản tin 27/10/2026, nguồn ghi: ẤN ĐỘ | 100% tấm Stxd | 330 | 334",
+    "tinh_toan": true
+   },
+   {
+    "tim": "326 - 330",
+    "thay": "330 - 334",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://vietfood.org.vn/gia-gao-xuat-khau-cua-cac-nuoc-tren-the-gioi-ngay-27-10-2026/",
+    "ly_do": "Ấn Độ Gạo 100% tấm – giá. VFA (vietfood.org.vn, số liệu Oryza) bản tin 27/10/2026, nguồn ghi: ẤN ĐỘ | 100% tấm Stxd | 330 | 334"
+   },
+   {
+    "tim": "-1",
+    "thay": "Không đổi",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://vietfood.org.vn/gia-gao-xuat-khau-cua-cac-nuoc-tren-the-gioi-ngay-27-10-2026/",
+    "ly_do": "Thái Lan Gạo 100% tấm – thay đổi = giá 27/10/2026 (407 - 411) − giá kỳ trước 26/10/2026 (THÁI LAN | A1 Super | 407 | 411) = +0 / +0. VFA (vietfood.org.vn, số liệu Oryza) bản tin 27/10/2026, nguồn ghi: THÁI LAN | A1 Super | 407 | 411",
+    "tinh_toan": true
+   },
+   {
+    "tim": "381 - 385",
+    "thay": "407 - 411",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://vietfood.org.vn/gia-gao-xuat-khau-cua-cac-nuoc-tren-the-gioi-ngay-27-10-2026/",
+    "ly_do": "Thái Lan Gạo 100% tấm – giá. VFA (vietfood.org.vn, số liệu Oryza) bản tin 27/10/2026, nguồn ghi: THÁI LAN | A1 Super | 407 | 411"
+   },
+   {
+    "tim": "-4",
+    "thay": "+1",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://vietfood.org.vn/gia-gao-xuat-khau-cua-cac-nuoc-tren-the-gioi-ngay-27-10-2026/",
+    "ly_do": "Thái Lan Gạo trắng 5% tấm – thay đổi = giá 27/10/2026 (475 - 479) − giá kỳ trước 26/10/2026 (THÁI LAN | 5% tấm | 474 | 478) = +1 / +1. VFA (vietfood.org.vn, số liệu Oryza) bản tin 27/10/2026, nguồn ghi: THÁI LAN | 5% tấm | 475 | 479",
+    "tinh_toan": true
+   },
+   {
+    "tim": "455 - 459",
+    "thay": "475 - 479",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://vietfood.org.vn/gia-gao-xuat-khau-cua-cac-nuoc-tren-the-gioi-ngay-27-10-2026/",
+    "ly_do": "Thái Lan Gạo trắng 5% tấm – giá. VFA (vietfood.org.vn, số liệu Oryza) bản tin 27/10/2026, nguồn ghi: THÁI LAN | 5% tấm | 475 | 479"
+   }
+  ],
+  "can_duyet": [
+   "Giá trong nước lấy từ bảng mới nhất của banggianongsan.com: 'Bảng giá lúa gạo mới nhất - 29/10/2026' (đăng 09:17 28/10/2026); bài ghi ngày hôm sau theo quy tắc.",
+   "Dòng \"Lúa Nàng Hoa 9\": nguồn chưa có đủ giá (\"Lúa Nàng Hoa 9 (đ/kg) | 6.000 – 6.200 |  | Chưa có dữ liệu giá mới\") → giữ nguyên cả dòng.",
+   "Nguồn có thêm Lúa tươi DS1 (5.900 – 6.000 | 5.900 – 6.000 | 0 đ (Không đổi)); Tấm thơm (9.400 – 9.500 | 9.600 – 9.800 | ▲+200 ~ +300 đ); Cám (7.850 – 8.100 | 7.750 – 8.150 | ▼-100 ~ +50 đ) nhưng bài không có các dòng này → không thêm (quy tắc không thay đổi nội dung).",
+   "Bảng giá gạo thế giới lấy từ nguồn THAY THẾ: Hiệp hội Lương thực Việt Nam (VFA, số liệu Oryza) bản tin 27/10/2026 vì bài vietbao.vn 3 ngày gần nhất không có bảng thế giới. Ghép dòng: Thái Lan 5% tấm = '5% tấm'; Thái Lan 100% tấm = 'A1 Super'; Ấn Độ 100% tấm = '100% tấm Stxd'; Ấn Độ gạo đồ 5% tấm = 'Gạo đồ 5% Stxd'. Cột thay đổi tính so với bản tin 26/10/2026 – cần duyệt."
+  ]
+ }
+}

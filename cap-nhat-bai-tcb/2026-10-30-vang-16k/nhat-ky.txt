@@ -1,0 +1,20 @@
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py lay cap-nhat/cau-hinh.json
+bai1 ok
+▶ node /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/vang-16k/lay_gia_16k.js cap-nhat/gia.json
+sjc       Nữ trang 68% | mua 8,433,500 | bán 9,413,500 đ/chỉ | cập nhật 16:05:03 29/10/2026
+mihong    680 | mua 8,050,000 | bán 8,350,000 đ/chỉ | cập nhật 29/10/2026 13:18
+pnj       Vàng 680 (16.3K) | mua 8,476,000 | bán 9,466,000 đ/chỉ | cập nhật 29/10/2026 08:32:41
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py dung cap-nhat/cau-hinh.json 30/10/2026
+bai1 Vàng 16K giá hôm nay: Bảng giá chi tiết cập nhật – 30/10/2026: 0 bảng lãi suất [], 0 ô sửa, 0 ô kỳ hạn gần nhất, 0 ô '-', 0 ô đổi màu, đổi ngày/tháng: 9
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/vang-16k/tao_sua.py --xem cap-nhat/xem.txt --gia cap-nhat/gia.json --ra cap-nhat/sua.json
+6 chỗ cần đổi, 0 mục cần duyệt → cap-nhat/sua.json
+   84 → 83.5
+   81 → 80.5
+   94.339 → 94.135
+   84.539 → 84.335
+   dao động 81.0 - 94.7 triệu VND/lượng, tương đương khoảng 8.1 - 9.47 tr → dao động 80.5 - 94.7 triệu VND/lượng, tương đương khoảng 8.05 - 9.47 t
+   khoảng 81.0 - 94.7 triệu VND/lượng (mua vào - bán ra), tương đương kho → khoảng 80.5 - 94.7 triệu VND/lượng (mua vào - bán ra), tương đương kho
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py sua cap-nhat/cau-hinh.json cap-nhat/sua.json
+bai1: sửa được 6/6 chỗ
+Soát: khớp hết
+XONG vang-16k ngày 30/10/2026

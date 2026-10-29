@@ -1,0 +1,26 @@
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py lay cap-nhat/cau-hinh.json
+bai1 ok
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/gia-thep/lay_gia.py cap-nhat/gia.json
+barchart KHÔNG ĐỌC ĐƯỢC (HTTP 202, 0 byte – trang kiểm tra chống máy, không vượt)
+steelonline ngày 29-10-2026: 10 thương hiệu
+  Hoà Phát: 14,210 - 14,920 VND/kg | 102,596 - 814,309 VND/cây
+  Việt Ý: 13,840 - 14,750 VND/kg | 100,646 - 804,702 VND/cây
+  Việt Đức: 13,950 - 14,650 VND/kg | 100,719 - 799,616 VND/cây
+  Kyoei: 14,240 - 15,050 VND/kg | 102,812 - 816,004 VND/cây
+  Thái Nguyên: 14,590 - 15,500 VND/kg | 107,505 - 858,952 VND/cây
+  Thép VAS: 14,140 - 15,050 VND/kg | 102,090 - 827,306 VND/cây
+  Pomina: 13,940 - 14,850 VND/kg | 103,895 - 821,655 VND/cây
+  Việt Sing: 13,890 - 14,750 VND/kg | 101,368 - 804,702 VND/cây
+  TungHo: 13,840 - 14,850 VND/kg | 99,924 - 810,353 VND/cây
+  Miền Nam: 14,410 - 15,120 VND/kg | 106,278 - 819,960 VND/cây
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py dung cap-nhat/cau-hinh.json 30/10/2026
+bai1 Giá thép hôm nay: Bảng giá cập nhật và các yếu tố ảnh hưởng đến thị trường – 30/10/2026: 0 bảng lãi suất [], 0 ô sửa, 0 ô kỳ hạn gần nhất, 0 ô '-', 0 ô đổi màu, đổi ngày/tháng: 6
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/gia-thep/tao_sua.py --xem cap-nhat/xem.txt --gia cap-nhat/gia.json --goc cap-nhat/tam/bai1.html --ra cap-nhat/sua.json
+1 chỗ cần đổi, 2 mục cần duyệt → cap-nhat/sua.json
+   30/10/2026 → 29/10/2026
+  cần duyệt: Bảng giá thép thế giới: Barchart không đọc được (trang chặn máy chủ tự động, trả HTTP 202/403) – giữ nguyên toàn bộ giá và mức thay đổi cũ, giữ ngày cũ ở tiêu đề mục 1. Nhờ người cập nhật tay.
+  cần duyệt: Bảng giá thép trong nước: dùng bảng steelonline.vn ngày 29-10-2026 (trang mới nhất có số); khoảng giá = thấp nhất – cao nhất mọi ô VNĐ/kg và VNĐ/cây ở tab đầu tiên của mỗi hãng.
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py sua cap-nhat/cau-hinh.json cap-nhat/sua.json
+bai1: sửa được 1/1 chỗ
+Soát: khớp hết
+XONG gia-thep ngày 30/10/2026

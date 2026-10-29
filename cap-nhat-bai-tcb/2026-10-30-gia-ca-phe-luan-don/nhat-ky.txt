@@ -1,0 +1,46 @@
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py lay cap-nhat/cau-hinh.json
+bai1 ok
+thamkhao1 ok → /tmp/claude-0/-home-user-trang/1b398c43-e849-51a9-b1c6-50ad97fcbda2/scratchpad/chay-2910/kq/gia-ca-phe-luan-don/cap-nhat/tam/thamkhao1.txt (13347 ký tự)
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/gia-ca-phe-luan-don/lay_gia.py cap-nhat/gia.json
+Robusta London (cập nhật 15:38 ngày 29/10/2026):
+   11/2026     3.200  down     40  (hôm trước 3.240)
+   01/2027     3.199  down     21  (hôm trước 3.220)
+   03/2027     3.183  down     22  (hôm trước 3.205)
+   05/2027     3.175  down     19  (hôm trước 3.194)
+   07/2027     3.163  down     17  (hôm trước 3.180)
+Arabica New York (cập nhật 15:38 ngày 29/10/2026):
+   12/2026    286,75  down   7,00  (hôm trước 293,75)
+   03/2027    276,20  down   4,90  (hôm trước 281,10)
+   05/2027    272,25  down   4,85  (hôm trước 277,10)
+   07/2027    269,50  down   4,65  (hôm trước 274,15)
+   09/2027    266,90  down   4,50  (hôm trước 271,40)
+Trạng thái thị trường: ?
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py dung cap-nhat/cau-hinh.json 30/10/2026
+bai1 Giá cà phê sàn London và New York mới nhất hôm nay – 30/10/2026: 0 bảng lãi suất [], 0 ô sửa, 0 ô kỳ hạn gần nhất, 0 ô '-', 0 ô đổi màu, đổi ngày/tháng: 4
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/gia-ca-phe-luan-don/tao_sua.py --xem cap-nhat/xem.txt --gia cap-nhat/gia.json --goc cap-nhat/tam/bai1.html --ra cap-nhat/sua.json
+20 chỗ cần đổi, 1 mục cần duyệt → cap-nhat/sua.json
+   3.240 → 3.200
+   +46 USD/tấn → -40 USD/tấn
+   3.220 → 3.199
+   +19 USD/tấn → -21 USD/tấn
+   3.205 → 3.183
+   +17 USD/tấn → -22 USD/tấn
+   3.194 → 3.175
+   +17 USD/tấn → -19 USD/tấn
+   3.180 → 3.163
+   +22 USD/tấn → -17 USD/tấn
+   293.75 → 286.75
+   -7.20 cent/pound → -7.00 cent/pound
+   281.10 → 276.20
+   -4.10 cent/pound → -4.90 cent/pound
+   277.10 → 272.25
+   -3.55 cent/pound → -4.85 cent/pound
+   274.15 → 269.50
+   -3.35 cent/pound → -4.65 cent/pound
+   271.40 → 266.90
+   -3.20 cent/pound → -4.50 cent/pound
+  cần duyệt: Giá lấy theo lần cập nhật của nguồn (Robusta London 15:38 ngày 29/10/2026; Arabica New York 15:38 ngày 29/10/2026) – nếu sàn đang giao dịch thì đây là giá trong phiên, có thể còn đổi; bài ghi ngày hôm sau theo quy tắc chung.
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py sua cap-nhat/cau-hinh.json cap-nhat/sua.json
+bai1: sửa được 20/20 chỗ
+Soát: khớp hết
+XONG gia-ca-phe-luan-don ngày 30/10/2026

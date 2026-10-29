@@ -1,0 +1,28 @@
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py lay cap-nhat/cau-hinh.json
+bai1 ok
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/gia-lua-gao/lay_gia.py cap-nhat/gia.json
+bgns    bảng 29/10/2026 (đăng 09:17 28/10/2026): 32 dòng
+vietbao bài mới nhất 28/10/2026: https://vietbao.vn/gia-lua-gao-hom-nay-28102026-gao-thom-xuat-khau-duoc-chao-bao-nhieu-613341.html
+        bảng thế giới: không có trong các bài 3 ngày gần nhất
+vfa     bản tin 27/10/2026: 23 dòng; kỳ trước: 26/10/2026
+→ cap-nhat/gia.json
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py dung cap-nhat/cau-hinh.json 30/10/2026
+bai1 Giá lúa gạo hôm nay: Cập nhật thị trường trong nước, thế giới & các yếu tố tác động – 30/10/2026: 0 bảng lãi suất [], 0 ô sửa, 0 ô kỳ hạn gần nhất, 0 ô '-', 0 ô đổi màu, đổi ngày/tháng: 4
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/gia-lua-gao/tao_sua.py --xem cap-nhat/xem.txt --gia cap-nhat/gia.json --goc cap-nhat/tam/bai1.html --ra cap-nhat/sua.json
+8 chỗ cần đổi, 4 mục cần duyệt → cap-nhat/sua.json
+   Chưa có dữ liệu → Không đổi
+   381 - 385 → 378 - 382
+   +3 → +2
+   326 - 330 → 330 - 334
+   -1 → Không đổi
+   381 - 385 → 407 - 411
+   -4 → +1
+   455 - 459 → 475 - 479
+  cần duyệt: Giá trong nước lấy từ bảng mới nhất của banggianongsan.com: 'Bảng giá lúa gạo mới nhất - 29/10/2026' (đăng 09:17 28/10/2026); bài ghi ngày hôm sau theo quy tắc.
+  cần duyệt: Dòng "Lúa Nàng Hoa 9": nguồn chưa có đủ giá ("Lúa Nàng Hoa 9 (đ/kg) | 6.000 – 6.200 |  | Chưa có dữ liệu giá mới") → giữ nguyên cả dòng.
+  cần duyệt: Nguồn có thêm Lúa tươi DS1 (5.900 – 6.000 | 5.900 – 6.000 | 0 đ (Không đổi)); Tấm thơm (9.400 – 9.500 | 9.600 – 9.800 | ▲+200 ~ +300 đ); Cám (7.850 – 8.100 | 7.750 – 8.150 | ▼-100 ~ +50 đ) nhưng bài không có các dòng này → không thêm (quy tắc không thay đổi nội dung).
+  cần duyệt: Bảng giá gạo thế giới lấy từ nguồn THAY THẾ: Hiệp hội Lương thực Việt Nam (VFA, số liệu Oryza) bản tin 27/10/2026 vì bài vietbao.vn 3 ngày gần nhất không có bảng thế giới. Ghép dòng: Thái Lan 5% tấm = '5% tấm'; Thái Lan 100% tấm = 'A1 Super'; Ấn Độ 100% tấm = '100% tấm Stxd'; Ấn Độ gạo đồ 5% tấm = 'Gạo đồ 5% Stxd'. Cột thay đổi tính so với bản tin 26/10/2026 – cần duyệt.
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py sua cap-nhat/cau-hinh.json cap-nhat/sua.json
+bai1: sửa được 8/8 chỗ
+Soát: khớp hết
+XONG gia-lua-gao ngày 30/10/2026

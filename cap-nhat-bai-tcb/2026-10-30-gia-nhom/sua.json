@@ -1,0 +1,79 @@
+{
+ "bai1": {
+  "sua": [
+   {
+    "tim": "ALIN2027 3,160 +0.59%",
+    "thay": "ALIN2027 3,145 -0.45%",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.tradingview.com/symbols/COMEX-ALI1!/contracts/",
+    "ly_do": "TradingView dòng ALIN2027 (đáo hạn 2027-07-28): Price \"3,145.75\", Chg % \"-0.45%\" – As of today at 01:00 GMT (giá trễ D). Bài ghi giá số nguyên thì bỏ phần lẻ."
+   },
+   {
+    "tim": "ALIM2027 3,150 +0.59%",
+    "thay": "ALIM2027 3,135 -0.45%",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.tradingview.com/symbols/COMEX-ALI1!/contracts/",
+    "ly_do": "TradingView dòng ALIM2027 (đáo hạn 2027-06-28): Price \"3,135.75\", Chg % \"-0.45%\" – As of today at 01:00 GMT (giá trễ D). Bài ghi giá số nguyên thì bỏ phần lẻ."
+   },
+   {
+    "tim": "ALIK2027 3,164 +1.33%",
+    "thay": "ALIK2027 3,148 -0.51%",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.tradingview.com/symbols/COMEX-ALI1!/contracts/",
+    "ly_do": "TradingView dòng ALIK2027 (đáo hạn 2027-05-26): Price \"3,148.00\", Chg % \"-0.51%\" – As of today at 01:00 GMT (giá trễ D). Bài ghi giá số nguyên thì bỏ phần lẻ."
+   },
+   {
+    "tim": "ALIJ2027 3,165 +1.63%",
+    "thay": "ALIJ2027 3,147 -0.56%",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.tradingview.com/symbols/COMEX-ALI1!/contracts/",
+    "ly_do": "TradingView dòng ALIJ2027 (đáo hạn 2027-04-28): Price \"3,147.50\", Chg % \"-0.56%\" – As of today at 01:00 GMT (giá trễ D). Bài ghi giá số nguyên thì bỏ phần lẻ."
+   },
+   {
+    "tim": "ALIH2027 3,169 +1.92%",
+    "thay": "ALIH2027 3,159 -0.33%",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.tradingview.com/symbols/COMEX-ALI1!/contracts/",
+    "ly_do": "TradingView dòng ALIH2027 (đáo hạn 2027-03-29): Price \"3,159.00\", Chg % \"-0.33%\" – As of today at 01:00 GMT (giá trễ D). Bài ghi giá số nguyên thì bỏ phần lẻ."
+   },
+   {
+    "tim": "ALIG2027 3,172 +1.94%",
+    "thay": "ALIG2027 3,163 -0.28%",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.tradingview.com/symbols/COMEX-ALI1!/contracts/",
+    "ly_do": "TradingView dòng ALIG2027 (đáo hạn 2027-02-24): Price \"3,163.75\", Chg % \"-0.28%\" – As of today at 01:00 GMT (giá trễ D). Bài ghi giá số nguyên thì bỏ phần lẻ."
+   },
+   {
+    "tim": "ALIF2027 3,185 +0.07%",
+    "thay": "ALIF2027 3,183 +0.24%",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.tradingview.com/symbols/COMEX-ALI1!/contracts/",
+    "ly_do": "TradingView dòng ALIF2027 (đáo hạn 2027-01-27): Price \"3,183.00\", Chg % \"+0.24%\" – As of today at 01:00 GMT (giá trễ D). Bài ghi giá số nguyên thì bỏ phần lẻ."
+   },
+   {
+    "tim": "ALIZ2026 3,240 +1.90%",
+    "thay": "ALIZ2026 3,231 -0.30%",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.tradingview.com/symbols/COMEX-ALI1!/contracts/",
+    "ly_do": "TradingView dòng ALIZ2026 (đáo hạn 2026-12-29): Price \"3,231.00\", Chg % \"-0.30%\" – As of today at 01:00 GMT (giá trễ D). Bài ghi giá số nguyên thì bỏ phần lẻ."
+   },
+   {
+    "tim": "ALIX2026 3,294 +1.96%",
+    "thay": "ALIX2026 3,287 -0.22%",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://www.tradingview.com/symbols/COMEX-ALI1!/contracts/",
+    "ly_do": "TradingView dòng ALIX2026 (đáo hạn 2026-11-25): Price \"3,287.00\", Chg % \"-0.22%\" – As of today at 01:00 GMT (giá trễ D). Bài ghi giá số nguyên thì bỏ phần lẻ."
+   }
+  ],
+  "can_duyet": []
+ }
+}

@@ -1,0 +1,21 @@
+{
+ "bai1": {
+  "sua": [
+   {
+    "tim": "Bảng giá đồng thế giới 30/10/2026",
+    "thay": "Bảng giá đồng thế giới 29/10/2026",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "",
+    "ly_do": "bảng 1.2 không cập nhật được – giữ ngày gốc của bài để tiêu đề không ghi ngày mới cho giá cũ"
+   }
+  ],
+  "can_duyet": [
+   "Bảng 1.1: dòng thứ 4 bài ghi \"Đồng cháy\" (trùng tên dòng khác), nguồn ở cùng vị trí ghi \"Đồng vàng\" – lấy giá dòng \"Đồng vàng\", giữ nguyên tên trong bài (không đổi tên riêng), nhờ biên tập xem lại tên.",
+   "Bảng 1.1: có dòng viết dấu phẩy (155,000), có dòng viết dấu chấm (130.000) – giữ nguyên cách viết của từng ô, nhờ biên tập thống nhất nếu muốn.",
+   "Bảng 1.1: trang nguồn thumuaphelieugiacao24h.vn ghi sửa lần cuối 04/05/2026 – nguồn có thể không cập nhật hằng ngày, nhờ biên tập lưu ý.",
+   "Bảng 1.2 (giá đồng thế giới): nguồn Barchart HG*0 chặn máy chủ (CloudFront) nên không đọc được số – giữ nguyên cả bảng. Lưu ý thêm: bài đang ghi mã hợp đồng ALI… (ALIV2026 … ALIN2027) – ALI là mã hợp đồng NHÔM, không phải đồng (đồng COMEX là HG, USD/pound); cần Trang/biên tập chốt bảng này dùng đồng HG hay nhôm ALI.",
+   "Các số trong phần phân tích (thiếu khoảng 25% vào năm 2035; nhu cầu 26.7 triệu tấn năm 2024 → 34.1 triệu tấn năm 2040; năm 2025) không có trong nguồn được chọn nên giữ nguyên."
+  ]
+ }
+}

@@ -1,0 +1,19 @@
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py lay cap-nhat/cau-hinh.json
+bai1 ok
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/gia-dong/lay_gia.py cap-nhat/gia.json
+barchart.com (đồng COMEX HG) KHÔNG ĐỌC ĐƯỢC: trang chặn máy chủ (CloudFront), công thức không vượt chặn — https://www.barchart.com/futures/quotes/HG*0/futures-prices?viewName=main
+phế liệu: Đồng cáp | 155.000 – 250.000; Đồng đỏ | 140.000 – 210.000; Đồng cháy | 130.000 – 180.000; Đồng vàng | 105.000 – 155.000 | trang sửa lần cuối 2026-05-04T09:43:34+00:00
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py dung cap-nhat/cau-hinh.json 30/10/2026
+bai1 Giá đồng hôm nay trực tuyến & các yếu tố tác động đến thị trường – 30/10/2026: 0 bảng lãi suất [], 0 ô sửa, 0 ô kỳ hạn gần nhất, 0 ô '-', 0 ô đổi màu, đổi ngày/tháng: 6
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/gia-dong/tao_sua.py --xem cap-nhat/xem.txt --gia cap-nhat/gia.json --goc cap-nhat/tam/bai1.html --ra cap-nhat/sua.json
+1 chỗ cần đổi, 5 mục cần duyệt → cap-nhat/sua.json
+   Bảng giá đồng thế giới 30/10/2026 → Bảng giá đồng thế giới 29/10/2026
+  cần duyệt: Bảng 1.1: dòng thứ 4 bài ghi "Đồng cháy" (trùng tên dòng khác), nguồn ở cùng vị trí ghi "Đồng vàng" – lấy giá dòng "Đồng vàng", giữ nguyên tên trong bài (không đổi tên riêng), nhờ biên tập xem lại tên.
+  cần duyệt: Bảng 1.1: có dòng viết dấu phẩy (155,000), có dòng viết dấu chấm (130.000) – giữ nguyên cách viết của từng ô, nhờ biên tập thống nhất nếu muốn.
+  cần duyệt: Bảng 1.1: trang nguồn thumuaphelieugiacao24h.vn ghi sửa lần cuối 04/05/2026 – nguồn có thể không cập nhật hằng ngày, nhờ biên tập lưu ý.
+  cần duyệt: Bảng 1.2 (giá đồng thế giới): nguồn Barchart HG*0 chặn máy chủ (CloudFront) nên không đọc được số – giữ nguyên cả bảng. Lưu ý thêm: bài đang ghi mã hợp đồng ALI… (ALIV2026 … ALIN2027) – ALI là mã hợp đồng NHÔM, không phải đồng (đồng COMEX là HG, USD/pound); cần Trang/biên tập chốt bảng này dùng đồng HG hay nhôm ALI.
+  cần duyệt: Các số trong phần phân tích (thiếu khoảng 25% vào năm 2035; nhu cầu 26.7 triệu tấn năm 2024 → 34.1 triệu tấn năm 2040; năm 2025) không có trong nguồn được chọn nên giữ nguyên.
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py sua cap-nhat/cau-hinh.json cap-nhat/sua.json
+bai1: sửa được 1/1 chỗ
+Soát: khớp hết
+XONG gia-dong ngày 30/10/2026

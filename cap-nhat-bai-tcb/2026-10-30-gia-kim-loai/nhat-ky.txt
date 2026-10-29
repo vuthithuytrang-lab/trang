@@ -1,0 +1,44 @@
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py lay cap-nhat/cau-hinh.json
+bai1 ok
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/gia-kim-loai/lay_gia.py cap-nhat/gia.json
+vang       Vàng (GOLD / XAU USD) | 125,469,874 VNĐ / lượng | -0.01% | lấy lúc 16h08 giờ VN 29/10/2026 (nguồn cập nhật theo thời gian thực)
+bac        Bạc (SILVER / XAG USD) | 1,647,288 VNĐ / lượng | +0.08% | lấy lúc 16h08 giờ VN 29/10/2026 (nguồn cập nhật theo thời gian thực)
+dong       Đồng (COPPER) | 375,490,338 VNĐ / tấn | -0.05% | lấy lúc 16h08 giờ VN 29/10/2026 (nguồn cập nhật theo thời gian thực)
+bach_kim   Bạch kim (PLATINUM) | 46,979,957 VNĐ / lượng | -0.03% | lấy lúc 16h08 giờ VN 29/10/2026 (nguồn cập nhật theo thời gian thực)
+niken      Nickel (NICKEL) | 403,149,798 VNĐ / tấn | -0.30% | lấy lúc 16h08 giờ VN 29/10/2026 (nguồn cập nhật theo thời gian thực)
+chi        Chì (LEAD) | 49,382,363 VNĐ / tấn | +0.03% | lấy lúc 16h08 giờ VN 29/10/2026 (nguồn cập nhật theo thời gian thực)
+nhom       Nhôm (ALUMINUM) | 79,015,397 VNĐ / tấn | -0.19% | lấy lúc 16h08 giờ VN 29/10/2026 (nguồn cập nhật theo thời gian thực)
+kem        Kẽm (ZINC) | 100,394,788 VNĐ / tấn | +0.13% | lấy lúc 16h08 giờ VN 29/10/2026 (nguồn cập nhật theo thời gian thực)
+quang_sat  Quặng sắt 62% Fe (IRON ORE) | 2,343,053 VNĐ / dmtu | -0.06% | lấy lúc 16h08 giờ VN 29/10/2026 (nguồn cập nhật theo thời gian thực)
+thiec      Thiếc (TIN) | 1,310,172,261 VNĐ / tấn | -1.45% | lấy lúc 16h08 giờ VN 29/10/2026 (nguồn cập nhật theo thời gian thực)
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py dung cap-nhat/cau-hinh.json 30/10/2026
+bai1 Giá kim loại thế giới: Bảng giá cập nhật và các yếu tố ảnh hưởng – 30/10/2026: 0 bảng lãi suất [], 0 ô sửa, 0 ô kỳ hạn gần nhất, 0 ô '-', 0 ô đổi màu, đổi ngày/tháng: 4
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/gia-kim-loai/tao_sua.py --xem cap-nhat/xem.txt --gia cap-nhat/gia.json --goc cap-nhat/tam/bai1.html --ra cap-nhat/sua.json
+20 chỗ cần đổi, 3 mục cần duyệt → cap-nhat/sua.json
+   +0.99 → -1.45
+   1,318,406,823 → 1,310,172,261
+   -0.09 → -0.06
+   2,343,915 → 2,343,053
+   +0.16 → +0.13
+   99,684,860 → 100,394,788
+   -0.01 → -0.19
+   80,111,750 → 79,015,397
+   +0.02 → +0.03
+   49,940,631 → 49,382,363
+   +0.33 → -0.30
+   404,693,550 → 403,149,798
+   +0.01 → -0.03
+   47,903,903 → 46,979,957
+   +0.10 → -0.05
+   377,992,801 → 375,490,338
+   -0.11 → +0.08
+   1,675,219 → 1,647,288
+   +0.03 → -0.01
+   125,606,371 → 125,469,874
+  cần duyệt: Giá nguồn chạy theo thời gian thực, lấy lúc 16h08 giờ VN 29/10/2026; mở lại trang nguồn có thể thấy số khác. Đã dùng số trong "Bảng giá Kim loại", không dùng dải chạy chữ đầu trang.
+  cần duyệt: Tiêu đề cột ghi "Giá (VND/lượng)" nhưng nguồn niêm yết Đồng, Niken, Chì, Nhôm, Kẽm, Thiếc theo VNĐ/tấn và Quặng sắt theo VNĐ/dmtu – giữ nguyên tiêu đề cột như bài (bài đã có dòng Lưu ý về đơn vị).
+  cần duyệt: Các mốc năm trong phần phân tích (năm 2025, đầu năm 2026, đầu tư khoáng sản giảm 9% năm 2025, World Bank…) – nguồn không đề cập, giữ nguyên.
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py sua cap-nhat/cau-hinh.json cap-nhat/sua.json
+bai1: sửa được 20/20 chỗ
+Soát: khớp hết
+XONG gia-kim-loai ngày 30/10/2026

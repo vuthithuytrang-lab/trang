@@ -1,0 +1,29 @@
+cp: cannot stat '/home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/lai-suat-1/cau-hinh.json': No such file or directory
+▶ python3 -I cap-nhat.py lay
+bai1.html ok
+bai2.html ok
+topi.html ok
+vne-offline.json ok
+vne-online.json ok
+▶ python3 -I cap-nhat.py dung 30/10/2026
+bai1 62 ô sửa, 11 ô theo kỳ hạn gần nhất, 0 ô trường hợp B, 0 số ngoài bảng, đổi ngày/tháng: ['Tiêu đề: 29/10/2026 → 30/10/2026', 'Sapo: 29/10/2026 → 30/10/2026', 'Ngày đăng: 29/10/2026 → 30/10/2026']
+bai2 0 ô sửa, 0 ô theo kỳ hạn gần nhất, 0 ô trường hợp B, 0 số ngoài bảng, đổi ngày/tháng: ['Tiêu đề: 29/10/2026 → 30/10/2026', 'Sapo: 29/10/2026 → 30/10/2026', 'Ngày đăng: 29/10/2026 → 30/10/2026']
+  cần duyệt: Bảng Tại quầy – VPBank: 36 tháng (5.8, Topi) thấp hơn hẳn 24 tháng (6.9, Topi) – số bất thường trên nguồn, vẫn điền theo nguồn.
+  cần duyệt: Bảng Tại quầy – SCB – 1 tháng: nguồn ghi 0.1, thấp bất thường.
+  cần duyệt: Bảng Tại quầy – SCB – 3 tháng: nguồn ghi 0.1, thấp bất thường.
+  cần duyệt: Bảng Tại quầy – SCB – 6 tháng: nguồn ghi 0.5, thấp bất thường.
+  cần duyệt: Bảng Online – VPBank: 36 tháng (6, Topi) thấp hơn hẳn 24 tháng (7.1, Topi) – số bất thường trên nguồn, vẫn điền theo nguồn.
+  cần duyệt: Bảng Online – SeABank: Topi không có ngân hàng này ở bảng online → kỳ hạn 18, 24, 36 tháng lấy theo kỳ hạn gần nhất.
+  cần duyệt: Bảng Online – VIB: 18 tháng (5.9, Topi) thấp hơn hẳn 12 tháng (7, VnExpress) – số bất thường trên nguồn, vẫn điền theo nguồn.
+  cần duyệt: Bảng Online – VietinBank: 18 tháng (5.9, Topi) thấp hơn hẳn 12 tháng (6.8, VnExpress) – số bất thường trên nguồn, vẫn điền theo nguồn.
+  cần duyệt: Bảng Online – Agribank: Topi không có ngân hàng này ở bảng online → kỳ hạn 18, 24, 36 tháng lấy theo kỳ hạn gần nhất.
+  cần duyệt: Bảng Online – LPBank: 36 tháng (6.1, Topi) thấp hơn hẳn 24 tháng (7.2, Topi) – số bất thường trên nguồn, vẫn điền theo nguồn.
+  cần duyệt: Bảng Online – SCB – 1 tháng: nguồn ghi 0.1, thấp bất thường.
+  cần duyệt: Bảng Online – SCB – 3 tháng: nguồn ghi 0.5, thấp bất thường.
+  cần duyệt: Bảng Online – SCB – 6 tháng: nguồn ghi 0.5, thấp bất thường.
+  cần duyệt: Bảng Online – SCB – 12 tháng: nguồn ghi 0.6, thấp bất thường.
+  cần duyệt: Bảng Online – BacABank: Topi không có ngân hàng này ở bảng online → kỳ hạn 18, 24, 36 tháng lấy theo kỳ hạn gần nhất.
+  cần duyệt: Ngoài bảng – "Thông thường lãi suất gửi tiết kiệm online sẽ cao hơn lãi suất gửi tiết kiệm tại quầy từ 0.1 - 0.4%/năm.": khoảng chênh online − tại quầy không tính gọn được từ 2 bảng mới: 231 cặp ngân hàng–kỳ hạn, online cao hơn 169, bằng 49, thấp hơn 13; chênh từ -3.1 đến 3.6, nửa giữa 0–0.5 điểm %. Giữ nguyên.
+  cần duyệt: Ngoài bảng – "Ưu tiên gửi tiết kiệm online: Các khoản tiết kiệm online thường có lãi suất cao hơn gửi tại quầy khoảng 0.1 -…": khoảng chênh online − tại quầy không tính gọn được từ 2 bảng mới: 231 cặp ngân hàng–kỳ hạn, online cao hơn 169, bằng 49, thấp hơn 13; chênh từ -3.1 đến 3.6, nửa giữa 0–0.5 điểm %. Giữ nguyên.
+bai1 Lãi suất tiết kiệm Techcombank – 30/10/2026: 0 bảng lãi suất
+XONG lai-suat-1 ngày 30/10/2026

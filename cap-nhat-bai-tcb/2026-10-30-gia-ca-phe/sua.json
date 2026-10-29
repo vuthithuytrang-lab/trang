@@ -1,0 +1,250 @@
+{
+ "bai1": {
+  "sua": [
+   {
+    "tim": "-2.75",
+    "thay": "-4.50",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://giacaphe.com/gia-ca-phe-truc-tuyen/",
+    "ly_do": "Arabica kỳ hạn 09/27: 266.90, thay đổi -4.50 (giacaphe.com, Cập nhật: 29/10/2026 lúc 16:05:01); mã hợp đồng theo quy ước tháng của sàn ICE"
+   },
+   {
+    "tim": "282.90s",
+    "thay": "266.90",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://giacaphe.com/gia-ca-phe-truc-tuyen/",
+    "ly_do": "Arabica kỳ hạn 09/27: 266.90, thay đổi -4.50 (giacaphe.com, Cập nhật: 29/10/2026 lúc 16:05:01); mã hợp đồng theo quy ước tháng của sàn ICE"
+   },
+   {
+    "tim": "-3.10",
+    "thay": "-4.65",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://giacaphe.com/gia-ca-phe-truc-tuyen/",
+    "ly_do": "Arabica kỳ hạn 07/27: 269.50, thay đổi -4.65 (giacaphe.com, Cập nhật: 29/10/2026 lúc 16:05:01); mã hợp đồng theo quy ước tháng của sàn ICE"
+   },
+   {
+    "tim": "285.90s",
+    "thay": "269.50",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://giacaphe.com/gia-ca-phe-truc-tuyen/",
+    "ly_do": "Arabica kỳ hạn 07/27: 269.50, thay đổi -4.65 (giacaphe.com, Cập nhật: 29/10/2026 lúc 16:05:01); mã hợp đồng theo quy ước tháng của sàn ICE"
+   },
+   {
+    "tim": "-3.45",
+    "thay": "-4.85",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://giacaphe.com/gia-ca-phe-truc-tuyen/",
+    "ly_do": "Arabica kỳ hạn 05/27: 272.25, thay đổi -4.85 (giacaphe.com, Cập nhật: 29/10/2026 lúc 16:05:01); mã hợp đồng theo quy ước tháng của sàn ICE"
+   },
+   {
+    "tim": "289.00s",
+    "thay": "272.25",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://giacaphe.com/gia-ca-phe-truc-tuyen/",
+    "ly_do": "Arabica kỳ hạn 05/27: 272.25, thay đổi -4.85 (giacaphe.com, Cập nhật: 29/10/2026 lúc 16:05:01); mã hợp đồng theo quy ước tháng của sàn ICE"
+   },
+   {
+    "tim": "-4.05",
+    "thay": "-4.90",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://giacaphe.com/gia-ca-phe-truc-tuyen/",
+    "ly_do": "Arabica kỳ hạn 03/27: 276.20, thay đổi -4.90 (giacaphe.com, Cập nhật: 29/10/2026 lúc 16:05:01); mã hợp đồng theo quy ước tháng của sàn ICE"
+   },
+   {
+    "tim": "293.40s",
+    "thay": "276.20",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://giacaphe.com/gia-ca-phe-truc-tuyen/",
+    "ly_do": "Arabica kỳ hạn 03/27: 276.20, thay đổi -4.90 (giacaphe.com, Cập nhật: 29/10/2026 lúc 16:05:01); mã hợp đồng theo quy ước tháng của sàn ICE"
+   },
+   {
+    "tim": "-5",
+    "thay": "-7.00",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://giacaphe.com/gia-ca-phe-truc-tuyen/",
+    "ly_do": "Arabica kỳ hạn 12/26: 286.75, thay đổi -7.00 (giacaphe.com, Cập nhật: 29/10/2026 lúc 16:05:01); mã hợp đồng theo quy ước tháng của sàn ICE"
+   },
+   {
+    "tim": "307.45s",
+    "thay": "286.75",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://giacaphe.com/gia-ca-phe-truc-tuyen/",
+    "ly_do": "Arabica kỳ hạn 12/26: 286.75, thay đổi -7.00 (giacaphe.com, Cập nhật: 29/10/2026 lúc 16:05:01); mã hợp đồng theo quy ước tháng của sàn ICE"
+   },
+   {
+    "tim": "-40",
+    "thay": "-2",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://giacaphe.com/gia-ca-phe-truc-tuyen/",
+    "ly_do": "Robusta kỳ hạn 07/27: 3,161, thay đổi -2 (giacaphe.com, Cập nhật: 29/10/2026 lúc 16:05:01); mã hợp đồng theo quy ước tháng của sàn ICE"
+   },
+   {
+    "tim": "3,204s",
+    "thay": "3,161",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://giacaphe.com/gia-ca-phe-truc-tuyen/",
+    "ly_do": "Robusta kỳ hạn 07/27: 3,161, thay đổi -2 (giacaphe.com, Cập nhật: 29/10/2026 lúc 16:05:01); mã hợp đồng theo quy ước tháng của sàn ICE"
+   },
+   {
+    "tim": "-40",
+    "thay": "+15",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://giacaphe.com/gia-ca-phe-truc-tuyen/",
+    "ly_do": "Robusta kỳ hạn 05/27: 3,190, thay đổi +15 (giacaphe.com, Cập nhật: 29/10/2026 lúc 16:05:01); mã hợp đồng theo quy ước tháng của sàn ICE"
+   },
+   {
+    "tim": "3,219s",
+    "thay": "3,190",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://giacaphe.com/gia-ca-phe-truc-tuyen/",
+    "ly_do": "Robusta kỳ hạn 05/27: 3,190, thay đổi +15 (giacaphe.com, Cập nhật: 29/10/2026 lúc 16:05:01); mã hợp đồng theo quy ước tháng của sàn ICE"
+   },
+   {
+    "tim": "-45",
+    "thay": "+17",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://giacaphe.com/gia-ca-phe-truc-tuyen/",
+    "ly_do": "Robusta kỳ hạn 03/27: 3,200, thay đổi +17 (giacaphe.com, Cập nhật: 29/10/2026 lúc 16:05:01); mã hợp đồng theo quy ước tháng của sàn ICE"
+   },
+   {
+    "tim": "3,329s",
+    "thay": "3,200",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://giacaphe.com/gia-ca-phe-truc-tuyen/",
+    "ly_do": "Robusta kỳ hạn 03/27: 3,200, thay đổi +17 (giacaphe.com, Cập nhật: 29/10/2026 lúc 16:05:01); mã hợp đồng theo quy ước tháng của sàn ICE"
+   },
+   {
+    "tim": "-59",
+    "thay": "+15",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://giacaphe.com/gia-ca-phe-truc-tuyen/",
+    "ly_do": "Robusta kỳ hạn 01/27: 3,214, thay đổi +15 (giacaphe.com, Cập nhật: 29/10/2026 lúc 16:05:01); mã hợp đồng theo quy ước tháng của sàn ICE"
+   },
+   {
+    "tim": "3,242s",
+    "thay": "3,214",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://giacaphe.com/gia-ca-phe-truc-tuyen/",
+    "ly_do": "Robusta kỳ hạn 01/27: 3,214, thay đổi +15 (giacaphe.com, Cập nhật: 29/10/2026 lúc 16:05:01); mã hợp đồng theo quy ước tháng của sàn ICE"
+   },
+   {
+    "tim": "-60",
+    "thay": "-40",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://giacaphe.com/gia-ca-phe-truc-tuyen/",
+    "ly_do": "Robusta kỳ hạn 11/26: 3,200, thay đổi -40 (giacaphe.com, Cập nhật: 29/10/2026 lúc 16:05:01); mã hợp đồng theo quy ước tháng của sàn ICE"
+   },
+   {
+    "tim": "3,228s",
+    "thay": "3,200",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://giacaphe.com/gia-ca-phe-truc-tuyen/",
+    "ly_do": "Robusta kỳ hạn 11/26: 3,200, thay đổi -40 (giacaphe.com, Cập nhật: 29/10/2026 lúc 16:05:01); mã hợp đồng theo quy ước tháng của sàn ICE"
+   },
+   {
+    "tim": "-1700",
+    "thay": "-2200",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe/",
+    "ly_do": "Lâm Đồng: 88,000 đ/kg, thay đổi -2,200 (Nhà Bè Agri, cập nhật 16:07 29/10/2026)"
+   },
+   {
+    "tim": "88,500",
+    "thay": "88,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe/",
+    "ly_do": "Lâm Đồng: 88,000 đ/kg, thay đổi -2,200 (Nhà Bè Agri, cập nhật 16:07 29/10/2026)"
+   },
+   {
+    "tim": "-1800",
+    "thay": "-2500",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe/",
+    "ly_do": "Gia Lai: 88,300 đ/kg, thay đổi -2,500 (Nhà Bè Agri, cập nhật 16:07 29/10/2026)"
+   },
+   {
+    "tim": "89,000",
+    "thay": "88,300",
+    "lan": 3,
+    "giu_nguyen_so": true,
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe/",
+    "ly_do": "Gia Lai: 88,300 đ/kg, thay đổi -2,500 (Nhà Bè Agri, cập nhật 16:07 29/10/2026)"
+   },
+   {
+    "tim": "-2800",
+    "thay": "-3400",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe/",
+    "ly_do": "Đắk Lắk: 88,400 đ/kg, thay đổi -3,400 (Nhà Bè Agri, cập nhật 16:07 29/10/2026)"
+   },
+   {
+    "tim": "89,000",
+    "thay": "88,400",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe/",
+    "ly_do": "Đắk Lắk: 88,400 đ/kg, thay đổi -3,400 (Nhà Bè Agri, cập nhật 16:07 29/10/2026)"
+   },
+   {
+    "tim": "-1700",
+    "thay": "-2500",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe/",
+    "ly_do": "Đắk Nông: 88,500 đ/kg, thay đổi -2,500 (Nhà Bè Agri, cập nhật 16:07 29/10/2026)"
+   },
+   {
+    "tim": "89,300",
+    "thay": "88,500",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe/",
+    "ly_do": "Đắk Nông: 88,500 đ/kg, thay đổi -2,500 (Nhà Bè Agri, cập nhật 16:07 29/10/2026)"
+   },
+   {
+    "tim": "-1800",
+    "thay": "-2500",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe/",
+    "ly_do": "Tây Nguyên: 88,300 đ/kg, thay đổi -2,500 (Nhà Bè Agri, cập nhật 16:07 29/10/2026)"
+   },
+   {
+    "tim": "89,000",
+    "thay": "88,300",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://nhabeagri.com/gia-nong-san/gia-ca-phe/",
+    "ly_do": "Tây Nguyên: 88,300 đ/kg, thay đổi -2,500 (Nhà Bè Agri, cập nhật 16:07 29/10/2026)"
+   }
+  ],
+  "can_duyet": [
+   "Lúc chạy (16:07 29/10/2026) sàn London/New York đang giao dịch: giá thế giới là giá trực tuyến, chưa phải giá chốt phiên, nên KHÔNG ghi ký tự \"s\" sau giá. Muốn có giá chốt phiên thì chạy lại trước 15:00.",
+   "Bài gốc trên web có lỗi chính tả \"Tây Nuy\" (đúng: \"Tây Nguyên\") – theo quy tắc không sửa câu chữ, chỉ báo lại."
+  ]
+ }
+}

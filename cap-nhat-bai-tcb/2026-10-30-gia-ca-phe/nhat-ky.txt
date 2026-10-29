@@ -1,0 +1,84 @@
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py lay cap-nhat/cau-hinh.json
+bai1 ok
+thamkhao1 ok → /tmp/claude-0/-home-user-trang/1b398c43-e849-51a9-b1c6-50ad97fcbda2/scratchpad/chay-2910/kq/gia-ca-phe/cap-nhat/tam/thamkhao1.txt (18386 ký tự)
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py dung cap-nhat/cau-hinh.json 30/10/2026
+bai1 Giá cà phê hôm nay trực tuyến – 30/10/2026: 0 bảng lãi suất [], 0 ô sửa, 0 ô kỳ hạn gần nhất, 0 ô '-', 0 ô đổi màu, đổi ngày/tháng: 6
+▶ node /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/gia-ca-phe/lay_gia_the_gioi.js cap-nhat/gia-the-gioi.json
+{
+ "cap_nhat": "Cập nhật: 29/10/2026 lúc 16:05:01",
+ "bang": {
+  "robusta": [
+   {
+    "ky_han": "11/26",
+    "gia": "3200",
+    "thay_doi": "-40",
+    "hom_truoc": "3240"
+   },
+   {
+    "ky_han": "01/27",
+    "gia": "3214",
+    "thay_doi": "+15",
+    "hom_truoc": "3199"
+   },
+   {
+    "ky_han": "03/27",
+    "gia": "3200",
+    "thay_doi": "+17",
+    "hom_truoc": "3183"
+   },
+   {
+    "ky_han": "05/27",
+    "gia": "3190",
+    "thay_doi": "+15",
+    "hom_truoc": "3175"
+   },
+   {
+    "ky_han": "07/27",
+    "gia": "3161",
+    "thay_doi": "-2",
+    "hom_truoc": "3163"
+   }
+  ],
+  "arabica": [
+   {
+    "ky_han": "12/26",
+    "gia": "286.75",
+    "thay_doi": "-7",
+    "hom_truoc": "293.75"
+   },
+   {
+    "ky_han": "03/27",
+    "gia": "276.20",
+    "thay_doi": "-4.90",
+    "hom_truoc": "281.10"
+   },
+   {
+    "ky_han": "05/27",
+    "gia": "272.25",
+    "thay_doi": "-4.85",
+    "hom_truoc": "277.10"
+   },
+   {
+    "ky_han": "07/27",
+    "gia": "269.50",
+    "thay_doi": "-4.65",
+    "hom_truoc": "274.15"
+   },
+   {
+    "ky_han": "09/27",
+    "gia": "266.90",
+    "thay_doi": "-4.50",
+    "hom_truoc": "271.40"
+   }
+  ]
+ },
+ "nguon": "https://giacaphe.com/gia-ca-phe-truc-tuyen/"
+}
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/gia-ca-phe/tao_sua.py --xem cap-nhat/xem.txt --nha-be cap-nhat/tam/thamkhao1.goc --the-gioi cap-nhat/gia-the-gioi.json --ra cap-nhat/sua.json
+30 ô cần đổi, 2 mục cần duyệt → cap-nhat/sua.json
+  cần duyệt: Lúc chạy (16:07 29/10/2026) sàn London/New York đang giao dịch: giá thế giới là giá trực tuyến, chưa phải giá chốt phiên, nên KHÔNG ghi ký tự "s" sau giá. Muốn có giá chốt phiên thì chạy lại trước 15:00.
+  cần duyệt: Bài gốc trên web có lỗi chính tả "Tây Nuy" (đúng: "Tây Nguyên") – theo quy tắc không sửa câu chữ, chỉ báo lại.
+▶ python3 -I /home/user/trang/cong-cu/skill-cap-nhat-bai-tcb/cap-nhat-bai-tcb/scripts/cap_nhat.py sua cap-nhat/cau-hinh.json cap-nhat/sua.json
+bai1: sửa được 30/30 chỗ
+Soát 3 bảng: khớp hết
+XONG gia-ca-phe ngày 30/10/2026

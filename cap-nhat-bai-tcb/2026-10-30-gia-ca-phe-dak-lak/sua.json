@@ -1,0 +1,165 @@
+{
+ "bai1": {
+  "sua": [
+   {
+    "tim": "Đắk Nông khoảng 89,300 VND/kg",
+    "thay": "Đắk Nông khoảng 88,500 VND/kg",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://giacaphe.com/gia-ca-phe-dak-nong/",
+    "ly_do": "giacaphe.com Đắk Nông ngày 29/10/2026: \"29/10/2026 | 88,500 | -800\" (cập nhật 9:38 29/10/2026)"
+   },
+   {
+    "tim": "Gia Lai khoảng 89,000 VND/kg",
+    "thay": "Gia Lai khoảng 88,300 VND/kg",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://giacaphe.com/gia-ca-phe-gia-lai/",
+    "ly_do": "giacaphe.com Gia Lai ngày 29/10/2026: \"29/10/2026 | 88,300 | -700\" (cập nhật 9:38 29/10/2026)"
+   },
+   {
+    "tim": "Lâm Đồng khoảng 88,500 VND/kg",
+    "thay": "Lâm Đồng khoảng 88,000 VND/kg",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://giacaphe.com/gia-ca-phe-lam-dong/",
+    "ly_do": "giacaphe.com Lâm Đồng ngày 29/10/2026: \"29/10/2026 | 88,000 | -500\" (cập nhật 9:38 29/10/2026)"
+   },
+   {
+    "tim": "-400",
+    "thay": "-600",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://giacaphe.com/gia-ca-phe-dak-lak/",
+    "ly_do": "giacaphe.com Đắk Lắk, bảng \"Giá cà phê Đắk Lắk theo ngày\", dòng 5: \"23/10/2026 | 90,800 | -600\""
+   },
+   {
+    "tim": "91,400",
+    "thay": "90,800",
+    "lan": 2,
+    "giu_nguyen_so": true,
+    "nguon": "https://giacaphe.com/gia-ca-phe-dak-lak/",
+    "ly_do": "giacaphe.com Đắk Lắk, bảng \"Giá cà phê Đắk Lắk theo ngày\", dòng 5: \"23/10/2026 | 90,800 | -600\""
+   },
+   {
+    "tim": "22/10/2026",
+    "thay": "23/10/2026",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://giacaphe.com/gia-ca-phe-dak-lak/",
+    "ly_do": "giacaphe.com Đắk Lắk, bảng \"Giá cà phê Đắk Lắk theo ngày\", dòng 5: \"23/10/2026 | 90,800 | -600\""
+   },
+   {
+    "tim": "-600",
+    "thay": "-1,300",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://giacaphe.com/gia-ca-phe-dak-lak/",
+    "ly_do": "giacaphe.com Đắk Lắk, bảng \"Giá cà phê Đắk Lắk theo ngày\", dòng 4: \"24/10/2026 | 89,500 | -1,300\""
+   },
+   {
+    "tim": "90,800",
+    "thay": "89,500",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://giacaphe.com/gia-ca-phe-dak-lak/",
+    "ly_do": "giacaphe.com Đắk Lắk, bảng \"Giá cà phê Đắk Lắk theo ngày\", dòng 4: \"24/10/2026 | 89,500 | -1,300\""
+   },
+   {
+    "tim": "23/10/2026",
+    "thay": "24/10/2026",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://giacaphe.com/gia-ca-phe-dak-lak/",
+    "ly_do": "giacaphe.com Đắk Lắk, bảng \"Giá cà phê Đắk Lắk theo ngày\", dòng 4: \"24/10/2026 | 89,500 | -1,300\""
+   },
+   {
+    "tim": "-1,300",
+    "thay": "-700",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://giacaphe.com/gia-ca-phe-dak-lak/",
+    "ly_do": "giacaphe.com Đắk Lắk, bảng \"Giá cà phê Đắk Lắk theo ngày\", dòng 3: \"27/10/2026 | 88,800 | -700\""
+   },
+   {
+    "tim": "89,500",
+    "thay": "88,800",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://giacaphe.com/gia-ca-phe-dak-lak/",
+    "ly_do": "giacaphe.com Đắk Lắk, bảng \"Giá cà phê Đắk Lắk theo ngày\", dòng 3: \"27/10/2026 | 88,800 | -700\""
+   },
+   {
+    "tim": "24/10/2026",
+    "thay": "27/10/2026",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://giacaphe.com/gia-ca-phe-dak-lak/",
+    "ly_do": "giacaphe.com Đắk Lắk, bảng \"Giá cà phê Đắk Lắk theo ngày\", dòng 3: \"27/10/2026 | 88,800 | -700\""
+   },
+   {
+    "tim": "-700",
+    "thay": "+200",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://giacaphe.com/gia-ca-phe-dak-lak/",
+    "ly_do": "giacaphe.com Đắk Lắk, bảng \"Giá cà phê Đắk Lắk theo ngày\", dòng 2: \"28/10/2026 | 89,000 | +200\""
+   },
+   {
+    "tim": "88,800",
+    "thay": "89,000",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://giacaphe.com/gia-ca-phe-dak-lak/",
+    "ly_do": "giacaphe.com Đắk Lắk, bảng \"Giá cà phê Đắk Lắk theo ngày\", dòng 2: \"28/10/2026 | 89,000 | +200\""
+   },
+   {
+    "tim": "27/10/2026",
+    "thay": "28/10/2026",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://giacaphe.com/gia-ca-phe-dak-lak/",
+    "ly_do": "giacaphe.com Đắk Lắk, bảng \"Giá cà phê Đắk Lắk theo ngày\", dòng 2: \"28/10/2026 | 89,000 | +200\""
+   },
+   {
+    "tim": "+200",
+    "thay": "-600",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://giacaphe.com/gia-ca-phe-dak-lak/",
+    "ly_do": "giacaphe.com Đắk Lắk, bảng \"Giá cà phê Đắk Lắk theo ngày\", dòng 1: \"29/10/2026 | 88,400 | -600\""
+   },
+   {
+    "tim": "89,000",
+    "thay": "88,400",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://giacaphe.com/gia-ca-phe-dak-lak/",
+    "ly_do": "giacaphe.com Đắk Lắk, bảng \"Giá cà phê Đắk Lắk theo ngày\", dòng 1: \"29/10/2026 | 88,400 | -600\""
+   },
+   {
+    "tim": "28/10/2026",
+    "thay": "29/10/2026",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://giacaphe.com/gia-ca-phe-dak-lak/",
+    "ly_do": "giacaphe.com Đắk Lắk, bảng \"Giá cà phê Đắk Lắk theo ngày\", dòng 1: \"29/10/2026 | 88,400 | -600\""
+   },
+   {
+    "tim": "tại Đắk Lắk đang được tham khảo ở mức khoảng 91,400 VND/kg, tăng khoảng 200 VND/kg so với phiên trước",
+    "thay": "tại Đắk Lắk đang được tham khảo ở mức khoảng 88,400 VND/kg, giảm khoảng 600 VND/kg so với phiên trước",
+    "lan": 1,
+    "giu_nguyen_so": true,
+    "nguon": "https://giacaphe.com/gia-ca-phe-dak-lak/",
+    "ly_do": "giacaphe.com Đắk Lắk ngày 29/10/2026: \"29/10/2026 | 88,400 | -600\" (cập nhật 9:38 29/10/2026); mức thay đổi so với phiên trước theo nguồn: -600"
+   }
+  ],
+  "can_duyet": [
+   "Bảng giá theo ngày: 5 dòng = 5 ngày mới nhất trên giacaphe.com (29/10/2026, 28/10/2026, 27/10/2026, 24/10/2026, 23/10/2026); nguồn không ghi ngày nghỉ (chủ nhật, ngày không giao dịch) nên các ngày có thể không liền nhau.",
+   "Đoạn giá Đắk Lắk: chữ chỉ chiều đổi \"tăng\" → \"giảm\" theo nguồn (-600 đ/kg so với phiên trước) – đọc lại câu.",
+   "Câu \"giá Đắk Lắk đang ở mức tương đối cao\" giữ nguyên, nhưng với số mới Đắk Lắk 88,400 thấp hơn Đắk Nông 88,500 → câu có thể không còn đúng, cần duyệt.",
+   "Ngày trong bài ghi 30/10/2026 (quy tắc ngày hôm sau) nhưng số mới nhất trên nguồn là ngày 29/10/2026 → mọi số giá trong bài là số ngày 29/10/2026.",
+   "Câu \"Dưới đây là bảng thông tin được trích xuất và kẻ lại y hệt theo hình ảnh bạn cung cấp:\" có sẵn trên bài web (giống câu trả lời của AI sót lại) – không sửa, nên báo nhóm web xem lại."
+  ]
+ }
+}
