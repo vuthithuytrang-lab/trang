@@ -14,6 +14,7 @@ concurrency: { group: tu-dong-cap-nhat, cancel-in-progress: false }
 env:
   PHIEU: https://drive.usercontent.google.com/download?id=1wrO0bArJtokvfFvOzFNFqvJhrLrPD2VI&export=download
   KET_QUA: https://raw.githubusercontent.com/${{ github.repository }}/tu-dong-ket-qua/trang-thai.json
+  NTFY: https://ntfy.sh/sn-tcb-cap-nhat-vttt-8q2m   # nút "Chạy cập nhật" trên trang công khai gửi yêu cầu vào đây (không cần chìa)
   DANH_SACH: https://raw.githubusercontent.com/${{ github.repository }}/claude/vibrant-keller-rk0i98/cong-cu/tu-dong/danh-sach.json
 jobs:
   kiem:
@@ -31,6 +32,7 @@ jobs:
           curl -sfL -m 30 "$PHIEU" -o phieu.json || echo '{}' > phieu.json
           curl -sfL -m 30 "$DANH_SACH?t=$(date +%s)" -o ds.json || echo '{}' > ds.json
           curl -sfL -m 30 "$KET_QUA?t=$(date +%s)" -o tt.json || echo '{}' > tt.json
+          curl -sfL -m 30 "$NTFY/json?poll=1&since=6h" -o nt.json || : > nt.json
           python3 - <<'EOF' >> $GITHUB_OUTPUT
           import json, os, re, time, datetime as d
           HOP_LE = {'gia-ca-phe', 'gia-xang-dau', 'vang-24k', 'vang-14k', 'vang-18k', 'vang-10k', '1-chi-vang', 'vang-16k', 'vang-610', 'lai-suat-1', 'lai-suat-2'}
@@ -42,10 +44,34 @@ jobs:
           if tay:
               print('bai=' + ' '.join(tay)); print('ma=tay-%d' % time.time()); raise SystemExit
           try:
-              p = json.load(open('phieu.json')); tt = json.load(open('tt.json'))
+              tt = json.load(open('tt.json'))
+          except Exception:
+              tt = {}
+          if not isinstance(tt, dict):
+              tt = {}
+          # 1) yêu cầu từ trang công khai (ntfy): mỗi dòng 1 sự kiện; chỉ nhận tin mới hơn tin đã xử lý (_ntfy = nt-<giờ>)
+          cu = str(tt.get('_ntfy', ''))
+          cu = int(cu[3:]) if re.fullmatch(r'nt-\d{1,12}', cu) else 0
+          nt_bai, nt_moi = set(), 0
+          for dong in open('nt.json', errors='replace'):
+              try:
+                  e = json.loads(dong); m = json.loads(e.get('message', '')) if isinstance(e, dict) and e.get('event') == 'message' else None
+              except Exception:
+                  continue
+              t = e.get('time')
+              if not isinstance(m, dict) or not isinstance(t, int) or t <= cu or not isinstance(m.get('bai'), list):
+                  continue
+              hop = {b for b in m['bai'] if isinstance(b, str) and b in HOP_LE}
+              if hop:
+                  nt_bai |= hop; nt_moi = max(nt_moi, t)
+          if nt_bai:
+              print('bai=' + ' '.join(sorted(nt_bai))); print('ma=nt-%d' % nt_moi); raise SystemExit
+          # 2) phiếu Drive do Apps Script ghi
+          try:
+              p = json.load(open('phieu.json'))
           except Exception:
               raise SystemExit
-          if not isinstance(p, dict) or not isinstance(tt, dict):
+          if not isinstance(p, dict):
               raise SystemExit
           ma = str(p.get('ma', ''))
           bai = [b for b in p.get('bai', []) if isinstance(b, str) and b in HOP_LE] if isinstance(p.get('bai'), list) else []

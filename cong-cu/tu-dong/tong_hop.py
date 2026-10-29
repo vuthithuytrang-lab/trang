@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Gom kết quả chay.sh của các bài vào thư mục xuất: <mã>.html + trang-thai.json (Apps Script đọc file này).
-Bài không chạy lần này giữ nguyên kết quả cũ trong thư mục xuất. "_yeu_cau" = mã phiếu yêu cầu vừa xử lý.
+Bài không chạy lần này giữ nguyên kết quả cũ trong thư mục xuất. "_yeu_cau" = mã phiếu Drive vừa xử lý, "_ntfy" = mốc yêu cầu trang công khai.
 Dùng: python3 tong_hop.py <thư mục ket-qua> <thư mục xuất> [mã phiếu]"""
 import datetime, json, os, re, shutil, sys
 
@@ -9,8 +9,8 @@ os.makedirs(ra, exist_ok=True)
 luc = datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='seconds')
 p_tt = os.path.join(ra, 'trang-thai.json')
 tt = json.load(open(p_tt)) if os.path.exists(p_tt) else {}
-if len(sys.argv) > 3:
-    tt['_yeu_cau'] = sys.argv[3]
+if len(sys.argv) > 3:   # nt-… = yêu cầu từ trang công khai (ntfy), còn lại = phiếu Drive
+    tt['_ntfy' if sys.argv[3].startswith('nt-') else '_yeu_cau'] = sys.argv[3]
 for f in sorted(os.listdir(kq)):
     if not f.endswith('.log'):
         continue
