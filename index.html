@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Cập nhật bài Techcombank</title>
 <meta name="description" content="Danh sách 23 bài blog Techcombank và bản cập nhật Google Docs mới nhất.">
-<!-- phien-ban: 202610300310 -->
+<!-- phien-ban: 202610300313 -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Cập nhật bài Techcombank">
 <meta property="og:description" content="Danh sách 23 bài blog Techcombank và bản cập nhật Google Docs mới nhất – ai có link cũng mở được.">
@@ -211,7 +211,9 @@ $("#run").addEventListener("click", function(e){
   if (!ids.length) { bao("Bài đã chọn không chạy tự động được – nhờ người phụ trách chạy."); return; }
   guiChay(ids, this);
 });
-fetch(DU_LIEU + "?t=" + Date.now()).then(function(r){ return r.json(); }).then(function(d){ du = d; render(); return taiKq(); })
+fetch(DU_LIEU + "?t=" + Date.now()).then(function(r){ return r.json(); }).then(function(d){
+  var MA = {"lai-suat-tiet-kiem": "lai-suat-1", "cach-tinh-lai-suat": "lai-suat-2"};   // id trong danh sách → mã công thức máy chạy
+  du = d; du.bai.forEach(function(b){ b.id = MA[b.id] || b.id; }); render(); return taiKq(); })
   .catch(function(){ $("#list").innerHTML = '<div class="empty">Chưa tải được danh sách – tải lại trang (Ctrl + R, Mac: Cmd + R).</div>'; });
 </script>
 </body>
