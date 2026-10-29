@@ -6,7 +6,7 @@
  *   "dd/mm/yyyy | Kiểm tra lúc". Từ 13:00 trở đi so với NGÀY MAI (bài phải sang ngày hôm sau mới tính là Done).
  *   Đổi giờ này ở tab "Điều khiển" ô B6, không cần sửa mã.
  * - Xong gửi tin vào Lark: hết thì "Done", còn thiếu thì soạn sẵn tin nhờ chị Tú Anh publish lại.
- * - Gõ "UD" hoặc "UP" (hoa thường đều được) vào nhóm Lark → trong khoảng 1 phút máy kiểm và trả lời ngay trong nhóm.
+ * - Nhắn vào nhóm Lark một tin có chữ up / ud / update / publish / check / kiểm tra (hoa thường đều được) → trong khoảng 1 phút máy kiểm và trả lời ngay trong nhóm.
  * - Trong ngày đã có lần kiểm thấy đủ hết (UD / Kiểm tra ngay) thì lần tự kiểm 19:00 bỏ qua, không nhắn.
  * - App Check Publish ghi yêu cầu vào tab "Điều khiển" ô B1 → trong khoảng 1 phút máy tự kiểm.
  * - Menu "Check publish" trên thanh công cụ của sheet: Kiểm tra ngay, cài Lark, bật/tắt lịch.
@@ -151,8 +151,7 @@ function ngheLark_() {
       if (!m.sender || m.sender.sender_type !== 'user' || m.msg_type !== 'text') return;
       var chu = '';
       try { chu = JSON.parse(m.body.content).text || ''; } catch (e) {}
-      chu = chu.replace(/@_user_\d+|@_all/g, '').trim().toUpperCase();
-      if (chu === 'UD' || chu === 'UP') co = true;  // không phân biệt hoa thường: ud, Ud, up, UP...
+      if (laLenhKiem_(chu)) co = true;
     });
     pr.setProperty('LARK_DA_DOC', String(moiNhat));
     ghiNghe_('Đang nghe nhóm "' + (pr.getProperty('LARK_TEN_NHOM') || 'Lark') + '" · lần đọc gần nhất ' + gio +
@@ -162,6 +161,15 @@ function ngheLark_() {
     ghiNghe_('Lỗi nghe Lark lúc ' + gio + ': ' + e.message);
     return false;
   }
+}
+
+/** Tin có chữ up / ud / update / publish / check / kiểm tra (hoa thường, có dấu hay không đều được) = lệnh kiểm. */
+function laLenhKiem_(chu) {
+  var t = String(chu || '').replace(/@_user_\d+|@_all/g, ' ').normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/đ/g, 'd').replace(/Đ/g, 'D').toLowerCase();
+  // Bỏ qua chính các tin máy tự gửi, phòng khi Lark ghi nhầm người gửi → không tự kích hoạt vòng lặp
+  if (/^(dang check publish|done$|chi tu anh oi|check publish tcb da ket noi|tin (nhan )?thu)/.test(t.trim())) return false;
+  return /(^|[^a-z])(up|ud|update|updates|updated|publish|check|checkpublish|kiem\s*tra)([^a-z]|$)/.test(t);
 }
 
 function ghiNghe_(chu) { bangDieuKhien_().getRange('B5').setValue(chu); }

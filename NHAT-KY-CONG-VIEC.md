@@ -18,7 +18,7 @@
 | 05–27/10/2026 | Theo dõi ngày publish URL TCB bằng Claude (lịch 08:00/13:00/19:00 → còn 19:00) | Sheet "Theo dõi publish TCB", ghi chú `cong-cu/theo-doi-publish-techcombank/CACH-LAM-MOI.md` | Đã thay bằng Apps Script 28/10 |
 | 21/10/2026 | Hướng dẫn check ngày publish bằng Screaming Frog (Custom Extraction) | `cong-cu/theo-doi-publish-techcombank/SCREAMING-FROG.md` | — |
 | 23/10/2026 | Skill "theo-doi-publish" cho team khác tự cài | `.claude/skills/theo-doi-publish/`, zip + hướng dẫn: `cong-cu/skill-theo-doi-publish/` | — |
-| 28/10/2026 | App Check Publish + chuyển việc kiểm sang Apps Script (không tốn token) + báo Lark ("Done" / tin nhờ chị Tú Anh kèm list URL) | `cong-cu/app-check-publish/` | Chờ admin Lark duyệt app "Check publish TCB" → thêm bot vào nhóm → menu Bước 3 (App ID/Secret) để lệnh UD/UP chạy |
+| 28/10/2026 | App Check Publish + chuyển việc kiểm sang Apps Script (không tốn token) + báo Lark ("Done" / tin nhờ chị Tú Anh kèm list URL) | `cong-cu/app-check-publish/` | Chờ admin Lark duyệt app "Check publish TCB" → thêm bot vào nhóm → menu Bước 3 (App ID/Secret) để lệnh UD/UP chạy — XONG 29/10, nhận mọi tin có chữ up/ud/update/publish/check/kiểm tra |
 | 28/10/2026 | Quy tắc: sau 13:00 bài phải sang ngày mai mới tính Done (đổi ở `Điều khiển!B6`); trong ngày đã Done thì bỏ lần 19:00 | Apps Script + `cap_nhat_sheet.py` | — |
 | 28/10/2026 | Quy tắc: kết quả chỉ gửi về máy Trang + vuthithuytrang@seongon.com | CLAUDE.md | Trang tự xem: chế độ chia sẻ app, repo public, tài khoản Claude dùng chung |
 | trước 15/10/2026 | baotinmanhhai.vn: gợi ý 301 cho 17 URL 404 | — | Trang dừng giữa chừng, chưa làm |
