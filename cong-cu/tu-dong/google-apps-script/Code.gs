@@ -93,6 +93,8 @@ function chay_() {
       if (!tt.ok) throw new Error(tt.loi || 'công thức chạy lỗi');
       const html = UrlFetchApp.fetch(CAU_HINH.KHO + t.ma + '.html?t=' + Date.now()).getContentText('UTF-8');
       const ten = tt.ten;
+      // (file cố định: không cần kiểm tra trùng tên)
+
       const id = ghiDocs_(t.ma, ten, html);
       emails = emails || ss.getSheetByName('Hướng dẫn').getRange('B11:B20').getValues().flat()
         .map(x => String(x).trim()).filter(x => /@/.test(x));
