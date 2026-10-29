@@ -1,4 +1,20 @@
 {
- "wp": {"tu_khoa": "gửi sinh hoạt phí cho người thân ở nước ngoài", "title": "Gửi sinh hoạt phí cho người thân ở nước ngoài đều đặn, đúng hạn", "slug": "gui-sinh-hoat-phi-cho-nguoi-than-o-nuoc-ngoai", "mo_ta": "Cách lập lịch chuyển tiền, dự trù biến động tỷ giá và chuẩn bị hồ sơ khi gửi sinh hoạt phí định kỳ cho người thân ở nước ngoài."},
- "wix": {"tu_khoa": "gửi sinh hoạt phí cho người thân ở nước ngoài", "title": "Chuyển tiền định kỳ cho con học ở nước ngoài: lịch, tỷ giá, hồ sơ", "slug": "chuyen-tien-dinh-ky-cho-con-hoc-o-nuoc-ngoai", "mo_ta": "Ba phần cần chuẩn bị khi chuyển tiền định kỳ cho con hoặc người thân ở nước ngoài: lịch chuyển, tỷ giá từng đợt và hồ sơ."}
+ "wp": {
+  "tu_khoa": "gửi sinh hoạt phí cho người thân ở nước ngoài",
+  "title": "Gửi sinh hoạt phí cho người thân ở nước ngoài đều đặn, đúng hạn",
+  "slug": "gui-sinh-hoat-phi-cho-nguoi-than-o-nuoc-ngoai",
+  "mo_ta": "Cách lập lịch chuyển tiền, dự trù biến động tỷ giá và chuẩn bị hồ sơ khi gửi sinh hoạt phí định kỳ cho người thân ở nước ngoài."
+ },
+ "wix": {
+  "tu_khoa": "gửi sinh hoạt phí cho người thân ở nước ngoài",
+  "title": "Chuyển tiền định kỳ cho con học ở nước ngoài: lịch, tỷ giá, hồ sơ",
+  "slug": "chuyen-tien-dinh-ky-cho-con-hoc-o-nuoc-ngoai",
+  "mo_ta": "Ba phần cần chuẩn bị khi chuyển tiền định kỳ cho con hoặc người thân ở nước ngoài: lịch chuyển, tỷ giá từng đợt và hồ sơ."
+ },
+ "wf": {
+  "tu_khoa": "gửi sinh hoạt phí cho người thân ở nước ngoài",
+  "title": "Hỏi đáp: gửi sinh hoạt phí cho người thân ở nước ngoài định kỳ",
+  "slug": "hoi-dap-gui-sinh-hoat-phi-cho-nguoi-than-o-nuoc-ngoai",
+  "mo_ta": "Giải đáp về số tiền, tần suất, ngày gửi, tỷ giá và giấy tờ khi gửi sinh hoạt phí định kỳ cho người thân ở nước ngoài."
+ }
 }
