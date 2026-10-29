@@ -1,0 +1,51 @@
+name: App lãi suất công khai (tự chạy mỗi sáng, miễn phí)
+# 2 bài lãi suất Techcombank → trang công khai https://vuthithuytrang-lab.github.io/trang/lai-suat/
+# (Trang dặn 29/10/2026: app lãi suất công khai để mọi người cùng làm, không tốn token).
+# Mỗi sáng ~6h45 giờ VN chạy công cụ cong-cu/cap-nhat-lai-suat (nguồn VnExpress + Topi), ghi kết quả vào
+# nhánh gh-pages, thư mục lai-suat/du-lieu/. Bấm tay: Actions → workflow này → Run workflow.
+on:
+  schedule:
+    - cron: '43 23 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: { group: lai-suat-cong-khai, cancel-in-progress: false }
+jobs:
+  chay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: claude/vibrant-keller-rk0i98 }   # công cụ mới nhất nằm ở nhánh này
+      - name: Cài trình duyệt
+        run: |
+          npm i -g playwright@1.48.2
+          npx -y playwright@1.48.2 install --with-deps chromium
+          echo "NODE_PATH=$(npm root -g)" >> $GITHUB_ENV
+      - name: Chạy 2 bài lãi suất
+        run: |
+          mkdir -p ket-qua
+          for m in lai-suat-1 lai-suat-2; do
+            for lan in 1 2; do                      # nguồn lỗi thì nghỉ 1 phút chạy lại 1 lần
+              rm -rf ket-qua/$m
+              timeout 600 bash cong-cu/tu-dong/chay.sh $m ket-qua > ket-qua/$m.log 2>&1 || echo "LỖI $m" >> ket-qua/$m.log
+              grep -q '^XONG' ket-qua/$m.log && break
+              sleep 60
+            done
+            echo "::group::$m"; cat ket-qua/$m.log; echo "::endgroup::"
+          done
+      - name: Đăng lên trang công khai
+        run: |
+          git config --global user.name "Cập nhật tự động"
+          git config --global user.email "actions@users.noreply.github.com"
+          for lan in 1 2 3; do
+            rm -rf trang && git clone -q --depth 1 -b gh-pages "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" trang
+            mkdir -p trang/lai-suat/du-lieu
+            python3 -I cong-cu/tu-dong/tong_hop.py ket-qua trang/lai-suat/du-lieu
+            cd trang && git add -A
+            git diff --cached --quiet && exit 0
+            git commit -qm "Lãi suất $(TZ=Asia/Ho_Chi_Minh date '+%H:%M %d/%m/%Y')"
+            git push -q origin gh-pages && exit 0
+            cd .. ; sleep 10                          # có người vừa đẩy gh-pages → lấy bản mới, ghi lại
+          done
+          exit 1
