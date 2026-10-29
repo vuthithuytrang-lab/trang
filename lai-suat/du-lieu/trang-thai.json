@@ -1,0 +1,18 @@
+{
+ "lai-suat-1": {
+  "ok": true,
+  "luc": "2026-10-29T12:05:02+00:00",
+  "ngay": "30/10/2026",
+  "ten": "Lãi suất tiết kiệm Techcombank – 30/10/2026",
+  "can_duyet": "Chưa cập nhật được từ Topi (bảng Tại quầy) do không truy cập được\nChưa cập nhật được từ Topi (bảng Online) do không truy cập được\nBảng Tại quầy – SCB – 1 tháng: nguồn ghi 0.1, thấp bất thường.\nBảng Tại quầy – SCB – 3 tháng: nguồn ghi 0.1, thấp bất thường.\nBảng Tại quầy – SCB – 6 tháng: nguồn ghi 0.5, thấp bất thường.\nBảng Online – SCB – 1 tháng: nguồn ghi 0.1, thấp bất thường.\nBảng Online – SCB – 3 tháng: nguồn ghi 0.5, thấp bất thường.\nBảng Online – SCB – 6 tháng: nguồn ghi 0.5, thấp bất thường.\nBảng Online – SCB – 12 tháng: nguồn ghi 0.6, thấp bất thường.\nNgoài bảng – \"Thông thường lãi suất gửi tiết kiệm online sẽ cao hơn lãi suất gửi tiết kiệm tại quầy từ 0.1 - 0.4%/năm.\": khoảng chênh online − tại quầy không tính gọn được từ 2 bảng mới: 231 cặp ngân hàng–kỳ hạn, online cao hơn 175, bằng 50, thấp hơn 6; chênh từ -3.1 đến 3.6, nửa giữa 0.05–0.5 điểm %. Giữ nguyên.\nNgoài bảng – \"Ưu tiên gửi tiết kiệm online: Các khoản tiết kiệm online thường có lãi suất cao hơn gửi tại quầy khoảng 0.1 -…\": khoảng chênh online − tại quầy không tính gọn được từ 2 bảng mới: 231 cặp ngân hàng–kỳ hạn, online cao hơn 175, bằng 50, thấp hơn 6; chênh từ -3.1 đến 3.6, nửa giữa 0.05–0.5 điểm %. Giữ nguyên.",
+  "loi": ""
+ },
+ "lai-suat-2": {
+  "ok": true,
+  "luc": "2026-10-29T12:05:02+00:00",
+  "ngay": "30/10/2026",
+  "ten": "Cách tính lãi suất tiền gửi tiết kiệm Techcombank – 30/10/2026",
+  "can_duyet": "Ngoài bảng – \"Kỳ hạn | Lãi suất %/năm | Cách tính lãi | Số tiền lãi nhận được\": bảng ví dụ có 8 ô lãi suất (4.30, 4.60, 6.30, 6.50, 5.60) cùng các số tiền tính theo đó – lãi suất Techcombank, chỉ sửa theo techcombank.com, giữ nguyên.\nNgoài bảng – \"Ví dụ: Khách hàng Private gửi tiết kiệm 100,000,000 VND vào sản phẩm Tiết kiệm thường bằng hình thức trực tuy…\": lãi suất/ví dụ tính của Techcombank – chỉ sửa theo techcombank.com (biểu lãi suất chính thức), giữ nguyên.\nNgoài bảng – \"Số tiền nhận được = 100,000,000 x (1 + 6.40%/1) ^ (1 x 5) = 136,366,640 VND\": lãi suất/ví dụ tính của Techcombank – chỉ sửa theo techcombank.com (biểu lãi suất chính thức), giữ nguyên.\nNgoài bảng – \"Năm | Lãi suất %/năm | Cách tính lãi | Số tiền lãi nhận được\": bảng ví dụ có 5 ô lãi suất (6.40) cùng các số tiền tính theo đó – lãi suất Techcombank, chỉ sửa theo techcombank.com, giữ nguyên.\nNgoài bảng – \"Trường hợp khách hàng hưởng lãi trước kỳ hạn: Khách hàng được hưởng mức lãi suất 0.05%/năm.\": lãi suất/ví dụ tính của Techcombank – chỉ sửa theo techcombank.com (biểu lãi suất chính thức), giữ nguyên.\nNgoài bảng – \"Số tiền lãi = 100,000,000 x 0.05% x 156/365 = 21,370 VND.\": lãi suất/ví dụ tính của Techcombank – chỉ sửa theo techcombank.com (biểu lãi suất chính thức), giữ nguyên.\nNgoài bảng – \"Như vậy, tổng số tiền khách hàng nhận về là 100,000,000 + 21,370 = 100,021,370 VND.\": lãi suất/ví dụ tính của Techcombank – chỉ sửa theo techcombank.com (biểu lãi suất chính thức), giữ nguyên.\nNgoài bảng – \"Lưu ý: Lã",
+  "loi": ""
+ }
+}
