@@ -1,4 +1,20 @@
 {
- "wp": {"tu_khoa": "thông tin tỷ giá hằng ngày", "title": "Chọn lọc thông tin tỷ giá hằng ngày cho khoản chi ngoại tệ gia đình", "slug": "chon-loc-thong-tin-ty-gia-hang-ngay-cho-gia-dinh", "mo_ta": "Phân biệt các loại tin tỷ giá, biết con số nào liên quan trực tiếp đến khoản chi ngoại tệ của gia đình và cách theo dõi vừa đủ."},
- "wix": {"tu_khoa": "thông tin tỷ giá hằng ngày", "title": "Tin tỷ giá nhiều quá, gia đình nên theo dõi con số nào là đủ?", "slug": "tin-ty-gia-nhieu-qua-gia-dinh-nen-theo-doi-con-so-nao", "mo_ta": "Thứ tự ưu tiên khi đọc tin tỷ giá và thói quen theo dõi vừa đủ cho gia đình có khoản chi bằng ngoại tệ."}
+ "wp": {
+  "tu_khoa": "thông tin tỷ giá hằng ngày",
+  "title": "Chọn lọc thông tin tỷ giá hằng ngày cho khoản chi ngoại tệ gia đình",
+  "slug": "chon-loc-thong-tin-ty-gia-hang-ngay-cho-gia-dinh",
+  "mo_ta": "Phân biệt các loại tin tỷ giá, biết con số nào liên quan trực tiếp đến khoản chi ngoại tệ của gia đình và cách theo dõi vừa đủ."
+ },
+ "wix": {
+  "tu_khoa": "thông tin tỷ giá hằng ngày",
+  "title": "Tin tỷ giá nhiều quá, gia đình nên theo dõi con số nào là đủ?",
+  "slug": "tin-ty-gia-nhieu-qua-gia-dinh-nen-theo-doi-con-so-nao",
+  "mo_ta": "Thứ tự ưu tiên khi đọc tin tỷ giá và thói quen theo dõi vừa đủ cho gia đình có khoản chi bằng ngoại tệ."
+ },
+ "wf": {
+  "tu_khoa": "thông tin tỷ giá hằng ngày",
+  "title": "Hỏi đáp: gia đình nên chọn lọc thông tin tỷ giá hằng ngày thế nào",
+  "slug": "hoi-dap-chon-loc-thong-tin-ty-gia-hang-ngay",
+  "mo_ta": "Giải đáp về các loại tin tỷ giá, con số nào liên quan trực tiếp đến khoản chi ngoại tệ gia đình và cách theo dõi vừa đủ."
+ }
 }
