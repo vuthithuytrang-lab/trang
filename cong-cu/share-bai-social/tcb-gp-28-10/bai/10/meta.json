@@ -1,4 +1,20 @@
 {
- "wp": {"tu_khoa": "mua ngoại tệ theo nhiều đợt", "title": "Mua ngoại tệ theo nhiều đợt cho khoản chi lớn: lập lịch thế nào", "slug": "mua-ngoai-te-theo-nhieu-dot-cho-khoan-chi-lon", "mo_ta": "Vì sao nên chia đợt mua ngoại tệ cho học phí, chuyến đi dài ngày và cách lập lịch, ghi chép để chi phí bình quân ổn định."},
- "wix": {"tu_khoa": "mua ngoại tệ theo nhiều đợt", "title": "Chuẩn bị ngoại tệ cho học phí, chuyến đi xa: chia nhỏ để đỡ áp lực", "slug": "chuan-bi-ngoai-te-cho-hoc-phi-chuyen-di-xa-chia-nho", "mo_ta": "Chia nhỏ khoản mua ngoại tệ theo lịch cố định giúp chi phí bình quân ổn định và dòng tiền gia đình nhẹ nhàng hơn."}
+ "wp": {
+  "tu_khoa": "mua ngoại tệ theo nhiều đợt",
+  "title": "Mua ngoại tệ theo nhiều đợt cho khoản chi lớn: lập lịch thế nào",
+  "slug": "mua-ngoai-te-theo-nhieu-dot-cho-khoan-chi-lon",
+  "mo_ta": "Vì sao nên chia đợt mua ngoại tệ cho học phí, chuyến đi dài ngày và cách lập lịch, ghi chép để chi phí bình quân ổn định."
+ },
+ "wix": {
+  "tu_khoa": "mua ngoại tệ theo nhiều đợt",
+  "title": "Chuẩn bị ngoại tệ cho học phí, chuyến đi xa: chia nhỏ để đỡ áp lực",
+  "slug": "chuan-bi-ngoai-te-cho-hoc-phi-chuyen-di-xa-chia-nho",
+  "mo_ta": "Chia nhỏ khoản mua ngoại tệ theo lịch cố định giúp chi phí bình quân ổn định và dòng tiền gia đình nhẹ nhàng hơn."
+ },
+ "wf": {
+  "tu_khoa": "mua ngoại tệ theo nhiều đợt",
+  "title": "Hỏi đáp: mua ngoại tệ theo nhiều đợt cho khoản chi lớn đã biết trước",
+  "slug": "hoi-dap-mua-ngoai-te-theo-nhieu-dot",
+  "mo_ta": "Giải đáp vì sao nên mua ngoại tệ theo nhiều đợt, cách lập lịch mẫu, ghi chép và cất giữ ngoại tệ cho khoản chi lớn."
+ }
 }
