@@ -1,4 +1,20 @@
 {
- "wp": {"tu_khoa": "đặt phòng khách sạn nước ngoài qua mạng", "title": "Đặt phòng khách sạn nước ngoài qua mạng: trả bằng tiền nào cho lợi", "slug": "dat-phong-khach-san-nuoc-ngoai-qua-mang-tra-bang-tien-nao", "mo_ta": "So sánh trả trước, trả tại khách sạn, đặt cọc và lựa chọn tiền Việt hay tiền địa phương khi đặt phòng khách sạn nước ngoài qua mạng."},
- "wix": {"tu_khoa": "đặt phòng khách sạn nước ngoài qua mạng", "title": "Quẹt thẻ ở khách sạn nước ngoài: chọn tiền Việt hay tiền địa phương?", "slug": "quet-the-o-khach-san-nuoc-ngoai-chon-tien-viet-hay-tien-dia-phuong", "mo_ta": "Giải thích chuyển đổi tiền tệ động và cách so sánh tổng chi phí bằng tiền Việt trước khi chọn hình thức thanh toán phòng khách sạn."}
+ "wp": {
+  "tu_khoa": "đặt phòng khách sạn nước ngoài qua mạng",
+  "title": "Đặt phòng khách sạn nước ngoài qua mạng: trả bằng tiền nào cho lợi",
+  "slug": "dat-phong-khach-san-nuoc-ngoai-qua-mang-tra-bang-tien-nao",
+  "mo_ta": "So sánh trả trước, trả tại khách sạn, đặt cọc và lựa chọn tiền Việt hay tiền địa phương khi đặt phòng khách sạn nước ngoài qua mạng."
+ },
+ "wix": {
+  "tu_khoa": "đặt phòng khách sạn nước ngoài qua mạng",
+  "title": "Quẹt thẻ ở khách sạn nước ngoài: chọn tiền Việt hay tiền địa phương?",
+  "slug": "quet-the-o-khach-san-nuoc-ngoai-chon-tien-viet-hay-tien-dia-phuong",
+  "mo_ta": "Giải thích chuyển đổi tiền tệ động và cách so sánh tổng chi phí bằng tiền Việt trước khi chọn hình thức thanh toán phòng khách sạn."
+ },
+ "wf": {
+  "tu_khoa": "đặt phòng khách sạn nước ngoài qua mạng",
+  "title": "Hỏi đáp: trả tiền khi đặt phòng khách sạn nước ngoài qua mạng",
+  "slug": "hoi-dap-tra-tien-dat-phong-khach-san-nuoc-ngoai",
+  "mo_ta": "Giải đáp về các cách trả tiền phòng, tiền cọc, chọn tiền Việt hay tiền địa phương ở quầy và so chi phí khi đặt khách sạn nước ngoài."
+ }
 }
