@@ -211,7 +211,9 @@ $("#run").addEventListener("click", function(e){
   if (!ids.length) { bao("Bài đã chọn không chạy tự động được – nhờ người phụ trách chạy."); return; }
   guiChay(ids, this);
 });
-fetch(DU_LIEU + "?t=" + Date.now()).then(function(r){ return r.json(); }).then(function(d){ du = d; render(); return taiKq(); })
+fetch(DU_LIEU + "?t=" + Date.now()).then(function(r){ return r.json(); }).then(function(d){
+  var MA = {"lai-suat-tiet-kiem": "lai-suat-1", "cach-tinh-lai-suat": "lai-suat-2"};   // id trong danh sách → mã công thức máy chạy
+  du = d; du.bai.forEach(function(b){ b.id = MA[b.id] || b.id; }); render(); return taiKq(); })
   .catch(function(){ $("#list").innerHTML = '<div class="empty">Chưa tải được danh sách – tải lại trang (Ctrl + R, Mac: Cmd + R).</div>'; });
 </script>
 </body>
