@@ -4,5 +4,11 @@
   "title": "7 bước ghi chép chi tiêu bằng ngoại tệ vào sổ ngân sách gia đình",
   "slug": "7-buoc-ghi-chep-chi-tieu-bang-ngoai-te",
   "mo_ta": "Chia nhóm, ghi số tiền Việt thực trả, tự tính tỷ giá đã trả và dùng dữ liệu cuối năm để lập ngân sách cho khoản chi ngoại tệ."
+ },
+ "wf": {
+  "tu_khoa": "ghi chép chi tiêu bằng ngoại tệ",
+  "title": "Hỏi đáp: ghi chép chi tiêu bằng ngoại tệ trong sổ ngân sách gia đình",
+  "slug": "hoi-dap-ghi-chep-chi-tieu-bang-ngoai-te",
+  "mo_ta": "Giải đáp cách chia nhóm, ghi số tiền Việt thực trả, tính tỷ giá đã trả và dùng sổ để lập ngân sách cho khoản chi ngoại tệ."
  }
 }
