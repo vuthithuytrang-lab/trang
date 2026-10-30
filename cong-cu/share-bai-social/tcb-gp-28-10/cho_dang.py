@@ -5,7 +5,8 @@ from datetime import datetime, timezone
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 done = {(r["so"], r["nen"]) for r in map(json.loads, open(os.path.join(HERE, "da-dang.jsonl"))) if r.get("ok")}
-nxt = next(e for e in json.load(open(os.path.join(HERE, "lich.json"))) if (e["so"], e["nen"]) not in done)
+co_nguon = lambda so: os.path.exists(os.path.join(HERE, "nguon", f"{so:02d}.txt"))  # bài 5, 7, 8 chưa có nguồn thì bỏ qua
+nxt = next(e for e in json.load(open(os.path.join(HERE, "lich.json"))) if (e["so"], e["nen"]) not in done and co_nguon(e["so"]))
 cho = (datetime.fromisoformat(nxt["gio"]) - datetime.now(timezone.utc)).total_seconds()
 print("lượt kế:", nxt, "chờ", int(cho), "giây", flush=True)
 if cho > 6600: sys.exit("còn quá xa, chưa chờ")
