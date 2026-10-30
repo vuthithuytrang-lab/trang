@@ -1,7 +1,7 @@
 {
  "1-chi-vang": {
   "ok": true,
-  "luc": "2026-10-29T20:07:27+00:00",
+  "luc": "2026-10-30T07:16:07+00:00",
   "ngay": "31/10/2026",
   "ten": "1 chỉ vàng bao nhiêu tiền? Giá vàng 24K, 18K, 9999 hôm nay – 31/10/2026",
   "can_duyet": "DOJI không còn dòng \"KNT + KTT + Kim Giáp\" – lấy dòng \"KIM TT/AVPL\" (kim thần tài/ An Vượng Phát Lộc).\nPNJ không có \"990\" – lấy dòng \"Vàng nữ trang 9920\".",
@@ -17,7 +17,7 @@
  },
  "gia-xang-dau": {
   "ok": true,
-  "luc": "2026-10-29T20:07:27+00:00",
+  "luc": "2026-10-30T07:16:07+00:00",
   "ngay": "31/10/2026",
   "ten": "Giá xăng dầu hôm nay bao nhiêu 1 lít mới nhất – 31/10/2026",
   "can_duyet": "Không thấy câu hỏi thường gặp về E10 RON 95-III Vùng 1 để cập nhật.\nKhông thấy câu hỏi thường gặp về E5 RON 92-II Vùng 1 để cập nhật.",
@@ -25,7 +25,7 @@
  },
  "vang-10k": {
   "ok": true,
-  "luc": "2026-10-30T03:26:00+00:00",
+  "luc": "2026-10-30T07:16:07+00:00",
   "ngay": "31/10/2026",
   "ten": "Vàng 10K là gì? Vàng 10k bao nhiêu 1 chỉ – 31/10/2026",
   "can_duyet": "",
@@ -33,23 +33,23 @@
  },
  "vang-14k": {
   "ok": true,
-  "luc": "2026-10-29T20:07:27+00:00",
+  "luc": "2026-10-30T07:16:07+00:00",
   "ngay": "31/10/2026",
   "ten": "Vàng 14K giá hôm nay: Bảng giá chi tiết cập nhật – 31/10/2026",
-  "can_duyet": "Đoạn Xu hướng: mức thay đổi làm tròn bằng 0 (+0.000) – giữ chữ \"giảm\", nên đọc lại câu.",
+  "can_duyet": "",
   "loi": ""
  },
  "vang-16k": {
   "ok": true,
-  "luc": "2026-10-29T20:07:27+00:00",
+  "luc": "2026-10-30T07:16:07+00:00",
   "ngay": "31/10/2026",
   "ten": "Vàng 16K giá hôm nay: Bảng giá chi tiết cập nhật – 31/10/2026",
-  "can_duyet": "pnj       KHÔNG ĐỌC ĐƯỢC\nPNJ: không đọc được nguồn – giữ nguyên giá cũ.\nThiếu nguồn pnj – khoảng tóm tắt chỉ tính trên các hãng còn lại.",
+  "can_duyet": "",
   "loi": ""
  },
  "vang-18k": {
   "ok": true,
-  "luc": "2026-10-29T20:07:27+00:00",
+  "luc": "2026-10-30T07:16:07+00:00",
   "ngay": "31/10/2026",
   "ten": "Vàng 18K là gì? Giá vàng 18k hôm nay – 31/10/2026",
   "can_duyet": "",
@@ -57,7 +57,7 @@
  },
  "vang-24k": {
   "ok": true,
-  "luc": "2026-10-29T20:07:27+00:00",
+  "luc": "2026-10-30T07:16:07+00:00",
   "ngay": "31/10/2026",
   "ten": "Vàng 24K là gì? Giá vàng 24k hôm nay – 31/10/2026",
   "can_duyet": "",
@@ -65,48 +65,48 @@
  },
  "vang-610": {
   "ok": true,
-  "luc": "2026-10-29T20:07:27+00:00",
+  "luc": "2026-10-30T07:16:07+00:00",
   "ngay": "31/10/2026",
   "ten": "Vàng 610 là vàng gì? Giá vàng 610 hôm nay bao nhiêu 1 chỉ – 31/10/2026",
-  "can_duyet": "pnj       KHÔNG ĐỌC ĐƯỢC",
+  "can_duyet": "",
   "loi": ""
  },
- "_yeu_cau": "tay-1793330710",
+ "_yeu_cau": "tay-1793344455",
  "gia-ca-cao": {
   "ok": true,
-  "luc": "2026-10-29T20:09:30+00:00",
+  "luc": "2026-10-30T07:16:07+00:00",
   "ngay": "31/10/2026",
   "ten": "Giá ca cao hôm nay: Biến động thị trường và góc nhìn cho nhà đầu tư – 31/10/2026",
-  "can_duyet": "Bảng trong nước, cột \"Thay đổi\" dòng \"Ca cao tươi\": nguồn ghi \"▲ +0 ~ 100\" (7.300 – 8.000 → 7.300 – 8.100), bài ghi \"0 VND/kg\" – không ghi được đúng dạng của bài, giữ nguyên.\nNew York CCN28: trang ICE chưa có giá khớp cho hợp đồng này (KL 3) – giữ nguyên \"5,812\" / \"+28\".\nNew York CCU28: trang ICE không liệt kê hợp đồng này – giữ nguyên \"5,771\" / \"+33\".\nBảng New York: số lấy từ trang chính thức của sàn ICE (Barchart chặn máy chủ) – là giá khớp gần nhất (10/29/2026 04:55 PM GMT – 10/29/2026 05:29 PM GMT, trễ tối thiểu 15 phút), không phải giá chốt phiên; nếu sàn đang mở phiên thì số còn thay đổi.\nLondon CAN28: trang ICE chưa có giá khớp cho hợp đồng này (KL 12) – giữ nguyên \"4,316\" / \"+22\".\nLondon CAU28: trang ICE chưa có giá khớp cho hợp đồng này (KL 4) – giữ nguyên \"4,279\" / \"+32\".\nBảng London: số lấy từ trang chính thức của sàn ICE (Barchart chặn máy chủ) – là giá khớp gần nhất (10/29/2026 04:54 PM GMT, trễ tối thiểu 15 phút), không phải giá chốt phiên; nếu sàn đang mở phiên thì số còn thay đổi.",
+  "can_duyet": "Bảng trong nước, cột \"Thay đổi\" dòng \"Ca cao tươi\": nguồn ghi \"▲ +0 ~ 100\" (7.300 – 8.000 → 7.300 – 8.100), bài ghi \"0 VND/kg\" – không ghi được đúng dạng của bài, giữ nguyên.\nNew York CCZ26: trang ICE chưa có giá khớp cho hợp đồng này (KL 0) – giữ nguyên \"5,843\" / \"+42\".\nNew York CCH27: trang ICE chưa có giá khớp cho hợp đồng này (KL 0) – giữ nguyên \"5,954\" / \"+33\".\nNew York CCK27: trang ICE chưa có giá khớp cho hợp đồng này (KL 0) – giữ nguyên \"6,001\" / \"+22\".\nNew York CCN27: trang ICE chưa có giá khớp cho hợp đồng này (KL 0) – giữ nguyên \"6,020\" / \"+21\".\nNew York CCU27: trang ICE chưa có giá khớp cho hợp đồng này (KL 0) – giữ nguyên \"6,008\" / \"+18\".\nNew York CCZ27: trang ICE chưa có giá khớp cho hợp đồng này (KL 0) – giữ nguyên \"5,951\" / \"+17\".\nNew York CCH28: trang ICE chưa có giá khớp cho hợp đồng này (KL 0) – giữ nguyên \"5,895\" / \"+16\".\nNew York CCK28: trang ICE chưa có giá khớp cho hợp đồng này (KL 0) – giữ nguyên \"5,847\" / \"+22\".\nNew York CCN28: trang ICE chưa có giá khớp cho hợp đồng này (KL 0) – giữ nguyên \"5,812\" / \"+28\".\nNew York CCU28: trang ICE chưa có giá khớp cho hợp đồng này (KL 0) – giữ nguyên \"5,771\" / \"+33\".\nLondon CAZ26: trang ICE chưa có giá khớp cho hợp đồng này (KL 0) – giữ nguyên \"4,340\" / \"+40\".\nLondon CAH27: trang ICE chưa có giá khớp cho hợp đồng này (KL 0) – giữ nguyên \"4,469\" / \"+24\".\nLondon CAK27: trang ICE chưa có giá khớp cho hợp đồng này (KL 0) – giữ nguyên \"4,495\" / \"+15\".\nLondon CAN27: trang ICE chưa có giá khớp cho hợp đồng này (KL 0) – giữ",
   "loi": ""
  },
  "gia-ca-phe-dak-lak": {
   "ok": true,
-  "luc": "2026-10-29T20:09:30+00:00",
+  "luc": "2026-10-30T07:16:07+00:00",
   "ngay": "31/10/2026",
   "ten": "Giá cà phê Đắk Lắk hôm nay: Biến động thị trường và góc nhìn cho nhà đầu tư – 31/10/2026",
-  "can_duyet": "Bảng giá theo ngày: 5 dòng = 5 ngày mới nhất trên giacaphe.com (29/10/2026, 28/10/2026, 27/10/2026, 24/10/2026, 23/10/2026); nguồn không ghi ngày nghỉ (chủ nhật, ngày không giao dịch) nên các ngày có thể không liền nhau.\nĐoạn giá Đắk Lắk: chữ chỉ chiều đổi \"tăng\" → \"giảm\" theo nguồn (-600 đ/kg so với phiên trước) – đọc lại câu.\nCâu \"giá Đắk Lắk đang ở mức tương đối cao\" giữ nguyên, nhưng với số mới Đắk Lắk 88,400 thấp hơn Đắk Nông 88,500 → câu có thể không còn đúng, cần duyệt.\nNgày trong bài ghi 31/10/2026 (quy tắc ngày hôm sau) nhưng số mới nhất trên nguồn là ngày 29/10/2026 → mọi số giá trong bài là số ngày 29/10/2026.\nCâu \"Dưới đây là bảng thông tin được trích xuất và kẻ lại y hệt theo hình ảnh bạn cung cấp:\" có sẵn trên bài web (giống câu trả lời của AI sót lại) – không sửa, nên báo nhóm web xem lại.",
+  "can_duyet": "Bảng giá theo ngày: 5 dòng = 5 ngày mới nhất trên giacaphe.com (30/10/2026, 29/10/2026, 28/10/2026, 27/10/2026, 24/10/2026); nguồn không ghi ngày nghỉ (chủ nhật, ngày không giao dịch) nên các ngày có thể không liền nhau.\nĐoạn giá Đắk Lắk: chữ chỉ chiều đổi \"tăng\" → \"giảm\" theo nguồn (-1,000 đ/kg so với phiên trước) – đọc lại câu.\nCâu \"giá Đắk Lắk đang ở mức tương đối cao\" giữ nguyên, nhưng với số mới Đắk Lắk 87,400 thấp hơn Đắk Nông 87,500 → câu có thể không còn đúng, cần duyệt.\nNgày trong bài ghi 31/10/2026 (quy tắc ngày hôm sau) nhưng số mới nhất trên nguồn là ngày 30/10/2026 → mọi số giá trong bài là số ngày 30/10/2026.\nCâu \"Dưới đây là bảng thông tin được trích xuất và kẻ lại y hệt theo hình ảnh bạn cung cấp:\" có sẵn trên bài web (giống câu trả lời của AI sót lại) – không sửa, nên báo nhóm web xem lại.",
   "loi": ""
  },
  "gia-ca-phe-luan-don": {
   "ok": true,
-  "luc": "2026-10-29T20:09:30+00:00",
+  "luc": "2026-10-30T07:16:07+00:00",
   "ngay": "31/10/2026",
   "ten": "Giá cà phê sàn London và New York mới nhất hôm nay – 31/10/2026",
-  "can_duyet": "Giá lấy theo lần cập nhật của nguồn (Robusta London 02:37 ngày 30/10/2026; Arabica New York 02:37 ngày 30/10/2026) – nếu sàn đang giao dịch thì đây là giá trong phiên, có thể còn đổi; bài ghi ngày hôm sau theo quy tắc chung.",
+  "can_duyet": "Giá lấy theo lần cập nhật của nguồn (Robusta London 13:38 ngày 30/10/2026; Arabica New York 13:38 ngày 30/10/2026) – nếu sàn đang giao dịch thì đây là giá trong phiên, có thể còn đổi; bài ghi ngày hôm sau theo quy tắc chung.",
   "loi": ""
  },
  "gia-dau-the-gioi": {
   "ok": true,
-  "luc": "2026-10-29T20:09:30+00:00",
+  "luc": "2026-10-30T07:16:07+00:00",
   "ngay": "31/10/2026",
   "ten": "Cập nhật giá dầu thế giới hôm nay – 31/10/2026",
-  "can_duyet": "Giá Brent/WTI là giá giao dịch trong phiên trên TradingView (Tính đến ngày hôm nay 20:08 GMT, lấy lúc 2026-10-29 20:08 GMT, thị trường mở cửa) nên còn thay đổi; bài ghi ngày hôm sau theo quy tắc ghi ngày.\nĐoạn mô tả đầu bài (sapo) nhắc \"diễn biến 5 ngày gần đây\" nhưng bài không có bảng 5 ngày – giữ nguyên câu chữ, không thêm bảng.",
+  "can_duyet": "Giá Brent/WTI là giá giao dịch trong phiên trên TradingView (Tính đến ngày hôm nay 07:14 GMT, lấy lúc 2026-10-30 07:14 GMT, thị trường mở cửa) nên còn thay đổi; bài ghi ngày hôm sau theo quy tắc ghi ngày.\nĐoạn mô tả đầu bài (sapo) nhắc \"diễn biến 5 ngày gần đây\" nhưng bài không có bảng 5 ngày – giữ nguyên câu chữ, không thêm bảng.",
   "loi": ""
  },
  "gia-dieu": {
   "ok": true,
-  "luc": "2026-10-29T20:09:30+00:00",
+  "luc": "2026-10-30T07:16:07+00:00",
   "ngay": "31/10/2026",
   "ten": "Giá điều hôm nay: Cập nhật thị trường trong nước, thế giới & các yếu tố tác động – 31/10/2026",
   "can_duyet": "",
@@ -114,7 +114,7 @@
  },
  "gia-dong": {
   "ok": true,
-  "luc": "2026-10-29T20:09:30+00:00",
+  "luc": "2026-10-30T07:16:07+00:00",
   "ngay": "31/10/2026",
   "ten": "Giá đồng hôm nay trực tuyến & các yếu tố tác động đến thị trường – 31/10/2026",
   "can_duyet": "barchart.com (đồng COMEX HG) KHÔNG ĐỌC ĐƯỢC: trang chặn máy chủ (CloudFront), công thức không vượt chặn — https://www.barchart.com/futures/quotes/HG*0/futures-prices?viewName=main\nBảng 1.1: dòng thứ 4 bài ghi \"Đồng cháy\" (trùng tên dòng khác), nguồn ở cùng vị trí ghi \"Đồng vàng\" – lấy giá dòng \"Đồng vàng\", giữ nguyên tên trong bài (không đổi tên riêng), nhờ biên tập xem lại tên.\nBảng 1.1: có dòng viết dấu phẩy (155,000), có dòng viết dấu chấm (130.000) – giữ nguyên cách viết của từng ô, nhờ biên tập thống nhất nếu muốn.\nBảng 1.1: trang nguồn thumuaphelieugiacao24h.vn ghi sửa lần cuối 04/05/2026 – nguồn có thể không cập nhật hằng ngày, nhờ biên tập lưu ý.\nBảng 1.2 (giá đồng thế giới): nguồn Barchart HG*0 chặn máy chủ (CloudFront) nên không đọc được số – giữ nguyên cả bảng. Lưu ý thêm: bài đang ghi mã hợp đồng ALI… (ALIV2026 … ALIN2027) – ALI là mã hợp đồng NHÔM, không phải đồng (đồng COMEX là HG, USD/pound); cần Trang/biên tập chốt bảng này dùng đồng HG hay nhôm ALI.\nCác số trong phần phân tích (thiếu khoảng 25% vào năm 2035; nhu cầu 26.7 triệu tấn năm 2024 → 34.1 triệu tấn năm 2040; năm 2025) không có trong nguồn được chọn nên giữ nguyên.",
@@ -122,7 +122,7 @@
  },
  "gia-gas": {
   "ok": true,
-  "luc": "2026-10-29T20:09:30+00:00",
+  "luc": "2026-10-30T07:16:07+00:00",
   "ngay": "31/10/2026",
   "ten": "Cập nhật giá gas hôm nay mới nhất – 31/10/2026",
   "can_duyet": "Bài có nhắc thương hiệu Pacific Petro nhưng không có dòng giá Pacific Petro và không có nguồn Pacific Petro – không có gì để cập nhật, chỉ báo lại.",
@@ -138,34 +138,34 @@
  },
  "gia-lua-gao": {
   "ok": true,
-  "luc": "2026-10-29T20:09:30+00:00",
+  "luc": "2026-10-30T07:16:07+00:00",
   "ngay": "31/10/2026",
   "ten": "Giá lúa gạo hôm nay: Cập nhật thị trường trong nước, thế giới & các yếu tố tác động – 31/10/2026",
-  "can_duyet": "Giá trong nước lấy từ bảng mới nhất của banggianongsan.com: 'Bảng giá lúa gạo mới nhất - 30/10/2026' (đăng 09:17 28/10/2026); bài ghi ngày hôm sau theo quy tắc.\nDòng \"Lúa Nàng Hoa 9\": nguồn chưa có đủ giá (\"Lúa Nàng Hoa 9 (đ/kg) | 6.000 – 6.200 |  | Chưa có dữ liệu giá mới\") → giữ nguyên cả dòng.\nNguồn có thêm Lúa tươi DS1 (5.900 – 6.000 | 5.900 – 6.000 | 0 đ (Không đổi)); Tấm thơm (9.400 – 9.500 | 9.600 – 9.800 | ▲+200 ~ +300 đ); Cám (7.850 – 8.100 | 7.750 – 8.150 | ▼-100 ~ +50 đ) nhưng bài không có các dòng này → không thêm (quy tắc không thay đổi nội dung).\nBảng giá gạo thế giới lấy từ nguồn THAY THẾ: Hiệp hội Lương thực Việt Nam (VFA, số liệu Oryza) bản tin 27/10/2026 vì bài vietbao.vn 3 ngày gần nhất không có bảng thế giới. Ghép dòng: Thái Lan 5% tấm = '5% tấm'; Thái Lan 100% tấm = 'A1 Super'; Ấn Độ 100% tấm = '100% tấm Stxd'; Ấn Độ gạo đồ 5% tấm = 'Gạo đồ 5% Stxd'. Cột thay đổi tính so với bản tin 26/10/2026 – cần duyệt.",
+  "can_duyet": "Giá trong nước lấy từ bảng mới nhất của banggianongsan.com: 'Bảng giá lúa gạo mới nhất - 30/10/2026' (đăng 08:59 30/10/2026); bài ghi ngày hôm sau theo quy tắc.\nDòng \"Lúa Nàng Hoa 9\": nguồn chưa có đủ giá (\"Lúa Nàng Hoa 9 (đ/kg) | 6.000 – 6.200 |  | Chưa có dữ liệu giá mới\") → giữ nguyên cả dòng.\nNguồn có thêm Lúa tươi DS1 (5.900 – 6.000 | 6.600 – 6.700 | ▲+700 đ); Tấm thơm (9.400 – 9.500 | 9.600 – 9.800 | ▲+200 ~ +300 đ); Cám (7.850 – 8.100 | 7.750 – 8.150 | ▼-100 ~ +50 đ) nhưng bài không có các dòng này → không thêm (quy tắc không thay đổi nội dung).\nBảng giá gạo thế giới lấy từ nguồn THAY THẾ: Hiệp hội Lương thực Việt Nam (VFA, số liệu Oryza) bản tin 27/10/2026 vì bài vietbao.vn 3 ngày gần nhất không có bảng thế giới. Ghép dòng: Thái Lan 5% tấm = '5% tấm'; Thái Lan 100% tấm = 'A1 Super'; Ấn Độ 100% tấm = '100% tấm Stxd'; Ấn Độ gạo đồ 5% tấm = 'Gạo đồ 5% Stxd'. Cột thay đổi tính so với bản tin 26/10/2026 – cần duyệt.",
   "loi": ""
  },
  "gia-nhom": {
   "ok": true,
-  "luc": "2026-10-29T20:09:30+00:00",
+  "luc": "2026-10-30T07:16:07+00:00",
   "ngay": "31/10/2026",
-  "ten": "Giá nhôm hôm nay: Bảng giá cập nhật và các yếu tố ảnh hưởng đến thị trường – 31/10/2026",
-  "can_duyet": "",
+  "ten": "Giá nhôm thế giới hôm nay – 31/10/2026",
+  "can_duyet": "Bảng giá nhôm thế giới: hợp đồng ALIV2026 không còn trên TradingView (đã đáo hạn) → đã cuộn mã: bảng nay là 10 hợp đồng đầu tiên trên nguồn (ALIX2026 … ALIQ2027). Kiểm tra lại mã hợp đồng.",
   "loi": ""
  },
  "gia-thep": {
   "ok": true,
-  "luc": "2026-10-29T20:09:30+00:00",
+  "luc": "2026-10-30T07:16:07+00:00",
   "ngay": "31/10/2026",
   "ten": "Giá thép hôm nay: Bảng giá cập nhật và các yếu tố ảnh hưởng đến thị trường – 31/10/2026",
-  "can_duyet": "barchart KHÔNG ĐỌC ĐƯỢC (HTTP 202, 0 byte – trang kiểm tra chống máy, không vượt)\nBảng giá thép thế giới: Barchart không đọc được (trang chặn máy chủ tự động, trả HTTP 202/403) – giữ nguyên toàn bộ giá và mức thay đổi cũ, giữ ngày cũ ở tiêu đề mục 1. Nhờ người cập nhật tay.\nBảng giá thép trong nước: dùng bảng steelonline.vn ngày 29-10-2026 (trang mới nhất có số); khoảng giá = thấp nhất – cao nhất mọi ô VNĐ/kg và VNĐ/cây ở tab đầu tiên của mỗi hãng.",
+  "can_duyet": "barchart KHÔNG ĐỌC ĐƯỢC (HTTP 202, 0 byte – trang kiểm tra chống máy, không vượt)\nBảng giá thép thế giới: Barchart không đọc được (trang chặn máy chủ tự động, trả HTTP 202/403) – giữ nguyên toàn bộ giá và mức thay đổi cũ, giữ ngày cũ ở tiêu đề mục 1. Nhờ người cập nhật tay.\nBảng giá thép trong nước: dùng bảng steelonline.vn ngày 30-10-2026 (trang mới nhất có số); khoảng giá = thấp nhất – cao nhất mọi ô VNĐ/kg và VNĐ/cây ở tab đầu tiên của mỗi hãng.",
   "loi": ""
  },
  "gia-tieu": {
   "ok": true,
-  "luc": "2026-10-29T20:09:30+00:00",
+  "luc": "2026-10-30T07:16:07+00:00",
   "ngay": "31/10/2026",
   "ten": "Giá tiêu hôm nay mới nhất – 31/10/2026",
-  "can_duyet": "Dòng \"Indonesia - Black Pepper\": không có trong banggianongsan.com – giữ nguyên 6.850 / 6.850 / Không đổi.\nDòng \"Indonesia - White Pepper\": không có trong banggianongsan.com – giữ nguyên 9.354 / 9.354 / Không đổi.\nDòng \"Brazil Black - Pepper ASTA 570\": không có trong banggianongsan.com – giữ nguyên 5.800 / 5.800 / Không đổi.\nDòng \"Malaysia - Black Pepper ASTA\": không có trong banggianongsan.com – giữ nguyên 9.100 / 9.100 / Không đổi.\nDòng \"Malaysia - White Pepper ASTA\": không có trong banggianongsan.com – giữ nguyên 12.000 / 12.000 / Không đổi.\nDòng \"Viet Nam - Black Pepper 500 g/l\": không có trong banggianongsan.com – giữ nguyên 5.950 / 5.950 / Không đổi.\nDòng \"Viet Nam - Black Pepper 550 g/l\": không có trong banggianongsan.com – giữ nguyên 5.995 / 5.995 / Không đổi.\nDòng \"Viet Nam - White Pepper ASTA\": không có trong banggianongsan.com – giữ nguyên 8.450 / 8.450 / Không đổi.\nDòng \"Garbled\": không có trong banggianongsan.com – giữ nguyên 71.300 / 71.300 / Không đổi.\nDòng \"Gram/lit\": không có trong banggianongsan.com – giữ nguyên 68.300 / 68.300 / Không đổi.\nDòng \"Ungarbled\": không có trong banggianongsan.com – giữ nguyên 69.300 / 69.300 / Không đổi.\nBảng giá hồ tiêu trong nước – Hồ Tiêu Gia Lai (đ/kg): 2 nguồn cùng ngày lệch Giá mới – banggianongsan 137,000, giatieu.com (Gia Lai) 136,000 → giữ nguyên cả dòng, cần người chọn nguồn.\nBảng giá hồ tiêu trong nước – Hồ Tiêu Đồng Nai (đ/kg): 2 nguồn cùng ngày lệch Giá mới – banggianongsan 137,000, giatieu.com (Bình Phước) 136,000 →",
+  "can_duyet": "Giá hồ tiêu nội địa Ấn Độ – Garbled: ghi theo banggianongsan (71,300); giatieu.com/gia-tieu-truc-tuyen ghi 71,400 (thay đổi 0) – lệch 100 Rupee → cần người chọn nguồn.\nGiá hồ tiêu nội địa Ấn Độ – Gram/lit: ghi theo banggianongsan (68,300); giatieu.com/gia-tieu-truc-tuyen ghi 68,400 (thay đổi 0) – lệch 100 Rupee → cần người chọn nguồn.\nGiá hồ tiêu nội địa Ấn Độ – Ungarbled: ghi theo banggianongsan (69,300); giatieu.com/gia-tieu-truc-tuyen ghi 69,400 (thay đổi 0) – lệch 100 Rupee → cần người chọn nguồn.\nBảng giá hồ tiêu trong nước – Hồ Tiêu Gia Lai (đ/kg): 2 nguồn cùng ngày lệch Giá mới – banggianongsan 137,000, giatieu.com (Gia Lai) 135,000 → giữ nguyên cả dòng, cần người chọn nguồn.\nBảng giá hồ tiêu trong nước – Hồ Tiêu Đồng Nai (đ/kg): 2 nguồn cùng ngày lệch Giá mới – banggianongsan 137,000, giatieu.com (Bình Phước) 135,000 → giữ nguyên cả dòng, cần người chọn nguồn.\nBảng giá hồ tiêu trong nước – Hồ Tiêu TP. Hồ Chí Minh (đ/kg): 2 nguồn cùng ngày lệch Giá mới – banggianongsan 137,500, giatieu.com (Bà Rịa - Vũng Tàu) 135,500 → giữ nguyên cả dòng, cần người chọn nguồn.\nBảng giá hồ tiêu trong nước – Hồ Tiêu Lâm Đồng (Đắk Nông cũ sáp nhập) (đ/kg): 2 nguồn cùng ngày lệch Giá mới – banggianongsan 139,000, giatieu.com (Đắk Nông) 136,500 → giữ nguyên cả dòng, cần người chọn nguồn.\nBảng giá hồ tiêu trong nước – Hồ Tiêu Đắk Lắk (đ/kg): 2 nguồn cùng ngày lệch Giá mới – banggianongsan 140,000, giatieu.com (Đắk Lắk) 137,500 → giữ nguyên cả dòng, cần người chọn nguồn.\ngiatieu.com/gia-tieu-",
   "loi": ""
  },
  "lai-suat-1": {
