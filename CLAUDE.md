@@ -108,3 +108,4 @@ Agent đọc chìa từ file, gửi qua header `Authorization: Bearer <chìa>`, 
 | `khoa-hoc/` | Tiến độ khóa Agent Boss, mã nộp từng bài, sản phẩm đã làm |
 | `cong-cu/` | Công cụ dùng lại được — prompt SEO, bản tin tự động |
 | `BAO-MAT.md` | Danh sách chìa khóa đã lộ cần thu hồi |
+| `.claude/skills/toi-uu-mdtk/` | Skill chèn MĐTK theo Google Sheet (gõ `/toi-uu-mdtk`). ⚠️ Mới có `SKILL.md`, **còn thiếu** `scripts/` và `references/` — cần Trang gửi file `toi-uu-mdtk.zip` |
