@@ -18,7 +18,7 @@ export default async (req) => {
   if (!chia) return tra({loi: 'Nút chạy chưa được cài chìa (GITHUB_TOKEN)'}, 503);
   const r = await fetch('https://api.github.com/repos/vuthithuytrang-lab/trang/actions/workflows/tu-dong-cap-nhat.yml/dispatches', {
     method: 'POST',
-    headers: {authorization: `Bearer ${chia}`, accept: 'application/vnd.github+json', 'user-agent': 'vttt-sn', 'x-github-api-version': '2022-11-28'},
+    headers: {authorization: `Bearer ${chia}`, accept: 'application/vnd.github+json', 'content-type': 'application/json', 'user-agent': 'vttt-sn', 'x-github-api-version': '2022-11-28'},
     body: JSON.stringify({ref: 'claude/ai-boss-data-replace-hn412r', inputs: {bai: bai.join(' ')}}),
   });
   if (!r.ok) return tra({loi: `GitHub từ chối (${r.status})`}, 502);
