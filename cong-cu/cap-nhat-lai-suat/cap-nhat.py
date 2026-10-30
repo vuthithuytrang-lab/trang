@@ -660,11 +660,15 @@ def o_bang(h):
 
 def soat(ma, duong_dan):
     import base64
-    d = json.load(open(duong_dan))
-    try:
-        g = base64.b64decode(d['content']).decode('utf-8')
-    except Exception:
-        g = d['content']
+    raw = open(duong_dan, encoding='utf-8').read()
+    try:             # kết quả tải Drive cũ: JSON {content: base64}; bản mới lưu thẳng file HTML
+        d = json.loads(raw)
+        try:
+            g = base64.b64decode(d['content']).decode('utf-8')
+        except Exception:
+            g = d['content']
+    except ValueError:
+        g = raw
     mau = open(f'{TAM}{ma}.min.html').read()
     G, M = o_bang(g), o_bang(mau)
     lech = [(i, a, b) for i, (a, b) in enumerate(zip(G, M)) if a != b]
