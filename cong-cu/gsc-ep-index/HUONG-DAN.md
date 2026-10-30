@@ -34,3 +34,17 @@ File 1 mở Chrome với `--remote-debugging-port=9222` và hồ sơ riêng `%LO
 (Chrome 136+ không cho bật cổng điều khiển trên hồ sơ mặc định). Script `ep-index.ps1` dùng
 PowerShell có sẵn trên Windows, nối vào tab GSC qua DevTools Protocol, và chạy đúng phần JS
 của skill gốc (`mac/request.sh`, `mac/inspect.sh`).
+
+---
+
+# Cách 2 (khuyên dùng): tiện ích Chrome — dùng luôn Chrome đang đăng nhập GSC
+
+Không cần đăng nhập lại, không cần PowerShell. File: `ep-index-chrome-extension.zip` (mã nguồn trong `chrome-extension/`).
+
+1. Giải nén file zip.
+2. Trong Chrome, vào `chrome://extensions`, bật **Developer mode** (Chế độ dành cho nhà phát triển) ở góc phải.
+3. Bấm **Load unpacked** (Tải tiện ích đã giải nén), rồi chọn thư mục `ep-index-gsc-extension`.
+4. Mở trang Tổng quan GSC của website. Bấm biểu tượng tiện ích (hình mảnh ghép → **Ép index GSC**).
+5. Kiểm tra giờ publish và danh sách link, rồi bấm **Bắt đầu**. Chạy xong, bấm **Sao chép kết quả** và dán vào chat.
+
+Kết quả được lưu lại. Nếu bấm Dừng hoặc tắt máy, lần sau bấm Bắt đầu thì link đã xong sẽ không làm lại.

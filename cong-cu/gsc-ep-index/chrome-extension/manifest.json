@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Ép index GSC",
+  "version": "1.0",
+  "description": "Tự kiểm tra Last crawl và bấm Request indexing trong Google Search Console cho cả danh sách URL.",
+  "permissions": ["scripting", "tabs", "storage"],
+  "host_permissions": ["https://search.google.com/*"],
+  "background": { "service_worker": "background.js" },
+  "action": { "default_title": "Ép index GSC" }
+}
