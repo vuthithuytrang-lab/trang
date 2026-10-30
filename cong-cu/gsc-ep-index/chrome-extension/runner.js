@@ -41,15 +41,27 @@ const P = {
     return document.documentElement.classList.contains('translated-ltr') || document.documentElement.classList.contains('translated-rtl') ? 'TRANSLATED' : 'OK';
   },
   async fill(u) {
-    const find = () => [...document.querySelectorAll('input')].find((x) => /Inspect any URL/.test(x.getAttribute('aria-label') || '') && x.offsetParent);
+    const shown = (x) => x.getClientRects().length > 0;
+    const label = (x) => [x.getAttribute('aria-label'), x.getAttribute('placeholder'), x.getAttribute('title')].join(' ');
+    const find = () => {
+      const ins = [...document.querySelectorAll('input')].filter((x) => shown(x) && !/hidden|checkbox|radio/i.test(x.type));
+      return ins.find((x) => /Inspect any URL|Kiểm tra mọi URL/i.test(label(x))) || ins.find((x) => /Inspect|URL/i.test(label(x)));
+    };
     let i = find();
     if (!i) {
       // cửa sổ hẹp: ô tìm kiếm thu thành kính lúp → bấm để mở ra
-      const b = [...document.querySelectorAll('[role=button],button')].find((x) => /Inspect|Search/i.test(x.getAttribute('aria-label') || '') && x.offsetParent);
+      const b = [...document.querySelectorAll('[role=button],button')].find((x) => /Inspect|Search/i.test(label(x)) && shown(x));
       if (b) { b.click(); await new Promise((r) => setTimeout(r, 1000)); i = find(); }
     }
-    if (!i) return 0;
-    i.focus(); i.value = u; i.dispatchEvent(new Event('input', { bubbles: true }));
+    if (!i) {
+      // ghi lại các ô đang có để sửa tiếp
+      return 'NOINPUT ' + [...document.querySelectorAll('input')].slice(0, 8)
+        .map((x) => `[${x.type}|${shown(x) ? 'hiện' : 'ẩn'}|${label(x).trim()}]`).join(' ');
+    }
+    i.focus();
+    Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set.call(i, u);
+    i.dispatchEvent(new Event('input', { bubbles: true }));
+    i.dispatchEvent(new Event('change', { bubbles: true }));
     const o = { key: 'Enter', code: 'Enter', keyCode: 13, which: 13, bubbles: true };
     ['keydown', 'keypress', 'keyup'].forEach((t) => i.dispatchEvent(new KeyboardEvent(t, o)));
     return 1;
@@ -136,13 +148,17 @@ async function home() {
   }
 }
 const CLOSE = '^(Dismiss|GOT IT)$';
+async function fillOrLog(u) {
+  const f = await run(P.fill, u);
+  if (f !== 1) log(`  Chưa thấy ô Kiểm tra URL, đang thử lại... ${f || ''}`);
+}
 
 // ---------- Đọc Last crawl ----------
 async function inspect(u) {
   await home(); await sleep(6);
   let r = null;
   for (let k = 0; k < 3 && !(r && r.st !== undefined); k++) {
-    if (!(await run(P.fill, u))) log('  Chưa thấy ô Kiểm tra URL, đang thử lại...');
+    await fillOrLog(u);
     for (let i = 0; i < 15; i++) { await sleep(3); r = await run(P.read, u); if (r && r.st !== undefined) break; }
     if (!(r && r.st !== undefined)) await sleep(3);
   }
@@ -183,7 +199,7 @@ async function request(u) {
   let st = '';
   for (let k = 0; k < 3; k++) {
     await run(P.click, CLOSE); await sleep(1);
-    if (!(await run(P.fill, u))) log('  Chưa thấy ô Kiểm tra URL, đang thử lại...');
+    await fillOrLog(u);
     for (let i = 0; i < 15; i++) { await sleep(3); st = await run(P.ready, u); if (st === 'READY' || st === 'NOTPROP') break; }
     if (st === 'READY' || st === 'NOTPROP') break;
   }
