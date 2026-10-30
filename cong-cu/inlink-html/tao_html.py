@@ -1,4 +1,4 @@
-import sys, json, re, html as H, urllib.parse
+import sys, json, re, html as H, html as html_mod, urllib.parse
 from bs4 import BeautifulSoup, NavigableString
 
 def unwrap(h):
@@ -170,8 +170,41 @@ def build_cell(results, missing):
     return s
 
 if __name__ == '__main__':
-    rows = {str(o['row']): o for o in json.load(open('rows.json'))}
-    o = rows[sys.argv[1]]
-    tg = list(o['pairs']) + ([(o['I'], o['J'])] if o['J'] else [])
-    r, m = process(f'html/{sys.argv[1]}.html', tg)
-    print(build_cell(r, m))
+    # python3 tao_html.py <viec_can_lam.json> <thu_muc_html> <thu_muc_ra>
+    import os, unicodedata
+    jobs = json.load(open(sys.argv[1], encoding='utf-8'))
+    hdir, odir = sys.argv[2], sys.argv[3]
+    os.makedirs(odir, exist_ok=True)
+    cells = {}
+    for o in jobs:
+        p = os.path.join(hdir, f"{o['row']}.html")
+        if not os.path.exists(p):
+            print('THIEU FILE DOCS', o['row']); continue
+        raw = html_mod.unescape(open(p, encoding='utf-8').read())
+        slug = o['url'].rstrip('/').split('/')[-1]
+        tg = [tuple(x) for x in o['pairs']] + ([(o['I'], o['J'])] if o.get('J') else [])
+        if slug not in raw:
+            cells[o['row']] = f'<!-- CHƯA TẠO HTML: link FILE BLOG ở cột K không mở ra file Docs của bài {slug}. Cần kiểm tra lại link file Docs. -->'
+        else:
+            r, m = process(p, tg)
+            c = build_cell(r, m)
+            if o.get('note'):
+                c = f'<!-- Chị Lộc duyệt: "{o["note"]}" -->\n\n' + c
+            cells[o['row']] = c
+        cells[o['row']] = unicodedata.normalize('NFC', cells[o['row']])
+        print(o['row'], len(cells[o['row']]), 'ky tu')
+    json.dump({str(k): v for k, v in cells.items()}, open(os.path.join(odir, 'cells.json'), 'w', encoding='utf-8'), ensure_ascii=False)
+    # chia lô ghi: mỗi lô <= 12000 ký tự, các dòng gần nhau
+    col = jobs[0]['html_col'] if jobs else 'Z'
+    ks = sorted(cells); groups = []; cur = []; size = 0
+    for k in ks:
+        if cur and (k - cur[-1] > 12 or size + len(cells[k]) > 12000):
+            groups.append(cur); cur = []; size = 0
+        cur.append(k); size += len(cells[k])
+    if cur: groups.append(cur)
+    sheet = jobs[0]['sheet'] if jobs else ''
+    for i, g in enumerate(groups):
+        vals = [[cells[r]] if r in cells else [None] for r in range(g[0], g[-1] + 1)]
+        json.dump({'range': f"'{sheet}'!{col}{g[0]}:{col}{g[-1]}", 'values': vals},
+                  open(os.path.join(odir, f'lo_{i:02d}.json'), 'w', encoding='utf-8'), ensure_ascii=False)
+    print('so lo ghi:', len(groups))
