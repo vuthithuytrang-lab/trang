@@ -1,17 +1,17 @@
 {
  "lai-suat-1": {
   "ok": true,
-  "luc": "2026-10-29T12:11:24+00:00",
-  "ngay": "30/10/2026",
-  "ten": "Lãi suất tiết kiệm Techcombank – 30/10/2026",
+  "luc": "2026-10-30T02:55:34+00:00",
+  "ngay": "31/10/2026",
+  "ten": "Lãi suất tiết kiệm Techcombank – 31/10/2026",
   "can_duyet": "Bảng Tại quầy – VPBank: 36 tháng (5.8, Topi) thấp hơn hẳn 24 tháng (6.9, Topi) – số bất thường trên nguồn, vẫn điền theo nguồn.\nBảng Tại quầy – SCB – 1 tháng: nguồn ghi 0.1, thấp bất thường.\nBảng Tại quầy – SCB – 3 tháng: nguồn ghi 0.1, thấp bất thường.\nBảng Tại quầy – SCB – 6 tháng: nguồn ghi 0.5, thấp bất thường.\nBảng Online – VPBank: 36 tháng (6, Topi) thấp hơn hẳn 24 tháng (7.1, Topi) – số bất thường trên nguồn, vẫn điền theo nguồn.\nBảng Online – SeABank: Topi không có ngân hàng này ở bảng online → kỳ hạn 18, 24, 36 tháng lấy theo kỳ hạn gần nhất.\nBảng Online – VIB: 18 tháng (5.9, Topi) thấp hơn hẳn 12 tháng (7, VnExpress) – số bất thường trên nguồn, vẫn điền theo nguồn.\nBảng Online – VietinBank: 18 tháng (5.9, Topi) thấp hơn hẳn 12 tháng (6.8, VnExpress) – số bất thường trên nguồn, vẫn điền theo nguồn.\nBảng Online – Agribank: Topi không có ngân hàng này ở bảng online → kỳ hạn 18, 24, 36 tháng lấy theo kỳ hạn gần nhất.\nBảng Online – LPBank: 36 tháng (6.1, Topi) thấp hơn hẳn 24 tháng (7.2, Topi) – số bất thường trên nguồn, vẫn điền theo nguồn.\nBảng Online – SCB – 1 tháng: nguồn ghi 0.1, thấp bất thường.\nBảng Online – SCB – 3 tháng: nguồn ghi 0.5, thấp bất thường.\nBảng Online – SCB – 6 tháng: nguồn ghi 0.5, thấp bất thường.\nBảng Online – SCB – 12 tháng: nguồn ghi 0.6, thấp bất thường.\nBảng Online – BacABank: Topi không có ngân hàng này ở bảng online → kỳ hạn 18, 24, 36 tháng lấy theo kỳ hạn gần nhất.\nNgoài bảng – \"Thông thường lãi suất gửi tiết kiệm online sẽ cao hơn lãi su",
   "loi": ""
  },
  "lai-suat-2": {
   "ok": true,
-  "luc": "2026-10-29T12:11:24+00:00",
-  "ngay": "30/10/2026",
-  "ten": "Cách tính lãi suất tiền gửi tiết kiệm Techcombank – 30/10/2026",
+  "luc": "2026-10-30T02:55:34+00:00",
+  "ngay": "31/10/2026",
+  "ten": "Cách tính lãi suất tiền gửi tiết kiệm Techcombank – 31/10/2026",
   "can_duyet": "Ngoài bảng – \"Kỳ hạn | Lãi suất %/năm | Cách tính lãi | Số tiền lãi nhận được\": bảng ví dụ có 8 ô lãi suất (4.30, 4.60, 6.30, 6.50, 5.60) cùng các số tiền tính theo đó – lãi suất Techcombank, chỉ sửa theo techcombank.com, giữ nguyên.\nNgoài bảng – \"Ví dụ: Khách hàng Private gửi tiết kiệm 100,000,000 VND vào sản phẩm Tiết kiệm thường bằng hình thức trực tuy…\": lãi suất/ví dụ tính của Techcombank – chỉ sửa theo techcombank.com (biểu lãi suất chính thức), giữ nguyên.\nNgoài bảng – \"Số tiền nhận được = 100,000,000 x (1 + 6.40%/1) ^ (1 x 5) = 136,366,640 VND\": lãi suất/ví dụ tính của Techcombank – chỉ sửa theo techcombank.com (biểu lãi suất chính thức), giữ nguyên.\nNgoài bảng – \"Năm | Lãi suất %/năm | Cách tính lãi | Số tiền lãi nhận được\": bảng ví dụ có 5 ô lãi suất (6.40) cùng các số tiền tính theo đó – lãi suất Techcombank, chỉ sửa theo techcombank.com, giữ nguyên.\nNgoài bảng – \"Trường hợp khách hàng hưởng lãi trước kỳ hạn: Khách hàng được hưởng mức lãi suất 0.05%/năm.\": lãi suất/ví dụ tính của Techcombank – chỉ sửa theo techcombank.com (biểu lãi suất chính thức), giữ nguyên.\nNgoài bảng – \"Số tiền lãi = 100,000,000 x 0.05% x 156/365 = 21,370 VND.\": lãi suất/ví dụ tính của Techcombank – chỉ sửa theo techcombank.com (biểu lãi suất chính thức), giữ nguyên.\nNgoài bảng – \"Như vậy, tổng số tiền khách hàng nhận về là 100,000,000 + 21,370 = 100,021,370 VND.\": lãi suất/ví dụ tính của Techcombank – chỉ sửa theo techcombank.com (biểu lãi suất chính thức), giữ nguyên.\nNgoài bảng – \"Lưu ý: Lã",
   "loi": ""
  }
