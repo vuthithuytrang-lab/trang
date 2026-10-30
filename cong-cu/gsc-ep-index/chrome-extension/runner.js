@@ -110,7 +110,7 @@ const P = {
 };
 
 // ---------- Điều khiển tab ----------
-let tabId = null, rid = '';
+let tabId = null, rid = '', lastErr = '';
 async function findTab(domain) {
   // phóng to cửa sổ GSC để ô "Kiểm tra URL" hiện đầy đủ
   const tabs = await chrome.tabs.query({ url: 'https://search.google.com/search-console*' });
@@ -127,6 +127,7 @@ async function run(fn, ...args) {
     return r ? r.result : null;
   } catch (e) {
     if (/No tab with id/i.test(e.message)) throw new Error('Tab Search Console đã bị đóng. Hãy mở lại rồi bấm Bắt đầu.');
+    lastErr = e.message;
     return null; // tab đang tải trang
   }
 }
@@ -149,8 +150,9 @@ async function home() {
 }
 const CLOSE = '^(Dismiss|GOT IT)$';
 async function fillOrLog(u) {
+  lastErr = '';
   const f = await run(P.fill, u);
-  if (f !== 1) log(`  Chưa thấy ô Kiểm tra URL, đang thử lại... ${f || ''}`);
+  if (f !== 1) log(`  Chưa thấy ô Kiểm tra URL, đang thử lại... ${f || ('Chrome báo: ' + (lastErr || 'không rõ'))}`);
 }
 
 // ---------- Đọc Last crawl ----------
@@ -297,4 +299,6 @@ $('saochep').onclick = async () => {
   await navigator.clipboard.writeText(['URL\tKết quả\tGhi chú', ...rows].join('\n'));
   status(`Đã sao chép ${rows.length} dòng — dán vào chat cho Claude.`);
 };
+document.title += ' ' + chrome.runtime.getManifest().version;
+log('Phiên bản tiện ích: ' + chrome.runtime.getManifest().version);
 chrome.storage.local.get('results').then((s) => { results = s.results || {}; showCount(); });
