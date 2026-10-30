@@ -24,11 +24,13 @@ không bao giờ dùng chung chìa giữa các dự án.
 - Lịch đợt 1: 11 bài × 4 nền tảng = 44 lượt, 05/10 14:05 → 09/10 08:05. **✅ XONG 44/44 lúc 09/10/2026 08:10, 0 lỗi.**
 - Đợt 2 (16/10): "food ingredients" (dòng 124–127) + "nguyên liệu dinh dưỡng" (129–132), 8 lượt 09:30 → 17:05. Routine BẬT lại 16/10. **✅ XONG 8/8 lúc 16/10 17:15, 0 lỗi. Routine đã TẮT.**
 - Đợt 3 (21–22/10): 4 bài (dòng 134, 139, 144, 149) × 4 nền tảng = 16 lượt, 21/10 15:05 → 22/10 17:05. Bài "yeast protein" ở cột B là link xem trước (?preview=true) — dùng link sạch khi đăng. Routine BẬT lại 21/10. ✅ **XONG đủ 16/16 lượt lúc 22/10 18:10**, routine đã TẮT lại.
-- Đợt 4 (28–30/10): 5 bài (dòng 153, 158, 163, 168, 173) × 4 nền tảng = 20 lượt, 28/10 15:05 → 30/10 11:05. Routine BẬT lại 28/10.
+- Đợt 4 (28–30/10): 5 bài (dòng 153, 158, 163, 168, 173) × 4 nền tảng = 20 lượt, 28/10 15:05 → 30/10 11:05. Routine BẬT lại 28/10. ✅ **XONG 20/20 lượt lúc 30/10 11:14**, routine đã TẮT lại.
   Routine đã **TẮT** (enabled=false) — đợt mới: tạo lịch mới rồi bật lại routine.
 - 08/10: lượt 12:05 bị trễ (mất kết nối) → lùi các lượt còn lại 1 giờ, vẫn đúng giãn cách.
 - Việc còn hỏi Trang: WordPress có hiện nội dung 2 lần không (giao diện); ảnh trong thân bài Wix có hiện không; Blogger không có ảnh xem trước khi share (giao diện).
 - 22/10: trước khi đăng, so giờ với **bài cùng nền tảng đăng gần nhất** (giờ thật, không phải giờ hẹn) — lịch cách 3 giờ nhưng lượt trước đăng trễ vài phút thì phải chờ cho đủ 3 giờ.
+- 29–30/10: routine hay gọi trễ 5–25 phút → trước khi đăng luôn kiểm tra cách lượt trước (bất kỳ nền tảng) ≥ 60 phút; trễ thì chờ, nhưng phải xong trước 21:00.
+- Ảnh trong bài gốc có biển hiệu/gian hàng **công ty khác** (vd. bài "nhà phân phối nguyên liệu": DKSH, Cargill…) → không dùng, chỉ dùng ảnh AIG/ACC (được dùng lại, đổi cặp/vai trò).
 - Thêm bài mới → tạo lại lịch (nối tiếp sau lượt cuối), ghi cột F, cập nhật file JSON.
 
 ## Còn mở
