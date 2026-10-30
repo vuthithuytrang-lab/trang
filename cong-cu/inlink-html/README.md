@@ -20,6 +20,9 @@ Công thức (sheet dùng dấu `;` theo vùng Việt Nam), đặt ở ô hàng 
 =ARRAYFORMULA(IF(IFERROR(REGEXMATCH(B2:B&"";"techcombank\.com/");FALSE);"https://author-techcombank-prod65.adobecqms.net/editor.html/content/techcombank/web/vn/vi/"&IFERROR(REGEXEXTRACT(B2:B&"";"techcombank\.com/([^?#]*[^/?#])");"")&".html";""))
 ```
 
-## Chạy script
+## Chạy tự động hằng ngày
+Xem `CHAY-HANG-NGAY.md`. Các script: `loc_bai.py` (lọc bài, tự dò cột theo tiêu đề), `tao_html.py` (tạo HTML + chia lô ghi), `kiem_tra.py` (đối chiếu sau khi ghi).
+
+## Ghi chú cũ
 `tao_html.py` đọc `rows.json` (danh sách bài đã lọc) và `html/<dòng>.html` (file Docs xuất dạng HTML zip),
 in ra nội dung ô HTML cho 1 dòng: `python3 tao_html.py <số dòng>`.
