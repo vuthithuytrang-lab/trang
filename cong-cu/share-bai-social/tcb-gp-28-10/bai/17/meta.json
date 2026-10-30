@@ -1,4 +1,20 @@
 {
- "wp": {"tu_khoa": "số tiền hoàn về thẻ", "title": "Vì sao số tiền hoàn về thẻ khác số đã trả khi giao dịch ngoại tệ", "slug": "vi-sao-so-tien-hoan-ve-the-khac-so-da-tra", "mo_ta": "Ba nguyên nhân khiến số tiền hoàn về thẻ lệch với số đã thanh toán khi giao dịch ngoại tệ và cách theo dõi, đối chiếu khoản hoàn."},
- "wix": {"tu_khoa": "số tiền hoàn về thẻ", "title": "Hủy vé, trả hàng mua nước ngoài: tiền hoàn về thẻ được tính ra sao", "slug": "huy-ve-tra-hang-nuoc-ngoai-tien-hoan-ve-the", "mo_ta": "Giải thích tỷ giá lúc hoàn, phí chuyển đổi và khấu trừ của người bán khi nhận tiền hoàn bằng ngoại tệ về thẻ."}
+ "wp": {
+  "tu_khoa": "số tiền hoàn về thẻ",
+  "title": "Vì sao số tiền hoàn về thẻ khác số đã trả khi giao dịch ngoại tệ",
+  "slug": "vi-sao-so-tien-hoan-ve-the-khac-so-da-tra",
+  "mo_ta": "Ba nguyên nhân khiến số tiền hoàn về thẻ lệch với số đã thanh toán khi giao dịch ngoại tệ và cách theo dõi, đối chiếu khoản hoàn."
+ },
+ "wix": {
+  "tu_khoa": "số tiền hoàn về thẻ",
+  "title": "Hủy vé, trả hàng mua nước ngoài: tiền hoàn về thẻ được tính ra sao",
+  "slug": "huy-ve-tra-hang-nuoc-ngoai-tien-hoan-ve-the",
+  "mo_ta": "Giải thích tỷ giá lúc hoàn, phí chuyển đổi và khấu trừ của người bán khi nhận tiền hoàn bằng ngoại tệ về thẻ."
+ },
+ "wf": {
+  "tu_khoa": "số tiền hoàn về thẻ",
+  "title": "Bốn tình huống khiến số tiền hoàn về thẻ lệch với số đã trả",
+  "slug": "bon-tinh-huong-so-tien-hoan-ve-the-lech",
+  "mo_ta": "Bốn tình huống hủy vé, hủy phòng, trả hàng khiến số tiền hoàn về thẻ khác số đã trả bằng ngoại tệ và cách theo dõi khoản hoàn."
+ }
 }
