@@ -106,5 +106,19 @@ Agent đọc chìa từ file, gửi qua header `Authorization: Bearer <chìa>`, 
 |---|---|
 | `ho-so/` | Hồ sơ Trang, phần cần cập nhật trên Agent Boss |
 | `khoa-hoc/` | Tiến độ khóa Agent Boss, mã nộp từng bài, sản phẩm đã làm |
-| `cong-cu/` | Công cụ dùng lại được — prompt SEO, bản tin tự động |
+| `cong-cu/` | Công cụ dùng lại được — prompt SEO, bản tin tự động, ép index GSC (`gsc-ep-index/`) |
 | `BAO-MAT.md` | Danh sách chìa khóa đã lộ cần thu hồi |
+
+## 7. Ép index GSC — quy tắc cố định
+
+Công cụ: `cong-cu/gsc-ep-index/` (Trang dùng **máy Windows**, chạy bản trong `windows/`).
+
+Mỗi lần Trang báo **giờ publish** và gửi danh sách URL:
+1. Kiểm tra **Last crawl** của từng URL. URL nào Google đã đọc **sau** giờ publish thì **không ép**.
+2. URL chưa được đọc lại thì **ép đến khi thành công**. Thành công nghĩa là thấy hộp thoại
+   "Indexing requested" mới. Hết quota thì chờ, rồi kiểm tra lại và ép tiếp.
+3. Tích vào sheet *Đề xuất tối ưu URL | Techcombank* (ID `13ugpyw2dsxLx90XyZ0kSD9Ci8v2u7flOTmyLLqsGDAQ`),
+   tab **Daily**: URL ở cột D, hàng 2 là tiêu đề ngày. Tích vào **cột của ngày publish**,
+   chỉ tích URL có kết quả `DA-DOC` hoặc `OK`.
+4. Phiên Claude trên web không điều khiển được Chrome của Trang. Trang chạy file `.bat` trên máy,
+   rồi gửi `ket-qua.tsv` vào chat để Claude tích sheet qua kết nối Google Sheets.
