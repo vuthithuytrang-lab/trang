@@ -30,9 +30,11 @@ function showCount() {
 }
 
 // ---------- Các hàm chạy bên trong tab GSC ----------
+// Viết dạng `tên: function` (không viết tắt kiểu method) vì Chrome chép nguyên văn hàm sang tab để chạy.
+const BASE = 'https://search.google.com';
 const P = {
   // Chặn Chrome tự dịch trang (bản dịch làm hỏng việc nhận diện chữ tiếng Anh)
-  notranslate() {
+  notranslate: function () {
     document.documentElement.setAttribute('translate', 'no');
     document.documentElement.classList.add('notranslate');
     if (!document.querySelector('meta[name=google][content=notranslate]')) {
@@ -40,7 +42,7 @@ const P = {
     }
     return document.documentElement.classList.contains('translated-ltr') || document.documentElement.classList.contains('translated-rtl') ? 'TRANSLATED' : 'OK';
   },
-  async fill(u) {
+  fill: async function (u) {
     const shown = (x) => x.getClientRects().length > 0;
     const label = (x) => [x.getAttribute('aria-label'), x.getAttribute('placeholder'), x.getAttribute('title')].join(' ');
     const find = () => {
@@ -66,7 +68,7 @@ const P = {
     ['keydown', 'keypress', 'keyup'].forEach((t) => i.dispatchEvent(new KeyboardEvent(t, o)));
     return 1;
   },
-  read(u) {
+  read: function (u) {
     const t = document.body.innerText;
     if (!location.pathname.includes('inspect') || !t.includes(u) || /Retrieving data/i.test(t) ||
         !/URL is (not )?on Google|unknown to Google|not in (the current )?property/i.test(t)) return 'loading';
@@ -75,13 +77,13 @@ const P = {
     const st = (t.match(/URL is (not )?on Google|URL is unknown to Google|not in (the current )?property/i) || [''])[0];
     return { st, lc, href: location.href };
   },
-  ready(u) {
+  ready: function (u) {
     const t = document.body.innerText;
     if (/not in (the current )?property/i.test(t)) return 'NOTPROP';
     if (!location.pathname.includes('inspect') || !t.includes(u) || /Retrieving data/i.test(t)) return 'loading';
     return /REQUEST INDEXING/i.test(t) ? 'READY' : 'loading';
   },
-  click(src) {
+  click: function (src) {
     const lbl = new RegExp(src, 'i');
     const bs = [...document.querySelectorAll('[role=button]')].filter((e) => lbl.test((e.innerText || '').trim()) && e.offsetParent);
     bs.forEach((b) => {
@@ -90,15 +92,15 @@ const P = {
     });
     return bs.length;
   },
-  dismiss() {
+  dismiss: function () {
     const bs = [...document.querySelectorAll('button')].filter((b) => /^Dismiss$/i.test((b.innerText || '').trim()) && b.offsetParent);
     bs.forEach((b) => b.click());
     return bs.length;
   },
-  vis() {
+  vis: function () {
     return [...document.querySelectorAll('*')].filter((e) => e.children.length === 0 && /Indexing requested/.test(e.textContent) && e.offsetParent).length;
   },
-  watch() {
+  watch: function () {
     const t = document.body.innerText;
     if (/Indexing request rejected/i.test(t)) return 'rejected';
     const m = t.match(/Quota exceeded|Something went wrong|not a robot|recaptcha/i);
@@ -113,7 +115,7 @@ const P = {
 let tabId = null, rid = '', lastErr = '';
 async function findTab(domain) {
   // phóng to cửa sổ GSC để ô "Kiểm tra URL" hiện đầy đủ
-  const tabs = await chrome.tabs.query({ url: 'https://search.google.com/search-console*' });
+  const tabs = await chrome.tabs.query({ url: BASE + '/search-console*' });
   const t = tabs.find((x) => x.url.includes(domain) && /[?&]resource_id=/.test(x.url));
   if (!t) throw new Error(`Không thấy tab Search Console của ${domain}. Hãy mở trang Tổng quan của ${domain} trong Chrome này.`);
   tabId = t.id;
@@ -141,7 +143,7 @@ async function nav(url) {
 }
 let warnedTranslate = false;
 async function home() {
-  await nav(`https://search.google.com/search-console?resource_id=${rid}&hl=en`);
+  await nav(`${BASE}/search-console?resource_id=${rid}&hl=en`);
   await sleep(1);
   if ((await run(P.notranslate)) === 'TRANSLATED' && !warnedTranslate) {
     warnedTranslate = true;
