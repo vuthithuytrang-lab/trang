@@ -16,5 +16,17 @@
   "title": "Bốn tình huống khiến số tiền hoàn về thẻ lệch với số đã trả",
   "slug": "bon-tinh-huong-so-tien-hoan-ve-the-lech",
   "mo_ta": "Bốn tình huống hủy vé, hủy phòng, trả hàng khiến số tiền hoàn về thẻ khác số đã trả bằng ngoại tệ và cách theo dõi khoản hoàn."
+ },
+ "bl": {
+  "tu_khoa": "số tiền hoàn về thẻ",
+  "title": "Kinh nghiệm đối chiếu số tiền hoàn về thẻ khi hủy vé, trả hàng",
+  "slug": "kinh-nghiem-doi-chieu-so-tien-hoan-ve-the",
+  "mo_ta": "Chia sẻ thực tế vì sao số tiền hoàn về thẻ khác số đã trả bằng ngoại tệ và cách tự đối chiếu, tra soát khoản hoàn."
+ },
+ "gg": {
+  "tu_khoa": "số tiền hoàn về thẻ",
+  "title": "Số tiền hoàn về thẻ lệch số đã trả: 13 ý giải thích và cách đối chiếu",
+  "slug": "so-tien-hoan-ve-the-lech-13-y",
+  "mo_ta": "Mười ba ý ngắn giải thích vì sao số tiền hoàn về thẻ khác số đã trả bằng ngoại tệ và cách lưu chứng từ, đối chiếu, tra soát."
  }
 }
