@@ -50,11 +50,11 @@ Không kẻ khung quanh title/meta, không lặp lại H1.
 - Không mở được quyền "ai có link cũng sửa" qua công cụ (`share_file` chỉ nhận email) → dùng thư mục chung.
 - Chưa có kết nối Google Docs → không sửa được file đã tạo; muốn sửa phải bật kết nối hoặc tạo lại file.
 
-## Việc đang dở (01/11/2026) — phiên sau làm tiếp
+## ✅ ĐÃ XONG 01/11/2026 — 7 bài Business_Lending (giữ lại làm mẫu tham khảo)
 
 Sheet riêng của Trang: https://docs.google.com/spreadsheets/d/1GVPQPqSN7lAe-BItxtB9BD8_Qx3c_jBhXreVbCLUCYg/edit
 (tab "Trang tính1": URL cột C, link Docs điền cột D, tên file = từ khóa chính cột E).
-Còn 7 dòng chưa có Docs — **phải tạo trên Drive vuthithuytrang@seongon.com**, vào thư mục chung
+Đã tạo 7 Docs trên Drive vuthithuytrang@seongon.com và gắn link cột D (khớp theo URL, vì Trang có xoá/chèn dòng trong lúc chạy — số dòng dưới đây là lúc đọc, sau đó lệch lên 1), vào thư mục chung
 (Trang đã mở công khai "ai có link cũng sửa" cho thư mục ngày 01/11):
 
 | Dòng | URL | Tên file |
