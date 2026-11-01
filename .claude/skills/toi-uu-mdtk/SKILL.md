@@ -92,6 +92,7 @@ Bảng ngắn cho từng bài: link Docs, từ khoá (có sẵn → chèn thêm 
 
 ## ĐỌC TRƯỚC MỖI LẦN CHẠY
 - `references/GOP-Y-CUA-TRANG.md` — sổ góp ý của Trang (mới nhất thắng). Trang góp ý gì thì ghi ngay vào đó + commit.
+- `references/tieu-chuan-title-meta.md` — khi có vị trí Title/Meta hoặc Trang gửi file tối ưu Title/Meta: phân tích SERP, 3 title + 2–3 meta, khối kết quả in đậm phần sửa, bảng đối chiếu, danh sách lỗi bài.
 - `references/7c-sapo-ket-bai.md` — quy tắc sapo/kết bài (1–2 key khớp chính xác mỗi đoạn, còn lại phân tán; vùng khác mỗi câu tối đa 1 key) và mẫu báo cáo sapo/kết bài.
 
 ## Bổ sung của Trang (01/11/2026), ưu tiên hơn các mục trên
