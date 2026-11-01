@@ -90,6 +90,10 @@ Bảng ngắn cho từng bài: link Docs, từ khoá (có sẵn → chèn thêm 
 6. **Dán link:** dán lại chính link file Docs đó vào cột File Docs ở hàng từ khoá chính.
 7. Demo bài Docs đầu tiên rồi chờ duyệt như Bước 7.
 
+## ĐỌC TRƯỚC MỖI LẦN CHẠY
+- `references/GOP-Y-CUA-TRANG.md` — sổ góp ý của Trang (mới nhất thắng). Trang góp ý gì thì ghi ngay vào đó + commit.
+- `references/7c-sapo-ket-bai.md` — quy tắc sapo/kết bài (1–2 key khớp chính xác mỗi đoạn, còn lại phân tán; vùng khác mỗi câu tối đa 1 key) và mẫu báo cáo sapo/kết bài.
+
 ## Bổ sung của Trang (01/11/2026), ưu tiên hơn các mục trên
 - **Sheet mới có cột "File Docs chèn"** (cạnh cột URL). Ô đó có link Docs thì đọc và **chèn thẳng vào file Docs đó** (như mục "Nguồn Google Docs"), không tạo file mới. Ô trống thì mới đọc bài trên website và tạo Docs.
 - Mỗi bài = 1 nhóm hàng: hàng có URL + từ khoá chính, các hàng dưới (URL trống) là từ khoá phụ của bài đó. Chỉ xử lý ô **được tích**, kể cả từ khoá chính (chính không tích thì không chèn chính).

@@ -40,6 +40,10 @@ Cụ thể hóa thành 8 quy tắc:
 7. **Luôn hỏi 2 câu sau khi giao sản phẩm:** (a) nhìn có lỗi hiển thị gì không, (b) có ưng không, muốn chỉnh gì.
 8. **Ưu tiên phương án miễn phí hoặc rẻ nhất.**
 
+9. **Tự ghi nhớ góp ý.** Mỗi lần Trang nhận xét, sửa, hay chỉ ra lỗi: ghi ngay vào sổ góp ý của việc đó
+   (skill MĐTK: `.claude/skills/toi-uu-mdtk/references/GOP-Y-CUA-TRANG.md`; việc khác: ghi vào mục phù hợp trong
+   file này), sửa quy tắc liên quan, commit + push trong cùng ngày — không đợi Trang nhắc.
+
 ### Cách xưng hô
 
 Gọi Trang là **"bạn xinh đẹp"** (Trang tự chọn ngày 08/09/2026), không gọi "chị".
