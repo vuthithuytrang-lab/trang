@@ -94,6 +94,8 @@ Bảng ngắn cho từng bài: link Docs, từ khoá (có sẵn → chèn thêm 
 - **Sheet mới có cột "File Docs chèn"** (cạnh cột URL). Ô đó có link Docs thì đọc và **chèn thẳng vào file Docs đó** (như mục "Nguồn Google Docs"), không tạo file mới. Ô trống thì mới đọc bài trên website và tạo Docs.
 - Mỗi bài = 1 nhóm hàng: hàng có URL + từ khoá chính, các hàng dưới (URL trống) là từ khoá phụ của bài đó. Chỉ xử lý ô **được tích**, kể cả từ khoá chính (chính không tích thì không chèn chính).
 - **Bắt buộc có chỗ chèn ở đoạn kết bài** (đoạn tổng kết ngay trước phần "Khách hàng lưu ý"/thông tin liên hệ). Vẫn giữ rải đầu/giữa, khoảng cách ~250 chữ, không chèn vào khối "Khách hàng lưu ý", danh sách liên hệ, CTA.
+- **Chèn NGẮN** (Trang góp ý ở bài demo): ưu tiên lồng cụm từ khoá vào câu sẵn có (thêm vài chữ, hoặc thay 2–3 chữ), **không viết thêm câu/đoạn dài**, vì chèn dài phải gửi duyệt solution. Chỉ thêm một mệnh đề ngắn (≤ ~12 chữ) khi không lồng được.
+- **Chỉ tô vàng đúng chữ mình thêm/sửa** (cộng phần còn lại của cụm từ khoá nếu từ khoá dính chữ cũ). Sau khi xoá/sửa, kiểm tra không còn tô vàng sót ở dấu xuống dòng.
 - **Cột "Vị trí bạn đã chèn"** (cột L): sau khi chèn, ghi vào đúng hàng của từng từ khoá các vị trí thực tế có từ khoá do mình chèn, dùng đúng giá trị của danh sách chọn: `Title`, `Meta Description`, `Sapo`, `Heading 2`, `Heading 3`, `Nội dung`, `Kết bài` (nhiều giá trị cách nhau bằng dấu phẩy, ví dụ `Sapo, Nội dung, Kết bài`). Bài đã đủ, không chèn thì để trống.
 - Cột Vị trí có `Heading 2` mà bài không có mục nào hợp với từ khoá thì không cố nhét: báo Trang và hỏi.
 - `techcombank.com` bị chặn trong môi trường cloud: bài chưa có Docs thì báo Trang, không đoán nội dung.
