@@ -34,3 +34,7 @@ Trong phần tổng kết, nêu riêng:
 - Sapo: liệt kê key đạt, ghi rõ loại khớp của từng key (chính xác / mở rộng / phân tán)
 - Kết bài: tương tự
 - Nếu một key chỉ xuất hiện ở sapo/kết bài mà không có trong thân bài, phải cảnh báo: key đó có thể lệch chủ đề bài.
+
+## Bổ sung của Trang (01/11/2026)
+- **Key chính bắt buộc chèn khớp CHÍNH XÁC**, không dùng dạng mở rộng/phân tán. Khi chọn 1–2 key chính xác cho sapo/kết bài, key chính (nếu được tích) luôn được ưu tiên một suất.
+- **Key phụ** nào không còn suất chính xác ở sapo/kết bài thì **vẫn phải có mặt ở sapo và kết bài dưới dạng MỞ RỘNG/PHÂN TÁN** (không bỏ qua). Phần khớp chính xác còn thiếu của key phụ đó thì chèn tiếp ở vị trí ưu tiên kế tiếp (Heading 2, Nội dung).

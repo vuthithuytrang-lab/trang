@@ -15,3 +15,4 @@
 | 01/11/2026 | Hỏi "sao bài đầu bạn không làm" | Bài không chèn gì vẫn phải nói rõ lý do trong báo cáo + cột M |
 | 01/11/2026 | Hướng dẫn 7c (sapo/kết bài) | Xem `7c-sapo-ket-bai.md`: mỗi đoạn sapo/kết bài tối đa 1–2 key khớp chính xác, còn lại phân tán; vùng khác mỗi câu tối đa 1 key; báo cáo riêng sapo/kết bài |
 | 01/11/2026 | (Lỗi của mình) Ghi Sheet lệch 1 hàng vì Trang xoá hàng trong lúc chạy | Đọc lại Sheet ngay trước mỗi lần ghi |
+| 01/11/2026 | Bài nhiều key phụ: key phụ nào không chèn được dạng chính xác thì chèn dạng MỞ RỘNG ở Sapo và Kết bài. Không áp dụng cho key chính | Key chính: luôn chèn khớp chính xác. Key phụ vượt suất 1–2 key chính xác của sapo/kết bài: chèn dạng mở rộng/phân tán (theo 7c) thay vì bỏ qua; báo cáo ghi rõ loại khớp |
