@@ -69,3 +69,10 @@ Sheet riêng của Trang: https://docs.google.com/spreadsheets/d/1GVPQPqSN7lAe-B
 
 ⚠️ Trước khi tạo: kiểm tra Drive đang kết nối đúng tài khoản Trang (`search_files owner='me'` → owner phải là
 vuthithuytrang@seongon.com). Ngày 01/11 connector từng bị nối nhầm tuanmai2k4@gmail.com — KHÔNG tạo file ở đó.
+
+## Trang nguồn khác Techcombank (01/11/2026)
+- `build.py` đọc được thêm **asiagroup-vn.com** (WordPress): khung bài `section.main_content_post div.col.large-8`,
+  bỏ mục lục ez-toc + khối "Thẻ / Chia sẻ", ảnh lazy (`data-lazy-src`), chú thích `figcaption` → đoạn nghiêng căn giữa.
+- **Ảnh webp không hiện trong Google Docs** → script tự đổi link ảnh webp sang `https://wsrv.nl/?url=...&output=jpg`.
+  Đã thử: bản không đổi → 0 ảnh; bản đổi → đủ ảnh.
+- Trang nguồn mới khác: kiểm tra khung bài bằng H2 đầu tiên rồi thêm selector vào `article()`.

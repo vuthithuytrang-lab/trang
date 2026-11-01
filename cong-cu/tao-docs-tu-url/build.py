@@ -20,6 +20,15 @@ def keyword(slug, texts):
 ALLOWED={'p','h2','h3','h4','h5','ul','ol','li','b','strong','i','em','u','a','table','tbody','thead','tr','td','th','img','br','span','sup','sub'}
 def clean(node):
     for t in node.find_all(['script','style','noscript','button','svg','form','iframe']): t.decompose()
+    # asiagroup-vn.com (WordPress): mục lục tự động, khối chia sẻ/thẻ, đường kẻ
+    for t in node.select('.ez-toc-v2_0_85, [id^=ez-toc], .ez-toc-container, .wrap_tag_share, div.line'): t.decompose()
+    for fc in node.find_all('figcaption'):
+        fc.name='p'; fc.attrs={}
+        inner=BeautifulSoup('<i></i>','lxml').i
+        for ch in list(fc.contents): inner.append(ch.extract())
+        fc.append(inner)
+    for im in node.find_all('img'):
+        if (im.get('src') or '').startswith('data:') and im.get('data-lazy-src'): im['src']=im['data-lazy-src']
     for t in node.find_all(True):
         if t.name not in ALLOWED:
             t.unwrap(); continue
@@ -57,7 +66,7 @@ def clean(node):
                 nx['style']='text-align:center;'
     return node
 def article(s):
-    a=s.select_one('.article-text')
+    a=s.select_one('.article-text') or s.select_one('section.main_content_post div.col.large-8')
     if a: return a
     return None
 def product(s):
@@ -78,6 +87,7 @@ def product(s):
 rows=[l.split() for l in open(SP+'urls.txt')]
 res=[]
 for id,url in rows:
+    BASE='/'.join(url.split('/')[:3])  # link/ảnh tương đối theo đúng trang nguồn
     s=BeautifulSoup(open(SP+f'raw/{id}.html',encoding='utf-8').read(),'lxml')
     title=s.title.get_text(strip=True) if s.title else ''
     md=s.find('meta',attrs={'name':'description'}); md=md['content'].strip() if md else ''
@@ -92,6 +102,8 @@ for id,url in rows:
         body=product(s); kind='product'
     slug=url.rstrip('/').split('/')[-1]
     kw=keyword(slug,[h1,title,md,BeautifulSoup(body,'lxml').get_text(' ')])
+    # Google Docs không đọc được ảnh webp -> đổi sang jpg qua wsrv.nl (miễn phí, Google tải được)
+    body=re.sub(r'src="https?://([^"]+?\.webp)"', lambda m: 'src="https://wsrv.nl/?url='+m.group(1)+'&amp;output=jpg&amp;q=85"', body)
     doc=f'''<html><head><meta charset="utf-8"></head><body style="font-family:Arial">
 <p>URL: <a href="{url}">{url}</a></p><p></p>
 <p style="text-align:center"><b>{html.escape(title)}</b></p><p></p>
