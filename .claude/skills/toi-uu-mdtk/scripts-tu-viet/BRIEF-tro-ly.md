@@ -17,7 +17,7 @@ Example spec format: see spec3.json / spec5.json in the scratchpad (these are fi
 5. Run build.py to validate. Then re-check final counts mentally.
 
 ## Rules the user (an SEO specialist) set — follow strictly
-- **NEWEST RULE (overrides target/total rules below):** the target is the number of NEW insertions to make, not a total. Skip a keyword only if it already appears 5+ times. Occurrences that only exist inside a longer keyword phrase do not count as a separate insertion. The task prompt tells you exactly how many MORE insertions each keyword needs and which positions were already used — honour those numbers.
+- **NEWEST RULE (overrides target/total rules below):** the target is the number of NEW insertions to make, not a total. Skip a keyword only if it already appears 4+ times. Occurrences that only exist inside a longer keyword phrase do not count as a separate insertion. The task prompt tells you exactly how many MORE insertions each keyword needs and which positions were already used — honour those numbers.
 - **POSITION PRIORITY (newest rule, overrides older ones):** the "Vị trí" list is ordered by priority, left = highest. Fill positions in that order until the target total (existing + inserted) is reached, then STOP — do not add to later positions. If a higher position has no factual basis/natural fit, skip it and move to the next. If the keyword already meets the target, insert nothing.
 - Exception to the old rule: Kết bài is no longer mandatory; only use it when it comes up in priority order.
 - Target = "Số lần" column is the TOTAL. If already >= target, do not insert that keyword.
