@@ -49,3 +49,23 @@ Không kẻ khung quanh title/meta, không lặp lại H1.
 - Hai dòng trùng URL vẫn tạo 2 file theo 2 ID, nhưng báo cho Trang biết.
 - Không mở được quyền "ai có link cũng sửa" qua công cụ (`share_file` chỉ nhận email) → dùng thư mục chung.
 - Chưa có kết nối Google Docs → không sửa được file đã tạo; muốn sửa phải bật kết nối hoặc tạo lại file.
+
+## Việc đang dở (01/11/2026) — phiên sau làm tiếp
+
+Sheet riêng của Trang: https://docs.google.com/spreadsheets/d/1GVPQPqSN7lAe-BItxtB9BD8_Qx3c_jBhXreVbCLUCYg/edit
+(tab "Trang tính1": URL cột C, link Docs điền cột D, tên file = từ khóa chính cột E).
+Còn 7 dòng chưa có Docs — **phải tạo trên Drive vuthithuytrang@seongon.com**, vào thư mục chung
+(Trang đã mở công khai "ai có link cũng sửa" cho thư mục ngày 01/11):
+
+| Dòng | URL | Tên file |
+|---|---|---|
+| 62 | /thong-tin/blog/nen-vay-tin-chap-o-dau | cần vay vốn ngân hàng |
+| 63 | /thong-tin/blog/kinh-nghiem-chuyen-doi-tu-ho-kinh-doanh-len-doanh-nghiep | hồ sơ vay doanh nghiệp chuyển đổi từ hộ kinh doanh |
+| 64 | /thong-tin/blog/cac-hinh-thuc-vay-von-ngan-hang | vay doanh nghiệp nhỏ |
+| 68 | /thong-tin/blog/lai-suat-the-tin-dung | số ngày miễn lãi thẻ tín dụng doanh nghiệp |
+| 69 | /thong-tin/blog/thu-tuc-vay-von-kinh-doanh-nho | vay tiền bằng giấy phép kinh doanh |
+| 71 | /thong-tin/blog/vay-von-doanh-nghiep-khong-the-chap | thủ tục vay doanh nghiệp mới không cần tài sản đảm bảo |
+| 72 | /thong-tin/blog/vay-tin-chap-toi-da-duoc-bao-nhieu | hạn mức cho vay doanh nghiệp sme |
+
+⚠️ Trước khi tạo: kiểm tra Drive đang kết nối đúng tài khoản Trang (`search_files owner='me'` → owner phải là
+vuthithuytrang@seongon.com). Ngày 01/11 connector từng bị nối nhầm tuanmai2k4@gmail.com — KHÔNG tạo file ở đó.
