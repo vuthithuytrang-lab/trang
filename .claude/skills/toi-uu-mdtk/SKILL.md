@@ -99,6 +99,7 @@ Bảng ngắn cho từng bài: link Docs, từ khoá (có sẵn → chèn thêm 
 - **Chỉ tô vàng đúng chữ mình thêm/sửa** (cộng phần còn lại của cụm từ khoá nếu từ khoá dính chữ cũ). Sau khi xoá/sửa, kiểm tra không còn tô vàng sót ở dấu xuống dòng.
 - **Cột "Vị trí bạn đã chèn"** (cột L): sau khi chèn, ghi vào đúng hàng của từng từ khoá các vị trí thực tế có từ khoá do mình chèn, dùng đúng giá trị của danh sách chọn: `Title`, `Meta Description`, `Sapo`, `Heading 2`, `Heading 3`, `Nội dung`, `Kết bài` (nhiều giá trị cách nhau bằng dấu phẩy, ví dụ `Sapo, Nội dung, Kết bài`). Bài đã đủ, không chèn thì để trống.
 - **Cột ghi chú (cột M, ngay sau cột L)**: với từ khoá được tích mà **không chèn hoặc chèn thiếu** (kể cả vị trí ưu tiên bị bỏ qua), ghi lý do bằng lời thường. Ví dụ: "Không chèn: bài đã có sẵn 5 lần (cần 2)", "Không chèn: bài không có nội dung về X, cần bổ sung thông tin trước", "Mới chèn 1/2: …". Ô chưa có tiêu đề thì đặt tiêu đề "Ghi chú (key không chèn / chèn thiếu – lý do)".
+- **Đọc lại Sheet ngay trước mỗi lần ghi** (cột L/M/D): Trang hay xoá/chèn hàng trong lúc mình làm, hàng có thể bị dịch. Đối chiếu tên từ khoá ở cột E/F với hàng định ghi rồi mới ghi. (01/11/2026 đã bị ghi lệch 1 hàng vì Trang xoá hàng trùng.)
 - Cột Vị trí có `Heading 2` mà bài không có mục nào hợp với từ khoá thì không cố nhét: báo Trang và hỏi.
 - `techcombank.com` bị chặn trong môi trường cloud: bài chưa có Docs thì báo Trang, không đoán nội dung.
 
