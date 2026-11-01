@@ -8,3 +8,6 @@ Quy trình chèn thẳng vào Google Docs có sẵn:
 
 Bài chưa có Docs: `make_html.py <url> out.html` → `create_file` (text/html) trong thư mục chung, rồi làm như trên.
 `BRIEF-tro-ly.md`: lời dặn khi giao trợ lý soạn nháp song song.
+
+Lưu ý: `build.py` chỉ tô vàng, không gỡ tô vàng. Khi sửa ngược (trả lại chữ gốc) mà chữ gốc còn dính vàng thì thêm tay
+`updateTextStyle` với `textStyle: {}` và `fields: backgroundColor` cho đoạn đó (đặt ở đầu danh sách requests).
