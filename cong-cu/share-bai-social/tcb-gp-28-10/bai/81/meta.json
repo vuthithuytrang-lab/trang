@@ -1,0 +1,32 @@
+{
+ "wix": {
+  "tu_khoa": "quản lý chi phí nguyên liệu và chất đốt của hộ kinh doanh ăn uống",
+  "title": "Cách quản lý chi phí nguyên liệu và chất đốt cho quán ăn nhỏ",
+  "slug": "cach-quan-ly-chi-phi-nguyen-lieu-chat-dot-quan-an",
+  "mo_ta": "Các bước đưa tiền gas vào giá vốn từng suất, lập bảng định lượng món, tách tài khoản kinh doanh và nuôi quỹ dự phòng cho quán ăn gia đình quy mô nhỏ."
+ },
+ "wf": {
+  "tu_khoa": "quản lý chi phí nguyên liệu và chất đốt của hộ kinh doanh ăn uống",
+  "title": "Hỏi đáp: quản lý chi phí nguyên liệu, chất đốt của hộ kinh doanh ăn uống",
+  "slug": "hoi-dap-chi-phi-nguyen-lieu-chat-dot-ho-kinh-doanh",
+  "mo_ta": "Giải đáp về tính tiền gas trên mỗi suất, theo dõi giá gia vị, lập bảng giá vốn món, tách tiền quán khỏi tiền nhà và lập quỹ dự phòng cho hộ kinh doanh."
+ },
+ "bl": {
+  "tu_khoa": "quản lý chi phí nguyên liệu và chất đốt của hộ kinh doanh ăn uống",
+  "title": "Kinh nghiệm quản lý tiền gas, gia vị khi mở quán cơm gia đình",
+  "slug": "kinh-nghiem-quan-ly-tien-gas-gia-vi-quan-com",
+  "mo_ta": "Câu chuyện quán cơm nhà tôi đông khách mà không thấy lãi, và cách tôi tính lại giá vốn từng món, tách tài khoản, lập quỹ dự phòng để quán đứng vững."
+ },
+ "gg": {
+  "tu_khoa": "quản lý chi phí nguyên liệu và chất đốt của hộ kinh doanh ăn uống",
+  "title": "Chi phí nguyên liệu và chất đốt của quán ăn nhỏ: 13 ý cần nắm",
+  "slug": "chi-phi-nguyen-lieu-chat-dot-quan-an-13-y",
+  "mo_ta": "Mười ba ý ngắn cho chủ quán ăn nhỏ về theo dõi giá gas, gia vị, tính giá vốn từng món, tách tiền kinh doanh khỏi tiền nhà và nuôi quỹ dự phòng."
+ },
+ "wp": {
+  "tu_khoa": "quản lý chi phí nguyên liệu và chất đốt của hộ kinh doanh ăn uống",
+  "title": "Giá vốn món ăn ở quán nhỏ: chất đốt, gia vị và dòng tiền kinh doanh",
+  "slug": "gia-von-mon-an-quan-nho-chat-dot-gia-vi",
+  "mo_ta": "Giải thích cách đưa chất đốt và gia vị vào giá vốn, đọc biên lợi nhuận từng món và tổ chức dòng tiền tách bạch cho hộ kinh doanh ăn uống quy mô nhỏ."
+ }
+}
