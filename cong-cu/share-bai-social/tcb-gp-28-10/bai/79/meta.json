@@ -1,0 +1,32 @@
+{
+ "wix": {
+  "tu_khoa": "thông tin định danh cá nhân thường dùng trong các thủ tục tài chính",
+  "title": "Cách lập bộ thông tin định danh cá nhân để làm thủ tục tài chính nhanh",
+  "slug": "cach-lap-bo-thong-tin-dinh-danh-ca-nhan",
+  "mo_ta": "Các bước gom căn cước, mã số thuế, mã bảo hiểm xã hội và thẻ bảo hiểm y tế vào một bảng, kiểm tra, cất giữ an toàn để làm hồ sơ không bị vấp."
+ },
+ "wf": {
+  "tu_khoa": "thông tin định danh cá nhân thường dùng trong các thủ tục tài chính",
+  "title": "Hỏi đáp: thông tin định danh cá nhân dùng trong thủ tục tài chính",
+  "slug": "hoi-dap-thong-tin-dinh-danh-ca-nhan",
+  "mo_ta": "Giải đáp ngắn về căn cước, mã số thuế, mã bảo hiểm xã hội, thẻ bảo hiểm y tế: dùng khi nào, tra cứu ra sao và lưu giữ thế nào cho an toàn."
+ },
+ "bl": {
+  "tu_khoa": "thông tin định danh cá nhân thường dùng trong các thủ tục tài chính",
+  "title": "Kinh nghiệm sắp xếp giấy tờ định danh cá nhân sau một lần hồ sơ bị trả",
+  "slug": "kinh-nghiem-sap-xep-giay-to-dinh-danh",
+  "mo_ta": "Câu chuyện hồ sơ bị trả vì lệch một chữ trong tên và cách tôi lập bảng mã số thuế, bảo hiểm, căn cước cho cả nhà để không lặp lại lần nữa."
+ },
+ "gg": {
+  "tu_khoa": "thông tin định danh cá nhân thường dùng trong các thủ tục tài chính",
+  "title": "Thông tin định danh cá nhân khi làm thủ tục tài chính: 13 ý cần nắm",
+  "slug": "thong-tin-dinh-danh-ca-nhan-13-y",
+  "mo_ta": "Mười ba ý ngắn về căn cước, mã số thuế, mã bảo hiểm xã hội, thẻ bảo hiểm y tế: dùng vào đâu, cách tra, cách lưu và lịch rà soát mỗi năm."
+ },
+ "wp": {
+  "tu_khoa": "thông tin định danh cá nhân thường dùng trong các thủ tục tài chính",
+  "title": "Bộ mã định danh cá nhân trong hồ sơ tài chính: hiểu đúng, lưu gọn",
+  "slug": "bo-ma-dinh-danh-ca-nhan-ho-so-tai-chinh",
+  "mo_ta": "Giải thích vai trò từng mã định danh trong thủ tục tài chính, cách kiểm tra mã số thuế, thẻ bảo hiểm y tế và cách tổ chức lưu trữ cho cả gia đình."
+ }
+}
