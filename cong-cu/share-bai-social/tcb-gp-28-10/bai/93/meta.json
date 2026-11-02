@@ -16,5 +16,11 @@
   "title": "Hỏi đáp: nhập hạt, tính tiền giao và dòng tiền cho quán cà phê nhỏ",
   "slug": "hoi-dap-nhap-hat-tien-giao-quan-ca-phe",
   "mo_ta": "Giải đáp thắc mắc của chủ quán cà phê nhỏ về chu kỳ nhập hạt, giá cà phê nhân, chi phí giao theo bán kính và quản lý tiền từ nhiều kênh."
+ },
+ "wix": {
+  "tu_khoa": "quản lý chi phí nhập nguyên liệu và giao hàng của quán cà phê nhỏ",
+  "title": "8 bước kiểm soát tiền nhập hạt và tiền giao cho quán cà phê nhỏ",
+  "slug": "8-buoc-kiem-soat-tien-nhap-hat-tien-giao",
+  "mo_ta": "Hướng dẫn từng bước đo lượng hạt, chọn chu kỳ nhập, tính tiền giao theo bán kính và gom doanh thu về tài khoản riêng cho quán cà phê nhỏ."
  }
 }
