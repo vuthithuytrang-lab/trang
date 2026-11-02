@@ -22,5 +22,11 @@
   "title": "8 bước tính giá suất cơm trưa khi nhận nấu cho xưởng, công trình",
   "slug": "8-buoc-tinh-gia-suat-com-trua-cong-nhan",
   "mo_ta": "Hướng dẫn chia suất cơm, lập thực đơn xoay vòng, định mức gia vị, quy tiền gas và chuẩn bị vốn để báo giá suất cơm công nhân có lãi."
+ },
+ "wp": {
+  "tu_khoa": "dự trù chi phí theo suất cho bếp nấu cơm trưa phục vụ nhóm công nhân",
+  "title": "Chi phí mỗi suất cơm công nhân: nguyên liệu, gia vị, gas và vốn",
+  "slug": "chi-phi-moi-suat-com-cong-nhan",
+  "mo_ta": "Giải thích cách tính nguyên liệu theo thực đơn xoay vòng, định mức gia vị, quy tiền gas về suất và chuẩn bị vốn cho bếp cơm công nhân."
  }
 }
