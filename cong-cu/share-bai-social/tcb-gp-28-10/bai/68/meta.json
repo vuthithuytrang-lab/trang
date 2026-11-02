@@ -16,5 +16,17 @@
   "title": "Hỏi đáp: quản lý hóa đơn sinh hoạt và khoản nộp định kỳ gia đình",
   "slug": "hoi-dap-quan-ly-hoa-don-sinh-hoat",
   "mo_ta": "Giải đáp cách lập danh mục hóa đơn, chia nhỏ khoản theo năm, theo dõi điện nước theo mùa, thanh toán tự động và nộp thuế đất online."
+ },
+ "wix": {
+  "tu_khoa": "quản lý hóa đơn sinh hoạt",
+  "title": "8 bước quản lý hóa đơn sinh hoạt để cả nhà không trễ hạn nộp",
+  "slug": "8-buoc-quan-ly-hoa-don-sinh-hoat",
+  "mo_ta": "Hướng dẫn từng bước lập danh sách hóa đơn, lập quỹ cho khoản theo năm, theo dõi điện nước và chuyển sang thanh toán trực tuyến."
+ },
+ "wp": {
+  "tu_khoa": "quản lý hóa đơn sinh hoạt",
+  "title": "Bốn trụ cột quản lý hóa đơn sinh hoạt và khoản nộp định kỳ",
+  "slug": "bon-tru-cot-quan-ly-hoa-don-sinh-hoat",
+  "mo_ta": "Giải thích cách ghi nhận đủ hóa đơn, phân bổ khoản dài kỳ, hiểu tiền điện tính theo bậc và thanh toán trực tuyến để không trễ hạn."
  }
 }
