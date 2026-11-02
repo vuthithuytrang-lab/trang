@@ -1,0 +1,59 @@
+URL: https://langvanhoavietnam.vn/uoc-tinh-diem-hoa-von-khi-kinh-doanh-xe-ca-phe-di-dong/
+TITLE: Ước tính điểm hòa vốn khi kinh doanh xe cà phê di động - Làng Văn hóa
+TCB_LINKS: ['https://techcombank.com/thong-tin/blog/gia-ca-phe-hom-nay', 'https://techcombank.com/thong-tin/blog/gia-gas-hom-nay']
+
+# 
+
+Một chiếc xe cà phê di động cần ít vốn hơn quán cố định, nhưng chủ xe vẫn cần biết mỗi ngày phải bán bao nhiêu ly mới bù được chi phí. Bài viết hướng dẫn cách tách chi phí cố định và chi phí biến đổi, tính số ly hòa vốn và dùng con số này để điều chỉnh giá bán, thời gian bán.
+
+## 1. Tách chi phí cố định và chi phí biến đổi của xe cà phê
+
+Chi phí cố định là những khoản phát sinh dù hôm đó bán nhiều hay ít ly. Với xe cà phê di động, nhóm này thường gồm khấu hao xe và dụng cụ pha chế, tiền thuê chỗ đứng hoặc phí trông giữ xe, phí điện thoại và internet cho thanh toán, cùng phần tiền công mà chủ xe muốn trả cho chính mình mỗi tháng.
+
+Khấu hao được tính bằng cách lấy tổng tiền đầu tư ban đầu chia cho số tháng dự kiến sử dụng. Giả sử chiếc xe cùng máy pha, bình giữ nhiệt và tủ đá được dùng trong 36 tháng, mỗi tháng sẽ gánh một phần ba mươi sáu số vốn đó. Cách tính này giúp chủ xe không xem tiền thu về mỗi ngày là lợi nhuận khi chưa trừ phần vốn đã bỏ ra.
+
+Chi phí biến đổi là những khoản tăng theo số ly bán ra: cà phê bột, sữa đặc, sữa tươi, đường, đá, ly nhựa, nắp, ống hút và túi đựng. Khoản này được tính trên mỗi ly bằng công thức định lượng, ví dụ mỗi ly cà phê sữa dùng bao nhiêu gam bột, bao nhiêu mililit sữa và một phần túi đá.
+
+Nguyên liệu cà phê là khoản biến đổi chịu tác động rõ từ thị trường. Chủ xe có thể theo dõi giá cafe hôm nay trước mỗi lần nhập bột từ cơ sở rang xay quen, ghi lại giá nhập theo từng đợt để biết chi phí cà phê trong mỗi ly đang tăng hay giảm, từ đó chủ động trao đổi với nhà cung cấp về quy cách hoặc số lượng nhập.
+Tách chi phí cố định và chi phí biến đổi là bước đầu để chủ xe biết mỗi ly mang lại bao nhiêu tiền lãi gộp.
+
+## 2. Tính số ly hòa vốn mỗi ngày
+
+Điểm hòa vốn là số ly mà tại đó tổng tiền lãi gộp vừa đủ bù chi phí cố định. Tiền lãi gộp mỗi ly bằng giá bán trừ chi phí biến đổi của ly đó. Lấy tổng chi phí cố định trong tháng chia cho tiền lãi gộp trung bình mỗi ly sẽ ra số ly cần bán trong tháng, chia tiếp cho số ngày bán sẽ ra số ly mỗi ngày.
+
+Một ví dụ giả định với các con số tròn: nếu chi phí cố định cả tháng tương đương với tiền lãi gộp của 1.500 ly và xe bán 25 ngày, chủ xe cần bán trung bình 60 ly mỗi ngày để hòa vốn. Từ ly thứ 61 trở đi, phần lãi gộp mới là lợi nhuận. Con số này dễ nhớ và có thể so trực tiếp với số ly bán thực tế ghi trong sổ.
+
+Xe bán nhiều loại đồ uống thì tính lãi gộp bình quân theo cơ cấu bán hàng. Nếu cà phê đen chiếm phần lớn, các món có lãi gộp thấp hơn như nước ép hay trà sữa sẽ ít ảnh hưởng đến điểm hòa vốn. Ngược lại, khi cơ cấu chuyển sang món lãi thấp, số ly cần bán sẽ tăng lên dù tổng lượng khách không đổi.
+
+Chủ xe nên ghi số ly bán theo khung giờ trong ít nhất hai đến ba tuần. Dữ liệu này cho thấy khung giờ nào vượt điểm hòa vốn, khung giờ nào chỉ đủ bù chi phí, từ đó quyết định có nên kéo dài giờ bán buổi sáng hay rút ngắn ca chiều.
+
+## 3. Đưa chất đốt và các khoản phát sinh vào bảng tính
+
+Nhiều xe cà phê di động dùng bếp gas mini hoặc bình gas nhỏ để đun nước, pha trà hay hâm sữa. Chất đốt là chi phí biến đổi theo số ly đồ uống nóng, nhưng thường được mua theo bình nên dễ bị tính gộp vào chi phí chung. Đếm số ngày một bình gas dùng hết rồi chia cho tổng số ly nóng bán trong các ngày đó sẽ ra phần chất đốt trên mỗi ly.
+
+Khi đặt bình mới, chủ xe có thể tham khảo giá gas tại khu vực và cập nhật vào bảng tính chi phí. Nếu giá bình tăng, phần chất đốt trên mỗi ly nóng tăng theo, kéo lãi gộp xuống và đẩy điểm hòa vốn lên. Với quy mô xe nhỏ, mức chênh này thường không lớn, nhưng nên được ghi lại để bảng tính phản ánh đúng thực tế.
+
+Các khoản phát sinh như sửa xe, thay linh kiện máy pha hay ngày nghỉ do thời tiết nên được dự trù bằng cách trích một tỷ lệ nhỏ từ lãi gộp mỗi ngày vào quỹ riêng. Quỹ này giúp chủ xe không phải lấy tiền nhập nguyên liệu để trả cho những khoản đột xuất.
+
+Cuối mỗi tháng, chủ xe so sánh số ly bán thực tế với điểm hòa vốn đã tính. Nếu doanh số ổn định cao hơn điểm hòa vốn, phần dư có thể dùng để trả dần vốn đầu tư hoặc tích lũy cho việc nâng cấp xe. Nếu doanh số sát điểm hòa vốn, chủ xe có thể cân nhắc thử vị trí khác, bổ sung món có lãi gộp cao hơn hoặc điều chỉnh giá bán.
+Bảng ghi số ly bán theo khung giờ giúp chủ xe so sánh doanh số thực tế với điểm hòa vốn mỗi ngày.
+
+Điểm hòa vốn chuyển những khoản chi rời rạc thành một con số dễ theo dõi: số ly cần bán mỗi ngày. Khi chi phí cố định, chi phí nguyên liệu và chất đốt được cập nhật đều đặn, chủ xe cà phê có căn cứ rõ ràng để quyết định giá bán, giờ bán và thời điểm mở rộng. Hy vọng bài viết trên của Làng Văn Hóa sẽ hữu ích với bạn!
+
+    Xem thêm:
+
+    Hà Nam ở đâu trên bản đồ Việt Nam: Vị trí và tiềm năng
+
+    Kỹ thuật ném biên trong bóng đá: Luật chơi và cách thực hiện chuẩn
+
+    Ước tính điểm hòa vốn khi kinh doanh xe cà phê di động
+
+    63 tỉnh thành trước sáp nhập 2026: cẩm nang bản đồ và lưu ý du lịch
+
+    Cách Bắt Cầu Tài Xỉu FEBET Giúp Cược Thủ Thắng Lớn
+
+    BTV Thủy Ngọc  
+
+        BTV Thủy Ngọc là biên tập viên nội dung chuyên sâu trong lĩnh vực văn hóa – du lịch, đặc biệt quan tâm đến việc bảo tồn và lan tỏa giá trị truyền thống của cộng đồng 54 dân tộc Việt Nam. Với lối viết chỉn chu, giàu tính nghiên cứu và cảm xúc, Thủy Ngọc đã thực hiện nhiều bài viết giới thiệu về phong tục tập quán, lễ hội, đời sống sinh hoạt và bản sắc văn hóa đặc trưng của từng vùng miền.
+
+Thông qua các nội dung được biên tập kỹ lưỡng, BTV Thủy Ngọc mong muốn mang đến cho độc giả cái nhìn chân thực, gần gũi về văn hóa dân tộc, đồng thời góp phần nâng cao ý thức gìn giữ và phát huy những giá trị truyền thống quý báu trong đời sống hiện đại.

@@ -1,0 +1,87 @@
+URL: https://danang.plus/quan-ly-von-kinh-doanh-ho-kinh-doanh-ca-the/
+TITLE: Quản lý vốn kinh doanh và dự trù nghĩa vụ thuế cho chủ hộ kinh doanh cá thể
+TCB_LINKS: ['https://techcombank.com/thong-tin/blog/ho-kinh-doanh-dong-thue-nhu-nao', 'https://techcombank.com/thong-tin/blog/lai-suat-tiet-kiem']
+
+class="entry-content mt-3">
+Với hộ kinh doanh cá thể, tiền bán hàng và tiền chi tiêu gia đình thường đi chung một nguồn, khiến việc quản lý vốn và chuẩn bị nộp thuế gặp khó khăn. Bài viết trình bày cách tách bạch dòng tiền, ghi chép sổ sách cơ bản và dự trù nghĩa vụ thuế theo từng kỳ.
+
+Advertisements
+
+## 1. Tách bạch tiền kinh doanh và tiền chi tiêu gia đình
+Nền tảng của việc quản lý vốn là tách riêng dòng tiền kinh doanh khỏi chi tiêu cá nhân, để biết chính xác cửa hàng đang thu về bao nhiêu và chi ra bao nhiêu.
+Khi tiền bán hàng được dùng trực tiếp cho chi tiêu gia đình, chủ hộ kinh doanh khó nhận biết cửa hàng đang có lãi hay chỉ đang quay vòng vốn. Cách khắc phục đơn giản là mở một tài khoản riêng dành cho hoạt động kinh doanh. Toàn bộ doanh thu, kể cả tiền khách chuyển khoản hay quét mã QR, đều đi vào tài khoản này. Mọi khoản chi cho cửa hàng như nhập hàng, tiền mặt bằng hay lương nhân viên cũng được thanh toán từ đây.
+Thu nhập của chủ hộ được chuyển từ tài khoản kinh doanh sang tài khoản cá nhân theo một mức cố định mỗi tháng, tương tự như một khoản lương. Cách làm này giúp chi tiêu gia đình ổn định, đồng thời phần tiền còn lại trong tài khoản kinh doanh phản ánh đúng tình hình vốn của cửa hàng.
+Với phần vốn chưa cần sử dụng trong vài tháng tới, nhiều chủ hộ gửi tiết kiệm để khoản tiền sinh lời. Theo dõi lãi suất ngân hàng ở các kỳ hạn ngắn giúp chọn kỳ hạn phù hợp với chu kỳ nhập hàng, bảo đảm tiền đến hạn đúng lúc cửa hàng cần vốn.
+
+Advertisements
+
+Tách riêng tiền kinh doanh giúp chủ hộ biết chính xác cửa hàng đang có lãi hay không.
+## 2. Ghi chép sổ sách cơ bản để nắm rõ doanh thu và chi phí
+Sổ sách rõ ràng không chỉ giúp chủ hộ quản lý vốn mà còn là căn cứ để xác định nghĩa vụ thuế chính xác.
+Ở mức cơ bản, chủ hộ kinh doanh nên ghi chép đều đặn các nội dung sau:
+Doanh thu bán hàng theo ngày, phân theo tiền mặt và chuyển khoản
+Chi phí nhập hàng kèm hóa đơn, chứng từ từ nhà cung cấp
+Chi phí vận hành như mặt bằng, điện nước, lương nhân viên
+Lượng hàng tồn kho vào cuối mỗi tháng
+Hiện nay, nhiều ứng dụng quản lý bán hàng hỗ trợ ghi nhận doanh thu tự động từ máy tính tiền hoặc giao dịch thanh toán điện tử. Khi doanh thu được ghi nhận tự động, chủ hộ giảm được thời gian ghi chép thủ công và hạn chế sai sót. Việc kết nối ứng dụng bán hàng với tài khoản kinh doanh cũng giúp đối soát dòng tiền cuối ngày nhanh hơn.
+Bên cạnh doanh thu và chi phí, chủ hộ nên theo dõi công nợ với nhà cung cấp và khách hàng mua chịu, nếu có. Những khoản phải trả và phải thu này ảnh hưởng trực tiếp đến lượng tiền thực có trong tài khoản kinh doanh, dù doanh thu trên sổ sách vẫn ở mức tốt. Ghi chép công nợ theo từng đối tác giúp chủ hộ chủ động sắp xếp thời điểm thanh toán và thu hồi.
+
+Advertisements
+
+Định kỳ mỗi tháng, chủ hộ nên tổng hợp doanh thu và chi phí để xem lãi gộp của cửa hàng. Con số này cho biết mặt hàng nào mang lại hiệu quả, tháng nào cần chuẩn bị vốn nhiều hơn, từ đó điều chỉnh kế hoạch nhập hàng hợp lý.
+## 3. Dự trù khoản thuế theo từng kỳ kê khai
+Khi đã có sổ sách đầy đủ, chủ hộ kinh doanh có thể ước tính khoản thuế phải nộp và chuẩn bị tiền từ trước thay vì bị động khi đến hạn.
+Tìm hiểu hộ kinh doanh đóng thuế như thế nào theo phương pháp đang áp dụng cho cửa hàng của mình là bước đầu tiên. Mỗi phương pháp có cách xác định doanh thu tính thuế và kỳ kê khai khác nhau, vì vậy chủ hộ nên nắm rõ căn cứ tính thuế, thời điểm kê khai và hình thức nộp. Khi chưa chắc chắn, có thể liên hệ cơ quan thuế quản lý trực tiếp để được hướng dẫn.
+Sau khi nắm được cách tính, chủ hộ có thể trích một tỷ lệ doanh thu cố định mỗi ngày hoặc mỗi tuần vào một quỹ riêng dành cho thuế. Giả sử khoản thuế ước tính tương ứng một tỷ lệ nhỏ trên doanh thu, việc trích đều đặn giúp quỹ luôn đủ khi đến kỳ nộp mà không ảnh hưởng đến vốn nhập hàng.
+Nộp thuế qua kênh điện tử cũng giúp chủ hộ tiết kiệm thời gian và lưu lại chứng từ đầy đủ. Các chứng từ nộp thuế nên được lưu cùng sổ sách kinh doanh để thuận tiện khi cần đối chiếu.
+
+Advertisements
+
+Khi quy mô kinh doanh thay đổi, chủ hộ nên rà soát lại cả cách phân bổ vốn lẫn quỹ dự trù thuế, vì doanh thu tăng có thể kéo theo thay đổi về nghĩa vụ thuế.
+Quản lý vốn kinh doanh và dự trù nghĩa vụ thuế bắt đầu từ việc tách bạch dòng tiền, ghi chép sổ sách đều đặn và trích quỹ thuế theo kế hoạch. Khi ba việc này trở thành thói quen, chủ hộ kinh doanh có thể nắm rõ hiệu quả hoạt động của cửa hàng và hoàn thành nghĩa vụ thuế một cách chủ động.Dự trù trước khoản thuế giúp chủ hộ kinh doanh chủ động dòng tiền khi đến kỳ nộp.
+Bài viết quảng cáo của Techcombank.
+
+Advertisements
+
+Share: 
+
+Thông tin hữu ích
+
+Số điện thoại công an Đà Nẵng: 113 và công an 93 phường, xã
+Ban biên tập Danang.Plus - Cập nhật 23/09/2026
+
+Số điện thoại cứu hộ khi mưa bão ở Đà Nẵng              
+Cập nhật 05/10/2026
+
+Số điện thoại Điện lực Đà Nẵng 2026              
+Cập nhật 23/09/2026
+
+Dân số Đà Nẵng 2026 là bao nhiêu?              
+Cập nhật 25/09/2026
+
+Đăng ký Grab Đà Nẵng ở đâu? Địa chỉ, hồ sơ và cách đăng ký online              
+Cập nhật 25/09/2026 Bài viết liên quan
+
+Tính chi phí rang xay cà phê cho hộ gia đình làm cà phê bột bán lẻ
+
+ Thông tin cần biết    
+
+Đồng bộ hóa đơn điện tử và tồn kho khi chủ hộ kinh doanh chuyển sang phần mềm quản lý
+
+ Thông tin cần biết    
+
+Quản lý chi phí nhập nguyên liệu và giao hàng của quán cà phê nhỏ có bán mang đi
+
+ Thông tin cần biết    
+
+Sau mùa mưa, nhiều chủ xe bắt đầu quan tâm đến bảo hiểm thân vỏ ô tô cho những tháng cuối năm
+
+ Thông tin cần biết    
+
+Lý do tỷ giá niêm yết giữa các ngân hàng có sự khác nhau và cách tra cứu để chủ động khi giao dịch
+
+ Thông tin cần biết    
+
+5 bước thăm khám và điều trị bệnh lý tuyến giáp tại Bệnh viện Đa khoa Hồng Ngọc
+
+ Thông tin cần biết

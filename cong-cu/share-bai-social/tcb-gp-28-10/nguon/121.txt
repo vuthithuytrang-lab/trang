@@ -1,0 +1,85 @@
+URL: https://thanhhoatoplist.com/ghi-chep-thu-nhap-va-chung-tu-cho-tai-xe-cong-nghe-va-nguoi-giao-hang/
+TITLE: Ghi chép thu nhập và chứng từ cho tài xế công nghệ và người giao hàng
+TCB_LINKS: ['https://techcombank.com/thong-tin/blog/cach-tra-cuu-hoa-don-dien-tu', 'https://techcombank.com/thong-tin/blog/tra-cuu-ma-so-thue-ca-nhan']
+
+class="entry-content mt-3 ">
+
+Tài xế công nghệ và người giao hàng nhận tiền từ nhiều cuốc xe, nhiều đơn mỗi ngày, trong khi chi phí xăng, sửa xe và điện thoại lại phát sinh rải rác. Bài viết này ThanhHoatoplist sẽ trình bày cách tổng hợp thu nhập từ nền tảng, lưu chứng từ chi phí và giữ thông tin thuế cá nhân chính xác để nắm rõ thu nhập thực của mình.
+
+Mục lục nội dung
+Toggle
+
+## Tổng hợp thu nhập từ một hay nhiều nền tảng
+
+Một người giao hàng có thể chạy cho hai nền tảng vào giờ cao điểm và nhận thêm đơn riêng của vài cửa hàng quen trong khu vực. Tiền từ mỗi nguồn về theo nhịp khác nhau: có nơi chuyển về ví theo ngày, có nơi đối soát theo tuần, còn đơn riêng thì nhận tiền mặt hoặc chuyển khoản ngay.
+
+Bảng thu nhập theo tuần giúp tài xế thấy rõ nguồn thu nào đóng góp nhiều nhất vào tổng thu nhập
+
+Cách tổng hợp đơn giản là lập một bảng theo tuần, mỗi nguồn thu một cột. Số liệu lấy từ báo cáo thu nhập trong ứng dụng tài xế, gồm doanh thu cuốc xe, tiền thưởng, chiết khấu nền tảng đã trừ và số tiền thực nhận. Với đơn riêng, người giao hàng ghi số đơn và tổng tiền mỗi ngày ngay khi kết thúc ca.
+
+Sau vài tháng, bảng tổng hợp cho thấy thu nhập bình quân theo tuần, những tuần cao điểm và những tuần thấp. Thông tin này hữu ích khi tài xế lập ngân sách gia đình, bởi thu nhập không cố định nên ngân sách nên dựa trên mức trung bình của nhiều tuần thay vì tuần cao nhất.
+
+Xem thêm:  Giải đáp chi tiết: Gãy xương ở tay bao lâu thì lành?
+## Lưu hóa đơn chi phí để tính thu nhập thực
+
+Doanh thu trên ứng dụng chưa phải thu nhập thực, vì tài xế còn gánh nhiều khoản chi để duy trì công việc. Nhóm chi phí chính gồm nhiên liệu, bảo dưỡng và sửa chữa xe, phí gửi xe, cước điện thoại và dữ liệu di động, cùng với khấu hao xe theo thời gian sử dụng.
+
+Các cửa hàng xăng dầu và nhiều gara hiện nay xuất hóa đơn điện tử khi khách yêu cầu, gửi qua email hoặc tin nhắn. Tài xế có thể dùng một địa chỉ email riêng chỉ để nhận các hóa đơn này, nhờ đó cuối tháng chỉ cần mở hộp thư là có đủ chứng từ chi phí. Với những khoản không có hóa đơn, như rửa xe hay gửi xe, ghi chú nhanh trên điện thoại ngay sau khi chi là đủ.
+Lưu hóa đơn chi phí để tính thu nhập thực
+
+Khi đã có chi phí, tài xế tính thu nhập thực bằng cách lấy tiền thực nhận từ nền tảng trừ đi tổng chi phí trong cùng kỳ. Giả sử mỗi tuần chạy khoảng tám trăm ki-lô-mét, tài xế có thể quy chi phí nhiên liệu và bảo dưỡng về mỗi ki-lô-mét, rồi so sánh với tiền thực nhận trên mỗi ki-lô-mét để đánh giá ca chạy nào mang lại hiệu quả hơn.
+
+Hóa đơn sửa chữa lớn như thay lốp, thay nhớt định kỳ hay đại tu còn là căn cứ để theo dõi lịch bảo dưỡng và làm việc với gara khi có hạng mục còn trong thời gian bảo hành.
+
+Xem thêm:  Sleep Box Đà Lạt: Lựa chọn lưu trú giá tốt, view đẹp cho du khách
+## Giữ thông tin thuế cá nhân chính xác và lưu chứng từ khấu trừ
+
+Thu nhập từ hoạt động chạy xe, giao hàng qua nền tảng thuộc diện chịu thuế theo quy định, và với nhiều hình thức hợp tác, nền tảng thực hiện khấu trừ trước khi chuyển tiền cho tài xế. Cách tính và mức khấu trừ do quy định hiện hành và thỏa thuận hợp tác quyết định, nên tài xế nên đọc kỹ mục thông tin thuế trong ứng dụng và lưu lại thông báo khi có thay đổi.
+
+Để khoản thuế đã khấu trừ được ghi nhận đúng người, thông tin cá nhân khai trên ứng dụng phải khớp với dữ liệu của cơ quan thuế. Mã số thuế của tài xế hiện trùng với số định danh cá nhân in trên căn cước, nên tài xế có thể tra cứu mã số thuế cá nhân bằng CCCD để kiểm tra họ tên, cơ quan thuế quản lý và tình trạng mã số. Nếu thấy thông tin chưa thống nhất, tài xế cập nhật lại trên ứng dụng hoặc liên hệ cơ quan thuế để điều chỉnh.
+Thông tin cá nhân khớp với dữ liệu thuế giúp khoản đã khấu trừ được ghi nhận đúng người
+
+Chứng từ khấu trừ thuế do nền tảng cung cấp, báo cáo thu nhập theo tháng và bảng tổng hợp chi phí nên được lưu trong một thư mục theo năm. Bộ hồ sơ này hỗ trợ tài xế khi cần đối chiếu với cơ quan thuế, đồng thời là căn cứ chứng minh thu nhập khi làm các thủ tục như thuê nhà hay đăng ký dịch vụ tài chính.
+
+Xem thêm:  Cùng nhau khám phá thế giới mô hình đầy thú vị tại Reviewmohinh.com
+Mỗi quý một lần, tài xế nên dành thời gian xem lại toàn bộ hồ sơ để bổ sung chứng từ còn thiếu, thay vì đợi đến cuối năm mới tổng hợp.
+
+Thu nhập của tài xế công nghệ và người giao hàng đến từ nhiều cuốc xe nhỏ, nên chỉ trở nên rõ ràng khi được ghi chép đều đặn. Bảng tổng hợp theo tuần, hóa đơn chi phí lưu tập trung và thông tin thuế chính xác giúp người lao động tự do nắm được thu nhập thực và chủ động hơn trong kế hoạch tài chính của gia đình.
+
+            5/5 - (1 vote)    
+
+    Share: 
+
+Phuong Dung
+
+### Bài viết liên quan
+
+      Giải pháp kệ kho cho nhà máy mới tại KKT Nghi Sơn và các KCN Thanh Hóa    
+
+       Cẩm nang tư vấn    
+
+      Tự đóng bảo hiểm xã hội và bảo hiểm y tế khi chuyển sang làm việc tự do    
+
+       Cẩm nang tư vấn    
+
+      Lập kế hoạch mua dự trữ cà phê và gia vị khô cho gia đình theo từng tháng    
+
+       Cẩm nang tư vấn    
+
+      Tra giá vé máy bay Vietravel Airlines ở đâu nhanh và chính xác?    
+
+       Cẩm nang tư vấn    
+
+      Review Glow app – massage tại nhà Thanh Hóa cho phút nghỉ ngơi đáng giá    
+
+       Cẩm nang tư vấn    
+
+      In ấn Trần Gia và giải pháp in túi giấy đáp ứng nhu cầu doanh nghiệp    
+
+       Cẩm nang tư vấn    
+
+#### 
+
+#### 
+
+####

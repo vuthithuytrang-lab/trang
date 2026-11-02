@@ -107,10 +107,26 @@ class Text(HTMLParser):
 def cmd_fetch(so):
     x = item(so)
     r = urllib.request.Request(x["url"], headers={"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/126 Safari/537.36"})
-    raw = urllib.request.urlopen(r, context=_ctx, timeout=60).read().decode("utf8", "replace")
+    r.add_header("Accept-Encoding", "gzip")
+    resp = urllib.request.urlopen(r, context=_ctx, timeout=60); raw = resp.read()
+    if raw[:2] == b"\x1f\x8b":
+        import gzip; raw = gzip.decompress(raw)
+    raw = raw.decode("utf8", "replace")
+    def lay(chunk):
+        t = Text(); t.feed(chunk)
+        return re.sub(r"\n\s*\n+", "\n\n", "".join(t.out)).strip()
     m = re.search(r"<article.*?</article>", raw, re.S) or re.search(r'class="[^"]*(entry-content|post-content|detail-content|content-detail|news-content|article-content)[^"]*".*', raw, re.S)
-    t = Text(); t.feed(m.group(0) if m else raw)
-    txt = re.sub(r"\n\s*\n+", "\n\n", "".join(t.out)).strip()
+    txt = lay(m.group(0) if m else raw)
+    a, b = raw.find('class="dcontent_live'), raw.find('class="content_cm')
+    if 0 < a < b:  # baophutho: lấy các đoạn p/h2/h3/li đứng trước khung bình luận
+        parts = re.findall(r"<(p|h2|h3|li)[^>]*>(.*?)</\1>", raw[:b], re.S)
+        txt = "\n\n".join(("## " if t != "p" and t != "li" else "") + html.unescape(re.sub(r"<[^>]+>", "", c)).strip() for t, c in parts if re.sub(r"<[^>]+>", "", c).strip())
+    elif len(txt.split()) < 400:  # trang có khung lạ (baophutho, vntime): thử các khung nội dung khác, lấy bản dài nhất có nghĩa
+        for k in ("cms-body", "content-inner", "content_cm", "xbody", "entry-content"):
+            m2 = re.search(r'class="[^"]*\b' + k + r'\b[^"]*".*', raw, re.S)
+            if m2:
+                t2 = lay(m2.group(0)[:200000])
+                if len(t2.split()) > len(txt.split()): txt = t2
     title = html.unescape((re.search(r"<title>(.*?)</title>", raw, re.S) or [None, ""])[1]).strip()
     links = sorted(set(re.findall(r'href="(https?://[^"]*techcombank[^"]*)"', raw)))
     os.makedirs(os.path.join(HERE, "nguon"), exist_ok=True)

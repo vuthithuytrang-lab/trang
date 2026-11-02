@@ -11,6 +11,10 @@ cho = (datetime.fromisoformat(nxt["gio"]) - datetime.now(timezone.utc)).total_se
 print("lượt kế:", nxt, "chờ", int(cho), "giây", flush=True)
 if cho > 6600: sys.exit("còn quá xa, chưa chờ")
 time.sleep(max(0, cho) + 20)
+f = os.path.join(HERE, "bai", f"{nxt['so']:02d}", {"wp": "wp.html", "wix": "wix.html", "wf": "wf.html", "bl": "bl.html", "gg": "gg.html", "ma": "ma.txt"}[nxt["nen"]])
+for _ in range(45):  # bài chưa viết xong thì chờ thêm, tối đa 45 phút
+    if os.path.exists(f) and "OK" in subprocess.run([sys.executable, os.path.join(HERE, "dang.py"), "check", str(nxt["so"]), nxt["nen"]], capture_output=True, text=True).stdout: break
+    time.sleep(60)
 for c in ("check", "dang"):
     p = subprocess.run([sys.executable, os.path.join(HERE, "dang.py"), c, str(nxt["so"]), nxt["nen"]], capture_output=True, text=True)
     print(p.stdout[-1500:], p.stderr[-800:], flush=True)

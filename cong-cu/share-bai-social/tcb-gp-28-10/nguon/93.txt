@@ -1,0 +1,78 @@
+URL: https://danang.plus/quan-ly-chi-phi-quan-ca-phe/
+TITLE: Quản lý chi phí nhập nguyên liệu và giao hàng của quán cà phê nhỏ có bán mang đi
+TCB_LINKS: ['https://techcombank.com/thong-tin/blog/gia-ca-phe-hom-nay', 'https://techcombank.com/thong-tin/blog/gia-xang-dau-hom-nay']
+
+class="entry-content mt-3">
+Quán cà phê nhỏ có thêm kênh bán mang đi và giao hàng thường tăng được doanh thu, nhưng cũng có thêm khoản chi cho nhiên liệu và vật dụng đóng gói. Bài viết trình bày cách lên kế hoạch nhập hạt cà phê, tính chi phí giao hàng theo bán kính và đưa hai khoản này vào dòng tiền của quán.
+
+Advertisements
+
+## 1. Lên kế hoạch nhập hạt cà phê theo chu kỳ bán hàng
+Một quán cà phê nhỏ trong khu dân cư, phục vụ tại chỗ vào buổi sáng và nhận đơn giao hàng cho các văn phòng gần đó, thường nhập cà phê đã rang từ một vài cơ sở rang quen. Hạt cà phê là nguyên liệu chính, có giá trị lớn trong tổng chi phí và cần được dùng trong thời gian nhất định để giữ hương vị.
+Chu kỳ nhập hàng nên dựa trên lượng bán thực tế. Chủ quán có thể ghi lại lượng cà phê đã dùng mỗi tuần trong một tháng, rồi lấy mức trung bình làm cơ sở đặt hàng. Nhập theo tuần hoặc hai tuần một lần giúp hạt luôn mới, đồng thời hạn chế lượng tiền nằm trong kho nguyên liệu.
+Giá bán của các cơ sở rang thay đổi theo giá cà phê nhân trên thị trường. Thói quen xem giá cà phê trực tuyến giúp chủ quán hiểu xu hướng giá nguyên liệu và chuẩn bị trước khi cơ sở rang thông báo điều chỉnh. Khi thấy giá cà phê nhân tăng kéo dài, chủ quán có thể trao đổi với nhà cung cấp để chốt giá cho vài đợt hàng tới.
+Bên cạnh hạt cà phê, các nguyên liệu như sữa đặc, sữa tươi, đường, trà và trái cây cũng nên được ghi theo cùng chu kỳ. Một bảng nhập hàng đơn giản gồm tên nguyên liệu, số lượng, đơn giá và ngày nhập giúp chủ quán nhận ra mặt hàng nào đang tăng giá và ảnh hưởng thế nào đến giá vốn đồ uống.
+
+Advertisements
+
+Theo dõi xu hướng giá cà phê nhân giúp chủ quán chủ động khi cơ sở rang điều chỉnh giá bán.
+## 2. Tính chi phí giao hàng theo bán kính phục vụ
+Nhiều quán nhỏ tự giao hàng bằng xe máy cho khách quen trong vài ki-lô-mét quanh quán, song song với việc nhận đơn qua các nền tảng giao đồ ăn. Với đơn tự giao, chi phí nhiên liệu, thời gian của người giao và vật dụng đóng gói đều do quán chi trả.
+Cách tính hợp lý là chia khu vực giao thành các vòng bán kính, chẳng hạn trong vòng 1 km, từ 1 đến 3 km và trên 3 km. Mỗi vòng có quãng đường khứ hồi trung bình, nhân với mức tiêu hao nhiên liệu của xe sẽ ra số lít cho mỗi chuyến giao. Phần quy ra tiền dựa vào giá xăng dầu hôm nay, cập nhật mỗi khi giá nhiên liệu được điều chỉnh.
+Kết quả cho thấy đơn giao xa có chi phí cao hơn nhiều so với đơn gần, đặc biệt khi giá trị đơn nhỏ. Từ đó chủ quán có thể đặt giá trị đơn tối thiểu cho từng vòng bán kính, thu phí giao cho vòng xa, hoặc gom các đơn cùng hướng vào một chuyến trong giờ cao điểm.
+Ly mang đi, nắp, ống hút, túi đựng và đá cũng là chi phí riêng của kênh bán mang đi. Khi cộng các khoản này với chi phí nhiên liệu, chủ quán biết được mỗi đơn giao cần có giá trị bao nhiêu để đạt cùng mức lợi nhuận như một ly bán tại chỗ.Ghi chi phí từng chuyến giao giúp chủ quán biết khoản nhiên liệu của mỗi khu vực giao hàng.
+## 3. Đưa nguyên liệu và chi phí giao hàng vào dòng tiền của quán
+Doanh thu của quán đến từ nhiều kênh: tiền mặt tại quầy, chuyển khoản qua mã QR và tiền thanh toán từ các nền tảng giao đồ ăn, thường được chuyển về theo chu kỳ. Các khoản tiền về không cùng thời điểm, trong khi tiền nhập hàng phải chi trước.
+
+Advertisements
+
+Chủ quán có thể dùng một tài khoản riêng cho hoạt động của quán, nhận toàn bộ doanh thu và thanh toán mọi khoản nhập hàng từ tài khoản này. Lịch nhập hàng được đặt sau thời điểm các khoản thanh toán từ nền tảng thường về, để luôn có đủ tiền trả nhà cung cấp mà không phải dùng tiền cá nhân.
+Mỗi tháng, chủ quán tách chi phí theo từng kênh bán: nguyên liệu, nhiên liệu giao hàng, vật dụng mang đi và phí nền tảng. So sánh chi phí với doanh thu từng kênh cho thấy kênh nào đóng góp lợi nhuận tốt, kênh nào cần điều chỉnh giá hoặc cách vận hành.
+Quán cũng nên duy trì một khoản dự phòng cho nguyên liệu, đủ cho vài tuần nhập hàng. Khoản này giúp quán giữ được thực đơn ổn định khi giá đầu vào tăng hoặc khi doanh thu tạm chững lại vào mùa mưa, mùa nghỉ lễ.
+Với quán cà phê nhỏ có bán mang đi, nguyên liệu và chi phí giao hàng là hai khoản cần được theo dõi sát sao trong suốt quá trình vận hành. Nhập hạt theo chu kỳ bán thực tế, tính chi phí giao theo bán kính và quản lý dòng tiền từ nhiều kênh trong một tài khoản riêng giúp chủ quán giữ biên lợi nhuận ổn định khi mở rộng phục vụ.
+Bài viết quảng cáo của Techcombank.
+
+Advertisements
+
+Share: 
+
+Thông tin hữu ích
+
+Số điện thoại công an Đà Nẵng: 113 và công an 93 phường, xã
+Ban biên tập Danang.Plus - Cập nhật 23/09/2026
+
+Số điện thoại cứu hộ khi mưa bão ở Đà Nẵng              
+Cập nhật 05/10/2026
+
+Số điện thoại Điện lực Đà Nẵng 2026              
+Cập nhật 23/09/2026
+
+Dân số Đà Nẵng 2026 là bao nhiêu?              
+Cập nhật 25/09/2026
+
+Đăng ký Grab Đà Nẵng ở đâu? Địa chỉ, hồ sơ và cách đăng ký online              
+Cập nhật 25/09/2026 Bài viết liên quan
+
+Tính chi phí rang xay cà phê cho hộ gia đình làm cà phê bột bán lẻ
+
+ Thông tin cần biết    
+
+Đồng bộ hóa đơn điện tử và tồn kho khi chủ hộ kinh doanh chuyển sang phần mềm quản lý
+
+ Thông tin cần biết    
+
+Sau mùa mưa, nhiều chủ xe bắt đầu quan tâm đến bảo hiểm thân vỏ ô tô cho những tháng cuối năm
+
+ Thông tin cần biết    
+
+Lý do tỷ giá niêm yết giữa các ngân hàng có sự khác nhau và cách tra cứu để chủ động khi giao dịch
+
+ Thông tin cần biết    
+
+5 bước thăm khám và điều trị bệnh lý tuyến giáp tại Bệnh viện Đa khoa Hồng Ngọc
+
+ Thông tin cần biết    
+
+Số hóa các giao dịch tài chính của gia đình từ thanh toán, gửi tiết kiệm đến nộp thuế
+
+ Thông tin cần biết

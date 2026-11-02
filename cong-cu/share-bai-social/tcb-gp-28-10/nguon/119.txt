@@ -1,0 +1,167 @@
+URL: https://vntime.org/huong-dan-quan-ly-ho-so-thue-va-hoa-don-cho-nguoi-co-thu-nhap-tu-cho-thue-nha.html
+TITLE: Hướng dẫn quản lý hồ sơ thuế và hóa đơn cho người có thu nhập từ cho thuê nhà - VNTime
+TCB_LINKS: ['https://techcombank.com/thong-tin/blog/cach-tra-cuu-hoa-don-dien-tu', 'https://techcombank.com/thong-tin/blog/tra-cuu-ma-so-thue-ca-nhan']
+
+class="content-inner ">
+Cho thuê một căn hộ hay vài phòng trọ tạo ra nguồn thu đều đặn, đồng thời kéo theo nhiều giấy tờ cần quản lý: hợp đồng, biên nhận tiền thuê, hóa đơn điện nước và hồ sơ thuế. Bài viết trình bày cách người cho thuê tổ chức sổ thu, xử lý hóa đơn dịch vụ và chuẩn bị thông tin thuế theo nguyên tắc chung.
+
+Mục lục
+Toggle
+
+## 1. Lập sổ thu tiền thuê theo từng hợp đồng
+Một gia đình có căn nhà ba tầng, dành tầng trệt cho thuê làm cửa hàng và hai tầng trên chia thành bốn phòng cho người đi làm thuê. Mỗi hợp đồng có thời hạn, giá thuê và ngày thanh toán riêng, nên nếu chỉ dựa vào tin nhắn chuyển khoản, chủ nhà khó biết phòng nào đã đóng, phòng nào còn thiếu.
+Sổ thu nên được lập theo từng hợp đồng, mỗi dòng là một kỳ thanh toán với các cột: kỳ thuê, số tiền theo hợp đồng, số tiền thực nhận, ngày nhận và ghi chú. Tiền đặt cọc được theo dõi ở một mục riêng, vì đây là khoản sẽ hoàn lại khi kết thúc hợp đồng, không phải doanh thu.
+Người thuê nên được đề nghị chuyển khoản vào một tài khoản dành riêng cho hoạt động cho thuê, nội dung ghi số phòng và tháng thuê. Khi toàn bộ tiền thuê đi qua một tài khoản, sao kê cuối tháng trở thành bảng đối chiếu với sổ thu, đồng thời thu nhập từ cho thuê không bị lẫn với lương hay chi tiêu gia đình.
+Cuối mỗi quý, chủ nhà cộng tổng tiền thuê thực nhận của từng phòng và so với số theo hợp đồng. Phòng nào thường thanh toán chậm, phòng nào có kỳ để trống giữa hai người thuê sẽ hiện ra rõ, giúp chủ nhà điều chỉnh ngày thu hoặc kế hoạch tìm người thuê mới sớm hơn.
+
+Sổ thu theo từng hợp đồng giúp chủ nhà biết chính xác kỳ thuê nào đã được thanh toán.
+## 2. Quản lý hóa đơn điện nước và phí dịch vụ chung
+Với nhà cho thuê nhiều phòng, hóa đơn điện, nước, internet thường đứng tên chủ nhà rồi được chia lại cho người thuê theo chỉ số công tơ riêng hoặc theo đầu người. Cách chia minh bạch giúp hai bên ít phải trao đổi lại và chủ nhà không phải bù phần chênh lệch không rõ nguồn gốc.
+Hằng tháng, chủ nhà có thể tra cứu hóa đơn điện tử của đơn vị cung cấp điện, nước trên trang thông tin chính thức để lấy tổng số tiền và chỉ số tiêu thụ của kỳ. Sau đó, chủ nhà ghi chỉ số công tơ từng phòng, tính phần của mỗi phòng theo đúng đơn giá trên hóa đơn và gửi kèm ảnh chụp hóa đơn gốc cho người thuê. Cách làm này giúp mọi con số đều có căn cứ.
+Phí dịch vụ chung như vệ sinh, thu gom rác hay bảo trì thang máy cũng nên được liệt kê rõ trong hợp đồng, kèm cách tính và thời điểm thu. Khi có thay đổi, chủ nhà thông báo trước bằng văn bản hoặc tin nhắn để người thuê có thời gian chuẩn bị.
+Hóa đơn điện nước và biên nhận phí dịch vụ được lưu theo tháng, tách thành phần chủ nhà chi trả và phần đã thu lại từ người thuê. Số liệu này giúp chủ nhà tính được thu nhập thực từ cho thuê sau khi trừ các chi phí mình gánh.
+## 3. Chuẩn bị thông tin thuế cho hoạt động cho thuê
+Cá nhân có thu nhập từ cho thuê tài sản thuộc diện kê khai thuế khi doanh thu đạt ngưỡng theo quy định. Ngưỡng, cách tính và kỳ kê khai có thể thay đổi theo từng thời kỳ, nên chủ nhà cần theo dõi hướng dẫn mới nhất của cơ quan thuế nơi có tài sản cho thuê thay vì dựa vào thông tin của những năm trước.
+Thông tin nền tảng trong mọi hồ sơ là mã số thuế của người cho thuê. Hiện nay số định danh cá nhân được dùng làm mã số thuế, và chủ nhà có thể tra cứu mã số thuế cá nhân để kiểm tra thông tin đăng ký như họ tên, cơ quan thuế quản lý và tình trạng hoạt động. Nếu tài sản đứng tên chung của hai vợ chồng, hai người nên thống nhất ai là người đứng tên kê khai để hồ sơ nhất quán.
+Một bộ hồ sơ cho thuê đầy đủ thường gồm hợp đồng thuê và phụ lục, sổ thu tiền thuê, sao kê tài khoản nhận tiền và các tờ khai thuế đã nộp. Khi người thuê là doanh nghiệp, bên thuê đôi khi kê khai thay theo thỏa thuận trong hợp đồng, và chủ nhà nên lưu lại chứng từ do bên thuê cung cấp.
+Toàn bộ giấy tờ nên được sắp xếp theo năm, mỗi năm một thư mục. Cách tổ chức này hỗ trợ việc kê khai, đồng thời là căn cứ khi chủ nhà cần chứng minh thu nhập để làm các thủ tục tài chính khác.
+
+Hồ sơ cho thuê nhà được sắp xếp theo năm giúp việc kê khai thuế diễn ra nhanh và chính xác.
+Cho thuê nhà là nguồn thu ổn định khi đi kèm cách ghi chép có hệ thống. Sổ thu theo hợp đồng, hóa đơn điện nước được chia minh bạch và hồ sơ thuế sắp xếp theo năm giúp chủ nhà vừa hoàn thành nghĩa vụ, vừa nắm rõ hiệu quả thực của tài sản đang cho thuê.
+
+Đánh giá nội dung này
+
+### Bài viết mới cập nhật
+
+### 
+Hướng dẫn quản lý hồ sơ thuế và hóa đơn cho người có thu nhập từ cho thuê nhà
+
+by nguoidung23
+ 30 Tháng 10, 2026
+ 0 
+
+### 
+Cách tính giá vốn cho sản phẩm của hộ kinh doanh làm tại nhà
+
+by nguoidung23
+ 30 Tháng 10, 2026
+ 0 
+
+### 
+Đọc hiểu chi phí thực của một khoản vay trước khi ký hợp đồng
+
+by nguoidung23
+ 26 Tháng 10, 2026
+ 0 
+
+### 
+Sáu nhà nghiên cứu trẻ Tứ Xuyên chia sẻ kinh nghiệm bảo tồn di sản tại Đại hội đồng ICOMOS
+
+by nguoidung23
+ 25 Tháng 10, 2026
+ 0 
+
+### 
+Phân bổ hợp lý giữa tiền mặt ngoại tệ và thẻ khi chi tiêu ở nước ngoài
+
+by nguoidung23
+ 12 Tháng 10, 2026
+ 0 
+
+### Bài viết nổi bật
+
+### 
+30 Món Ngon Mỗi Ngày Giúp Bạn Giải Quyết Hôm Nay Ăn Gì?
+
+### 
+Đài phun nước phao nổi là gì?
+
+### 
+102 Lời Chia Buồn Đám Tang Sâu Sắc, Ý Nghĩa Nhất
+
+### 
+Những Hình Ảnh Anime Đẹp Nhất Thế Giới Mà Fan Không Nên Bỏ Lỡ 2024
+
+### 
+Cách đánh sập Group trên Facebook – Rip Group FB Nhanh Chóng Đơn Giản
+
+### 
+Tổng Hợp 100 Trích Dẫn, Quotes Và Những Câu Nói Hay Về Cuộc Sống
+
+### 
+100 Câu nói hay về Phật giáo giúp bạn có được điểm tựa tinh thần trong cuộc sống
+
+### 
+100 Khung Ảnh Đẹp Để Ghép Hình Cho Photoshop, Treo Tường, Ảnh Cưới
+
+### 
+Tổng hợp các nhân vật trong thủy thủ mặt trăng
+
+### 
+DU LỊCH NHẬT BẢN CẦN CHÚ Ý ĐIỀU GÌ?
+
+VNTime là một trang web chuyên cung cấp các tin tức mới nhất về các công nghệ và xu hướng. Cập nhật các thủ thuật hay mỗi ngày cũng như những mẹo sức khỏe, du lịch,...
+
+### MENU
+
+Giới thiệu
+Gửi bài
+Điều khoản sử dụng
+
+### TÌM CHÚNG TÔI TRÊN
+
+ © 2024 Bản quyền thuộc về VNTime.org. Vui lòng trích dẫn nguồn khi sử dụng lại nội dung!
+
+No Result
+
+ View All Result
+
+Công nghệ
+Máy tính
+Ô tô, xe máy
+Điện thoại
+Điện tử
+Điện lạnh
+Cơ khí
+Thủ thuật
+Facebook
+Máy tính
+Văn phòng
+Điện thoại
+Internet
+Game
+Ảnh đẹp
+Sức khỏe
+Mẹ và bé
+Phụ nữ
+Nam giới
+Làm đẹp
+Các loại bệnh
+Thực đơn dinh dưỡng
+Du lịch
+Du học
+Khám phá
+Nghệ thuật
+Trang trí
+Quà tặng
+Phong cách sống
+Câu nói hay
+Câu chuyện hay
+Tin tức
+Doanh nghiệp
+Bạn có biết?
+Tài chính
+
+© 2024 Bản quyền thuộc về VNTime.org. Vui lòng trích dẫn nguồn khi sử dụng lại nội dung!
+
+### Welcome Back!
+Login to your account below
+
+Remember Me
+
+Forgotten Password?
+
+### Retrieve your password
+Please enter your username or email address to reset your password.
+
+ Log In

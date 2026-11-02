@@ -1,0 +1,45 @@
+URL: https://topshare.vn/lap-bang-gia-von-cho-tung-ly-do-uong-cua-quan-ca-phe-nho/
+TITLE: Lập Bảng Giá Vốn Cho Từng Ly đồ Uống Của Quán Cà Phê Nhỏ - Topshare.vn
+TCB_LINKS: ['https://techcombank.com/thong-tin/blog/gia-ca-phe-hom-nay', 'https://techcombank.com/thong-tin/blog/gia-gas-hom-nay']
+
+Chủ quán cà phê nhỏ thường định giá theo mặt bằng chung trong khu vực, trong khi giá vốn của mỗi ly lại khác nhau tùy công thức. Bài viết trình bày cách lập bảng giá vốn gồm phần hạt cà phê, phần gas đun nấu, ly và nguyên phụ liệu để định giá từng món trên thực đơn có cơ sở hơn.
+
+### 
+
+## 1. Tính phần hạt cà phê trong mỗi ly theo định lượng pha chế
+
+Một chủ quán tự pha chế, bán cà phê phin, cà phê sữa, bạc xỉu và vài món trà, thường biết tổng tiền nhập hàng mỗi tháng nhưng chưa biết từng ly tốn bao nhiêu. Bảng giá vốn bắt đầu từ định lượng: mỗi món dùng bao nhiêu gram cà phê, bao nhiêu mililít sữa, bao nhiêu gram đường. Khi các nhân viên pha chế cùng làm theo một công thức đã cân đo, giá vốn tính ra cũng phản ánh đúng chi phí thực của từng ly bán cho khách.
+
+Với cà phê, định lượng nên được cân thực tế thay vì ước chừng bằng muỗng. Giả sử một ly phin dùng 20 gram cà phê bột, một ki-lô-gam pha được khoảng 50 ly. Chi phí cà phê trong mỗi ly bằng giá nhập một ki-lô-gam chia cho 50, cộng thêm phần hao do cặn, đổ bỏ khi thử vị hoặc pha lại.
+
+Giá nhập cà phê rang phụ thuộc vào giá cà phê nhân, vốn biến động theo thị trường trong nước và thế giới. Chủ quán có thể tham khảo giá cà phê trực tuyến để biết khi nào giá nguyên liệu đang có xu hướng thay đổi, từ đó dự đoán khả năng nhà rang điều chỉnh giá và cập nhật phần chi phí cà phê trong bảng giá vốn kịp thời.
+
+Những món pha máy espresso có định lượng và tỷ lệ hao khác với cà phê phin, nên cần tính riêng. Nếu quán dùng nhiều loại hạt, mỗi loại là một dòng riêng trong bảng nguyên liệu, gắn với các món sử dụng loại hạt đó.
+
+Định lượng nguyên liệu cho từng món giúp chủ quán biết một ki-lô-gam hạt pha được bao nhiêu ly.
+
+## 2. Phân bổ chi phí gas đun nấu cho từng ly
+
+Quán cà phê nhỏ dùng bếp gas để đun nước pha phin, nấu trân châu, nấu đường nước, hâm sữa hoặc làm thạch. Chi phí gas không gắn với một món cụ thể nên thường bị bỏ ra ngoài bảng giá vốn, dù đây là khoản chi đều đặn mỗi tháng.
+
+Cách phân bổ đơn giản là tính theo số ly bán ra. Chủ quán ghi lại số bình gas dùng trong một tháng và tổng số ly đã bán trong cùng kỳ. Lấy tổng chi phí gas chia cho số ly sẽ ra phần chi phí gas bình quân trên mỗi ly. Nếu quán có các món nấu riêng như trân châu, có thể phân bổ nhiều hơn cho nhóm món đó.
+
+Để tính tổng chi phí gas, chủ quán nhân số bình đã dùng với đơn giá mua. Theo dõi giá gas hôm nay khi đặt bình giúp chủ quán biết đơn giá hiện hành để cập nhật vào bảng, đồng thời so sánh giữa các đại lý cung cấp quanh khu vực.
+
+Phần chi phí gas trên mỗi ly thường nhỏ, nhưng khi số ly bán ra mỗi tháng lên đến hàng nghìn, chênh lệch nhỏ trên mỗi ly cộng lại thành con số đáng kể. Đun nước bằng ấm có nắp, giữ nước nóng trong bình giữ nhiệt thay vì đun lại nhiều lần là những cách giúp giảm lượng gas tiêu thụ.
+
+## 3. Cộng ly, nắp và nguyên phụ liệu để hoàn thiện bảng giá vốn
+
+Bên cạnh cà phê và gas, mỗi ly còn có sữa, đường, đá, ly, nắp, ống hút và túi đựng nếu bán mang đi. Mỗi thành phần được tính theo định lượng nhân đơn giá. Riêng ly mang đi và ly dùng tại quán nên tách hai cột, vì ly thủy tinh dùng lại có chi phí rửa và hao vỡ, còn ly nhựa hoặc ly giấy được tính trọn vào mỗi đơn.
+
+Khi cộng tất cả thành phần, chủ quán có giá vốn của từng món. Đặt giá vốn cạnh giá bán sẽ thấy tỷ lệ giá vốn của mỗi món. Những món có tỷ lệ cao có thể được điều chỉnh định lượng phụ liệu, đổi quy cách ly hoặc tăng giá ở mức khách hàng chấp nhận được.
+
+Bảng giá vốn nên được lưu dưới dạng bảng tính có công thức, trong đó đơn giá nguyên liệu nằm ở một trang riêng. Khi giá cà phê, sữa hay gas thay đổi, chủ quán chỉ cần sửa đơn giá, giá vốn của mọi món tự cập nhật theo.
+
+Định kỳ mỗi tháng hoặc mỗi khi đổi nhà cung cấp, chủ quán rà lại bảng giá vốn một lần. Việc rà soát đều đặn giúp quyết định tăng giá, thêm món hay khuyến mãi dựa trên số liệu cụ thể thay vì cảm nhận.
+
+Đặt giá vốn cạnh giá bán của từng món giúp chủ quán thấy món nào mang lại biên lợi nhuận tốt.
+
+Một bảng giá vốn tách rõ phần hạt cà phê, phần gas đun nấu, ly và nguyên phụ liệu cho chủ quán biết chính xác mỗi ly đồ uống tốn bao nhiêu để làm ra. Khi bảng được cập nhật theo đơn giá đầu vào, việc định giá thực đơn và điều chỉnh công thức trở nên chủ động và có căn cứ.
+
+            Mời bạn đánh giá

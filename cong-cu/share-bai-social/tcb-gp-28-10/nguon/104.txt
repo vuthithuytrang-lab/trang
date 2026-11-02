@@ -1,0 +1,190 @@
+URL: https://baophutho.vn/chuan-bi-tai-chinh-cho-giai-doan-tai-canh-vuon-ca-phe-gia-coi-263740.htm
+TITLE: Chuẩn bị tài chính cho giai đoạn tái canh vườn cà phê già cỗi
+TCB_LINKS: ['https://techcombank.com/thong-tin/blog/gia-ca-phe-hom-nay', 'https://techcombank.com/thong-tin/blog/gia-ca-phe-san-luan-don-hom-nay']
+
+-->
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+{"@context":"https://schema.org","@type":"Organization","name":"Báo và Phát thanh, Truyền hình Phú Thọ","url":"https://baophutho.vn","logo":"//i.baophutho.vn/logo/2529/48d23165748-web-app-manifest-512x512.png","foundingDate":2010,"founders":[{"@type":"Person","name":"Đảng bộ Đảng Cộng sản Việt Nam tỉnh Phú Thọ"}],"address":[{"@type":"PostalAddress","streetAddress":"Đường Nguyễn Tất Thành - P. Việt Trì - Tỉnh Phú Thọ","addressLocality":"VietNam","addressRegion":"VietNam","postalCode":"10000","addressCountry":"VNM"}],"contactPoint":[{"@type":"ContactPoint","telephone":"039.558.7799","contactType":"customer service"},{"@type":"ContactPoint","telephone":"0966.683988","contactType":"customer service"},{"@type":"ContactPoint","telephone":"0210.3814337","contactType":"customer service"}],"sameAs":["https://www.facebook.com/baophutho","https://www.youtube.com/@baophutho2179","https://news.google.com/publications/CAAqJggKIiBDQklTRWdnTWFnNEtER0poYjNCb2RYUm9ieTUyYmlnQVAB?hl=vi\u0026gl=VN\u0026ceid=VN:vi","https://www.tiktok.com/@baophutho.vn"]}
+{"@context":"https://schema.org","@type":"WebSite","name":"Báo và Phát thanh, Truyền hình Phú Thọ","url":"https://baophutho.vn","alternateName":"Báo và Phát thanh, Truyền hình Phú Thọ, Đảng bộ Đảng Cộng sản Việt Nam tỉnh Phú Thọ","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://baophutho.vn/search?q={search_term_string}"},"query-input":"required name={_qname}"}}
+{"@context":"https://schema.org","@type":"Person","name":"Báo và Phát thanh, Truyền hình Phú Thọ","url":"https://baophutho.vn","sameAs":["https://www.facebook.com/baophutho","https://www.youtube.com/@baophutho2179","https://news.google.com/publications/CAAqJggKIiBDQklTRWdnTWFnNEtER0poYjNCb2RYUm9ieTUyYmlnQVAB?hl=vi\u0026gl=VN\u0026ceid=VN:vi","https://www.tiktok.com/@baophutho.vn"]}
+
+    
+    
+    
+    
+
+    
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+{"@context":"https://schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https://baophutho.vn/chuan-bi-tai-chinh-cho-giai-doan-tai-canh-vuon-ca-phe-gia-coi-263740.htm"},"headline":"Chuẩn bị tài chính cho giai đoạn tái canh vườn cà phê già cỗi","description":"Vườn cà phê sau nhiều năm khai thác thường giảm năng suất và tái canh là lựa chọn để phục hồi nguồn thu lâu dài. Bài viết trình bày cách ước tính chi phí tái canh, chia diện tích theo từng giai đoạn và tích lũy trước để gia đình có đủ nguồn chi trong những năm cây mới chưa cho thu hoạch.","image":{"@type":"ImageObject","url":"https://baophutho.vn/thumbnail/news/chuan-bi-tai-ch-w720t0-di2643d204d5191018t13l1.webp","width":720,"height":378},"datePublished":"2026-10-30T17:10:00+0700","dateModified":"2026-10-30T17:10:00+0700","author":{"@type":"Person","name":"Báo và Phát thanh, Truyền hình Phú Thọ"},"publisher":{"@type":"Organization","name":"Báo và Phát thanh, Truyền hình Phú Thọ","logo":{"@type":"ImageObject","url":"//i.baophutho.vn/logo/2529/48d23165748-web-app-manifest-512x512.png"}}}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://baophutho.vn/chuan-bi-tai-chinh-cho-giai-doan-tai-canh-vuon-ca-phe-gia-coi-263740.htm","name":"Quảng cáo"}}]}
+
+
+
+
+
+
+    
+window.dataLayer=window.dataLayer || [];function gtag(){dataLayer.push(arguments)}
+gtag("js",new Date());gtag("config","G-NW9E22JM71",{content_group:"15"})
+
+
+
+    
+        
+            
+                
+            
+        
+        
+            
+                
+                    
+                        
+                    
+                    
+                        
+                             GMT+7
+
+039.558.7799
+
+English
+                                -->
+                                 Video
+                                 Podcast
+                                 Facebook
+
+Tìm kiếm
+
+Trang chủ
+
+Phú Thọ 24h
+
+Phong vị đất tổ
+                
+                    
+                        Đền Hùng
+
+Du lịch lễ hội
+
+Chính trị
+                
+                    
+                        BV nền tảng tư tưởng của Đảng
+
+Quốc hội - Hội đồng nhân dân
+
+Học và làm theo Bác
+
+Văn hóa - Xã hội
+                
+                    
+                        Xã hội
+
+Văn học nghệ thuật
+
+Văn hóa
+
+Dân tộc - Tôn giáo
+
+Nét đẹp đời thường
+
+Kinh tế
+                
+                    
+                        Giá cả thị trường
+
+Giáo dục
+
+Y tế
+
+Phóng sự - Ghi chép
+
+Quốc tế
+
+Quốc phòng - An ninh
+
+Giải trí
+
+Thể thao
+
+Tòa soạn - Bạn đọc
+                
+                    
+                        Cộng đồng
+
+Ống kính phóng viên
+
+Khoa học
+                
+                    
+                        Chuyển đổi số
+
+Ô tô - Xe máy
+
+{title}
+
+Vườn cà phê sau nhiều năm khai thác thường giảm năng suất và tái canh là lựa chọn để phục hồi nguồn thu lâu dài. Bài viết trình bày cách ước tính chi phí tái canh, chia diện tích theo từng giai đoạn và tích lũy trước để gia đình có đủ nguồn chi trong những năm cây mới chưa cho thu hoạch.
+
+1. Xác định thời điểm và quy mô tái canh phù hợp
+
+Một vườn cà phê cần tái canh khi năng suất giảm kéo dài qua nhiều vụ dù đã chăm sóc đầy đủ, cây có nhiều cành khô, sâu bệnh tái phát hoặc tỷ lệ cây chết tăng dần. Ghi chép sản lượng từng lô qua các năm giúp chủ vườn nhận ra lô nào đang suy giảm rõ rệt, thay vì quyết định dựa vào cảm nhận.
+
+Tái canh toàn bộ vườn cùng lúc khiến gia đình mất gần hết nguồn thu từ cà phê trong vài năm. Cách làm phổ biến là chia vườn thành nhiều lô và tái canh lần lượt, mỗi năm một đến hai lô. Phần diện tích còn lại vẫn cho thu hoạch, tạo nguồn tiền để chi cho lô đang tái canh và cho sinh hoạt của gia đình.
+
+Quy mô mỗi đợt tái canh nên dựa trên nguồn thu dự kiến của phần vườn còn khai thác. Chủ vườn có thể theo dõi giá cà phê hôm nay trong nhiều tháng để ước lượng mặt bằng giá, rồi nhân với sản lượng của các lô còn lại. Kết quả cho biết phần thu nhập có thể dành cho tái canh mà không ảnh hưởng đến chi tiêu thiết yếu của gia đình.
+
+Trước khi tái canh, nhiều chủ vườn để đất nghỉ hoặc trồng cây luân canh một thời gian để cải tạo đất. Giai đoạn này cũng cần được tính vào kế hoạch, vì lô đất không có thu nhập từ cà phê nhưng vẫn phát sinh chi phí xử lý đất.
+
+Chia vườn thành nhiều lô tái canh lần lượt giúp gia đình duy trì nguồn thu trong những năm cây mới chưa cho quả.
+
+2. Ước tính chi phí tái canh theo từng năm
+
+Chi phí tái canh trải dài qua nhiều năm chứ không chỉ tập trung ở năm đầu. Năm đầu gồm nhổ bỏ cây cũ, xử lý đất, cây giống, đào hố, bón lót và trồng mới. Những năm tiếp theo là chi phí chăm sóc cây con: phân bón, tưới nước, làm cỏ, tỉa cành tạo tán và trồng dặm những cây chết.
+
+Chủ vườn nên lập bảng chi phí theo năm cho mỗi lô, mỗi dòng là một hạng mục và mỗi cột là một năm. Cách trình bày này cho thấy, năm nào cần nhiều tiền nhất và tổng số vốn cần chuẩn bị cho cả chu kỳ từ khi trồng đến khi cây cho thu hoạch ổn định.
+
+Chi phí dự kiến nên được tính theo số lượng thay vì ước lượng chung: bao nhiêu cây giống, bao nhiêu bao phân mỗi năm, bao nhiêu ngày công. Khi đã có số lượng, chủ vườn chỉ cần cập nhật đơn giá ở thời điểm mua để có chi phí sát thực tế.
+
+Một khoản dự phòng khoảng một phần mười tổng chi phí giúp xử lý những phát sinh như trồng dặm nhiều hơn dự kiến hoặc phải tưới thêm trong năm khô hạn. Khoản này giúp kế hoạch không bị gián đoạn khi có thay đổi ngoài dự tính.
+
+3. Tích lũy trước và quản lý nguồn tiền trong những năm chờ thu hoạch
+
+Nguồn vốn tái canh ổn định đến từ phần tích lũy từ các vụ trước. Chủ vườn có thể bắt đầu trích một tỷ lệ cố định từ tiền bán cà phê mỗi vụ vào một tài khoản tiết kiệm riêng, hai đến ba năm trước khi bắt đầu tái canh. Tài khoản tách biệt giúp khoản tích lũy không bị dùng lẫn cho chi tiêu thường ngày.
+
+Thời điểm bán hàng cũng ảnh hưởng đến phần tiền có thể tích lũy. Giá cà phê trong nước chịu tác động từ giá tham chiếu quốc tế, nên tham khảo thêm giá cà phê trực tuyến sàn Luân Đôn New York giúp chủ vườn hiểu xu hướng chung và chia sản lượng thành nhiều đợt bán, thay vì bán toàn bộ vào một thời điểm.
+
+Trong những năm cây tái canh chưa cho quả, gia đình có thể tận dụng diện tích giữa các hàng cây con để trồng xen cây ngắn ngày như đậu, bắp hoặc rau. Nguồn thu nhỏ này hỗ trợ chi phí chăm sóc và giúp đất được che phủ, hạn chế xói mòn trong mùa mưa.
+
+Nếu phần tích lũy chưa đủ, gia đình có thể cân nhắc nguồn vốn vay cho sản xuất nông nghiệp với kỳ hạn phù hợp với chu kỳ cây trồng. Khi đó, bảng chi phí theo năm và sản lượng dự kiến sau tái canh là cơ sở để tính khả năng trả nợ và chọn lịch trả gắn với mùa thu hoạch.
+
+Trích một tỷ lệ cố định từ mỗi vụ vào tài khoản riêng giúp chủ vườn có sẵn vốn trước khi bắt đầu tái canh.
+
+Tái canh vườn cà phê là khoản đầu tư nhiều năm cho nguồn thu của thế hệ cây tiếp theo. Chia diện tích theo lô, lập bảng chi phí theo từng năm và tích lũy từ các vụ trước giúp gia đình đi qua giai đoạn chờ thu hoạch với dòng tiền ổn định.

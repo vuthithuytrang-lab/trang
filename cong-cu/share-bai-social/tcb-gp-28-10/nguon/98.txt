@@ -1,0 +1,167 @@
+URL: https://vntime.org/cach-tinh-gia-von-cho-san-pham-cua-ho-kinh-doanh-lam-tai-nha.html
+TITLE: Cách tính giá vốn cho sản phẩm của hộ kinh doanh làm tại nhà - VNTime
+TCB_LINKS: ['https://techcombank.com/thong-tin/blog/gia-gas-hom-nay', 'https://techcombank.com/thong-tin/blog/gia-tieu-hom-nay']
+
+class="content-inner ">
+Nhiều gia đình làm giò lụa, chả quế, ruốc hay thịt kho tiêu tại nhà rồi đóng gói bán qua mạng xã hội. Bài viết trình bày cách tính giá vốn cho một gói thành phẩm, gồm nguyên liệu chính, gia vị, chất đốt, bao bì và chi phí giao hàng, để định giá bán phù hợp với từng quy cách.
+
+Mục lục
+Toggle
+
+## 1. Lập công thức định lượng cho từng mẻ sản phẩm
+Món đặc sản làm tại nhà thường được nấu theo mẻ, nên giá vốn cần tính từ mẻ rồi mới chia cho từng gói. Bước đầu tiên là ghi lại công thức định lượng: một mẻ ruốc dùng bao nhiêu ki-lô-gam thịt, bao nhiêu gam nước mắm, đường, hành và hạt tiêu, và cho ra bao nhiêu gam thành phẩm sau khi sao khô.
+Với các món sao, sấy hoặc kho, khối lượng thành phẩm thấp hơn nhiều so với nguyên liệu tươi. Giả sử 5 kg thịt nạc cho ra khoảng 2 kg ruốc, tỷ lệ thu hồi là 40%. Nếu bỏ qua tỷ lệ này và tính giá vốn theo khối lượng thịt tươi, giá bán sẽ thấp hơn chi phí thực tế mà chủ hộ không nhận ra.
+Gia vị chiếm tỷ trọng nhỏ nhưng có mặt trong hầu hết món đặc sản, và hạt tiêu là loại được dùng nhiều trong ruốc, giò, thịt kho hay lạp xưởng. Khi mua hạt tiêu với số lượng lớn để dùng dần, chủ hộ có thể tham khảo giá tiêu hôm nay trên thị trường trong nước để chọn thời điểm nhập, đồng thời ghi lại giá mua để cập nhật vào công thức định lượng.
+Lượng gia vị dự trữ nên vừa với nhu cầu một đến hai tháng, vì hạt tiêu xay sẵn để lâu sẽ giảm mùi thơm. Chủ hộ có thể mua hạt nguyên, bảo quản kín và xay theo từng mẻ để giữ chất lượng đồng đều giữa các lần nấu.
+
+Công thức định lượng ghi rõ khối lượng nguyên liệu và tỷ lệ thu hồi giúp hộ làm đặc sản tính đúng giá vốn từng mẻ.
+## 2. Phân bổ chi phí chất đốt và điện cho mỗi mẻ
+Các món như giò, chả, ruốc đều cần thời gian đun nấu dài. Ruốc phải sao liên tục trên lửa nhỏ, giò cần luộc đủ thời gian để chín đều, thịt kho cần nhiều giờ để thấm gia vị. Chất đốt vì thế là khoản chi đáng kể, nhất là khi hộ làm nhiều mẻ trong tuần để kịp đơn đặt hàng dịp lễ, Tết.
+Cách phân bổ phổ biến là ghi lại số mẻ mỗi loại món mà một bình gas đun được. Nếu một bình dùng cho 5 mẻ giò hoặc 3 mẻ ruốc, chi phí chất đốt mỗi mẻ bằng giá bình chia cho số mẻ tương ứng. Món đun lâu sẽ gánh phần chất đốt cao hơn, và giá bán của món đó cần phản ánh điều này.
+Trước mỗi lần đổi bình, chủ hộ có thể xem giá gas hôm nay tại khu vực để cập nhật chi phí vào bảng tính. Ghi giá bình theo từng lần mua giúp chủ hộ thấy chi phí chất đốt thay đổi thế nào qua các tháng, đặc biệt vào giai đoạn cao điểm cuối năm khi số mẻ tăng nhiều.
+Điện cho máy xay thịt, tủ đông bảo quản thành phẩm và máy hút chân không cũng cần được đưa vào giá vốn. Phần chênh lệch hóa đơn điện giữa tháng làm nhiều và tháng làm ít, chia cho số gói thành phẩm, là cách ước tính đơn giản và đủ sát với thực tế.
+## 3. Cộng bao bì, phí giao hàng và chốt giá bán theo quy cách
+Hàng bán qua mạng cần bao bì đủ kín để vận chuyển xa: túi hút chân không, hộp giấy, túi giữ lạnh hoặc đá khô cho hàng tươi, nhãn ghi thành phần và hạn sử dụng. Chi phí bao bì trên mỗi gói nhỏ thường cao hơn gói lớn tính theo khối lượng, nên giá bán từng quy cách cần tính riêng thay vì chia đều theo gam.
+Phí giao hàng là khoản dễ gây nhầm lẫn. Nếu hộ kinh doanh hỗ trợ một phần phí vận chuyển cho khách, phần hỗ trợ này phải được cộng vào giá vốn của đơn hàng. Chủ hộ nên ghi lại phí giao trung bình theo vùng và theo khối lượng để biết đơn hàng nào vẫn có lãi sau khi trừ phần hỗ trợ.
+Giá vốn một gói thành phẩm bằng tổng chi phí nguyên liệu, gia vị, chất đốt, điện của mẻ chia cho số gói, cộng thêm bao bì và phần phí giao hộ kinh doanh chịu. Giá bán được đặt trên giá vốn này cộng với biên lợi nhuận và một tỷ lệ cho hàng hỏng trong quá trình vận chuyển hoặc hàng gửi khách dùng thử.
+Tiền thu từ các đơn hàng trực tuyến nên được nhận qua một tài khoản riêng cho hoạt động kinh doanh. Khi doanh thu, tiền nhập thịt, gia vị và phí giao hàng đều đi qua cùng một tài khoản, chủ hộ dễ đối chiếu số liệu với bảng giá vốn và biết chính xác lợi nhuận của từng tháng.
+
+Bảng giá vốn tách riêng nguyên liệu, chất đốt, bao bì và phí giao giúp chủ hộ định giá từng quy cách đóng gói.
+Một gói đặc sản làm tại nhà chứa nhiều khoản chi hơn những gì khách hàng nhìn thấy. Khi chủ hộ tính đúng tỷ lệ thu hồi, chất đốt theo từng món, bao bì và phí giao hàng, giá bán sẽ phản ánh đúng công sức bỏ ra và việc kinh doanh qua mạng có thể duy trì lâu dài.
+
+Đánh giá nội dung này
+
+### Bài viết mới cập nhật
+
+### 
+Hướng dẫn quản lý hồ sơ thuế và hóa đơn cho người có thu nhập từ cho thuê nhà
+
+by nguoidung23
+ 30 Tháng 10, 2026
+ 0 
+
+### 
+Cách tính giá vốn cho sản phẩm của hộ kinh doanh làm tại nhà
+
+by nguoidung23
+ 30 Tháng 10, 2026
+ 0 
+
+### 
+Đọc hiểu chi phí thực của một khoản vay trước khi ký hợp đồng
+
+by nguoidung23
+ 26 Tháng 10, 2026
+ 0 
+
+### 
+Sáu nhà nghiên cứu trẻ Tứ Xuyên chia sẻ kinh nghiệm bảo tồn di sản tại Đại hội đồng ICOMOS
+
+by nguoidung23
+ 25 Tháng 10, 2026
+ 0 
+
+### 
+Phân bổ hợp lý giữa tiền mặt ngoại tệ và thẻ khi chi tiêu ở nước ngoài
+
+by nguoidung23
+ 12 Tháng 10, 2026
+ 0 
+
+### Bài viết nổi bật
+
+### 
+30 Món Ngon Mỗi Ngày Giúp Bạn Giải Quyết Hôm Nay Ăn Gì?
+
+### 
+Đài phun nước phao nổi là gì?
+
+### 
+102 Lời Chia Buồn Đám Tang Sâu Sắc, Ý Nghĩa Nhất
+
+### 
+Những Hình Ảnh Anime Đẹp Nhất Thế Giới Mà Fan Không Nên Bỏ Lỡ 2024
+
+### 
+Cách đánh sập Group trên Facebook – Rip Group FB Nhanh Chóng Đơn Giản
+
+### 
+Tổng Hợp 100 Trích Dẫn, Quotes Và Những Câu Nói Hay Về Cuộc Sống
+
+### 
+100 Câu nói hay về Phật giáo giúp bạn có được điểm tựa tinh thần trong cuộc sống
+
+### 
+100 Khung Ảnh Đẹp Để Ghép Hình Cho Photoshop, Treo Tường, Ảnh Cưới
+
+### 
+Tổng hợp các nhân vật trong thủy thủ mặt trăng
+
+### 
+DU LỊCH NHẬT BẢN CẦN CHÚ Ý ĐIỀU GÌ?
+
+VNTime là một trang web chuyên cung cấp các tin tức mới nhất về các công nghệ và xu hướng. Cập nhật các thủ thuật hay mỗi ngày cũng như những mẹo sức khỏe, du lịch,...
+
+### MENU
+
+Giới thiệu
+Gửi bài
+Điều khoản sử dụng
+
+### TÌM CHÚNG TÔI TRÊN
+
+ © 2024 Bản quyền thuộc về VNTime.org. Vui lòng trích dẫn nguồn khi sử dụng lại nội dung!
+
+No Result
+
+ View All Result
+
+Công nghệ
+Máy tính
+Ô tô, xe máy
+Điện thoại
+Điện tử
+Điện lạnh
+Cơ khí
+Thủ thuật
+Facebook
+Máy tính
+Văn phòng
+Điện thoại
+Internet
+Game
+Ảnh đẹp
+Sức khỏe
+Mẹ và bé
+Phụ nữ
+Nam giới
+Làm đẹp
+Các loại bệnh
+Thực đơn dinh dưỡng
+Du lịch
+Du học
+Khám phá
+Nghệ thuật
+Trang trí
+Quà tặng
+Phong cách sống
+Câu nói hay
+Câu chuyện hay
+Tin tức
+Doanh nghiệp
+Bạn có biết?
+Tài chính
+
+© 2024 Bản quyền thuộc về VNTime.org. Vui lòng trích dẫn nguồn khi sử dụng lại nội dung!
+
+### Welcome Back!
+Login to your account below
+
+Remember Me
+
+Forgotten Password?
+
+### Retrieve your password
+Please enter your username or email address to reset your password.
+
+ Log In

@@ -1,0 +1,78 @@
+URL: https://danang.plus/chi-phi-rang-xay-ca-phe/
+TITLE: Tính chi phí rang xay cà phê cho hộ gia đình làm cà phê bột bán lẻ
+TCB_LINKS: ['https://techcombank.com/thong-tin/blog/gia-ca-phe-hom-nay', 'https://techcombank.com/thong-tin/blog/gia-gas-hom-nay']
+
+class="entry-content mt-3">
+Nhiều gia đình ở vùng trồng cà phê tự rang xay hạt nhân thành cà phê bột để bán cho khách quen và cửa hàng nhỏ. Bài viết trình bày cách tính chi phí cho mỗi mẻ rang, từ hạt nhân, chất đốt, bao bì đến công lao động, rồi quy về giá thành một ki-lô-gam thành phẩm.
+
+Advertisements
+
+## 1. Bắt đầu từ hạt nhân và tỷ lệ hao hụt khi rang
+Hạt nhân là khoản chi lớn nhất trong giá thành cà phê rang xay. Khi rang, hạt mất nước và một phần khối lượng, nên một ki-lô-gam hạt nhân đưa vào chảo không cho ra một ki-lô-gam cà phê thành phẩm. Mức hao hụt phụ thuộc vào độ ẩm ban đầu của hạt và mức rang mà gia đình lựa chọn, rang càng đậm thì khối lượng giảm càng nhiều.
+Vì vậy, chủ hộ nên cân hạt trước và sau mỗi mẻ trong vài lần đầu để tìm ra tỷ lệ hao hụt thực tế của mình. Giả sử mỗi mẻ đưa vào 10 kg hạt nhân và thu về 8 kg cà phê rang, tỷ lệ thu hồi là 80%. Con số này giúp quy giá mua hạt nhân sang chi phí hạt trên mỗi ki-lô-gam thành phẩm, thay vì lấy thẳng giá mua để tính.
+Giá hạt nhân thay đổi theo mùa vụ, sản lượng và nhu cầu xuất khẩu, nên chi phí đầu vào của mỗi lô hàng thường không giống nhau. Hộ rang xay có thể theo dõi giá cà phê nhân xô trong nước trước mỗi đợt nhập hạt, ghi lại mức giá mua thực tế vào sổ và gắn với từng lô. Khi lô hàng sau có giá nhập khác lô trước, chủ hộ biết ngay giá thành cà phê bột sẽ thay đổi theo hướng nào.
+Với những gia đình pha trộn hai loại hạt, chẳng hạn Robusta và Arabica theo một tỷ lệ cố định, chi phí hạt được tính theo bình quân gia quyền của tỷ lệ phối trộn. Ghi rõ công thức phối trộn trong sổ giúp giá thành ổn định giữa các mẻ và dễ điều chỉnh khi một trong hai loại hạt đổi giá.
+
+Advertisements
+
+Ghi lại khối lượng hạt trước và sau khi rang giúp hộ gia đình tính chính xác chi phí hạt trên mỗi ki-lô-gam cà phê bột.
+## 2. Đưa chất đốt và điện năng vào chi phí từng mẻ rang
+Phần lớn hộ rang xay quy mô nhỏ dùng lò rang hoặc chảo quay đốt bằng gas, kèm máy xay chạy điện. Chất đốt không nằm trong thành phẩm nên thường bị ước chừng, trong khi một mẻ rang kéo dài và cần giữ lửa đều, lượng gas tiêu thụ vì thế không nhỏ so với các khoản khác.
+Cách đơn giản là đếm số mẻ rang mà một bình gas dùng được. Giả sử một bình đủ cho 6 mẻ, mỗi mẻ cho 8 kg thành phẩm, thì một bình tương ứng với 48 kg cà phê rang. Lấy giá mua bình chia cho 48 sẽ ra chi phí chất đốt trên mỗi ki-lô-gam. Phép tính này chỉ cần làm lại khi đổi lò, đổi kích cỡ mẻ hoặc khi giá bình thay đổi.
+Trước khi đặt bình mới, chủ hộ có thể xem giá gas hôm nay tại khu vực để cập nhật con số vào bảng chi phí. Giá gas bán lẻ chịu ảnh hưởng của giá khí hóa lỏng thế giới, tỷ giá và chi phí phân phối, nên việc ghi lại giá mỗi lần đặt bình giúp nhìn rõ xu hướng qua nhiều tháng thay vì chỉ nhớ lần mua gần nhất.
+Điện cho máy xay, máy hàn miệng túi và quạt làm nguội cũng được tính theo cách tương tự. Chủ hộ có thể so sánh hóa đơn điện của tháng có rang xay với tháng ít hoạt động, phần chênh lệch chia cho số ki-lô-gam đã xay trong tháng sẽ cho ra chi phí điện tương đối sát với thực tế.
+## 3. Cộng bao bì, công lao động và chốt giá thành một ki-lô-gam
+Bao bì gồm túi có van một chiều, nhãn in, dây buộc hoặc thùng carton khi giao cho cửa hàng. Mỗi loại quy cách đóng gói, như túi 250 gam, 500 gam hay 1 kg, có chi phí bao bì trên mỗi ki-lô-gam khác nhau. Túi nhỏ tiện cho khách lẻ nhưng làm chi phí bao bì trên mỗi ki-lô-gam cao hơn túi lớn, nên giá bán từng quy cách cần phản ánh sự khác biệt này.
+
+Advertisements
+
+Công lao động là khoản hay bị bỏ qua khi các thành viên trong gia đình cùng làm. Để giá thành phản ánh đúng, chủ hộ nên ghi số giờ dành cho rang, xay, đóng gói và giao hàng, rồi quy đổi theo mức tiền công tương đương nếu thuê người làm cùng việc. Khoản này cho biết hoạt động rang xay có tạo ra thu nhập cao hơn đi làm thuê hay không.
+Khi đã có đủ các khoản, bảng giá thành một ki-lô-gam gồm: chi phí hạt sau hao hụt, chất đốt, điện, bao bì theo quy cách và công lao động. Chủ hộ cộng thêm một tỷ lệ nhỏ cho hao hụt khi đóng gói, hàng mẫu tặng khách và hàng quá hạn. Giá bán được đặt trên cơ sở giá thành này cộng với biên lợi nhuận mong muốn.
+Bảng giá thành nên được rà lại mỗi khi nhập lô hạt mới. Nếu chi phí hạt tăng mà giá bán chưa điều chỉnh, chủ hộ có thể cân nhắc thay đổi tỷ lệ phối trộn, điều chỉnh quy cách đóng gói hoặc thông báo trước cho khách quen về mức giá mới.Bảng giá thành tách riêng hạt, chất đốt, bao bì và công lao động giúp chủ hộ định giá từng quy cách đóng gói.
+Tính chi phí rang xay theo từng mẻ giúp hộ gia đình biết rõ mỗi ki-lô-gam cà phê bột mang lại bao nhiêu lợi nhuận. Hạt nhân sau hao hụt, chất đốt, bao bì và công lao động đều cần có chỗ trong bảng tính. Khi các con số được cập nhật theo từng lô hạt, việc định giá và lên kế hoạch nhập hàng trở nên chủ động hơn.
+Bài viết quảng cáo của Techcombank.
+
+Advertisements
+
+Share: 
+
+Thông tin hữu ích
+
+Số điện thoại công an Đà Nẵng: 113 và công an 93 phường, xã
+Ban biên tập Danang.Plus - Cập nhật 23/09/2026
+
+Số điện thoại cứu hộ khi mưa bão ở Đà Nẵng              
+Cập nhật 05/10/2026
+
+Số điện thoại Điện lực Đà Nẵng 2026              
+Cập nhật 23/09/2026
+
+Dân số Đà Nẵng 2026 là bao nhiêu?              
+Cập nhật 25/09/2026
+
+Đăng ký Grab Đà Nẵng ở đâu? Địa chỉ, hồ sơ và cách đăng ký online              
+Cập nhật 25/09/2026 Bài viết liên quan
+
+Đồng bộ hóa đơn điện tử và tồn kho khi chủ hộ kinh doanh chuyển sang phần mềm quản lý
+
+ Thông tin cần biết    
+
+Quản lý chi phí nhập nguyên liệu và giao hàng của quán cà phê nhỏ có bán mang đi
+
+ Thông tin cần biết    
+
+Sau mùa mưa, nhiều chủ xe bắt đầu quan tâm đến bảo hiểm thân vỏ ô tô cho những tháng cuối năm
+
+ Thông tin cần biết    
+
+Lý do tỷ giá niêm yết giữa các ngân hàng có sự khác nhau và cách tra cứu để chủ động khi giao dịch
+
+ Thông tin cần biết    
+
+5 bước thăm khám và điều trị bệnh lý tuyến giáp tại Bệnh viện Đa khoa Hồng Ngọc
+
+ Thông tin cần biết    
+
+Số hóa các giao dịch tài chính của gia đình từ thanh toán, gửi tiết kiệm đến nộp thuế
+
+ Thông tin cần biết

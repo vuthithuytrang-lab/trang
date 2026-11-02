@@ -1,0 +1,190 @@
+URL: https://baophutho.vn/cach-ho-nong-dan-tinh-gia-thanh-mot-ki-lo-gam-ho-tieu-sau-phoi-say-va-xay-dong-goi-263744.htm
+TITLE: Cách hộ nông dân tính giá thành một ki-lô-gam hồ tiêu sau phơi sấy và xay đóng gói
+TCB_LINKS: ['https://techcombank.com/thong-tin/blog/gia-tieu-hom-nay', 'https://techcombank.com/thong-tin/blog/gia-xang-dau-hom-nay']
+
+-->
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+{"@context":"https://schema.org","@type":"Organization","name":"Báo và Phát thanh, Truyền hình Phú Thọ","url":"https://baophutho.vn","logo":"//i.baophutho.vn/logo/2529/48d23165748-web-app-manifest-512x512.png","foundingDate":2010,"founders":[{"@type":"Person","name":"Đảng bộ Đảng Cộng sản Việt Nam tỉnh Phú Thọ"}],"address":[{"@type":"PostalAddress","streetAddress":"Đường Nguyễn Tất Thành - P. Việt Trì - Tỉnh Phú Thọ","addressLocality":"VietNam","addressRegion":"VietNam","postalCode":"10000","addressCountry":"VNM"}],"contactPoint":[{"@type":"ContactPoint","telephone":"039.558.7799","contactType":"customer service"},{"@type":"ContactPoint","telephone":"0966.683988","contactType":"customer service"},{"@type":"ContactPoint","telephone":"0210.3814337","contactType":"customer service"}],"sameAs":["https://www.facebook.com/baophutho","https://www.youtube.com/@baophutho2179","https://news.google.com/publications/CAAqJggKIiBDQklTRWdnTWFnNEtER0poYjNCb2RYUm9ieTUyYmlnQVAB?hl=vi\u0026gl=VN\u0026ceid=VN:vi","https://www.tiktok.com/@baophutho.vn"]}
+{"@context":"https://schema.org","@type":"WebSite","name":"Báo và Phát thanh, Truyền hình Phú Thọ","url":"https://baophutho.vn","alternateName":"Báo và Phát thanh, Truyền hình Phú Thọ, Đảng bộ Đảng Cộng sản Việt Nam tỉnh Phú Thọ","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://baophutho.vn/search?q={search_term_string}"},"query-input":"required name={_qname}"}}
+{"@context":"https://schema.org","@type":"Person","name":"Báo và Phát thanh, Truyền hình Phú Thọ","url":"https://baophutho.vn","sameAs":["https://www.facebook.com/baophutho","https://www.youtube.com/@baophutho2179","https://news.google.com/publications/CAAqJggKIiBDQklTRWdnTWFnNEtER0poYjNCb2RYUm9ieTUyYmlnQVAB?hl=vi\u0026gl=VN\u0026ceid=VN:vi","https://www.tiktok.com/@baophutho.vn"]}
+
+    
+    
+    
+    
+
+    
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+{"@context":"https://schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https://baophutho.vn/cach-ho-nong-dan-tinh-gia-thanh-mot-ki-lo-gam-ho-tieu-sau-phoi-say-va-xay-dong-goi-263744.htm"},"headline":"Cách hộ nông dân tính giá thành một ki-lô-gam hồ tiêu sau phơi sấy và xay đóng gói","description":"Khi tự phơi sấy, xay và đóng gói hồ tiêu thay vì bán tiêu tươi, hộ nông dân có thêm lựa chọn về giá bán nhưng cũng phát sinh thêm nhiều khoản chi. Bài viết trình bày cách tính giá thành một ki-lô-gam tiêu thành phẩm từ tỷ lệ hao hụt, chi phí nhiên liệu, nhân công và bao bì.","image":{"@type":"ImageObject","url":"https://baophutho.vn/thumbnail/news/cach-ho-nong-da-w720t0-di2643d328d5201435t11000l1-15.webp","width":720,"height":378},"datePublished":"2026-10-30T20:16:00+0700","dateModified":"2026-10-30T20:16:00+0700","author":{"@type":"Person","name":"Báo và Phát thanh, Truyền hình Phú Thọ"},"publisher":{"@type":"Organization","name":"Báo và Phát thanh, Truyền hình Phú Thọ","logo":{"@type":"ImageObject","url":"//i.baophutho.vn/logo/2529/48d23165748-web-app-manifest-512x512.png"}}}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://baophutho.vn/cach-ho-nong-dan-tinh-gia-thanh-mot-ki-lo-gam-ho-tieu-sau-phoi-say-va-xay-dong-goi-263744.htm","name":"Quảng cáo"}}]}
+
+
+
+
+
+
+    
+window.dataLayer=window.dataLayer || [];function gtag(){dataLayer.push(arguments)}
+gtag("js",new Date());gtag("config","G-NW9E22JM71",{content_group:"15"})
+
+
+
+    
+        
+            
+                
+            
+        
+        
+            
+                
+                    
+                        
+                    
+                    
+                        
+                             GMT+7
+
+039.558.7799
+
+English
+                                -->
+                                 Video
+                                 Podcast
+                                 Facebook
+
+Tìm kiếm
+
+Trang chủ
+
+Phú Thọ 24h
+
+Phong vị đất tổ
+                
+                    
+                        Đền Hùng
+
+Du lịch lễ hội
+
+Chính trị
+                
+                    
+                        BV nền tảng tư tưởng của Đảng
+
+Quốc hội - Hội đồng nhân dân
+
+Học và làm theo Bác
+
+Văn hóa - Xã hội
+                
+                    
+                        Xã hội
+
+Văn học nghệ thuật
+
+Văn hóa
+
+Dân tộc - Tôn giáo
+
+Nét đẹp đời thường
+
+Kinh tế
+                
+                    
+                        Giá cả thị trường
+
+Giáo dục
+
+Y tế
+
+Phóng sự - Ghi chép
+
+Quốc tế
+
+Quốc phòng - An ninh
+
+Giải trí
+
+Thể thao
+
+Tòa soạn - Bạn đọc
+                
+                    
+                        Cộng đồng
+
+Ống kính phóng viên
+
+Khoa học
+                
+                    
+                        Chuyển đổi số
+
+Ô tô - Xe máy
+
+{title}
+
+Khi tự phơi sấy, xay và đóng gói hồ tiêu thay vì bán tiêu tươi, hộ nông dân có thêm lựa chọn về giá bán nhưng cũng phát sinh thêm nhiều khoản chi. Bài viết trình bày cách tính giá thành một ki-lô-gam tiêu thành phẩm từ tỷ lệ hao hụt, chi phí nhiên liệu, nhân công và bao bì.
+
+1. Bắt đầu từ tỷ lệ hao hụt qua từng khâu sơ chế
+
+Một gia đình trồng tiêu quyết định giữ lại một phần sản lượng để làm tiêu hạt khô và tiêu xay bán cho khách quen, cửa hàng đặc sản. Điểm xuất phát của mọi phép tính giá thành là khối lượng thành phẩm thu được từ một lượng tiêu tươi ban đầu, vì mỗi khâu sơ chế đều làm khối lượng giảm đi.
+
+Tiêu tươi sau khi phơi hoặc sấy mất phần lớn nước, sau đó qua sàng lọc bỏ hạt lép và tạp chất, rồi mới đến khâu xay. Gia đình nên cân lại sau từng khâu ở một mẻ làm thử. Giả sử từ 100kg tiêu tươi thu được khoảng 35kg tiêu khô và 33kg sau sàng lọc, đó là tỷ lệ riêng của vườn mình để dùng cho các phép tính sau.
+
+Tỷ lệ hao hụt quyết định chi phí nguyên liệu trên mỗi ki-lô-gam thành phẩm. Nếu 3kg tiêu tươi mới cho ra 1kg tiêu khô sạch, giá trị nguyên liệu của 1kg thành phẩm bằng giá trị của 3kg tiêu tươi. Tỷ lệ này thay đổi theo giống, độ chín khi hái và thời tiết lúc phơi, nên cần đo lại mỗi vụ.
+
+Cách định giá nguyên liệu đầu vào cũng cần thống nhất. Tiêu là sản phẩm của vườn nhà nên không có giá mua, nhưng gia đình nên tính theo giá có thể bán ở dạng tươi hoặc dạng khô tại thời điểm đó. Làm như vậy, phép tính giá thành phản ánh đúng phần giá trị gia đình bỏ ra khi chọn sơ chế thay vì bán ngay.
+
+Ghi lại khối lượng sau mỗi khâu phơi sấy và sàng lọc giúp hộ nông dân biết tỷ lệ thành phẩm thực tế của vườn mình.
+
+2. Tính nhiên liệu cho máy sấy, máy xay và việc chở hàng
+
+Phơi nắng tốn ít chi phí nhưng phụ thuộc thời tiết, nên nhiều hộ dùng thêm lò sấy chạy củi, dầu hoặc điện vào những ngày mưa. Máy xay thường dùng điện, còn việc chở tiêu đi sấy, đi xay thuê hay chở thành phẩm đến điểm giao hàng đều dùng xe máy hoặc xe tải nhỏ.
+
+Chi phí nhiên liệu nên được ghi theo từng mẻ. Mỗi mẻ sấy cần bao nhiêu lít dầu hay bao nhiêu số điện, mỗi chuyến chở hàng đi bao nhiêu ki-lô-mét, tất cả được cộng lại rồi chia cho số ki-lô-gam thành phẩm của mẻ đó. Phần xăng xe được tính bằng số lít ước tính nhân với giá xăng hiện tại, rồi cộng vào nhóm nhiên liệu.
+
+Do giá nhiên liệu được điều chỉnh theo kỳ, bảng tính nên tách riêng phần lượng dùng và phần đơn giá. Khi giá thay đổi, gia đình chỉ cần sửa đơn giá là có ngay chi phí nhiên liệu mới trên mỗi ki-lô-gam, không phải đo lại lượng tiêu hao.
+
+Nếu thuê dịch vụ sấy hoặc xay thay vì tự làm, chi phí này được tính theo đơn giá thuê trên mỗi ki-lô-gam. So sánh chi phí thuê với chi phí tự làm, gồm cả nhiên liệu và công sức, giúp gia đình quyết định có nên đầu tư máy riêng khi sản lượng tăng lên.
+
+3. Cộng nhân công, bao bì và đối chiếu với giá bán tiêu hạt
+
+Nhân công là khoản thường bị bỏ qua khi các thành viên trong gia đình tự làm. Để giá thành đầy đủ, gia đình nên ghi số ngày công cho phơi, sàng lọc, xay và đóng gói, rồi quy ra tiền theo mức công lao động phổ thông ở địa phương. Khoản này cho biết công sức bỏ ra được trả lại bao nhiêu qua giá bán.
+
+Bao bì gồm túi, hũ, tem nhãn, thùng carton và băng keo. Mỗi đơn vị đóng gói có chi phí riêng, nên tính theo từng quy cách, chẳng hạn túi 100 gram, hũ 200 gram hay bao 1kg. Quy cách càng nhỏ, chi phí bao bì trên mỗi ki-lô-gam càng cao, điều cần phản ánh trong giá bán lẻ.
+
+Khi đã có giá thành, gia đình đối chiếu với giá tiêu hôm nay của tiêu hạt khô trên thị trường. Phần chênh lệch giữa giá bán tiêu xay đóng gói và giá trị nếu bán tiêu hạt cho thương lái chính là phần giá trị tăng thêm nhờ sơ chế. Nếu phần chênh này đủ bù công sức và chi phí, việc sơ chế đáng duy trì và có thể mở rộng.
+
+Bảng giá thành nên được lưu lại theo từng vụ. Qua vài vụ, gia đình thấy được khâu nào chiếm nhiều chi phí và cải tiến khâu đó, chẳng hạn làm thêm sân phơi có mái che để giảm số mẻ sấy, hoặc đặt bao bì với số lượng lớn hơn để giảm đơn giá.
+
+Tổng hợp nguyên liệu, nhiên liệu, nhân công và bao bì cho ra giá thành của từng quy cách tiêu đóng gói.
+
+Tính đúng giá thành một ki-lô-gam tiêu thành phẩm giúp hộ nông dân định giá bán có cơ sở và biết rõ sơ chế mang lại bao nhiêu giá trị so với bán tiêu thô. Phép tính bắt đầu từ tỷ lệ hao hụt thực tế, cộng dần nhiên liệu, nhân công, bao bì và được cập nhật mỗi khi đơn giá đầu vào thay đổi.
