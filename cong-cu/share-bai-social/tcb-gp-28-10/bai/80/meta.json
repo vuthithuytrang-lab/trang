@@ -1,0 +1,32 @@
+{
+ "wix": {
+  "tu_khoa": "lập ngân sách hằng tháng cho gia đình có con nhỏ",
+  "title": "Cách lập ngân sách hằng tháng cho gia đình có con nhỏ theo từng bước",
+  "slug": "cach-lap-ngan-sach-gia-dinh-co-con-nho",
+  "mo_ta": "Hướng dẫn tính chi phí đưa đón con, gom thông tin bảo hiểm của từng thành viên và lập quỹ y tế riêng để ngân sách gia đình có con nhỏ không bị vỡ."
+ },
+ "wf": {
+  "tu_khoa": "lập ngân sách hằng tháng cho gia đình có con nhỏ",
+  "title": "Hỏi đáp: lập ngân sách hằng tháng cho gia đình có con nhỏ",
+  "slug": "hoi-dap-ngan-sach-gia-dinh-co-con-nho",
+  "mo_ta": "Giải đáp thắc mắc về tính tiền xăng đưa đón, kiểm tra mã bảo hiểm của con, nhắc hạn thẻ y tế và cách lập quỹ y tế cho gia đình có trẻ nhỏ."
+ },
+ "bl": {
+  "tu_khoa": "lập ngân sách hằng tháng cho gia đình có con nhỏ",
+  "title": "Kinh nghiệm lập ngân sách khi nhà có hai con nhỏ đi học mỗi ngày",
+  "slug": "kinh-nghiem-ngan-sach-nha-co-hai-con-nho",
+  "mo_ta": "Câu chuyện của tôi khi tiền xăng đưa đón và tiền thuốc cho con liên tục vượt dự tính, và cách tôi tách quỹ, gom thông tin bảo hiểm để cân lại."
+ },
+ "gg": {
+  "tu_khoa": "lập ngân sách hằng tháng cho gia đình có con nhỏ",
+  "title": "Lập ngân sách hằng tháng cho gia đình có con nhỏ: 14 ý nên lưu lại",
+  "slug": "ngan-sach-gia-dinh-co-con-nho-14-y",
+  "mo_ta": "Mười bốn ý ngắn về tính chi phí đưa đón, theo dõi bảo hiểm từng thành viên và nuôi quỹ y tế riêng, giúp ngân sách nhà có con nhỏ chủ động hơn."
+ },
+ "wp": {
+  "tu_khoa": "lập ngân sách hằng tháng cho gia đình có con nhỏ",
+  "title": "Ngân sách gia đình có trẻ nhỏ: đi lại, bảo hiểm và quỹ y tế riêng",
+  "slug": "ngan-sach-gia-dinh-tre-nho-di-lai-bao-hiem",
+  "mo_ta": "Giải thích ba trụ cột trong ngân sách nhà có con nhỏ: ước tính chi phí đưa đón, quản lý thông tin bảo hiểm từng người và cách nuôi quỹ y tế dự phòng."
+ }
+}

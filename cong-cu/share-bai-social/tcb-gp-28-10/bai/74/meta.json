@@ -19,8 +19,14 @@
  },
  "wix": {
   "tu_khoa": "quyền lợi bảo hiểm và tài chính cá nhân trong giai đoạn chuyển việc",
-  "title": "8 bước giữ quyền lợi bảo hiểm và tiền bạc khi bạn chuyển việc",
-  "slug": "8-buoc-giu-quyen-loi-bao-hiem-khi-chuyen-viec",
+  "title": "9 bước giữ quyền lợi bảo hiểm và tiền bạc khi bạn chuyển việc",
+  "slug": "9-buoc-giu-quyen-loi-bao-hiem-khi-chuyen-viec",
   "mo_ta": "Hướng dẫn từng bước chốt bảo hiểm xã hội ở nơi cũ, xem hạn thẻ y tế, chọn phương án dự phòng và sắp xếp chi tiêu lúc chờ lương mới."
+ },
+ "wp": {
+  "tu_khoa": "quyền lợi bảo hiểm và tài chính cá nhân trong giai đoạn chuyển việc",
+  "title": "Chuyển việc: hiểu đúng về bảo hiểm xã hội, thẻ y tế và dòng tiền chờ lương",
+  "slug": "chuyen-viec-bao-hiem-xa-hoi-the-y-te-dong-tien",
+  "mo_ta": "Giải thích cách khép bảo hiểm xã hội ở nơi cũ, giữ thẻ y tế liên tục và cân đối chi tiêu khi chưa có lương mới, kèm một ví dụ cụ thể."
  }
 }
