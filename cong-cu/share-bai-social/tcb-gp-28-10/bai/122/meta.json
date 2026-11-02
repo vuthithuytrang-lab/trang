@@ -1,0 +1,20 @@
+{
+ "gg": {
+  "tu_khoa": "kiểm tra hóa đơn đầu vào trước khi thanh toán cho nhà cung cấp",
+  "title": "Kiểm tra hóa đơn đầu vào trước khi trả nhà cung cấp: 14 ý cần nắm",
+  "slug": "kiem-tra-hoa-don-dau-vao-14-y",
+  "mo_ta": "Mười bốn ý ngắn cho chủ hộ kinh doanh: đối chiếu ba chứng từ, tra hóa đơn điện tử, kiểm tra thông tin người mua và gom lịch trả nhà cung cấp."
+ },
+ "bl": {
+  "tu_khoa": "kiểm tra hóa đơn đầu vào trước khi thanh toán cho nhà cung cấp",
+  "title": "Kinh nghiệm soát hóa đơn nhà cung cấp sau bốn năm mở tiệm tạp hóa",
+  "slug": "kinh-nghiem-soat-hoa-don-nha-cung-cap-tiem-tap-hoa",
+  "mo_ta": "Câu chuyện chủ tiệm tạp hóa học cách đối chiếu hóa đơn với phiếu giao, soi đơn giá, sửa thông tin người mua và trả tiền mối hàng theo lịch."
+ },
+ "wf": {
+  "tu_khoa": "kiểm tra hóa đơn đầu vào trước khi thanh toán cho nhà cung cấp",
+  "title": "Hỏi đáp: kiểm tra hóa đơn đầu vào trước khi trả tiền nhà cung cấp",
+  "slug": "hoi-dap-kiem-tra-hoa-don-dau-vao",
+  "mo_ta": "Giải đáp thắc mắc của chủ tiệm về đối chiếu ba chứng từ, tra hóa đơn điện tử, kiểm tra mã số thuế người mua và lên lịch trả nhà cung cấp."
+ }
+}

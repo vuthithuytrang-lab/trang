@@ -1,0 +1,70 @@
+<p>Với hộ kinh doanh, chuyển từ ghi chép thủ công sang phần mềm quản lý không đơn thuần là đổi công cụ. Đó là thay đổi cách dữ liệu chảy trong cửa hàng: từ hóa đơn nhà cung cấp, qua kho, tới quầy bán và cuối cùng là bức tranh dòng tiền. Bài viết giải thích cơ chế của việc <a href="https://danang.plus/hoa-don-dien-tu-ton-kho/">đồng bộ hóa đơn điện tử và tồn kho</a>, vì sao từng khâu lại quan trọng và cách vận hành sao cho số liệu đáng tin.</p>
+
+<h2>Vì sao dữ liệu đầu vào quyết định mọi báo cáo</h2>
+
+<p>Phần mềm quản lý chỉ làm phép cộng trừ trên những gì được đưa vào. Nếu dữ liệu ban đầu sai lệch, mọi báo cáo về sau đều mang theo cái sai đó, dù giao diện có đẹp tới đâu.</p>
+
+<h3>Danh mục hàng hóa là bộ khung</h3>
+
+<p>Mỗi mặt hàng cần ba thuộc tính cố định: tên chuẩn, đơn vị tính và mã riêng. Khi hai bản ghi cùng chỉ một món nhưng mang tên khác nhau, phần mềm sẽ coi đó là hai món, khiến số tồn bị chia đôi và giá vốn bị tính sai. Vì vậy, chuẩn hóa danh mục là việc đầu tiên, trước cả khi chọn phần mềm.</p>
+
+<h3>Bảng đối chiếu tên hàng giải quyết sự khác biệt giữa các nhà cung cấp</h3>
+
+<p>Các nhà cung cấp không dùng chung một cách đặt tên. Bảng đối chiếu ánh xạ (nối) từng cách ghi trên hóa đơn với một mã trong danh mục cửa hàng. Đây là cầu nối giúp dữ liệu từ bên ngoài đi vào hệ thống mà không làm rối danh mục.</p>
+
+<h3>Số tồn đầu kỳ là gốc của mọi phép tính</h3>
+
+<p>Phần mềm tính tồn kho theo công thức: tồn đầu kỳ cộng nhập trừ xuất. Số đầu kỳ có được từ một lần kiểm kê thực tế, đếm theo nhóm hàng và ghi kèm giá nhập gần đây. Sai ở đây nghĩa là sai ở mọi thời điểm sau đó.</p>
+
+<h2>Hóa đơn điện tử vận hành thế nào trong luồng nhập kho</h2>
+
+<p>Hóa đơn đầu vào chứa sẵn tên hàng, số lượng, đơn giá và thông tin bên mua. Dùng nó làm căn cứ lập phiếu nhập giúp số lượng và giá vốn cùng bắt nguồn từ một chứng từ.</p>
+
+<h3>Thứ tự xử lý khi hàng về</h3>
+
+<ol>
+<li>Đối chiếu hóa đơn với hàng thực nhận về số lượng và mẫu mã.</li>
+<li>Xác minh hóa đơn bằng mã tra cứu trên trang của đơn vị phát hành hoặc cổng thông tin của cơ quan thuế.</li>
+<li>Kiểm tra tên cửa hàng và mã số thuế ghi trên hóa đơn.</li>
+<li>Lập phiếu nhập trên phần mềm.</li>
+</ol>
+
+<p>Đặt bước đếm hàng trước bước nhập liệu là cách chặn chênh lệch ngay từ cửa kho.</p>
+
+<h3>Nhập tự động từ tệp hóa đơn</h3>
+
+<p>Một số phần mềm đọc được tệp hóa đơn điện tử và tự tạo phiếu nhập, dựa vào bảng đối chiếu tên hàng. Những dòng chưa nhận diện được sẽ được đánh dấu để người dùng chọn mã thủ công, sau đó lưu lại cho lần sau. Theo thời gian, tỷ lệ dòng tự khớp tăng dần, công sức nhập liệu giảm theo.</p>
+
+<h3>Lưu trữ để tra cứu lại</h3>
+
+<p>Hóa đơn đã xử lý nên được phân loại theo tháng và theo nhà cung cấp. Cấu trúc này phục vụ hai nhu cầu thường gặp: xem lịch sử giá của một mặt hàng và tổng hợp giá trị nhập từ một nguồn.</p>
+
+<h2>Biến số liệu tồn kho thành quyết định tài chính</h2>
+
+<p>Khi đầu vào và đầu ra cùng nằm trên một hệ thống, kho không còn là một khu chứa đồ mà trở thành một phần của bảng cân đối vốn.</p>
+
+<h3>Báo cáo tồn theo giá vốn</h3>
+
+<p>Báo cáo này cho biết tổng số tiền đang gắn với hàng chưa bán, đồng thời phân loại nhóm hàng quay vòng nhanh và nhóm nằm lâu trên kệ. Đây là căn cứ để giảm nhập những món chậm, giải phóng vốn cho món bán tốt.</p>
+
+<h3>Mức tồn tối thiểu và lịch nhập hàng</h3>
+
+<p>Đặt ngưỡng tồn tối thiểu cho từng mặt hàng giúp phần mềm nhắc đúng lúc cần đặt thêm. Tiền nhập hàng nhờ đó được phân bổ theo nhu cầu thực, phần còn lại dành cho chi phí cố định và quỹ dự phòng.</p>
+
+<h2>Một ví dụ cụ thể</h2>
+
+<p>Giả định một cửa hàng vật tư điện nước có khoảng 400 mã hàng và 8 nhà cung cấp (số giả định). Chủ hộ đặt ngưỡng tồn tối thiểu cho ống nhựa loại phổ biến là lượng đủ bán trong hai tuần. Khi số tồn chạm ngưỡng, phần mềm báo. Chủ hộ mở báo cáo, thấy nhóm vòi sen cao cấp đã ba tháng không bán thêm cái nào, liền tạm ngưng nhập nhóm này và dùng khoản tiền đó cho đơn ống nhựa. Cuối tháng, chủ hộ đếm mẫu nhóm ống và nhóm dây điện, phát hiện lệch hai cuộn dây do khách trả lại chưa ghi, và sửa ngay trong ngày.</p>
+
+<h2>Điều nên nhớ</h2>
+
+<h3>Về chọn hệ thống</h3>
+
+<p>ERP là hệ thống nối mua hàng, kho, bán hàng và kế toán trên một cơ sở dữ liệu chung, hay được nhắc tới khi có nhiều điểm bán. Với hộ kinh doanh, phần mềm bán hàng phổ thông thường đã đáp ứng phần lớn nhu cầu. Hãy dựa vào số mã hàng, số điểm bán và mức độ cần nối với kế toán khi lựa chọn.</p>
+
+<h3>Về duy trì</h3>
+
+<ul>
+<li>Đếm mẫu vài nhóm hàng mỗi cuối tháng để đối chiếu.</li>
+<li>Tìm nguyên nhân chênh lệch, thường là thiếu phiếu hoặc hàng đổi trả chưa ghi.</li>
+<li>Cập nhật bảng đối chiếu mỗi khi gặp cách ghi tên mới.</li>
+</ul>
