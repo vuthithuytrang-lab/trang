@@ -1,7 +1,8 @@
 // Cửa sổ điều khiển: kiểm tra Last crawl từng URL, bỏ qua URL Google đã đọc sau mốc giờ,
 // ép phần còn lại đến khi thành công. Logic bấm/đọc giữ nguyên skill gốc (mac/request.sh, mac/inspect.sh):
 // chỉ tính OK khi thấy "Testing if live URL" rồi hộp thoại "Indexing requested" MỚI.
-const WAIT_RETRY = 60, WAIT_REJECTED = 15, WAIT_QUOTA = 30 * 60;
+// Theo skill gốc: lần đầu không được thì thử lại tối đa 20 lần; mỗi lần chờ 60s (bị rejected: 15s)
+const MAX_RETRY = 20, WAIT_RETRY = 60, WAIT_REJECTED = 15;
 const $ = (id) => document.getElementById(id);
 
 // ---------- Đồng hồ không bị làm chậm ----------
@@ -26,7 +27,7 @@ async function saveResult(u, kq, note) {
 }
 function showCount() {
   const v = Object.values(results), c = (k) => v.filter((x) => x.kq === k).length;
-  $('dem').textContent = `Đã đọc: ${c('DA-DOC')} · Ép OK: ${c('OK')} · Bỏ qua: ${c('SKIP')}`;
+  $('dem').textContent = `Đã đọc: ${c('DA-DOC')} · Ép OK: ${c('OK')} · Chưa được: ${c('FAIL')} · Bỏ qua: ${c('SKIP')}`;
 }
 
 // ---------- Các hàm chạy bên trong tab GSC ----------
@@ -241,42 +242,39 @@ async function main() {
   // Link đã xong ở lần chạy trước (cùng mốc giờ) thì không làm lại
   const done = (u) => results[u] && results[u].moc === $('moc').value && ['OK', 'DA-DOC', 'SKIP'].includes(results[u].kq);
 
-  status('Bước 1: kiểm tra Google đã đọc link nào');
-  const todo = [];
+  // Từng link: kiểm tra Last crawl → cần ép thì ép luôn (thử lại tối đa 20 lần) → sang link sau
+  let quotaStop = false;
   for (const [i, u] of urls.entries()) {
     if (stopFlag) return;
-    if (done(u)) { log(`[${i + 1}] đã xong từ trước: ${u}`); continue; }
-    status(`Bước 1: kiểm tra ${i + 1}/${urls.length}`);
+    const tag = `[${i + 1}/${urls.length}]`;
+    if (done(u)) { log(`${tag} đã xong từ trước: ${u}`); continue; }
+    status(`${tag} kiểm tra Google đã đọc chưa`);
     const f = await freshSince(u, cut);
-    if (f === 'NOTPROP') { await saveResult(u, 'SKIP', 'không thuộc property'); log(`[${i + 1}] BỎ QUA (không thuộc website): ${u}`); }
-    else if (f) { await saveResult(u, 'DA-DOC', `Google đọc lúc ${f}`); log(`[${i + 1}] ĐÃ ĐỌC lúc ${f}: ${u}`); }
-    else { todo.push(u); log(`[${i + 1}] CẦN ÉP: ${u}`); }
-  }
-
-  log(`=== Cần ép ${todo.length} link`);
-  for (const [i, u] of todo.entries()) {
-    let n = 0;
+    if (f === 'NOTPROP') { await saveResult(u, 'SKIP', 'không thuộc property'); log(`${tag} BỎ QUA (không thuộc website): ${u}`); continue; }
+    if (f) { await saveResult(u, 'DA-DOC', `Google đọc lúc ${f}`); log(`${tag} ĐÃ ĐỌC lúc ${f}: ${u}`); continue; }
+    if (quotaStop) { await saveResult(u, 'SKIP', 'cần ép nhưng hết lượt ép trong ngày — chạy lại hôm sau'); log(`${tag} CẦN ÉP nhưng đã hết lượt ép: ${u}`); continue; }
+    log(`${tag} CẦN ÉP — đang ép: ${u}`);
+    let n = 0, r = '';
     while (!stopFlag) {
-      n++;
-      status(`Bước 2: ép ${i + 1}/${todo.length} — lần ${n}`);
-      const r = await request(u);
-      if (r === 'OK') { await saveResult(u, 'OK', `ép lúc ${fmt(new Date())}`); log(`[${i + 1}/${todo.length}] OK sau ${n} lần: ${u}`); break; }
-      if (r === 'SKIP') { await saveResult(u, 'SKIP', 'không thuộc property'); log(`[${i + 1}/${todo.length}] BỎ QUA: ${u}`); break; }
+      status(`${tag} đang ép` + (n ? ` — thử lại ${n}/${MAX_RETRY}` : ''));
+      r = await request(u);
+      if (r === 'OK') { await saveResult(u, 'OK', `ép lúc ${fmt(new Date())}`); log(`${tag} ÉP OK${n ? ` sau ${n} lần thử lại` : ''}: ${u}`); break; }
+      if (r === 'SKIP') { await saveResult(u, 'SKIP', 'không thuộc property'); log(`${tag} BỎ QUA: ${u}`); break; }
       if (r === 'ROBOT') {
         status('⚠️ Google hiện ô "Tôi không phải robot" — hãy bấm ô đó trong tab GSC, rồi bấm Bắt đầu lại');
         log('DỪNG: gặp ô "Tôi không phải robot"');
         alert('Google hiện ô "Tôi không phải robot". Bạn bấm ô đó trong tab Search Console, rồi bấm Bắt đầu lại.');
         return;
       }
-      log(`  lần ${n} chưa được (${r})`);
-      if (r === 'QUOTA') {
-        status(`Hết lượt ép trong ngày — chờ 30 phút rồi thử lại (link ${i + 1}/${todo.length})`);
-        log('  Hết lượt ép của Google — chờ 30 phút');
-        await sleep(WAIT_QUOTA);
-        if (stopFlag) return;
-        const f = await freshSince(u, cut);
-        if (f && f !== 'NOTPROP') { await saveResult(u, 'DA-DOC', `Google đọc lúc ${f}`); log(`  Google đã tự đọc lúc ${f} — thôi ép`); break; }
-      } else await sleep(r === 'REJECTED' ? WAIT_REJECTED : WAIT_RETRY);
+      if (n >= MAX_RETRY) {
+        await saveResult(u, 'FAIL', `${MAX_RETRY} lần thử lại vẫn chưa được (${r})`);
+        log(`${tag} CHƯA ĐƯỢC sau ${MAX_RETRY} lần thử lại (${r}): ${u}`);
+        if (r === 'QUOTA') { quotaStop = true; log('=== Hết lượt ép trong ngày — link cần ép còn lại để chạy lại hôm sau'); }
+        break;
+      }
+      n++;
+      log(`  chưa được (${r}) — thử lại ${n}/${MAX_RETRY}`);
+      await sleep(r === 'REJECTED' ? WAIT_REJECTED : WAIT_RETRY);
     }
   }
   if (!stopFlag) { status('✅ Xong. Bấm "Sao chép kết quả" rồi dán vào chat cho Claude.'); log('=== XONG'); }

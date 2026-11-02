@@ -111,14 +111,17 @@ Agent đọc chìa từ file, gửi qua header `Authorization: Bearer <chìa>`, 
 
 ## 7. Ép index GSC — quy tắc cố định
 
-Công cụ: `cong-cu/gsc-ep-index/` (Trang dùng **máy Windows**, chạy bản trong `windows/`).
+Công cụ chính: **tiện ích Chrome** `cong-cu/gsc-ep-index/chrome-extension/` (gửi Trang file
+`ep-index-chrome-extension.zip`). Trang dùng máy Windows, Chrome hằng ngày đã đăng nhập GSC của
+maianhtuann@seongon.com. Đã chạy được trên GSC thật ngày 02/11/2026. Bản PowerShell trong `windows/` chỉ là dự phòng.
 
-Mỗi lần Trang báo **giờ publish** và gửi danh sách URL:
-1. Kiểm tra **Last crawl** của từng URL. URL nào Google đã đọc **sau** giờ publish thì **không ép**.
-2. URL chưa được đọc lại thì **ép đến khi thành công**. Thành công nghĩa là thấy hộp thoại
-   "Indexing requested" mới. Hết quota thì chờ, rồi kiểm tra lại và ép tiếp.
-3. Tích vào sheet *Đề xuất tối ưu URL | Techcombank* (ID `13ugpyw2dsxLx90XyZ0kSD9Ci8v2u7flOTmyLLqsGDAQ`),
-   tab **Daily**: URL ở cột D, hàng 2 là tiêu đề ngày. Tích vào **cột của ngày publish**,
-   chỉ tích URL có kết quả `DA-DOC` hoặc `OK`.
-4. Phiên Claude trên web không điều khiển được Chrome của Trang. Trang chạy file `.bat` trên máy,
-   rồi gửi `ket-qua.tsv` vào chat để Claude tích sheet qua kết nối Google Sheets.
+Mỗi lần Trang báo **giờ publish** và gửi danh sách URL, thì xử lý **từng link một**:
+1. Kiểm tra **Last crawl**. Google đã đọc **sau** giờ publish → `DA-DOC`, không ép.
+2. Chưa đọc lại → **ép ngay**. Không được thì thử lại tối đa **20 lần** (cách nhau 60s; bị rejected thì 15s).
+   Chỉ tính OK khi thấy hộp thoại "Indexing requested" **mới**. Thử 20 lần vẫn hết quota → các link cần ép còn lại ghi SKIP, chạy lại hôm sau.
+3. Trang bấm "Sao chép kết quả" và dán vào chat. Claude tích vào sheet *Đề xuất tối ưu URL | Techcombank*
+   (ID `13ugpyw2dsxLx90XyZ0kSD9Ci8v2u7flOTmyLLqsGDAQ`), tab **Daily**: URL ở cột D, hàng 2 là tiêu đề ngày.
+   Tích vào **cột của ngày publish**, chỉ tích URL có kết quả `DA-DOC` hoặc `OK`.
+4. Phiên Claude trên web không điều khiển được Chrome của Trang. Mọi thao tác bấm đều do tiện ích làm.
+   Sửa tiện ích thì **chạy thử trên trang GSC giả trước** (Playwright + `--load-extension`), đừng bắt Trang cài đi cài lại.
+   Lưu ý kỹ thuật: hàm truyền vào `chrome.scripting.executeScript` phải viết dạng `tên: function`, không viết tắt kiểu method.
