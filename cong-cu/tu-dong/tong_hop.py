@@ -23,7 +23,11 @@ for f in sorted(os.listdir(kq)):
     duyet = [l.strip() for l in log.splitlines()
              if re.search(r'cần duyệt:|LỖI:|KHÔNG ĐỌC ĐƯỢC|KHÔNG đọc được', l)]
     duyet = list(dict.fromkeys(re.sub(r'^\s*(cần duyệt:\s*)', '', l) for l in duyet))
-    tt[ma] = {'ok': ok, 'luc': luc, 'ngay': ngay.group(1) if ngay else '', 'ten': ten.group(1) if ten else '',
+    if ten:                                       # ngày "hôm nay" trong tên bài → ngày hôm sau (như trong bài)
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from doi_ngay_bai import doi_chu
+        ten_moi = doi_chu(ten.group(1))[0]
+    tt[ma] = {'ok': ok, 'luc': luc, 'ngay': ngay.group(1) if ngay else '', 'ten': ten_moi if ten else '',
               'can_duyet': '\n'.join(duyet)[:1500], 'loi': '' if ok else (log.strip().splitlines() or ['?'])[-1][:200]}
     if ok:
         shutil.copy(html, os.path.join(ra, ma + '.html'))

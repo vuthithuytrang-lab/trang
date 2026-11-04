@@ -3,7 +3,7 @@
 # Dùng: bash chay.sh <mã công thức> <thư mục ra>     (mã = tên thư mục trong skill-cap-nhat-bai-tcb/cong-thuc/)
 set -uo pipefail
 MA=$1; RA=$(realpath -m "$2")
-GOC=$(cd "$(dirname "$0")/../skill-cap-nhat-bai-tcb" && pwd)
+GOC=$(cd "$(dirname "$0")/../skill-cap-nhat-bai-tcb" && pwd); TD=$(cd "$(dirname "$0")" && pwd)
 SKILL=$GOC/cap-nhat-bai-tcb/scripts/cap_nhat.py; CT=$GOC/cong-thuc/$MA
 W=$RA/$MA; rm -rf "$W"; mkdir -p "$W/cap-nhat"; cd "$W"
 cp "$CT/cau-hinh.json" cap-nhat/
@@ -71,4 +71,5 @@ buoc $P $SKILL sua cap-nhat/cau-hinh.json cap-nhat/sua.json
 $P $SKILL xem cap-nhat/cau-hinh.json bai1 > $X2
 $P $CT/tao_sua.py --kiem --xem $X2 "${KIEM[@]}" | tee cap-nhat/kiem.txt
 cp cap-nhat/tam/bai1.min.html "$W/bai.html"
+$P "$TD/doi_ngay_bai.py" "$W/bai.html"            # ngày "hôm nay" trong tiêu đề/đoạn văn → ngày hôm sau
 echo "XONG $MA ngày $N"
