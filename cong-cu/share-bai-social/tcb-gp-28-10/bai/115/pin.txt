@@ -1,0 +1,3 @@
+Chuyển sang phần mềm bán hàng: cho hóa đơn và kho chạy khớp nhau
+
+Hóa đơn một nơi, sổ kho một nẻo khiến chủ cửa hàng khó biết vốn đang nằm ở đâu. Bài viết hướng dẫn đồng bộ hóa đơn điện tử và tồn kho: dữ liệu đi từ hóa đơn mua vào tới kho rồi tới báo cáo vốn ra sao, kèm ví dụ cửa hàng vật tư và những việc cần làm đều mỗi tháng. #hoadondientu #quanlytonkho #hokinhdoanh #phanmembanhang

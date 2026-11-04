@@ -1,0 +1,3 @@
+Tạp hóa vùng quê: nhập và giữ kho cà phê, tiêu sao cho có lời
+
+Gom cà phê, hạt tiêu để bán lại cần tính toán kỹ vì giá thay đổi liên tục. Bài viết hướng dẫn quản lý tồn kho và giá nhập cà phê, hạt tiêu cho cửa hàng tạp hóa: tính số vốn nằm trong kho, theo dõi giá sàn thế giới, chọn lúc nhập và đo tốc độ quay vòng vốn. Bạn sẽ giảm rủi ro ôm hàng khi giá xuống. #taphoa #caphe #hotieu #quanlytonkho

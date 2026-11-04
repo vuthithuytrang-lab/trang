@@ -1,0 +1,3 @@
+Xe cà phê đẩy: mỗi ngày bán bao nhiêu ly thì đủ vốn
+
+Trước khi đẩy xe ra phố, hãy tính xem mỗi ngày cần đạt doanh số cỡ nào để đủ trang trải. Bài viết hướng dẫn ước tính điểm hòa vốn khi kinh doanh xe cà phê di động: chia chi phí thành phần trả đều và phần tăng theo số ly, tính phần lời mỗi ly và xem yếu tố nào làm số ly thay đổi. Bạn sẽ ra quyết định kinh doanh có cơ sở. #xecaphe #hoavon #kinhdoanhnho #khoinghiep

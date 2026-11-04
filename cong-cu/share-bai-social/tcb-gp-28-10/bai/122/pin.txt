@@ -1,0 +1,3 @@
+Tiệm nhỏ trả tiền nhà cung cấp: soát hóa đơn trước khi chuyển
+
+Chuyển tiền xong mới phát hiện hóa đơn sai thông tin thì rất mất công đòi lại. Bài viết hướng dẫn kiểm tra hóa đơn đầu vào trước khi thanh toán cho nhà cung cấp: đối chiếu chứng từ, xác thực hóa đơn điện tử, soát mã số thuế bên mua và sắp xếp lịch trả tiền hợp lý cho cửa hàng. #hoadondauvao #hokinhdoanh #hoadondientu #kinhdoanhnho
