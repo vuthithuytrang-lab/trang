@@ -136,7 +136,8 @@ def run():
         else:
             say('LOI', x['stt'], x['row'], code, str(r)[:250])
             if 'draft_id' in r or code in (403, 429): raise SystemExit('dung')
-            open(os.path.join(HERE, 'san-sang.txt'), 'w').write(''.join(f'{r}\n' for r in ready() - {x['row']}))
+            con = ready() - {x['row']}  # đọc trước khi ghi đè (mở 'w' sẽ xóa trắng file)
+            open(os.path.join(HERE, 'san-sang.txt'), 'w').write(''.join(f'{r}\n' for r in sorted(con)))
             continue
         time.sleep(random.randint(int(os.environ.get('GIAN_MIN', 480)), int(os.environ.get('GIAN_MAX', 720))))
 
