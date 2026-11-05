@@ -115,3 +115,5 @@ Agent đọc chìa từ file, gửi qua header `Authorization: Bearer <chìa>`, 
 - **Tiết kiệm token:** chỉ đọc đúng cột/đoạn cần dùng; kết quả lớn thì lọc bằng script, không in hết ra màn hình;
   chỉ dùng agent con khi việc nhiều và chạy song song được; báo cáo ngắn gọn.
 - Luồng chèn internal link (mọi dự án): skill `.claude/skills/chen-internal-link/`.
+- **Sổ góp ý chị Lộc** (`cong-cu/tao-docs-tu-url/gop-y-chi-loc.csv` + `BAI-HOC-GOP-Y.md`): mỗi phiên có đụng tới Techcombank, quét comment mới của chị
+  (chỉ các dòng cột duyệt ≠ "ok") và ghi bổ sung trước khi làm việc khác. Lịch tự chạy hằng ngày chưa đặt được (lịch tạo từ phiên này không có kết nối Google).
