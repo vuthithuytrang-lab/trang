@@ -44,8 +44,12 @@ Cột của sheet hay bị đổi chỗ → **luôn đọc hàng 1 trước mỗ
 
 ## 3. Luồng B — sửa theo góp ý người duyệt
 
-**⛔ Tạm dừng từ 28/10/2026:** Trang báo luồng đang có vấn đề → **không tự vào sửa các dòng người duyệt ghi "cần sửa"**.
-Chỉ chạy lại khi Trang bảo rõ ràng. Khi được mở lại:
+**05/11/2026: Trang mở lại, làm 1 bài mẫu cho Trang duyệt trước rồi mới sửa hàng loạt.** Phản hồi nay ghi **ngay trong file** (comment), không chỉ cột M.
+
+- Công cụ comment (Docs `update_doc`): `insertComment` {range, content} chạy được (đăng dưới tên Thùy Trang); `deleteComment` {commentId} chạy được.
+  **Không trả lời thẳng vào luồng comment được** (insertCommentReply / replyToComment / insertPost đều không có) → thêm comment mới
+  gắn vào câu đã sửa, mở đầu "Phản hồi góp ý của chị Lộc (\"<trích ngắn>\"): Em đã …".
+- Rà comment còn mở trước: nhiều dòng "cần sửa" cũ đã sửa ở lượt 1, chỉ thiếu phản hồi → chỉ cần comment phản hồi, không sửa lại.
 
 - Đọc cột duyệt + comment trong file (Drive `read_file_content`, `includeComments: true`).
 - Note bắt đầu bằng **"c …"** ("c sửa chút trong bài", "c wording lại…") = **người duyệt đã tự sửa** → không đụng file, không ghi phản hồi.
