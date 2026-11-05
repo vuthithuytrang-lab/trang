@@ -1,5 +1,7 @@
 # Worker brief — inserting internal links into Techcombank articles (Docs files)
 
+> **MUST READ FIRST:** /home/user/trang/cong-cu/tao-docs-tu-url/BAI-HOC-GOP-Y.md — real reviewer complaints, grouped. Every insert must avoid those mistakes.
+
 You are an SEO + banking content expert. For each row assigned to you, produce one final HTML file with
 **every** anchor from the sheet inserted. You do NOT upload, do NOT write to the sheet, do NOT edit the website.
 

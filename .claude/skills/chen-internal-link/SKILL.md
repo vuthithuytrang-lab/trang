@@ -8,6 +8,8 @@ description: Chạy trọn luồng "Plan internal links" cho một dự án SEO 
 Mã nguồn và mẫu lệnh: `cong-cu/tao-docs-tu-url/` (README.md = quy trình chi tiết, chen.py/kiemtra.py/... = công cụ),
 `cong-cu/tao-docs-tu-url/duyet/` (sửa theo góp ý). Dự án Techcombank là bản mẫu: `plan-internal-links/` (tien-do.csv, bao-cao.md).
 Trước khi đụng Google Docs/Sheets: đọc skill `google-workspace`.
+**Trước khi chèn/sửa bất kỳ bài nào: đọc `cong-cu/tao-docs-tu-url/BAI-HOC-GOP-Y.md`** (lỗi chị Lộc hay bắt). Có nhận xét mới → thêm 1 dòng vào
+`gop-y-chi-loc.csv` và cập nhật mục tương ứng trong BAI-HOC (Trang yêu cầu 05/11/2026, cập nhật hằng ngày).
 
 ## 0. Nhận dự án mới — kiểm đủ tài liệu, thiếu thì hỏi MỘT lần
 
@@ -48,7 +50,7 @@ Cột của sheet hay bị đổi chỗ → **luôn đọc hàng 1 trước mỗ
 
 - Công cụ comment (Docs `update_doc`): `insertComment` {range, content} chạy được (đăng dưới tên Thùy Trang); `deleteComment` {commentId} chạy được.
   **Không trả lời thẳng vào luồng comment được** (insertCommentReply / replyToComment / insertPost đều không có) → thêm comment mới
-  gắn vào câu đã sửa, mở đầu "Phản hồi góp ý của chị Lộc (\"<trích ngắn>\"): Em đã …".
+  gắn vào câu đã sửa, **viết thẳng "Em đã …"**, không trích lại góp ý của chị (Trang chốt 05/11/2026).
 - Rà comment còn mở trước: nhiều dòng "cần sửa" cũ đã sửa ở lượt 1, chỉ thiếu phản hồi → chỉ cần comment phản hồi, không sửa lại.
 
 - Đọc cột duyệt + comment trong file (Drive `read_file_content`, `includeComments: true`).
