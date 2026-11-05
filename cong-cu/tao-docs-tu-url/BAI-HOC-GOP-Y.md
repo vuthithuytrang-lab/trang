@@ -14,6 +14,8 @@
 - Doanh nghiệp **không** nộp thuế trên eTax Mobile (dùng Cổng thuế điện tử). Rút tiền bằng mã QR là từ **tài khoản thanh toán**, không phải thẻ tín dụng.
 - Không gắn link sản phẩm **khách hàng cá nhân** vào bài **doanh nghiệp** (và ngược lại).
 - Không gắn tỷ giá vào điều kiện/quy định (dễ hiểu thành quy định của ngân hàng).
+- MyCash (vay thấu chi): không cần tiền gửi vẫn được mời — đừng viết "hạn mức dựa trên tiền gửi có kỳ hạn".
+- Khi không có chỗ nào hợp ngữ cảnh, chị chấp nhận **bỏ link** hơn là để câu gượng (05/11: bỏ ở 4 bài) — ghi rõ "còn x/N anchor".
 
 ## Lỗi số 3 — Gượng, sai vị trí trong bài (B, F)
 - Đặt link ở **mục đúng chủ đề** của bài: tiết kiệm vào mục tiết kiệm, thuế vào mục thuế, nghĩa vụ thuế sau các bước thành lập.

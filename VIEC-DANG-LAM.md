@@ -10,8 +10,8 @@ Cập nhật: 28/10/2026
 ## Plan internal links — Techcombank
 - [ ] Sổ góp ý chị Lộc: cập nhật mỗi phiên (lịch tự động hằng ngày cần Trang tạo trong mục Routines trên claude.ai, có bật kết nối Google Drive + Sheets).
 - [ ] **Dòng 43 (vàng là gì)**: sheet chỉ có URL tỷ giá, ô anchor trống (cần 1 link) → chờ Trang đưa anchor rồi mới tạo file.
-- [ ] **Góp ý chị Lộc (37 dòng "cần sửa")**: Trang mở lại 05/11/2026. Đã làm bài mẫu dòng 337 (cách nạp thẻ Viettel) → chờ Trang duyệt rồi mới làm hàng loạt.
-  Danh sách comment còn mở: scratchpad rv2/scan-1.json, scan-2.json (dòng sửa mới: 371, 489, 496, 674, 693, 718, 719, 34, 119; dòng đã sửa lượt 1 chỉ cần phản hồi: 86, 109, 118, 125, 128, 129, 144, 154, 172, 174, 187).
+- [x] **Góp ý chị Lộc (37 dòng "cần sửa")**: xong 05/11/2026 — 31 dòng comment "Em đã…" + L "đã sửa" (xem bao-cao.md Đợt 12).
+- [ ] Chờ quyết: dòng 187 (bỏ link tỷ giá?), 125 (chỗ chèn "giá USD"), cột E của 34/489/496/693 còn ghi số anchor cũ.
 - [ ] Các dòng chờ chị Lộc chốt (đã ghi ở cột M): 10, 46, 170, 211, 245, 474; dòng 37, 41 đổi sang "cần sửa" nhưng không có comment mới.
 - [x] Tạo file cho mọi dòng có URL: xong. Chỉ còn dòng 43 (thiếu anchor).
 - [x] Đóng gói luồng thành skill `chen-internal-link` để dùng cho dự án khác.

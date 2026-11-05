@@ -320,3 +320,15 @@ Sau đợt này, cột K chỉ còn **dòng 60** để trống.
 **Sheet đổi trong lúc làm (lúc kiểm tra lại cuối đợt):**
 - Dòng 19, 20, 21, 27, 32, 35, 36, 50, 55 đã thành "ok".
 - Dòng 37 và 41 đổi từ "c sửa…" sang "cần sửa", trong file không có comment mới. Chờ chị Lộc nói rõ cần sửa gì.
+
+## Đợt 12 — sửa theo comment chị Lộc, phản hồi trong file (05/11/2026)
+
+- Cách phản hồi: comment mới gắn vào câu đã sửa, viết thẳng "Em đã …" (công cụ không trả lời thẳng vào luồng comment được). Sửa xong đổi cột L thành **"đã sửa"**.
+- 22 bài đã sửa từ đợt 11, chỉ thiếu phản hồi: comment + L "đã sửa" — 6, 7, 8, 14, 20, 28, 79, 86, 109, 118, 119, 125, 128, 129, 144, 154, 172, 174, 234, 236, 240, 243.
+- 9 bài sửa mới: 337 (bài mẫu), 34, 371, 489, 496, 674, 693, 718, 719 — comment + L "đã sửa".
+  - **Bỏ hẳn link** (không có chỗ hợp ngữ cảnh): 34 (tỷ giá USD hôm nay), 489 (cách tính lãi suất ngân hàng), 496 (rút tiền thẻ tín dụng), 693 (rút tiền không cần thẻ). Cột E các dòng này vẫn ghi "Đủ N/N" cũ.
+  - 674: chuyển link lên mục 2.1 theo đúng chỉ định của chị (mục này nằm trong 25% đầu bài).
+  - 718: bài gốc mục 1.2 vẫn ghi "hạn mức đến 90% giá trị tiền gửi có kỳ hạn" — nếu chị Lộc đúng thì cần báo đội nội dung.
+  - 719: vẫn giữ link lãi suất tiết kiệm trong bài vay (nối ý tích lũy vốn đối ứng); comment đã ghi "nếu chị thấy lệch thì em bỏ".
+- 187 (quét mã QR): chỉ comment đề xuất bỏ link tỷ giá, **chưa** đổi L — chờ quyết.
+- 125: vẫn thiếu anchor "giá USD" (câu cột I không có trong bài) — đã nói trong comment.
