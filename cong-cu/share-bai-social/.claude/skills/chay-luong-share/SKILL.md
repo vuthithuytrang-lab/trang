@@ -32,7 +32,10 @@ Tài khoản đã kết nối nằm sẵn ở `.claude/skills/share-bai-*/…acc
    `python3 scripts/check_sites.py <thư mục dự án>` → nếu `BLOCKED` thì DỪNG nền tảng đó và báo Trang ngay.
    `python3 scripts/step.py <thư mục dự án>` → in `PUBLISHED {…}`, `LEFT`, `WAKE_AT`.
    Mỗi `PUBLISHED` có `"live": true` → tìm lại dòng theo URL bài gốc, ghi link + giờ đăng "HH:MM dd/mm/yyyy", đọc lại sau khi ghi.
-   Đặt `send_later` vào phút SAU `WAKE_AT` (send_later làm tròn xuống phút), chỉ 1 nhắc chờ. Thêm 1 routine giữ nhịp 3 tiếng/lần phòng vòng bị đứt.
+   **Tiết kiệm token (Trang yêu cầu 06/11):** chạy vòng đăng NỀN bằng script (mẫu `cong-cu/share-bai-social/gp-share-social/chay_nen.py`:
+   `setsid nohup python3 chay_nen.py &`) — tự chờ giờ, giữ ≥ 2 tiếng/bài, chỉ 7–23h, tự dừng khi trang bị khóa. AI chỉ thức
+   **1 lần/tối** (send_later 22:45) để ghi link cả ngày vào sheet bằng 1 lệnh, kiểm tra vòng nền còn sống, sao lưu. Không đặt nhắc mỗi bài,
+   không routine giữ nhịp 3 tiếng. Tốt nhất: chuyển hẳn sang app Google Sheet (`cong-cu/app-share-bai/`) — 0 token.
 8. **Kết thúc**: xóa routine, sao lưu `posted.jsonl` vào `cong-cu/share-bai-social/<tên đợt>/`, commit + push, báo tổng kết bằng lời thường.
 
 ## Luật an toàn (bắt buộc — đã mất 2 trang WordPress vì đăng dày)
