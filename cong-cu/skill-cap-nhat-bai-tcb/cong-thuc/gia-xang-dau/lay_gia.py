@@ -133,6 +133,20 @@ def main():
         kq['mipec'] = None
         kq['_ghi_chu']['mipec'] = f'lỗi đọc mipec.com.vn: {e}'
 
+    # 4) Chốt chặn (06/11/2026: topi.vn còn để giá kỳ trước sau kỳ 15h 05/11 → bài ghi sai ~2.000 đ/lít).
+    #    Mipec bán theo giá trần của Bộ nên thường khớp Petrolimex Vùng 1. Lệch > 300 đ ở xăng → coi Topi là CŨ:
+    #    lấy số Mipec cho 4 mặt hàng chung, bỏ E10 RON 95-V / dầu hỏa và bảng PVOIL (giữ số cũ + cần duyệt).
+    p, m = (kq.get('petrolimex') or {}).get('gia') or {}, (kq.get('mipec') or {}).get('gia') or {}
+    lech = [k for k in ('e10_95_iii', 'e5_92') if p.get(k) and m.get(k) and abs(p[k][0] - m[k][0]) > 300]
+    if lech:
+        print('KHÔNG ĐỌC ĐƯỢC chắc chắn giá Petrolimex: topi.vn lệch mipec.com.vn ở',
+              ', '.join(f'{k} {p[k][0]:,} ≠ {m[k][0]:,}' for k in lech), '→ dùng số Mipec, cần mở ảnh thông cáo đối chiếu')
+        kq['petrolimex']['gia'] = {k: m[k] for k in ('e10_95_iii', 'e5_92', 'do_0001', 'do_005') if k in m}
+        kq['petrolimex']['ky'] += ' – topi.vn chưa cập nhật, số lấy theo mipec.com.vn (cùng giá trần)'
+        kq['pvoil'] = None
+        kq['_ghi_chu']['pvoil'] = 'topi.vn còn để giá kỳ trước, pvoil.com.vn chặn máy chủ → không có nguồn giá PVOIL mới'
+        kq['_ghi_chu']['petrolimex'] = 'topi.vn chưa cập nhật kỳ mới – E10 RON 95-V và dầu hỏa giữ nguyên, cần đối chiếu ảnh thông cáo'
+
     ra = os.path.join(thu_muc, 'gia.json')
     json.dump(kq, open(ra, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 

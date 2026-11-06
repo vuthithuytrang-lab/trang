@@ -87,7 +87,8 @@ def main():
                 he = None
             cells = []
             j = i + 1
-            while j < len(dong) and dong[j][2]:
+            # ô bảng thường có dấu '|'; một số bản bài (từ 06/11/2026) để ô số thành dòng riêng → nhận cả dòng chỉ có số
+            while j < len(dong) and (dong[j][2] or re.fullmatch(r'[\d.,]+', dong[j][0].strip())):
                 cells.append(dong[j]); j += 1
             if he and cells:
                 hang.append((he, (chu, vt), cells))
@@ -115,7 +116,10 @@ def main():
     # Câu hỏi thường gặp: số trong câu lấy theo Petrolimex
     p = gia.get('petrolimex')
     if p:
-        P = p['gia']
+        P = {k: v for k, v in p['gia'].items()}
+        thieu = [k for k in ('e10_95_iii', 'e5_92', 'e10_95_v', 'do_0001') if k not in P]
+        for k in thieu:
+            P[k] = [None, None]          # thiếu nguồn → câu hỏi đáp chứa mặt hàng này giữ nguyên
         mau = [
             (r'(1 lít xăng E10 RON 95-III có giá khoảng )([\d,]+)( VND/lít)', [P['e10_95_iii'][0]], 'E10 RON 95-III Vùng 1'),
             (r'(1 lít xăng E5 RON 92-II có giá khoảng )([\d,]+)( VND/lít)', [P['e5_92'][0]], 'E5 RON 92-II Vùng 1'),
@@ -124,6 +128,9 @@ def main():
             (r'(Giá dầu DO 0,001S-V là )([\d,]+)( VND/lít tại Vùng 1 và )([\d,]+)( VND/lít tại Vùng 2)', P['do_0001'], 'DO 0,001S-V'),
         ]
         for mau_re, so_moi, ten in mau:
+            if None in so_moi:
+                can.append(f'Câu hỏi thường gặp về {ten}: thiếu nguồn giá mới – giữ nguyên.')
+                continue
             for chu, vt, _ in dong:
                 m = re.search(mau_re, chu)
                 if not m:
