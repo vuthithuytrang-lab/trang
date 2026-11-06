@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Cập nhật bài Techcombank</title>
 <meta name="description" content="Danh sách bài blog Techcombank cần cập nhật giá / lãi suất – bấm chạy là có bản mới, miễn phí.">
-<!-- phien-ban: 202611061525 -->
+<!-- phien-ban: 202611061534 -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Cập nhật bài Techcombank">
 <meta property="og:description" content="Danh sách bài blog Techcombank cần cập nhật giá / lãi suất – ai có link cũng dùng được.">
@@ -171,7 +171,7 @@ function render(){
   if (!$("#msg").dataset.giu) $("#msg").textContent = c ? "Đang chạy " + c + " bài – mỗi bài 1–3 phút. Trang tự làm mới, không cần bấm lại."
     : (n ? "Đã chọn " + n + " bài – bấm Chạy cập nhật." : "Tích bài cần cập nhật rồi bấm Chạy cập nhật.");
   $("#ft").textContent = "Danh sách cập nhật: " + (du.cap_nhat || "–") + ". Bản mới máy chạy miễn phí trên GitHub; ghi chú \"Cần xem lại\" nên được người phụ trách duyệt trước khi đăng.";
-  clearTimeout(hen); if (c) hen = setTimeout(taiKq, 30000);
+  clearTimeout(hen); if (c) hen = setTimeout(taiKq, 10000);
 }
 function taiKq(){
   return fetch(KQ + "trang-thai.json?t=" + Date.now()).then(function(r){ return r.json(); }).then(function(d){ kq = d || {}; render(); }).catch(function(){ render(); });
