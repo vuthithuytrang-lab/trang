@@ -76,40 +76,35 @@ giả lập của khóa học, có bộ màu riêng, đừng trộn hai bên và
 ## 3c. Nghiên cứu Search Intent & tối ưu content — bật quy trình, đừng làm tay
 
 Trang đưa **từ khóa + bài viết + URL bài viết + URL đối thủ** (đủ bốn hoặc chỉ một phần),
-hoặc nhắc tới *phân tích search intent, phân tích đối thủ, tối ưu content, soát E-E-A-T*
-⇒ **dùng skill `toi-uu-content-seo`**, chạy đúng quy trình 7 chặng đã chốt ngày 10/09/2026.
+hoặc nhắc tới *phân tích search intent · phân tích đối thủ · phân tích chi tiết · tối ưu
+content · tối ưu bài cũ · soát E-E-A-T · "làm như bài deco" · "làm như key 80m2" ·
+"bài này đang tụt" · "bài này yếu chỗ nào"*
+⇒ **dùng skill `toi-uu-content-seo`** — quy trình hoàn chỉnh 10 chặng, bản gộp ngày 06/11/2026.
 
-Ba điều không được quên:
-1. **Dừng hỏi sau mỗi chặng.** Trang gật mới đi tiếp. Không chạy một mạch 7 chặng rồi mới đưa.
-2. **Tự mở từng URL đối thủ mà đọc.** Không bắt Trang copy nội dung ra. Mở không được thì
-   báo rõ bị chặn ở đâu, không đoán nội dung.
-3. **Không bịa số liệu, tên khách, giải thưởng, trích dẫn.** Thiếu thì ghi `[CẦN TRANG BỔ SUNG: …]`.
+Quy trình dùng cho **cả bài mới lẫn bài đã đăng**. Chỉ một skill, không có skill thứ hai.
 
-4. **Trước khi viết bài**, đọc `cong-cu/toi-uu-content-seo/luat-viet-content.md` — 14 luật rút từ
-   góp ý thật của Trang, và tự chấm theo bảng ở cuối file trước khi giao.
-5. **Trang góp ý bằng bình luận trên Google Docs** ⇒ tải bản `.docx` để đọc đúng vị trí neo bình luận,
-   **cấm suy đoán theo mốc thời gian**. Xem `cong-cu/toi-uu-content-seo/ky-thuat-ban-giao.md`.
+Sáu điều không được quên:
 
-Quy trình đầy đủ: `cong-cu/toi-uu-content-seo/QUY-TRINH-NGHIEN-CUU.md`
+1. **Chặng 0 — chốt bối cảnh trước khi đề xuất bất cứ điều gì.** Phải biết: bài mới hay đã đăng ·
+   **đang đứng thứ mấy** · đâu là key chính đâu là key mở rộng · khách có website không ·
+   có điều cấm gì · đầu ra muốn outline hay mã HTML. **Đã sai hai lần vì bỏ qua chặng này.**
+2. **Chặng 2 — soi website khách.** Sơ đồ trang, trang sản phẩm, bài đã đăng. Lấy số liệu thật,
+   phát hiện bài cũ tự cạnh tranh nhau, bắt chỗ site tự nói ngược nhau. Đây là chặng cho ra
+   nhiều thứ nhất và cũng hay bị bỏ qua nhất.
+3. **Dừng hỏi sau mỗi chặng.** Trang gật mới đi tiếp. Không chạy một mạch rồi mới đưa.
+4. **Tự mở từng URL mà đọc.** Không bắt Trang copy nội dung ra. Mở không được thì báo rõ bị chặn
+   ở đâu, đã thử mấy cách, **không đoán nội dung**.
+5. **Không bịa số liệu, tên khách, giải thưởng, trích dẫn.** Thiếu thì ghi `[CẦN TRANG BỔ SUNG: …]`.
+6. **Bài đang có thứ hạng thì sửa tại chỗ** — giữ nguyên URL và giữ nguyên tên các mục đã chạy
+   được. Dựng bài mới là vứt đi vốn xếp hạng và tự cạnh tranh với chính mình.
 
-## 3d. Phân tích chuyên sâu — khi khách ĐÃ CÓ bài trên site
+Trước khi viết: đọc `cong-cu/toi-uu-content-seo/luat-viet-content.md` (14 luật) và
+`LUAT-DAT-HEADING.md` (đặt tên heading, rải từ khóa).
+Trang góp ý bằng bình luận Google Docs ⇒ tải bản `.docx` để đọc đúng vị trí neo bình luận,
+**cấm suy đoán theo mốc thời gian** — xem `ky-thuat-ban-giao.md`.
 
-Trang nhắc *"phân tích chi tiết"*, *"làm như bài deco"*, *"làm như key 80m2"*,
-*"bài này đang tụt"*, *"tối ưu bài cũ"*, hoặc cần lấy số liệu thật từ website khách
-⇒ **dùng skill `phan-tich-doi-thu-chuyen-sau`**.
-
-Khác với skill `toi-uu-content-seo` (viết bài mới), skill này dùng khi bài đã đăng rồi.
-Ba việc nó làm mà quy trình kia không có:
-
-1. **Soi website khách** — sơ đồ trang, trang sản phẩm, bài đã đăng. Lấy số liệu thật
-   và phát hiện bài cũ đang cạnh tranh với nhau.
-2. **Bắt lỗi site tự nói ngược nhau** — đối chiếu phần chữ quảng cáo với bảng thông số.
-3. **Học luật đặt heading từ chính bài đang top** của khách, không áp luật của mình.
-
-⚠️ **Hỏi trước khi đề xuất bất cứ điều gì:** bài cũ đang đứng thứ mấy, cho từ khóa nào,
-đâu là key chính và đâu là key mở rộng. Đã sai hai lần vì bỏ qua câu hỏi này.
-
-Quy trình: `cong-cu/phan-tich-doi-thu-chuyen-sau/` (3 file)
+Bảng chạy việc một trang: `cong-cu/toi-uu-content-seo/QUY-TRINH-NGHIEN-CUU.md`
+Ca mẫu đủ 10 chặng: `cong-cu/toi-uu-content-seo/VI-DU-OSAKAR.md`
 
 ## 4. Giới hạn môi trường đã gặp (đừng mất công thử lại)
 
@@ -145,6 +140,5 @@ Agent đọc chìa từ file, gửi qua header `Authorization: Bearer <chìa>`, 
 | `ho-so/` | Hồ sơ Trang, phần cần cập nhật trên Agent Boss |
 | `khoa-hoc/` | Tiến độ khóa Agent Boss, mã nộp từng bài, sản phẩm đã làm |
 | `cong-cu/` | Công cụ dùng lại được — prompt SEO, bản tin tự động |
-| `cong-cu/toi-uu-content-seo/` | Quy trình 8 bước nghiên cứu search intent, checklist E-E-A-T, 4 luật tối ưu bài viết — **đọc trước khi phân tích intent hoặc tối ưu content** |
-| `cong-cu/phan-tich-doi-thu-chuyen-sau/` | Kỹ thuật bóc dữ liệu website, luật đặt heading, ca mẫu OSAKAR — **đọc khi tối ưu bài đã đăng** |
+| `cong-cu/toi-uu-content-seo/` | Toàn bộ tài liệu cho quy trình 10 chặng: search intent, kỹ thuật bóc dữ liệu website, checklist E-E-A-T, luật đặt heading, 14 luật viết, kỹ thuật bàn giao, ca mẫu — **đọc trước khi phân tích hoặc tối ưu content** |
 | `BAO-MAT.md` | Danh sách chìa khóa đã lộ cần thu hồi |
