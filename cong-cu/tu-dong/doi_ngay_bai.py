@@ -2,7 +2,7 @@
 
 Từ 11/2026 Techcombank ghi ngày ngay trong tiêu đề/đoạn văn ("Giá điều hôm nay 4/11/2026: …") mà công thức cũ
 không đổi. Bước này chạy SAU công thức: mọi ngày đủ dạng d/m/yyyy rơi vào hôm nay hoặc 2 ngày trước (giờ VN),
-nằm trong chữ (không đụng thuộc tính/đường link), được đổi thành ngày mai, giữ cách viết (có/không số 0 đầu)
+nằm trong chữ (không đụng thuộc tính/đường link, không đụng ô bảng chỉ chứa ngày – đó là dữ liệu bảng giá theo ngày), được đổi thành ngày mai, giữ cách viết (có/không số 0 đầu)
 và tô vàng như các chỗ sửa khác.
 
 Dùng: python3 -I doi_ngay_bai.py <bai.html>       (in số chỗ đã đổi)
@@ -47,13 +47,20 @@ def doi_html(html, nay=None):
     phan = re.split(r'(<[^>]*>)', html)          # chỉ sửa phần chữ giữa các thẻ
     tong = 0
     trong_vang = False
+    o_bang = 0          # ngày trong ô bảng là DỮ LIỆU (bảng giá theo ngày) → không đổi (sửa 06/11/2026)
     for i, p in enumerate(phan):
         if p.startswith('<'):
             if re.match(r'<span[^>]*background-color:#ffff00', p):
                 trong_vang = True
             elif p.startswith('</span') and trong_vang:
                 trong_vang = False
+            elif re.match(r'<t[dh][\s>]', p, re.I):
+                o_bang += 1
+            elif re.match(r'</t[dh]>', p, re.I):
+                o_bang = max(0, o_bang - 1)
             continue
+        if o_bang and re.fullmatch(r'\s*\d{1,2}/\d{1,2}/\d{4}\s*', p):
+            continue        # ô bảng CHỈ có ngày = dữ liệu bảng giá theo ngày (tiêu đề/sapo nằm trong ô khung vẫn đổi)
         phan[i], n = doi_chu(p, to_vang=not trong_vang, nay=nay)
         tong += n
     return ''.join(phan), tong
