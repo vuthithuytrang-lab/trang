@@ -154,6 +154,13 @@ border-bottom:2px solid var(--sg-mint);padding-bottom:5px}
     <div class="card">
       <h2>Ảnh trong bài</h2>
       <p class="hint">App hiện ảnh thật để bạn nhìn mà viết. Ô nào viết xong, đèn bên dưới tự báo đúng/sai luật.</p>
+      <div class="canhbao" style="margin:0 0 14px"><b>Về nút "Gợi ý câu nháp"</b><br>
+        Máy <b>không nhìn hiểu được ảnh</b> nên không tả được ảnh. Nút này chỉ ghép lại chất liệu
+        đã có sẵn trong bài — chú thích cũ, tên mục, alt cũ — rồi gắn key và canh cho dưới 120 ký tự.
+        Câu ra là <b>câu nháp</b>: bạn nhìn ảnh rồi sửa lại phần tả cho khớp với ảnh thật.</div>
+      <div class="hang-nut" style="margin:0 0 12px">
+        <button class="btn phu" id="nutGoiYCaBai">Gợi ý câu nháp cho mọi ô còn trống</button>
+      </div>
       <div id="dsAnh"></div>
       <h3 class="muc">Bốn ô cho ảnh thumb</h3>
       <div id="khungThumb"></div>
@@ -398,6 +405,99 @@ function kiem(cau, key, laDescription, tatCaCau){
   return { n:n, loi:loi, trong:false };
 }
 
+/* --- Dựng câu nháp ------------------------------------------------------
+   Máy KHÔNG nhìn hiểu được ảnh. Nó chỉ ghép lại chất liệu đã có sẵn trong bài:
+   chú thích cũ, tên mục, alt cũ, tên file — rồi gắn key và canh cho dưới 120 ký tự.
+   Câu ra là CÂU NHÁP, bắt buộc người nhìn ảnh sửa lại.
+   ----------------------------------------------------------------------- */
+function donChatLieu(s){
+  if(!s) return '';
+  var t = String(s).replace(/<[^>]+>/g,' ').replace(/\[[^\]]*\]/g,' ').replace(/&nbsp;/gi,' ');
+  // bỏ dấu nguồn cuối câu: (Nguồn: Internet), (Ảnh tham khảo) — nhận cả bản không dấu
+  t = t.replace(/\([^)]*\)/g, function(m){
+    var k = boDau(m);
+    return (k.indexOf('(nguon') === 0 || k.indexOf('(anh') === 0) ? '' : m;
+  });
+  return t.replace(/\s+/g,' ')
+    .replace(/^\s*\d+(\.\d+)*[.)]?\s*/,'')             // bỏ số thứ tự mục "2.3." ở đầu
+    .replace(/^[\s\-–—:·]+|[\s\-–—:·.,]+$/g,'')
+    .trim();
+}
+function catTheoTu(s, toiDa){
+  if(demKyTu(s) <= toiDa) return s;
+  var tu = s.split(' '), ra = '';
+  for(var i = 0; i < tu.length; i++){
+    var thu = ra ? ra + ' ' + tu[i] : tu[i];
+    if(demKyTu(thu) > toiDa) break;
+    ra = thu;
+  }
+  return ra;
+}
+function hoaDau(s){ return s ? s.charAt(0).toUpperCase() + s.slice(1) : s; }
+
+function nenCauNhap(nguonTho, muc, key, kieu){
+  var nguon = donChatLieu(nguonTho);
+  var mucSach = donChatLieu(muc).replace(/^\d+(\.\d+)*\.?\s*/,'');   // bỏ "2.3." đầu tên mục
+  if(!nguon) nguon = mucSach;
+  if(!nguon) return '';
+
+  // gỡ từ cấm khỏi chất liệu, đỡ phải sửa tay
+  TU_CAM.forEach(function(t){
+    nguon = nguon.replace(new RegExp(t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'gi'),'').replace(/\s+/g,' ').trim();
+  });
+
+  var mau;
+  if(!key){
+    mau = ['{n}'];
+    if(mucSach) mau.push('{n} trong mục ' + mucSach);
+  }else{
+    mau = [
+      '{n}, ' + key,
+      '{n} — minh họa ' + key,
+      '{n} thuộc nhóm ' + key,
+      '{n} trong danh mục ' + key
+    ];
+    if(mucSach) mau.push('{n}, ' + key + ' trong mục ' + mucSach);
+  }
+  var khuon = mau[kieu % mau.length];
+  var phanThem = demKyTu(khuon.replace('{n}',''));
+  var choNguon = Math.max(12, GIOI_HAN - 1 - phanThem);
+  var cau = khuon.replace('{n}', hoaDau(catTheoTu(nguon, choNguon)));
+  cau = cau.replace(/\s+/g,' ').replace(/\s+,/g,',').replace(/,\s*,/g,',').trim();
+  if(demKyTu(cau) >= GIOI_HAN) cau = catTheoTu(cau, GIOI_HAN - 1);
+  return cau;
+}
+
+/* chất liệu tốt nhất cho một ảnh: chú thích cũ > alt cũ > tên mục */
+function chatLieuAnh(a){
+  return a.chuThichCu || a.altCu || a.muc || a.ten.replace(/[-_]/g,' ').replace(/\.\w+$/,'');
+}
+
+function goiYChoAnh(a, kieu){
+  var c = nenCauNhap(chatLieuAnh(a), a.muc, a.keyGan, kieu);
+  // không được trùng câu đã có ở ô khác
+  var dangCo = moiCau().filter(function(x){ return x.trim(); });
+  var n = 0;
+  while(c && dangCo.indexOf(c) !== -1 && n < 4){ c = nenCauNhap(chatLieuAnh(a), a.muc, a.keyGan, kieu + (++n)); }
+  return c;
+}
+
+/* chất liệu cho ảnh thumb: lấy từ mục đầu bài hoặc đoạn mở bài */
+function chatLieuThumb(){
+  var h = /<h2[^>]*>([\s\S]*?)<\/h2>/i.exec(G.htmlGoc);
+  if(h) return donChatLieu(h[1]);
+  var p = /<p[^>]*>([\s\S]*?)<\/p>/i.exec(G.htmlGoc);
+  if(p) return catTheoTu(donChatLieu(p[1]), 60);
+  return '';
+}
+function goiYChoThumb(kieu){
+  var c = nenCauNhap(chatLieuThumb(), '', G.thumb.keyGan, kieu);
+  var dangCo = moiCau().filter(function(x){ return x.trim(); });
+  var n = 0;
+  while(c && dangCo.indexOf(c) !== -1 && n < 4){ c = nenCauNhap(chatLieuThumb(), '', G.thumb.keyGan, kieu + 1 + (n++)); }
+  return c;
+}
+
 function moiCau(){
   var ra = [];
   G.anh.forEach(function(a){ ra.push(a.altMoi || ''); if(a.chuThichMoi !== null) ra.push(a.chuThichMoi || ''); });
@@ -406,12 +506,27 @@ function moiCau(){
 }
 
 /* --- Vẽ một ô nhập ----------------------------------------------------- */
-function veONhap(nhan, giaTri, key, laDesc, khiDoi){
+function veONhap(nhan, giaTri, key, laDesc, khiDoi, taoNhap){
   var box = document.createElement('div'); box.className = 'o-nhap';
-  var lb = document.createElement('label'); lb.textContent = nhan; box.appendChild(lb);
+  var dongNhan = document.createElement('div');
+  dongNhan.style.cssText = 'display:flex;align-items:center;gap:8px;flex-wrap:wrap';
+  var lb = document.createElement('label'); lb.textContent = nhan; lb.style.flex = '1';
+  dongNhan.appendChild(lb);
+  if(taoNhap){
+    var bn = document.createElement('button'); bn.className = 'mini';
+    bn.textContent = 'Gợi ý câu nháp';
+    bn.onclick = function(){
+      var c = taoNhap();
+      if(!c){ alert('Bài này không có đủ chữ để dựng câu nháp cho ô đó.'); return; }
+      ta.value = c; box.laNhap = true; khiDoi(c); veLaiDem();
+    };
+    dongNhan.appendChild(bn);
+  }
+  box.appendChild(dongNhan);
   var ta = document.createElement('textarea'); ta.value = giaTri || ''; box.appendChild(ta);
   var dong = document.createElement('div'); dong.className = 'dong-dem'; box.appendChild(dong);
   var ul = document.createElement('ul'); ul.className = 'loi-list'; box.appendChild(ul);
+  box.laNhap = false;
   function ve(){
     var r = kiem(ta.value, key(), laDesc, moiCau());
     dong.innerHTML = '';
@@ -423,11 +538,17 @@ function veONhap(nhan, giaTri, key, laDesc, khiDoi){
     n.className = 'nhan ' + (r.trong ? 'vang' : (r.loi.length ? 'do' : 'xanh'));
     n.textContent = r.trong ? 'chưa viết' : (r.loi.length ? 'còn ' + r.loi.length + ' lỗi' : 'đạt');
     dong.appendChild(n);
+    if(box.laNhap && !r.trong){
+      var w = document.createElement('span'); w.className = 'nhan vang';
+      w.textContent = '⚠ câu nháp — nhìn ảnh rồi sửa lại';
+      dong.appendChild(w);
+    }
     ul.innerHTML = '';
     if(!r.trong) r.loi.forEach(function(x){ var li = document.createElement('li'); li.textContent = x; ul.appendChild(li); });
   }
-  ta.addEventListener('input', function(){ khiDoi(ta.value); veLaiDem(); });
+  ta.addEventListener('input', function(){ box.laNhap = false; khiDoi(ta.value); veLaiDem(); });
   box.veLai = ve;
+  box.oChu = ta;
   return box;
 }
 
@@ -472,13 +593,14 @@ function veBangSoan(){
     phai.appendChild(chon);
 
     var oAlt = veONhap('Alt cho ảnh ' + a.stt, a.altMoi, function(){ return a.keyGan; }, false,
-      function(v){ a.altMoi = v; });
+      function(v){ a.altMoi = v; }, function(){ return goiYChoAnh(a, 0); });
     phai.appendChild(oAlt); cacO.push(oAlt);
 
     if(a.chuThichCu !== null){
       if(a.chuThichMoi === null) a.chuThichMoi = '';
       var oCt = veONhap('Chú thích (giữ nguyên nếu để trống) — chú thích cũ: "' + a.chuThichCu.slice(0,60) + '"',
-        a.chuThichMoi, function(){ return ''; }, false, function(v){ a.chuThichMoi = v; });
+        a.chuThichMoi, function(){ return ''; }, false, function(v){ a.chuThichMoi = v; },
+        function(){ return goiYChoAnh(a, 1); });
       phai.appendChild(oCt); cacO.push(oCt);
     }
 
@@ -510,10 +632,11 @@ function veBangSoan(){
   sel.onchange = function(){ G.thumb.keyGan = sel.value; veLaiDem(); };
   phai.appendChild(sel);
 
-  [['alt','Alt Text',false],['title','Title',false],
-   ['caption','Image Caption',false],['desc','Description',true]].forEach(function(x){
+  [['alt','Alt Text',false,0],['title','Title',false,1],
+   ['caption','Image Caption',false,3],['desc','Description',true,2]].forEach(function(x){
     var o = veONhap(x[1], G.thumb[x[0]], function(){ return G.thumb.keyGan || ''; }, x[2],
-      function(v){ G.thumb[x[0]] = v; });
+      function(v){ G.thumb[x[0]] = v; },
+      function(){ return goiYChoThumb(x[3]); });
     phai.appendChild(o); cacO.push(o);
   });
   hang.appendChild(phai);
@@ -692,6 +815,21 @@ document.getElementById('nutXoa').onclick = function(){
   ['htmlVao','dsKey','thuVien'].forEach(function(id){ document.getElementById(id).value = ''; });
   document.getElementById('urlThumb').value = '';
 };
+document.getElementById('nutGoiYCaBai').onclick = function(){
+  var dem = 0;
+  G.anh.forEach(function(a, i){
+    if(!a.altMoi.trim()){ var c = goiYChoAnh(a, i); if(c){ a.altMoi = c; dem++; } }
+  });
+  [['alt',0],['title',1],['desc',2],['caption',3]].forEach(function(x){
+    if(!(G.thumb[x[0]] || '').trim()){ var c = goiYChoThumb(x[1]); if(c){ G.thumb[x[0]] = c; dem++; } }
+  });
+  if(!dem){ alert('Không còn ô nào trống, hoặc bài không đủ chữ để dựng câu nháp.'); return; }
+  veBangSoan();
+  cacO.forEach(function(o){ if(o.oChu && o.oChu.value.trim()) o.laNhap = true; });
+  veLaiDem();
+  alert('Đã dựng ' + dem + ' câu nháp.\n\nĐây CHƯA phải alt dùng được: máy không nhìn được ảnh.\nBạn xem từng ảnh rồi sửa lại phần tả cho khớp.');
+};
+
 document.getElementById('nutTaoHtml').onclick = taoHtml;
 document.getElementById('nutTaoBang').onclick = taoBang;
 

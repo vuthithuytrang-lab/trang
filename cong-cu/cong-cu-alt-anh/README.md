@@ -52,6 +52,17 @@ Cần mạng để **tải ảnh về xem và đo kích thước** — phần so
 
 **Tự chia key** cho các ảnh (bạn đổi lại được bằng ô chọn ở từng ảnh).
 
+**Dựng câu nháp** — nút *"Gợi ý câu nháp"* ở từng ô, và nút *"Gợi ý câu nháp cho mọi ô còn trống"*.
+
+⚠️ **Câu nháp KHÔNG phải alt dùng được.** Máy không nhìn hiểu được ảnh nên không tả được ảnh.
+Nó chỉ ghép lại chất liệu đã có sẵn trong bài — chú thích cũ, tên mục, alt cũ — rồi gắn key
+và canh cho dưới 120 ký tự. Bạn **nhìn ảnh rồi sửa lại phần tả** cho khớp với ảnh thật.
+
+Ô nào đang là câu nháp chưa sửa thì có nhãn vàng ⚠ nhắc. Gõ vào một chữ là nhãn tự mất.
+
+Khi dựng, app tự bỏ dấu nguồn `(Nguồn: Internet)`, bỏ số thứ tự mục `2.3.`, bỏ từ cấm,
+và dùng **mẫu câu khác nhau cho từng ô** để bốn ô thumb không ra bốn câu giống hệt.
+
 **Xuất HTML nguyên vẹn** — chỉ thay giá trị trong `alt="…"`, không đụng một ký tự nào khác.
 Kèm bảng chứng minh: đếm lại `<img`, `<h2`, `<h3`, `<table`, `<tr`, `<td`, `<ul`, `<li`,
 `<a `, `[caption`, `<p `, `<strong`, `<em`, `&amp;` và so phần chữ đọc được với bản gốc.
