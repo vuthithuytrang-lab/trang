@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Cập nhật bài Techcombank</title>
-<meta name="description" content="Danh sách 23 bài blog Techcombank và bản cập nhật Google Docs mới nhất.">
+<meta name="description" content="Danh sách bài blog Techcombank cần cập nhật giá / lãi suất – bấm chạy là có bản mới, miễn phí.">
 <!-- phien-ban: 2026-10-29b -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Cập nhật bài Techcombank">
-<meta property="og:description" content="Danh sách 23 bài blog Techcombank và bản cập nhật Google Docs mới nhất – ai có link cũng mở được.">
+<meta property="og:description" content="Danh sách bài blog Techcombank cần cập nhật giá / lãi suất – ai có link cũng dùng được.">
 <meta property="og:url" content="https://vuthithuytrang-lab.github.io/trang/">
 <meta property="og:image" content="https://vuthithuytrang-lab.github.io/trang/logo.webp">
 <link rel="icon" href="logo.webp" type="image/webp">
@@ -67,6 +67,17 @@ h1{font:800 clamp(24px,4vw,32px)/1.15 Gilroy,"Montserrat",Arial,sans-serif;margi
 #msg{flex:1;min-width:0;font-size:14px}
 .btn{font:700 15px Montserrat,Arial,sans-serif;background:var(--brand);color:#FFFFFF;border:0;border-radius:10px;padding:12px 22px;cursor:pointer;text-decoration:none}
 .btn[aria-disabled="true"]{opacity:.45;cursor:not-allowed}
+.them{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;display:grid;gap:10px}
+.them h2{font:800 18px Montserrat,Arial,sans-serif;margin:0;color:var(--brand-ink)}
+.them p{margin:0;color:var(--muted);font-size:14px}
+.them label{display:grid;gap:4px;font-weight:600;font-size:14px}
+.them input,.them textarea{font:15px "Be Vietnam Pro",Arial,sans-serif;width:100%;border:1px solid var(--line);border-radius:8px;padding:9px 10px;background:var(--bg);color:var(--fg)}
+.them textarea{min-height:84px;resize:vertical}
+.them .hang{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+#themMsg{font-size:14px;color:var(--muted)}
+.cho{display:grid;gap:6px;margin:0;padding:0;list-style:none}
+.cho li{border-top:1px solid var(--line);padding-top:6px;font-size:13px;color:var(--muted);overflow-wrap:anywhere}
+.cho a{color:var(--brand);font-weight:600;text-decoration:none}
 footer{font-size:12px;color:var(--muted)}
 </style>
 </head>
@@ -92,6 +103,18 @@ footer{font-size:12px;color:var(--muted)}
     <button class="pill" id="none">Bỏ chọn</button>
   </div>
   <div class="list" id="list"><div class="empty">Đang tải danh sách bài…</div></div>
+  <section class="them" aria-labelledby="themTieuDe">
+    <h2 id="themTieuDe">Thêm bài mới cần theo dõi</h2>
+    <p>Dán link bài Techcombank và các trang nguồn lấy số. Yêu cầu được lưu lại vào danh sách chờ; người phụ trách kỹ thuật làm "công thức" cho bài một lần, sau đó bài hiện trong danh sách ở trên và bấm chạy được như các bài khác.</p>
+    <label>Link bài (techcombank.com/thong-tin/blog/…)
+      <input id="themUrl" type="url" inputmode="url" placeholder="https://techcombank.com/thong-tin/blog/…" autocomplete="off"></label>
+    <label>Nguồn lấy số (mỗi dòng 1 link, tối đa 10)
+      <textarea id="themNguon" placeholder="https://…&#10;https://…"></textarea></label>
+    <label>Ghi chú (không bắt buộc)
+      <input id="themGhi" type="text" maxlength="500" placeholder="Vd: bảng nào lấy từ nguồn nào, cách ghi số…"></label>
+    <div class="hang"><button class="btn" id="themGui" type="button">Gửi yêu cầu</button><span id="themMsg" aria-live="polite"></span></div>
+    <ul class="cho" id="themDs"></ul>
+  </section>
   <footer id="ft"></footer>
 </div>
 <div class="bar"><div class="bar-in">
@@ -211,9 +234,33 @@ $("#run").addEventListener("click", function(e){
   if (!ids.length) { bao("Bài đã chọn không chạy tự động được – nhờ người phụ trách chạy."); return; }
   guiChay(ids, this);
 });
+// Thêm bài mới: gửi link + nguồn cho hàm Netlify `them` → GitHub ghi vào yeu-cau-bai-moi.json (nhánh tu-dong-ket-qua)
+var HAM_THEM = HAM.replace(/chay$/, "them");
+function taiYeuCau(){
+  return fetch(KQ + "yeu-cau-bai-moi.json?t=" + Date.now()).then(function(r){ return r.ok ? r.json() : []; }).catch(function(){ return []; }).then(function(ds){
+    var co = {}; du.bai.forEach(function(b){ co[String(b.url).replace(/\/$/, "")] = 1; });
+    ds = (ds || []).filter(function(x){ return !co[String(x.url).replace(/\/$/, "")]; }).reverse();
+    $("#themDs").innerHTML = ds.length ? ds.map(function(x){
+      return '<li><a target="_blank" rel="noopener" href="' + esc(x.url) + '">' + esc(x.url.replace(/^https:\/\/techcombank\.com\/thong-tin\/blog\//, "")) + ' ↗</a> · '
+        + esc(x.trang_thai || "Chờ làm công thức") + ' · gửi ' + esc(x.luc) + (x.nguon && x.nguon.length ? ' · ' + x.nguon.length + ' nguồn' : '') + (x.ghi_chu ? ' · ' + esc(x.ghi_chu) : '') + '</li>';
+    }).join("") : '<li>Chưa có yêu cầu nào đang chờ.</li>';
+  });
+}
+$("#themGui").addEventListener("click", function(){
+  var url = $("#themUrl").value.trim(), m = $("#themMsg"), nut = this;
+  if (!/^https:\/\/techcombank\.com\/thong-tin\/blog\/[a-z0-9-]{3,120}\/?$/.test(url)) { m.textContent = "Link phải là bài trên techcombank.com/thong-tin/blog/…"; return; }
+  var tt = du.bai.filter(function(b){ return String(b.url).replace(/\/$/, "") === url.replace(/\/$/, ""); })[0];
+  if (tt) { m.textContent = "Bài này đã có trong danh sách (" + tt.ten + ") – bấm chạy ở trên."; return; }
+  nut.disabled = true; m.textContent = "Đang gửi…";
+  fetch(HAM_THEM, {method: "POST", headers: {"content-type": "application/json"}, body: JSON.stringify({url: url, nguon: $("#themNguon").value, ghi_chu: $("#themGhi").value})})
+    .then(function(r){ return r.json().catch(function(){ return {}; }).then(function(j){ if (!r.ok || !j.ok) throw (j.loi || ("lỗi " + r.status)); }); })
+    .then(function(){ m.textContent = "Đã gửi. Khoảng 1 phút sau yêu cầu hiện trong danh sách chờ bên dưới."; $("#themUrl").value = $("#themNguon").value = $("#themGhi").value = ""; setTimeout(taiYeuCau, 60000); })
+    .catch(function(l){ m.textContent = "Chưa gửi được: " + l; })
+    .then(function(){ nut.disabled = false; });
+});
 fetch(DU_LIEU + "?t=" + Date.now()).then(function(r){ return r.json(); }).then(function(d){
   var MA = {"lai-suat-tiet-kiem": "lai-suat-1", "cach-tinh-lai-suat": "lai-suat-2"};   // id trong danh sách → mã công thức máy chạy
-  du = d; du.bai.forEach(function(b){ b.id = MA[b.id] || b.id; }); render(); return taiKq(); })
+  du = d; du.bai.forEach(function(b){ b.id = MA[b.id] || b.id; }); render(); taiYeuCau(); return taiKq(); })
   .catch(function(){ $("#list").innerHTML = '<div class="empty">Chưa tải được danh sách – tải lại trang (Ctrl + R, Mac: Cmd + R).</div>'; });
 </script>
 </body>
