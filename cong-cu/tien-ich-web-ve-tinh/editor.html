@@ -29,6 +29,8 @@ iframe{width:100%;height:640px;border:1px solid var(--line);border-radius:10px;b
 .code{border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:0 0 14px}
 .code h3{margin:0 0 4px;font-size:16px}.code .where{font-size:13px;color:var(--mut);margin:0 0 8px;line-height:1.5}
 .code textarea{min-height:90px;font-family:ui-monospace,Consolas,monospace;font-size:12px}
+.go{display:inline-block;margin:0 8px 6px 0;background:#07EF9C;color:#0B1B3F;border-radius:999px;padding:7px 14px;font-weight:700;font-size:13px;text-decoration:none}
+.go.alt{background:#fff;border:1px solid #CBD3E3;font-weight:600}
 .copied{color:#0A8F5B;font-weight:700;font-size:13px;margin-left:8px}
 .status{font-size:13px;background:#FFF8E1;border:1px solid #F3D27A;border-radius:10px;padding:8px 12px;margin:0 0 12px;line-height:1.5}
 .hide{display:none}
@@ -38,6 +40,11 @@ iframe{width:100%;height:640px;border:1px solid var(--line);border-radius:10px;b
 <div class="grid">
   <div class="col form" id="form">
     <div class="status" id="status">Đang đo màu logo…</div>
+
+    <h2>0. Trang WordPress của bạn</h2>
+    <label>Địa chỉ trang WordPress (để có nút mở thẳng chỗ dán)</label>
+    <input id="wpSite" placeholder="ví dụ: sunlifevietnam.wordpress.com">
+    <p class="note" id="wpNote">Dán địa chỉ trang WordPress cần làm. Tiện ích tự kiểm tra giao diện và kiểu trang chủ để chọn đúng link.</p>
 
     <h2>1. Thương hiệu</h2>
     <label>Tên thương hiệu</label><input id="brand">

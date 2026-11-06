@@ -12,8 +12,8 @@ Mở website mẫu → bấm 1 nút → ra 4 mã dán vào WordPress.com. **Khô
 ## Dùng
 1. Mở website mẫu (trang chủ thương hiệu), đợi trang hiện đủ.
 2. Bấm biểu tượng tiện ích → **Lấy dữ liệu trang này**.
-3. Trang chỉnh sửa mở ra: kiểm tra logo, màu, chữ, ảnh, hotline. Sửa ô bên trái, khung bên phải tự cập nhật.
-4. Bấm tab **Lấy mã dán WordPress** → bấm **Copy mã** từng mã, dán vào đúng chỗ ghi dưới mỗi mã.
+3. Trang chỉnh sửa mở ra. Ở mục **0** dán địa chỉ trang WordPress cần làm (vd `ten.wordpress.com`) — tiện ích sẽ tạo **nút mở thẳng đúng chỗ dán** cho từng mã. Kiểm tra logo, màu, chữ, ảnh, hotline; sửa ô bên trái, khung bên phải tự cập nhật.
+4. Bấm tab **Lấy mã dán WordPress** → với từng mã: bấm **nút xanh** (mở đúng chỗ dán) → bấm **Copy mã** → dán. Nút "Link dự phòng" dùng khi nút xanh không mở được.
 
 ## Tiện ích tự làm gì
 - Logo: ưu tiên file có chữ "logo", dạng SVG, ở đầu trang; bỏ bản cho điện thoại / icon.
