@@ -10,6 +10,7 @@ Chạy trên bộ công cụ chung `../../cap-nhat-bai-tcb/`, chạy tự độn
 | Việc | Cách làm cố định |
 |---|---|
 | Nguồn (Trang chọn) | https://www.thitruonghanghoa.com/gia-kim-loai — **chỉ** "Bảng giá Kim loại" (trang dựng sẵn, tải bằng `curl`). Không dùng dải chạy chữ đầu trang (số khác bảng) |
+| Nguồn dự phòng miễn phí (06/11/2026) | thitruonghanghoa chặn máy GitHub Actions → kim loại nào không đọc được thì `lay_gia.py` tự lấy TradingView (scanner miễn phí, không chìa): TVC:GOLD/SILVER/PLATINUM, COMEX:HG1!, COMEX:TIO1!, LME:NI1!/PB1!/AH1!/ZS1!/SN1!, quy ra VNĐ đúng cách thitruonghanghoa (USD × hệ số đơn vị × tỷ giá FX_IDC:USDVND, đối chiếu open.er-api.com). Thử 06/11: lệch trang chính 0,1–1,2%; % thay đổi theo phiên TradingView → luôn ghi cần duyệt. Ép chạy dự phòng: `KIM_LOAI_DU_PHONG=1` |
 | Nhận dòng nguồn | Theo tên tiếng Anh in dưới tên: GOLD, SILVER, COPPER, PLATINUM, NICKEL, LEAD, ALUMINUM, ZINC, IRON ORE, TIN — không theo vị trí |
 | Nhận dòng trong bài | Theo tên: Vàng, Bạc, Đồng, Bạch kim, Niken (nguồn ghi "Nickel"), Chì, Nhôm, Kẽm, Quặng sắt 62% Fe, Thiếc. Ô giá / ô thay đổi nhận theo dạng số, không theo cột |
 | Ô "Giá (VND/lượng)" | Số VNĐ của nguồn (`local-price`, vd `125.921.056`) viết lại dấu nghìn như bài: `125,921,056`. Không quy đổi đơn vị — nguồn ghi VNĐ/lượng (vàng, bạc, bạch kim), VNĐ/tấn (kim loại cơ bản), VNĐ/dmtu (quặng sắt), bài cũng đang ghi đúng như vậy |

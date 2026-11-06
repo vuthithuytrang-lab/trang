@@ -4,7 +4,7 @@
 const HOP_LE = new Set(['gia-ca-phe', 'gia-xang-dau', 'vang-24k', 'vang-14k', 'vang-18k', 'vang-10k', '1-chi-vang', 'vang-16k',
   'vang-610', 'lai-suat-1', 'lai-suat-2', 'gia-nhom', 'gia-lua-gao', 'gia-dieu', 'gia-dong', 'gia-thep', 'gia-ca-phe-dak-lak',
   'gia-ca-phe-luan-don', 'gia-gas', 'gia-dau-the-gioi', 'gia-tieu', 'gia-ca-cao',
-  'gia-vang-sjc', 'gia-vang-nhan', 'gia-bach-kim', 'gia-niken']);   // gia-kim-loai: nguồn chặn máy GitHub
+  'gia-vang-sjc', 'gia-vang-nhan', 'gia-bach-kim', 'gia-niken', 'gia-kim-loai']);
 const CORS = {'access-control-allow-origin': '*', 'access-control-allow-methods': 'POST, OPTIONS', 'access-control-allow-headers': 'content-type'};
 const tra = (o, status = 200) => Response.json(o, {status, headers: CORS});
 

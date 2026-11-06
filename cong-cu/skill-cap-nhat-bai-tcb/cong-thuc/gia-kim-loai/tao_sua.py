@@ -98,12 +98,12 @@ def main():
     url = gia.get('_nguon', 'https://www.thitruonghanghoa.com/gia-kim-loai')
     sua, can, lech, thay_dong = [], [], [], set()
 
-    def them(cu, vt, moi, ly, tim_lan=True):
+    def them(cu, vt, moi, ly, tim_lan=True, nguon=None):
         if cu == moi:
             return
         lech.append(f'"{cu}" (cần là "{moi}")')
         sua.append({'tim': cu, 'thay': moi, 'lan': lan_thu(van, cu, vt) if tim_lan else 'tat_ca',
-                    'giu_nguyen_so': True, 'nguon': url, 'ly_do': ly, '_vt': vt})
+                    'giu_nguyen_so': True, 'nguon': nguon or url, 'ly_do': ly, '_vt': vt})
 
     # --- Bảng giá: dòng tên kim loại (không phải ô) + các ô ngay sau nó
     for i, (chu, vt, la_o) in enumerate(dong):
@@ -123,8 +123,8 @@ def main():
             can.append(f'{chu}: không đọc được giá trên nguồn – giữ nguyên giá cũ "{o_gia[0][0]}" và mức thay đổi "{o_pct[0][0]}".')
             continue
         goc = f'{g["ten_nguon"]}: "{g["gia_goc"]}" {g["don_vi"]}, thay đổi "{g["thay_doi_goc"]}" ({g["chieu"]}), {g["cap_nhat"]}'
-        them(o_gia[0][0], o_gia[0][1], viet_gia(g['gia'], o_gia[0][0]), f'Giá dòng {chu} – nguồn {goc}')
-        them(o_pct[0][0], o_pct[0][1], viet_pct(g), f'Thay đổi (%) dòng {chu} – nguồn {goc}')
+        them(o_gia[0][0], o_gia[0][1], viet_gia(g['gia'], o_gia[0][0]), f'Giá dòng {chu} – nguồn {goc}', nguon=g.get('nguon'))
+        them(o_pct[0][0], o_pct[0][1], viet_pct(g), f'Thay đổi (%) dòng {chu} – nguồn {goc}', nguon=g.get('nguon'))
 
     thieu = [k for k in TEN if not gia.get(k)]
     if not thay_dong:
@@ -146,6 +146,11 @@ def main():
     else:
         can.append(f"Giá nguồn chạy theo thời gian thực, {gia.get('_cap_nhat', '').split(' (')[0]}; mở lại trang nguồn có thể thấy số khác. "
                    'Đã dùng số trong "Bảng giá Kim loại", không dùng dải chạy chữ đầu trang.')
+    if gia.get('_du_phong'):
+        can.append('thitruonghanghoa.com không đọc được (chặn máy chạy tự động) – ' + ', '.join(TEN[k][0] for k in gia['_du_phong'] if k in TEN)
+                   + ' lấy dự phòng từ TradingView (cùng loại giá thế giới), quy ra VNĐ theo tỷ giá USD/VND thị trường; số có thể lệch '
+                   'nhẹ (~0,1–1%) so với thitruonghanghoa và % thay đổi tính theo phiên TradingView. Muốn khớp hẳn: mở '
+                   'https://www.thitruonghanghoa.com/gia-kim-loai đối chiếu.')
     can.append('Tiêu đề cột ghi "Giá (VND/lượng)" nhưng nguồn niêm yết Đồng, Niken, Chì, Nhôm, Kẽm, Thiếc theo VNĐ/tấn và '
                'Quặng sắt theo VNĐ/dmtu – giữ nguyên tiêu đề cột như bài (bài đã có dòng Lưu ý về đơn vị).')
     can.append('Các mốc năm trong phần phân tích (năm 2025, đầu năm 2026, đầu tư khoáng sản giảm 9% năm 2025, World Bank…) '
