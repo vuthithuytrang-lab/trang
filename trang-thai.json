@@ -71,7 +71,7 @@
   "can_duyet": "",
   "loi": ""
  },
- "_yeu_cau": "tay-1793954490",
+ "_yeu_cau": "tay-1793955895",
  "gia-ca-cao": {
   "ok": true,
   "luc": "2026-11-06T08:37:26+00:00",
@@ -130,10 +130,10 @@
  },
  "gia-kim-loai": {
   "ok": true,
-  "luc": "2026-10-28T16:12:08+00:00",
-  "ngay": "29/10/2026",
-  "ten": "Giá kim loại thế giới: Bảng giá cập nhật và các yếu tố ảnh hưởng – 29/10/2026",
-  "can_duyet": "vang       vang KHÔNG ĐỌC ĐƯỢC\nbac        bac KHÔNG ĐỌC ĐƯỢC\ndong       dong KHÔNG ĐỌC ĐƯỢC\nbach_kim   bach_kim KHÔNG ĐỌC ĐƯỢC\nniken      niken KHÔNG ĐỌC ĐƯỢC\nchi        chi KHÔNG ĐỌC ĐƯỢC\nnhom       nhom KHÔNG ĐỌC ĐƯỢC\nkem        kem KHÔNG ĐỌC ĐƯỢC\nquang_sat  quang_sat KHÔNG ĐỌC ĐƯỢC\nthiec      thiec KHÔNG ĐỌC ĐƯỢC\nVàng: không đọc được giá trên nguồn – giữ nguyên giá cũ \"125,606,371\" và mức thay đổi \"+0.03\".\nBạc: không đọc được giá trên nguồn – giữ nguyên giá cũ \"1,675,219\" và mức thay đổi \"-0.11\".\nĐồng: không đọc được giá trên nguồn – giữ nguyên giá cũ \"377,992,801\" và mức thay đổi \"+0.10\".\nBạch kim: không đọc được giá trên nguồn – giữ nguyên giá cũ \"47,903,903\" và mức thay đổi \"+0.01\".\nNiken: không đọc được giá trên nguồn – giữ nguyên giá cũ \"404,693,550\" và mức thay đổi \"+0.33\".\nChì: không đọc được giá trên nguồn – giữ nguyên giá cũ \"49,940,631\" và mức thay đổi \"+0.02\".\nNhôm: không đọc được giá trên nguồn – giữ nguyên giá cũ \"80,111,750\" và mức thay đổi \"-0.01\".\nKẽm: không đọc được giá trên nguồn – giữ nguyên giá cũ \"99,684,860\" và mức thay đổi \"+0.16\".\nQuặng sắt 62% Fe: không đọc được giá trên nguồn – giữ nguyên giá cũ \"2,343,915\" và mức thay đổi \"-0.09\".\nThiếc: không đọc được giá trên nguồn – giữ nguyên giá cũ \"1,318,406,823\" và mức thay đổi \"+0.99\".\nThiếu số của nguồn (vang, bac, dong, bach_kim, niken, chi, nhom, kem, quang_sat, thiec) – giữ nguyên ngày cũ của bài (29/10/2026) để bài không ghi ngày mới cho giá cũ.\nTiêu đề cột ghi \"Giá (VND/lượng)\" nhưng nguồn niêm yết ",
+  "luc": "2026-11-06T09:05:06+00:00",
+  "ngay": "07/11/2026",
+  "ten": "Giá kim loại thế giới: Bảng giá cập nhật và các yếu tố ảnh hưởng – 07/11/2026",
+  "can_duyet": "Giá nguồn chạy theo thời gian thực, lấy lúc 16h05 giờ VN 06/11/2026; mở lại trang nguồn có thể thấy số khác. Đã dùng số trong \"Bảng giá Kim loại\", không dùng dải chạy chữ đầu trang.\nTiêu đề cột ghi \"Giá (VND/lượng)\" nhưng nguồn niêm yết Đồng, Niken, Chì, Nhôm, Kẽm, Thiếc theo VNĐ/tấn và Quặng sắt theo VNĐ/dmtu – giữ nguyên tiêu đề cột như bài (bài đã có dòng Lưu ý về đơn vị).\nCác mốc năm trong phần phân tích (năm 2025, đầu năm 2026, đầu tư khoáng sản giảm 9% năm 2025, World Bank…) – nguồn không đề cập, giữ nguyên.",
   "loi": ""
  },
  "gia-lua-gao": {
