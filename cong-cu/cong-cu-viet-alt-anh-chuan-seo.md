@@ -70,6 +70,30 @@ cùng một ảnh nhưng mỗi ô tả một góc khác, đổi cấu trúc câu
    |---|---|---|
    | Description | Bài viết của AIG giới thiệu Mekong Delta Gourmet (MDG) - công ty sản xuất trái cây đông lạnh IQF với nhà máy hơn 33.000 m²… | Xoài, thơm, chuối và thanh long cắt khối xếp trong tô gỗ tại công ty sản xuất trái cây đông lạnh MDG |
 
+4. **Không tả cách dàn trang của ảnh** (chốt 06/11/2026). Cấm các từ *ảnh ghép*,
+   *khung hình tròn*, *hình tròn ghép lại*, *nền bản đồ chấm bi*, *bố cục*, *collage*,
+   *ảnh thiết kế*. Ảnh ghép hay ảnh chụp thì alt vẫn **chỉ nói trong ảnh có gì**,
+   người đọc và Google không cần biết ảnh được ghép thế nào.
+
+   | | Sai | Đúng |
+   |---|---|---|
+   | Alt Text | **Ảnh ghép** phòng lab, nhà máy, kho và xe lạnh của AIG **trên nền bản đồ thế giới** | Phòng nghiên cứu, dây chuyền sản xuất, kho hàng và xe lạnh của AIG |
+   | Caption | **Năm khung hình tròn ghép lại**: phòng nghiên cứu, dây chuyền, chai chiết xuất… | Từ phòng nghiên cứu, chai chiết xuất, máy đóng bột đến xe lạnh… |
+
+### Mật độ key — bao nhiêu là vừa (chốt 06/11/2026)
+
+Nhồi key vào mọi ô là spam. Tỷ lệ đang dùng: **khoảng 55–65% số ô có key**.
+
+Bài chỉ có **một key** mà có 10 ô thì đặt key ở 5–6 ô; các ô còn lại chỉ tả ảnh,
+hoặc dùng cách gọi tiếng Việt tương đương (ví dụ `nguyên liệu khoa học đời sống`
+thay cho `nguyên liệu life science`).
+
+Khi đếm key phải xét **key dài trước key ngắn** (`kích thước tủ hồ sơ văn phòng`
+trước `kích thước tủ hồ sơ`), không thì đếm nhầm.
+
+Nếu Trang đưa key **không liên quan đến nội dung bài** thì vẫn làm đúng yêu cầu,
+nhưng **báo rõ** là key lệch và khuyên chuyển key đó sang bài khác hợp hơn.
+
 Đừng bấm nút **"Generate Alt"** của WordPress: nó sinh alt tiếng Anh chung chung,
 không có key, không đúng ngữ cảnh bài.
 
