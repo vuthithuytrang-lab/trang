@@ -3,8 +3,9 @@
   python3 -I lay_gia.py <thư mục làm việc>/cap-nhat
 
 - Petrolimex: tìm thông cáo "điều chỉnh giá xăng dầu" MỚI NHẤT trên petrolimex.com.vn, tải ảnh bảng giá về
-  cap-nhat/tam/plx-gia.jpg (Claude PHẢI mở ảnh này đối chiếu); số lấy từ bảng Petrolimex trên topi.vn.
-- PVOIL: bảng PVOIL trên topi.vn (pvoil.com.vn chặn máy chủ).
+  cap-nhat/tam/plx-gia.jpg (để đối chiếu); số lấy từ webgia.com (bảng chữ đủ 6 mặt hàng, chép từ Petrolimex),
+  so chéo với giaxanghomnay.com. 06/11/2026 Trang dặn bỏ topi.vn (Topi để giá kỳ cũ sau kỳ 15h 05/11 → bài sai).
+- PVOIL: bảng PVOIL trên giaxanghomnay.com (pvoil.com.vn chặn máy chủ).
 - Mipec: mipec.com.vn/pages/gia-xang-dau-ban-le.
 In bảng so sánh để đối chiếu. Thiếu nguồn nào thì hệ thống đó = null.
 """
@@ -12,7 +13,8 @@ import html, json, os, re, subprocess, sys
 
 UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/141 Safari/537.36'
 PLX_LIST = 'https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi.html'
-TOPI = 'https://topi.vn/gia-xang-dau-hom-nay.html'
+WEBGIA = 'https://webgia.com/gia-xang-dau/petrolimex/'
+GXHN = 'https://giaxanghomnay.com/'
 MIPEC = 'https://www.mipec.com.vn/pages/gia-xang-dau-ban-le'
 
 
@@ -43,7 +45,7 @@ def ma_hang(ten):
         return 'do_005'
     if '95-v' in t and '95-iii' not in t or 'mức5' in t and '95' in t:
         return 'e10_95_v'
-    if '95-iii' in t:
+    if '95-iii' in t or 'mức3' in t and '95' in t:
         return 'e10_95_iii'
     if '92' in t:
         return 'e5_92'
@@ -100,26 +102,43 @@ def main():
         kq['_ghi_chu']['petrolimex_tcbc'] = f'lỗi đọc thông cáo Petrolimex: {e}'
     kq['_petrolimex_tcbc'] = plx
 
-    # 2) Topi: bảng 0 = Petrolimex (2 vùng), bảng PVOIL (1 cột giá)
+    # 2) Petrolimex: webgia.com (chính) + giaxanghomnay.com (so chéo); PVOIL: giaxanghomnay.com
+    ky = plx.get('tieu_de', '').replace('Petrolimex điều chỉnh giá xăng dầu', 'kỳ điều chỉnh').strip()
+    wg, gx, pv, luc_wg, luc_gx = {}, {}, {}, '', ''
     try:
-        tb = bang(tai(TOPI))
-        p = doc_bang_gia(tb[0], 2) if tb else {}
-        pv = {}
-        for rows in tb[1:]:
-            if rows and 'điều chỉnh' in ' '.join(rows[0]).lower():
-                pv = {k: v for k, v in doc_bang_gia(rows, 1).items()}
-                break
-        ky = plx.get('tieu_de', '').replace('Petrolimex điều chỉnh giá xăng dầu', 'kỳ điều chỉnh').strip()
-        kq['petrolimex'] = {'ky': f'{ky} (số theo topi.vn, đối chiếu ảnh thông cáo)', 'nguon': plx.get('url') or TOPI,
-                            'gia': p} if p else None
-        kq['pvoil'] = {'ky': f'{ky} (theo topi.vn)', 'nguon': TOPI, 'gia': pv} if pv else None
-        if not p:
-            kq['_ghi_chu']['petrolimex'] = 'topi.vn không có bảng Petrolimex'
-        if not pv:
-            kq['_ghi_chu']['pvoil'] = 'topi.vn không có bảng PVOIL'
+        t = tai(WEBGIA)
+        for rows in bang(t):
+            wg.update(doc_bang_gia(rows, 2))
+        m = re.search(r'cập nhật mới nhất vào lúc ([\d:]+ [\d/]+)', chu(t))
+        luc_wg = m.group(1) if m else ''
     except Exception as e:
-        kq['petrolimex'] = kq['pvoil'] = None
-        kq['_ghi_chu']['pvoil'] = kq['_ghi_chu']['petrolimex'] = f'lỗi đọc topi.vn: {e}'
+        kq['_ghi_chu']['webgia'] = f'lỗi đọc webgia.com: {e}'
+    try:
+        t = tai(GXHN)
+        tb = bang(t)
+        for rows in tb:
+            hdr = ' '.join(rows[0]).lower() if rows else ''
+            if 'giá vùng 1' in hdr and not gx:      # bảng Petrolimex: tên | tăng giảm | kỳ trước | V1 | V2
+                gx = doc_bang_gia([[r[0]] + r[-2:] for r in rows if len(r) >= 3], 2)
+            elif hdr.endswith('giá') and not pv:     # bảng PVOIL: tên | tăng giảm | kỳ trước | giá
+                pv = doc_bang_gia([[r[0], r[-1]] for r in rows if len(r) >= 2], 1)
+        m = re.search(r'Giá của PVOIL cập nhật ([\d-]+ [\d:]+)', chu(t))
+        luc_gx = m.group(1) if m else ''
+    except Exception as e:
+        kq['_ghi_chu']['giaxanghomnay'] = f'lỗi đọc giaxanghomnay.com: {e}'
+    p = wg or gx
+    if wg and gx:
+        lech = [k for k in wg if k in gx and wg[k] != gx[k]]
+        if lech:
+            print('KHÔNG ĐỌC ĐƯỢC chắc chắn giá Petrolimex: webgia.com lệch giaxanghomnay.com ở', ', '.join(lech))
+            kq['_ghi_chu']['petrolimex'] = 'webgia.com và giaxanghomnay.com lệch nhau ở ' + ', '.join(lech) + ' – cần mở ảnh thông cáo đối chiếu'
+    kq['petrolimex'] = {'ky': f'{ky} (số theo {"webgia.com" if wg else "giaxanghomnay.com"}, lúc {luc_wg if wg else ""}; đối chiếu ảnh thông cáo)'.replace(', lúc )', ')'),
+                        'nguon': plx.get('url') or WEBGIA, 'gia': p} if p else None
+    kq['pvoil'] = {'ky': f'{ky} (theo giaxanghomnay.com, cập nhật {luc_gx})', 'nguon': GXHN, 'gia': pv} if pv else None
+    if not p:
+        kq['_ghi_chu']['petrolimex'] = 'không đọc được bảng Petrolimex trên webgia.com lẫn giaxanghomnay.com'
+    if not pv:
+        kq['_ghi_chu']['pvoil'] = 'không đọc được bảng PVOIL trên giaxanghomnay.com'
 
     # 3) Mipec
     try:
@@ -133,19 +152,13 @@ def main():
         kq['mipec'] = None
         kq['_ghi_chu']['mipec'] = f'lỗi đọc mipec.com.vn: {e}'
 
-    # 4) Chốt chặn (06/11/2026: topi.vn còn để giá kỳ trước sau kỳ 15h 05/11 → bài ghi sai ~2.000 đ/lít).
-    #    Mipec bán theo giá trần của Bộ nên thường khớp Petrolimex Vùng 1. Lệch > 300 đ ở xăng → coi Topi là CŨ:
-    #    lấy số Mipec cho 4 mặt hàng chung, bỏ E10 RON 95-V / dầu hỏa và bảng PVOIL (giữ số cũ + cần duyệt).
+    # 4) Chốt chặn: Mipec bán theo giá trần nên thường khớp Petrolimex Vùng 1. Lệch > 300 đ ở xăng → báo cần duyệt.
     p, m = (kq.get('petrolimex') or {}).get('gia') or {}, (kq.get('mipec') or {}).get('gia') or {}
     lech = [k for k in ('e10_95_iii', 'e5_92') if p.get(k) and m.get(k) and abs(p[k][0] - m[k][0]) > 300]
     if lech:
-        print('KHÔNG ĐỌC ĐƯỢC chắc chắn giá Petrolimex: topi.vn lệch mipec.com.vn ở',
-              ', '.join(f'{k} {p[k][0]:,} ≠ {m[k][0]:,}' for k in lech), '→ dùng số Mipec, cần mở ảnh thông cáo đối chiếu')
-        kq['petrolimex']['gia'] = {k: m[k] for k in ('e10_95_iii', 'e5_92', 'do_0001', 'do_005') if k in m}
-        kq['petrolimex']['ky'] += ' – topi.vn chưa cập nhật, số lấy theo mipec.com.vn (cùng giá trần)'
-        kq['pvoil'] = None
-        kq['_ghi_chu']['pvoil'] = 'topi.vn còn để giá kỳ trước, pvoil.com.vn chặn máy chủ → không có nguồn giá PVOIL mới'
-        kq['_ghi_chu']['petrolimex'] = 'topi.vn chưa cập nhật kỳ mới – E10 RON 95-V và dầu hỏa giữ nguyên, cần đối chiếu ảnh thông cáo'
+        print('LƯU Ý: giá Petrolimex lệch Mipec ở', ', '.join(f'{k} {p[k][0]:,} ≠ {m[k][0]:,}' for k in lech),
+              '– một trong hai nguồn chưa cập nhật kỳ mới, cần mở ảnh thông cáo đối chiếu')
+        kq['_ghi_chu']['doi_chieu'] = 'Petrolimex lệch Mipec ở ' + ', '.join(lech) + ' – cần đối chiếu ảnh thông cáo'
 
     ra = os.path.join(thu_muc, 'gia.json')
     json.dump(kq, open(ra, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
@@ -155,7 +168,7 @@ def main():
     print('  Ảnh bảng giá (PHẢI mở ra đối chiếu):', plx.get('anh', 'KHÔNG TẢI ĐƯỢC'))
     ten = {'e10_95_v': 'E10 RON 95-V', 'e10_95_iii': 'E10 RON 95-III', 'e5_92': 'E5 RON 92-II',
            'do_0001': 'DO 0,001S-V', 'do_005': 'DO 0,05S-II', 'dau_hoa': 'Dầu hỏa 2-K'}
-    print(f'{"Mặt hàng":16} | {"Petrolimex V1/V2 (Topi)":24} | {"PVOIL (Topi)":12} | Mipec V1/V2')
+    print(f'{"Mặt hàng":16} | {"Petrolimex V1/V2 (webgia)":24} | {"PVOIL (GXHN)":12} | Mipec V1/V2')
     for k, t in ten.items():
         f = lambda h: '/'.join(f'{v:,}' for v in ((kq.get(h) or {}).get('gia') or {}).get(k, [])) or '-'
         print(f'{t:16} | {f("petrolimex"):24} | {f("pvoil"):12} | {f("mipec")}')

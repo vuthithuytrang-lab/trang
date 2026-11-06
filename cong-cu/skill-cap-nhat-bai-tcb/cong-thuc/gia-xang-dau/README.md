@@ -9,10 +9,10 @@ Chạy trên bộ công cụ chung `../../cap-nhat-bai-tcb/`.
 | Việc | Cách làm cố định |
 |---|---|
 | Kỳ giá | Thông cáo **"Petrolimex điều chỉnh giá xăng dầu…" mới nhất** trên https://www.petrolimex.com.vn/ndi/thong-cao-bao-chi.html |
-| Bảng Petrolimex (6 mặt hàng × Vùng 1/2) | Số lấy từ bảng Petrolimex trên https://topi.vn/gia-xang-dau-hom-nay.html, **bắt buộc đối chiếu với ảnh bảng giá trong thông cáo** (Claude mở ảnh `cap-nhat/tam/plx-gia.jpg` để đọc). Ảnh là gốc: lệch thì sửa `gia.json` theo ảnh |
-| Bảng PVOIL | Bảng PVOIL trên topi.vn — pvoil.com.vn chặn máy chủ (Cloudflare), **không cố vượt** |
+| Bảng Petrolimex (6 mặt hàng × Vùng 1/2) | **Từ 06/11/2026 (Trang dặn bỏ Topi):** số lấy từ https://webgia.com/gia-xang-dau/petrolimex/ (bảng chữ, đủ 6 mặt hàng, ghi giờ cập nhật), so chéo với https://giaxanghomnay.com/ và Mipec; vẫn tải ảnh bảng giá trong thông cáo (`cap-nhat/tam/plx-gia.jpg`) để đối chiếu — ảnh là gốc |
+| Bảng PVOIL | Bảng PVOIL trên https://giaxanghomnay.com/ — pvoil.com.vn chặn máy chủ (Cloudflare), **không cố vượt** |
 | Bảng Mipec | https://www.mipec.com.vn/pages/gia-xang-dau-ban-le |
-| Topi chưa sang kỳ mới (bảng Petrolimex trên Topi ≠ ảnh thông cáo) | Petrolimex: điền theo ảnh. PVOIL: đặt `"pvoil": null` → giữ số cũ + mục cần duyệt "nhờ Trang chụp màn hình trang PVOIL" |
+| webgia ≠ giaxanghomnay, hoặc Petrolimex lệch Mipec > 300 đ | Script in cảnh báo + ghi cần duyệt; mở ảnh thông cáo để chốt số. **Không dùng topi.vn** (06/11/2026 Topi để giá kỳ cũ → bài sai ~2.000 đ/lít) |
 | Không dùng | webgia.com — hay chậm, có lúc hiện giá trước giờ điều chỉnh |
 | Câu hỏi thường gặp 5.1 / 5.3 / 5.4 | Cập nhật số theo Petrolimex; câu 5.1 dùng giá **Vùng 1** |
 | Cách viết số | `28,180` (dấu phẩy ngăn nghìn) như bài gốc |
@@ -32,7 +32,7 @@ python3 -I $CT/lay_gia.py cap-nhat                                     # giá 3 
 ```
 
 **Đối chiếu bắt buộc:** mở `cap-nhat/tam/plx-gia.jpg` (công cụ Read xem được ảnh), so từng số Vùng 1/Vùng 2 với bảng
-script in ra. Khớp → làm tiếp. Lệch → sửa `cap-nhat/gia.json` theo ảnh, và nếu Topi cũ thì `"pvoil": null` (mục 1).
+script in ra. Khớp → làm tiếp. Lệch → sửa `cap-nhat/gia.json` theo ảnh, (mục 1).
 
 ```bash
 python3 -I $SKILL/scripts/cap_nhat.py dung cap-nhat/cau-hinh.json $N
@@ -53,7 +53,7 @@ Báo Trang: link file, bảng tóm tắt (kỳ giá, nguồn từng bảng), m�
 | Hiện tượng | Làm gì |
 |---|---|
 | `lay_gia.py` báo lỗi đọc thông cáo Petrolimex | Mở danh sách thông cáo bằng công cụ đọc web, tự lấy bài mới nhất; vẫn không được → báo Trang |
-| Topi không có bảng | Petrolimex: đọc từ ảnh thông cáo, tự điền `gia.json` (mẫu: file `gia.json` trong `cap-nhat-bai-tcb/2026-10-07-gia-xang-dau/`). PVOIL: null + nhờ Trang chụp màn hình |
+| webgia và giaxanghomnay đều không có bảng | Petrolimex: đọc từ ảnh thông cáo, tự điền `gia.json` (mẫu: file `gia.json` trong `cap-nhat-bai-tcb/2026-10-07-gia-xang-dau/`). PVOIL: null + nhờ Trang chụp màn hình |
 | Mipec null | Giữ bảng Mipec, ghi cần duyệt |
 | `tao_sua.py --kiem` báo lệch | Đọc `xem2.txt`, sửa `sua.json` bằng tay, chạy lại `sua` |
 | Bài TCB thêm/bớt bảng hoặc đổi tên đề mục 1.1/1.2/1.3 | Script nhận bảng theo đề mục chứa "Petrolimex" / "PVOIL" / "Mipec" — đề mục đổi thì báo Trang |
@@ -63,5 +63,5 @@ Báo Trang: link file, bảng tóm tắt (kỳ giá, nguồn từng bảng), m�
 | File | Làm gì |
 |---|---|
 | `cau-hinh.json` | Link bài cho công cụ chung |
-| `lay_gia.py` | Tìm thông cáo Petrolimex mới nhất + tải ảnh bảng giá; lấy số Petrolimex/PVOIL từ Topi, Mipec từ mipec.com.vn → `gia.json` |
+| `lay_gia.py` | Tìm thông cáo Petrolimex mới nhất + tải ảnh bảng giá; Petrolimex từ webgia.com (so chéo giaxanghomnay.com), PVOIL từ giaxanghomnay.com, Mipec từ mipec.com.vn → `gia.json` |
 | `tao_sua.py` | So 3 bảng + 4 câu hỏi thường gặp với `gia.json` → `sua.json`; `--kiem` soát lại |
