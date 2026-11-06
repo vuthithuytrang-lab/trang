@@ -4,12 +4,15 @@ Cách dùng:
     python3 tai_bai.py danh-sach-url.txt thu-muc-luu/
 
 Mỗi bài lưu thành <thu-muc-luu>/<slug>.json gồm url, blocks, links (các link nội bộ có sẵn trong bài).
+Dùng được cho mọi website: tên miền lấy từ chính URL bài. Trang dựng bằng JavaScript (nội dung không có
+trong HTML) sẽ ra rất ít khối — khi đó báo lại, đừng đoán nội dung.
 Chỉ dùng thư viện chuẩn của Python, không cần cài thêm.
 """
 import json
 import os
 import sys
 import time
+import urllib.parse
 import urllib.request
 from html.parser import HTMLParser
 
@@ -18,8 +21,9 @@ SKIP = {"script", "style", "noscript", "svg", "nav", "footer", "header"}
 
 
 class Parser(HTMLParser):
-    def __init__(self):
+    def __init__(self, domain):
         super().__init__()
+        self.domain = domain
         self.blocks, self.links = [], []
         self.stack, self.buf, self.skip = [], [], 0
 
@@ -29,8 +33,8 @@ class Parser(HTMLParser):
         if tag == "a":
             href = dict(attrs).get("href") or ""
             if href.startswith("/"):
-                href = "https://techcombank.com" + href
-            if "techcombank.com" in href:
+                href = "https://" + self.domain + href
+            if self.domain in href:
                 self.links.append(href.split("#")[0])
         if tag in TAGS:
             self.flush()
@@ -55,10 +59,10 @@ class Parser(HTMLParser):
 
 
 def tai(url):
-    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (internal-link-audit)"})
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (internal-link-plan)"})
     with urllib.request.urlopen(req, timeout=30) as r:
         html = r.read().decode("utf-8", "ignore")
-    p = Parser()
+    p = Parser(urllib.parse.urlparse(url).netloc)
     p.feed(html)
     p.flush()
     return {"url": url, "blocks": p.blocks, "links": sorted(set(p.links))}

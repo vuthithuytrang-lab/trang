@@ -1,7 +1,9 @@
 """Lọc sẵn 4 đoạn ứng viên tốt nhất trong bài nguồn cho từng link, rồi chia lô cho người đọc.
 
 Cách dùng:
-    python3 loc_doan_ung_vien.py links.tsv thu-muc-bai/ thu-muc-lo/ [so_lo]
+    python3 loc_doan_ung_vien.py links.tsv thu-muc-bai/ thu-muc-lo/ [so_lo] [ten_thuong_hieu]
+
+ten_thuong_hieu (tuỳ chọn): tên thương hiệu của website, ví dụ "techcombank", để không tính là từ khoá chủ đề.
 
 links.tsv: mỗi dòng "hàng<TAB>trang đích<TAB>anchor<TAB>bài nguồn" (hàng = số hàng trong tab tạm
 trên Google Sheet, để người đọc ghi kết quả đúng chỗ). Các dòng cùng bài nguồn phải nằm liền nhau.
@@ -15,7 +17,7 @@ import sys
 
 STOP = {"là", "gì", "và", "của", "có", "cho", "các", "những", "được", "một", "khi", "với", "tại", "trong",
         "bao", "nhiêu", "nào", "thế", "như", "này", "để", "không", "ở", "đâu", "cách", "bằng", "mới", "nhất",
-        "ngân", "hàng", "techcombank"}
+        "ngân", "hàng"}
 LUAT = re.compile(r"(luật|nghị định|thông tư|điều \d+|khoản \d+|quyết định số|bộ luật|văn bản hợp nhất"
                   r"|nđ-cp|tt-btc|qh1\d)", re.I)
 BO_QUA = ("bạn đọc lưu ý", "lưu ý:", "(*)", "email:", "trung tâm dịch vụ", "hệ thống chi nhánh", ">>>",
@@ -74,6 +76,8 @@ def cat(x, keys, n=300):
 def main():
     tsv, thu_muc, out_dir = sys.argv[1], sys.argv[2], sys.argv[3]
     so_lo = int(sys.argv[4]) if len(sys.argv) > 4 else 12
+    if len(sys.argv) > 5:
+        STOP.update(toks(sys.argv[5]))
     rows = [l.rstrip("\n").split("\t") for l in open(tsv, encoding="utf-8") if l.strip()]
     tieu_de = {}
     nhom = {}

@@ -19,7 +19,7 @@ Quy tắc bắt buộc:
 3. Đoạn có trích luật / nghị định / thông tư / điều khoản, bảng số liệu, các bước thao tác: KHÔNG sửa câu đó.
    Nếu vẫn là chỗ hợp lý nhất thì dùng cách "Xem thêm" (thêm 1 dòng sau đoạn, đặt sau cả danh sách/bảng).
 4. Không bịa số liệu, không ghi năm, không đổi nghĩa câu gốc, không viết kiểu "click vào đây".
-5. Câu mới viết tiếng Việt tự nhiên, ngắn gọn, giọng trung tính như bài blog ngân hàng.
+5. Câu mới viết tiếng Việt tự nhiên, ngắn gọn, giọng trung tính đúng văn phong của website.
 
 ### Điền 5 cột cho mỗi DÒNG
 - muc: tên mục chứa đoạn đã chọn (chép đúng, tối đa ~90 ký tự).
