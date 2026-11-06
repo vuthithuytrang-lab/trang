@@ -79,7 +79,8 @@ giả lập của khóa học, có bộ màu riêng, đừng trộn hai bên và
 |---|---|---|
 | ~~`hoc.agentboss.vn`~~ | ✅ **ĐÃ MỞ từ 08/09/2026** — vào bình thường, chỉ cần chìa đúng | — |
 | YouTube (tải video) | `IpBlocked` — đã thử 7 cách | Chạy trên máy cá nhân; hoặc tìm bài báo/bản ghi nguồn khác |
-| `techcombank.com` | tường lửa chặn domain + connection reset | Nhờ Trang dán thẳng nội dung bài vào chat |
+| ~~`techcombank.com`~~ | ✅ **ĐÃ MỞ từ 09/10/2026** — curl đọc được (trang chủ dựng bằng JS nên đọc trang con như /lien-he, /ve-chung-toi/ve-techcombank) | — |
+| `sunlife.com.vn` | 403 + captcha chống bot (DataDome) — cả curl lẫn trình duyệt thật; web.archive.org / archive.ph trả 429 (23/10/2026) | Logo + màu lấy từ `sunlife.com` (logo SVG: `#FEBE10`, `#003946`); nội dung VN nhờ Trang Ctrl+A → dán vào chat |
 | Desktop / Documents của Trang | bản web không thấy máy cá nhân | Nhờ Trang đính kèm file vào khung chat |
 
 | LibreOffice (xem thử file Word) | `source file could not be loaded` — hỏng cả với file mẫu gốc | Kiểm tra bằng python-docx + kiểm tra zip, không render được ảnh |
@@ -108,3 +109,10 @@ Agent đọc chìa từ file, gửi qua header `Authorization: Bearer <chìa>`, 
 | `khoa-hoc/` | Tiến độ khóa Agent Boss, mã nộp từng bài, sản phẩm đã làm |
 | `cong-cu/` | Công cụ dùng lại được — prompt SEO, bản tin tự động |
 | `BAO-MAT.md` | Danh sách chìa khóa đã lộ cần thu hồi |
+| `khach-hang/` | Web vệ tinh WordPress.com cho khách (AIG, VIB, Techcombank, Sun Life) — mã dán + script sinh mã |
+
+## 7. Web vệ tinh WordPress.com — làm theo skill
+
+Khi Trang gửi link `*.wordpress.com` + website chính thức, hoặc nói "làm trang chủ / tin tức như AIG, VIB":
+**đọc `.claude/skills/web-ve-tinh-wordpress/SKILL.md` và làm đúng từng bước**, đưa luôn 2 mã hoàn chỉnh
+(Trang chủ + Tin tức) + 3 dòng mẫu Pages, dán thẳng trong chat. Không hỏi lại những điều đã ghi trong đó.

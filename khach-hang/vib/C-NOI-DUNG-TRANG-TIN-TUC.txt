@@ -1,0 +1,39 @@
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"},"blockGap":"0"}},"layout":{"type":"default"}} -->
+<div class="wp-block-group alignfull" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0"><!-- wp:html -->
+<div style="background:#005BAA;color:#ffffff;padding:clamp(44px,7vw,80px) 20px;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;">
+<div style="max-width:1200px;margin:0 auto;">
+<p style="margin:0 0 10px;color:#F9B812;font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;">Tin tức &amp; Ưu đãi</p>
+<h1 style="margin:0 0 12px;color:#ffffff;font-size:clamp(30px,4.4vw,46px);line-height:1.15;font-weight:800;">Tin tức VIB</h1>
+<p style="margin:0;color:#ffffffd9;font-size:17px;max-width:640px;">Cập nhật tin tức, ưu đãi và kiến thức tài chính từ Ngân hàng Thương mại Cổ phần Quốc tế Việt&nbsp;Nam&nbsp;(VIB).</p>
+</div>
+</div>
+<!-- /wp:html -->
+
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"56px","bottom":"72px","left":"20px","right":"20px"}},"color":{"background":"#f6f7f9"}},"layout":{"type":"constrained","contentSize":"1200px"}} -->
+<div class="wp-block-group alignfull has-background" style="background-color:#f6f7f9;padding-top:56px;padding-right:20px;padding-bottom:72px;padding-left:20px"><!-- wp:query {"queryId":7,"query":{"perPage":20,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false}} -->
+<div class="wp-block-query"><!-- wp:post-template {"style":{"spacing":{"blockGap":"28px"}},"layout":{"type":"grid","columnCount":4}} -->
+<!-- wp:post-featured-image {"isLink":true,"aspectRatio":"16/9","style":{"border":{"radius":"14px"}}} /-->
+
+<!-- wp:post-date {"style":{"color":{"text":"#F27C24"},"typography":{"fontSize":"14px","fontWeight":"700"},"spacing":{"margin":{"top":"14px"}}}} /-->
+
+<!-- wp:post-title {"level":3,"isLink":true,"style":{"typography":{"fontSize":"20px","fontWeight":"800","lineHeight":"1.35"},"elements":{"link":{"color":{"text":"#005BAA"}}},"color":{"text":"#005BAA"},"spacing":{"margin":{"top":"6px","bottom":"8px"}}}} /-->
+
+<!-- wp:post-excerpt {"moreText":"Đọc tiếp →","excerptLength":28,"style":{"typography":{"fontSize":"15px"},"elements":{"link":{"color":{"text":"#F27C24"}}}}} /-->
+<!-- /wp:post-template -->
+
+<!-- wp:query-no-results -->
+<!-- wp:paragraph -->
+<p>Chưa có bài viết nào. Bài bạn đăng sẽ tự hiện ở đây.</p>
+<!-- /wp:paragraph -->
+<!-- /wp:query-no-results -->
+
+<!-- wp:query-pagination {"paginationArrow":"arrow","layout":{"type":"flex","justifyContent":"center"}} -->
+<!-- wp:query-pagination-previous {"label":"Trang trước"} /-->
+
+<!-- wp:query-pagination-numbers /-->
+
+<!-- wp:query-pagination-next {"label":"Trang sau"} /-->
+<!-- /wp:query-pagination --></div>
+<!-- /wp:query --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->

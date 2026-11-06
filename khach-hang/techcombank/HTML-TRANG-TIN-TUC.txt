@@ -1,0 +1,94 @@
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"},"blockGap":"0"}},"layout":{"type":"default"}} -->
+<div class="wp-block-group alignfull" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0"><!-- wp:html -->
+<div style="background:#ffffff;border-bottom:3px solid #EC1C24;padding:14px 20px;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;">
+<div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 28px;">
+<a href="/" style="display:flex;align-items:center;text-decoration:none;"><img src="https://techcombank.com/content/dam/techcombank/public-site/seo/techcombank_logo_svg_86201e50d1.svg" alt="Logo Techcombank – Ngân hàng TMCP Kỹ thương Việt Nam" width="200" height="27" style="width:200px;height:auto;display:block;" /></a>
+<div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-start;gap:6px 24px;font-size:15px;font-weight:600;">
+<a href="/#gioi-thieu" style="color:#061922;text-decoration:none;padding:4px 0;">Giới thiệu</a>
+<a href="/#khach-hang" style="color:#061922;text-decoration:none;padding:4px 0;">Khách hàng</a>
+<a href="/#san-pham" style="color:#061922;text-decoration:none;padding:4px 0;">Sản phẩm</a>
+<a href="/tin-tuc/" style="color:#061922;text-decoration:none;padding:4px 0;">Tin tức</a>
+<a href="/#lien-he" style="color:#061922;text-decoration:none;padding:4px 0;">Liên hệ</a>
+<a href="https://techcombank.com/" target="_blank" rel="noopener" style="background:#EC1C24;color:#ffffff;text-decoration:none;padding:9px 18px;border-radius:999px;">Website chính thức</a>
+</div>
+</div>
+</div>
+<div style="background:#061922;color:#ffffff;padding:clamp(44px,7vw,80px) 20px;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;">
+<div style="max-width:1200px;margin:0 auto;">
+<p style="margin:0 0 10px;color:#EC1C24;font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;">Tin tức &amp; Chia sẻ</p>
+<h1 style="margin:0 0 12px;color:#ffffff;font-size:clamp(30px,4.4vw,46px);line-height:1.15;font-weight:800;">Tin tức Techcombank</h1>
+<p style="margin:0;color:#ffffffd9;font-size:17px;max-width:660px;">Cập nhật tin tức thị trường, khám phá xu hướng tài chính, trải nghiệm sản phẩm dịch vụ và tận hưởng phong cách sống hiện&nbsp;đại.</p>
+</div>
+</div>
+<!-- /wp:html -->
+
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"56px","bottom":"72px","left":"20px","right":"20px"}},"color":{"background":"#f5f6f6"}},"layout":{"type":"constrained","contentSize":"1200px"}} -->
+<div class="wp-block-group alignfull has-background" style="background-color:#f5f6f6;padding-top:56px;padding-right:20px;padding-bottom:72px;padding-left:20px"><!-- wp:query {"queryId":7,"query":{"perPage":20,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false}} -->
+<div class="wp-block-query"><!-- wp:post-template {"style":{"spacing":{"blockGap":"28px"}},"layout":{"type":"grid","columnCount":4}} -->
+<!-- wp:post-featured-image {"isLink":true,"aspectRatio":"16/9","style":{"border":{"radius":"14px"}}} /-->
+
+<!-- wp:post-date {"style":{"color":{"text":"#EC1C24"},"typography":{"fontSize":"14px","fontWeight":"700"},"spacing":{"margin":{"top":"14px"}}}} /-->
+
+<!-- wp:post-title {"level":3,"isLink":true,"style":{"typography":{"fontSize":"20px","fontWeight":"800","lineHeight":"1.35"},"elements":{"link":{"color":{"text":"#061922"}}},"color":{"text":"#061922"},"spacing":{"margin":{"top":"6px","bottom":"8px"}}}} /-->
+
+<!-- wp:post-excerpt {"moreText":"Đọc tiếp →","excerptLength":28,"style":{"typography":{"fontSize":"15px"},"elements":{"link":{"color":{"text":"#EC1C24"}}}}} /-->
+<!-- /wp:post-template -->
+
+<!-- wp:query-no-results -->
+<!-- wp:paragraph -->
+<p>Chưa có bài viết nào. Bài bạn đăng sẽ tự hiện ở đây.</p>
+<!-- /wp:paragraph -->
+<!-- /wp:query-no-results -->
+
+<!-- wp:query-pagination {"paginationArrow":"arrow","layout":{"type":"flex","justifyContent":"center"}} -->
+<!-- wp:query-pagination-previous {"label":"Trang trước"} /-->
+
+<!-- wp:query-pagination-numbers /-->
+
+<!-- wp:query-pagination-next {"label":"Trang sau"} /-->
+<!-- /wp:query-pagination --></div>
+<!-- /wp:query --></div>
+<!-- /wp:group -->
+
+<!-- wp:html -->
+<div style="background:#061922;border-top:4px solid #EC1C24;color:#ffffffbf;padding:52px 20px 0;font-size:15px;line-height:1.65;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;">
+<div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:32px 44px;padding-bottom:36px;">
+<div style="flex:1.6 1 300px;min-width:0;">
+<div style="display:inline-block;background:#ffffff;border-radius:10px;padding:12px 16px;margin-bottom:18px;"><img src="https://techcombank.com/content/dam/techcombank/public-site/seo/techcombank_logo_svg_86201e50d1.svg" alt="Logo Techcombank" width="180" height="25" style="width:180px;height:auto;display:block;" /></div>
+<p style="margin:0 0 12px;">Ngân hàng TMCP Kỹ thương Việt Nam. Đặt khách hàng là trọng tâm, Techcombank sẵn sàng cùng bạn nâng tầm giá trị sống vượt trội.</p>
+<p style="margin:0 0 6px;"><strong style="color:#ffffff;">KH cá nhân:</strong> 1800 588 822 (miễn phí, 24/7)</p>
+<p style="margin:0 0 6px;"><strong style="color:#ffffff;">KH doanh nghiệp:</strong> 1800 6556 (miễn phí)</p>
+<p style="margin:0;"><strong style="color:#ffffff;">Email:</strong> <a href="mailto:call_center@techcombank.com.vn" style="color:#ffffffbf;text-decoration:none;">call_center@techcombank.com.vn</a></p>
+</div>
+<div style="flex:1 1 170px;min-width:0;">
+<p style="margin:0 0 14px;color:#ffffff;font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;">Khách hàng cá nhân</p>
+<p style="margin:0 0 8px;"><a href="https://techcombank.com/khach-hang-ca-nhan/chi-tieu/the/the-tin-dung" target="_blank" rel="noopener" style="color:#ffffffbf;text-decoration:none;">Thẻ tín dụng</a></p>
+<p style="margin:0 0 8px;"><a href="https://techcombank.com/khach-hang-ca-nhan/vay/vay-tieu-dung" target="_blank" rel="noopener" style="color:#ffffffbf;text-decoration:none;">Vay tiêu dùng</a></p>
+<p style="margin:0 0 8px;"><a href="https://techcombank.com/khach-hang-ca-nhan/ngan-hang-truc-tuyen/ngan-hang-so/techcombank-mobile" target="_blank" rel="noopener" style="color:#ffffffbf;text-decoration:none;">Techcombank Mobile</a></p>
+<p style="margin:0 0 8px;"><a href="https://techcombank.com/khach-hang-uu-tien" target="_blank" rel="noopener" style="color:#ffffffbf;text-decoration:none;">Khách hàng ưu tiên</a></p>
+<p style="margin:0 0 8px;"><a href="https://techcombank.com/khach-hang-ca-nhan/uu-dai" target="_blank" rel="noopener" style="color:#ffffffbf;text-decoration:none;">Chương trình ưu đãi</a></p>
+</div>
+<div style="flex:1 1 170px;min-width:0;">
+<p style="margin:0 0 14px;color:#ffffff;font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;">Doanh nghiệp</p>
+<p style="margin:0 0 8px;"><a href="https://techcombank.com/ho-kinh-doanh-va-doanh-nghiep-nho/ho-kinh-doanh" target="_blank" rel="noopener" style="color:#ffffffbf;text-decoration:none;">Hộ kinh doanh</a></p>
+<p style="margin:0 0 8px;"><a href="https://techcombank.com/ho-kinh-doanh-va-doanh-nghiep-nho/doanh-nghiep-nho" target="_blank" rel="noopener" style="color:#ffffffbf;text-decoration:none;">Doanh nghiệp vừa và nhỏ</a></p>
+<p style="margin:0 0 8px;"><a href="https://techcombank.com/khach-hang-doanh-nghiep" target="_blank" rel="noopener" style="color:#ffffffbf;text-decoration:none;">Doanh nghiệp lớn</a></p>
+<p style="margin:0 0 8px;"><a href="https://techcombank.com/nha-dau-tu" target="_blank" rel="noopener" style="color:#ffffffbf;text-decoration:none;">Nhà đầu tư</a></p>
+</div>
+<div style="flex:1 1 170px;min-width:0;">
+<p style="margin:0 0 14px;color:#ffffff;font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;">Về chúng tôi</p>
+<p style="margin:0 0 8px;"><a href="https://techcombank.com/ve-chung-toi/ve-techcombank" target="_blank" rel="noopener" style="color:#ffffffbf;text-decoration:none;">Về Techcombank</a></p>
+<p style="margin:0 0 8px;"><a href="https://techcombank.com/ve-chung-toi/tin-tuc-va-bao-chi" target="_blank" rel="noopener" style="color:#ffffffbf;text-decoration:none;">Tin tức và báo chí</a></p>
+<p style="margin:0 0 8px;"><a href="https://techcombank.com/ve-chung-toi/phat-trien-ben-vung" target="_blank" rel="noopener" style="color:#ffffffbf;text-decoration:none;">Phát triển bền vững</a></p>
+<p style="margin:0 0 8px;"><a href="https://techcombank.com/cong-cu-tien-ich/ty-gia" target="_blank" rel="noopener" style="color:#ffffffbf;text-decoration:none;">Tỷ giá</a></p>
+<p style="margin:0 0 8px;"><a href="https://techcombank.com/lien-he" target="_blank" rel="noopener" style="color:#ffffffbf;text-decoration:none;">Liên hệ</a></p>
+</div>
+</div>
+<div style="max-width:1200px;margin:0 auto;border-top:1px solid #ffffff26;padding:18px 0 22px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;font-size:14px;color:#ffffff99;">
+<p style="margin:0;">© 2026 Techcombank – Ngân hàng TMCP Kỹ thương Việt Nam</p>
+<p style="margin:0;">Website chính thức: <a href="https://techcombank.com/" target="_blank" rel="noopener" style="color:#ffffff;text-decoration:none;font-weight:700;border-bottom:2px solid #EC1C24;">techcombank.com</a></p>
+</div>
+</div>
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->
