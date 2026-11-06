@@ -17,9 +17,9 @@
  },
  "gia-xang-dau": {
   "ok": true,
-  "luc": "2026-10-30T07:16:07+00:00",
-  "ngay": "31/10/2026",
-  "ten": "Giá xăng dầu hôm nay bao nhiêu 1 lít mới nhất – 31/10/2026",
+  "luc": "2026-11-06T08:13:15+00:00",
+  "ngay": "07/11/2026",
+  "ten": "Giá xăng dầu hôm nay bao nhiêu 1 lít mới nhất – 07/11/2026",
   "can_duyet": "Không thấy câu hỏi thường gặp về E10 RON 95-III Vùng 1 để cập nhật.\nKhông thấy câu hỏi thường gặp về E5 RON 92-II Vùng 1 để cập nhật.",
   "loi": ""
  },
@@ -71,7 +71,7 @@
   "can_duyet": "",
   "loi": ""
  },
- "_yeu_cau": "tay-1793849337",
+ "_yeu_cau": "tay-1793952733",
  "gia-ca-cao": {
   "ok": true,
   "luc": "2026-10-30T07:16:07+00:00",
@@ -182,6 +182,14 @@
   "ngay": "31/10/2026",
   "ten": "Cách tính lãi suất tiền gửi tiết kiệm Techcombank – 31/10/2026",
   "can_duyet": "Ngoài bảng – \"Kỳ hạn | Lãi suất %/năm | Cách tính lãi | Số tiền lãi nhận được\": bảng ví dụ có 8 ô lãi suất (4.30, 4.60, 6.30, 6.50, 5.60) cùng các số tiền tính theo đó – lãi suất Techcombank, chỉ sửa theo techcombank.com, giữ nguyên.\nNgoài bảng – \"Ví dụ: Khách hàng Private gửi tiết kiệm 100,000,000 VND vào sản phẩm Tiết kiệm thường bằng hình thức trực tuy…\": lãi suất/ví dụ tính của Techcombank – chỉ sửa theo techcombank.com (biểu lãi suất chính thức), giữ nguyên.\nNgoài bảng – \"Số tiền nhận được = 100,000,000 x (1 + 6.40%/1) ^ (1 x 5) = 136,366,640 VND\": lãi suất/ví dụ tính của Techcombank – chỉ sửa theo techcombank.com (biểu lãi suất chính thức), giữ nguyên.\nNgoài bảng – \"Năm | Lãi suất %/năm | Cách tính lãi | Số tiền lãi nhận được\": bảng ví dụ có 5 ô lãi suất (6.40) cùng các số tiền tính theo đó – lãi suất Techcombank, chỉ sửa theo techcombank.com, giữ nguyên.\nNgoài bảng – \"Trường hợp khách hàng hưởng lãi trước kỳ hạn: Khách hàng được hưởng mức lãi suất 0.05%/năm.\": lãi suất/ví dụ tính của Techcombank – chỉ sửa theo techcombank.com (biểu lãi suất chính thức), giữ nguyên.\nNgoài bảng – \"Số tiền lãi = 100,000,000 x 0.05% x 156/365 = 21,370 VND.\": lãi suất/ví dụ tính của Techcombank – chỉ sửa theo techcombank.com (biểu lãi suất chính thức), giữ nguyên.\nNgoài bảng – \"Như vậy, tổng số tiền khách hàng nhận về là 100,000,000 + 21,370 = 100,021,370 VND.\": lãi suất/ví dụ tính của Techcombank – chỉ sửa theo techcombank.com (biểu lãi suất chính thức), giữ nguyên.\nNgoài bảng – \"Lưu ý: Lã",
+  "loi": ""
+ },
+ "gia-niken": {
+  "ok": true,
+  "luc": "2026-11-06T08:13:15+00:00",
+  "ngay": "07/11/2026",
+  "ten": "Giá Niken hôm nay: Biến động thị trường và góc nhìn đầu tư – 07/11/2026",
+  "can_duyet": "Bảng giá: 5 dòng = 5 phiên mới nhất trên Westmetall (05/11/2026, 04/11/2026, 03/11/2026, 02/11/2026, 30/10/2026); giá là LME Nickel 3-month (giá chính thức LME, USD/tấn), có thể khác chuỗi \"giá đóng cửa hợp đồng tương lai\" mà bài ghi trước đó (số cũ có lẻ .25/.75) – cần duyệt xem Trang có muốn dùng chuỗi này; phiên mới nhất trên nguồn có thể cũ hơn ngày ghi trong tiêu đề (quy tắc ngày hôm sau).\nCâu giá mới nhất: chữ chỉ chiều đổi \"giảm\" → \"tăng\" theo dấu của mức thay đổi trên nguồn (+590.00) – đọc lại câu.\nCâu giá mới nhất (\"đóng cửa ở mức …\"): giá 16,265 và mức thay đổi 590.00 lấy từ phiên 05/11/2026; tỷ lệ 3.76% là số tính ra (mức thay đổi / giá phiên trước) – nguồn không có sẵn con số %.\nTỷ lệ phần trăm trong bài giữ nguyên (không phải giá, nguồn Westmetall không có): \" Theo USGS, Indonesia chiếm khoảng 67%\" (vd Indonesia ~67% sản lượng theo USGS năm 2025) – cần duyệt nếu Trang muốn đối chiếu lại số năm.",
   "loi": ""
  }
 }
