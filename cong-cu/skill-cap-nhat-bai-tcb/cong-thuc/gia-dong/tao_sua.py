@@ -122,7 +122,7 @@ def main():
     if not b1:
         can.append('Không thấy bảng "Loại đồng | Giá (VND/kg)" trong bài – bài đổi bố cục, cần xem lại công thức.')
     elif not pl:
-        can.append('Bảng 1.1: không đọc được nguồn thumuaphelieugiacao24h.vn – giữ nguyên toàn bộ giá cũ.')
+        can.append('Bảng 1.1: không đọc được nguồn phế liệu (hoangngocdiep.vn) – giữ nguyên toàn bộ giá cũ.')
         tra_ngay('Bảng giá đồng phế liệu trong nước theo chủng loại', 'nguồn phế liệu không đọc được – giữ ngày gốc của bài')
     else:
         theo_ten = {}
@@ -158,7 +158,7 @@ def main():
         try:
             ng = datetime.datetime.fromisoformat(pl['cap_nhat'].replace('Z', '+00:00'))
             if (datetime.datetime.now(datetime.timezone.utc) - ng).days > 7:
-                can.append(f'Bảng 1.1: trang nguồn thumuaphelieugiacao24h.vn ghi sửa lần cuối {ng:%d/%m/%Y} – nguồn có thể không cập nhật hằng ngày, nhờ biên tập lưu ý.')
+                can.append(f'Bảng 1.1: trang nguồn phế liệu ghi cập nhật {ng:%d/%m/%Y} – nguồn có thể không cập nhật hằng ngày, nhờ biên tập lưu ý.')
         except Exception:
             pass
 
@@ -179,8 +179,20 @@ def main():
     else:
         theo_ma = {ma_hd(h['ma']): h for h in tg['hop_dong'] if ma_hd(h['ma'])}
         xong = True
-        for ten, vt, o in b2:
-            h = theo_ma.get(ma_hd(ten))
+        if tg.get('goc') == 'ALI':
+            can.append('Bảng 1.2: bài ghi "giá đồng thế giới" nhưng mã hợp đồng là ALI (NHÔM COMEX, USD/tấn) – đã cập nhật đúng các hợp đồng ALI '
+                       'theo TradingView (giữ nội dung bài); cần Trang/biên tập chốt có đổi sang đồng HG (USD/pound) hay không.')
+        cuon = any(ma_hd(t) not in theo_ma for t, _, _ in b2)   # có hợp đồng đã đáo hạn → cuộn: dòng k = hợp đồng thứ k còn hạn
+        if cuon:
+            can.append(f'Bảng 1.2: hợp đồng {", ".join(t for t, _, _ in b2 if ma_hd(t) not in theo_ma)} đã đáo hạn → đã cuộn mã: '
+                       f'bảng nay là {len(b2)} hợp đồng đầu tiên trên nguồn ({tg["hop_dong"][0]["ma"]} … {tg["hop_dong"][min(len(b2), len(tg["hop_dong"])) - 1]["ma"]}).')
+        for k, (ten, vt, o) in enumerate(b2):
+            if cuon and k < len(tg['hop_dong']):
+                h = tg['hop_dong'][k]
+                ma_moi = h['ma'] if len(ten.strip()) == len(h['ma']) else h['ma'][:-4] + h['ma'][-2:]
+                them(ten.strip(), vt, ma_moi, tg['nguon'], f'cuộn hợp đồng: {ten.strip()} → {ma_moi}')
+            else:
+                h = theo_ma.get(ma_hd(ten))
             if not h:
                 xong = False
                 can.append(f'Bảng 1.2 – {ten}: nguồn không còn hợp đồng này (đã đáo hạn?) – giữ nguyên dòng.')

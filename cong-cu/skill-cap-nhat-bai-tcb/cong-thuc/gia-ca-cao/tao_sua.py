@@ -203,7 +203,7 @@ def main():
             if g != int(g):
                 can.append(f'{ten_san} {chu}: giá ICE "{g}" có phần lẻ – giữ nguyên.')
                 continue
-            chg = g - g / (1 + pct / 100)
+            chg = h['thay_doi'] if h.get('thay_doi') is not None else g - g / (1 + pct / 100)   # TradingView cho sẵn mức thay đổi
             if abs(chg - round(chg)) > 0.05:
                 can.append(f'{ten_san} {chu}: ICE ghi giá {g}, thay đổi {pct}% → mức thay đổi tính ra {chg:.2f} không tròn – giữ nguyên cả dòng.')
                 continue
@@ -213,8 +213,10 @@ def main():
             them(cells[2][0], cells[2][1], '0' if c == 0 else f'{c:+,d}', s['nguon'],
                  f'{ly}, change {pct}% → thay đổi = {g} − {g}/(1 + ({pct})/100) = {chg:.3f} ≈ {c:+d} {dv}', tinh=True)
         if gio:
-            can.append(f'Bảng {ten_san}: số lấy từ trang chính thức của sàn ICE (Barchart chặn máy chủ) – là giá khớp gần nhất '
-                       f'({gio[0]}{" – " + gio[-1] if len(gio) > 1 else ""}, trễ tối thiểu 15 phút), không phải giá chốt phiên; '
+            nguon_ten = 'TradingView (cùng hợp đồng ICE; trang ICE và Barchart chặn máy chủ)' if 'tradingview' in s['nguon'] \
+                else 'trang chính thức của sàn ICE (Barchart chặn máy chủ)'
+            can.append(f'Bảng {ten_san}: số lấy từ {nguon_ten} – là giá khớp gần nhất '
+                       f'({gio[0]}{" – " + gio[-1] if len(gio) > 1 else ""}, trễ khoảng 10–15 phút), không phải giá chốt phiên; '
                        f'nếu sàn đang mở phiên thì số còn thay đổi.')
 
     # ---------- 3. Ngày tiêu đề bảng thế giới ----------

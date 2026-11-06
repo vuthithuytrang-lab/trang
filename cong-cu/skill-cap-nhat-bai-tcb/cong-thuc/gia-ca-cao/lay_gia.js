@@ -79,6 +79,31 @@ async function moTrang(b, url, bat) {
     } catch (e) { console.error(ma, 'LỖI', e.message.slice(0, 120)); }
   }
   await b.close();
+
+  // 3) Dự phòng khi trang ICE không đọc được (06/11/2026): TradingView scanner, cùng hợp đồng ICE (trễ ~10 phút).
+  //    New York: ICEUS:CC<tháng><năm 4 số>; London: ICEEUR:C<tháng><năm 4 số>. "thay đổi" = change_abs so với phiên trước.
+  const TV = { new_york: ['CC', 'ICEUS', /^CC[FGHJKMNQUVXZ]\d{4}$/], london: ['C', 'ICEEUR', /^C[FGHJKMNQUVXZ]\d{4}$/] };
+  const THANG_EN = { F: 'Jan', G: 'Feb', H: 'Mar', J: 'Apr', K: 'May', M: 'Jun', N: 'Jul', Q: 'Aug', U: 'Sep', V: 'Oct', X: 'Nov', Z: 'Dec' };
+  const { execFileSync } = require('child_process');
+  for (const [ma, [ten, san, mau]] of Object.entries(TV)) {
+    if (kq[ma]) continue;
+    try {
+      const body = JSON.stringify({ filter: [{ left: 'name', operation: 'match', right: ten }, { left: 'exchange', operation: 'equal', right: san }],
+        columns: ['name', 'close', 'change_abs', 'change', 'expiration', 'last_bar_update_time', 'volume'],
+        sort: { sortBy: 'expiration', sortOrder: 'asc' }, range: [0, 300] });
+      const raw = execFileSync('curl', ['-sS', '-m', '40', '-A', 'Mozilla/5.0 (X11; Linux x86_64) Chrome/124.0', '-H', 'Content-Type: application/json',
+        '--data', body, 'https://scanner.tradingview.com/futures/scan']).toString();
+      const rows = JSON.parse(raw).data.map(x => x.d).filter(d => mau.test(d[0] || '') && d[1] != null && d[4]).sort((a, b) => a[4] - b[4]);
+      const gio = t => { const d = new Date(t * 1000); const h = d.getUTCHours(); const pad = n => String(n).padStart(2, '0');
+        return `${pad(d.getUTCMonth() + 1)}/${pad(d.getUTCDate())}/${d.getUTCFullYear()} ${pad(h % 12 || 12)}:${pad(d.getUTCMinutes())} ${h < 12 ? 'AM' : 'PM'} GMT`; };
+      if (rows.length) kq[ma] = {
+        nguon: `https://www.tradingview.com/symbols/${san}-${ten}1!/`, api: 'scanner.tradingview.com (dự phòng vì trang ICE không đọc được)',
+        ghi_chu_trang: 'TradingView, giá trễ ~10 phút',
+        hop_dong: rows.map(d => { const m = d[0].match(/([FGHJKMNQUVXZ])(\d{4})$/);
+          return { thang: THANG_EN[m[1]] + m[2].slice(2), gia: d[1], thay_doi: d[2], thay_doi_pct: d[3], luc: gio(d[5]), khoi_luong: d[6] }; }),
+      };
+    } catch (e) { console.error('tradingview', ma, 'LỖI', String(e.message).slice(0, 120)); }
+  }
   fs.writeFileSync(out, JSON.stringify(kq, null, 1));
 
   const tn = kq.trong_nuoc;

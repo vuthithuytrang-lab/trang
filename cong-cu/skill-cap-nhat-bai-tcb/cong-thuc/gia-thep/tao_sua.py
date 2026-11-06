@@ -134,8 +134,13 @@ def tinh(o, van, gia, goc):
                 them(hang, d[0][1], f'{x["ma"]} {x["thang"]} {g} {td}', b['nguon'], ly)
             else:
                 them(f'{d[2][0]} {d[3][0]}', d[2][1], f'{g} {td}', b['nguon'], ly, ngu=hang)
-        can.append(f'Bảng giá thép thế giới: giá Barchart là giá thanh toán phiên {", ".join(sorted(phien))} (giờ Mỹ), '
-                   f'chạy lúc {gia.get("chay_luc", "?")}.')
+        if 'tradingview' in b['nguon']:
+            can.append(f'Bảng giá thép thế giới: Barchart chặn máy chủ nên lấy từ TradingView (cùng hợp đồng LME Steel HRC FOB China, '
+                       f'mã HC… = V7…), giá trễ ~30 phút, cập nhật {", ".join(sorted(phien))} (giờ VN); mức thay đổi so với phiên trước '
+                       f'của TradingView – có thể lệch nhẹ với Barchart. Chạy lúc {gia.get("chay_luc", "?")}.')
+        else:
+            can.append(f'Bảng giá thép thế giới: giá Barchart là giá thanh toán phiên {", ".join(sorted(phien))} (giờ Mỹ), '
+                       f'chạy lúc {gia.get("chay_luc", "?")}.')
 
     # ---- Bảng 2: thép trong nước (steelonline)
     s = gia.get('steelonline')

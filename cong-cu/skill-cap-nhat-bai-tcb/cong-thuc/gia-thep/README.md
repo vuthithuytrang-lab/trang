@@ -57,3 +57,6 @@ Hoặc gọn: `bash cong-cu/tu-dong/chay.sh gia-thep <thư mục ra>`.
 | `cau-hinh.json` | Link bài cho công cụ chung |
 | `lay_gia.py` | Tải Barchart (1 lần, chặn → null) + trang steelonline mới nhất có số → `gia.json` (số + chữ gốc + link + ngày) |
 | `tao_sua.py` | Bảng thế giới (theo mã, tự chuyển kỳ) + bảng trong nước (theo hãng) + giữ ngày tiêu đề mục khi nguồn lỗi → `sua.json`; `--kiem` soát lại |
+
+## Đổi nguồn 06/11/2026
+- Bảng thép thế giới: Barchart chặn máy chủ → tự dùng TradingView scanner (LME Steel HRC FOB China, mã HC… = V7…), giá trễ ~30 phút.

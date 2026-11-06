@@ -67,3 +67,6 @@ Rồi Bước 5 – 6 của `SKILL.md` (tạo Docs, `soat`, `bao-cao`, chia sẻ
 | `cau-hinh.json` | Link bài cho công cụ chung |
 | `lay_gia.js` | Mở banggianongsan + 2 trang ICE bằng Chromium, chép nguyên chữ / số từng ô + giờ cập nhật → `gia.json`; nguồn lỗi → `null` + "KHÔNG ĐỌC ĐƯỢC" |
 | `tao_sua.py` | 3 bảng (+ ngày tiêu đề bảng thế giới khi thiếu nguồn) → `sua.json`; `--kiem` soát lại |
+
+## Đổi nguồn 06/11/2026
+- Bảng New York / London: trang ICE không đọc được → tự dùng TradingView scanner (ICEUS:CC…, ICEEUR:C…), trễ ~10 phút; mức thay đổi lấy thẳng từ nguồn.

@@ -52,3 +52,7 @@ Rồi Bước 5 – 6 của `SKILL.md` (tạo Docs, `soat`, `bao-cao`, chia sẻ
 
 - Giữ **nhôm ALI**: cần nguồn hợp đồng nhôm COMEX đọc được từ máy chủ; ghi `the_gioi = {"goc": "ALI", "don_vi": "USD/tấn", "hop_dong": [{"ma": "ALIZ26", "gia": …, "thay_doi_pt": "-0.25%", "dong": "<chữ gốc>"}], "cap_nhat": …, "nguon": …}` trong `lay_gia.py` — `tao_sua.py` đã sẵn sàng.
 - Đổi sang **đồng HG**: là đổi nội dung bài (mã + đơn vị) → biên tập sửa bài trên web trước, công thức tự khớp theo mã HG khi có nguồn đọc được.
+
+## Đổi nguồn 06/11/2026
+- Bảng 1.1 phế liệu: hoangngocdiep.vn/bang-gia-phe-lieu-hom-nay-moi-nhat/ (nguồn cũ thumuaphelieugiacao24h.vn không cập nhật từ 04/05/2026). Dòng 3 = Đồng vàng, dòng 4 = Đồng dây điện cháy (bài ghi trùng "Đồng cháy").
+- Bảng 1.2: bài dùng mã NHÔM ALI → cập nhật đúng các hợp đồng ALI từ TradingView scanner, tự cuộn mã khi hợp đồng đáo hạn; luôn ghi cần duyệt để biên tập chốt có đổi sang đồng HG.

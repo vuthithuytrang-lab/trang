@@ -62,6 +62,44 @@ def so_thap_phan(s):
     return float(s.replace(',', '')) if re.fullmatch(r'[+-]?[\d,]+(\.\d+)?', s) else None
 
 
+TV_SCAN = 'https://scanner.tradingview.com/futures/scan'
+
+
+def lay_tradingview(hom_nay):
+    """Dự phòng khi Barchart chặn (06/11/2026): cùng sản phẩm LME Steel HRC FOB China, TradingView gọi gốc 'HC'
+    (HCX2026 = V7X26). Giá trễ ~30 phút; 'thay đổi' = so với giá đóng phiên trước của TradingView."""
+    ds = hop_dong_con_han(hom_nay)
+    body = json.dumps({'filter': [{'left': 'description', 'operation': 'match', 'right': 'LME Steel HRC FOB China'},
+                                  {'left': 'exchange', 'operation': 'equal', 'right': 'LME'}],
+                       'columns': ['name', 'close', 'change_abs', 'last_bar_update_time'],
+                       'range': [0, 200], 'sort': {'sortBy': 'expiration', 'sortOrder': 'asc'}})
+    r = subprocess.run(['curl', '-sS', '-m', '40', '-A', UA, '-H', 'Content-Type: application/json',
+                        '--data', body, TV_SCAN], capture_output=True)
+    try:
+        data = json.loads(r.stdout.decode('utf-8', 'replace'))['data']
+    except Exception:
+        print('tradingview KHÔNG ĐỌC ĐƯỢC (không có dữ liệu LME Steel HRC FOB China)')
+        return None
+    theo_ma = {}
+    for it in data:
+        ten, gia, td, luc = it['d']
+        m = re.fullmatch(r'HC([FGHJKMNQUVXZ])(\d{4})', ten or '')
+        if m and gia is not None:
+            theo_ma['V7' + m.group(1) + m.group(2)[-2:]] = (gia, td or 0.0, luc)
+    hd = []
+    for x in ds:
+        if x['ma'] in theo_ma:
+            gia, td, luc = theo_ma[x['ma']]
+            phien = datetime.datetime.fromtimestamp(luc, VN).strftime('%H:%M %d/%m/%Y') if luc else '?'
+            hd.append(dict(x, gia=float(gia), thay_doi=float(td), phien=phien,
+                           chu_goc=f'TradingView LME:HC{x["ma"][2]}20{x["ma"][3:]} close {gia}, change_abs {td}'))
+    if not hd:
+        print('tradingview KHÔNG ĐỌC ĐƯỢC (không khớp mã hợp đồng V7 nào)')
+        return None
+    return {'nguon': 'https://www.tradingview.com/symbols/LME-HC1!/ (LME Steel HRC FOB China, qua scanner.tradingview.com)',
+            'hop_dong': hd}
+
+
 def lay_barchart(hom_nay):
     ds = hop_dong_con_han(hom_nay)
     url = BARCHART.format(ma=ds[0]['ma'])
@@ -146,7 +184,7 @@ def main():
     out = sys.argv[1] if len(sys.argv) > 1 else 'gia.json'
     hom_nay = datetime.datetime.now(VN).date()
     kq = {'chay_luc': datetime.datetime.now(VN).strftime('%H:%M %d/%m/%Y'),
-          'barchart': lay_barchart(hom_nay), 'steelonline': lay_steel(hom_nay)}
+          'barchart': lay_barchart(hom_nay) or lay_tradingview(hom_nay), 'steelonline': lay_steel(hom_nay)}
     json.dump(kq, open(out, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     if kq['barchart']:
         for x in kq['barchart']['hop_dong']:
