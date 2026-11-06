@@ -52,6 +52,14 @@ iframe{width:100%;height:640px;border:1px solid var(--line);border-radius:10px;b
     <label>Logo</label><select id="logoPick"></select>
     <input id="logo" placeholder="Hoặc dán link logo khác">
     <p class="note">Logo phải là file gốc của thương hiệu, không vẽ lại.</p>
+    <label>Phông chữ</label>
+    <select id="font">
+      <option value="inter">Inter – có sẵn trong giao diện WordPress (khuyên dùng)</option>
+      <option value="arial">Arial – đơn giản, máy nào cũng có</option>
+      <option value="tahoma">Tahoma – rõ nét, hợp chữ nhỏ</option>
+      <option value="system">Phông mặc định của máy người xem</option>
+      <option value="georgia">Georgia – có chân, trang trọng</option>
+    </select>
     <label>Màu thương hiệu (đo từ logo)</label>
     <div class="row"><div class="sw"><input type="color" id="c1p"><input id="color1"></div><div class="sw"><input type="color" id="c2p"><input id="color2"></div></div>
     <p class="note" id="colorNote"></p>
@@ -90,7 +98,14 @@ iframe{width:100%;height:640px;border:1px solid var(--line);border-radius:10px;b
       <button data-t="codes">Lấy mã dán WordPress</button>
     </div>
     <div id="t-preview"><iframe id="pv" title="Xem trước"></iframe><p class="note">Ảnh xem trước dùng ảnh thật từ website mẫu. Sửa ô bên trái là trang tự cập nhật.</p></div>
-    <div id="t-codes" class="hide"></div>
+    <div id="t-codes-wrap" class="hide">
+      <div class="status" style="background:#E8F0FF;border-color:#9DB8FF">
+        <b>Địa chỉ trang WordPress cần dán:</b>
+        <input id="wpSite2" placeholder="ví dụ: sunlifevietnam.wordpress.com" style="margin-top:6px">
+        <span id="wpNote2" class="note" style="display:block"></span>
+      </div>
+      <div id="t-codes"></div>
+    </div>
   </div>
 </div>
 <script src="color.js"></script>

@@ -2,7 +2,15 @@
 // Luật WordPress.com gói Free: chỉ style inline, màu hex (không rgba), flex-wrap thay media query,
 // đầu/chân trang bằng <div>, bọc trong group full-width blockGap 0.
 const SL_Gen = (() => {
-  const F = "font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;";
+  // Phông chữ: Inter có sẵn trong giao diện Assembler của WordPress.com (không cần tải thêm)
+  const FONTS = {
+    inter: "font-family:Inter,'Segoe UI',Arial,sans-serif;",
+    arial: "font-family:Arial,Helvetica,sans-serif;",
+    tahoma: "font-family:Tahoma,Verdana,Arial,sans-serif;",
+    system: "font-family:system-ui,'Segoe UI',Roboto,Arial,sans-serif;",
+    georgia: "font-family:Georgia,'Times New Roman',serif;"
+  };
+  let F = FONTS.inter;
   const EXT = ' target="_blank" rel="noopener"';
   const esc = (s) => String(s || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   // nối 2 chữ cuối để không rớt 1 chữ lẻ xuống dòng
@@ -25,9 +33,10 @@ const SL_Gen = (() => {
   }
 
   function build(d) {
+    F = FONTS[d.font] || FONTS.inter;
     const P = palette(d);
     const M = d.official || "#";
-    const logo = (w, extra = "") => d.logo ? `<img src="${esc(d.logo)}" alt="Logo ${esc(d.brand)}" width="${w}" style="width:${w}px;max-height:64px;height:auto;display:block;object-fit:contain;${extra}" />` : `<span style="font-size:22px;font-weight:800;color:${P.ink};">${esc(d.brand)}</span>`;
+    const logo = (w, extra = "") => d.logo ? `<img src="${esc(d.logo)}" alt="Logo ${esc(d.brand)}" width="${w}" style="width:${w}px;max-height:64px;height:auto;display:block;object-fit:contain;${extra}" />` : `<span style="font-size:22px;font-weight:700;color:${P.ink};">${esc(d.brand)}</span>`;
     const cards = (d.cards || []).filter((c) => c.title);
     const hasContact = (d.phones || []).length || (d.emails || []).length || (d.addresses || []).length;
 
@@ -52,7 +61,7 @@ ${a(pre + "#lien-he", "Liên hệ")}
     const footer = () => {
       const links = (d.footerLinks || []).filter((l) => l.text).slice(0, 6);
       const col = links.length ? `<div style="flex:1 1 180px;min-width:0;">
-<p style="margin:0 0 14px;color:${P.ink};font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;">Khám phá</p>
+<p style="margin:0 0 14px;color:${P.ink};font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;">Khám phá</p>
 ${links.map((l) => `<p style="margin:0 0 8px;"><a href="${esc(l.href || M)}"${EXT} style="color:${P.muted};text-decoration:none;">${esc(l.text)}</a></p>`).join("\n")}
 </div>` : "";
       const c = [];
@@ -60,7 +69,7 @@ ${links.map((l) => `<p style="margin:0 0 8px;"><a href="${esc(l.href || M)}"${EX
       (d.phones || []).forEach((x) => c.push(`<p style="margin:0 0 8px;"><strong style="color:${P.ink};">Điện thoại:</strong> <a href="tel:${esc(x.replace(/[^\d+]/g, ""))}" style="color:${P.muted};text-decoration:none;">${esc(x)}</a></p>`));
       (d.emails || []).forEach((x) => c.push(`<p style="margin:0 0 8px;"><strong style="color:${P.ink};">Email:</strong> <a href="mailto:${esc(x)}" style="color:${P.muted};text-decoration:none;">${esc(x)}</a></p>`));
       const contactCol = c.length ? `<div style="flex:1.3 1 260px;min-width:0;">
-<p style="margin:0 0 14px;color:${P.ink};font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;">Liên hệ</p>
+<p style="margin:0 0 14px;color:${P.ink};font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;">Liên hệ</p>
 ${c.join("\n")}
 </div>` : "";
       return `<div style="background:${P.soft};border-top:4px solid ${P.A};color:${P.muted};padding:52px 20px 0;font-size:15px;line-height:1.65;${F}">
@@ -68,7 +77,7 @@ ${c.join("\n")}
 <div style="flex:1.6 1 300px;min-width:0;">
 <div style="margin-bottom:18px;">${logo(160)}</div>
 <p style="margin:0 0 12px;">${esc(d.footerAbout || d.lead)}</p>
-<p style="margin:0;">Website chính thức: <a href="${esc(M)}"${EXT} style="color:${P.ink};text-decoration:none;font-weight:800;border-bottom:2px solid ${P.A};">${esc((M.replace(/^https?:\/\//, "").replace(/\/$/, "")))}</a></p>
+<p style="margin:0;">Website chính thức: <a href="${esc(M)}"${EXT} style="color:${P.ink};text-decoration:none;font-weight:700;border-bottom:2px solid ${P.A};">${esc((M.replace(/^https?:\/\//, "").replace(/\/$/, "")))}</a></p>
 </div>
 ${col}
 ${contactCol}
@@ -81,9 +90,9 @@ ${contactCol}
 `;
     };
 
-    const eyebrow = (t, center, dark) => `<p style="margin:0 0 10px;color:${dark ? P.eyebrowDark : P.eyebrowLight};font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;${center ? "text-align:center;" : ""}">${esc(t)}</p>`;
-    const h2 = (t, center, mb, color) => `<h2 style="margin:0 0 ${mb}px;color:${color || P.ink};font-size:clamp(26px,3.4vw,38px);line-height:1.2;font-weight:800;max-width:780px;${center ? "text-align:center;margin-left:auto;margin-right:auto;" : ""}">${nb(t)}</h2>`;
-    const btn = (t, bg, color, href) => `<a href="${esc(href || M)}"${EXT} style="display:inline-block;background:${bg};color:${color};text-decoration:none;font-weight:800;padding:13px 26px;border-radius:999px;">${esc(t)}</a>`;
+    const eyebrow = (t, center, dark) => `<p style="margin:0 0 10px;color:${dark ? P.eyebrowDark : P.eyebrowLight};font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;${center ? "text-align:center;" : ""}">${esc(t)}</p>`;
+    const h2 = (t, center, mb, color) => `<h2 style="margin:0 0 ${mb}px;color:${color || P.ink};font-size:clamp(26px,3.4vw,38px);line-height:1.2;font-weight:700;max-width:780px;${center ? "text-align:center;margin-left:auto;margin-right:auto;" : ""}">${nb(t)}</h2>`;
+    const btn = (t, bg, color, href) => `<a href="${esc(href || M)}"${EXT} style="display:inline-block;background:${bg};color:${color};text-decoration:none;font-weight:700;font-size:16px;padding:13px 26px;border-radius:999px;">${esc(t)}</a>`;
     const section = (inner, bg, id) => `<section${id ? ` id="${id}"` : ""} style="padding:clamp(56px,8vw,92px) 20px;background:${bg};">
 <div style="max-width:1200px;margin:0 auto;">
 ${inner}
@@ -97,7 +106,7 @@ ${inner}
 <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:40px;">
 <div style="flex:1 1 420px;min-width:0;">
 ${d.eyebrow ? `<p style="display:inline-block;margin:0 0 18px;padding:6px 14px;border:1px solid ${P.A};border-radius:999px;color:${P.eyebrowDark};font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;">${esc(d.eyebrow)}</p>` : ""}
-<h1 style="margin:0 0 18px;color:${P.onK};font-size:clamp(30px,4.6vw,50px);line-height:1.15;font-weight:800;">${nb(d.h1 || d.brand)}</h1>
+<h1 style="margin:0 0 18px;color:${P.onK};font-size:clamp(30px,4.6vw,50px);line-height:1.15;font-weight:700;">${nb(d.h1 || d.brand)}</h1>
 ${d.lead ? `<p style="margin:0 0 28px;font-size:clamp(16px,1.6vw,19px);color:${P.onK};opacity:.9;max-width:560px;">${nb(d.lead)}</p>` : ""}
 <div style="display:flex;flex-wrap:wrap;gap:12px;">
 ${btn(d.ctaText || "Khám phá ngay", P.A, P.onA)}
@@ -127,22 +136,28 @@ ${btn("Xem thêm về " + d.brand, P.K, P.onK)}
 ${h2(d.cardsTitle || "Sản phẩm và dịch vụ nổi bật", true, 36)}
 <div style="display:flex;flex-wrap:wrap;gap:20px;">
 ${cards.map((c, i) => `<a href="${esc(c.href || M)}"${EXT} style="flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:10px;text-decoration:none;background:#ffffff;border-radius:16px;padding:26px 24px;border-top:5px solid ${i % 2 ? P.K : P.A};box-shadow:0 6px 20px ${P.ink}14;">
-<h3 style="margin:0;color:${P.ink};font-size:20px;line-height:1.3;font-weight:800;">${nb(c.title)}</h3>
+<h3 style="margin:0;color:${P.ink};font-size:20px;line-height:1.3;font-weight:700;">${nb(c.title)}</h3>
 ${c.text ? `<p style="margin:0;color:${P.muted};font-size:15px;flex:1 1 auto;">${esc(c.text)}</p>` : ""}
-<span style="color:${P.ink};font-weight:800;font-size:15px;">Tìm hiểu →</span>
+<span style="color:${P.ink};font-weight:700;font-size:15px;">Tìm hiểu →</span>
 </a>`).join("\n")}
 </div>`, P.soft, "san-pham") : "";
 
-    const box = (title, lines) => `<div style="flex:1 1 240px;min-width:0;background:#ffffff;border-radius:14px;padding:22px 24px;color:${P.ink};font-size:15px;"><p style="margin:0 0 10px;font-weight:800;">${title}</p>${lines}</div>`;
+    const item = (label, value, href) => `<a href="${href}" style="display:flex;flex-direction:column;gap:2px;background:#ffffff;border-radius:12px;padding:14px 18px;text-decoration:none;">
+<span style="color:${P.muted};font-size:13px;font-weight:600;">${label}</span><span style="color:${P.ink};font-size:18px;font-weight:700;line-height:1.35;word-break:break-word;">${esc(value)}</span></a>`;
+    const items = [];
+    (d.phones || []).forEach((x) => items.push(item("Hotline", x, "tel:" + esc(x.replace(/[^\d+]/g, "")))));
+    (d.emails || []).forEach((x) => items.push(item("Email", x, "mailto:" + esc(x))));
+    (d.addresses || []).forEach((x) => items.push(`<div style="background:#ffffff;border-radius:12px;padding:14px 18px;"><span style="display:block;color:${P.muted};font-size:13px;font-weight:600;">Địa chỉ</span><span style="color:${P.ink};font-size:15px;line-height:1.5;">${esc(x)}</span></div>`));
     const contact = `<section id="lien-he" style="padding:clamp(56px,8vw,92px) 20px;background:#ffffff;">
-<div style="max-width:1200px;margin:0 auto;background:${P.K};border-radius:20px;padding:clamp(32px,5vw,56px);display:flex;flex-wrap:wrap;gap:24px;align-items:center;">
-<div style="flex:1.2 1 320px;min-width:0;">
-${h2("Liên hệ " + d.brand, false, 14, P.onK)}
-<p style="margin:0 0 22px;color:${P.onK};opacity:.9;font-size:17px;">Tìm hiểu sản phẩm, dịch vụ và nhận hỗ trợ trên website chính thức của ${esc(d.brand)}.</p>
+<div style="max-width:1200px;margin:0 auto;background:${P.K};border-radius:20px;padding:clamp(28px,5vw,52px);display:flex;flex-wrap:wrap;gap:28px 40px;align-items:center;justify-content:space-between;">
+<div style="flex:1 1 380px;min-width:0;">
+${h2("Liên hệ " + d.brand, false, 12, P.onK)}
+<p style="margin:0 0 22px;color:${P.onK};opacity:.9;font-size:17px;max-width:520px;">Tìm hiểu sản phẩm, dịch vụ và nhận hỗ trợ trên website chính thức của ${esc(d.brand)}.</p>
 ${btn("Truy cập website chính thức", P.A, P.onA)}
 </div>
-${(d.phones || []).length ? box("Hotline", d.phones.map((p) => `<p style="margin:0 0 6px;"><a href="tel:${esc(p.replace(/[^\d+]/g, ""))}" style="color:${P.ink};text-decoration:none;">${esc(p)}</a></p>`).join("")) : ""}
-${(d.emails || []).length || (d.addresses || []).length ? box("Email & địa chỉ", (d.emails || []).map((e) => `<p style="margin:0 0 6px;"><a href="mailto:${esc(e)}" style="color:${P.ink};text-decoration:none;">${esc(e)}</a></p>`).join("") + (d.addresses || []).map((a) => `<p style="margin:0 0 6px;">${esc(a)}</p>`).join("")) : ""}
+${items.length ? `<div style="flex:0 1 380px;min-width:0;display:flex;flex-direction:column;gap:10px;">
+${items.join("\n")}
+</div>` : ""}
 </div>
 </section>
 `;
@@ -155,8 +170,8 @@ ${(d.emails || []).length || (d.addresses || []).length ? box("Email & địa ch
 
     const newsTop = `<div style="background:${P.K};color:${P.onK};padding:clamp(44px,7vw,80px) 20px;${F}">
 <div style="max-width:1200px;margin:0 auto;">
-<p style="margin:0 0 10px;color:${P.eyebrowDark};font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;">Tin tức &amp; Chia sẻ</p>
-<h1 style="margin:0 0 12px;color:${P.onK};font-size:clamp(30px,4.4vw,46px);line-height:1.15;font-weight:800;">${nb("Tin tức " + d.brand)}</h1>
+<p style="margin:0 0 10px;color:${P.eyebrowDark};font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;">Tin tức &amp; Chia sẻ</p>
+<h1 style="margin:0 0 12px;color:${P.onK};font-size:clamp(30px,4.4vw,46px);line-height:1.15;font-weight:700;">${nb("Tin tức " + d.brand)}</h1>
 <p style="margin:0;color:${P.onK};opacity:.9;font-size:17px;max-width:660px;">${nb(d.newsLead || "Cập nhật tin tức, sự kiện và kiến thức mới nhất từ " + d.brand + ".")}</p>
 </div>
 </div>
@@ -214,7 +229,7 @@ ${(d.emails || []).length || (d.addresses || []).length ? box("Email & địa ch
       news: group(html(header(false) + newsTop) + "\n" + query + "\n" + html(footer())),
       single: group(html(header(false)) + "\n" + single + "\n" + html(footer())),
       pages: pages3,
-      preview: `<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head><body style="margin:0;">${homeInner}</body></html>`
+      preview: `<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">${(d.font || "inter") === "inter" ? '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">' : ""}</head><body style="margin:0;">${homeInner}</body></html>`
     };
   }
 
@@ -225,7 +240,7 @@ ${(d.emails || []).length || (d.addresses || []).length ? box("Email & địa ch
     const imgs = raw.images || [];
     const logo = (raw.logos || [])[0];
     return {
-      brand: raw.brand || "", official: raw.origin + "/", logo: logo ? logo.url : "",
+      brand: raw.brand || "", official: raw.origin + "/", logo: logo ? logo.url : "", font: "inter",
       color1: colors[0] || "", color2: colors[1] || "",
       eyebrow: raw.brand || "", h1: raw.h1 && raw.h1.length < 90 ? raw.h1 : raw.brand,
       lead: raw.description || "", ctaText: "Khám phá ngay",
@@ -235,7 +250,8 @@ ${(d.emails || []).length || (d.addresses || []).length ? box("Email & địa ch
       cards: (withText.length >= 4 ? withText.slice(1) : withText.slice(1).concat(sec.filter((s) => !s.text && !/tin tức|news|liên hệ|contact/i.test(s.title))))
         .slice(0, 6).map((s) => ({ title: s.title.replace(/[.:]$/, ""), text: s.text, href: s.href || "" })),
       phones: raw.phones || [], emails: raw.emails || [], addresses: raw.addresses || [],
-      footerLinks: (raw.footerLinks && raw.footerLinks.length ? raw.footerLinks : raw.nav || []).slice(0, 6),
+      footerLinks: (raw.footerLinks && raw.footerLinks.length ? raw.footerLinks : raw.nav || [])
+        .filter((l) => !/^(tiếng việt|english|vi|en|中文|日本語|한국어)$|đăng nhập|đăng ký|login|sign in|zalo|facebook|youtube|tiktok|instagram|linkedin/i.test(l.text)).slice(0, 6),
       footerAbout: raw.description || "", newsLead: ""
     };
   }

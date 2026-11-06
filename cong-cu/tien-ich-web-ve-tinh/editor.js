@@ -1,6 +1,6 @@
 // Trang chỉnh sửa: nhận dữ liệu thô -> đo màu logo -> bản nháp -> Trang sửa -> ra 4 mã dán.
 const $ = (id) => document.getElementById(id);
-const FIELDS = ["brand", "official", "logo", "color1", "color2", "eyebrow", "h1", "lead", "ctaText", "heroImg",
+const FIELDS = ["brand", "official", "logo", "font", "color1", "color2", "eyebrow", "h1", "lead", "ctaText", "heroImg",
   "aboutTitle", "aboutText", "aboutImg", "cardsTitle", "footerAbout", "newsLead"];
 const LISTS = ["phones", "emails", "addresses"];
 let data = null, raw = null, timer = null;
@@ -30,7 +30,7 @@ const tplOld = (slug) => `https://${wp.host}/wp-admin/site-editor.php?postType=w
 const cleanHost = (v) => (v || "").trim().replace(/^https?:\/\//, "").split(/[/?#]/)[0].toLowerCase();
 
 async function detectWp() {
-  wp.host = cleanHost($("wpSite").value); wp.homeIsPage = null; wp.homePageId = null; wp.theme = "assembler";
+  wp.host = cleanHost($("wpSite").value); $("wpSite2").value = $("wpSite").value; wp.homeIsPage = null; wp.homePageId = null; wp.theme = "assembler";
   if (!wp.host) { $("wpNote").textContent = "Dán địa chỉ trang WordPress cần làm để có nút mở thẳng chỗ dán."; update(); return; }
   try { chrome.storage.local.set({ wpSite: wp.host }); } catch (e) {}
   $("wpNote").textContent = "Đang kiểm tra " + wp.host + "…"; update();
@@ -90,13 +90,14 @@ function writeForm() {
 
 function update() {
   readForm();
+  if ($("wpNote2")) $("wpNote2").textContent = $("wpNote").textContent;
   const okHex = (h) => /^#[0-9A-Fa-f]{6}$/.test(h || "");
   if (!okHex(data.color1)) data.color1 = "#1A1A1A";
   if (!okHex(data.color2)) data.color2 = data.color1;
   const out = SL_Gen.build(data);
   $("pv").srcdoc = out.preview;
   const linkHtml = (c) => wp.host ? c.links().map(([t, u], i) => `<a class="go${i ? " alt" : ""}" href="${u}" target="_blank" rel="noopener">${i ? "" : "↗ "}${t}</a>`).join("") + "<br>"
-    : `<p class="note" style="margin:0 0 8px">Dán địa chỉ trang WordPress ở mục 0 (bên trái) để có nút mở thẳng chỗ dán.</p>`;
+    : `<p class="note" style="margin:0 0 8px;color:#C0262D">⬆ Dán địa chỉ trang WordPress vào ô xanh phía trên để có nút mở thẳng chỗ dán.</p>`;
   $("t-codes").innerHTML = CODES.map((c) => `<div class="code"><h3>${c.title}</h3><p class="where">${c.where()}</p>${linkHtml(c)}
 <button class="btn" data-copy="${c.key}" type="button">Copy mã</button><span class="copied" id="ok-${c.key}"></span>
 <textarea readonly id="code-${c.key}" style="margin-top:8px"></textarea></div>`).join("")
@@ -157,13 +158,15 @@ async function measureColors() {
   const saved = await chrome.storage.local.get(["wpSite"]);
   if (saved.wpSite) $("wpSite").value = saved.wpSite;
   $("wpSite").onchange = detectWp;
+  $("wpSite2").value = $("wpSite").value;
+  $("wpSite2").onchange = () => { $("wpSite").value = $("wpSite2").value; detectWp(); };
   $("c1p").oninput = () => { $("color1").value = $("c1p").value.toUpperCase(); schedule(); };
   $("c2p").oninput = () => { $("color2").value = $("c2p").value.toUpperCase(); schedule(); };
   $("addCard").onclick = () => { data.cards.push({ title: "", text: "", href: "" }); renderCards(); };
   document.querySelectorAll("#tabs button").forEach((b) => (b.onclick = () => {
     document.querySelectorAll("#tabs button").forEach((x) => x.classList.toggle("on", x === b));
     $("t-preview").classList.toggle("hide", b.dataset.t !== "preview");
-    $("t-codes").classList.toggle("hide", b.dataset.t !== "codes");
+    $("t-codes-wrap").classList.toggle("hide", b.dataset.t !== "codes");
   }));
   update();
   if ($("wpSite").value) detectWp();
