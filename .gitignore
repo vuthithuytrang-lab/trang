@@ -9,3 +9,4 @@ chia-agent-boss.txt
 *.local.json
 .claude/settings.local.json
 *.local.log
+__pycache__/
