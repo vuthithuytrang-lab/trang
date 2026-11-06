@@ -100,9 +100,10 @@ def process(path, targets):
     for b in blocks:
         t = b.get_text().replace('\xa0', ' ').strip()
         items.append(dict(el=b, text=t, head=b.name.startswith('h') and not t.startswith('[')))
-    tmap = {}
+    tmap = {}; tq = {}
     for a, u in targets:
-        tmap.setdefault(norm(u)[0], []).append(a)
+        k, q = norm(u)
+        tmap.setdefault(k, []).append(a); tq.setdefault(k, set()).add(q)
     for it in items:
         it['hit'] = any(norm(unwrap(a.get('href', '')))[0] in tmap for a in it['el'].find_all('a'))
     found = {}; results = []; curhead = None; title_seen = False
@@ -113,10 +114,12 @@ def process(path, targets):
         if it['text'].startswith('[Nội dung gốc'): continue
         hits = []
         for a in it['el'].find_all('a'):
-            key = norm(unwrap(a.get('href', '')))[0]
+            key, q = norm(unwrap(a.get('href', '')))
             if key in tmap:
                 anc = a.get_text().strip()
-                hits.append((anc, key))
+                # khớp chặt: đúng tham số URL và đúng anchor như trên sheet
+                strict = (q in tq[key] or '' in tq[key]) and any(anc.casefold() == str(x).strip().casefold() for x in tmap[key])
+                hits.append((anc, key, strict))
         if not hits: continue
         nxt = next((x for x in items[idx+1:] if x['text']), None)
         prvs = [x for x in reversed(items[:idx]) if x['text'] and not x['text'].startswith('[Nội dung gốc')]
@@ -141,7 +144,9 @@ def process(path, targets):
         if mode[0] == 'THÊM' and not newmark and not re.search(r'tham khảo|xem thêm|&gt;&gt;&gt;|>>>', it['text'], re.I):
             # file Docs không ghi nội dung gốc cho đoạn này
             mode = ('KIEMTRA', prv['text'] if prv else '')
-        for anc, key in hits: found.setdefault(key, anc)
+            hits = [h for h in hits if h[2]]
+            if not hits: continue  # link có sẵn trong bài, không phải link mới
+        for anc, key, _ in hits: found.setdefault(key, anc)
         tag = 'li' if it['el'].name == 'li' else 'p'
         body = render(it['el'], st)
         out_html = f'<li>{body}</li>' if tag == 'li' else f'<p style="text-align: justify;">{body}</p>'
