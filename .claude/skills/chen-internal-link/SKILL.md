@@ -1,80 +1,69 @@
 ---
 name: chen-internal-link
-description: Chạy trọn luồng "Plan internal links" cho một dự án SEO — đọc sheet kế hoạch, tạo file Google Docs từ URL bài, chèn anchor/internal link đúng quy tắc, tô vàng + ghi chú đỏ, ghi link file và ghi chú về sheet, soát lại; và luồng xử lý góp ý duyệt (đọc comment, sửa thẳng file cũ, phản hồi vào cột phản hồi). Dùng khi Trang nhắc tới chèn internal link, plan internal links, anchor text, tạo file docs từ URL, chạy nốt các bài chưa có file, hoặc sửa theo góp ý người duyệt — cho Techcombank hay dự án mới khác, miễn là Trang đưa đủ tài liệu.
+description: Chạy trọn luồng chèn internal link (inlink) cho dự án SEO từ một Google Sheet kế hoạch — tải bài từ URL, tạo file Google Docs, chèn đủ anchor đúng nguyên văn (tô vàng + ghi chú đỏ nội dung gốc), soát chữ sau khi tải, ghi link file vào sheet; và xử lý góp ý người duyệt (đọc comment, sửa thẳng file cũ, phản hồi bằng comment, đổi cột duyệt thành "đã sửa"). Dùng khi người dùng nhắc tới chèn internal link, inlink, plan internal links, anchor text, tạo file docs từ URL, chạy nốt bài chưa có file, sửa theo góp ý/comment người duyệt — cho Techcombank, Okamura hay dự án mới, miễn là có link sheet.
 ---
 
-# Chèn internal link — luồng dùng lại cho mọi dự án
+# Chèn internal link (inlink) — Google Sheet → Google Docs
 
-## Gói kèm trong skill (tự chứa, dùng được ở phiên/tài khoản khác)
-- `scripts/` — build.py (tách bài, env SP/BASE/SEL), chen.py (chèn theo plan.json), blocks.py, map.py, soat.py, kiemtra.py, linkcu.py,
-  cautruc.py, prep.py (Techcombank), fetch.sh (tải trang có UA), verify.py; sửa theo góp ý: docchk.py, docdiff.py, tohtml.py, runs.py.
-- `references/` — HUONG-DAN-WORKER.md (brief agent chèn link), BO-SUNG-OKAMURA.md (mẫu bổ sung cho dự án mới), **BAI-HOC-GOP-Y.md** +
-  gop-y-chi-loc.csv (sổ lỗi chị Lộc — đọc trước khi chèn), example-plan.json (mẫu plan đã duyệt).
-- `prompts/` — lệnh mẫu cho agent con: worker, upload, verify (soát chữ sau tải), sheet (ghi link), scan-gop-y, fix-gop-y, reply.
-  `<SKILL>` = thư mục skill này, `<THU_MUC_NHAP>` = thư mục nháp của phiên; id sheet/thư mục/tên cột trong prompt là của dự án mẫu → thay khi dùng.
+`<SKILL>` = thư mục chứa file này. Công cụ ở `<SKILL>/scripts/`, tài liệu ở `<SKILL>/references/`, lệnh mẫu cho agent con ở `<SKILL>/prompts/`.
+Cần kết nối Google Drive + Google Sheets + Google Docs. Trước khi đụng Google: đọc skill `google-workspace` nếu có.
+**Trước khi chèn/sửa bất kỳ bài nào: đọc `<SKILL>/references/BAI-HOC-GOP-Y.md`** — lỗi người duyệt đã bắt, phải tránh.
 
-> **Từ 06/11/2026 có App Inlink** (`cong-cu/app-inlink/`, chạy trong Google Sheet, không tốn token Claude): tạo file + chèn link + sổ góp ý + trả lời comment.
-> Skill này dùng cho **ca khó** (dòng app ghi "Thiếu", sửa theo góp ý, rà chất lượng) và để **sửa/nâng cấp app**. Dự án mới: thêm 1 mục vào `CauHinh.gs`.
+## 0. Nhận dự án — kiểm đủ, thiếu thì hỏi MỘT lần
 
-Mã nguồn và mẫu lệnh: `cong-cu/tao-docs-tu-url/` (README.md = quy trình chi tiết, chen.py/kiemtra.py/... = công cụ),
-`cong-cu/tao-docs-tu-url/duyet/` (sửa theo góp ý). Dự án Techcombank là bản mẫu: `plan-internal-links/` (tien-do.csv, bao-cao.md).
-Trước khi đụng Google Docs/Sheets: đọc skill `google-workspace`.
-**Trước khi chèn/sửa bất kỳ bài nào: đọc `cong-cu/tao-docs-tu-url/BAI-HOC-GOP-Y.md`** (lỗi chị Lộc hay bắt). Có nhận xét mới → thêm 1 dòng vào
-`gop-y-chi-loc.csv` và cập nhật mục tương ứng trong BAI-HOC (Trang yêu cầu 05/11/2026, cập nhật hằng ngày).
-
-## 0. Nhận dự án mới — kiểm đủ tài liệu, thiếu thì hỏi MỘT lần
-
-| Cần | Ví dụ (Techcombank) |
+| Cần | Mẫu đã chạy |
 |---|---|
-| Link sheet + tên tab | `1KqFQ7…MsM2Lnc`, tab "Plan internal links - Tổng" |
-| Bản đồ cột (đọc hàng 1 rồi xác nhận) | B URL · E Ghi chú · I/J anchor + URL tỷ giá · K FILE BLOG · L người duyệt · M phản hồi · P–Y cặp anchor/URL |
-| Thư mục Drive chứa file | "Plan internal links - File blog" |
-| Quy tắc riêng của dự án | VD "XF Tiết kiệm" thì bỏ anchor tỷ giá |
-| Cách lấy bài gốc | Techcombank: `www.` + User-Agent trình duyệt |
+| Link sheet + tên tab | Techcombank `1KqFQ7DIRFM3vwozccCYZrlsRybOAsieAKm_MVsM2Lnc` tab "Plan internal links - Tổng"; Okamura `1xKnPX-uf7av3FpSocVjy9wKJiNeygrsZLVmdcMC7np8` tab "Trang tính146" |
+| Bản đồ cột — **luôn đọc hàng 1 mỗi đợt**, cột hay bị đổi chỗ | TCB: B URL · E Ghi chú · G Chèn XF · I/J anchor+URL tỷ giá · K FILE BLOG · L Chị Lộc duyệt · M KT phản hồi · N Demo nội dung chèn · P–Y 5 cặp anchor/URL. Okamura: E URL · L–Q 3 cặp · R Tình trạng · S File blog |
+| Thư mục Drive chứa file | TCB `1qLQU6FfkXcOvAsUvKZ-KsVeXWC5RLgHH`; Okamura `1dfPI34Qf5mFI1ALHl5vWU8MUKrqVnwiU` (người dùng tự mở quyền "ai có link – chỉnh sửa" ở cấp thư mục; `share_file` chỉ chia theo email) |
+| Quy tắc riêng | TCB: ghi chú "XF Tiết kiệm" → bỏ anchor tỷ giá; cột Demo "Trước/Sau khi chèn" → áp nguyên văn. Okamura: bỏ dòng Tình trạng "Đã done"/"-" |
+| Cách lấy bài | TCB: `www.` + UA trình duyệt (thiếu UA → 403), `prep.py` bỏ công cụ quy đổi; Okamura (Wix): `BASE=https://www.okamura.com.vn SEL='[data-hook="post-description"]'`, build.py tự đổi ảnh mờ Wix sang ảnh gốc |
 
-Cột của sheet hay bị đổi chỗ → **luôn đọc hàng 1 trước mỗi đợt**, không tin số cột cũ. Ghi dự án mới thành một mục trong
-`cong-cu/tao-docs-tu-url/README.md` (sheet, cột, thư mục, quy tắc riêng).
+Dự án mới: viết 1 file bổ sung như `<SKILL>/references/BO-SUNG-OKAMURA.md` (site, cách dựng, giọng văn, quy tắc riêng).
 
-## 1. Quy tắc cứng (mọi dự án)
+## 1. Quy tắc cứng
 
-- Anchor **đúng nguyên văn sheet, phân biệt hoa/thường**. Sheet có bao nhiêu anchor thì chèn đủ bấy nhiêu.
-- Không chèn trong 25% đầu thân bài, trong tiêu đề, các bước hướng dẫn, đoạn định nghĩa.
-- Chữ chèn/sửa tô vàng; ngay sau là ghi chú đỏ nghiêng **[Nội dung gốc trước khi chèn: …]**; đoạn mới thì **[Đề xuất viết thêm đoạn mới]**.
-- Giọng văn tự nhiên theo ngành, **không bịa số liệu**, không thêm thông tin chưa có nguồn. Giữ mọi link cũ của bài.
-- Dòng thiếu anchor (chỉ có URL) → **không tự nghĩ anchor**, để trống, báo Trang.
-- Sheet: ghi **từng ô một**, chỉ ô trống; ghi đè chỉ khi Trang đồng ý; không bao giờ xoá ô. Trước khi ghi, đối chiếu URL cột B đúng dòng.
-- Không in/ghi/commit chìa khóa, token (repo public).
+- Anchor **đúng nguyên văn sheet, phân biệt hoa/thường**; sheet có bao nhiêu anchor chèn đủ bấy nhiêu — trừ khi không có chỗ hợp ngữ cảnh
+  thì **để thiếu và ghi lý do** (người duyệt chấp nhận bỏ link hơn câu gượng).
+- Không chèn trong 25% đầu thân bài, tiêu đề, các bước hướng dẫn, đoạn định nghĩa. Không 2 link ở đoạn kề nhau nếu tránh được.
+- Chữ chèn/sửa tô vàng; ngay sau là đoạn ghi chú đỏ nghiêng **[Nội dung gốc trước khi chèn: …]**; đoạn mới thì **[Đề xuất viết thêm đoạn mới]** đặt trên.
+- Giọng tự nhiên theo ngành; **không bịa số liệu/tính năng sản phẩm**; giữ mọi link cũ. Dòng chỉ có URL mà thiếu anchor → không tự nghĩ anchor.
+- Sheet: ghi **từng ô**, chỉ ô trống, đối chiếu URL đúng dòng trước khi ghi; ghi đè chỉ khi người dùng đồng ý; không xoá ô.
+- Không tạo file mới khi được yêu cầu sửa; không xoá file nếu không được bảo.
 
-## 2. Luồng A — tạo file cho dòng chưa có file
+## 2. Luồng A — tạo file cho dòng có URL mà cột FILE trống
 
-1. Đọc cột URL + cột FILE (jq/python trên file kết quả đã lưu, đừng in cả cột ra màn hình) → danh sách dòng có URL mà FILE trống.
-2. Theo README mục "Plan internal links": tải bài → `prep.py` → `build.py` → `plan.json` → `chen.py` → soát `soat.py`,
-   `kiemtra.py`, `linkcu.py`, `cautruc.py` → tải lên Drive (`create_file` text/html, đúng thư mục) → `verify.py`.
-3. **Agent tải lên gõ lại nội dung nên có thể sót chữ** → sau khi tải, xuất từng file và so từng chữ với bản gốc
-   (`duyet/docdiff.py` + `duyet/docchk.py`), sai thì sửa thẳng trong file. Tải xong lô nào gắn link lô đó vào sheet ngay (Trang muốn thấy dần).
-4. Ghi link file vào cột FILE, ghi chú "Đủ x/N anchor…" vào cột Ghi chú (ô trống).
-5. Thêm dòng vào `tien-do.csv` (khớp theo URL, không theo số dòng — sheet hay bị sắp xếp lại), thêm mục "Đợt N" vào `bao-cao.md`, commit + push.
+1. Đọc cột URL + FILE (kết quả lớn: lọc bằng python trên file đã lưu). Lập `rows.json`: `row, B, F, G, I, pairs[[anchor,url]], kw`.
+2. Chia lô ~7 bài; mỗi lô 1 thư mục `D`: `cp <SKILL>/scripts/* D/`, `cp <SKILL>/references/example-plan.json D/`, tạo `raw-goc/ raw/ tgt/ out/ final/` + `rows.json`.
+   Giao agent con theo `<SKILL>/prompts/worker.txt` (đọc `references/HUONG-DAN-WORKER.md`, file bổ sung dự án, BAI-HOC).
+   Lõi: `fetch.sh` → (`prep.py`) → `SP=D/ python3 -I D/build.py` → `map.py` → viết `plan.json` + `targets.json` → `chen.py` →
+   `soat.py`, `kiemtra.py`, `linkcu.py` (phải im), `cautruc.py` (phải im).
+3. Tải lên: `prompts/upload.txt` (Drive `create_file`, `text/html`, đúng `parentId`). **Agent tải lên gõ lại nội dung nên có thể sót chữ** →
+   bắt buộc `prompts/verify.txt`: xuất từng file HTML, `docdiff.py` so từng chữ + `docchk.py` (anchor/URL/vàng), sai thì sửa thẳng bằng `update_doc`.
+4. **Tải xong lô nào ghi link lô đó vào sheet ngay** (`prompts/sheet.txt`) — người dùng muốn thấy dần. Ghi chú "Đủ x/N anchor…" vào cột Ghi chú nếu có.
+5. Lưu tiến độ + báo cáo đợt (khớp theo URL, không theo số dòng).
 
-## 3. Luồng B — sửa theo góp ý người duyệt
+## 3. Luồng B — sửa theo góp ý người duyệt (làm 1 bài mẫu cho người dùng duyệt trước khi chạy hàng loạt)
 
-**05/11/2026: Trang mở lại, làm 1 bài mẫu cho Trang duyệt trước rồi mới sửa hàng loạt.** Phản hồi nay ghi **ngay trong file** (comment), không chỉ cột M.
+1. Quét comment còn mở: `prompts/scan-gop-y.txt` (Drive `read_file_content` includeComments). Nhiều dòng "cần sửa" cũ đã sửa rồi, chỉ thiếu phản hồi.
+2. Note ở ô duyệt bắt đầu bằng **"c …"** ("c sửa chút trong bài", "c wording lại…") = người duyệt đã tự sửa → không đụng.
+3. Sửa thẳng file cũ: `prompts/fix-gop-y.txt` — `read_doc` → `update_doc` một lô có `requiredRevisionId`, sửa từ vị trí cao xuống thấp, tính offset UTF-16
+   bằng python (`runs.py`, `docs_index.py find`); đoạn trả về phải đúng nguyên văn ghi chú đỏ. Soát lại sau khi sửa.
+4. Phản hồi: `insertComment` {range, content} gắn vào câu đã sửa, viết thẳng **"Em đã …"**, không trích lại góp ý.
+   **Không trả lời được thẳng dưới luồng comment** (insertCommentReply/replyToComment/insertPost không có); `deleteComment` dùng được.
+   Dòng đã sửa trước đó chỉ cần comment: `prompts/reply.txt`.
+5. Đổi ô duyệt thành **"đã sửa"** sau khi sửa + comment (đọc lại ô ngay trước khi ghi). Bỏ link → nói rõ "còn x/N anchor".
+6. Ghi mỗi nhận xét mới vào `references/gop-y-chi-loc.csv` + cập nhật `BAI-HOC-GOP-Y.md` (nhóm lỗi A–H).
 
-- Công cụ comment (Docs `update_doc`): `insertComment` {range, content} chạy được (đăng dưới tên Thùy Trang); `deleteComment` {commentId} chạy được.
-  **Không trả lời thẳng vào luồng comment được** (insertCommentReply / replyToComment / insertPost đều không có) → thêm comment mới
-  gắn vào câu đã sửa, **viết thẳng "Em đã …"**, không trích lại góp ý của chị (Trang chốt 05/11/2026).
-- Rà comment còn mở trước: nhiều dòng "cần sửa" cũ đã sửa ở lượt 1, chỉ thiếu phản hồi → chỉ cần comment phản hồi, không sửa lại.
+## 4. Lỗi môi trường đã gặp
 
-- Đọc cột duyệt + comment trong file (Drive `read_file_content`, `includeComments: true`).
-- Note bắt đầu bằng **"c …"** ("c sửa chút trong bài", "c wording lại…") = **người duyệt đã tự sửa** → không đụng file, không ghi phản hồi.
-- Sửa **thẳng file cũ** (Docs `update_doc`, có `requiredRevisionId`, sửa từ vị trí cao xuống thấp). Không tạo file mới, không xoá file.
-- Giữ ít nhất 1 ký tự của đoạn có comment, nếu không comment bị tách khỏi chữ.
-- Soát mỗi file: `duyet/docchk.py` (anchor/URL/tô vàng) + `duyet/docdiff.py` (chỉ đổi đúng chỗ định đổi). File quá lớn làm sập Drive export → `read_doc` + `duyet/tohtml.py`.
-- Phản hồi cột phản hồi bằng tiếng Việt, xưng "Em", gửi người duyệt; chỉ ghi ô trống. Mẫu lệnh: `duyet/PROMPT-*.txt` (thay id sheet/tên cột cho dự án mới).
-- Đọc lại cột duyệt ngay trước khi ghi — người duyệt có thể đã đổi trạng thái trong lúc mình làm.
+- File Docs quá lớn làm Drive export lỗi → `read_doc` + `tohtml.py` để soát.
+- Một số Docs lưu tiếng Việt dạng tổ hợp (decomposed) → offset lệch 1; luôn `find` trên bản đọc mới.
+- Xoá trọn câu có comment → comment bị tách khỏi chữ; giữ ≥1 ký tự nếu muốn comment còn gắn.
+- Sheet hay bị sắp xếp lại → khớp theo URL, đọc lại hàng 1 trước khi ghi.
+- Lịch tự chạy tạo từ phiên không có kết nối Google sẽ không đọc được Docs/Sheets.
 
-## 4. Tiết kiệm token (Trang yêu cầu 28/10/2026)
+## 5. Tiết kiệm token, báo cáo
 
-- Đọc sheet theo **cột cần dùng**, kết quả lớn thì xử lý bằng jq/python trên file đã lưu; không đọc lại thứ đã có.
-- Agent con chỉ khi việc nhiều và song song được (≥ ~15 bài); mỗi agent nhận lệnh từ file mẫu, trả JSON ngắn.
-- Không chạy agent soát trùng nếu `docchk`/`kiemtra` đã chạy được tại chỗ.
-- Báo cáo cho Trang ngắn, lời thường, đánh số; cuối luôn hỏi 2 câu (lỗi hiển thị? ưng chưa/chỉnh gì?) + nhắc Cmd + R.
+- Chỉ đọc cột/đoạn cần; agent con chỉ khi ≥ ~15 bài; agent trả JSON ngắn; không chạy agent soát trùng nếu script soát tại chỗ được.
+- Báo cáo người dùng ngắn, lời thường, đánh số; cuối hỏi: có lỗi hiển thị không, có ưng không/muốn chỉnh gì.

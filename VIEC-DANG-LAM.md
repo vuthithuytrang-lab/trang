@@ -2,7 +2,8 @@
 
 ## Skill chèn link trọn gói (06/11/2026) — LÀM TIẾP
 - [x] Gom scripts/references/prompts vào `.claude/skills/chen-internal-link/` (tự chứa).
-- [ ] Soát lại SKILL.md cho gọn, chạy thử 1 bài từ đầu chỉ bằng skill, đóng gói file .zip để Trang tải lên Claude (Cài đặt → Skills).
+- [x] Viết lại SKILL.md, chạy thử 1 bài (Okamura cabin làm việc) chỉ bằng công cụ trong skill: đạt 3/3. Đóng gói `cong-cu/skill-chen-internal-link.zip`.
+- [ ] Trang tải file zip lên Claude (Cài đặt → Skills) nếu muốn dùng ở tài khoản/phiên khác.
 
 ## App Inlink (06/11/2026) — Trang bảo để sau
 - [x] Viết app Google Apps Script (`cong-cu/app-inlink/`), chạy thử mô phỏng 20 bài đạt.

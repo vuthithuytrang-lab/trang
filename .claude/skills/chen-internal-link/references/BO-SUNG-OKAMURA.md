@@ -2,8 +2,8 @@
 
 - Site: https://www.okamura.com.vn (Wix). Nội thất văn phòng Nhật Bản (bàn, ghế, cabin, tủ). Không có cặp tỷ giá:
   F/G/I trống → bỏ qua mọi thứ về `tygia`; mọi anchor nằm trong `pairs`.
-- Tải bài: `bash $D/fetch.sh <url> <file>` (UA trình duyệt). Dựng: `cd <SKILL>/scripts &&
-  SP=$D/ BASE=https://www.okamura.com.vn SEL='[data-hook="post-description"]' python3 build.py`. KHÔNG chạy prep.py.
+- Tải bài: `bash $D/fetch.sh <url> <file>` (UA trình duyệt). Dựng: `SP=$D/ BASE=https://www.okamura.com.vn
+  SEL='[data-hook="post-description"]' python3 -I $D/build.py`. KHÔNG chạy prep.py.
   Trang sản phẩm (/san-pham/...) build in ra `product` — VẪN LÀM (khác Techcombank): chèn vào các đoạn mô tả có sẵn.
   Nếu trang sản phẩm gần như không có chữ (< ~5 đoạn) → báo `error: "trang ít nội dung"`, không bịa nội dung.
 - Giọng văn: chuyên gia nội thất văn phòng, xưng "bạn" (hoặc "doanh nghiệp" nếu bài dùng vậy), giọng tư vấn, không quảng cáo lố.

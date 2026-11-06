@@ -15,7 +15,7 @@ Always run Python with `python3 -I` and pass `$D/` (with trailing slash) as the 
 2. Write `$D/urls.txt`: one line per row `r<row> <B>`. Download each source: `bash $D/fetch.sh <B> $D/raw-goc/r<row>.html`,
    then `cp` into `raw/`. Download every target URL not already in `tgt/`: `bash $D/fetch.sh <url> $D/tgt/<last-path-segment>.html`.
    fetch.sh already rewrites to www + browser UA + retries. A 403/404/"Không tìm thấy" → report the row as an error, skip it.
-3. `python3 -I $D/prep.py $D/raw/r*.html` then `cd <repo>/cong-cu/tao-docs-tu-url && SP=$D/ python3 build.py`
+3. `python3 -I $D/prep.py $D/raw/r*.html` then `SP=$D/ python3 -I $D/build.py`
    (build.py reads `$D/urls.txt`; ignore its keyword output). A row printed as `product` (no article body) → report, skip.
 4. Read target pages (title, meta, H2s) to know what each target is about. `python3 -I $D/map.py $D/ $D/out/r<row>.html`
    prints numbered blocks with body-% position and existing links. Block indices `i` in the plan refer to THIS numbering.
