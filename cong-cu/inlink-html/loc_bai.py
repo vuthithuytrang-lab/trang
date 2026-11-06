@@ -1,9 +1,9 @@
 """Lọc các bài cần tạo HTML từ file inlink (bản xuất .xlsx).
 
-python3 loc_bai.py <file.xlsx> <viec_can_lam.json>
+python3 loc_bai.py <file.xlsx> <viec_can_lam.json> [--tat-ca]
 
-Điều kiện: cột "Tình trạng" khác "Đã hoàn thành", cột "Chị Lộc duyệt" có chữ "ok",
-cột "HTML" đang trống. Cột được dò theo tên tiêu đề nên chuyển chỗ cột vẫn chạy đúng.
+Điều kiện: cột "Tình trạng" khác "Đã hoàn thành"/"done", cột "Chị Lộc duyệt" có chữ "ok",
+cột "HTML" đang trống. Thêm --tat-ca để lấy cả bài đã hoàn thành. Cột được dò theo tên tiêu đề nên chuyển chỗ cột vẫn chạy đúng.
 """
 import sys, json, re
 import openpyxl
@@ -40,7 +40,8 @@ for r in range(2, ws.max_row + 1):
     url = str(g(r, cB) or '').strip()
     d = str(g(r, cD) or '').strip()
     l = str(g(r, cL) or '').strip()
-    if not url or d == 'Đã hoàn thành' or 'ok' not in l.lower() or str(g(r, cH) or '').strip():
+    done = d.lower() in ('đã hoàn thành', 'done') and '--tat-ca' not in sys.argv
+    if not url or done or 'ok' not in l.lower() or str(g(r, cH) or '').strip():
         continue
     m = re.search(r'/d/([\w-]+)', str(g(r, cK) or ''))
     if not m:
