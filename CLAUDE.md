@@ -92,6 +92,25 @@ Ba điều không được quên:
 
 Quy trình đầy đủ: `cong-cu/toi-uu-content-seo/QUY-TRINH-NGHIEN-CUU.md`
 
+## 3d. Phân tích chuyên sâu — khi khách ĐÃ CÓ bài trên site
+
+Trang nhắc *"phân tích chi tiết"*, *"làm như bài deco"*, *"làm như key 80m2"*,
+*"bài này đang tụt"*, *"tối ưu bài cũ"*, hoặc cần lấy số liệu thật từ website khách
+⇒ **dùng skill `phan-tich-doi-thu-chuyen-sau`**.
+
+Khác với skill `toi-uu-content-seo` (viết bài mới), skill này dùng khi bài đã đăng rồi.
+Ba việc nó làm mà quy trình kia không có:
+
+1. **Soi website khách** — sơ đồ trang, trang sản phẩm, bài đã đăng. Lấy số liệu thật
+   và phát hiện bài cũ đang cạnh tranh với nhau.
+2. **Bắt lỗi site tự nói ngược nhau** — đối chiếu phần chữ quảng cáo với bảng thông số.
+3. **Học luật đặt heading từ chính bài đang top** của khách, không áp luật của mình.
+
+⚠️ **Hỏi trước khi đề xuất bất cứ điều gì:** bài cũ đang đứng thứ mấy, cho từ khóa nào,
+đâu là key chính và đâu là key mở rộng. Đã sai hai lần vì bỏ qua câu hỏi này.
+
+Quy trình: `cong-cu/phan-tich-doi-thu-chuyen-sau/` (3 file)
+
 ## 4. Giới hạn môi trường đã gặp (đừng mất công thử lại)
 
 | Bị chặn | Biểu hiện | Đường vòng |
@@ -127,4 +146,5 @@ Agent đọc chìa từ file, gửi qua header `Authorization: Bearer <chìa>`, 
 | `khoa-hoc/` | Tiến độ khóa Agent Boss, mã nộp từng bài, sản phẩm đã làm |
 | `cong-cu/` | Công cụ dùng lại được — prompt SEO, bản tin tự động |
 | `cong-cu/toi-uu-content-seo/` | Quy trình 8 bước nghiên cứu search intent, checklist E-E-A-T, 4 luật tối ưu bài viết — **đọc trước khi phân tích intent hoặc tối ưu content** |
+| `cong-cu/phan-tich-doi-thu-chuyen-sau/` | Kỹ thuật bóc dữ liệu website, luật đặt heading, ca mẫu OSAKAR — **đọc khi tối ưu bài đã đăng** |
 | `BAO-MAT.md` | Danh sách chìa khóa đã lộ cần thu hồi |
