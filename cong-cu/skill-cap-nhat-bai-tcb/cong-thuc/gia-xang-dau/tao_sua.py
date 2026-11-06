@@ -144,6 +144,30 @@ def main():
             else:
                 can.append(f'Không thấy câu hỏi thường gặp về {ten} để cập nhật.')
 
+    # Gạch đầu dòng dạng "Xăng E10 RON 95-V: 21,156 VND/lít (Vùng 1) và 21,710 VND/lít (Vùng 2)" (thêm 06/11/2026)
+    if p:
+        for chu, vt, _ in dong:
+            for m in re.finditer(r'((?:Xăng|Dầu)[^:]{2,40}):\s*([\d,.]+)(\s*VND/lít \(Vùng 1\) và )([\d,.]+)(\s*VND/lít \(Vùng 2\))', chu):
+                mh = ma_hang(m.group(1))
+                if not mh or mh not in p['gia'] or None in p['gia'][mh][:2] or len(p['gia'][mh]) < 2:
+                    can.append(f'Gạch đầu dòng "{m.group(1).strip()}": thiếu nguồn giá mới – giữ nguyên.')
+                    continue
+                v1, v2 = p['gia'][mh][:2]
+                them(m.group(2), vt + m.start(2), so(v1), p['nguon'], f'Gạch đầu dòng – {m.group(1).strip()} Vùng 1 theo Petrolimex {p["ky"]}')
+                them(m.group(4), vt + m.start(4), so(v2), p['nguon'], f'Gạch đầu dòng – {m.group(1).strip()} Vùng 2 theo Petrolimex {p["ky"]}')
+
+    # Lưới an toàn: mọi số dạng giá (xx,xxx) trong bài phải hoặc đã được sửa, hoặc trùng một giá mới
+    moi_tat_ca = {so(v) for g in (gia.get(h) for h in ('petrolimex', 'pvoil', 'mipec')) if g for vs in g['gia'].values() for v in vs if v}
+    da_sua = {x['tim'] for x in sua}
+    con = []
+    for chu, vt, _ in dong:
+        for m in re.finditer(r'(?<![\d,.])(\d{2}[,.]\d{3})(?![\d,.])', chu):
+            x = m.group(1)
+            if x not in moi_tat_ca and x.replace('.', ',') not in moi_tat_ca and x not in da_sua and not any(x in t for t in da_sua):
+                con.append(x)
+    if con:
+        can.append('SỐ GIÁ CHƯA CẬP NHẬT (chưa có quy tắc sửa): ' + ', '.join(dict.fromkeys(con)) + ' – cần sửa tay / thêm quy tắc.')
+
     if re.search(r'\n5\.1\. ', van) and re.search(r'\n5\.3\. ', van) and not re.search(r'\n5\.2\. ', van):
         can.append('Mục 5 trong bài gốc đánh số 5.1 rồi nhảy sang 5.3 (không có 5.2) – không sửa, chỉ báo lại.')
 
