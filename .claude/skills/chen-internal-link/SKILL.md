@@ -5,6 +5,14 @@ description: Chạy trọn luồng "Plan internal links" cho một dự án SEO 
 
 # Chèn internal link — luồng dùng lại cho mọi dự án
 
+## Gói kèm trong skill (tự chứa, dùng được ở phiên/tài khoản khác)
+- `scripts/` — build.py (tách bài, env SP/BASE/SEL), chen.py (chèn theo plan.json), blocks.py, map.py, soat.py, kiemtra.py, linkcu.py,
+  cautruc.py, prep.py (Techcombank), fetch.sh (tải trang có UA), verify.py; sửa theo góp ý: docchk.py, docdiff.py, tohtml.py, runs.py.
+- `references/` — HUONG-DAN-WORKER.md (brief agent chèn link), BO-SUNG-OKAMURA.md (mẫu bổ sung cho dự án mới), **BAI-HOC-GOP-Y.md** +
+  gop-y-chi-loc.csv (sổ lỗi chị Lộc — đọc trước khi chèn), example-plan.json (mẫu plan đã duyệt).
+- `prompts/` — lệnh mẫu cho agent con: worker, upload, verify (soát chữ sau tải), sheet (ghi link), scan-gop-y, fix-gop-y, reply.
+  `<SKILL>` = thư mục skill này, `<THU_MUC_NHAP>` = thư mục nháp của phiên; id sheet/thư mục/tên cột trong prompt là của dự án mẫu → thay khi dùng.
+
 > **Từ 06/11/2026 có App Inlink** (`cong-cu/app-inlink/`, chạy trong Google Sheet, không tốn token Claude): tạo file + chèn link + sổ góp ý + trả lời comment.
 > Skill này dùng cho **ca khó** (dòng app ghi "Thiếu", sửa theo góp ý, rà chất lượng) và để **sửa/nâng cấp app**. Dự án mới: thêm 1 mục vào `CauHinh.gs`.
 

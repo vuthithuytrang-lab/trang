@@ -1,0 +1,35 @@
+ngay_ghi,du_an,bai,nhan_xet_chi_loc,nhom_loi,cach_sua
+2026-10-24,Techcombank,cac-nuoc-dung-usd (r9 cũ),"chèn ""USD sang VND"" vào đoạn khuyên đổi tiền đi Trung Quốc → ngược chiều quy đổi",A-sai-ngu-canh,chuyển xuống ý nhận tiền Western Union bằng USD
+2026-10-24,Techcombank,tien-indonesia (r12 cũ),"chèn ""USD sang VND"" vào đoạn mua USD/EUR rồi đổi tại Indonesia → ngược logic",A-sai-ngu-canh,chuyển xuống ý nhận tiền bằng USD
+2026-10-24,Techcombank,FIDO UAF (r24 cũ),câu tỷ giá chèn vào đoạn bảo mật FIDO,A-sai-ngu-canh,chuyển xuống mục chuẩn bị ngoại tệ khi đi du lịch
+2026-10-24,Techcombank,khoa-tai-khoan (r25 cũ),gắn tỷ giá vào điều kiện khóa tài khoản → dễ hiểu thành quy định,D-sai-nghiep-vu,chuyển xuống phần giải pháp
+2026-10-24,Techcombank,tien-singapore (r26 cũ),câu tỷ giá chen vào đoạn chính sách tỷ giá của MAS,A-sai-ngu-canh,chuyển xuống dòng >>> đổi đô la Mỹ
+2026-10-24,Techcombank,cac-loai-hinh-doanh-nghiep (r37),"câu chèn cuối đoạn kết lạc ý + lỗi chính tả ""lựa chon""",H-chinh-ta,đặt ngay sau câu đầu đoạn kết + sửa chính tả
+2026-10-24,Techcombank,tuan-thu-thue-startup (r41),"câu chèn đặt sau dấu hai chấm ""gồm:"" → đứt mạch liệt kê",C-chen-giua-cau,đặt trước câu dẫn có dấu hai chấm
+2026-10-24,Techcombank,thue-ho-kinh-doanh (r46),ngưỡng nộp thuế 100 triệu là nội dung gốc đã cũ,G-loi-bai-goc,báo bên nội dung cập nhật; không tự sửa
+2026-10-24,Techcombank,the-tin-dung (r95),"lỗi chính tả ""phát sin"" trong câu chèn",H-chinh-ta,sửa chính tả + tự soát chính tả câu chèn
+2026-10-24,Techcombank,tin-chap-doanh-nghiep (r474),2 link app vay / nộp tiền là của KH cá nhân chèn vào bài doanh nghiệp,D-sai-doi-tuong,chuyển link vay sang câu về khoản vay cá nhân của chủ DN
+2026-10-25,Techcombank,bao-nhieu-tuoi-duoc-mo-tai-khoan-ngan-hang,"đoạn này k logic, bài đang nói độ tuổi mở TK, k phù hợp nói kinh doanh hay tỷ giá",A-sai-ngu-canh,chuyển USD/VND sang ý mở tài khoản ngoại tệ
+2026-10-25,Techcombank,nhung-chi-phi-khong-duoc-tru-khi-tinh-thue-tndn,"đoạn tỷ giá USD hôm nay hơi gượng, có thể bỏ k",B-chen-guong,bỏ link tỷ giá (bài không có ngữ cảnh ngoại tệ) — còn 4/5 anchor
+2026-10-25,Techcombank,tra-cuu-no-thue-hai-quan,DN k nộp trên eTax được,D-sai-nghiep-vu,đổi sang Cổng thuế điện tử cho DN
+2026-10-25,Techcombank,ngan-hang-so,nên đưa lên phần tiết kiệm vì bài đã tách tiết kiệm khỏi đầu tư,F-sai-vi-tri-trong-bai,chuyển anchor lên mục Gửi tiết kiệm
+2026-10-25,Techcombank,the-visa-ao-la-gi,câu hỏi đang về thẻ ghi nợ mà chèn rút tiền thẻ tín dụng,A-sai-ngu-canh,chuyển sang dòng xem thêm dưới bảng thẻ tín dụng
+2026-10-25,Techcombank,the-visa-co-may-loai,câu tính lãi vay gượng,B-chen-guong,
+2026-10-25,Techcombank,cach-su-dung-tai-khoan-cong-ty,chèn thuế vào phần chuyển tiền cho nhân viên; sao không chèn ở phần thuế,F-sai-vi-tri-trong-bai,chuyển lên mục Chuyển tiền thuế
+2026-10-25,Techcombank,mo-them-tai-khoan-ngan-hang-cho-cong-ty,đoạn này k liên quan,A-sai-ngu-canh,chuyển sang ý xem xét tài chính công ty
+2026-10-25,Techcombank,thue-vat-la-gi,câu trước đang liệt kê mà chen vào → diễn đạt lại,C-chen-giua-cau,viết lại câu dẫn để câu chèn thành câu tiếp nối
+2026-10-25,Techcombank,thu-tuc-thanh-lap-doanh-nghiep,nên thành đoạn kết phần 5: làm xong các việc mới đến kê khai nộp thuế,F-sai-vi-tri-trong-bai,chuyển thành đoạn kết phần 5
+2026-10-25,Techcombank,chon-kenh-dau-tu-an-toan,tránh so sánh trực diện (trái phiếu vs tiền gửi); có thể phải chờ solution duyệt,E-so-sanh-truc-dien,viết câu trung tính
+2026-10-25,Techcombank,mo-the-tin-dung-co-loi-ich-gi,đoạn này gượng quá,B-chen-guong,chuyển sang đoạn điểm tín dụng
+2026-10-25,Techcombank,sms-banking,có dịch vụ báo tỷ giá qua SMS luôn à?,D-sai-nghiep-vu,bỏ ý không có nguồn
+2026-10-25,Techcombank,quet-ma-qr-techcombank,dòng xem thêm tỷ giá k liên quan nội dung phía trên,A-sai-ngu-canh,đề xuất bỏ link tỷ giá
+2026-10-25,Techcombank,cach-nap-the-viettel,"đoạn giá điện lạc quẻ, đang nói về điện thoại; nên cho xuống cuối bài",A-sai-ngu-canh,chuyển xuống đoạn kết (ngoài tiền điện thoại còn thanh toán tiền điện)
+2026-10-25,Techcombank,gui-tiet-kiem-tich-luy-la-gi,Tích lũy như ý của TCB lãi suất k giống nhau cả quá trình gửi,D-sai-nghiep-vu,"bỏ cụm sai ""cùng một mức lãi suất"", chuyển link xuống đầu mục 3 (so sánh lãi suất, thay đổi theo thời điểm)"
+2026-10-25,Techcombank,cach-tinh-lai-vay-ngan-hang,câu so sánh tính lãi tiền gửi k liên quan lắm,A-sai-ngu-canh,bỏ link tính lãi tiền gửi — còn 3/4 anchor
+2026-10-25,Techcombank,lam-the-visa-online,đoạn rút tiền thẻ tín dụng k liên quan,A-sai-ngu-canh,bỏ link rút tiền thẻ tín dụng — còn 3/4 anchor
+2026-10-25,Techcombank,quy-trinh-tat-toan-khoan-vay-the-chap,"đoạn lãi suất vay gượng, có thể chèn lên 2.1",B-chen-guong,chuyển link lên mục 2.1 (câu nối ý tính tiền lãi khi tất toán)
+2026-10-25,Techcombank,tra-cuu-han-muc-the-tin-dung,link rút tiền QR là từ TK thanh toán chứ k phải thẻ tín dụng → nên bỏ,D-sai-nghiep-vu,bỏ link rút tiền không cần thẻ — còn 4/5 anchor
+2026-10-25,Techcombank,vay-mua-dien-thoai,MyCash k cần có tiền gửi vẫn được gửi lời mời,D-sai-nghiep-vu,"bỏ ý hạn mức dựa trên tiền gửi; bài gốc mục 1.2 vẫn ghi ""90% giá trị tiền gửi"" → báo đội nội dung"
+2026-10-25,Techcombank,vay-mua-nha-o-xa-hoi,đang nói về vay sao lại có gửi tiết kiệm,A-sai-ngu-canh,viết lại câu nối ý tích lũy vốn đối ứng → gửi tiết kiệm; nếu chị vẫn thấy lệch thì bỏ link
+2026-10-25,Techcombank,(dòng 698),link ok nhưng mấy ảnh vẫn để TCB rewards,G-loi-bai-goc,báo bên nội dung
+2026-10-25,Techcombank,vay-the-chap-so-bao-hiem-xa-hoi (dòng 744),tiêu đề sổ BHXH mà nội dung về sổ đỏ (bài gốc cũng thế),G-loi-bai-goc,báo đội web

@@ -1,0 +1,13 @@
+Verify uploaded Google Docs against local source HTML, and fix small text slips IN PLACE. Load tools via ToolSearch: "select:mcp__Google_Drive__download_file_content,mcp__Google_Docs__read_doc,mcp__Google_Docs__update_doc".
+O = <THU_MUC_NHAP>/
+Batches: __BATCHES__. For each batch k: ids in O/k/uploaded.json ({row: docId}); local file O/k/final/r<row>.html; rows O/k/rows.json.
+For EACH doc:
+1. download_file_content(fileId, exportMimeType "text/html"). The result is saved to a file (path in the tool result); never print it.
+   If the connector crashes on a big doc, use read_doc and skip step 2's export-based check (say so).
+2. Run `python3 -I O/docdiff.py O/k/final/r<row>.html <saved json>` → word-level differences (ignore pure whitespace/punctuation-spacing noise and image-only noise).
+   Run `python3 -I O/docchk.py O/k/rows.json <row> <saved json>` → every anchor must be linked + yellow ("OK").
+3. If docdiff shows real word differences (missing/changed/extra words — the uploader retyped content and may have made slips), fix them in the Doc with
+   mcp__Google_Docs__update_doc: read_doc first, use writeControl.requiredRevisionId, insertText/deleteContentRange at exact positions (highest index first), keep formatting. Then re-export and re-run docdiff until clean.
+   NEVER create, copy, trash or rename files. NEVER touch Sheets.
+Known slip: row 43 (k5) Swift paragraph lost "thiết kế" in "kết hợp giữa thiết kế thẩm mỹ và tính năng".
+Final reply JSON only: [{"row": N, "docchk": "OK|...", "diff_before": n_real_diffs, "fixed": [..], "remaining": [..]}]

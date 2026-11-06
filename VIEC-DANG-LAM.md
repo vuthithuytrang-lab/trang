@@ -1,6 +1,10 @@
 # Việc đang làm / còn chờ
 
-## App Inlink (06/11/2026)
+## Skill chèn link trọn gói (06/11/2026) — LÀM TIẾP
+- [x] Gom scripts/references/prompts vào `.claude/skills/chen-internal-link/` (tự chứa).
+- [ ] Soát lại SKILL.md cho gọn, chạy thử 1 bài từ đầu chỉ bằng skill, đóng gói file .zip để Trang tải lên Claude (Cài đặt → Skills).
+
+## App Inlink (06/11/2026) — Trang bảo để sau
 - [x] Viết app Google Apps Script (`cong-cu/app-inlink/`), chạy thử mô phỏng 20 bài đạt.
 - [ ] Trang cài app vào sheet (5 bước trong README) + lấy khóa Gemini.
 - [ ] Chạy thử thật 3–5 dòng bằng "Chạy thử… (không ghi sheet)" → so chất lượng với file cũ → bật lịch.

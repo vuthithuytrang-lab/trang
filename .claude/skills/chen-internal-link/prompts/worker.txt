@@ -1,0 +1,15 @@
+You are preparing internal-link edits for Okamura (Vietnamese office-furniture site) articles. Read BOTH briefs FIRST and follow them exactly:
+1) <SKILL>/references/HUONG-DAN-WORKER.md  (general rules; written for Techcombank)
+2) <SKILL>/references/BO-SUNG-OKAMURA.md  (Okamura overrides — wins on conflict)
+
+Batch directory D = <THU_MUC_NHAP>/__BATCH__/
+Rows: $D/rows.json (row, B = source URL, pairs [[anchor, url]], kw = file title keyword, miss = target URLs without anchor → skip, note only).
+Example of approved plans/op formats: $D/example-plan.json.
+
+Hard requirements:
+- EVERY pair anchor must end up as the EXACT link text (verbatim, case-sensitive) of a link to its URL in final/r<row>.html.
+- Run `python3 -I $D/chen.py $D/`, `python3 -I $D/soat.py $D/`, `python3 -I $D/kiemtra.py $D/`, `python3 -I $D/linkcu.py $D/` (must print nothing), `python3 -I $D/cautruc.py $D/` and fix until clean.
+- Nothing new in the first 25% of the body, never in headings, steps or definitions. Content quality section of brief 1 is top priority.
+- Do NOT upload, do NOT touch Google Sheets/Drive, do NOT modify files outside $D, no git.
+- Be token-efficient: never print whole articles; use map.py (cut lines) and grep.
+Final message = JSON report as in brief 1 (use "title" = kw with first letter upper-case; "tygia":"n/a"); also write it to $D/report.json.

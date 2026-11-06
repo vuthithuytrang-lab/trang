@@ -1,0 +1,14 @@
+Task: add a reply comment to Google Docs that were ALREADY fixed, then mark the sheet. Do NOT edit any document text.
+Load tools via ToolSearch: "select:mcp__Google_Docs__read_doc,mcp__Google_Docs__update_doc,mcp__Google_Sheets__get_values,mcp__Google_Sheets__update_values".
+W = <THU_MUC_NHAP>/
+Helpers: `python3 W/runs.py <doc.json> <start> <end>` prints paragraphs/runs with styles (BG = yellow highlight, LINK:...).
+Docs index helper: python3 /root/.claude/skills/synced/3a8165cd-e86a-4b05-9ae0-45437de9f790_64916e23-f9f5-46fb-9fed-38ddc7b3eab3/google-workspace/scripts/docs_index.py find <doc.json> "<text>"
+Items: W/reply.json, entries __RANGE__ (by list position, 0-based, end exclusive). Each: row, slug, doc, reply (Vietnamese text written as "Em đã ..."), mark (bool).
+For EACH item:
+1. read_doc(documentId, commentsIncluded=true). The result is saved to a file; load it with python and save its "content" object as W/r<row>.json (never print the whole doc).
+   If a comment by "Thùy Trang" that starts with "Em" already exists → skip step 2 (already replied).
+2. Pick where the reply should sit: the yellow-highlighted (BG) inserted text that the reply talks about (e.g. the sentence containing the first quoted anchor in `reply`). Use runs.py / find to get its exact startIndex/endIndex (one sentence or the yellow run; not a heading). Then update_doc with
+   writeControl.requiredRevisionId = that read's revisionId and requests [{"insertComment":{"range":{"startIndex":S,"endIndex":E},"content": <reply exactly>}}].
+   If the doc no longer contains the fix described in `reply`, do NOT comment; report it.
+3. If mark is true and the comment was added (or already existed): Sheet 1KqFQ7DIRFM3vwozccCYZrlsRybOAsieAKm_MVsM2Lnc, tab 'Plan internal links - Tổng'. get_values B<row>:L<row>; check B ends with the slug and L contains a variant of "cần sửa" (typos ok, case-insensitive). If both true → update_values L<row> = [["đã sửa"]]. Otherwise do not write; report why. Never write any other cell.
+Final reply JSON only: [{"row":N,"comment":"added|exists|skipped: why","L":"đã sửa|skipped: why"}]

@@ -1,0 +1,6 @@
+Write doc links into a Google Sheet, very carefully. Load tools via ToolSearch query "select:mcp__Google_Sheets__get_values,mcp__Google_Sheets__update_values".
+Spreadsheet id: 1xKnPX-uf7av3FpSocVjy9wKJiNeygrsZLVmdcMC7np8 ; tab: Trang tính146 (range form: 'Trang tính146'!S12)
+First read 'Trang tính146'!S1 and confirm it is "Fie Blog"; otherwise STOP and report.
+Input: __LIST__ (JSON object { "<row>": {"S": "<doc link>", "E": "<expected landing page URL in column E>"} }).
+For EACH row: get_values 'Trang tính146'!E<row>:S<row>. If E != given E (ignore trailing slash) → write nothing, record "E không khớp". If S<row> is empty → update_values 'Trang tính146'!S<row> with [[S]]; else record "S đã có dữ liệu".
+Never write any other cell, never multi-cell writes, never clear. Final reply JSON only: {"<row>": "written|skipped: reason"}

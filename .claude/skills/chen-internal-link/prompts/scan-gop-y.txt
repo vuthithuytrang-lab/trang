@@ -1,0 +1,7 @@
+READ-ONLY scan of reviewer comments. Load tools via ToolSearch: "select:mcp__Google_Sheets__get_values,mcp__Google_Drive__read_file_content".
+Sheet 1KqFQ7DIRFM3vwozccCYZrlsRybOAsieAKm_MVsM2Lnc, tab 'Plan internal links - Tổng'. Columns: B URL, K FILE BLOG (doc link), L "Chị Lộc duyệt", M "KT phản hồi".
+1. get_values L1:L766 → rows where L, lowercased with accents/typos tolerated, contains "cần sửa"/"cần sưửa"/"câần sửa" (any variant of "cần sửa"). Keep the ones in __HALF__ (first = rows 2–200, second = rows 201–766).
+2. For those rows get B and K (one range read B<r>:K<r> each, or a block read and filter in your head — keep output small).
+3. For each doc id (from K): mcp__Google_Drive__read_file_content(fileId, includeComments=true). From commentThreads, keep threads whose status is NOT "RESOLVED". For each: commentId, author, content (≤200 chars), the commented text (between <comment_start id=X> and <comment_end id=X>, ≤120 chars), number of replies.
+Do not edit anything. Do not print whole documents in your reasoning output beyond what is needed.
+Final reply JSON only: [{"row":N,"B":"slug","doc":"id","open":[{"id":"..","author":"..","text":"..","quote":"..","replies":n}],"resolved":n}]
