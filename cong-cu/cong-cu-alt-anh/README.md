@@ -1,0 +1,79 @@
+# App soát và chèn alt ảnh
+
+File: **`soat-alt-anh.html`**
+
+Mở bằng Chrome là chạy. Không cần cài gì, không cần đăng nhập, không tốn token.
+Cần mạng để **tải ảnh về xem và đo kích thước** — phần soát luật thì chạy offline.
+
+---
+
+## Dùng thế nào
+
+1. Mở file `soat-alt-anh.html` bằng Chrome
+2. Dán **HTML bài viết** vào ô 1
+3. Dán **danh sách key** vào ô 2 — mỗi dòng một key, dòng nào là key chính thì ghi thêm `- key chính` ở cuối
+4. Dán **đường dẫn ảnh thumb** vào ô 3
+5. (Tùy chọn) Dán danh sách **ảnh đã dùng ở bài trước** vào ô 4 để app báo nếu bài này xài lại
+6. Bấm **Quét bài** — đợi app tải ảnh về
+7. Nhìn ảnh, viết alt vào từng ô. Đèn bên dưới tự báo đúng/sai luật ngay khi gõ
+8. Sang tab **HTML đã chèn** → bấm Copy → dán thẳng vào CMS
+9. Hoặc sang tab **Bảng để copy** nếu chỉ cần bảng text
+
+---
+
+## App làm được gì
+
+**Tự dò lỗi bài** — đúng những lỗi vẫn hay gặp ở bài AIG:
+
+| Lỗi | Mức |
+|---|---|
+| Khai `height` sai so với kích thước file thật | nặng |
+| Ảnh không có thẻ `alt`, hoặc `alt` rỗng | nặng |
+| Hai ảnh dùng chung một chú thích | nặng |
+| Cùng một file ảnh dùng hai lần trong bài | nặng |
+| Ảnh đã dùng ở bài trước (dò theo thư viện bạn dán) | nặng |
+| Lỗi link Markdown `[chữ](đường-dẫn)` dán nhầm vào HTML | nặng |
+| Link còn đuôi `utm_source=chatgpt` | nặng |
+| Ảnh trỏ về server nháp (`dangbai.`, `staging`…) | nặng |
+| Alt cũ thừa dấu cách đầu hoặc cuối | nhẹ |
+| Alt cũ giống hệt chú thích | nhẹ |
+| Thẻ link rỗng, không có chữ bên trong | nhẹ |
+
+**Tự kiểm từng câu alt khi đang gõ:**
+
+- Đếm ký tự **đúng như Python `len()`** (đếm ký tự, không đếm byte — tiếng Việt đếm byte là sai)
+- Báo nếu chạm hoặc vượt 120 ký tự
+- Báo nếu thiếu key đã gán cho ảnh đó
+- Báo nếu chứa **từ cấm**: `banner`, `ảnh bìa`, `cover image`, `ảnh ghép`, `khung tròn`,
+  `khung hình tròn`, `hình tròn ghép`, `collage`, `bố cục`, `ảnh thiết kế`, `nền bản đồ`
+- Riêng ô **Description**: báo nếu mở đầu bằng `Bài viết của…`, `Trang dịch vụ…`, `Cover image for…`
+- Báo nếu **trùng câu** với một ô khác
+- Báo nếu thừa dấu cách, hoặc có ký tự `< > " &` làm vỡ thẻ HTML
+
+**Tự chia key** cho các ảnh (bạn đổi lại được bằng ô chọn ở từng ảnh).
+
+**Xuất HTML nguyên vẹn** — chỉ thay giá trị trong `alt="…"`, không đụng một ký tự nào khác.
+Kèm bảng chứng minh: đếm lại `<img`, `<h2`, `<h3`, `<table`, `<tr`, `<td`, `<ul`, `<li`,
+`<a `, `[caption`, `<p `, `<strong`, `<em`, `&amp;` và so phần chữ đọc được với bản gốc.
+
+---
+
+## App KHÔNG làm được gì
+
+**Không viết hộ câu alt.** Nó không nhìn hiểu được tấm ảnh.
+
+App hiện ảnh lên cho bạn nhìn, gán sẵn key, đếm ký tự và soát luật — nhưng **câu chữ vẫn do
+người viết**. Phần đó nếu cần người viết hộ thì mới dùng tới Claude.
+
+Ngoài ra app **không so được nội dung hai tấm ảnh** để biết có trùng nhau không (trình duyệt
+không đọc được điểm ảnh của ảnh từ tên miền khác). Nó chỉ dò trùng theo **đường dẫn file** —
+nên hãy dùng ô "Thư viện ảnh đã dùng": mỗi lần xong một bài thì copy danh sách đường dẫn ảnh
+của bài đó vào một file riêng, bài sau dán lại vào ô đó.
+
+---
+
+## Luật lấy từ đâu
+
+Toàn bộ luật trong app lấy từ `cong-cu/cong-cu-viet-alt-anh-chuan-seo.md`.
+Sửa luật ở file đó thì nhớ sửa cả trong app (mục `GIOI_HAN`, `TU_CAM`, `MO_DAU_CAM`
+nằm ngay đầu phần `<script>`).
