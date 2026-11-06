@@ -1,0 +1,22 @@
+{
+  "ten_du_an": "Ví dụ: Share social GP tháng 11",
+  "sheet_id": "ID file Google Sheet (đoạn giữa /d/ và /edit)",
+  "tab": "Tên tab, ví dụ: Share social GP",
+  "cot": {"url_bai_goc": "B", "nhan": "C", "link_da_share": "D", "lich_dang": "E"},
+  "nhan_cua_minh": {"wp": "WordPress - Trang", "wix": "Wix - Trang"},
+  "nen_tang": ["wp", "wix"],
+  "wordpress": {"site": "tenblog.wordpress.com"},
+  "wix": {
+    "site": "khóa site trong wix-accounts.local.json, ví dụ: trangjena3.wixsite.com/techcombankvietnam",
+    "trang_chu": "https://trangjena3.wixsite.com/techcombankvietnam",
+    "url_bai": "https://trangjena3.wixsite.com/techcombankvietnam/b-i-ng/"
+  },
+  "han_chot": "2026-11-08T23:00:00+07:00",
+  "khung_gio": [7, 0, 23, 0],
+  "cach_nhau_phut": [120, 180],
+  "toi_da_moi_ngay": 6,
+  "dang_thang_khong_nhap": true,
+  "nhan_anh": {"wp": "Kiến thức tài chính cá nhân", "wix": "Cẩm nang quản lý tiền"},
+  "file_quy_tac_viet": "quy-tac-viet.md",
+  "ghi_chu": "Chìa đăng nhập KHÔNG để ở đây. Chìa nằm trong .claude/skills/share-bai-*/…accounts.local.json (không lên git)."
+}
