@@ -32,7 +32,9 @@ Tài khoản đã kết nối nằm sẵn ở `.claude/skills/share-bai-*/…acc
    `python3 scripts/check_sites.py <thư mục dự án>` → nếu `BLOCKED` thì DỪNG nền tảng đó và báo Trang ngay.
    `python3 scripts/step.py <thư mục dự án>` → in `PUBLISHED {…}`, `LEFT`, `WAKE_AT`.
    Mỗi `PUBLISHED` có `"live": true` → tìm lại dòng theo URL bài gốc, ghi link + giờ đăng "HH:MM dd/mm/yyyy", đọc lại sau khi ghi.
-   **Tiết kiệm token (Trang yêu cầu 06/11):** chạy vòng đăng NỀN bằng script (mẫu `cong-cu/share-bai-social/gp-share-social/chay_nen.py`:
+   ⚠️ Đã thử 06/11: chương trình chạy nền BỊ TẮT khi phiên ngủ (lỡ 2 bài). Vì vậy vẫn cần send_later mỗi giờ hẹn, nhưng prompt ngắn,
+   không routine giữ nhịp 3 tiếng. Cách 0 token thật sự = app Google Sheet.
+   (Cách cũ, chỉ dùng khi phiên đang thức:) chạy vòng đăng NỀN bằng script (mẫu `cong-cu/share-bai-social/gp-share-social/chay_nen.py`:
    `setsid nohup python3 chay_nen.py &`) — tự chờ giờ, giữ ≥ 2 tiếng/bài, chỉ 7–23h, tự dừng khi trang bị khóa. AI chỉ thức
    **1 lần/tối** (send_later 22:45) để ghi link cả ngày vào sheet bằng 1 lệnh, kiểm tra vòng nền còn sống, sao lưu. Không đặt nhắc mỗi bài,
    không routine giữ nhịp 3 tiếng. Tốt nhất: chuyển hẳn sang app Google Sheet (`cong-cu/app-share-bai/`) — 0 token.
