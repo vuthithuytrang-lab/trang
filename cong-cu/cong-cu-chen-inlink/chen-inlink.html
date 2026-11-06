@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chèn inlink tự động</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sg-xanh:#004AEF; --sg-xanh-sang:#0D53F0; --sg-navy:#002992;
+  --sg-mint:#07EF9C; --sg-cyan:#0DD1FF; --sg-vang:#FFCE00; --sg-cam:#F68B1F;
+  --den:#151515; --xam-nen:#F3F3F6; --xam-vien:#DCDCDC; --xam-chu:#5A6B66;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--xam-nen); color:var(--den);
+  font-family:Montserrat,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:14px; line-height:1.55;
+}
+header{background:var(--sg-navy); color:#fff; padding:18px 24px}
+header h1{margin:0; font-size:22px; font-weight:800; letter-spacing:-.2px}
+header p{margin:4px 0 0; font-size:13px; opacity:.85}
+.wrap{max-width:1400px; margin:0 auto; padding:20px 16px 60px}
+.grid{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+@media(max-width:1000px){.grid{grid-template-columns:1fr}}
+.card{background:#fff; border:1px solid var(--xam-vien); border-radius:10px; padding:16px; margin-bottom:16px}
+.card h2{margin:0 0 4px; font-size:15px; font-weight:700; color:var(--sg-navy)}
+.card .hint{margin:0 0 10px; font-size:12px; color:var(--xam-chu)}
+textarea{
+  width:100%; border:1px solid var(--xam-vien); border-radius:8px; padding:10px;
+  font-family:ui-monospace,"SF Mono",Consolas,monospace; font-size:12.5px; line-height:1.5;
+  resize:vertical; background:#fff; color:var(--den);
+}
+textarea.tall{min-height:280px}
+textarea.mid{min-height:170px}
+input[type=text],input[type=number],select{
+  border:1px solid var(--xam-vien); border-radius:8px; padding:7px 9px;
+  font-family:inherit; font-size:13px; background:#fff; color:var(--den);
+}
+input[type=text]{width:100%}
+label.row{display:flex; align-items:center; gap:8px; margin:7px 0; font-size:13px}
+label.row span{flex:1}
+label.row input[type=number]{width:84px}
+label.chk{display:flex; align-items:flex-start; gap:8px; margin:9px 0; font-size:13px; cursor:pointer}
+label.chk input{margin-top:3px; flex:none}
+.btn{
+  background:var(--sg-xanh); color:#fff; border:0; border-radius:8px;
+  padding:12px 22px; font-family:inherit; font-size:14px; font-weight:700; cursor:pointer;
+}
+.btn:hover{background:var(--sg-xanh-sang)}
+.btn.phu{background:#fff; color:var(--sg-xanh); border:1.5px solid var(--sg-xanh); padding:9px 16px; font-size:13px}
+.btn.phu:hover{background:#EEF3FF}
+.hang-nut{display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin:14px 0 4px}
+table{width:100%; border-collapse:collapse; font-size:12.5px; margin-top:8px}
+th,td{border:1px solid var(--xam-vien); padding:7px 9px; text-align:left; vertical-align:top}
+th{background:var(--xam-nen); font-weight:700; font-size:12px}
+td.url{word-break:break-all; max-width:280px}
+.pill{display:inline-block; padding:2px 8px; border-radius:20px; font-size:11px; font-weight:700; white-space:nowrap}
+.pill.ok{background:#E1FBF0; color:#046B47}
+.pill.bo{background:#FFF3E0; color:#9A5600}
+.pill.loi{background:#FDE7E7; color:#9A1B1B}
+.zone{display:inline-block; padding:2px 7px; border-radius:5px; font-size:11px; background:var(--xam-nen); color:var(--xam-chu); font-weight:600}
+.tomtat{display:flex; gap:10px; flex-wrap:wrap; margin:12px 0}
+.o{background:var(--xam-nen); border-radius:8px; padding:10px 14px; min-width:104px}
+.o .so{font-size:23px; font-weight:800; color:var(--sg-xanh); line-height:1.1}
+.o .ten{font-size:11px; color:var(--xam-chu); margin-top:2px}
+.uutien-list{list-style:none; padding:0; margin:6px 0 0}
+.uutien-list li{
+  display:flex; align-items:center; gap:9px; background:var(--xam-nen);
+  border:1px solid var(--xam-vien); border-radius:8px; padding:7px 10px; margin-bottom:6px; font-size:13px;
+}
+.uutien-list .stt{
+  width:22px; height:22px; flex:none; border-radius:50%; background:var(--sg-xanh); color:#fff;
+  font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center;
+}
+.uutien-list .ten{flex:1}
+.mini{background:#fff; border:1px solid var(--xam-vien); border-radius:5px; padding:3px 8px;
+  font-family:inherit; font-size:12px; cursor:pointer; line-height:1}
+.mini:hover{background:var(--xam-nen)}
+.canhbao{background:#FFF8E1; border-left:4px solid var(--sg-vang); border-radius:0 8px 8px 0;
+  padding:10px 14px; font-size:12.5px; margin-top:12px}
+.canhbao b{color:#8A6100}
+.xem-truoc{border:1px solid var(--xam-vien); border-radius:8px; padding:14px; max-height:420px;
+  overflow:auto; background:#fff; font-size:13.5px; line-height:1.7}
+.xem-truoc a{color:var(--sg-xanh); font-weight:600}
+.xem-truoc mark{background:var(--sg-mint); padding:1px 2px; border-radius:3px}
+.tab-hang{display:flex; gap:6px; margin-bottom:10px; flex-wrap:wrap}
+.tab{background:var(--xam-nen); border:1px solid var(--xam-vien); border-radius:7px;
+  padding:7px 14px; font-size:12.5px; font-weight:600; cursor:pointer}
+.tab.chon{background:var(--sg-xanh); color:#fff; border-color:var(--sg-xanh)}
+.an{display:none}
+code.k{background:var(--xam-nen); padding:1px 5px; border-radius:4px; font-size:12px}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Chèn inlink tự động</h1>
+  <p>Dán HTML bài viết + bảng link, bấm một nút. Chạy ngay trong trình duyệt — không cần mạng, không cần tài khoản.</p>
+</header>
+
+<div class="wrap">
+
+<div class="grid">
+
+  <!-- CỘT TRÁI: ĐẦU VÀO -->
+  <div>
+    <div class="card">
+      <h2>1. HTML bài viết</h2>
+      <p class="hint">Dán nguyên khối HTML từ CMS vào đây.</p>
+      <textarea id="htmlVao" class="tall" placeholder="&lt;p&gt;Nội dung bài viết...&lt;/p&gt;"></textarea>
+    </div>
+
+    <div class="card">
+      <h2>2. Bảng link</h2>
+      <p class="hint">
+        Mỗi dòng một link, viết theo thứ tự: <code class="k">từ khoá | đường dẫn | mức ưu tiên</code><br>
+        Mức ưu tiên là số từ <b>1 đến 9</b>, <b>1 là ưu tiên cao nhất</b>. Bỏ trống thì mặc định là 5.<br>
+        Copy thẳng 3 cột từ Excel dán vào cũng được.
+      </p>
+      <textarea id="bangLink" class="mid" placeholder="tinh bột sắn | https://asiagroup-vn.com/tinh-bot-san/ | 1
+nước ép trái cây | https://asiagroup-vn.com/nuoc-ep-trai-cay/ | 2
+nguyên liệu thực phẩm | https://asiagroup-vn.com/nguyen-lieu-thuc-pham/"></textarea>
+    </div>
+  </div>
+
+  <!-- CỘT PHẢI: LUẬT -->
+  <div>
+    <div class="card">
+      <h2>3. Thứ tự vùng ưu tiên</h2>
+      <p class="hint">Một từ khoá xuất hiện ở nhiều chỗ thì app chèn vào vùng đứng trên trước. Bấm mũi tên để đổi thứ tự.</p>
+      <ul class="uutien-list" id="dsVung"></ul>
+    </div>
+
+    <div class="card">
+      <h2>4. Luật chèn</h2>
+      <label class="row"><span>Tối đa bao nhiêu link một bài</span><input type="number" id="maxTong" value="8" min="1" max="100"></label>
+      <label class="row"><span>Tối đa bao nhiêu link về cùng một đường dẫn</span><input type="number" id="maxUrl" value="1" min="1" max="10"></label>
+      <label class="row"><span>Hai link phải cách nhau ít nhất (ký tự)</span><input type="number" id="khoangCach" value="250" min="0" max="5000"></label>
+
+      <label class="chk"><input type="checkbox" id="choHeading"><span>Cho phép chèn link vào trong tiêu đề (H1–H6)</span></label>
+      <label class="chk"><input type="checkbox" id="moTabMoi" checked><span>Mở link ở tab mới <code class="k">target="_blank"</code></span></label>
+      <label class="chk"><input type="checkbox" id="uuTienDai" checked><span>Từ khoá dài thắng từ khoá ngắn khi trùng nhau</span></label>
+
+      <label class="row" style="margin-top:12px"><span style="flex:none">Không tự link về chính bài này:</span></label>
+      <input type="text" id="urlBaiNay" placeholder="Dán URL của chính bài đang làm (để trống cũng được)">
+    </div>
+
+    <div class="hang-nut">
+      <button class="btn" id="nutChay">Chèn link</button>
+      <button class="btn phu" id="nutViDu">Điền ví dụ mẫu</button>
+      <button class="btn phu" id="nutXoa">Xoá hết</button>
+    </div>
+  </div>
+</div>
+
+<!-- KẾT QUẢ -->
+<div class="card an" id="khungKetQua">
+  <h2>Kết quả</h2>
+
+  <div class="tomtat" id="tomTat"></div>
+
+  <div class="tab-hang">
+    <div class="tab chon" data-tab="html">HTML đã chèn</div>
+    <div class="tab" data-tab="xem">Xem thử</div>
+    <div class="tab" data-tab="bao">Bảng báo cáo</div>
+    <div class="tab" data-tab="sot">Key chưa chèn được</div>
+  </div>
+
+  <div id="tab-html">
+    <div class="hang-nut" style="margin-top:0">
+      <button class="btn phu" id="nutCopy">Copy HTML</button>
+      <span id="baoCopy" style="font-size:12.5px;color:#046B47;font-weight:600"></span>
+    </div>
+    <textarea id="htmlRa" class="tall" readonly></textarea>
+  </div>
+
+  <div id="tab-xem" class="an"><div class="xem-truoc" id="xemTruoc"></div></div>
+  <div id="tab-bao" class="an"><div id="bangBao"></div></div>
+  <div id="tab-sot" class="an"><div id="bangSot"></div></div>
+</div>
+
+</div>
+
+<script>
+/* ==========================================================================
+   CHÈN INLINK TỰ ĐỘNG
+   Chạy hoàn toàn trong trình duyệt. Không gọi ra ngoài, không gửi dữ liệu đi đâu.
+   ========================================================================== */
+
+/* --- Ba tầng ưu tiên ---------------------------------------------------
+   Tầng 1: ưu tiên theo TỪ KHOÁ  — cột thứ 3 trong bảng link (1 cao nhất)
+   Tầng 2: ưu tiên theo VÙNG     — danh sách kéo thả ở mục 3
+   Tầng 3: ưu tiên theo ĐỘ DÀI   — key dài thắng key ngắn khi trùng chỗ
+   ----------------------------------------------------------------------- */
+
+var VUNG = [
+  {ma:'sapo',    ten:'Sapo (đoạn mở đầu)'},
+  {ma:'heading', ten:'Tiêu đề có sẵn (H2–H6)'},
+  {ma:'ketbai',  ten:'Kết bài (hai đoạn cuối)'},
+  {ma:'thanbai', ten:'Thân bài'}
+];
+
+function veDanhSachVung(){
+  var ul = document.getElementById('dsVung');
+  ul.innerHTML = '';
+  VUNG.forEach(function(v, i){
+    var li = document.createElement('li');
+    li.innerHTML =
+      '<span class="stt">' + (i+1) + '</span>' +
+      '<span class="ten">' + v.ten + '</span>' +
+      '<button class="mini" data-len="' + i + '" ' + (i===0?'disabled':'') + '>&#9650;</button>' +
+      '<button class="mini" data-xuong="' + i + '" ' + (i===VUNG.length-1?'disabled':'') + '>&#9660;</button>';
+    ul.appendChild(li);
+  });
+  ul.querySelectorAll('[data-len]').forEach(function(b){
+    b.onclick = function(){ var i = +b.dataset.len; doiCho(i, i-1); };
+  });
+  ul.querySelectorAll('[data-xuong]').forEach(function(b){
+    b.onclick = function(){ var i = +b.dataset.xuong; doiCho(i, i+1); };
+  });
+}
+function doiCho(a, b){
+  var t = VUNG[a]; VUNG[a] = VUNG[b]; VUNG[b] = t; veDanhSachVung();
+}
+veDanhSachVung();
+
+/* --- Đọc bảng link ----------------------------------------------------- */
+function docBangLink(text){
+  var ds = [], loi = [];
+  text.split(/\r?\n/).forEach(function(dong, idx){
+    dong = dong.trim();
+    if(!dong) return;
+    var cot = dong.split(/\s*[|\t]\s*/);           // ngăn bằng dấu | hoặc tab
+    var key = (cot[0]||'').trim();
+    var url = (cot[1]||'').trim();
+    var ut  = parseInt((cot[2]||'').trim(), 10);
+    if(!key || !url){ loi.push('Dòng ' + (idx+1) + ': thiếu từ khoá hoặc đường dẫn'); return; }
+    if(isNaN(ut) || ut < 1 || ut > 9) ut = 5;
+    ds.push({key:key, url:url, uuTien:ut});
+  });
+  return {ds:ds, loi:loi};
+}
+
+/* --- Khớp từ khoá kiểu tiếng Việt --------------------------------------
+   \b của JS không hiểu chữ có dấu, nên phải tự chặn hai đầu bằng
+   "không phải chữ cái, không phải chữ số".
+   ----------------------------------------------------------------------- */
+function thoatRegex(s){ return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+function taoRegex(key){
+  var loi = thoatRegex(key).replace(/\s+/g, '[\\s\\u00A0]+');
+  try{
+    return new RegExp('(?<![\\p{L}\\p{N}_])' + loi + '(?![\\p{L}\\p{N}_])', 'giu');
+  }catch(e){
+    return new RegExp('(^|[^\\p{L}\\p{N}_])(' + loi + ')(?![\\p{L}\\p{N}_])', 'giu');
+  }
+}
+
+/* --- Xác định vùng của một nút văn bản --------------------------------- */
+function ganVung(body){
+  var khoi = Array.prototype.slice.call(body.children);
+  var laHeading = function(e){ return /^H[1-6]$/.test(e.tagName); };
+  var viTriHeadingDau = khoi.findIndex(laHeading);
+
+  // Kết bài = tối đa 2 đoạn văn nằm SAU tiêu đề cuối cùng.
+  // Nếu dò ngược từ cuối mà gặp heading thì dừng, để không bắt nhầm đoạn giữa bài.
+  var doanCuoi = [];
+  for(var i = khoi.length - 1; i >= 0 && doanCuoi.length < 2; i--){
+    if(laHeading(khoi[i])) break;
+    if(khoi[i].tagName === 'P') doanCuoi.push(khoi[i]);
+  }
+  khoi.forEach(function(e, i){
+    var v = 'thanbai';
+    if(/^H[1-6]$/.test(e.tagName))                      v = 'heading';
+    else if(viTriHeadingDau === -1 || i < viTriHeadingDau) v = 'sapo';
+    else if(doanCuoi.indexOf(e) !== -1)                  v = 'ketbai';
+    e.setAttribute('data-vung', v);
+  });
+}
+
+/* --- Nút văn bản được phép chèn ---------------------------------------- */
+var CAM_TRONG = ['A','SCRIPT','STYLE','CODE','PRE','TEXTAREA','NOSCRIPT','BUTTON','SELECT'];
+function layNutChu(body, choHeading){
+  var ra = [], mocChu = 0;
+  var w = document.createTreeWalker(body, NodeFilter.SHOW_TEXT, null);
+  var n;
+  while((n = w.nextNode())){
+    var cam = false, vung = 'thanbai', p = n.parentNode;
+    while(p && p !== body){
+      if(CAM_TRONG.indexOf(p.tagName) !== -1) cam = true;
+      if(!choHeading && /^H[1-6]$/.test(p.tagName)) cam = true;
+      if(p.hasAttribute && p.hasAttribute('data-vung')) vung = p.getAttribute('data-vung');
+      p = p.parentNode;
+    }
+    var chu = n.nodeValue;
+    if(!cam && chu.trim()) ra.push({nut:n, vung:vung, moc:mocChu});
+    mocChu += chu.length;
+  }
+  return ra;
+}
+
+/* --- Thuật toán chèn --------------------------------------------------- */
+function chay(){
+  var htmlVao   = document.getElementById('htmlVao').value;
+  var kqBang    = docBangLink(document.getElementById('bangLink').value);
+  var maxTong   = +document.getElementById('maxTong').value || 8;
+  var maxUrl    = +document.getElementById('maxUrl').value || 1;
+  var khoangCach= +document.getElementById('khoangCach').value || 0;
+  var choHeading= document.getElementById('choHeading').checked;
+  var tabMoi    = document.getElementById('moTabMoi').checked;
+  var uuTienDai = document.getElementById('uuTienDai').checked;
+  var urlBaiNay = document.getElementById('urlBaiNay').value.trim();
+
+  if(!htmlVao.trim()){ alert('Bạn chưa dán HTML bài viết ở mục 1.'); return; }
+  if(!kqBang.ds.length){ alert('Bảng link ở mục 2 đang trống hoặc viết sai.'); return; }
+
+  // bỏ link tự trỏ về chính bài
+  var boTuLink = [];
+  var dsLink = kqBang.ds.filter(function(l){
+    if(urlBaiNay && chuanUrl(l.url) === chuanUrl(urlBaiNay)){ boTuLink.push(l); return false; }
+    return true;
+  });
+
+  var doc  = new DOMParser().parseFromString('<div id="goc">' + htmlVao + '</div>', 'text/html');
+  var body = doc.getElementById('goc');
+  ganVung(body);
+
+  var nutChu = layNutChu(body, choHeading);
+  var hangVung = {};
+  VUNG.forEach(function(v, i){ hangVung[v.ma] = i; });
+
+  // sắp thứ tự xét key: ưu tiên số nhỏ trước, rồi key dài trước
+  var thuTu = dsLink.slice().sort(function(a, b){
+    if(a.uuTien !== b.uuTien) return a.uuTien - b.uuTien;
+    if(uuTienDai && a.key.length !== b.key.length) return b.key.length - a.key.length;
+    return 0;
+  });
+
+  var daChen = [];                 // {nut, batDau, ketThuc, link, vung, mocTuyetDoi}
+  var demUrl = {}, chuaChen = [];
+
+  thuTu.forEach(function(link){
+    if(daChen.length >= maxTong){
+      chuaChen.push({link:link, vi:'đã đủ ' + maxTong + ' link cho bài này'});
+      return;
+    }
+    var urlC = chuanUrl(link.url);
+    if((demUrl[urlC] || 0) >= maxUrl){
+      chuaChen.push({link:link, vi:'đã có đủ ' + maxUrl + ' link về đường dẫn này'});
+      return;
+    }
+
+    var re = taoRegex(link.key);
+    var ungVien = [];
+    nutChu.forEach(function(nc){
+      re.lastIndex = 0;
+      var m;
+      while((m = re.exec(nc.nut.nodeValue)) !== null){
+        var batDau = m.index + (m[1] ? m[1].length : 0);
+        var doDai  = (m[2] || m[0]).length;
+        ungVien.push({
+          nc:nc, batDau:batDau, ketThuc:batDau + doDai,
+          vung:nc.vung, mocTuyetDoi:nc.moc + batDau
+        });
+        if(re.lastIndex === m.index) re.lastIndex++;
+      }
+    });
+
+    if(!ungVien.length){
+      chuaChen.push({link:link, vi:'không tìm thấy từ khoá này trong bài'});
+      return;
+    }
+
+    // chấm điểm: vùng ưu tiên trước, trong cùng vùng thì lấy chỗ xuất hiện sớm nhất
+    ungVien.sort(function(a, b){
+      var va = hangVung[a.vung] === undefined ? 99 : hangVung[a.vung];
+      var vb = hangVung[b.vung] === undefined ? 99 : hangVung[b.vung];
+      if(va !== vb) return va - vb;
+      return a.mocTuyetDoi - b.mocTuyetDoi;
+    });
+
+    var chon = null, lyDoHong = '';
+    for(var i = 0; i < ungVien.length; i++){
+      var uv = ungVien[i];
+      var deLen = daChen.some(function(d){
+        return d.nut === uv.nc.nut && !(uv.ketThuc <= d.batDau || uv.batDau >= d.ketThuc);
+      });
+      if(deLen){ lyDoHong = 'chỗ nào cũng đã bị một link khác chiếm'; continue; }
+      var quaGan = daChen.some(function(d){
+        return Math.abs(d.mocTuyetDoi - uv.mocTuyetDoi) < khoangCach;
+      });
+      if(quaGan){ lyDoHong = 'mọi vị trí đều cách link gần nhất dưới ' + khoangCach + ' ký tự'; continue; }
+      chon = uv; break;
+    }
+
+    if(!chon){ chuaChen.push({link:link, vi:lyDoHong || 'không còn vị trí hợp lệ'}); return; }
+
+    daChen.push({
+      nut:chon.nc.nut, batDau:chon.batDau, ketThuc:chon.ketThuc,
+      link:link, vung:chon.vung, mocTuyetDoi:chon.mocTuyetDoi
+    });
+    demUrl[urlC] = (demUrl[urlC] || 0) + 1;
+  });
+
+  // thực thi: chèn từ CUỐI lên ĐẦU trong từng nút để không lệch vị trí
+  var theoNut = new Map();
+  daChen.forEach(function(d){
+    if(!theoNut.has(d.nut)) theoNut.set(d.nut, []);
+    theoNut.get(d.nut).push(d);
+  });
+  theoNut.forEach(function(ds, nut){
+    ds.sort(function(a, b){ return b.batDau - a.batDau; });
+    ds.forEach(function(d){
+      var chu  = nut.nodeValue;
+      var sau  = nut.splitText(d.batDau);
+      sau.splitText(d.ketThuc - d.batDau);
+      var a = doc.createElement('a');
+      a.setAttribute('href', d.link.url);
+      if(tabMoi){ a.setAttribute('target', '_blank'); a.setAttribute('rel', 'noopener'); }
+      a.textContent = sau.nodeValue;
+      sau.parentNode.replaceChild(a, sau);
+    });
+  });
+
+  // dọn thuộc tính đánh dấu vùng
+  body.querySelectorAll('[data-vung]').forEach(function(e){ e.removeAttribute('data-vung'); });
+
+  hienKetQua(body.innerHTML, daChen, chuaChen, boTuLink, kqBang.loi, htmlVao);
+}
+
+function chuanUrl(u){
+  return u.trim().toLowerCase().replace(/^https?:\/\//,'').replace(/\/+$/,'').replace(/^www\./,'');
+}
+function thoatHtml(s){
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+function tenVung(ma){
+  var v = VUNG.find(function(x){ return x.ma === ma; });
+  return v ? v.ten.replace(/\s*\(.*\)/,'') : ma;
+}
+
+/* --- Hiển thị ---------------------------------------------------------- */
+function hienKetQua(htmlRa, daChen, chuaChen, boTuLink, loiBang, htmlGoc){
+  document.getElementById('khungKetQua').classList.remove('an');
+  document.getElementById('htmlRa').value = htmlRa;
+
+  // tóm tắt
+  var soUrl = new Set(daChen.map(function(d){ return chuanUrl(d.link.url); })).size;
+  document.getElementById('tomTat').innerHTML =
+    o(daChen.length, 'link đã chèn') +
+    o(soUrl, 'đường dẫn khác nhau') +
+    o(chuaChen.length, 'key chưa chèn được') +
+    o(boTuLink.length, 'link tự trỏ đã bỏ');
+  function o(so, ten){ return '<div class="o"><div class="so">' + so + '</div><div class="ten">' + ten + '</div></div>'; }
+
+  // bảng báo cáo
+  var b = '<table><tr><th style="width:36px">#</th><th>Từ khoá được gắn link</th><th>Đường dẫn</th>' +
+          '<th style="width:70px">Ưu tiên</th><th style="width:120px">Vùng</th></tr>';
+  daChen.slice().sort(function(a, c){ return a.mocTuyetDoi - c.mocTuyetDoi; })
+    .forEach(function(d, i){
+      b += '<tr><td>' + (i+1) + '</td><td><b>' + thoatHtml(d.link.key) + '</b></td>' +
+           '<td class="url">' + thoatHtml(d.link.url) + '</td>' +
+           '<td>' + d.link.uuTien + '</td>' +
+           '<td><span class="zone">' + tenVung(d.vung) + '</span></td></tr>';
+    });
+  b += '</table>';
+  if(!daChen.length) b = '<p style="color:#9A1B1B;font-weight:600">Không chèn được link nào. Xem tab "Key chưa chèn được".</p>';
+  document.getElementById('bangBao').innerHTML = b;
+
+  // key chưa chèn
+  var s = '';
+  if(chuaChen.length){
+    s += '<table><tr><th>Từ khoá</th><th>Đường dẫn</th><th style="width:70px">Ưu tiên</th><th>Vì sao chưa chèn</th></tr>';
+    chuaChen.forEach(function(c){
+      s += '<tr><td><b>' + thoatHtml(c.link.key) + '</b></td>' +
+           '<td class="url">' + thoatHtml(c.link.url) + '</td>' +
+           '<td>' + c.link.uuTien + '</td>' +
+           '<td><span class="pill bo">' + thoatHtml(c.vi) + '</span></td></tr>';
+    });
+    s += '</table>';
+    s += '<div class="canhbao"><b>Những key ghi "không tìm thấy từ khoá này trong bài"</b> là nhóm cần viết thêm câu — ' +
+         'app không viết hộ được. Chỉ nhóm này mới cần đưa qua Claude, phần còn lại app đã xong.</div>';
+  }else{
+    s = '<p style="color:#046B47;font-weight:600">Tất cả từ khoá trong bảng link đều đã được chèn.</p>';
+  }
+  if(boTuLink.length){
+    s += '<div class="canhbao"><b>Đã bỏ ' + boTuLink.length + ' link tự trỏ về chính bài này:</b> ' +
+         boTuLink.map(function(l){ return thoatHtml(l.key); }).join(', ') + '</div>';
+  }
+  if(loiBang.length){
+    s += '<div class="canhbao"><b>Bảng link có dòng viết sai, đã bỏ qua:</b><br>' +
+         loiBang.map(thoatHtml).join('<br>') + '</div>';
+  }
+  document.getElementById('bangSot').innerHTML = s;
+
+  // xem thử — tô sáng link mới
+  var tam = document.createElement('div');
+  tam.innerHTML = htmlRa;
+  tam.querySelectorAll('a[href]').forEach(function(a){
+    var la = daChen.some(function(d){ return d.link.url === a.getAttribute('href'); });
+    if(la){ var m = document.createElement('mark'); a.parentNode.insertBefore(m, a); m.appendChild(a); }
+  });
+  document.getElementById('xemTruoc').innerHTML = tam.innerHTML;
+
+  document.getElementById('khungKetQua').scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+/* --- Nút bấm ----------------------------------------------------------- */
+document.getElementById('nutChay').onclick = chay;
+
+document.getElementById('nutCopy').onclick = function(){
+  var t = document.getElementById('htmlRa');
+  t.select(); t.setSelectionRange(0, 999999);
+  try{ document.execCommand('copy'); }catch(e){}
+  if(navigator.clipboard) navigator.clipboard.writeText(t.value).catch(function(){});
+  var b = document.getElementById('baoCopy');
+  b.textContent = 'Đã copy, dán thẳng vào CMS được rồi.';
+  setTimeout(function(){ b.textContent = ''; }, 3000);
+};
+
+document.getElementById('nutXoa').onclick = function(){
+  document.getElementById('htmlVao').value = '';
+  document.getElementById('bangLink').value = '';
+  document.getElementById('urlBaiNay').value = '';
+  document.getElementById('khungKetQua').classList.add('an');
+};
+
+document.getElementById('nutViDu').onclick = function(){
+  document.getElementById('htmlVao').value =
+'<p>Tinh bột sắn là nguyên liệu thực phẩm được dùng trong nhiều ngành. Doanh nghiệp tìm nguyên liệu thực phẩm chất lượng cần đánh giá kỹ nhà cung cấp.</p>\n' +
+'<h2>1. Ứng dụng của tinh bột sắn</h2>\n' +
+'<p>Trong sản xuất, tinh bột sắn giúp tạo độ sánh và hỗ trợ cấu trúc. Nhiều nhà máy nước ép trái cây cũng dùng nhóm nguyên liệu này.</p>\n' +
+'<p>Ngoài ra, nước ép trái cây cô đặc là một hướng ứng dụng khác của nguyên liệu thực phẩm từ nông sản Việt Nam.</p>\n' +
+'<h2>2. Kết luận</h2>\n' +
+'<p>Chọn đúng nguồn tinh bột sắn giúp doanh nghiệp ổn định chất lượng thành phẩm trong dài hạn.</p>';
+  document.getElementById('bangLink').value =
+'tinh bột sắn | https://asiagroup-vn.com/tinh-bot-san/ | 1\n' +
+'nước ép trái cây | https://asiagroup-vn.com/nuoc-ep-trai-cay/ | 2\n' +
+'nguyên liệu thực phẩm | https://asiagroup-vn.com/nguyen-lieu-thuc-pham/ | 3\n' +
+'trái cây đông lạnh IQF | https://asiagroup-vn.com/trai-cay-iqf/ | 4';
+};
+
+document.querySelectorAll('.tab').forEach(function(t){
+  t.onclick = function(){
+    document.querySelectorAll('.tab').forEach(function(x){ x.classList.remove('chon'); });
+    t.classList.add('chon');
+    ['html','xem','bao','sot'].forEach(function(k){
+      document.getElementById('tab-' + k).classList.toggle('an', k !== t.dataset.tab);
+    });
+  };
+});
+</script>
+</body>
+</html>
