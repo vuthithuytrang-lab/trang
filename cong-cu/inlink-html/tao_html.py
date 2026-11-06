@@ -5,6 +5,11 @@ def unwrap(h):
     if h.startswith('https://www.google.com/url'):
         q = urllib.parse.parse_qs(urllib.parse.urlparse(h).query)
         h = q.get('q', [h])[0]
+    # link bị mã hóa 2 lần (utm_source%3D...): giải mã phần tham số
+    if '?' in h:
+        base, qs = h.split('?', 1)
+        if '=' not in qs and '%3D' in qs:
+            h = base + '?' + urllib.parse.unquote(qs)
     return h
 
 def norm(u):
@@ -39,6 +44,10 @@ def render(block, st):
             elif ch.name == 'br':
                 pieces.append(('<br>', b, i, href))
             elif ch.name == 'img':
+                continue
+            elif ch.name == 'sup' and ch.find('a', href=re.compile(r'^#cmnt')):
+                continue  # dấu bình luận của Google Docs ([a], [b]...)
+            elif ch.name == 'a' and str(ch.get('href', '')).startswith('#cmnt'):
                 continue
             else:
                 nb, ni = b, i
@@ -189,7 +198,7 @@ if __name__ == '__main__':
         slug = o['url'].rstrip('/').split('/')[-1]
         tg = [tuple(x) for x in o['pairs']] + ([(o['I'], o['J'])] if o.get('J') else [])
         if slug not in raw:
-            cells[o['row']] = f'<!-- CHƯA TẠO HTML: link FILE BLOG ở cột K không mở ra file Docs của bài {slug}. Cần kiểm tra lại link file Docs. -->'
+            cells[o['row']] = f'<!-- CHƯA TẠO HTML: link ở cột FILE BLOG không mở ra file Docs của bài {slug}. Cần kiểm tra lại link file Docs. -->'
         else:
             r, m = process(p, tg)
             c = build_cell(r, m)
