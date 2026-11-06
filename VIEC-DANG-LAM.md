@@ -1,5 +1,10 @@
 # Việc đang làm / còn chờ
 
+## App Inlink (06/11/2026)
+- [x] Viết app Google Apps Script (`cong-cu/app-inlink/`), chạy thử mô phỏng 20 bài đạt.
+- [ ] Trang cài app vào sheet (5 bước trong README) + lấy khóa Gemini.
+- [ ] Chạy thử thật 3–5 dòng bằng "Chạy thử… (không ghi sheet)" → so chất lượng với file cũ → bật lịch.
+
 Cập nhật: 28/10/2026
 
 ## Okamura inlink (28/10/2026)

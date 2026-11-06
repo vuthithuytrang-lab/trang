@@ -5,6 +5,9 @@ description: Chạy trọn luồng "Plan internal links" cho một dự án SEO 
 
 # Chèn internal link — luồng dùng lại cho mọi dự án
 
+> **Từ 06/11/2026 có App Inlink** (`cong-cu/app-inlink/`, chạy trong Google Sheet, không tốn token Claude): tạo file + chèn link + sổ góp ý + trả lời comment.
+> Skill này dùng cho **ca khó** (dòng app ghi "Thiếu", sửa theo góp ý, rà chất lượng) và để **sửa/nâng cấp app**. Dự án mới: thêm 1 mục vào `CauHinh.gs`.
+
 Mã nguồn và mẫu lệnh: `cong-cu/tao-docs-tu-url/` (README.md = quy trình chi tiết, chen.py/kiemtra.py/... = công cụ),
 `cong-cu/tao-docs-tu-url/duyet/` (sửa theo góp ý). Dự án Techcombank là bản mẫu: `plan-internal-links/` (tien-do.csv, bao-cao.md).
 Trước khi đụng Google Docs/Sheets: đọc skill `google-workspace`.
