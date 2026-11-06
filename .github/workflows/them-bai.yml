@@ -1,0 +1,50 @@
+name: Ghi yêu cầu thêm bài mới (từ app công khai)
+# Nút "Gửi yêu cầu" trên app → hàm Netlify `them` → workflow này ghi yêu cầu vào nhánh tu-dong-ket-qua
+# (file yeu-cau-bai-moi.json). Chỉ GHI LẠI yêu cầu; làm công thức cho bài mới vẫn cần người kỹ thuật/Claude một lần.
+on:
+  workflow_dispatch:
+    inputs:
+      url: { description: 'Link bài techcombank.com/thong-tin/blog/…', required: true }
+      nguon: { description: 'Nguồn tham khảo (mỗi dòng 1 link)', required: false, default: '' }
+      ghi_chu: { description: 'Ghi chú', required: false, default: '' }
+permissions:
+  contents: write
+concurrency: { group: them-bai, cancel-in-progress: false }
+jobs:
+  ghi:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Ghi yêu cầu
+        env: { URL_BAI: '${{ inputs.url }}', NGUON: '${{ inputs.nguon }}', GHI_CHU: '${{ inputs.ghi_chu }}' }
+        run: |
+          git config --global user.name "App cập nhật bài"
+          git config --global user.email "actions@users.noreply.github.com"
+          for lan in 1 2 3 4 5; do
+            rm -rf xuat
+            git clone -q --depth 1 -b tu-dong-ket-qua "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" xuat
+            python3 -I - <<'PY' || exit 1
+          import json, os, re, datetime as d
+          url = os.environ['URL_BAI'].strip()
+          if not re.fullmatch(r'https://techcombank\.com/thong-tin/blog/[a-z0-9-]{3,120}/?', url):
+              raise SystemExit('URL không hợp lệ')
+          nguon = [x.strip() for x in os.environ.get('NGUON', '').replace(',', '\n').splitlines()]
+          nguon = [x[:300] for x in nguon if re.match(r'https?://', x)][:10]
+          ghi = os.environ.get('GHI_CHU', '').strip()[:500]
+          p = 'xuat/yeu-cau-bai-moi.json'
+          ds = json.load(open(p)) if os.path.exists(p) else []
+          luc = (d.datetime.utcnow() + d.timedelta(hours=7)).strftime('%H:%M %d/%m/%Y')
+          cu = next((x for x in ds if x['url'].rstrip('/') == url.rstrip('/')), None)
+          if cu:
+              cu.update(nguon=nguon or cu.get('nguon', []), ghi_chu=ghi or cu.get('ghi_chu', ''), luc=luc)
+          else:
+              ds.append({'url': url, 'nguon': nguon, 'ghi_chu': ghi, 'luc': luc, 'trang_thai': 'Chờ làm công thức'})
+          json.dump(ds[-100:], open(p, 'w'), ensure_ascii=False, indent=1)
+          PY
+            git -C xuat add -A
+            git -C xuat diff --cached --quiet && exit 0
+            git -C xuat commit -qm "Yêu cầu bài mới $(TZ=Asia/Ho_Chi_Minh date '+%H:%M %d/%m/%Y')"
+            git -C xuat push -q origin tu-dong-ket-qua && exit 0
+            sleep $((lan * 3))
+          done
+          exit 1
