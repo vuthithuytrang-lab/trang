@@ -108,6 +108,7 @@ Agent đọc chìa từ file, gửi qua header `Authorization: Bearer <chìa>`, 
 | `ho-so/` | Hồ sơ Trang, phần cần cập nhật trên Agent Boss |
 | `khoa-hoc/` | Tiến độ khóa Agent Boss, mã nộp từng bài, sản phẩm đã làm |
 | `cong-cu/` | Công cụ dùng lại được — prompt SEO, bản tin tự động |
+| `cong-cu/tien-ich-web-ve-tinh/` | Tiện ích Chrome: mở web mẫu → 4 mã dán WordPress, 0 token (file tải: `cong-cu/tien-ich-web-ve-tinh.zip`) |
 | `BAO-MAT.md` | Danh sách chìa khóa đã lộ cần thu hồi |
 | `khach-hang/` | Web vệ tinh WordPress.com cho khách (AIG, VIB, Techcombank, Sun Life) — mã dán + script sinh mã |
 

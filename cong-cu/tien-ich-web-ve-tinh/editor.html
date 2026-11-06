@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><title>Tạo mã web vệ tinh</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+:root{--b:#004AEF;--m:#07EF9C;--ink:#0B1B3F;--mut:#5B6785;--line:#E3E7F0;--bg:#F5F7FB}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.top{background:var(--b);color:#fff;padding:14px 22px;display:flex;flex-wrap:wrap;gap:8px 24px;align-items:center;justify-content:space-between}
+.top b{font-size:17px}.top span{font-size:13px;opacity:.9}
+.grid{display:flex;flex-wrap:wrap;gap:18px;padding:18px}
+.col{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;min-width:0}
+.form{flex:1 1 380px;max-width:520px}.out{flex:2 1 560px}
+h2{font-size:15px;margin:18px 0 8px;color:var(--b);text-transform:uppercase;letter-spacing:.06em}
+h2:first-child{margin-top:0}
+label{display:block;font-size:13px;font-weight:600;margin:10px 0 4px}
+input,textarea,select{width:100%;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font:inherit;font-size:14px;color:var(--ink);background:#fff}
+textarea{min-height:64px;resize:vertical}
+.row{display:flex;gap:10px}.row>*{flex:1}
+.sw{display:flex;align-items:center;gap:8px}.sw input[type=color]{width:46px;height:36px;padding:2px;flex:0 0 46px}
+.note{font-size:12px;color:var(--mut);margin:4px 0 0;line-height:1.5}
+.card{border:1px dashed var(--line);border-radius:10px;padding:8px 10px;margin:8px 0;position:relative}
+.card button.x{position:absolute;right:8px;top:6px;border:0;background:none;color:#C0262D;cursor:pointer;font-size:13px}
+.btn{background:var(--b);color:#fff;border:0;border-radius:999px;padding:9px 16px;font-weight:700;cursor:pointer;font-size:14px}
+.btn.ghost{background:#fff;color:var(--b);border:1px solid var(--b)}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.tabs button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 14px;cursor:pointer;font-weight:600;font-size:14px}
+.tabs button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+iframe{width:100%;height:640px;border:1px solid var(--line);border-radius:10px;background:#fff}
+.code{border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:0 0 14px}
+.code h3{margin:0 0 4px;font-size:16px}.code .where{font-size:13px;color:var(--mut);margin:0 0 8px;line-height:1.5}
+.code textarea{min-height:90px;font-family:ui-monospace,Consolas,monospace;font-size:12px}
+.copied{color:#0A8F5B;font-weight:700;font-size:13px;margin-left:8px}
+.status{font-size:13px;background:#FFF8E1;border:1px solid #F3D27A;border-radius:10px;padding:8px 12px;margin:0 0 12px;line-height:1.5}
+.hide{display:none}
+</style></head>
+<body>
+<div class="top"><b>Tạo mã web vệ tinh WordPress</b><span id="src">Đang tải dữ liệu…</span></div>
+<div class="grid">
+  <div class="col form" id="form">
+    <div class="status" id="status">Đang đo màu logo…</div>
+
+    <h2>1. Thương hiệu</h2>
+    <label>Tên thương hiệu</label><input id="brand">
+    <label>Website chính thức</label><input id="official">
+    <label>Logo</label><select id="logoPick"></select>
+    <input id="logo" placeholder="Hoặc dán link logo khác">
+    <p class="note">Logo phải là file gốc của thương hiệu, không vẽ lại.</p>
+    <label>Màu thương hiệu (đo từ logo)</label>
+    <div class="row"><div class="sw"><input type="color" id="c1p"><input id="color1"></div><div class="sw"><input type="color" id="c2p"><input id="color2"></div></div>
+    <p class="note" id="colorNote"></p>
+
+    <h2>2. Phần mở đầu</h2>
+    <label>Dòng nhỏ phía trên</label><input id="eyebrow">
+    <label>Tiêu đề lớn (H1)</label><input id="h1">
+    <label>Câu giới thiệu</label><textarea id="lead"></textarea>
+    <label>Chữ trên nút chính</label><input id="ctaText">
+    <label>Ảnh lớn</label><select id="heroPick"></select><input id="heroImg" placeholder="Hoặc dán link ảnh">
+
+    <h2>3. Giới thiệu</h2>
+    <label>Tiêu đề</label><input id="aboutTitle">
+    <label>Nội dung (mỗi dòng = 1 đoạn)</label><textarea id="aboutText" style="min-height:110px"></textarea>
+    <label>Ảnh</label><select id="aboutPick"></select><input id="aboutImg" placeholder="Hoặc dán link ảnh">
+
+    <h2>4. Sản phẩm / dịch vụ</h2>
+    <label>Tiêu đề mục</label><input id="cardsTitle">
+    <div id="cards"></div>
+    <button class="btn ghost" id="addCard" type="button">+ Thêm ô</button>
+
+    <h2>5. Liên hệ (mỗi dòng 1 mục, để trống nếu không có)</h2>
+    <label>Điện thoại</label><textarea id="phones"></textarea>
+    <label>Email</label><textarea id="emails"></textarea>
+    <label>Địa chỉ</label><textarea id="addresses"></textarea>
+    <p class="note">Chỉ giữ thông tin thật lấy từ website chính thức. Không chắc thì xoá đi.</p>
+
+    <h2>6. Chân trang & Tin tức</h2>
+    <label>Giới thiệu ngắn ở chân trang</label><textarea id="footerAbout"></textarea>
+    <label>Câu mô tả trang Tin tức</label><input id="newsLead" placeholder="Để trống = câu mặc định">
+  </div>
+
+  <div class="col out">
+    <div class="tabs" id="tabs">
+      <button data-t="preview" class="on">Xem trước trang chủ</button>
+      <button data-t="codes">Lấy mã dán WordPress</button>
+    </div>
+    <div id="t-preview"><iframe id="pv" title="Xem trước"></iframe><p class="note">Ảnh xem trước dùng ảnh thật từ website mẫu. Sửa ô bên trái là trang tự cập nhật.</p></div>
+    <div id="t-codes" class="hide"></div>
+  </div>
+</div>
+<script src="color.js"></script>
+<script src="generate.js"></script>
+<script src="editor.js"></script>
+</body></html>
