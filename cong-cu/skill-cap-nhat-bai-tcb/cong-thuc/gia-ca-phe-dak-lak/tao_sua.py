@@ -108,9 +108,18 @@ def main():
         if not (dong[i + 1][2] and dong[i + 1][0].startswith('Giá') and dong[i + 2][2] and dong[i + 2][0].startswith('Thay đổi')):
             continue
         hang, j = [], i + 3
-        while j + 2 < len(dong) and not dong[j][2] and RE_DATE.match(dong[j][0]) and dong[j + 1][2] and dong[j + 2][2]:
-            hang.append((dong[j], dong[j + 1], dong[j + 2]))
-            j += 3
+        while j < len(dong):
+            c, v, o = dong[j]
+            # 06/11/2026: bài web gộp vài dòng đầu thành 1 dòng chữ "30/10/2026 | 87,400 | -1,000 |"
+            m = re.fullmatch(r'(\d{1,2}/\d{1,2}/\d{4}) \| ([\d.,]+) \| ([+\-−]?[\d.,]+) \|?', c.strip()) if not o else None
+            if m:
+                hang.append(tuple((m.group(g), v + m.start(g), True) for g in (1, 2, 3)))
+                j += 1
+            elif j + 2 < len(dong) and not o and RE_DATE.match(c) and dong[j + 1][2] and dong[j + 2][2]:
+                hang.append((dong[j], dong[j + 1], dong[j + 2]))
+                j += 3
+            else:
+                break
         for k, (o_ngay, o_gia, o_doi) in enumerate(hang):
             da_xu_ly.update({o_ngay[1], o_gia[1], o_doi[1]})
             if k >= len(dl_ls):
