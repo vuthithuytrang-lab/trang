@@ -5,7 +5,7 @@ Từ 06/11/2026 app chạy hoàn toàn bằng dịch vụ miễn phí, **không 
 ## Dùng hằng ngày
 1. Mở **https://vttt-sn.netlify.app/** (hoặc https://vuthithuytrang-lab.github.io/trang/).
 2. Tìm bài → bấm **"↻ Chạy bài này"** (hoặc tích nhiều bài rồi bấm chạy chung).
-3. Chờ 2–3 phút, app tự hiện bản mới. Bấm **"Chép để dán vào Docs"** (giữ tô vàng) hoặc **"Tải Word"**.
+3. Chờ khoảng 1–1,5 phút, app tự hiện bản mới (app tự kiểm tra 10 giây/lần). Bấm **"Chép để dán vào Docs"** (giữ tô vàng) hoặc **"Tải Word"**.
 4. Đọc mục **"Cần xem lại"** dưới mỗi bài trước khi gửi đăng.
 
 Ngày trong bài luôn là ngày hôm sau. Chỗ nào đổi đều được tô vàng.
@@ -17,7 +17,7 @@ Ngày trong bài luôn là ngày hôm sau. Chỗ nào đổi đều được tô
 | Nút chạy | Hàm Netlify `chay` dùng chìa GitHub (biến `GITHUB_TOKEN` trong Netlify) |
 | Máy chạy bài | GitHub Actions `tu-dong-cap-nhat.yml` (miễn phí) |
 | Công thức 27 bài | `cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/<mã>/` |
-| Kết quả | nhánh `tu-dong-ket-qua` |
+| Kết quả | nhánh `tu-dong-ket-qua` (app đọc ngay qua hàm Netlify `kq`) |
 
 ## Khi có sự cố
 - **Bấm chạy không có gì xảy ra / báo lỗi nút** → chìa GitHub có thể đã hết hạn. Xem hạn ở
