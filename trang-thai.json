@@ -191,5 +191,13 @@
   "ten": "Giá Niken hôm nay: Biến động thị trường và góc nhìn đầu tư – 07/11/2026",
   "can_duyet": "Bảng giá: 5 dòng = 5 phiên mới nhất trên Westmetall (05/11/2026, 04/11/2026, 03/11/2026, 02/11/2026, 30/10/2026); giá là LME Nickel 3-month (giá chính thức LME, USD/tấn), có thể khác chuỗi \"giá đóng cửa hợp đồng tương lai\" mà bài ghi trước đó (số cũ có lẻ .25/.75) – cần duyệt xem Trang có muốn dùng chuỗi này; phiên mới nhất trên nguồn có thể cũ hơn ngày ghi trong tiêu đề (quy tắc ngày hôm sau).\nCâu giá mới nhất: chữ chỉ chiều đổi \"giảm\" → \"tăng\" theo dấu của mức thay đổi trên nguồn (+590.00) – đọc lại câu.\nCâu giá mới nhất (\"đóng cửa ở mức …\"): giá 16,265 và mức thay đổi 590.00 lấy từ phiên 05/11/2026; tỷ lệ 3.76% là số tính ra (mức thay đổi / giá phiên trước) – nguồn không có sẵn con số %.\nTỷ lệ phần trăm trong bài giữ nguyên (không phải giá, nguồn Westmetall không có): \" Theo USGS, Indonesia chiếm khoảng 67%\" (vd Indonesia ~67% sản lượng theo USGS năm 2025) – cần duyệt nếu Trang muốn đối chiếu lại số năm.",
   "loi": ""
+ },
+ "gia-vang-sjc": {
+  "ok": true,
+  "luc": "2026-11-06T08:34:47+00:00",
+  "ngay": "07/11/2026",
+  "ten": "Giá vàng SJC hôm nay: Bảng giá cập nhật và lưu ý khi mua bán – 07/11/2026",
+  "can_duyet": "Dòng \"Nữ trang 41.7%\", cột Bán ra: ô cũ \"58..244\" viết lạ (không phải số bình thường) – đã thay bằng 58.327 theo nguồn, đọc lại.\nSỐ GIÁ CHƯA CẬP NHẬT (công thức không có quy tắc/nguồn để tính lại, giữ nguyên): \"190\" trong \"á bán vàng miếng SJC từng ở vùng khoảng 190 triệu VND/lượng h\"",
+  "loi": ""
  }
 }
