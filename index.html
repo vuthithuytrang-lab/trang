@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Cập nhật bài Techcombank</title>
 <meta name="description" content="Danh sách bài blog Techcombank cần cập nhật giá / lãi suất – bấm chạy là có bản mới, miễn phí.">
-<!-- phien-ban: 202611061534 -->
+<!-- phien-ban: 202611061540 -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Cập nhật bài Techcombank">
 <meta property="og:description" content="Danh sách bài blog Techcombank cần cập nhật giá / lãi suất – ai có link cũng dùng được.">
@@ -126,6 +126,9 @@ footer{font-size:12px;color:var(--muted)}
 // ghi bài mới lên nhánh tu-dong-ket-qua → trang này đọc về cho chép / tải.
 var HAM = /netlify\.app$/.test(location.hostname) ? "/.netlify/functions/chay" : "https://vttt-sn.netlify.app/.netlify/functions/chay";
 var KQ = "https://raw.githubusercontent.com/vuthithuytrang-lab/trang/tu-dong-ket-qua/";
+var HAM_KQ = HAM.replace(/chay$/, "kq") + "?f=";   // đọc kết quả ngay qua hàm Netlify (raw.githubusercontent giữ bản cũ 5 phút)
+function docKq(f){ return fetch(HAM_KQ + f + "&t=" + Date.now()).then(function(r){ if (!r.ok) throw 0; return r; })
+  .catch(function(){ return fetch(KQ + f + "?t=" + Date.now()); }); }
 var DU_LIEU = /github\.io$/.test(location.hostname) ? "du-lieu.json" : "https://vuthithuytrang-lab.github.io/trang/du-lieu.json";
 // bài có nguồn chặn máy tự động (thitruonghanghoa 403 trên GitHub) → không có nút chạy, nhờ người phụ trách chạy bằng Claude
 var KHONG_TU_DONG = {"gia-kim-loai": 1};
@@ -174,9 +177,9 @@ function render(){
   clearTimeout(hen); if (c) hen = setTimeout(taiKq, 10000);
 }
 function taiKq(){
-  return fetch(KQ + "trang-thai.json?t=" + Date.now()).then(function(r){ return r.json(); }).then(function(d){ kq = d || {}; render(); }).catch(function(){ render(); });
+  return docKq("trang-thai.json").then(function(r){ return r.json(); }).then(function(d){ kq = d || {}; render(); }).catch(function(){ render(); });
 }
-function layBai(id){ return fetch(KQ + id + ".html?t=" + Date.now()).then(function(r){ if (!r.ok) throw 0; return r.text(); }); }
+function layBai(id){ return docKq(id + ".html").then(function(r){ if (!r.ok) throw 0; return r.text(); }); }
 function bao(s){ var m = $("#msg"); m.textContent = s; m.dataset.giu = 1; setTimeout(function(){ delete m.dataset.giu; }, 8000); }
 function chep(id){
   layBai(id).then(function(h){
@@ -237,7 +240,7 @@ $("#run").addEventListener("click", function(e){
 // Thêm bài mới: gửi link + nguồn cho hàm Netlify `them` → GitHub ghi vào yeu-cau-bai-moi.json (nhánh tu-dong-ket-qua)
 var HAM_THEM = HAM.replace(/chay$/, "them");
 function taiYeuCau(){
-  return fetch(KQ + "yeu-cau-bai-moi.json?t=" + Date.now()).then(function(r){ return r.ok ? r.json() : []; }).catch(function(){ return []; }).then(function(ds){
+  return docKq("yeu-cau-bai-moi.json").then(function(r){ return r.ok ? r.json() : []; }).catch(function(){ return []; }).then(function(ds){
     var co = {}; du.bai.forEach(function(b){ co[String(b.url).replace(/\/$/, "")] = 1; });
     ds = (ds || []).filter(function(x){ return !co[String(x.url).replace(/\/$/, "")]; }).reverse();
     $("#themDs").innerHTML = ds.length ? ds.map(function(x){
