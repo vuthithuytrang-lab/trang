@@ -9,7 +9,16 @@ Bảng: Loại dầu | Giá (USD/thùng) | Thay đổi so với phiên trước 
 Số viết theo đúng ô cũ (dấu thập phân, số chữ số lẻ, kiểu dấu trừ). Câu văn có "Brent/WTI … X USD/thùng" cũng được đổi.
 Không có mạng, không gọi AI.
 """
-import argparse, datetime, html, json, re, sys, unicodedata
+import argparse, datetime, html, json, re, sys, unicodedata, os
+
+def ngay_bai_dt():
+    """Ngày ghi trong bài: biến NGAY_BAI (dd/mm/yyyy, app chọn theo giờ đổi ngày) – không có thì ngày hôm sau (giờ VN)."""
+    tz = datetime.timezone(datetime.timedelta(hours=7))
+    n = os.environ.get('NGAY_BAI', '')
+    if re.fullmatch(r'\d{2}/\d{2}/\d{4}', n):
+        return datetime.datetime.strptime(n, '%d/%m/%Y').replace(tzinfo=tz, hour=12)
+    return datetime.datetime.now(tz) + datetime.timedelta(days=1)
+
 
 TEN = {'brent': 'Dầu Brent', 'wti': 'Dầu WTI'}
 SO = r'\d+(?:[.,]\d+)?'
@@ -179,7 +188,7 @@ def main():
     thieu = [TEN[k] for k in TEN if not gia[k]]
     if thieu:
         cu = ngay_goc(a.goc)
-        mai = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=7))) + datetime.timedelta(days=1)
+        mai = ngay_bai_dt()
         moi = f'{mai.day:02d}/{mai.month:02d}/{mai.year}'
         if cu and cu != moi:
             vt_ngay = [vt + m.start() for chu, vt, _ in dong for m in re.finditer(re.escape(moi), chu)]

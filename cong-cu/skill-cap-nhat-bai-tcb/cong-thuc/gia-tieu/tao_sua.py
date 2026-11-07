@@ -20,7 +20,16 @@ nguồn phải đúng bằng Giá mới − Giá cũ của nguồn, sai → gi�
 Ngày: "hôm nay d/m/yyyy", "trong nước ngày …", "thế giới …" và dòng ngày đăng = ngày mai (giờ VN). Nguồn chính không đọc được
 → ngày ở câu "cập nhật giá … trong nước ngày …" và tiêu đề "Bảng giá tiêu thế giới …" trả về ngày gốc của bài.
 """
-import argparse, datetime, html, json, re, sys, unicodedata
+import argparse, datetime, html, json, re, sys, unicodedata, os
+
+def ngay_bai_dt():
+    """Ngày ghi trong bài: biến NGAY_BAI (dd/mm/yyyy, app chọn theo giờ đổi ngày) – không có thì ngày hôm sau (giờ VN)."""
+    tz = datetime.timezone(datetime.timedelta(hours=7))
+    n = os.environ.get('NGAY_BAI', '')
+    if re.fullmatch(r'\d{2}/\d{2}/\d{4}', n):
+        return datetime.datetime.strptime(n, '%d/%m/%Y').replace(tzinfo=tz, hour=12)
+    return datetime.datetime.now(tz) + datetime.timedelta(days=1)
+
 
 DOI_CHIEU_VUNG = {'hồ tiêu gia lai (đ/kg)': 'gia lai', 'hồ tiêu đắk lắk (đ/kg)': 'đắk lắk',
                   'hồ tiêu lâm đồng (đắk nông cũ sáp nhập) (đ/kg)': 'đắk nông',
@@ -110,7 +119,7 @@ def ngay_so(s):
 
 
 def ngay_mai():
-    return (datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(hours=7, days=1)).strftime('%d/%m/%Y')
+    return ngay_bai_dt().strftime('%d/%m/%Y')
 
 
 def main():

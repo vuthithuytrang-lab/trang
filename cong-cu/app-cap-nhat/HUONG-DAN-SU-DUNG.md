@@ -8,7 +8,7 @@ Từ 06/11/2026 app chạy hoàn toàn bằng dịch vụ miễn phí, **không 
 3. Chờ khoảng 1–1,5 phút, app tự hiện bản mới (app tự kiểm tra 10 giây/lần). Bấm **"Chép để dán vào Docs"** (giữ tô vàng) hoặc **"Tải Word"**.
 4. Đọc mục **"Cần xem lại"** dưới mỗi bài trước khi gửi đăng.
 
-Ngày trong bài luôn là ngày hôm sau. Chỗ nào đổi đều được tô vàng.
+Trước khi bấm chạy, chọn ngày ở ô **"Ngày ghi trong bài"** (hôm nay / ngày mai / ngày kia; mặc định ngày mai). Hai bài lãi suất máy tự lo, luôn ghi ngày mai. Chỗ nào đổi đều được tô vàng.
 
 ## Mọi thứ nằm ở đâu (đều là của Trang)
 | Phần | Ở đâu |

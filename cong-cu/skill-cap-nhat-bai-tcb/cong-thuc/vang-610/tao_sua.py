@@ -8,7 +8,16 @@ CHỈ CẬP NHẬT SỐ, GIỮ NGUYÊN CÂU CHỮ (Trang dặn 14/10/2026):
   - Tóm tắt "Mua vào khoảng a – b triệu …": giữ dạng như bài (khoảng thì min – max, 1 mức thì giá PNJ), giữ dấu thập phân của bài.
   - "tháng mm/yyyy" -> tháng này.
 """
-import argparse, datetime, json, re, sys, unicodedata
+import argparse, datetime, json, re, sys, unicodedata, os
+
+def ngay_bai_dt():
+    """Ngày ghi trong bài: biến NGAY_BAI (dd/mm/yyyy, app chọn theo giờ đổi ngày) – không có thì ngày hôm sau (giờ VN)."""
+    tz = datetime.timezone(datetime.timedelta(hours=7))
+    n = os.environ.get('NGAY_BAI', '')
+    if re.fullmatch(r'\d{2}/\d{2}/\d{4}', n):
+        return datetime.datetime.strptime(n, '%d/%m/%Y').replace(tzinfo=tz, hour=12)
+    return datetime.datetime.now(tz) + datetime.timedelta(days=1)
+
 
 
 def doc_xem(path):
@@ -50,7 +59,7 @@ def main():
     co = {k: v for k, v in gia.items() if v}
     g = co.get('pnj')
     # Ngày ghi trong bài: chạy từ 15h giờ VN trở đi -> ghi ngày hôm sau (+9 giờ là sang ngày mới)
-    hn = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=7))) + datetime.timedelta(days=1)  # Trang chốt 21/10/2026: luôn ghi ngày hôm sau
+    hn = ngay_bai_dt()  # Trang chốt 21/10/2026: luôn ghi ngày hôm sau
     thang = f'{hn.month:02d}/{hn.year}'
     sua, can, lech = [], [], []
     nguon = ', '.join(v['nguon'] for v in co.values())

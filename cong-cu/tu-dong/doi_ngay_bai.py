@@ -5,9 +5,13 @@ không đổi. Bước này chạy SAU công thức: mọi ngày đủ dạng d/
 nằm trong chữ (không đụng thuộc tính/đường link, không đụng ô bảng chỉ chứa ngày – đó là dữ liệu bảng giá theo ngày), được đổi thành ngày mai, giữ cách viết (có/không số 0 đầu)
 và tô vàng như các chỗ sửa khác.
 
+Từ 07/11/2026 app cho chọn "giờ đổi ngày" → gửi ngày cần ghi qua biến NGAY_BAI (dd/mm/yyyy). Có biến đó thì ngày đích
+là NGAY_BAI, ngày cũ được đổi là 1–3 ngày trước ngày đích; không có thì như cũ (đích = ngày mai, đổi hôm nay + 2 ngày trước).
+
 Dùng: python3 -I doi_ngay_bai.py <bai.html>       (in số chỗ đã đổi)
 """
 import datetime as d
+import os
 import re
 import sys
 
@@ -19,11 +23,21 @@ def hom_nay():
     return (d.datetime.utcnow() + d.timedelta(hours=7)).date()
 
 
+def ngay_dich():
+    """Ngày ghi trong bài: NGAY_BAI (app chọn theo giờ đổi ngày) hoặc ngày mai (giờ VN)."""
+    n = os.environ.get('NGAY_BAI', '')
+    if re.fullmatch(r'\d{2}/\d{2}/\d{4}', n):
+        try:
+            return d.datetime.strptime(n, '%d/%m/%Y').date()
+        except ValueError:
+            pass
+    return hom_nay() + d.timedelta(days=1)
+
+
 def doi_chu(chu, to_vang=False, nay=None):
-    """Đổi ngày cũ → ngày mai trong một đoạn chữ thường. Trả (chữ mới, số chỗ đổi)."""
-    nay = nay or hom_nay()
-    mai = nay + d.timedelta(days=1)
-    cu = {nay - d.timedelta(days=i) for i in range(3)}
+    """Đổi ngày cũ → ngày đích trong một đoạn chữ thường. Trả (chữ mới, số chỗ đổi)."""
+    mai = nay + d.timedelta(days=1) if nay else ngay_dich()
+    cu = {mai - d.timedelta(days=i) for i in range(1, 4)}
     dem = 0
 
     def thay(m):
@@ -70,4 +84,4 @@ if __name__ == '__main__':
     f = sys.argv[1]
     moi, n = doi_html(open(f, encoding='utf-8').read())
     open(f, 'w', encoding='utf-8').write(moi)
-    print('đổi ngày trong chữ sang ngày hôm sau: %d chỗ' % n)
+    print('đổi ngày trong chữ sang %s: %d chỗ' % (ngay_dich().strftime('%d/%m/%Y'), n))

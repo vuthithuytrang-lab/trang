@@ -11,7 +11,16 @@ Bài có 6 bảng VND/chỉ; mỗi bảng thuộc 1 nguồn theo đề mục đ�
 Chú thích ảnh SJC / Rồng Thăng Long (ngày dd.mm.yyyy, giá RTL) cũng được cập nhật.
 Mỗi dòng trong bài khớp 1 dòng nguồn theo bảng KHOP bên dưới. Không khớp / nguồn thiếu giá -> giữ nguyên + cần duyệt.
 """
-import argparse, datetime, html as H, json, re, sys, unicodedata
+import argparse, datetime, html as H, json, re, sys, unicodedata, os
+
+def ngay_bai_dt():
+    """Ngày ghi trong bài: biến NGAY_BAI (dd/mm/yyyy, app chọn theo giờ đổi ngày) – không có thì ngày hôm sau (giờ VN)."""
+    tz = datetime.timezone(datetime.timedelta(hours=7))
+    n = os.environ.get('NGAY_BAI', '')
+    if re.fullmatch(r'\d{2}/\d{2}/\d{4}', n):
+        return datetime.datetime.strptime(n, '%d/%m/%Y').replace(tzinfo=tz, hour=12)
+    return datetime.datetime.now(tz) + datetime.timedelta(days=1)
+
 
 # (nguồn, mẫu tên dòng trong bài, mẫu tên dòng ở nguồn)
 KHOP = {
@@ -241,7 +250,7 @@ def main():
 
     # Chú thích ảnh có ngày dạng dd.mm.yyyy (+ giá Rồng Thăng Long) -> hôm nay / giá mới
     # Ngày ghi trong bài: chạy từ 15h giờ VN trở đi -> ghi ngày hôm sau (+9 giờ là sang ngày mới)
-    hn = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=7))) + datetime.timedelta(days=1)  # Trang chốt 21/10/2026: luôn ghi ngày hôm sau
+    hn = ngay_bai_dt()  # Trang chốt 21/10/2026: luôn ghi ngày hôm sau
     ngay_cham = hn.strftime('%d.%m.%Y')
     rtl = next((r for r in bang.get('btmc', []) if re.search(r'Rồng Thăng Long 999\.9', r[0])), None)
     for o, la_o, noi in dong:

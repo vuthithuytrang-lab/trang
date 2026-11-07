@@ -7,7 +7,9 @@ GOC=$(cd "$(dirname "$0")/../skill-cap-nhat-bai-tcb" && pwd); TD=$(cd "$(dirname
 SKILL=$GOC/cap-nhat-bai-tcb/scripts/cap_nhat.py; CT=$GOC/cong-thuc/$MA
 W=$RA/$MA; rm -rf "$W"; mkdir -p "$W/cap-nhat"; cd "$W"
 cp "$CT/cau-hinh.json" cap-nhat/
-N=$(TZ=Asia/Ho_Chi_Minh date -d "+1 day" +%d/%m/%Y)     # luôn ghi ngày hôm sau (Trang chốt 21/10/2026)
+N=$(TZ=Asia/Ho_Chi_Minh date -d "+1 day" +%d/%m/%Y)     # mặc định ghi ngày hôm sau (Trang chốt 21/10/2026)
+[[ ${NGAY_BAI:-} =~ ^[0-9]{2}/[0-9]{2}/[0-9]{4}$ && $MA != lai-suat-[12] ]] && N=$NGAY_BAI   # ngày Trang chọn trên app (07/11/2026); lãi suất luôn ngày mai
+export NGAY_BAI=$N                                       # công thức + doi_ngay_bai.py đọc cùng một ngày
 P="python3 -I"; X=cap-nhat/xem.txt; X2=cap-nhat/xem2.txt
 buoc(){ echo "▶ $*"; "$@"; }
 case $MA in

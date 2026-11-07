@@ -7,7 +7,16 @@ Bảng: Thương hiệu | Giá mua vào | Giá bán ra — ô viết "9,765,000 
 khi DOJI không niêm yết giá bán. Câu tổng kết: "mua vào cao nhất" = giá mua lớn nhất; "bán ra thấp nhất" = giá bán
 nhỏ nhất (trong các hãng có giá bán) — viết triệu VND/chỉ, 3 số lẻ. Ngày "cập nhật đến ngày d/m/yyyy" -> hôm nay.
 """
-import argparse, datetime, json, re, sys, unicodedata
+import argparse, datetime, json, re, sys, unicodedata, os
+
+def ngay_bai_dt():
+    """Ngày ghi trong bài: biến NGAY_BAI (dd/mm/yyyy, app chọn theo giờ đổi ngày) – không có thì ngày hôm sau (giờ VN)."""
+    tz = datetime.timezone(datetime.timedelta(hours=7))
+    n = os.environ.get('NGAY_BAI', '')
+    if re.fullmatch(r'\d{2}/\d{2}/\d{4}', n):
+        return datetime.datetime.strptime(n, '%d/%m/%Y').replace(tzinfo=tz, hour=12)
+    return datetime.datetime.now(tz) + datetime.timedelta(days=1)
+
 
 
 def nfc(s):
@@ -54,7 +63,7 @@ def main():
     dong, van = doc_xem(a.xem)
     gia = json.load(open(a.gia, encoding='utf-8'))
     # Ngày ghi trong bài: chạy từ 15h giờ VN trở đi -> ghi ngày hôm sau (+9 giờ là sang ngày mới)
-    hn = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=7))) + datetime.timedelta(days=1)  # Trang chốt 21/10/2026: luôn ghi ngày hôm sau
+    hn = ngay_bai_dt()  # Trang chốt 21/10/2026: luôn ghi ngày hôm sau
     ngay = f'{hn.day}/{hn.month}/{hn.year}'
     sua, can, lech = [], [], []
 

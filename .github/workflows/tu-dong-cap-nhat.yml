@@ -8,6 +8,7 @@ on:
   workflow_dispatch:
     inputs:
       bai: { description: 'Mã bài, cách nhau bằng dấu cách (để trống = đọc phiếu)', required: false, default: '' }
+      ngay: { description: 'Ngày ghi trong bài dd/mm/yyyy (Trang chọn trên app; trống = ngày mai; lãi suất luôn ngày mai)', required: false, default: '' }
 permissions:
   contents: write
 # Không khóa cả workflow: nhiều người bấm cùng lúc thì các lượt chạy song song, bước đăng tự thử lại khi đụng nhau.
@@ -112,7 +113,7 @@ jobs:
           NODE_PATH=$(npm root -g) node -e "require('playwright').chromium.launch().then(b=>b.close())" \
             || timeout 240 npx -y playwright@1.48.2 install --with-deps chromium
       - name: Chạy bài
-        env: { MA: '${{ matrix.ma }}' }
+        env: { MA: '${{ matrix.ma }}', NGAY_BAI: '${{ inputs.ngay }}' }
         run: |
           mkdir -p ket-qua
           [ -d cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/$MA ] || [[ $MA == lai-suat-[12] ]] || { echo "LỖI không có công thức $MA" > ket-qua/$MA.log; exit 0; }
@@ -129,7 +130,7 @@ jobs:
           fi
           find ket-qua -mindepth 2 ! -name bai.html -type f -delete   # chỉ giữ bai.html + log
       - name: Đăng kết quả bài này lên nhánh tu-dong-ket-qua
-        env: { MA: '${{ needs.kiem.outputs.ma }}' }
+        env: { MA: '${{ needs.kiem.outputs.ma }}', NGAY_BAI: '${{ inputs.ngay }}' }
         run: |
           git config --global user.name "Cập nhật tự động"
           git config --global user.email "actions@users.noreply.github.com"

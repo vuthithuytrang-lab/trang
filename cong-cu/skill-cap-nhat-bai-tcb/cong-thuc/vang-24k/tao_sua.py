@@ -5,7 +5,16 @@
 Bảng giá: mỗi dòng = Thương hiệu | Loại vàng | Giá mua (VND/chỉ) | Giá bán (VND/chỉ).
 Ngày trong câu "cập nhật đến ngày d/m/yyyy" (2 chỗ) đổi sang hôm nay, giữ kiểu viết không số 0 đầu.
 """
-import argparse, datetime, json, re, sys, unicodedata
+import argparse, datetime, json, re, sys, unicodedata, os
+
+def ngay_bai_dt():
+    """Ngày ghi trong bài: biến NGAY_BAI (dd/mm/yyyy, app chọn theo giờ đổi ngày) – không có thì ngày hôm sau (giờ VN)."""
+    tz = datetime.timezone(datetime.timedelta(hours=7))
+    n = os.environ.get('NGAY_BAI', '')
+    if re.fullmatch(r'\d{2}/\d{2}/\d{4}', n):
+        return datetime.datetime.strptime(n, '%d/%m/%Y').replace(tzinfo=tz, hour=12)
+    return datetime.datetime.now(tz) + datetime.timedelta(days=1)
+
 
 THUONG_HIEU = {'sjc': 'sjc', 'pnj': 'pnj', 'doji': 'doji', 'bảo tín minh châu': 'btmc'}
 
@@ -46,7 +55,7 @@ def main():
     dong, van = doc_xem(a.xem)
     gia = json.load(open(a.gia, encoding='utf-8'))
     # Ngày ghi trong bài: chạy từ 15h giờ VN trở đi -> ghi ngày hôm sau (+9 giờ là sang ngày mới)
-    hom_nay = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=7))) + datetime.timedelta(days=1)  # Trang chốt 21/10/2026: luôn ghi ngày hôm sau
+    hom_nay = ngay_bai_dt()  # Trang chốt 21/10/2026: luôn ghi ngày hôm sau
     ngay = f'{hom_nay.day}/{hom_nay.month}/{hom_nay.year}'
     sua, can, lech = [], [], []
 
