@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>App share bài</title>
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--xanh:#004AEF;--xanh2:#0D53F0;--navy:#002992;--mint:#07EF9C;--cam:#F68B1F;--vang:#FFCE00;--den:#151515;--xam:#F3F3F6;--vien:#DCDCDC;--phu:#5A6B66;--do:#D93025}
+*{box-sizing:border-box}
+body{margin:0;font-family:Gilroy,Montserrat,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--den);background:var(--xam);font-size:15px;line-height:1.55}
+a{color:var(--xanh)}
+header{background:#fff;border-bottom:1px solid var(--vien);position:sticky;top:0;z-index:5}
+.top{max-width:1180px;margin:auto;display:flex;align-items:center;gap:18px;padding:10px 16px;flex-wrap:wrap}
+.top img{width:150px;height:auto}
+.top h1{font-size:18px;margin:0;color:var(--navy);font-weight:800}
+nav{display:flex;gap:4px;flex-wrap:wrap;margin-left:auto}
+nav button{border:0;background:none;padding:8px 12px;border-radius:8px;font:inherit;font-weight:600;color:var(--phu);cursor:pointer}
+nav button.on{background:var(--xanh);color:#fff}
+main{max-width:1180px;margin:auto;padding:18px 16px 60px}
+.card{background:#fff;border:1px solid var(--vien);border-radius:14px;padding:18px;margin-bottom:16px}
+h2{font-size:22px;margin:0 0 6px;color:var(--navy)}
+h3{font-size:17px;margin:0 0 8px}
+.mo{color:var(--phu);font-size:13px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.stat{background:#fff;border:1px solid var(--vien);border-radius:14px;padding:14px}
+.stat b{display:block;font-size:30px;color:var(--xanh);font-weight:800;line-height:1.2}
+.stat.mint b{color:#03a86c}
+label{display:block;font-weight:600;font-size:13px;margin:10px 0 4px}
+input,select,textarea{width:100%;font:inherit;padding:9px 11px;border:1px solid var(--vien);border-radius:9px;background:#fff}
+textarea{min-height:120px;font-family:ui-monospace,Menlo,monospace;font-size:13px}
+button.b{border:0;background:var(--xanh);color:#fff;font:inherit;font-weight:700;padding:9px 16px;border-radius:9px;cursor:pointer}
+button.b.phu{background:#fff;color:var(--xanh);border:1px solid var(--xanh)}
+button.b.nho{padding:5px 10px;font-size:13px}
+button.b.do{background:var(--do)}
+button:disabled{opacity:.5}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.row>*{flex:1 1 200px}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--vien);vertical-align:top}
+th{background:var(--xam);font-weight:700}
+.tag{display:inline-block;padding:2px 8px;border-radius:99px;font-size:12px;font-weight:700;background:var(--xam);white-space:nowrap}
+.t-da_dang{background:#d9fbe9;color:#05734a}.t-cho{background:#e6edff;color:var(--xanh)}.t-loi{background:#fde3e1;color:var(--do)}.t-tam_giu{background:#fff4cc;color:#8a6d00}.t-dang{background:#ffe9d1;color:#9a4f00}
+.steps{counter-reset:s;list-style:none;padding:0;margin:8px 0}
+.steps li{counter-increment:s;position:relative;padding:6px 0 8px 36px}
+.steps li:before{content:counter(s);position:absolute;left:0;top:5px;width:24px;height:24px;border-radius:50%;background:var(--xanh);color:#fff;font-weight:800;font-size:13px;display:grid;place-items:center}
+.go{display:inline-block;margin:4px 6px 0 0;padding:4px 10px;border-radius:7px;background:#e6edff;color:var(--xanh);font-weight:700;font-size:13px;text-decoration:none}
+.go:after{content:" ↗"}
+.copy{display:flex;gap:6px;align-items:center;background:var(--xam);border-radius:8px;padding:6px 8px;font-family:ui-monospace,monospace;font-size:12.5px;word-break:break-all;margin-top:4px}
+.copy button{flex:none}
+.plat{display:flex;gap:8px;flex-wrap:wrap}
+.plat button{border:1px solid var(--vien);background:#fff;border-radius:99px;padding:7px 14px;font:inherit;font-weight:600;cursor:pointer}
+.plat button:hover{border-color:var(--xanh);color:var(--xanh)}
+.ok{color:#05734a;font-weight:600}.err{color:var(--do);font-weight:600}
+.hide{display:none!important}
+#toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--navy);color:#fff;padding:10px 18px;border-radius:10px;font-weight:600;display:none;z-index:9;max-width:90vw}
+.login{max-width:420px;margin:60px auto}
+.conn-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap}
+.chk{display:flex;gap:8px;align-items:center;font-weight:500;margin:6px 0}
+.chk input{width:auto}
+canvas{max-width:100%;border-radius:10px;border:1px solid var(--vien)}
+.scroll{overflow-x:auto}
+</style>
+</head>
+<body>
+<header><div class="top">
+  <img src="/logo.webp" alt="SEONGON">
+  <h1>App share bài</h1>
+  <nav id="nav" class="hide">
+    <button data-v="baocao">Báo cáo</button><button data-v="hangdoi">Hàng đợi</button><button data-v="them">Thêm bài</button>
+    <button data-v="ketnoi">Kết nối</button><button data-v="caidat">Cài đặt</button><button data-v="nhatky">Nhật ký</button>
+  </nav>
+</div></header>
+<main id="app"></main>
+<div id="toast"></div>
+
+<script>
+// ======================= HƯỚNG DẪN KẾT NỐI TỪNG NỀN TẢNG =======================
+// {R} = địa chỉ trả về (redirect) của app, {O} = địa chỉ app. Mỗi bước có nút mở thẳng đúng trang.
+const P = {
+  wix: { ten: 'Wix', oauth: false,
+    buoc: [
+      ['Mở trang tạo chìa API của Wix, bấm <b>Generate API Key</b>. Đặt tên "app share bai".', [['Mở trang tạo chìa Wix', 'https://manage.wix.com/account/api-keys']]],
+      ['Ở mục quyền: chọn <b>All site permissions</b> → tích <b>Wix Blog</b> (đăng bài) và <b>Media Manager</b> (tải ảnh). Bấm <b>Generate Key</b> → <b>Copy</b> → dán vào ô "Chìa API" bên dưới.'],
+      ['Lấy <b>Site ID</b>: mở danh sách trang → bấm vào trang cần đăng → nhìn thanh địa chỉ, đoạn chữ số sau <code>/dashboard/</code> chính là Site ID.', [['Mở danh sách trang Wix', 'https://manage.wix.com/account/sites']]],
+      ['Bấm <b>Lưu & kiểm tra</b>. App tự tìm tác giả bài viết. (Trang phải cài sẵn ứng dụng Blog của Wix.)'],
+    ],
+    o: [['name', 'Tên gợi nhớ', 'Wix - trangjena3'], ['api_key', 'Chìa API (bắt đầu bằng IST.)', '', 1], ['site_id', 'Site ID', 'a11ce1ee-…'], ['url_prefix', 'Link đầu bài (không bắt buộc)', 'https://tenban.wixsite.com/trang/post/'], ['member_id', 'Member ID tác giả (để trống — app tự tìm)', '']] },
+  wordpress: { ten: 'WordPress.com', oauth: true,
+    buoc: [
+      ['Mở trang tạo ứng dụng WordPress.com (đăng nhập đúng tài khoản sở hữu blog).', [['Tạo app WordPress.com', 'https://developer.wordpress.com/apps/new/'], ['Danh sách app của bạn', 'https://developer.wordpress.com/apps/']]],
+      ['Điền: <b>Name</b> = app share bai · <b>Website URL</b> = địa chỉ app · <b>Redirect URLs</b> = địa chỉ trả về · <b>Type</b> = Web. Tích ô xác nhận rồi bấm <b>Create</b>.', null, ['O', 'R']],
+      ['Trang hiện <b>Client ID</b> và <b>Client Secret</b> → dán vào 2 ô bên dưới. Ô "Địa chỉ blog" điền dạng <code>tenblog.wordpress.com</code>.'],
+      ['Bấm <b>Lưu</b> rồi <b>Đăng nhập & cấp quyền</b> → chọn blog → <b>Approve</b>. App tự quay lại và kiểm tra.'],
+    ],
+    o: [['name', 'Tên gợi nhớ', 'WordPress - tenblog'], ['client_id', 'Client ID', ''], ['client_secret', 'Client Secret', '', 1], ['site_id', 'Địa chỉ blog', 'tenblog.wordpress.com']] },
+  blogger: { ten: 'Blogger (Google)', oauth: true,
+    buoc: [
+      ['Tạo một dự án Google Cloud (đặt tên "app share bai") → <b>Create</b>.', [['Tạo dự án Google Cloud', 'https://console.cloud.google.com/projectcreate']]],
+      ['Bật 2 dịch vụ: Blogger (đăng bài) và Google Sheets (ghi link về sheet). Mỗi trang bấm <b>Enable</b>.', [['Bật Blogger API', 'https://console.cloud.google.com/apis/library/blogger.googleapis.com'], ['Bật Google Sheets API', 'https://console.cloud.google.com/apis/library/sheets.googleapis.com']]],
+      ['Khai màn hình đồng ý: điền tên app + email → <b>Audience: External</b> → thêm email của bạn vào <b>Test users</b>. Sau đó vào mục Audience bấm <b>Publish app</b> để chìa <b>không hết hạn sau 7 ngày</b>.', [['Màn hình đồng ý (Branding)', 'https://console.cloud.google.com/auth/branding'], ['Mục Audience (Publish app)', 'https://console.cloud.google.com/auth/audience']]],
+      ['Tạo chìa: <b>Application type = Web application</b> → mục <b>Authorized redirect URIs</b> bấm Add URI, dán địa chỉ trả về → <b>Create</b> → chép Client ID và Client Secret vào 2 ô dưới.', [['Tạo chìa OAuth', 'https://console.cloud.google.com/auth/clients/create']], ['R']],
+      ['Bấm <b>Lưu</b> rồi <b>Đăng nhập & cấp quyền</b> → chọn tài khoản Google sở hữu blog → nếu báo "chưa xác minh" bấm <b>Nâng cao → Đi tới…</b> → <b>Cho phép</b>. App tự lấy blog đầu tiên; muốn blog khác thì điền Blog ID.'],
+    ],
+    o: [['name', 'Tên gợi nhớ', 'Blogger - tenblog'], ['client_id', 'Client ID', '….apps.googleusercontent.com'], ['client_secret', 'Client Secret', '', 1], ['blog_id', 'Blog ID (để trống — app tự lấy)', '']] },
+  webflow: { ten: 'Webflow', oauth: false,
+    buoc: [
+      ['Mở bảng điều khiển Webflow → di chuột vào trang → ⚙ <b>Settings</b> → <b>Apps & integrations</b> → kéo xuống <b>API access</b> → <b>Generate API token</b>. Tích <b>CMS: Read and write</b> và <b>Sites: Read</b> → chép token.', [['Mở Webflow Dashboard', 'https://webflow.com/dashboard']]],
+      ['Lấy <b>Collection ID</b>: mở Designer → biểu tượng CMS → bộ sưu tập bài viết (vd Blog Posts) → ⚙ Settings → chép <b>Collection ID</b>.'],
+      ['<b>Link đầu bài</b>: mở 1 bài bất kỳ trên trang, chép phần trước tên bài, vd <code>https://tenban.webflow.io/blog-posts/</code>.'],
+      ['Bấm <b>Lưu & kiểm tra</b>. Lưu ý gói miễn phí chỉ chứa tối đa 50 bài.'],
+    ],
+    o: [['name', 'Tên gợi nhớ', 'Webflow - tenban'], ['token', 'API token', '', 1], ['collection_id', 'Collection ID', ''], ['url_prefix', 'Link đầu bài', 'https://tenban.webflow.io/blog-posts/']] },
+  tumblr: { ten: 'Tumblr', oauth: true,
+    buoc: [
+      ['Mở trang đăng ký ứng dụng Tumblr → <b>Register application</b>.', [['Đăng ký app Tumblr', 'https://www.tumblr.com/oauth/register']]],
+      ['Điền: Application name = app share bai · <b>Application website</b> = địa chỉ app · <b>Default callback URL</b> và <b>OAuth2 redirect URLs</b> = địa chỉ trả về · email của bạn → <b>Register</b>.', null, ['O', 'R']],
+      ['Chép <b>OAuth Consumer Key</b> vào ô Client ID, <b>Secret Key</b> vào ô Client Secret.', [['Danh sách app Tumblr', 'https://www.tumblr.com/oauth/apps']]],
+      ['Bấm <b>Lưu</b> rồi <b>Đăng nhập & cấp quyền</b> → <b>Allow</b>.'],
+    ],
+    o: [['name', 'Tên gợi nhớ', 'Tumblr - tenblog'], ['client_id', 'Client ID (OAuth Consumer Key)', ''], ['client_secret', 'Client Secret', '', 1], ['blog', 'Tên blog (để trống — app tự lấy)', 'tenblog']] },
+  mastodon: { ten: 'Mastodon', oauth: false,
+    buoc: [
+      ['Điền <b>máy chủ</b> của bạn (vd mastodon.social) vào ô bên dưới, rồi bấm nút để mở trang tạo ứng dụng.', [['Tạo app trên mastodon.social', 'https://mastodon.social/settings/applications/new']]],
+      ['Application name = app share bai · chỉ cần tích <b>read:accounts</b> và <b>write:statuses</b> → <b>Submit</b>.'],
+      ['Bấm vào app vừa tạo → chép <b>Your access token</b> → dán vào ô dưới → <b>Lưu & kiểm tra</b>. Mastodon đăng tút ngắn (tiêu đề + tóm tắt + link bài gốc).'],
+    ],
+    o: [['name', 'Tên gợi nhớ', 'Mastodon - @ten'], ['instance', 'Máy chủ', 'mastodon.social'], ['token', 'Access token', '', 1]] },
+  telegram: { ten: 'Telegram', oauth: false,
+    buoc: [
+      ['Mở BotFather → gõ <code>/newbot</code> → đặt tên → BotFather gửi <b>token</b> → chép vào ô dưới.', [['Mở BotFather', 'https://t.me/BotFather']]],
+      ['Thêm bot vào kênh của bạn với vai trò <b>Quản trị viên</b>, bật quyền <b>Đăng tin</b>.'],
+      ['Ô Chat ID điền <code>@tenkenh</code> (kênh công khai) → <b>Lưu & kiểm tra</b>. Telegram đăng tin ngắn có link bài gốc.'],
+    ],
+    o: [['name', 'Tên gợi nhớ', 'Telegram - kênh'], ['bot_token', 'Bot token', '', 1], ['chat_id', 'Chat ID', '@tenkenh']] },
+};
+
+// ======================= TIỆN ÍCH =======================
+const $ = (s, el = document) => el.querySelector(s), $$ = (s, el = document) => [...el.querySelectorAll(s)];
+const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+let TOKEN = ''; try { TOKEN = localStorage.getItem('tok') || ''; } catch {}
+let S = null, VIEW = 'baocao', EDIT = null;
+function toast(m, ms = 3500) { const t = $('#toast'); t.textContent = m; t.style.display = 'block'; clearTimeout(t._h); t._h = setTimeout(() => t.style.display = 'none', ms); }
+async function api(path, body) {
+  const r = await fetch('/api/' + path, { method: body ? 'POST' : 'GET', headers: { 'Content-Type': 'application/json', 'x-token': TOKEN }, body: body ? JSON.stringify(body) : undefined });
+  const d = await r.json().catch(() => ({}));
+  if (r.status === 401 && path !== 'login') { TOKEN = ''; showLogin(); throw new Error('Cần đăng nhập lại'); }
+  if (!r.ok) throw new Error(d.error || 'Lỗi ' + r.status);
+  return d;
+}
+const vn = (iso) => { if (!iso) return ''; const d = new Date(iso); return d.toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh', hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit', year: 'numeric' }); };
+const vnDay = (iso) => new Date(new Date(iso).getTime() + 7 * 3600e3).toISOString().slice(0, 10);
+const slugify = (s) => String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/đ/g, 'd').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 70);
+const ST = { cho: 'Chờ đến giờ', tam_giu: 'Tạm giữ', dang: 'Đang đăng', da_dang: 'Đã đăng', loi: 'Lỗi' };
+const tag = (st) => `<span class="tag t-${st}">${ST[st] || st}</span>`;
+const connName = (id) => (S.conns.find((c) => c.id === id) || {}).name || '(đã xóa)';
+function copyBox(txt) { return `<div class="copy"><span style="flex:1">${esc(txt)}</span><button class="b nho" onclick="navigator.clipboard.writeText('${esc(txt)}');toast('Đã chép')">Chép</button></div>`; }
+// "dd/mm/yyyy HH:MM" hoặc "HH:MM dd/mm/yyyy" -> ISO (giờ VN)
+function parseVN(s) {
+  s = String(s || '').trim(); if (!s) return new Date().toISOString();
+  let m = s.match(/(\d{1,2}):(\d{2})\s+(\d{1,2})\/(\d{1,2})\/(\d{4})/) || null, d, mo, y, h, mi;
+  if (m) [, h, mi, d, mo, y] = m; else { m = s.match(/(\d{1,2})\/(\d{1,2})\/(\d{4})\s+(\d{1,2}):(\d{2})/); if (m) [, d, mo, y, h, mi] = m; }
+  if (!m) { const t = Date.parse(s); return isNaN(t) ? null : new Date(t).toISOString(); }
+  return new Date(Date.UTC(+y, +mo - 1, +d, +h - 7, +mi)).toISOString();
+}
+
+// ======================= ĐĂNG NHẬP =======================
+async function showLogin() {
+  $('#nav').classList.add('hide');
+  const st = await fetch('/api/status').then((r) => r.json());
+  $('#app').innerHTML = `<div class="card login"><h2>${st.setup ? 'Đăng nhập' : 'Tạo mật khẩu cho app'}</h2>
+    <p class="mo">${st.setup ? 'Nhập mật khẩu bạn đã đặt.' : 'Lần đầu dùng: đặt mật khẩu riêng (ít nhất 6 ký tự) để chỉ bạn vào được app. Nhớ lưu lại mật khẩu này.'}</p>
+    <label>Mật khẩu</label><input id="pw" type="password" autocomplete="current-password">
+    <p><button class="b" id="go">${st.setup ? 'Vào app' : 'Tạo mật khẩu & vào app'}</button></p></div>`;
+  const go = async () => { try { const d = await api(st.setup ? 'login' : 'setup', { password: $('#pw').value }); TOKEN = d.token; try { localStorage.setItem('tok', TOKEN); } catch {} boot(); } catch (e) { toast(e.message); } };
+  $('#go').onclick = go; $('#pw').onkeydown = (e) => e.key === 'Enter' && go();
+}
+async function boot() {
+  if (!TOKEN) return showLogin();
+  try { S = await api('state'); } catch (e) { return; }
+  $('#nav').classList.remove('hide');
+  const h = location.hash.match(/ketnoi=([\w]+)/); if (h) { VIEW = 'ketnoi'; history.replaceState(null, '', '/'); const c = S.conns.find((x) => x.id === h[1]); if (c) setTimeout(() => toast((c.ok ? '✅ ' : '⚠️ ') + c.test, 7000), 300); }
+  render();
+}
+async function reload() { S = await api('state'); render(); }
+$$('#nav button').forEach((b) => b.onclick = () => { VIEW = b.dataset.v; EDIT = null; render(); });
+function render() {
+  $$('#nav button').forEach((b) => b.classList.toggle('on', b.dataset.v === VIEW));
+  ({ baocao: vBaoCao, hangdoi: vHangDoi, them: vThem, ketnoi: vKetNoi, caidat: vCaiDat, nhatky: vNhatKy })[VIEW]();
+}
+
+// ======================= BÁO CÁO =======================
+function vBaoCao() {
+  const jobs = S.items.flatMap((it) => (it.jobs || []).map((j) => ({ ...j, it })));
+  const today = vnDay(new Date().toISOString()), n = (f) => jobs.filter(f).length;
+  const days = [...Array(7)].map((_, i) => vnDay(new Date(Date.now() - (6 - i) * 864e5).toISOString()));
+  const per = S.conns.map((c) => { const J = jobs.filter((j) => j.conn === c.id); return { c, da: J.filter((j) => j.status === 'da_dang'), cho: J.filter((j) => ['cho', 'tam_giu', 'dang'].includes(j.status)).length, loi: J.filter((j) => j.status === 'loi').length, J }; });
+  const sapToi = jobs.filter((j) => j.status === 'cho').sort((a, b) => a.at.localeCompare(b.at)).slice(0, 8);
+  $('#app').innerHTML = `
+  <div class="grid">
+    <div class="stat mint"><b>${n((j) => j.status === 'da_dang')}</b>Link đã đăng</div>
+    <div class="stat"><b>${n((j) => j.status === 'da_dang' && vnDay(j.when) === today)}</b>Đăng hôm nay</div>
+    <div class="stat"><b>${n((j) => ['cho', 'tam_giu'].includes(j.status))}</b>Đang chờ đăng</div>
+    <div class="stat"><b style="color:${n((j) => j.status === 'loi') ? 'var(--do)' : 'var(--xanh)'}">${n((j) => j.status === 'loi')}</b>Lỗi cần xem</div>
+  </div>
+  <div class="card" style="margin-top:16px"><div class="row"><h2 style="flex:3">Từng tài khoản</h2>
+    <span style="flex:none" class="mo">Tự động: <b>${S.settings.tu_dong ? '🟢 đang bật' : '⚪ đang tắt'}</b> · 10 phút kiểm tra 1 lần · ${S.settings.gio_bat_dau}h–${S.settings.gio_ket_thuc}h · cách nhau ≥ ${S.settings.cach_nhau_phut} phút · tối đa ${S.settings.toi_da_moi_ngay} bài/ngày</span>
+    <button class="b nho" style="flex:none" onclick="runNow(this)">▶ Chạy 1 lượt ngay</button></div>
+    <div class="scroll"><table><tr><th>Tài khoản</th><th>Tình trạng</th><th>Đã đăng</th><th>Hôm nay</th><th>Chờ</th><th>Lỗi</th>${days.map((d) => `<th>${d.slice(8)}/${d.slice(5, 7)}</th>`).join('')}<th>Bài gần nhất</th></tr>
+    ${per.map((p) => `<tr><td><b>${esc(p.c.name)}</b><br><span class="mo">${P[p.c.type]?.ten || p.c.type}</span></td>
+      <td>${p.c.paused ? `<span class="err">⏸ Tạm dừng</span><br><span class="mo">${esc(p.c.pause_reason || '')}</span>` : p.c.ok ? '<span class="ok">● Sống</span>' : '<span class="err">Chưa kiểm tra / lỗi</span>'}</td>
+      <td><b>${p.da.length}</b></td><td>${p.da.filter((j) => vnDay(j.when) === today).length}</td><td>${p.cho}</td><td>${p.loi}</td>
+      ${days.map((d) => `<td>${p.da.filter((j) => vnDay(j.when) === d).length || ''}</td>`).join('')}
+      <td>${(() => { const l = p.da.sort((a, b) => b.when.localeCompare(a.when))[0]; return l ? `<a href="${esc(l.url)}" target="_blank">${vn(l.when)}</a>` : '—'; })()}</td></tr>`).join('') || '<tr><td colspan="20">Chưa có kết nối nào — vào tab <b>Kết nối</b>.</td></tr>'}
+    </table></div></div>
+  <div class="card"><h3>Sắp đăng</h3>${sapToi.length ? `<table>${sapToi.map((j) => `<tr><td>${vn(j.at)}</td><td>${esc(connName(j.conn))}</td><td>${esc(j.it.title)}</td></tr>`).join('')}</table>` : '<p class="mo">Không có bài nào đang chờ.</p>'}</div>
+  <div class="card"><div class="row"><h3 style="flex:3">Tất cả link đã đăng</h3><button class="b phu nho" style="flex:none" onclick="exportCSV()">⬇ Tải file CSV</button></div>
+    <div class="scroll"><table><tr><th>Giờ đăng</th><th>Tài khoản</th><th>Tiêu đề</th><th>Link</th><th>Ghi sheet</th></tr>
+    ${jobs.filter((j) => j.status === 'da_dang').sort((a, b) => b.when.localeCompare(a.when)).map((j) => `<tr><td>${vn(j.when)}</td><td>${esc(connName(j.conn))}</td><td>${esc(j.it.title)}</td><td><a href="${esc(j.url)}" target="_blank">${esc(j.url)}</a></td><td class="mo">${esc(j.sheet || '')}</td></tr>`).join('') || '<tr><td colspan="5" class="mo">Chưa có.</td></tr>'}</table></div></div>`;
+}
+async function runNow(btn) { btn.disabled = true; try { const d = await api('run', {}); toast(d.out.join(' · '), 8000); await reload(); } catch (e) { toast(e.message); } btn.disabled = false; }
+function exportCSV() {
+  const rows = [['Giờ đăng', 'Tài khoản', 'Tiêu đề', 'URL bài gốc', 'Link']];
+  S.items.forEach((it) => (it.jobs || []).filter((j) => j.status === 'da_dang').forEach((j) => rows.push([vn(j.when), connName(j.conn), it.title, it.source, j.url])));
+  const csv = '﻿' + rows.map((r) => r.map((x) => '"' + String(x).replace(/"/g, '""') + '"').join(',')).join('\n');
+  const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv' })); a.download = 'link-da-share.csv'; a.click();
+}
+
+// ======================= HÀNG ĐỢI =======================
+function vHangDoi() {
+  const items = [...S.items].reverse();
+  $('#app').innerHTML = `<div class="card"><h2>Hàng đợi</h2><p class="mo">Mỗi bài có thể đăng lên nhiều tài khoản. "Tạm giữ" = chưa cho app đăng. Bài lỗi: sửa xong bấm "Thử lại".</p>
+  <div class="scroll"><table><tr><th>Bài</th><th>Đăng lên</th><th></th></tr>
+  ${items.map((it) => `<tr><td style="min-width:220px"><b>${esc(it.title)}</b><br><a class="mo" href="${esc(it.source)}" target="_blank">${esc(it.source)}</a></td>
+    <td>${(it.jobs || []).map((j) => `<div style="margin-bottom:6px">${tag(j.status)} <b>${esc(connName(j.conn))}</b> · <span class="mo">${j.status === 'da_dang' ? vn(j.when) : 'hẹn ' + vn(j.at)}</span>
+      ${j.url ? ` · <a href="${esc(j.url)}" target="_blank">xem</a>` : ''}
+      ${j.status === 'tam_giu' ? `<button class="b nho" onclick="setJob('${it.id}','${j.conn}','cho')">Cho đăng</button>` : ''}
+      ${j.status === 'cho' ? `<button class="b phu nho" onclick="setJob('${it.id}','${j.conn}','tam_giu')">Tạm giữ</button>` : ''}
+      ${['loi', 'dang'].includes(j.status) ? `<button class="b nho" onclick="setJob('${it.id}','${j.conn}','cho')">Thử lại</button><br><span class="err" style="font-size:12px">${esc(j.err || (j.status === 'dang' ? 'Bị ngắt giữa chừng — kiểm tra trang trước khi thử lại để tránh đăng trùng' : ''))}</span>` : ''}</div>`).join('')}</td>
+    <td style="white-space:nowrap"><button class="b phu nho" onclick="EDIT='${it.id}';VIEW='them';render()">Sửa</button> <button class="b do nho" onclick="delItem('${it.id}')">Xóa</button></td></tr>`).join('') || '<tr><td colspan="3" class="mo">Chưa có bài. Vào tab <b>Thêm bài</b>.</td></tr>'}
+  </table></div></div>`;
+}
+async function setJob(item, conn, status) { try { await api('job', { item, conn, status }); await reload(); } catch (e) { toast(e.message); } }
+async function delItem(id) { if (!confirm('Xóa bài này khỏi hàng đợi? (Bài đã đăng trên trang vẫn giữ nguyên)')) return; await api('item/delete', { id }); await reload(); }
+
+// ======================= THÊM / SỬA BÀI =======================
+function vThem() {
+  const it = EDIT ? S.items.find((x) => x.id === EDIT) : null;
+  const toLocal = (iso) => { const d = new Date(new Date(iso).getTime() + 7 * 3600e3); return d.toISOString().slice(0, 16); };
+  $('#app').innerHTML = `<div class="card"><h2>${it ? 'Sửa bài' : 'Thêm 1 bài'}</h2>
+  <div class="row"><div><label>Tiêu đề</label><input id="f_title" value="${esc(it?.title)}"></div><div><label>Đường dẫn (slug) — tự tạo</label><input id="f_slug" value="${esc(it?.slug)}"></div></div>
+  <label>URL bài gốc (link trỏ về)</label><input id="f_source" value="${esc(it?.source)}" placeholder="https://…">
+  <label>Nội dung bài (HTML: &lt;p&gt;, &lt;h2&gt;, &lt;h3&gt;, &lt;ul&gt;&lt;li&gt;, &lt;strong&gt;, &lt;a&gt;) — hoặc dán 1 đường link tới file .html</label><textarea id="f_html" style="min-height:200px">${esc(it?.html)}</textarea>
+  <label>Tóm tắt ngắn cho Mastodon/Telegram (không bắt buộc — để trống app lấy đoạn đầu)</label><input id="f_short" value="${esc(it?.short)}">
+  <h3 style="margin-top:16px">Ảnh đại diện</h3>
+  <div class="row"><div><label>Chữ nhỏ trên ảnh</label><input id="f_label" value="${esc(it?.label || S.settings.nhan_anh || 'Cẩm nang tài chính')}"></div>
+  <div><label>Hoặc dùng ảnh có sẵn (link ảnh)</label><input id="f_image" value="${esc(it?.image)}" placeholder="để trống = dùng ảnh tự tạo"></div></div>
+  <p><canvas id="cv" width="1200" height="630" style="width:420px"></canvas></p>
+  <h3>Đăng lên đâu, lúc nào</h3>
+  ${S.conns.length ? S.conns.map((c) => { const j = it?.jobs?.find((x) => x.conn === c.id); return `<div class="row" style="border-top:1px solid var(--vien);padding-top:6px">
+     <label class="chk" style="flex:2"><input type="checkbox" class="f_conn" value="${c.id}" ${j ? 'checked' : ''} ${j?.status === 'da_dang' ? 'disabled' : ''}> ${esc(c.name)} ${j ? tag(j.status) : ''}</label>
+     <div><label>Giờ hẹn (để trống = sớm nhất, app tự giãn)</label><input type="datetime-local" class="f_at" data-c="${c.id}" value="${j?.at ? toLocal(j.at) : ''}"></div>
+     <div><label>Dòng trong sheet (ghi link về — không bắt buộc)</label><input class="f_row" data-c="${c.id}" value="${esc(j?.sheet_row || '')}" placeholder="vd 584"></div></div>`; }).join('') : '<p class="err">Chưa có kết nối nào. Vào tab Kết nối trước.</p>'}
+  <label class="chk"><input type="checkbox" id="f_hold"> Lưu ở trạng thái <b>Tạm giữ</b> (chưa cho đăng)</label>
+  <p><button class="b" id="save">💾 Lưu vào hàng đợi</button> <button class="b phu" onclick="EDIT=null;VIEW='hangdoi';render()">Hủy</button></p></div>
+  ${it ? '' : `<div class="card"><h2>Thêm nhiều bài một lúc</h2>
+  <p class="mo">Dán mỗi bài 1 dòng, các cột cách nhau bằng dấu <b>Tab</b> (chép thẳng từ Google Sheet được):<br>
+  <code>Tiêu đề · URL bài gốc · Nội dung HTML hoặc link file .html · Tên kết nối (nhiều thì cách nhau dấu phẩy) · Giờ hẹn (HH:MM dd/mm/yyyy, trống = sớm nhất) · Dòng sheet</code><br>Hoặc dán dữ liệu JSON do Claude xuất ra.</p>
+  <textarea id="bulk" placeholder="Tiêu đề&#9;https://bai-goc…&#9;https://…/bai.html&#9;Wix - trangjena3&#9;08:41 08/11/2026&#9;584"></textarea>
+  <label class="chk"><input type="checkbox" id="bulk_hold" checked> Nhập ở trạng thái Tạm giữ (xem lại rồi mới cho đăng)</label>
+  <p><button class="b" id="bulkgo">Nhập hàng loạt</button></p></div>`}`;
+  const draw = () => drawThumb($('#cv'), $('#f_title').value || 'Tiêu đề bài viết', $('#f_label').value);
+  $('#f_title').oninput = () => { if (!it) $('#f_slug').value = slugify($('#f_title').value); draw(); };
+  $('#f_label').oninput = draw; document.fonts.ready.then(draw); draw();
+  $('#save').onclick = async () => {
+    const btn = $('#save'); btn.disabled = true;
+    try {
+      const title = $('#f_title').value.trim(), source = $('#f_source').value.trim();
+      if (!title || !source) throw new Error('Cần tiêu đề và URL bài gốc');
+      let html = $('#f_html').value.trim(); if (/^https?:\/\/\S+$/.test(html)) html = await fetch(html).then((r) => { if (!r.ok) throw new Error('Không tải được file nội dung'); return r.text(); });
+      if (!html) throw new Error('Cần nội dung bài');
+      let image = $('#f_image').value.trim();
+      if (!image) image = (await api('image', { data: $('#cv').toDataURL('image/png') })).url;
+      const hold = $('#f_hold').checked;
+      const jobs = $$('.f_conn').filter((x) => x.checked || x.disabled).map((x) => { const at = $(`.f_at[data-c="${x.value}"]`).value, row = $(`.f_row[data-c="${x.value}"]`).value.trim();
+        return { conn: x.value, at: at ? new Date(at + ':00+07:00').toISOString() : new Date().toISOString(), status: hold ? 'tam_giu' : 'cho', sheet_row: row || undefined, sheet_offset: row ? 0 : undefined }; });
+      if (!jobs.length) throw new Error('Chọn ít nhất 1 nơi đăng');
+      await api('item', { id: it?.id, title, slug: $('#f_slug').value.trim() || slugify(title), source, html, short: $('#f_short').value.trim(), label: $('#f_label').value, image, jobs });
+      toast('Đã lưu'); EDIT = null; VIEW = 'hangdoi'; await reload();
+    } catch (e) { toast(e.message); }
+    btn.disabled = false;
+  };
+  if (!it) $('#bulkgo').onclick = bulkImport;
+}
+async function bulkImport() {
+  const btn = $('#bulkgo'), raw = $('#bulk').value.trim(), hold = $('#bulk_hold').checked; if (!raw) return;
+  btn.disabled = true;
+  try {
+    let rows;
+    if (raw.startsWith('[')) rows = JSON.parse(raw);
+    else rows = raw.split('\n').filter((l) => l.trim()).map((l) => { const c = l.split('\t'); return { title: c[0], source: c[1], html: c[2], conns: c[3], at: c[4], sheet_row: c[5] }; });
+    const items = [], cv = document.createElement('canvas'); cv.width = 1200; cv.height = 630;
+    for (const [i, r] of rows.entries()) {
+      btn.textContent = `Đang chuẩn bị ${i + 1}/${rows.length}…`;
+      let html = String(r.html || '').trim(); if (/^https?:\/\/\S+$/.test(html)) html = await fetch(html).then((x) => x.text());
+      const names = String(r.conns || '').split(',').map((s) => s.trim().toLowerCase()).filter(Boolean);
+      const cs = S.conns.filter((c) => names.includes(c.name.toLowerCase()));
+      if (!cs.length) throw new Error(`Dòng ${i + 1}: không thấy kết nối tên "${r.conns}"`);
+      let image = r.image; if (!image) { drawThumb(cv, r.title, r.label || S.settings.nhan_anh || 'Cẩm nang tài chính'); image = (await api('image', { data: cv.toDataURL('image/png') })).url; }
+      const at = r.at ? parseVN(r.at) : new Date().toISOString(); if (!at) throw new Error(`Dòng ${i + 1}: giờ hẹn sai dạng`);
+      items.push({ title: r.title, slug: r.slug || slugify(r.title), source: String(r.source).trim(), html, image, short: r.short || '',
+        jobs: cs.map((c) => ({ conn: c.id, at, status: hold ? 'tam_giu' : 'cho', sheet_row: r.sheet_row || undefined, sheet_offset: r.sheet_row ? 0 : undefined })) });
+    }
+    const d = await api('items/import', { items }); toast(`Đã nhập ${d.n} bài`); VIEW = 'hangdoi'; await reload();
+  } catch (e) { toast(e.message, 7000); }
+  btn.disabled = false; btn.textContent = 'Nhập hàng loạt';
+}
+// Ảnh đại diện 1200×630: nền xanh chuyển màu + tiêu đề trắng + nhãn nhỏ
+function drawThumb(cv, title, label) {
+  const g = cv.getContext('2d'), W = 1200, H = 630, gr = g.createLinearGradient(0, 0, W, H);
+  gr.addColorStop(0, '#002992'); gr.addColorStop(.6, '#0D53F0'); gr.addColorStop(1, '#0DD1FF');
+  g.fillStyle = gr; g.fillRect(0, 0, W, H);
+  g.globalAlpha = .12; g.fillStyle = '#fff'; g.beginPath(); g.arc(1060, 120, 260, 0, 7); g.fill(); g.beginPath(); g.arc(1150, 560, 160, 0, 7); g.fill(); g.globalAlpha = 1;
+  g.font = '700 30px Montserrat, Arial'; const lw = g.measureText(label).width + 44;
+  g.fillStyle = '#07EF9C'; g.beginPath(); g.roundRect(80, 90, lw, 56, 28); g.fill(); g.fillStyle = '#002992'; g.fillText(label, 102, 129);
+  g.fillStyle = '#fff'; let size = 68, lines;
+  do { g.font = `800 ${size}px Montserrat, Arial`; lines = wrap(g, title, W - 170); size -= 4; } while (lines.length > 4 && size > 40);
+  lines.forEach((l, i) => g.fillText(l, 80, 250 + i * (size + 18)));
+}
+function wrap(g, t, w) { const out = []; let cur = ''; for (const word of String(t).split(/\s+/)) { const tryL = cur ? cur + ' ' + word : word; if (g.measureText(tryL).width > w && cur) { out.push(cur); cur = word; } else cur = tryL; } if (cur) out.push(cur); return out; }
+
+// ======================= KẾT NỐI =======================
+function vKetNoi() {
+  $('#app').innerHTML = `<div class="card"><h2>Kết nối nền tảng</h2>
+    <p class="mo">Chọn nền tảng → làm theo từng bước (mỗi bước có nút mở thẳng đúng trang) → dán chìa → Lưu & kiểm tra. Chìa được cất kín trên máy chủ, không hiện lại trên trang.</p>
+    <div class="plat">${Object.entries(P).map(([k, p]) => `<button onclick="formConn('${k}')">+ ${p.ten}</button>`).join('')}</div></div>
+    <div id="form"></div>
+    ${S.conns.map((c) => `<div class="card"><div class="conn-head"><div><h3 style="margin:0">${esc(c.name)}</h3><span class="mo">${P[c.type]?.ten}</span></div>
+      <div class="row" style="flex:0 0 auto;gap:6px">
+        <button class="b nho" onclick="testConn('${c.id}',this)">Kiểm tra</button>
+        ${P[c.type]?.oauth ? `<button class="b nho" onclick="location='/api/oauth/start?id=${c.id}&t='+encodeURIComponent(TOKEN)">Đăng nhập & cấp quyền</button>` : ''}
+        <button class="b phu nho" onclick="formConn('${c.type}','${c.id}')">Sửa</button>
+        <button class="b phu nho" onclick="pauseConn('${c.id}',${!c.paused})">${c.paused ? '▶ Chạy lại' : '⏸ Tạm dừng'}</button>
+        <button class="b do nho" onclick="delConn('${c.id}')">Xóa</button></div></div>
+      <p class="${c.ok ? 'ok' : 'err'}" style="margin:8px 0 0">${c.paused ? '⏸ ' + esc(c.pause_reason || 'Đang tạm dừng') + ' · ' : ''}${esc(c.test || 'Chưa kiểm tra')}</p>
+      ${c.data.blogs?.length > 1 ? `<p class="mo">Blog đang dùng: ${esc((c.data.blogs.find((b) => b.id === c.data.blog_id) || {}).name || c.data.blog_id)} — muốn đổi, bấm Sửa và điền Blog ID: ${c.data.blogs.map((b) => esc(b.name) + ' = ' + b.id).join(' · ')}</p>` : ''}</div>`).join('')}`;
+}
+function formConn(type, cid) {
+  const p = P[type], c = cid ? S.conns.find((x) => x.id === cid) : null;
+  const sub = (k) => k === 'R' ? `<div class="mo" style="margin-top:6px">Địa chỉ trả về (Redirect URL):</div>${copyBox(S.redirect)}` : `<div class="mo" style="margin-top:6px">Địa chỉ app (Website URL):</div>${copyBox(S.origin)}`;
+  $('#form').innerHTML = `<div class="card" style="border:2px solid var(--xanh)"><h2>${c ? 'Sửa' : 'Kết nối'} ${p.ten}</h2>
+    <ol class="steps">${p.buoc.map(([t, links, subs]) => `<li>${t}<div>${(links || []).map(([n, u]) => `<a class="go" target="_blank" href="${u}">${n}</a>`).join('')}</div>${(subs || []).map(sub).join('')}</li>`).join('')}</ol>
+    <div class="row">${p.o.map(([k, l, ph, sec]) => `<div><label>${l}</label><input data-k="${k}" ${sec ? 'type="password" autocomplete="off"' : ''} placeholder="${esc(sec && c ? '•••••• (để trống = giữ chìa cũ)' : ph)}" value="${esc(k === 'name' ? (c?.name || '') : sec ? '' : (c?.data[k] || ''))}"></div>`).join('')}</div>
+    <p><button class="b" id="savec">${p.oauth ? '💾 Lưu' : '💾 Lưu & kiểm tra'}</button> <button class="b phu" onclick="$('#form').innerHTML=''">Đóng</button></p>
+    ${p.oauth ? '<p class="mo">Sau khi Lưu, bấm nút <b>Đăng nhập & cấp quyền</b> ở thẻ kết nối bên dưới.</p>' : ''}</div>`;
+  $('#form').scrollIntoView({ behavior: 'smooth' });
+  $('#savec').onclick = async () => {
+    const data = {}; $$('#form input[data-k]').forEach((i) => { if (i.dataset.k !== 'name') data[i.dataset.k] = i.value; });
+    if (type === 'wordpress' && data.site_id) data.site_id = data.site_id.replace(/^https?:\/\//, '').replace(/\/.*$/, '');
+    if (type === 'mastodon' && data.instance) data.instance = data.instance.replace(/^https?:\/\//, '').replace(/\/.*$/, '');
+    const name = $('#form input[data-k="name"]').value.trim() || p.ten;
+    try {
+      const d = await api('conn', { id: cid, type, name, data });
+      if (!p.oauth) { const t = await api('conn/test', { id: d.id }); toast((t.ok ? '✅ ' : '⚠️ ') + t.msg, 7000); } else toast('Đã lưu. Giờ bấm "Đăng nhập & cấp quyền".', 6000);
+      $('#form').innerHTML = ''; await reload();
+    } catch (e) { toast(e.message, 6000); }
+  };
+}
+async function testConn(id, btn) { btn.disabled = true; try { const t = await api('conn/test', { id }); toast((t.ok ? '✅ ' : '⚠️ ') + t.msg, 7000); await reload(); } catch (e) { toast(e.message); } btn.disabled = false; }
+async function pauseConn(id, paused) { await api('conn/pause', { id, paused }); await reload(); }
+async function delConn(id) { if (!confirm('Xóa kết nối này? Các bài đã đăng vẫn giữ nguyên trên trang.')) return; await api('conn/delete', { id }); await reload(); }
+
+// ======================= CÀI ĐẶT =======================
+function vCaiDat() {
+  const s = S.settings, g = S.conns.filter((c) => c.type === 'blogger');
+  $('#app').innerHTML = `<div class="card"><h2>Nhịp đăng an toàn</h2><p class="mo">Đã mất 2 trang WordPress vì đăng dày — giữ mặc định nếu không chắc.</p>
+    <label class="chk"><input type="checkbox" id="s_auto" ${s.tu_dong ? 'checked' : ''}> <b>Bật tự động đăng</b> (máy chủ tự kiểm tra 10 phút/lần, kể cả khi tắt máy)</label>
+    <div class="row"><div><label>Đăng từ (giờ)</label><input id="s_a" type="number" value="${s.gio_bat_dau}"></div><div><label>Đến trước (giờ)</label><input id="s_b" type="number" value="${s.gio_ket_thuc}"></div>
+    <div><label>Mỗi tài khoản cách nhau ít nhất (phút)</label><input id="s_gap" type="number" value="${s.cach_nhau_phut}"></div><div><label>Tối đa bài/ngày mỗi tài khoản</label><input id="s_max" type="number" value="${s.toi_da_moi_ngay}"></div></div>
+    <label>Chữ nhỏ mặc định trên ảnh đại diện</label><input id="s_label" value="${esc(s.nhan_anh || 'Cẩm nang tài chính')}"></div>
+  <div class="card"><h2>Ghi link về Google Sheet (không bắt buộc)</h2>
+    <ol class="steps"><li>Cần 1 kết nối <b>Blogger (Google)</b> đã cấp quyền bằng tài khoản <b>có quyền sửa sheet</b> (cùng chìa dùng cho cả Blogger và Sheet). Chưa có thì vào tab Kết nối → + Blogger.</li>
+    <li>Dán link Google Sheet và tên tab. Khi thêm bài, điền "Dòng trong sheet" cho từng nơi đăng → đăng xong app tự ghi link + giờ vào đúng dòng (tự dò lại dòng theo URL bài gốc nếu người khác chèn dòng, không ghi đè ô đã có link).</li></ol>
+    <div class="row"><div><label>Tài khoản Google dùng để ghi</label><select id="s_conn"><option value="">— chưa chọn —</option>${g.map((c) => `<option value="${c.id}" ${s.sheet.conn === c.id ? 'selected' : ''}>${esc(c.name)}</option>`).join('')}</select></div>
+    <div style="flex:2 1 300px"><label>Link Google Sheet</label><input id="s_sheet" value="${s.sheet.id ? 'https://docs.google.com/spreadsheets/d/' + esc(s.sheet.id) + '/edit' : ''}"></div></div>
+    <div class="row"><div><label>Tên tab</label><input id="s_tab" value="${esc(s.sheet.tab)}" placeholder="Share social GP"></div><div><label>Cột URL bài gốc</label><input id="s_cu" value="${esc(s.sheet.cot_url_goc)}"></div><div><label>Cột ghi link</label><input id="s_cl" value="${esc(s.sheet.cot_link)}"></div><div><label>Cột ghi giờ</label><input id="s_cg" value="${esc(s.sheet.cot_gio)}"></div></div>
+    <p><button class="b" id="ssave">💾 Lưu cài đặt</button></p></div>
+  <div class="card"><h3>Đăng xuất</h3><button class="b phu" onclick="try{localStorage.removeItem('tok')}catch{};TOKEN='';showLogin()">Đăng xuất</button></div>`;
+  $('#ssave').onclick = async () => {
+    const id = ($('#s_sheet').value.match(/\/d\/([\w-]+)/) || [, $('#s_sheet').value.trim()])[1];
+    await api('settings', { tu_dong: $('#s_auto').checked, gio_bat_dau: +$('#s_a').value, gio_ket_thuc: +$('#s_b').value, cach_nhau_phut: +$('#s_gap').value, toi_da_moi_ngay: +$('#s_max').value, nhan_anh: $('#s_label').value,
+      sheet: { conn: $('#s_conn').value, id, tab: $('#s_tab').value.trim(), cot_url_goc: $('#s_cu').value.trim().toUpperCase(), cot_link: $('#s_cl').value.trim().toUpperCase(), cot_gio: $('#s_cg').value.trim().toUpperCase() } });
+    toast('Đã lưu cài đặt'); await reload();
+  };
+}
+function vNhatKy() {
+  $('#app').innerHTML = `<div class="card"><h2>Nhật ký</h2><div class="scroll"><table><tr><th>Lúc</th><th>Việc</th><th>Chi tiết</th></tr>
+  ${S.log.map((l) => `<tr><td style="white-space:nowrap">${vn(l.t)}</td><td><b>${esc(l.viec)}</b></td><td>${esc(l.chi_tiet)}</td></tr>`).join('') || '<tr><td colspan="3" class="mo">Chưa có.</td></tr>'}</table></div></div>`;
+}
+boot();
+</script>
+</body>
+</html>
