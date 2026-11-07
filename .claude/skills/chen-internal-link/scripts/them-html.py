@@ -71,6 +71,17 @@ def giu_cau_sua_link(soup, x, url):
                 if slug in a['href']: a['href'] = url
             return str(p).replace('<li', '<p', 1).replace('</li>', '</p>'), True
     return None, False
+def dam_bao_link(h, url):
+    # link tới trang đích: luôn mở tab mới, bỏ nofollow nếu có (dofollow)
+    def sua(m):
+        a = m.group(0)
+        if url.rstrip('/') not in a: return a
+        a = re.sub(r'\s+rel="([^"]*)"', lambda r: ' rel="' + ' '.join(x for x in r.group(1).split() if x != 'nofollow' and x != 'ugc' and x != 'sponsored') + '"', a)
+        a = a.replace(' rel=""', '')
+        if 'target=' not in a: a = a[:-1] + ' target="_blank">'
+        if 'rel=' not in a: a = a[:-1] + ' rel="noopener">'
+        return a
+    return re.sub(r'<a\b[^>]*>', sua, h)
 tong = loi = 0; ket = {}
 for b in ['a1', 'a2', 'a3', 'a4']:
     rep = json.load(open(D + b + '/report.json')); rows = {str(r['row']): r for r in json.load(open(D + b + '/rows.json'))}
@@ -87,7 +98,8 @@ for b in ['a1', 'a2', 'a3', 'a4']:
             elif x.startswith('(dòng mới)'): h, ok = p_moi(y, anchor, url)
             else: h, ok = sua_doan(soup, x, y, anchor, url)
             if not h or not ok: loi += 1; print('CHƯA DỰNG ĐƯỢC', row, n, x[:60]); h = h or p_moi(y, anchor, url)[0]
-            moi.append(f'Anchor {n}: {anc}\nTrước khi chèn: {x}\nĐề xuất: {y}\nHTML: ->\n{h}{rest}')
+            h = dam_bao_link(h, url)
+            moi.append(f'Anchor {n}: {anc}\nTrước khi chèn: {x}\nĐề xuất: {y}\nYêu cầu link: dofollow (không gắn nofollow), mở tab mới (target="_blank")\nHTML: ->\n{h}{rest}')
         ket[row] = {'AB': '\n\n'.join(moi), 'B': r['B']}
 json.dump(ket, open(D + 'ab-html.json', 'w'), ensure_ascii=False, indent=0)
 print('đề xuất', tong, 'lỗi', loi)
