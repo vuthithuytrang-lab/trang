@@ -107,10 +107,10 @@
    "ten": "Lãi suất tiết kiệm (Bài 1)",
    "nhom": "Lãi suất",
    "url": "https://techcombank.com/thong-tin/blog/lai-suat-tiet-kiem",
-   "ten_file": "Lãi suất tiết kiệm Techcombank – 30/10/2026",
-   "link": "https://docs.google.com/document/d/1CsVg-cpM_Y71KSdjMBVf0-KD-iXkLdC3B10mUs-B5LQ/edit",
-   "luc": "16:30 29/10",
-   "ghi_chu": "Cần xem lại: Bảng Tại quầy – VPBank: 36 tháng (5.8, Topi) thấp hơn hẳn 24 tháng (6.9, Topi) – số bất thường trên nguồn, vẫn điền theo nguồn. / Bảng Tại quầy – SCB – 1 tháng: nguồn ghi 0.1, thấp bất thường. / Bảng Tại quầy – SCB – 3 tháng: nguồn ghi 0.1, thấp bất thường. / Bảng Tại quầy – SCB – 6 tháng: nguồn ghi 0.5, thấp bất thường. / Bảng Online – VPBank: 36 tháng (6, Topi) thấp hơn hẳn 24 tháng (7.1, Topi) – số bất thường trên nguồn, vẫn điền theo nguồn. / Bảng Online – SeABank: Topi không có ngân hàng này ở bảng online → kỳ hạn 18, 24, 36 tháng lấy theo kỳ hạn gần nhất. / Bảng Online – VIB: 18 tháng (5.9, Topi) thấp hơn hẳn 12 tháng (7, VnExpress) – số bất thường trên nguồn, vẫn điền theo nguồn. / Bảng Online – VietinBank: 18 tháng (5.9, Topi) thấp hơn hẳn 12 tháng (6.8, VnExpress) – số bất thường trên nguồn, vẫn điền theo nguồn. / Bảng Online – Agribank: Topi không có ngân hàng này ở bảng online → kỳ hạn 18, 24, 36 tháng lấy theo kỳ hạn gần nhất. / Bảng Online – LPBank: 36 tháng (6.1, Topi) thấp hơn hẳn 24 tháng (7.2, Topi) – số bất thường trên nguồn, vẫn điền theo nguồn. / Bảng Online – SCB – 1 tháng: nguồn ghi 0.1, thấp bất thường. / Bảng Online – SCB – 3 tháng: nguồn ghi 0.5, thấp bất thường. / Bảng Online – SCB – 6 tháng: nguồn ghi 0.5, thấp bất thường. / Bảng Online – SCB – 12 tháng: nguồn ghi 0.6, thấp bất thường. / Bảng Online – BacABank: Topi không có ngân hàng này ở bảng online → kỳ hạn 18, 24, 36 tháng lấy theo kỳ hạn gần nhất. / Ngoài bảng – \"Thông thường lãi "
+   "ten_file": "Lãi suất tiết kiệm Techcombank – 07/11/2026",
+   "link": "https://docs.google.com/document/d/1D5ysEeYVn6zdT6csiKm5YM1CBhdDpGbeZNoxzS_j1Ww/edit",
+   "luc": "15:31 06/11",
+   "ghi_chu": ""
   },
   {
    "id": "cach-tinh-lai-suat",
@@ -118,10 +118,10 @@
    "ten": "Cách tính lãi suất (Bài 2)",
    "nhom": "Lãi suất",
    "url": "https://techcombank.com/thong-tin/blog/cach-tinh-lai-suat-tien-gui-tiet-kiem",
-   "ten_file": "Cách tính lãi suất tiền gửi tiết kiệm Techcombank – 30/10/2026",
-   "link": "https://docs.google.com/document/d/1psXcHgHyDCP-md_xlAFIw9tfiAUdmndlugGUhCVV3LM/edit",
-   "luc": "16:30 29/10",
-   "ghi_chu": "Cần xem lại: Ngoài bảng – \"Kỳ hạn | Lãi suất %/năm | Cách tính lãi | Số tiền lãi nhận được\": bảng ví dụ có 8 ô lãi suất (4.30, 4.60, 6.30, 6.50, 5.60) cùng các số tiền tính theo đó – lãi suất Techcombank, chỉ sửa theo techcombank.com, giữ nguyên. / Ngoài bảng – \"Ví dụ: Khách hàng Private gửi tiết kiệm 100,000,000 VND vào sản phẩm Tiết kiệm thường bằng hình thức trực tuy…\": lãi suất/ví dụ tính của Techcombank – chỉ sửa theo techcombank.com (biểu lãi suất chính thức), giữ nguyên. / Ngoài bảng – \"Số tiền nhận được = 100,000,000 x (1 + 6.40%/1) ^ (1 x 5) = 136,366,640 VND\": lãi suất/ví dụ tính của Techcombank – chỉ sửa theo techcombank.com (biểu lãi suất chính thức), giữ nguyên. / Ngoài bảng – \"Năm | Lãi suất %/năm | Cách tính lãi | Số tiền lãi nhận được\": bảng ví dụ có 5 ô lãi suất (6.40) cùng các số tiền tính theo đó – lãi suất Techcombank, chỉ sửa theo techcombank.com, giữ nguyên. / Ngoài bảng – \"Trường hợp khách hàng hưởng lãi trước kỳ hạn: Khách hàng được hưởng mức lãi suất 0.05%/năm.\": lãi suất/ví dụ tính của Techcombank – chỉ sửa theo techcombank.com (biểu lãi suất chính thức), giữ nguyên. / Ngoài bảng – \"Số tiền lãi = 100,000,000 x 0.05% x 156/365 = 21,370 VND.\": lãi suất/ví dụ tính của Techcombank – chỉ sửa theo techcombank.com (biểu lãi suất chính thức), giữ nguyên. / Ngoài bảng – \"Như vậy, tổng số tiền khách hàng nhận về là 100,000,000 + 21,370 = 100,021,370 VND.\": lãi suất/ví dụ tính của Techcombank – chỉ sửa theo techcombank.com (biểu lãi suất chính thức), giữ nguyên"
+   "ten_file": "Cách tính lãi suất tiền gửi tiết kiệm Techcombank – 07/11/2026",
+   "link": "https://docs.google.com/document/d/17470Ge79GXwORz2xp1eVkLZS1RkqktRoJURiN4H2Fmg/edit",
+   "luc": "15:31 06/11",
+   "ghi_chu": ""
   },
   {
    "id": "gia-nhom",
