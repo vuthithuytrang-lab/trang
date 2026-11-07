@@ -7,6 +7,7 @@
 - **Cấm** dòng kiểu tiêu đề/cụm cụt: ">>> Xem thêm: giải pháp nguyên liệu cho doanh nghiệp 2026 khi chi phí đầu vào tăng", ">>> Xem thêm: <anchor> cho người mới".
 - Mọi chỗ chèn phải là **câu hoàn chỉnh, nối trực tiếp nội dung đoạn đang nói** (ý trước → vì sao người đọc cần trang đích lúc này), đọc như tác giả viết.
   Ưu tiên: viết lại nhẹ câu có sẵn > thêm 1 câu vào cuối đoạn đúng chủ đề > dòng ">>>" là **một câu đầy đủ** nối ý đoạn ngay trên.
+- Nếu buộc phải có dòng "Xem thêm:" thì **chữ đầu sau "Xem thêm:" viết hoa** (VD ">>> Xem thêm: Giải pháp…") — đây là ngoại lệ duy nhất cho quy tắc anchor nguyên văn hoa/thường.
 - Mẫu đạt (đang có trên web AIG): ">>> Bên cạnh Glucose Syrup, AIG còn là công ty cung cấp nguyên liệu thực phẩm với danh mục … cho doanh nghiệp đồ uống." — có chủ ngữ, nối ý, nói rõ giá trị.
 
 ## Lỗi số 1 — Chèn vào đoạn đang nói chuyện khác (A, chiếm ~40%)
