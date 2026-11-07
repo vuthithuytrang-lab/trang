@@ -1,5 +1,15 @@
 # App soát và chèn alt ảnh
 
+## 🌐 Địa chỉ web miễn phí
+
+**https://vuthithuytrang-lab.github.io/trang/alt/**
+
+Chạy trên GitHub Pages của chính kho này — **miễn phí vĩnh viễn, không dính tài khoản Claude**.
+Mở được từ mọi máy, mọi điện thoại. Gửi link cho ai cũng dùng được.
+
+Muốn cập nhật app: sửa `soat-alt-anh.html` ở đây, rồi copy đè file đó vào `alt/index.html`
+trên nhánh `gh-pages`. Khoảng 1 phút sau là địa chỉ web đổi theo.
+
 File: **`soat-alt-anh.html`**
 
 Mở bằng Chrome là chạy. Không cần cài gì, không cần đăng nhập, không tốn token.
