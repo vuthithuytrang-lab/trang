@@ -15,6 +15,7 @@
 | Blogger | https://nganhangtechcombankvn.blogspot.com (blog "Techcombank Việt Nam", blog ID `6701158052132617774`) | trangjena3@gmail.com | Google OAuth (Blogger API v3) | **Có — 7 ngày** (app đang ở chế độ Test) |
 | WordPress.com | https://techcombankvietnam.wordpress.com (site ID `257871734`) | tài khoản WP của Trang | WordPress.com OAuth, `response_type=code`, scope `global` | Không |
 | Mastodon / Pinterest / Wix / Webflow | (tool khác đang chạy) | — | — | — |
+| Google Groups (của mình) | https://groups.google.com/g/techcombankvn (techcombankvn@googlegroups.com, công khai) | trangjena3@gmail.com (chủ nhóm) | Gmail API (gửi email + đọc tiêu đề), project `rich-discovery-514017-q4`, app "share-ggr" | **Có — 7 ngày** (app ở chế độ Test). Kết nối 07/11/2026 → hết hạn ~14/11/2026. Mạng công ty chặn groups.google.com → dùng 4G khi cần mở trang nhóm |
 | ~~WordPress.com (của mình)~~ | ~~https://nganhangtechcombankvn.wordpress.com~~ | hoaa8k58 | — | **ĐÃ CHẾT 10/10/2026** — site trả 410, API bị khóa. Không dùng nữa |
 | Blogger (của mình — cột H ghi `- Hoa`) | https://nganhangtechcombankvietnam.blogspot.com (blog "Techcombank Việt Nam", blog ID `1862357162179574689`) | hoaa8k58@gmail.com (chị Hoa) | Google OAuth, project `share-bai-blogger-511119` trên hoaa8k58 | **Có — 7 ngày.** Đã kết nối 10/10/2026 17:40 → hết hạn khoảng **17/10/2026**. Cấp lại cần đăng nhập hoaa8k58 (Google có thể đòi mã trên điện thoại Galaxy của chị Hoa) |
 
