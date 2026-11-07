@@ -71,7 +71,7 @@
   "can_duyet": "",
   "loi": ""
  },
- "_yeu_cau": "tay-1793955895",
+ "_yeu_cau": "tay-1794040223",
  "gia-ca-cao": {
   "ok": true,
   "luc": "2026-11-06T08:37:26+00:00",
@@ -198,6 +198,14 @@
   "ngay": "07/11/2026",
   "ten": "Giá vàng SJC hôm nay: Bảng giá cập nhật và lưu ý khi mua bán – 07/11/2026",
   "can_duyet": "Dòng \"Nữ trang 41.7%\", cột Bán ra: ô cũ \"58..244\" viết lạ (không phải số bình thường) – đã thay bằng 58.327 theo nguồn, đọc lại.\nSỐ GIÁ CHƯA CẬP NHẬT (công thức không có quy tắc/nguồn để tính lại, giữ nguyên): \"190\" trong \"á bán vàng miếng SJC từng ở vùng khoảng 190 triệu VND/lượng h\"",
+  "loi": ""
+ },
+ "gia-bach-kim": {
+  "ok": true,
+  "luc": "2026-11-07T08:30:34+00:00",
+  "ngay": "08/11/2026",
+  "ten": "Giá bạch kim hôm nay: Biến động thị trường và góc nhìn đầu tư – 08/11/2026",
+  "can_duyet": "Bảng giá theo ngày: 5 dòng = 5 phiên mới nhất của hợp đồng bạch kim NYMEX (06/11/2026, 05/11/2026, 04/11/2026, 03/11/2026, 02/11/2026); nguồn không có ngày nghỉ nên ngày có thể không liền nhau. Số của nguồn có thể lệch vài USD so với số bài cũ vì khác nguồn (bài cũ có thể lấy giá giao ngay).\nPhiên mới nhất (06/11/2026) đọc lúc 2026-11-06 21:59 UTC; nếu thị trường còn mở, giá là giá đang giao dịch, chưa phải giá chốt phiên.\nCâu giá: chữ chỉ chiều đổi \"giảm\" → \"tăng\" theo nguồn (+13.80 USD/oz so với phiên trước) – đọc lại câu.\nCâu giá: mức thay đổi trong câu là số nguyên làm tròn từ +13.80.",
   "loi": ""
  }
 }
