@@ -23,7 +23,7 @@ Cần mạng để **tải ảnh về xem và đo kích thước** — phần so
 2. Dán **HTML bài viết** vào ô 1
 3. Dán **danh sách key** vào ô 2 — mỗi dòng một key, dòng nào là key chính thì ghi thêm `- key chính` ở cuối
 4. Dán **đường dẫn ảnh thumb** vào ô 3
-5. (Tùy chọn) Dán danh sách **ảnh đã dùng ở bài trước** vào ô 4 để app báo nếu bài này xài lại
+5. Ô 4 **không phải điền gì** — app tự nhớ ảnh của mọi bài bạn đã quét
 6. Bấm **Quét bài** — đợi app tải ảnh về
 7. Nhìn ảnh, viết alt vào từng ô. Đèn bên dưới tự báo đúng/sai luật ngay khi gõ
 8. Sang tab **HTML đã chèn** → bấm Copy → dán thẳng vào CMS
@@ -41,7 +41,7 @@ Cần mạng để **tải ảnh về xem và đo kích thước** — phần so
 | Ảnh không có thẻ `alt`, hoặc `alt` rỗng | nặng |
 | Hai ảnh dùng chung một chú thích | nặng |
 | Cùng một file ảnh dùng hai lần trong bài | nặng |
-| Ảnh đã dùng ở bài trước (dò theo thư viện bạn dán) | nặng |
+| Ảnh đã dùng ở bài trước (app tự nhớ, báo kèm tên bài cũ) | nặng |
 | Lỗi link Markdown `[chữ](đường-dẫn)` dán nhầm vào HTML | nặng |
 | Link còn đuôi `utm_source=chatgpt` | nặng |
 | Ảnh trỏ về server nháp (`dangbai.`, `staging`…) | nặng |
@@ -86,10 +86,21 @@ Kèm bảng chứng minh: đếm lại `<img`, `<h2`, `<h3`, `<table`, `<tr`, `<
 App hiện ảnh lên cho bạn nhìn, gán sẵn key, đếm ký tự và soát luật — nhưng **câu chữ vẫn do
 người viết**. Phần đó nếu cần người viết hộ thì mới dùng tới Claude.
 
-Ngoài ra app **không so được nội dung hai tấm ảnh** để biết có trùng nhau không (trình duyệt
-không đọc được điểm ảnh của ảnh từ tên miền khác). Nó chỉ dò trùng theo **đường dẫn file** —
-nên hãy dùng ô "Thư viện ảnh đã dùng": mỗi lần xong một bài thì copy danh sách đường dẫn ảnh
-của bài đó vào một file riêng, bài sau dán lại vào ô đó.
+### Thư viện ảnh — app tự nhớ
+
+Mỗi lần bạn bấm **Quét bài**, app tự ghi đường dẫn ảnh của bài đó vào bộ nhớ trình duyệt,
+kèm tên bài. Bài sau dùng lại đúng đường dẫn nào thì app báo ngay, **nói rõ ảnh đó của bài nào**.
+Bạn không phải dán gì cả. Quét lại chính bài cũ thì app **không** báo trùng.
+
+Ô 4 có nút **Xem danh sách** và **Xoá hết thư viện**.
+
+⚠️ Ba điều cần biết:
+
+1. Thư viện lưu trong **trình duyệt của máy này**. Đổi máy, đổi trình duyệt là bắt đầu lại từ 0.
+2. Xoá lịch sử duyệt web (phần "dữ liệu trang web") có thể xoá luôn thư viện.
+3. App **chỉ so theo đường dẫn file**, **không so được nội dung ảnh** — trình duyệt không đọc
+   được điểm ảnh của ảnh từ tên miền khác. Cùng một bức ảnh mà khách tải lên hai lần với
+   **hai tên file khác nhau** thì app không phát hiện được. Loại đó vẫn phải soi bằng mắt.
 
 ---
 
