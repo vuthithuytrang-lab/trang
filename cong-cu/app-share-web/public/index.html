@@ -338,11 +338,11 @@ function vKetNoi() {
     <div class="plat">${Object.entries(P).map(([k, p]) => `<button onclick="formConn('${k}')">+ ${p.ten}</button>`).join('')}</div></div>
     <div id="form"></div>
     ${S.conns.map((c) => `<div class="card"><div class="conn-head"><div><h3 style="margin:0">${esc(c.name)}</h3><span class="mo">${P[c.type]?.ten}</span></div>
-      <div class="row" style="flex:0 0 auto;gap:6px">
+      <div style="display:flex;gap:6px;flex-wrap:wrap">
         <button class="b nho" onclick="testConn('${c.id}',this)">Kiểm tra</button>
         ${P[c.type]?.oauth ? `<button class="b nho" onclick="location='/api/oauth/start?id=${c.id}&t='+encodeURIComponent(TOKEN)">Đăng nhập & cấp quyền</button>` : ''}
         <button class="b phu nho" onclick="formConn('${c.type}','${c.id}')">Sửa</button>
-        <button class="b phu nho" onclick="pauseConn('${c.id}',${!c.paused})">${c.paused ? '▶ Chạy lại' : '⏸ Tạm dừng'}</button>
+        <button class="b phu nho" onclick="pauseConn('${c.id}',${!c.paused})">${c.paused ? 'Chạy lại' : 'Tạm dừng'}</button>
         <button class="b do nho" onclick="delConn('${c.id}')">Xóa</button></div></div>
       <p class="${c.ok ? 'ok' : 'err'}" style="margin:8px 0 0">${c.paused ? '⏸ ' + esc(c.pause_reason || 'Đang tạm dừng') + ' · ' : ''}${esc(c.test || 'Chưa kiểm tra')}</p>
       ${c.data.blogs?.length > 1 ? `<p class="mo">Blog đang dùng: ${esc((c.data.blogs.find((b) => b.id === c.data.blog_id) || {}).name || c.data.blog_id)} — muốn đổi, bấm Sửa và điền Blog ID: ${c.data.blogs.map((b) => esc(b.name) + ' = ' + b.id).join(' · ')}</p>` : ''}</div>`).join('')}`;
