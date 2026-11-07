@@ -186,7 +186,7 @@ function wixTotal_() { var r = wixFetch_('post', 'https://www.wixapis.com/blog/v
 function publishWix_(row, cfg) {
   var before = wixTotal_();
   var draft = { title: row[C['Tiêu đề']], memberId: PropertiesService.getScriptProperties().getProperty('WIX_MEMBER_ID'),
-    richContent: { nodes: toRicos_(row[C['Nội dung HTML']]) }, seoSlug: row[C['Slug']] };
+    richContent: { nodes: toRicos_(html_(row)) }, seoSlug: row[C['Slug']] };
   if (row[C['Ảnh (media ID)']]) draft.media = { wixMedia: { image: { id: row[C['Ảnh (media ID)']] } }, displayed: true, custom: true };
   var r = wixFetch_('post', 'https://www.wixapis.com/blog/v3/draft-posts', { draftPost: draft, publish: true });
   if (r.code !== 200) {
@@ -227,7 +227,7 @@ function toRicos_(html) {
 /* ---- WordPress.com: đăng thẳng status=publish ---- */
 function publishWp_(row, cfg) {
   var tok = PropertiesService.getScriptProperties().getProperty('WP_TOKEN');
-  var body = { title: row[C['Tiêu đề']], content: toGutenberg_(row[C['Nội dung HTML']]), slug: row[C['Slug']], status: 'publish' };
+  var body = { title: row[C['Tiêu đề']], content: toGutenberg_(html_(row)), slug: row[C['Slug']], status: 'publish' };
   if (row[C['Ảnh (media ID)']]) body.featured_image = row[C['Ảnh (media ID)']];
   var r = UrlFetchApp.fetch('https://public-api.wordpress.com/rest/v1.1/sites/' + cfg.WP_SITE + '/posts/new',
     { method: 'post', contentType: 'application/json', payload: JSON.stringify(body), headers: { Authorization: 'Bearer ' + tok }, muteHttpExceptions: true });
@@ -299,4 +299,16 @@ function dailyEvening() {
   var acc = buildReport(), cfg = cfg_(); if (!cfg.EMAIL_BAO_CAO || !acc) return;
   var lines = Object.keys(acc).sort().map(function (k) { var a = acc[k]; return '• ' + k + ': hôm nay ' + a.homnay + ' bài, tổng đã đăng ' + a.da + '/' + a.tong + ', còn chờ ' + a.cho + (a.loi ? ', lỗi ' + a.loi : ''); });
   MailApp.sendEmail(cfg.EMAIL_BAO_CAO, 'Báo cáo share ngày ' + vnDay_(new Date()), lines.join('\n') + '\n\nXem chi tiết: ' + SpreadsheetApp.getActive().getUrl());
+}
+
+/* Ô "Nội dung HTML" có thể là chính nội dung, hoặc 1 đường link (https://…) tới file .html
+   — AI chỉ cần cất bài lên kho rồi dán link, đỡ tốn token khi đổ hàng đợi. */
+function html_(row) {
+  var v = String(row[C['Nội dung HTML']]).trim();
+  if (/^https?:\/\/\S+$/.test(v)) {
+    var r = UrlFetchApp.fetch(v, { muteHttpExceptions: true });
+    if (r.getResponseCode() !== 200) throw new Error('Không tải được nội dung bài từ link (' + r.getResponseCode() + ')');
+    return r.getContentText('UTF-8');
+  }
+  return v;
 }
