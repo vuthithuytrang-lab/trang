@@ -105,6 +105,15 @@ const P = {
       ['Bấm <b>Lưu</b> rồi <b>Đăng nhập & cấp quyền</b> → chọn tài khoản Google sở hữu blog → nếu báo "chưa xác minh" bấm <b>Nâng cao → Đi tới…</b> → <b>Cho phép</b>. App tự lấy blog đầu tiên; muốn blog khác thì điền Blog ID.'],
     ],
     o: [['name', 'Tên gợi nhớ', 'Blogger - tenblog'], ['client_id', 'Client ID', '….apps.googleusercontent.com'], ['client_secret', 'Client Secret', '', 1], ['blog_id', 'Blog ID (để trống — app tự lấy)', '']] },
+  ggroups: { ten: 'Google Groups', oauth: true,
+    buoc: [
+      ['Tài khoản Gmail dùng để đăng phải <b>là thành viên của nhóm</b> và được phép đăng bài không cần duyệt. Mở trang nhóm kiểm tra (chưa tham gia thì bấm <b>Tham gia nhóm</b>).', [['Mở nhóm techcombank-viet-nam', 'https://groups.google.com/g/techcombank-viet-nam']]],
+      ['Dùng lại dự án Google Cloud của Blogger (hoặc tạo mới), bật <b>Gmail API</b> → <b>Enable</b>.', [['Bật Gmail API', 'https://console.cloud.google.com/apis/library/gmail.googleapis.com'], ['Tạo dự án mới (nếu chưa có)', 'https://console.cloud.google.com/projectcreate']]],
+      ['Màn hình đồng ý: thêm email của bạn vào <b>Test users</b>, rồi <b>Publish app</b> để chìa không hết hạn sau 7 ngày.', [['Màn hình đồng ý', 'https://console.cloud.google.com/auth/branding'], ['Mục Audience (Publish app)', 'https://console.cloud.google.com/auth/audience']]],
+      ['Tạo chìa (hoặc dùng lại chìa Web của Blogger): <b>Web application</b> → <b>Authorized redirect URIs</b> dán địa chỉ trả về → <b>Create</b> → chép Client ID / Client Secret vào ô dưới.', [['Tạo chìa OAuth', 'https://console.cloud.google.com/auth/clients/create'], ['Danh sách chìa đã có', 'https://console.cloud.google.com/auth/clients']], ['R']],
+      ['Ô "Địa chỉ đăng bài của nhóm" điền <code>tennhom@googlegroups.com</code>. Bấm <b>Lưu</b> → <b>Đăng nhập & cấp quyền</b> → chọn đúng Gmail thành viên nhóm → <b>Cho phép</b>.'],
+    ],
+    o: [['name', 'Tên gợi nhớ', 'GG Group - techcombank-viet-nam'], ['client_id', 'Client ID', '….apps.googleusercontent.com'], ['client_secret', 'Client Secret', '', 1], ['group_email', 'Địa chỉ đăng bài của nhóm', 'techcombank-viet-nam@googlegroups.com']] },
   webflow: { ten: 'Webflow', oauth: false,
     buoc: [
       ['Mở bảng điều khiển Webflow → di chuột vào trang → ⚙ <b>Settings</b> → <b>Apps & integrations</b> → kéo xuống <b>API access</b> → <b>Generate API token</b>. Tích <b>CMS: Read and write</b> và <b>Sites: Read</b> → chép token.', [['Mở Webflow Dashboard', 'https://webflow.com/dashboard']]],

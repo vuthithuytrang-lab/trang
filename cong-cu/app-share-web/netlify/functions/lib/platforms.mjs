@@ -245,6 +245,30 @@ export const PLATFORMS = {
       return { url: u ? `https://t.me/${u}/${r.data.result.message_id}` : `telegram:${r.data.result.chat?.id}/${r.data.result.message_id}` };
     },
   },
+  ggroups: {
+    async test(c) {
+      const t = await googleToken(c);
+      const r = await http('GET', 'https://gmail.googleapis.com/gmail/v1/users/me/profile', { headers: { Authorization: 'Bearer ' + t } });
+      if (r.code !== 200) fail('Gmail', r);
+      c.data.from = r.data.emailAddress;
+      c.data.home = 'https://groups.google.com/g/' + String(c.data.group_email).split('@')[0];
+      return `Kết nối được Gmail ${r.data.emailAddress}. Bài sẽ gửi tới ${c.data.group_email} (tài khoản này phải là thành viên nhóm và được đăng bài).`;
+    },
+    async publish(c, it) {
+      const t = await googleToken(c), H = { Authorization: 'Bearer ' + t };
+      const b64 = (x) => Buffer.from(x, 'utf8').toString('base64');
+      const img = it.image ? `<p><img src="${it.image}" alt="${escT(it.title)}" style="max-width:100%"></p>\n` : '';
+      const mime = [`From: ${c.data.from || 'me'}`, `To: ${c.data.group_email}`, `Subject: =?UTF-8?B?${b64(it.title)}?=`, 'MIME-Version: 1.0',
+        'Content-Type: text/html; charset=UTF-8', 'Content-Transfer-Encoding: base64', '', b64(img + it.html).replace(/.{76}/g, '$&\r\n')].join('\r\n');
+      const raw = Buffer.from(mime).toString('base64url');
+      const r = await http('POST', 'https://gmail.googleapis.com/gmail/v1/users/me/messages/send', { headers: H, json: { raw } });
+      if (r.code !== 200) fail('Gmail gửi bài', r);
+      const m = await http('GET', `https://gmail.googleapis.com/gmail/v1/users/me/messages/${r.data.id}?format=metadata&metadataHeaders=Message-Id`, { headers: H });
+      const mid = ((m.data.payload?.headers || []).find((h) => /^message-id$/i.test(h.name))?.value || '').replace(/^<|>$/g, '');
+      const g = String(c.data.group_email).split('@')[0];
+      return { url: mid ? `https://groups.google.com/d/msgid/${g}/${encodeURIComponent(mid)}` : `https://groups.google.com/g/${g}` };
+    },
+  },
 };
 
 // Trang còn sống không? 410/404/451 = bị khóa
@@ -275,6 +299,14 @@ export const OAUTH = {
         c.data.blogs = (b.data.items || []).map((x) => ({ id: x.id, name: x.name, url: x.url }));
         if (c.data.blogs.length) c.data.blog_id = c.data.blogs[0].id;
       }
+    },
+  },
+  ggroups: {
+    url: (c, redir, state) => `https://accounts.google.com/o/oauth2/v2/auth?client_id=${encodeURIComponent(c.data.client_id)}&redirect_uri=${encodeURIComponent(redir)}&response_type=code&access_type=offline&prompt=consent&scope=${encodeURIComponent('https://www.googleapis.com/auth/gmail.send https://www.googleapis.com/auth/gmail.metadata')}&state=${state}`,
+    async exchange(c, code, redir) {
+      const r = await http('POST', 'https://oauth2.googleapis.com/token', { form: { client_id: c.data.client_id, client_secret: c.data.client_secret, redirect_uri: redir, code, grant_type: 'authorization_code' } });
+      if (r.code !== 200) fail('Google', r);
+      c.data.refresh_token = r.data.refresh_token || c.data.refresh_token;
     },
   },
   tumblr: {
