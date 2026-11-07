@@ -124,9 +124,16 @@ border-bottom:2px solid var(--sg-mint);padding-bottom:5px}
         <input type="text" id="urlThumb" placeholder="https://…/bai-viet-thumb.jpg">
       </div>
       <div class="card">
-        <h2>4. Thư viện ảnh đã dùng <span style="font-weight:400;color:var(--xam-chu);font-size:12px">(tùy chọn)</span></h2>
-        <p class="hint">Dán đường dẫn các ảnh đã dùng ở bài trước, mỗi dòng một cái. App sẽ báo nếu bài này xài lại.</p>
-        <textarea id="thuVien" class="low" placeholder="https://asiagroup-vn.com/wp-content/uploads/2026/10/food-ingredients-01-1.webp"></textarea>
+        <h2>4. Thư viện ảnh <span style="font-weight:400;color:var(--xam-chu);font-size:12px">— app tự nhớ</span></h2>
+        <p class="hint">Mỗi lần bạn quét một bài, app tự ghi nhớ đường dẫn ảnh của bài đó. Bài sau nó tự đối chiếu và báo nếu xài lại ảnh cũ. Bạn không phải dán gì.</p>
+        <div id="oThuVien" style="background:var(--xam-nen);border-radius:8px;padding:10px 12px;font-size:12.5px">
+          <span id="soThuVien">Đang nhớ 0 ảnh từ 0 bài</span>
+          <div class="hang-nut" style="margin:8px 0 0">
+            <button class="mini" id="nutXemTV">Xem danh sách</button>
+            <button class="mini" id="nutXoaTV">Xoá hết thư viện</button>
+          </div>
+          <textarea id="thuVien" class="low an" style="margin-top:8px" readonly></textarea>
+        </div>
       </div>
     </div>
   </div>
@@ -229,6 +236,60 @@ function boDau(s){
 /* --- Trạng thái -------------------------------------------------------- */
 var G = { htmlGoc:'', anh:[], keys:[], thumb:null, loiBai:[] };
 
+/* --- Thư viện ảnh: app tự nhớ, lưu trong trình duyệt của máy này --------
+   Mỗi đường dẫn ảnh được ghi kèm "tên bài" lần đầu nhìn thấy nó.
+   Bài sau dùng lại đúng đường dẫn đó mà tên bài khác → báo trùng.
+   ----------------------------------------------------------------------- */
+var KHOA_TV = 'soat-alt-thu-vien-v1';
+
+function docThuVien(){
+  try{ return JSON.parse(localStorage.getItem(KHOA_TV) || '{}'); }
+  catch(e){ return {}; }
+}
+function ghiThuVien(tv){
+  try{ localStorage.setItem(KHOA_TV, JSON.stringify(tv)); return true; }
+  catch(e){ return false; }   // trình duyệt chặn lưu, hoặc đầy
+}
+function goiDuongDan(u){ return String(u || '').split('?')[0].trim(); }
+
+/* tên bài = phần chung của tên các file ảnh, ví dụ "nguyen-lieu-cho-thuc-pham-chuc-nang" */
+function tenBai(dsAnh){
+  var ten = dsAnh.map(function(a){
+    return (a.ten || '').replace(/\.\w+$/,'').replace(/[-_]?\d+(-\d+)?$/,'');
+  }).filter(Boolean);
+  if(!ten.length) return 'bài không rõ tên';
+  var dem = {};
+  ten.forEach(function(t){ dem[t] = (dem[t] || 0) + 1; });
+  var tot = '', n = 0;
+  Object.keys(dem).forEach(function(k){ if(dem[k] > n){ n = dem[k]; tot = k; } });
+  return tot || 'bài không rõ tên';
+}
+
+function capNhatOThuVien(){
+  var tv = docThuVien();
+  var url = Object.keys(tv);
+  var bai = {};
+  url.forEach(function(u){ bai[tv[u]] = 1; });
+  var el = document.getElementById('soThuVien');
+  if(el) el.textContent = 'Đang nhớ ' + url.length + ' ảnh từ ' + Object.keys(bai).length + ' bài';
+  var ta = document.getElementById('thuVien');
+  if(ta) ta.value = url.map(function(u){ return tv[u] + '  ←  ' + u; }).join('\n');
+}
+
+/* ghi ảnh của bài vừa quét vào thư viện; không ghi đè bài đã nhận ảnh đó trước */
+function luuBaiVaoThuVien(dsAnh, thumbSrc, ten){
+  var tv = docThuVien(), them = 0;
+  dsAnh.forEach(function(a){
+    var u = goiDuongDan(a.src);
+    if(u && !tv[u]){ tv[u] = ten; them++; }
+  });
+  var t = goiDuongDan(thumbSrc);
+  if(t && !tv[t]){ tv[t] = ten; them++; }
+  var ok = ghiThuVien(tv);
+  capNhatOThuVien();
+  return ok ? them : -1;
+}
+
 /* --- Đọc danh sách key ------------------------------------------------- */
 function docKey(text){
   var ra = [];
@@ -301,7 +362,7 @@ function doAnh(a){
 }
 
 /* --- Dò lỗi kỹ thuật trong bài ----------------------------------------- */
-function doLoiBai(html, anh, thuVien){
+function doLoiBai(html, anh, thuVien, tenBaiNay){
   var L = [];
   // 1. kích thước khai sai
   anh.forEach(function(a){
@@ -337,12 +398,12 @@ function doLoiBai(html, anh, thuVien){
     if(sc[a.src]) L.push({muc:'nang', chu:'Ảnh ' + sc[a.src] + ' và ảnh ' + a.stt + ' là CÙNG một file: ' + a.ten});
     else sc[a.src] = a.stt;
   });
-  // 6. ảnh đã dùng ở bài trước
-  var tv = {};
-  thuVien.split(/\r?\n/).forEach(function(d){ d = d.trim(); if(d) tv[d.split('?')[0]] = 1; });
+  // 6. ảnh đã dùng ở bài trước — app tự nhớ, so theo đường dẫn file
   anh.forEach(function(a){
-    if(a.src && tv[a.src.split('?')[0]])
-      L.push({muc:'nang', chu:'Ảnh ' + a.stt + ' (' + a.ten + ') ĐÃ DÙNG ở bài trước — có trong thư viện bạn dán'});
+    var u = goiDuongDan(a.src);
+    var cu = u && thuVien[u];
+    if(cu && cu !== tenBaiNay)
+      L.push({muc:'nang', chu:'Ảnh ' + a.stt + ' (' + a.ten + ') ĐÃ DÙNG ở bài "' + cu + '" — app nhớ từ lần quét trước'});
   });
   // 7. ảnh trỏ về server nháp
   anh.forEach(function(a){
@@ -798,7 +859,11 @@ document.getElementById('nutQuet').onclick = async function(){
   G.anh.forEach(function(a, i){ a.keyGan = chia[i] || ''; });
   G.thumb.keyGan = G.keys.length ? G.keys[0].key : '';
 
-  G.loiBai = doLoiBai(html, G.anh, document.getElementById('thuVien').value);
+  var tenB = tenBai(G.anh);
+  G.loiBai = doLoiBai(html, G.anh, docThuVien(), tenB);
+  var them = luuBaiVaoThuVien(G.anh, urlThumb, tenB);
+  if(them === -1) G.loiBai.push({muc:'nhe',
+    chu:'Trình duyệt không cho app ghi nhớ thư viện ảnh (có thể đang ở chế độ ẩn danh). Lần sau app sẽ không báo được ảnh trùng.'});
 
   document.getElementById('buoc1').classList.add('an');
   document.getElementById('buoc2').classList.remove('an');
@@ -812,7 +877,7 @@ document.getElementById('nutQuayLai').onclick = function(){
   window.scrollTo({top:0});
 };
 document.getElementById('nutXoa').onclick = function(){
-  ['htmlVao','dsKey','thuVien'].forEach(function(id){ document.getElementById(id).value = ''; });
+  ['htmlVao','dsKey'].forEach(function(id){ document.getElementById(id).value = ''; });
   document.getElementById('urlThumb').value = '';
 };
 document.getElementById('nutGoiYCaBai').onclick = function(){
@@ -829,6 +894,20 @@ document.getElementById('nutGoiYCaBai').onclick = function(){
   veLaiDem();
   alert('Đã dựng ' + dem + ' câu nháp.\n\nĐây CHƯA phải alt dùng được: máy không nhìn được ảnh.\nBạn xem từng ảnh rồi sửa lại phần tả cho khớp.');
 };
+
+document.getElementById('nutXemTV').onclick = function(){
+  var ta = document.getElementById('thuVien');
+  var an = ta.classList.toggle('an');
+  this.textContent = an ? 'Xem danh sách' : 'Ẩn danh sách';
+};
+document.getElementById('nutXoaTV').onclick = function(){
+  var tv = docThuVien(), so = Object.keys(tv).length;
+  if(!so){ alert('Thư viện đang trống.'); return; }
+  if(!confirm('Xoá hết ' + so + ' ảnh app đang nhớ?\n\nSau khi xoá, app sẽ không báo được ảnh trùng cho tới khi bạn quét lại các bài cũ.')) return;
+  try{ localStorage.removeItem(KHOA_TV); }catch(e){}
+  capNhatOThuVien();
+};
+capNhatOThuVien();
 
 document.getElementById('nutTaoHtml').onclick = taoHtml;
 document.getElementById('nutTaoBang').onclick = taoBang;
