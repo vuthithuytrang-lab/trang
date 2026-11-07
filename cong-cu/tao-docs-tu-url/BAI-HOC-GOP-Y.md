@@ -31,5 +31,10 @@
 ## Không phải lỗi chèn nhưng cần báo (G)
 - Nội dung bài gốc cũ/sai (ngưỡng thuế, ảnh TCB Rewards cũ, tiêu đề lệch nội dung) → ghi chú báo bên nội dung/đội web, **không tự sửa bài gốc**.
 
+## Tự soát thêm (từ rà AIG 07/11/2026)
+- Kiểm tra URL của link: không để đuôi theo dõi như `?utm_source=chatgpt.com`; URL phải đúng y cột sheet.
+- Dòng ">>>" không chen giữa đoạn dẫn và danh sách/khung "Vai trò – Ứng dụng" của một mục.
+- Bài B2B xưng "doanh nghiệp", không chuyển sang "bạn". Chỉ nêu điều trang đích có (không thêm "vi chất", "cách chọn"… nếu trang đích không nói).
+
 ## Quy ước phản hồi comment (Trang chốt 05/11/2026)
 - Phản hồi trong file bằng comment gắn vào câu đã sửa, **viết thẳng "Em đã …"**, không trích lại góp ý của chị.

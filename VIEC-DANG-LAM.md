@@ -1,5 +1,9 @@
 # Việc đang làm / còn chờ
 
+## AIG rà inlink (07/11/2026)
+- [x] Rà 30 bài, ghi đề xuất cột AB (báo cáo: `cong-cu/tao-docs-tu-url/aig/bao-cao.md`).
+- [ ] Chờ Trang duyệt đề xuất; dòng thiếu trang đích (cột I trống) chưa rà.
+
 ## Skill chèn link trọn gói (06/11/2026) — LÀM TIẾP
 - [x] Gom scripts/references/prompts vào `.claude/skills/chen-internal-link/` (tự chứa).
 - [x] Viết lại SKILL.md, chạy thử 1 bài (Okamura cabin làm việc) chỉ bằng công cụ trong skill: đạt 3/3. Đóng gói `cong-cu/skill-chen-internal-link.zip`.
