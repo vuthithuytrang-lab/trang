@@ -6,3 +6,5 @@
   xưng "bạn" lệch giọng B2B; nêu thông tin trang đích không có (VD "vi chất").
 - Không rà: dòng thiếu trang đích ở cột I (coconut juice, công ty cung cấp nha đam, công ty cung cấp thực phẩm…), cặp có anchor mà thiếu URL hoặc ngược lại.
 - Lỗi bài gốc nên báo đội web: dòng 28 đoạn mở bài dính chữ ("Tập đoàna chọn… theo đ Nguyên liệu Á Châu"); dòng 39 H2 mục 2 thừa chữ "sản".
+
+- 07/11: thêm dòng "HTML: ->" (đúng kiểu HTML web AIG) cho mọi đề xuất; rà biên tập lần 2 theo 6 tiêu chí, viết lại 16 bài (bỏ ý không có nguồn, câu gượng, dòng "Xem thêm" kiểu "<cụm> với <anchor>").

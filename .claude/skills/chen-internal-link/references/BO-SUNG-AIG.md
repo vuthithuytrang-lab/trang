@@ -15,3 +15,5 @@
 - Site WordPress: tải `bash D/fetch.sh <url> <file>`; dựng `SP=D/ BASE=https://asiagroup-vn.com SEL='section.main_content_post' python3 -I D/build.py`.
 - Giọng: B2B, nhà cung cấp nguyên liệu thực phẩm/đồ uống/dược cho **doanh nghiệp**; xưng "doanh nghiệp", nhắc "AIG" vừa phải. Không bịa chứng nhận, công suất, số liệu.
 - Anchor có "là gì", "2026", "3 nhóm", "11 nhóm", "(…)" → hợp dạng dòng ">>> Xem thêm: …" hoặc viết lại khéo; giữ nguyên văn kể cả ngoặc.
+
+- **Luôn chạy 1 vòng biên tập lại** (6 tiêu chí: anchor nguyên văn · đúng ngữ cảnh trang đích · câu nối mạch, ≤35 chữ, không lặp "AIG còn là…" · không ý ngoài bài/trang đích · vị trí ≥25% · trích câu gốc chính xác) trước khi ghi vào sheet — lượt đầu 16/21 bài phải viết lại.
