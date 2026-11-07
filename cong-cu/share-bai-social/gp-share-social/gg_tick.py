@@ -9,7 +9,7 @@ left = [p for p in plan if p['main'] not in done]
 nxt = lambda: (left[0]['at'] if left else None)
 if not left: print('GG_HET'); sys.exit()
 if not (7 <= now.hour < 23): print('GG_NGOAI_GIO'); print('GG_WAKE_AT', nxt()); sys.exit()
-if (now - last).total_seconds() < 780 or D.datetime.fromisoformat(left[0]['at']) > now: print('GG_CHUA_DEN_GIO'); print('GG_WAKE_AT', nxt()); sys.exit()
+if (now - last).total_seconds() < 720 or D.datetime.fromisoformat(left[0]['at']) > now: print('GG_CHUA_DEN_GIO'); print('GG_WAKE_AT', nxt()); sys.exit()
 import os
 while left and not os.path.exists(f"bai/{left[0]['main']}/post.html") and os.path.exists(f"bai/{left[0]['main']}/NO_SOURCE.txt"): print('GG_BO_QUA_KHONG_NGUON', left.pop(0)['row'])
 if not left: print('GG_HET'); sys.exit()
