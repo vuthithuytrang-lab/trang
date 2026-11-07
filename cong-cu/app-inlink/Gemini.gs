@@ -20,7 +20,7 @@ var QUY_TAC = [
   '- Không bịa con số, lãi suất, phí, khuyến mãi, tính năng sản phẩm. Chỉ dùng điều có trong bài gốc hoặc thông tin trang đích được cung cấp.',
   '- Không so sánh trực diện sản phẩm. Không dấu chấm than, không câu hỏi tu từ, không từ quảng cáo.',
   '- Cấm các cụm: "Bên cạnh đó, bạn cũng có thể tham khảo", "Ngoài ra, bạn có thể tìm hiểu thêm", "để có thêm thông tin", "để hiểu rõ hơn", "một cách hiệu quả", "vô cùng", "hữu ích", "tham khảo ngay", "đừng quên", "chắc chắn", "tại đây".',
-  '- cach = "sentence": 1 câu ngắn (≤ 35 từ) nối vào CUỐI đoạn đã chọn. cach = "xemthem": 1 dòng riêng sau đoạn, bắt đầu ">>> Xem thêm: " + cụm như tiêu đề bài có chứa anchor (≤ 20 từ). Anchor có chữ "2026", "hiện nay", "top", "tổng hợp", "các mẫu" thì nên dùng xemthem.',
+  '- cach = "sentence": 1 câu ngắn (≤ 35 từ) nối vào CUỐI đoạn đã chọn. cach = "xemthem": 1 dòng riêng sau đoạn, bắt đầu ">>> " + MỘT CÂU HOÀN CHỈNH nối ý đoạn ngay trên (cấm dòng cụt kiểu "Xem thêm: <cụm>").',
   '- Nếu KHÔNG có đoạn nào thật sự hợp ngữ cảnh: trả về i = -1 và ly_do. Bỏ link tốt hơn chèn gượng (người duyệt đã nói rõ điều này).',
   'Chỉ trả về JSON: {"i": số đoạn, "cach": "sentence" | "xemthem", "cau": "câu tiếng Việt có dấu"} hoặc {"i": -1, "ly_do": "..."}'
 ].join('\n');

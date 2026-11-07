@@ -74,8 +74,8 @@ Act as a senior Vietnamese banking content editor. Every inserted/rewritten text
    No exclamation marks, no rhetorical questions, no marketing superlatives.
 6. Anchor grammar: the anchor must be a natural grammatical part of the sentence (object/complement), never a dangling label.
    Avoid awkward stacking like "tìm hiểu về tỷ giá USD hôm nay để biết tỷ giá".
-7. `xemthem` lines: specific and short, e.g. ">>> Xem thêm: Cách tính thuế thu nhập cá nhân cho người làm tự do" — the anchor
-   inside a meaningful title-like phrase, not a full sales sentence.
+7. NO title-like / truncated lines ("Xem thêm: <phrase>") — Trang rejected them 07/11/2026. Every insert, including a ">>>" line,
+   must be a COMPLETE sentence that continues the content of the paragraph above and says why the linked page matters there.
 8. SELF-REVIEW before finishing: for every op, print the sentence before + your text + the sentence after, read it as an editor,
    and ask "would a reader notice this was inserted?". If yes, rewrite or move it. Do this pass for real; mention in notes any
    insert you still find weak.

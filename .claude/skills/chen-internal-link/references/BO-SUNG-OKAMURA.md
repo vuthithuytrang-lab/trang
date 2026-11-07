@@ -9,8 +9,8 @@
 - Giọng văn: chuyên gia nội thất văn phòng, xưng "bạn" (hoặc "doanh nghiệp" nếu bài dùng vậy), giọng tư vấn, không quảng cáo lố.
   Không bịa kích thước, giá, bảo hành, chất liệu, chứng nhận — chỉ dùng thông tin có trong bài gốc hoặc trang đích.
 - Thay ví dụ ngân hàng trong brief bằng ngữ cảnh nội thất: VD anchor "kích thước ghế văn phòng" đặt ở đoạn đang bàn về chọn ghế hợp vóc dáng.
-- Anchor có chữ "2026", "hiện nay", "top", "tổng hợp", "các mẫu" phải giữ NGUYÊN VĂN → hợp nhất là dòng `xemthem`
-  (">>> Xem thêm: <anchor> ..." hoặc câu dẫn ngắn) hoặc `vietlai` khéo; đừng nhét gượng vào giữa câu.
+- Anchor có chữ "2026", "hiện nay", "top", "tổng hợp", "các mẫu" phải giữ NGUYÊN VĂN → vẫn phải là câu hoàn chỉnh nối nội dung
+  (`vietlai` khéo hoặc dòng ">>>" là một câu đầy đủ); cấm dòng cụt "Xem thêm: <cụm>".
 - Nhiều bài trỏ link sang nhau theo chuỗi; bài gốc có thể ĐÃ có link tới URL đích → dùng `dacolink`/`chuyenlink` đúng quy tắc.
 - Tên file (title): đúng cột "Từ khoá chính" của dòng (có trong rows.json là `kw`), viết hoa chữ đầu. VD "Sắp xếp bàn ghế văn phòng".
 - `miss` trong rows.json = URL đích sheet có nhưng THIẾU anchor → KHÔNG chèn, chỉ ghi vào notes.

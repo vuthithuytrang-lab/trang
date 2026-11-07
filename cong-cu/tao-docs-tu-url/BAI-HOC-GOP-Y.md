@@ -3,6 +3,12 @@
 > Tổng hợp từ `gop-y-chi-loc.csv` (nhật ký từng nhận xét). Cập nhật hằng ngày. Mọi agent chèn link phải đọc file này cùng brief.
 > Thống kê đến 05/11/2026: 35 nhận xét — **A sai ngữ cảnh 13 · D sai nghiệp vụ/đối tượng 9 · B gượng 4 · F sai vị trí trong bài 3 · C chen giữa câu 2 · H chính tả 2 · E so sánh trực diện 1 · G lỗi bài gốc 3**.
 
+## ⛔ Không chèn câu cụt (Trang chốt 07/11/2026 — bắt buộc)
+- **Cấm** dòng kiểu tiêu đề/cụm cụt: ">>> Xem thêm: giải pháp nguyên liệu cho doanh nghiệp 2026 khi chi phí đầu vào tăng", ">>> Xem thêm: <anchor> cho người mới".
+- Mọi chỗ chèn phải là **câu hoàn chỉnh, nối trực tiếp nội dung đoạn đang nói** (ý trước → vì sao người đọc cần trang đích lúc này), đọc như tác giả viết.
+  Ưu tiên: viết lại nhẹ câu có sẵn > thêm 1 câu vào cuối đoạn đúng chủ đề > dòng ">>>" là **một câu đầy đủ** nối ý đoạn ngay trên.
+- Mẫu đạt (đang có trên web AIG): ">>> Bên cạnh Glucose Syrup, AIG còn là công ty cung cấp nguyên liệu thực phẩm với danh mục … cho doanh nghiệp đồ uống." — có chủ ngữ, nối ý, nói rõ giá trị.
+
 ## Lỗi số 1 — Chèn vào đoạn đang nói chuyện khác (A, chiếm ~40%)
 - Câu chèn phải **cùng chủ đề với chính đoạn đó**, không phải chỉ cùng bài. Bài độ tuổi mở tài khoản ≠ tỷ giá; đoạn nạp điện thoại ≠ giá điện; câu hỏi thẻ ghi nợ ≠ rút tiền thẻ tín dụng; bài vay ≠ lãi suất tiết kiệm.
 - **Anchor tỷ giá/ngoại tệ** là chỗ hay sai nhất: chỉ đặt ở đoạn có giao dịch ngoại tệ thật (nhận/chuyển tiền nước ngoài, chi tiêu thẻ quốc tế, tài khoản ngoại tệ, đi du lịch). Không có đoạn như vậy → báo "bài không có ngữ cảnh ngoại tệ", đừng ép.
