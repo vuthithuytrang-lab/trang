@@ -8,3 +8,4 @@
 - Lỗi bài gốc nên báo đội web: dòng 28 đoạn mở bài dính chữ ("Tập đoàna chọn… theo đ Nguyên liệu Á Châu"); dòng 39 H2 mục 2 thừa chữ "sản".
 
 - 07/11: thêm dòng "HTML: ->" (đúng kiểu HTML web AIG) cho mọi đề xuất; rà biên tập lần 2 theo 6 tiêu chí, viết lại 16 bài (bỏ ý không có nguồn, câu gượng, dòng "Xem thêm" kiểu "<cụm> với <anchor>").
+- 07/11: Trang không chấp nhận dòng "Xem thêm: <cụm>" cụt → viết lại TOÀN BỘ đề xuất thành câu hoàn chỉnh nối nội dung (23 dòng đổi, thêm đề xuất sửa cho dòng 28, 40 trước đánh "ổn"). Ghi thành quy tắc cứng trong BAI-HOC.
