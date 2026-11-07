@@ -57,6 +57,8 @@ Dự án mới: viết 1 file bổ sung như `<SKILL>/references/BO-SUNG-OKAMURA
 
 ## 4. Lỗi môi trường đã gặp
 
+- Agent ghi sheet có thể báo "written" mà ô vẫn là bản cũ (so đầu/cuối cho nhanh) → sau mỗi lượt ghi đè, chạy 1 agent đọc lại và **so khớp chính xác bằng script**, lệch thì ghi lại.
+
 - File Docs quá lớn làm Drive export lỗi → `read_doc` + `tohtml.py` để soát.
 - Một số Docs lưu tiếng Việt dạng tổ hợp (decomposed) → offset lệch 1; luôn `find` trên bản đọc mới.
 - Xoá trọn câu có comment → comment bị tách khỏi chữ; giữ ≥1 ký tự nếu muốn comment còn gắn.
