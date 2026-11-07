@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Soát alt ảnh</title>
+<style>
+:root{--sg-xanh:#004AEF;--sg-xanh-sang:#0D53F0;--sg-navy:#002992;--sg-mint:#07EF9C;
+--sg-vang:#FFCE00;--sg-cam:#F68B1F;--den:#151515;--xam-nen:#F3F3F6;--xam-vien:#DCDCDC;--xam-chu:#5A6B66;
+--do:#C62828;--xanh-la:#046B47;--nen-the:#FFFFFF;--nen-nhap:#FFFFFF;
+--vang-nen:#FFF8E1;--do-nen:#FDE7E7;--la-nen:#E1FBF0;--xanh-nhat:#EEF3FF;
+--dau-nen:#002992;--dau-chu:#FFFFFF}
+@media(prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --sg-xanh:#5B8CFF;--sg-xanh-sang:#7AA3FF;--sg-navy:#AFC6FF;--sg-mint:#07EF9C;
+    --den:#E8EAED;--xam-nen:#16181C;--xam-vien:#343841;--xam-chu:#9AA3AD;
+    --do:#FF8A8A;--xanh-la:#4ED6A3;--nen-the:#1E2127;--nen-nhap:#14161A;
+    --vang-nen:#332B14;--do-nen:#3A1F1F;--la-nen:#13322A;--xanh-nhat:#1B2436;
+    --dau-nen:#0B1730;--dau-chu:#E8EAED;
+  }
+}
+:root[data-theme="dark"]{
+  --sg-xanh:#5B8CFF;--sg-xanh-sang:#7AA3FF;--sg-navy:#AFC6FF;--sg-mint:#07EF9C;
+  --den:#E8EAED;--xam-nen:#16181C;--xam-vien:#343841;--xam-chu:#9AA3AD;
+  --do:#FF8A8A;--xanh-la:#4ED6A3;--nen-the:#1E2127;--nen-nhap:#14161A;
+  --vang-nen:#332B14;--do-nen:#3A1F1F;--la-nen:#13322A;--xanh-nhat:#1B2436;
+  --dau-nen:#0B1730;--dau-chu:#E8EAED;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--xam-nen);color:var(--den);
+font-family:Montserrat,"Helvetica Neue",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-size:14px;line-height:1.55}
+header{background:var(--dau-nen);color:var(--dau-chu);padding:18px 24px}
+header h1{margin:0;font-size:22px;font-weight:800}
+header p{margin:4px 0 0;font-size:13px;opacity:.85}
+.wrap{max-width:1500px;margin:0 auto;padding:20px 16px 70px}
+.card{background:var(--nen-the);border:1px solid var(--xam-vien);border-radius:10px;padding:16px;margin-bottom:16px}
+.card h2{margin:0 0 4px;font-size:15px;font-weight:700;color:var(--sg-navy)}
+.card .hint{margin:0 0 10px;font-size:12px;color:var(--xam-chu)}
+.grid2{display:grid;grid-template-columns:2fr 1fr;gap:16px}
+@media(max-width:1000px){.grid2{grid-template-columns:1fr}}
+textarea{width:100%;border:1px solid var(--xam-vien);border-radius:8px;padding:10px;
+font-family:ui-monospace,"SF Mono",Consolas,monospace;font-size:12.5px;line-height:1.5;resize:vertical;
+background:var(--nen-nhap);color:var(--den)}
+textarea.tall{min-height:260px} textarea.mid{min-height:150px} textarea.low{min-height:88px}
+input[type=text]{width:100%;border:1px solid var(--xam-vien);border-radius:8px;padding:7px 9px;
+font-family:inherit;font-size:13px;background:var(--nen-nhap);color:var(--den)}
+.btn{background:var(--sg-xanh);color:#fff;border:0;border-radius:8px;padding:12px 22px;
+font-family:inherit;font-size:14px;font-weight:700;cursor:pointer}
+.btn:hover{background:var(--sg-xanh-sang)}
+.btn.phu{background:var(--nen-the);color:var(--sg-xanh);border:1.5px solid var(--sg-xanh);padding:9px 16px;font-size:13px}
+.btn.phu:hover{background:var(--xanh-nhat)}
+.hang-nut{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:14px 0 2px}
+.an{display:none}
+/* --- the anh --- */
+.anh-hang{display:grid;grid-template-columns:190px 1fr;gap:14px;border:1px solid var(--xam-vien);
+border-radius:10px;padding:12px;margin-bottom:12px;background:var(--nen-the)}
+@media(max-width:760px){.anh-hang{grid-template-columns:1fr}}
+.anh-hinh{width:100%;border-radius:8px;border:1px solid var(--xam-vien);background:var(--xam-nen);
+min-height:110px;object-fit:contain;display:block}
+.anh-meta{font-size:11.5px;color:var(--xam-chu);margin-top:6px;word-break:break-all;line-height:1.45}
+.anh-meta b{color:var(--den)}
+.nhan{display:inline-block;padding:1px 7px;border-radius:5px;font-size:10.5px;font-weight:700;margin-right:4px}
+.nhan.vang{background:var(--vang-nen);color:var(--sg-cam)}
+.nhan.do{background:var(--do-nen);color:var(--do)}
+.nhan.xanh{background:var(--la-nen);color:var(--xanh-la)}
+.o-nhap label{display:block;font-size:11.5px;font-weight:700;color:var(--sg-navy);margin:8px 0 3px}
+.o-nhap textarea{min-height:52px;font-family:inherit;font-size:13.5px}
+.dong-dem{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:4px;font-size:11.5px}
+.dem{font-weight:700;font-variant-numeric:tabular-nums}
+.dem.ok{color:var(--xanh-la)} .dem.loi{color:var(--do)} .dem.cho{color:var(--xam-chu)}
+select{border:1px solid var(--xam-vien);border-radius:7px;padding:5px 8px;font-family:inherit;
+font-size:12.5px;max-width:100%;background:var(--nen-nhap);color:var(--den)}
+.loi-list{margin:4px 0 0;padding-left:16px;font-size:11.5px;color:var(--do)}
+.loi-list li{margin:1px 0}
+table{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:8px}
+th,td{border:1px solid var(--xam-vien);padding:7px 9px;text-align:left;vertical-align:top}
+th{background:var(--xam-nen);font-weight:700;font-size:12px}
+.tomtat{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}
+.o{background:var(--xam-nen);border-radius:8px;padding:10px 14px;min-width:100px}
+.o .so{font-size:23px;font-weight:800;color:var(--sg-xanh);line-height:1.1}
+.o .so.canh{color:var(--sg-cam)} .o .so.xau{color:var(--do)}
+.o .ten{font-size:11px;color:var(--xam-chu);margin-top:2px}
+.canhbao{background:var(--vang-nen);border-left:4px solid var(--sg-vang);border-radius:0 8px 8px 0;
+padding:10px 14px;font-size:12.5px;margin-top:12px}
+.canhbao.do{background:var(--do-nen);border-left-color:var(--do)}
+.canhbao.xanh{background:var(--la-nen);border-left-color:var(--sg-mint)}
+code.k{background:var(--xam-nen);padding:1px 5px;border-radius:4px;font-size:12px}
+.tab-hang{display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap}
+.tab{background:var(--xam-nen);border:1px solid var(--xam-vien);border-radius:7px;padding:7px 14px;
+font-size:12.5px;font-weight:600;cursor:pointer}
+.tab.chon{background:var(--sg-xanh);color:#fff;border-color:var(--sg-xanh)}
+h3.muc{margin:22px 0 8px;font-size:14px;font-weight:800;color:var(--sg-navy);
+border-bottom:2px solid var(--sg-mint);padding-bottom:5px}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Soát và chèn alt ảnh</h1>
+  <p>Chạy trong trình duyệt — không cần mạng cho phần soát, không cần tài khoản, không tốn token.</p>
+</header>
+
+<div class="wrap">
+
+<!-- ====== ĐẦU VÀO ====== -->
+<div id="buoc1">
+  <div class="grid2">
+    <div>
+      <div class="card">
+        <h2>1. HTML bài viết</h2>
+        <p class="hint">Dán nguyên khối HTML từ CMS. App sẽ giữ nguyên từng ký tự, chỉ thay giá trị trong <code class="k">alt="…"</code>.</p>
+        <textarea id="htmlVao" class="tall" placeholder="&lt;p&gt;…&lt;/p&gt; &lt;img src=&quot;…&quot; alt=&quot;…&quot;&gt;"></textarea>
+      </div>
+    </div>
+    <div>
+      <div class="card">
+        <h2>2. Danh sách key</h2>
+        <p class="hint">Mỗi dòng một key. Dòng nào là key chính thì ghi thêm <code class="k">- key chính</code> ở cuối.</p>
+        <textarea id="dsKey" class="mid" placeholder="nguyên liệu thực phẩm - key chính&#10;food ingredients&#10;nhà cung cấp nguyên liệu"></textarea>
+      </div>
+      <div class="card">
+        <h2>3. Ảnh thumb</h2>
+        <p class="hint">Dán đường dẫn ảnh đại diện để app hiện ảnh và đo kích thước thật.</p>
+        <input type="text" id="urlThumb" placeholder="https://…/bai-viet-thumb.jpg">
+      </div>
+      <div class="card">
+        <h2>4. Thư viện ảnh đã dùng <span style="font-weight:400;color:var(--xam-chu);font-size:12px">(tùy chọn)</span></h2>
+        <p class="hint">Dán đường dẫn các ảnh đã dùng ở bài trước, mỗi dòng một cái. App sẽ báo nếu bài này xài lại.</p>
+        <textarea id="thuVien" class="low" placeholder="https://asiagroup-vn.com/wp-content/uploads/2026/10/food-ingredients-01-1.webp"></textarea>
+      </div>
+    </div>
+  </div>
+  <div class="hang-nut">
+    <button class="btn" id="nutQuet">Quét bài</button>
+    <button class="btn phu" id="nutXoa">Xoá hết</button>
+  </div>
+</div>
+
+<!-- ====== KẾT QUẢ ====== -->
+<div id="buoc2" class="an">
+  <div class="card">
+    <h2>Tổng quan</h2>
+    <div class="tomtat" id="tomTat"></div>
+    <div id="loiBai"></div>
+  </div>
+
+  <div class="tab-hang">
+    <div class="tab chon" data-tab="soan">Soạn alt</div>
+    <div class="tab" data-tab="xuat">HTML đã chèn</div>
+    <div class="tab" data-tab="bang">Bảng để copy</div>
+  </div>
+
+  <div id="tab-soan">
+    <div class="card">
+      <h2>Ảnh trong bài</h2>
+      <p class="hint">App hiện ảnh thật để bạn nhìn mà viết. Ô nào viết xong, đèn bên dưới tự báo đúng/sai luật.</p>
+      <div class="canhbao" style="margin:0 0 14px"><b>Về nút "Gợi ý câu nháp"</b><br>
+        Máy <b>không nhìn hiểu được ảnh</b> nên không tả được ảnh. Nút này chỉ ghép lại chất liệu
+        đã có sẵn trong bài — chú thích cũ, tên mục, alt cũ — rồi gắn key và canh cho dưới 120 ký tự.
+        Câu ra là <b>câu nháp</b>: bạn nhìn ảnh rồi sửa lại phần tả cho khớp với ảnh thật.</div>
+      <div class="hang-nut" style="margin:0 0 12px">
+        <button class="btn phu" id="nutGoiYCaBai">Gợi ý câu nháp cho mọi ô còn trống</button>
+      </div>
+      <div id="dsAnh"></div>
+      <h3 class="muc">Bốn ô cho ảnh thumb</h3>
+      <div id="khungThumb"></div>
+    </div>
+  </div>
+
+  <div id="tab-xuat" class="an">
+    <div class="card">
+      <h2>HTML đã chèn alt</h2>
+      <div class="hang-nut" style="margin-top:0">
+        <button class="btn phu" id="nutTaoHtml">Tạo lại HTML</button>
+        <button class="btn phu" id="nutCopyHtml">Copy HTML</button>
+        <span id="baoCopy" style="font-size:12.5px;color:var(--xanh-la);font-weight:700"></span>
+      </div>
+      <div id="chungMinh"></div>
+      <textarea id="htmlRa" class="tall" readonly></textarea>
+    </div>
+  </div>
+
+  <div id="tab-bang" class="an">
+    <div class="card">
+      <h2>Bảng để copy</h2>
+      <p class="hint">Bảng này dán thẳng vào Excel hoặc chat được.</p>
+      <div class="hang-nut" style="margin-top:0">
+        <button class="btn phu" id="nutTaoBang">Tạo lại bảng</button>
+        <button class="btn phu" id="nutCopyBang">Copy bảng</button>
+        <span id="baoCopy2" style="font-size:12.5px;color:var(--xanh-la);font-weight:700"></span>
+      </div>
+      <div id="bangXem"></div>
+      <textarea id="bangText" class="mid" readonly style="margin-top:10px"></textarea>
+    </div>
+  </div>
+
+  <div class="hang-nut">
+    <button class="btn phu" id="nutQuayLai">&#8592; Sửa đầu vào</button>
+  </div>
+</div>
+
+</div>
+
+<script>
+/* =======================================================================
+   SOÁT VÀ CHÈN ALT ẢNH
+   Chạy hoàn toàn trong trình duyệt. Chỉ gọi ra ngoài để TẢI ẢNH về xem.
+   Không gửi HTML hay key đi đâu cả.
+   ======================================================================= */
+
+/* --- Luật, lấy từ cong-cu-viet-alt-anh-chuan-seo.md --------------------- */
+var GIOI_HAN = 120;                       // alt phải DƯỚI 120 ký tự
+var TU_CAM = [                            // cấm trong mọi ô
+  'banner','ảnh bìa','cover image',
+  'ảnh ghép','khung tròn','khung hình tròn','hình tròn ghép',
+  'collage','bố cục','ảnh thiết kế','nền bản đồ'
+];
+var MO_DAU_CAM = [                        // cấm mở đầu ô Description
+  'bài viết của','trang dịch vụ','cover image for','ảnh bìa cho'
+];
+
+/* đếm ký tự ĐÚNG như Python len(): đếm code point, không đếm byte */
+function demKyTu(s){ return Array.from(s).length; }
+
+function boDau(s){
+  return s.normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/đ/g,'d').replace(/Đ/g,'D').toLowerCase();
+}
+
+/* --- Trạng thái -------------------------------------------------------- */
+var G = { htmlGoc:'', anh:[], keys:[], thumb:null, loiBai:[] };
+
+/* --- Đọc danh sách key ------------------------------------------------- */
+function docKey(text){
+  var ra = [];
+  text.split(/\r?\n/).forEach(function(d){
+    d = d.trim(); if(!d) return;
+    var chinh = /[-–—(]\s*key\s*ch[íi]nh\s*\)?\s*$/i.test(d);
+    var k = d.replace(/[-–—(]\s*key\s*ch[íi]nh\s*\)?\s*$/i,'').replace(/[:|]\s*$/,'').trim();
+    if(k) ra.push({ key:k, chinh:chinh });
+  });
+  // key chính lên đầu
+  ra.sort(function(a,b){ return (b.chinh?1:0) - (a.chinh?1:0); });
+  return ra;
+}
+
+/* --- Quét ảnh trong HTML ----------------------------------------------- */
+function quetAnh(html){
+  var ra = [], re = /<img\b[^>]*>/gi, m, i = 0;
+  while((m = re.exec(html)) !== null){
+    var the = m[0];
+    var lay = function(t){ var x = new RegExp(t+'\\s*=\\s*"([^"]*)"','i').exec(the); return x ? x[1] : null; };
+    var src = lay('src') || '';
+    ra.push({
+      stt:++i, the:the, viTri:m.index, src:src,
+      ten: src.split('/').pop().split('?')[0] || '(không rõ)',
+      altCu: lay('alt'),
+      wKhai: lay('width') ? +lay('width') : null,
+      hKhai: lay('height') ? +lay('height') : null,
+      wThat: null, hThat: null, taiDuoc: null,
+      muc: timMuc(html, m.index),
+      chuThichCu: timChuThich(html, m.index),
+      keyGan: '', altMoi: '', chuThichMoi: null
+    });
+  }
+  return ra;
+}
+
+/* tiêu đề H2/H3 gần nhất phía trên ảnh */
+function timMuc(html, viTri){
+  var truoc = html.slice(0, viTri);
+  var re = /<h([23])[^>]*>([\s\S]*?)<\/h\1>/gi, m, cuoi = null;
+  while((m = re.exec(truoc)) !== null) cuoi = m[2];
+  if(!cuoi) return '(trước tiêu đề đầu tiên)';
+  return cuoi.replace(/<[^>]+>/g,'').replace(/\s+/g,' ').trim().slice(0,70);
+}
+
+/* chữ chú thích nếu ảnh nằm trong khối [caption]…[/caption] */
+function timChuThich(html, viTri){
+  var mo = html.lastIndexOf('[caption', viTri);
+  if(mo === -1) return null;
+  var dong = html.indexOf('[/caption]', viTri);
+  if(dong === -1) return null;
+  var giua = html.slice(mo, dong);
+  if(giua.indexOf('[/caption]') !== -1) return null;   // khối khác, không phải của ảnh này
+  var sauThe = html.indexOf('>', viTri);
+  if(sauThe === -1 || sauThe > dong) return null;
+  return html.slice(sauThe + 1, dong).trim();
+}
+
+/* --- Đo kích thước thật bằng cách tải ảnh về --------------------------- */
+function doAnh(a){
+  return new Promise(function(xong){
+    if(!a.src){ a.taiDuoc = false; return xong(); }
+    var im = new Image();
+    im.onload  = function(){ a.wThat = im.naturalWidth; a.hThat = im.naturalHeight; a.taiDuoc = true; xong(); };
+    im.onerror = function(){ a.taiDuoc = false; xong(); };
+    im.referrerPolicy = 'no-referrer';
+    im.src = a.src;
+    setTimeout(function(){ if(a.taiDuoc === null){ a.taiDuoc = false; xong(); } }, 12000);
+  });
+}
+
+/* --- Dò lỗi kỹ thuật trong bài ----------------------------------------- */
+function doLoiBai(html, anh, thuVien){
+  var L = [];
+  // 1. kích thước khai sai
+  anh.forEach(function(a){
+    if(a.taiDuoc && a.hKhai && a.hThat && a.hKhai !== a.hThat){
+      var lech = Math.abs(a.hKhai - a.hThat);
+      L.push({ muc:lech > 5 ? 'nang' : 'nhe',
+        chu:'Ảnh ' + a.stt + ' (' + a.ten + ') khai height="' + a.hKhai + '" nhưng file thật cao ' + a.hThat + 'px — lệch ' + lech + 'px' });
+    }
+  });
+  // 2. alt cũ thừa dấu cách / rỗng / thiếu
+  anh.forEach(function(a){
+    if(a.altCu === null) L.push({muc:'nang', chu:'Ảnh ' + a.stt + ' (' + a.ten + ') KHÔNG có thuộc tính alt'});
+    else if(!a.altCu.trim()) L.push({muc:'nang', chu:'Ảnh ' + a.stt + ' (' + a.ten + ') có alt rỗng'});
+    else if(a.altCu !== a.altCu.trim()) L.push({muc:'nhe', chu:'Ảnh ' + a.stt + ' (' + a.ten + ') alt cũ thừa dấu cách ở đầu hoặc cuối'});
+  });
+  // 3. alt trùng chú thích
+  anh.forEach(function(a){
+    if(a.altCu && a.chuThichCu && a.altCu.trim() === a.chuThichCu.trim())
+      L.push({muc:'nhe', chu:'Ảnh ' + a.stt + ': alt cũ giống hệt chú thích — Google chỉ đọc được một thông tin'});
+  });
+  // 4. chú thích trùng nhau giữa hai ảnh
+  var ct = {};
+  anh.forEach(function(a){
+    if(!a.chuThichCu) return;
+    var k = a.chuThichCu.trim();
+    if(ct[k]) L.push({muc:'nang', chu:'Ảnh ' + ct[k] + ' và ảnh ' + a.stt + ' dùng CHUNG một chú thích'});
+    else ct[k] = a.stt;
+  });
+  // 5. cùng một ảnh dùng hai lần trong bài
+  var sc = {};
+  anh.forEach(function(a){
+    if(!a.src) return;
+    if(sc[a.src]) L.push({muc:'nang', chu:'Ảnh ' + sc[a.src] + ' và ảnh ' + a.stt + ' là CÙNG một file: ' + a.ten});
+    else sc[a.src] = a.stt;
+  });
+  // 6. ảnh đã dùng ở bài trước
+  var tv = {};
+  thuVien.split(/\r?\n/).forEach(function(d){ d = d.trim(); if(d) tv[d.split('?')[0]] = 1; });
+  anh.forEach(function(a){
+    if(a.src && tv[a.src.split('?')[0]])
+      L.push({muc:'nang', chu:'Ảnh ' + a.stt + ' (' + a.ten + ') ĐÃ DÙNG ở bài trước — có trong thư viện bạn dán'});
+  });
+  // 7. ảnh trỏ về server nháp
+  anh.forEach(function(a){
+    if(/dangbai\.|staging|localhost|127\.0\.0\.1|\/wp-content\/uploads\/\d{4}\/\d{2}\/.*\.(bmp|tiff)$/i.test(a.src))
+      L.push({muc:'nang', chu:'Ảnh ' + a.stt + ' trỏ về địa chỉ đáng ngờ (server nháp hoặc định dạng lạ): ' + a.src});
+  });
+  // 8. lỗi link Markdown dán nhầm
+  var md = html.match(/\[[^\]\n]{1,120}\]\((https?:[^)\s]+)\)/g);
+  if(md) L.push({muc:'nang', chu:'Có ' + md.length + ' chỗ dính lỗi link Markdown, lên trang sẽ hiện nguyên dấu ngoặc: ' + md[0]});
+  // 9. rác ChatGPT
+  if(/utm_source=chatgpt/i.test(html))
+    L.push({muc:'nang', chu:'Trong bài có link còn đuôi utm_source=chatgpt — ai xem mã nguồn đều thấy'});
+  // 10. thẻ link rỗng
+  var rong = html.match(/<a\b[^>]*>\s*<\/a>/gi);
+  if(rong) L.push({muc:'nhe', chu:'Có ' + rong.length + ' thẻ link rỗng (không có chữ bên trong), người đọc không bấm được'});
+  // 11. ảnh không tải được
+  anh.forEach(function(a){
+    if(a.taiDuoc === false) L.push({muc:'nhe', chu:'Ảnh ' + a.stt + ' (' + a.ten + ') không tải được — chưa đo được kích thước thật'});
+  });
+  return L;
+}
+
+/* --- Chia key đều cho các ô -------------------------------------------- */
+function chiaKey(soO, keys){
+  if(!keys.length) return new Array(soO).fill('');
+  // dùng key ở khoảng 60% số ô, trải đều, key chính được thêm một lượt
+  var soDung = Math.max(keys.length, Math.round(soO * 0.6));
+  soDung = Math.min(soDung, soO);
+  var day = [], i = 0;
+  while(day.length < soDung){ day.push(keys[i % keys.length].key); i++; }
+  var ra = new Array(soO).fill('');
+  var buoc = soO / soDung;
+  day.forEach(function(k, j){ ra[Math.min(soO - 1, Math.round(j * buoc))] = k; });
+  // chèn nốt key nào chưa được dùng lần nào
+  keys.forEach(function(k){
+    if(ra.indexOf(k.key) === -1){
+      var trong = ra.indexOf('');
+      if(trong !== -1) ra[trong] = k.key;
+    }
+  });
+  return ra;
+}
+
+/* --- Kiểm một câu theo luật -------------------------------------------- */
+function kiem(cau, key, laDescription, tatCaCau){
+  var loi = [], s = cau || '';
+  var n = demKyTu(s);
+  if(!s.trim()) return { n:0, loi:['chưa viết'], trong:true };
+  if(n >= GIOI_HAN) loi.push('dài ' + n + ' ký tự, phải dưới ' + GIOI_HAN);
+  if(s !== s.trim()) loi.push('thừa dấu cách ở đầu hoặc cuối');
+  var thap = boDau(s);
+  TU_CAM.forEach(function(t){ if(thap.indexOf(boDau(t)) !== -1) loi.push('chứa từ cấm "' + t + '"'); });
+  if(laDescription) MO_DAU_CAM.forEach(function(t){
+    if(thap.indexOf(boDau(t)) === 0) loi.push('mở đầu bằng cụm cấm "' + t + '"');
+  });
+  if(key && thap.indexOf(boDau(key)) === -1) loi.push('thiếu key "' + key + '"');
+  if(/[<>"&]/.test(s)) loi.push('có ký tự < > " & — sẽ làm vỡ thẻ HTML');
+  var trung = tatCaCau.filter(function(x){ return x.trim() && x.trim() === s.trim(); }).length;
+  if(trung > 1) loi.push('trùng câu với một ô khác');
+  return { n:n, loi:loi, trong:false };
+}
+
+/* --- Dựng câu nháp ------------------------------------------------------
+   Máy KHÔNG nhìn hiểu được ảnh. Nó chỉ ghép lại chất liệu đã có sẵn trong bài:
+   chú thích cũ, tên mục, alt cũ, tên file — rồi gắn key và canh cho dưới 120 ký tự.
+   Câu ra là CÂU NHÁP, bắt buộc người nhìn ảnh sửa lại.
+   ----------------------------------------------------------------------- */
+function donChatLieu(s){
+  if(!s) return '';
+  var t = String(s).replace(/<[^>]+>/g,' ').replace(/\[[^\]]*\]/g,' ').replace(/&nbsp;/gi,' ');
+  // bỏ dấu nguồn cuối câu: (Nguồn: Internet), (Ảnh tham khảo) — nhận cả bản không dấu
+  t = t.replace(/\([^)]*\)/g, function(m){
+    var k = boDau(m);
+    return (k.indexOf('(nguon') === 0 || k.indexOf('(anh') === 0) ? '' : m;
+  });
+  return t.replace(/\s+/g,' ')
+    .replace(/^\s*\d+(\.\d+)*[.)]?\s*/,'')             // bỏ số thứ tự mục "2.3." ở đầu
+    .replace(/^[\s\-–—:·]+|[\s\-–—:·.,]+$/g,'')
+    .trim();
+}
+function catTheoTu(s, toiDa){
+  if(demKyTu(s) <= toiDa) return s;
+  var tu = s.split(' '), ra = '';
+  for(var i = 0; i < tu.length; i++){
+    var thu = ra ? ra + ' ' + tu[i] : tu[i];
+    if(demKyTu(thu) > toiDa) break;
+    ra = thu;
+  }
+  return ra;
+}
+function hoaDau(s){ return s ? s.charAt(0).toUpperCase() + s.slice(1) : s; }
+
+function nenCauNhap(nguonTho, muc, key, kieu){
+  var nguon = donChatLieu(nguonTho);
+  var mucSach = donChatLieu(muc).replace(/^\d+(\.\d+)*\.?\s*/,'');   // bỏ "2.3." đầu tên mục
+  if(!nguon) nguon = mucSach;
+  if(!nguon) return '';
+
+  // gỡ từ cấm khỏi chất liệu, đỡ phải sửa tay
+  TU_CAM.forEach(function(t){
+    nguon = nguon.replace(new RegExp(t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'gi'),'').replace(/\s+/g,' ').trim();
+  });
+
+  var mau;
+  if(!key){
+    mau = ['{n}'];
+    if(mucSach) mau.push('{n} trong mục ' + mucSach);
+  }else{
+    mau = [
+      '{n}, ' + key,
+      '{n} — minh họa ' + key,
+      '{n} thuộc nhóm ' + key,
+      '{n} trong danh mục ' + key
+    ];
+    if(mucSach) mau.push('{n}, ' + key + ' trong mục ' + mucSach);
+  }
+  var khuon = mau[kieu % mau.length];
+  var phanThem = demKyTu(khuon.replace('{n}',''));
+  var choNguon = Math.max(12, GIOI_HAN - 1 - phanThem);
+  var cau = khuon.replace('{n}', hoaDau(catTheoTu(nguon, choNguon)));
+  cau = cau.replace(/\s+/g,' ').replace(/\s+,/g,',').replace(/,\s*,/g,',').trim();
+  if(demKyTu(cau) >= GIOI_HAN) cau = catTheoTu(cau, GIOI_HAN - 1);
+  return cau;
+}
+
+/* chất liệu tốt nhất cho một ảnh: chú thích cũ > alt cũ > tên mục */
+function chatLieuAnh(a){
+  return a.chuThichCu || a.altCu || a.muc || a.ten.replace(/[-_]/g,' ').replace(/\.\w+$/,'');
+}
+
+function goiYChoAnh(a, kieu){
+  var c = nenCauNhap(chatLieuAnh(a), a.muc, a.keyGan, kieu);
+  // không được trùng câu đã có ở ô khác
+  var dangCo = moiCau().filter(function(x){ return x.trim(); });
+  var n = 0;
+  while(c && dangCo.indexOf(c) !== -1 && n < 4){ c = nenCauNhap(chatLieuAnh(a), a.muc, a.keyGan, kieu + (++n)); }
+  return c;
+}
+
+/* chất liệu cho ảnh thumb: lấy từ mục đầu bài hoặc đoạn mở bài */
+function chatLieuThumb(){
+  var h = /<h2[^>]*>([\s\S]*?)<\/h2>/i.exec(G.htmlGoc);
+  if(h) return donChatLieu(h[1]);
+  var p = /<p[^>]*>([\s\S]*?)<\/p>/i.exec(G.htmlGoc);
+  if(p) return catTheoTu(donChatLieu(p[1]), 60);
+  return '';
+}
+function goiYChoThumb(kieu){
+  var c = nenCauNhap(chatLieuThumb(), '', G.thumb.keyGan, kieu);
+  var dangCo = moiCau().filter(function(x){ return x.trim(); });
+  var n = 0;
+  while(c && dangCo.indexOf(c) !== -1 && n < 4){ c = nenCauNhap(chatLieuThumb(), '', G.thumb.keyGan, kieu + 1 + (n++)); }
+  return c;
+}
+
+function moiCau(){
+  var ra = [];
+  G.anh.forEach(function(a){ ra.push(a.altMoi || ''); if(a.chuThichMoi !== null) ra.push(a.chuThichMoi || ''); });
+  if(G.thumb) ['alt','title','caption','desc'].forEach(function(k){ ra.push(G.thumb[k] || ''); });
+  return ra;
+}
+
+/* --- Vẽ một ô nhập ----------------------------------------------------- */
+function veONhap(nhan, giaTri, key, laDesc, khiDoi, taoNhap){
+  var box = document.createElement('div'); box.className = 'o-nhap';
+  var dongNhan = document.createElement('div');
+  dongNhan.style.cssText = 'display:flex;align-items:center;gap:8px;flex-wrap:wrap';
+  var lb = document.createElement('label'); lb.textContent = nhan; lb.style.flex = '1';
+  dongNhan.appendChild(lb);
+  if(taoNhap){
+    var bn = document.createElement('button'); bn.className = 'mini';
+    bn.textContent = 'Gợi ý câu nháp';
+    bn.onclick = function(){
+      var c = taoNhap();
+      if(!c){ alert('Bài này không có đủ chữ để dựng câu nháp cho ô đó.'); return; }
+      ta.value = c; box.laNhap = true; khiDoi(c); veLaiDem();
+    };
+    dongNhan.appendChild(bn);
+  }
+  box.appendChild(dongNhan);
+  var ta = document.createElement('textarea'); ta.value = giaTri || ''; box.appendChild(ta);
+  var dong = document.createElement('div'); dong.className = 'dong-dem'; box.appendChild(dong);
+  var ul = document.createElement('ul'); ul.className = 'loi-list'; box.appendChild(ul);
+  box.laNhap = false;
+  function ve(){
+    var r = kiem(ta.value, key(), laDesc, moiCau());
+    dong.innerHTML = '';
+    var d = document.createElement('span');
+    d.className = 'dem ' + (r.trong ? 'cho' : (r.loi.length ? 'loi' : 'ok'));
+    d.textContent = r.n + '/' + GIOI_HAN + ' ký tự';
+    dong.appendChild(d);
+    var n = document.createElement('span');
+    n.className = 'nhan ' + (r.trong ? 'vang' : (r.loi.length ? 'do' : 'xanh'));
+    n.textContent = r.trong ? 'chưa viết' : (r.loi.length ? 'còn ' + r.loi.length + ' lỗi' : 'đạt');
+    dong.appendChild(n);
+    if(box.laNhap && !r.trong){
+      var w = document.createElement('span'); w.className = 'nhan vang';
+      w.textContent = '⚠ câu nháp — nhìn ảnh rồi sửa lại';
+      dong.appendChild(w);
+    }
+    ul.innerHTML = '';
+    if(!r.trong) r.loi.forEach(function(x){ var li = document.createElement('li'); li.textContent = x; ul.appendChild(li); });
+  }
+  ta.addEventListener('input', function(){ box.laNhap = false; khiDoi(ta.value); veLaiDem(); });
+  box.veLai = ve;
+  box.oChu = ta;
+  return box;
+}
+
+var cacO = [];
+function veLaiDem(){ cacO.forEach(function(o){ o.veLai(); }); }
+
+/* --- Vẽ toàn bộ bảng soạn ---------------------------------------------- */
+function veBangSoan(){
+  cacO = [];
+  var ds = document.getElementById('dsAnh'); ds.innerHTML = '';
+
+  G.anh.forEach(function(a){
+    var hang = document.createElement('div'); hang.className = 'anh-hang';
+
+    var trai = document.createElement('div');
+    var im = document.createElement('img'); im.className = 'anh-hinh';
+    im.referrerPolicy = 'no-referrer'; im.loading = 'lazy'; im.src = a.src;
+    im.alt = 'Ảnh ' + a.stt;
+    trai.appendChild(im);
+    var meta = document.createElement('div'); meta.className = 'anh-meta';
+    var kt = a.taiDuoc ? (a.wThat + ' × ' + a.hThat) : 'không tải được';
+    var khai = (a.wKhai || '?') + ' × ' + (a.hKhai || '?');
+    var lech = a.taiDuoc && a.hKhai && a.hKhai !== a.hThat;
+    meta.innerHTML =
+      '<b>Ảnh ' + a.stt + '</b> — ' + thoat(a.ten) + '<br>' +
+      'Mục: ' + thoat(a.muc) + '<br>' +
+      'Thật: <b>' + kt + '</b> · Khai: ' + khai +
+      (lech ? ' <span class="nhan do">khai sai</span>' : '') +
+      (a.altCu ? '<br>Alt cũ: ' + thoat(a.altCu.slice(0,90)) + (a.altCu.length > 90 ? '…' : '') : '<br><span class="nhan do">chưa có alt</span>');
+    trai.appendChild(meta);
+    hang.appendChild(trai);
+
+    var phai = document.createElement('div');
+    var chon = document.createElement('div');
+    chon.innerHTML = '<label style="display:block;font-size:11.5px;font-weight:700;color:var(--sg-navy);margin-bottom:3px">Key gán cho ảnh này</label>';
+    var sel = document.createElement('select');
+    sel.innerHTML = '<option value="">— không gán key —</option>' +
+      G.keys.map(function(k){ return '<option value="' + thoat(k.key) + '">' + thoat(k.key) + (k.chinh ? '  (key chính)' : '') + '</option>'; }).join('');
+    sel.value = a.keyGan;
+    sel.onchange = function(){ a.keyGan = sel.value; veLaiDem(); };
+    chon.appendChild(sel);
+    phai.appendChild(chon);
+
+    var oAlt = veONhap('Alt cho ảnh ' + a.stt, a.altMoi, function(){ return a.keyGan; }, false,
+      function(v){ a.altMoi = v; }, function(){ return goiYChoAnh(a, 0); });
+    phai.appendChild(oAlt); cacO.push(oAlt);
+
+    if(a.chuThichCu !== null){
+      if(a.chuThichMoi === null) a.chuThichMoi = '';
+      var oCt = veONhap('Chú thích (giữ nguyên nếu để trống) — chú thích cũ: "' + a.chuThichCu.slice(0,60) + '"',
+        a.chuThichMoi, function(){ return ''; }, false, function(v){ a.chuThichMoi = v; },
+        function(){ return goiYChoAnh(a, 1); });
+      phai.appendChild(oCt); cacO.push(oCt);
+    }
+
+    hang.appendChild(phai);
+    ds.appendChild(hang);
+  });
+
+  // 4 ô thumb
+  var kt = document.getElementById('khungThumb'); kt.innerHTML = '';
+  var hang = document.createElement('div'); hang.className = 'anh-hang';
+  var trai = document.createElement('div');
+  if(G.thumb.src){
+    var im = document.createElement('img'); im.className = 'anh-hinh';
+    im.referrerPolicy = 'no-referrer'; im.src = G.thumb.src; im.alt = 'Ảnh thumb';
+    trai.appendChild(im);
+  }
+  var meta = document.createElement('div'); meta.className = 'anh-meta';
+  meta.innerHTML = '<b>Ảnh thumb</b><br>' + (G.thumb.src ? thoat(G.thumb.src.split('/').pop()) : '(chưa dán đường dẫn)') +
+    (G.thumb.wThat ? '<br>Thật: <b>' + G.thumb.wThat + ' × ' + G.thumb.hThat + '</b>' : '');
+  trai.appendChild(meta);
+  hang.appendChild(trai);
+
+  var phai = document.createElement('div');
+  phai.innerHTML = '<label style="display:block;font-size:11.5px;font-weight:700;color:var(--sg-navy);margin-bottom:3px">Key gán cho ảnh thumb</label>';
+  var sel = document.createElement('select');
+  sel.innerHTML = '<option value="">— không gán key —</option>' +
+    G.keys.map(function(k){ return '<option value="' + thoat(k.key) + '">' + thoat(k.key) + (k.chinh ? '  (key chính)' : '') + '</option>'; }).join('');
+  sel.value = G.thumb.keyGan || '';
+  sel.onchange = function(){ G.thumb.keyGan = sel.value; veLaiDem(); };
+  phai.appendChild(sel);
+
+  [['alt','Alt Text',false,0],['title','Title',false,1],
+   ['caption','Image Caption',false,3],['desc','Description',true,2]].forEach(function(x){
+    var o = veONhap(x[1], G.thumb[x[0]], function(){ return G.thumb.keyGan || ''; }, x[2],
+      function(v){ G.thumb[x[0]] = v; },
+      function(){ return goiYChoThumb(x[3]); });
+    phai.appendChild(o); cacO.push(o);
+  });
+  hang.appendChild(phai);
+  kt.appendChild(hang);
+
+  veLaiDem();
+}
+
+function thoat(s){
+  return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+/* --- Xuất HTML: chỉ thay alt, không đụng ký tự nào khác ----------------- */
+function taoHtml(){
+  var out = G.htmlGoc, lechViTri = 0;
+  var canhBao = [];
+  G.anh.forEach(function(a){
+    if(!a.altMoi.trim()) return;
+    var theCu = a.the;
+    var theMoi;
+    if(/alt\s*=\s*"/i.test(theCu)){
+      theMoi = theCu.replace(/alt\s*=\s*"[^"]*"/i, 'alt="' + a.altMoi.trim() + '"');
+    }else{
+      theMoi = theCu.replace(/<img\b/i, '<img alt="' + a.altMoi.trim() + '"');
+      canhBao.push('Ảnh ' + a.stt + ' vốn không có thẻ alt — app đã thêm mới.');
+    }
+    var vt = out.indexOf(theCu, Math.max(0, a.viTri + lechViTri - 50));
+    if(vt === -1) vt = out.indexOf(theCu);
+    if(vt === -1){ canhBao.push('Ảnh ' + a.stt + ': không tìm lại được thẻ img, bỏ qua.'); return; }
+    out = out.slice(0, vt) + theMoi + out.slice(vt + theCu.length);
+    lechViTri += theMoi.length - theCu.length;
+  });
+
+  // thay chú thích nếu có nhập
+  G.anh.forEach(function(a){
+    if(a.chuThichMoi === null || !a.chuThichMoi.trim() || !a.chuThichCu) return;
+    var cu = a.chuThichCu;
+    var vt = out.indexOf(cu);
+    if(vt === -1){ canhBao.push('Ảnh ' + a.stt + ': không tìm lại được chú thích cũ, bỏ qua.'); return; }
+    out = out.slice(0, vt) + a.chuThichMoi.trim() + out.slice(vt + cu.length);
+  });
+
+  document.getElementById('htmlRa').value = out;
+  document.getElementById('chungMinh').innerHTML = chungMinh(G.htmlGoc, out, canhBao);
+  return out;
+}
+
+/* --- Chứng minh HTML không bị đụng chạm -------------------------------- */
+function chungMinh(goc, moi, canhBao){
+  var the = ['<img','<h2','<h3','<table','<tr','<td','<ul','<li','<a ','[caption','<p ','<strong','<em','&amp;'];
+  var hang = '', lech = 0;
+  the.forEach(function(t){
+    var d1 = dem(goc, t), d2 = dem(moi, t);
+    if(d1 !== d2) lech++;
+    hang += '<tr><td><code class="k">' + thoat(t) + '</code></td><td>' + d1 + '</td><td>' + d2 + '</td><td>' +
+      (d1 === d2 ? '<span class="nhan xanh">khớp</span>' : '<span class="nhan do">lệch</span>') + '</td></tr>';
+  });
+  // so phần chữ đọc được: bỏ thẻ img rồi bỏ mọi thẻ
+  var chu = function(s){ return s.replace(/<img\b[^>]*>/gi,'').replace(/<[^>]+>/g,''); };
+  var chuGoc = chu(goc), chuMoi = chu(moi);
+  var daDoiChuThich = G.anh.some(function(a){ return a.chuThichMoi && a.chuThichMoi.trim() && a.chuThichCu; });
+  var giongChu = chuGoc === chuMoi;
+
+  var html = '<div class="canhbao ' + (lech === 0 && (giongChu || daDoiChuThich) ? 'xanh' : 'do') + '">' +
+    '<b>Kiểm tra HTML còn nguyên vẹn</b><br>' +
+    (lech === 0 ? 'Mọi thẻ đều khớp số lượng.' : '⚠️ Có ' + lech + ' loại thẻ bị lệch số lượng — xem bảng dưới.') +
+    '<br>' + (giongChu ? 'Phần chữ đọc được giống bản gốc từng ký tự.'
+      : (daDoiChuThich ? 'Phần chữ có thay đổi — đúng như mong đợi vì bạn đã sửa chú thích ảnh.'
+      : '⚠️ Phần chữ đọc được KHÁC bản gốc, dù bạn chưa sửa chú thích. Nên kiểm lại.')) +
+    (canhBao.length ? '<br><br>' + canhBao.map(thoat).join('<br>') : '') + '</div>' +
+    '<table><tr><th>Thẻ</th><th>Bản gốc</th><th>Bản mới</th><th>Kết quả</th></tr>' + hang + '</table>';
+  return html;
+}
+function dem(s, t){ return s.split(t).length - 1; }
+
+/* --- Bảng để copy ------------------------------------------------------ */
+function taoBang(){
+  var h = '<table><tr><th style="width:34px">#</th><th>Tên file</th><th>Alt đề xuất</th><th style="width:60px">Ký tự</th></tr>';
+  var t = 'STT\tTên file\tAlt đề xuất\tKý tự\n';
+  G.anh.forEach(function(a){
+    var n = demKyTu(a.altMoi || '');
+    h += '<tr><td>' + a.stt + '</td><td>' + thoat(a.ten) + '</td><td>' + thoat(a.altMoi) + '</td><td>' + (n || '') + '</td></tr>';
+    t += a.stt + '\t' + a.ten + '\t' + (a.altMoi || '') + '\t' + (n || '') + '\n';
+  });
+  h += '</table>';
+
+  var cct = G.anh.filter(function(a){ return a.chuThichMoi && a.chuThichMoi.trim(); });
+  if(cct.length){
+    h += '<h3 class="muc">Chú thích ảnh</h3><table><tr><th style="width:34px">#</th><th>Tên file</th><th>Chú thích đề xuất</th><th style="width:60px">Ký tự</th></tr>';
+    t += '\nSTT\tTên file\tChú thích đề xuất\tKý tự\n';
+    cct.forEach(function(a){
+      var n = demKyTu(a.chuThichMoi);
+      h += '<tr><td>' + a.stt + '</td><td>' + thoat(a.ten) + '</td><td>' + thoat(a.chuThichMoi) + '</td><td>' + n + '</td></tr>';
+      t += a.stt + '\t' + a.ten + '\t' + a.chuThichMoi + '\t' + n + '\n';
+    });
+    h += '</table>';
+  }
+
+  h += '<h3 class="muc">Bốn ô cho ảnh thumb</h3><table><tr><th style="width:130px">Ô</th><th>Nội dung</th><th style="width:60px">Ký tự</th></tr>';
+  t += '\nÔ\tNội dung\tKý tự\n';
+  [['Alt Text','alt'],['Title','title'],['Image Caption','caption'],['Description','desc']].forEach(function(x){
+    var v = G.thumb[x[1]] || '', n = demKyTu(v);
+    h += '<tr><td><b>' + x[0] + '</b></td><td>' + thoat(v) + '</td><td>' + (n || '') + '</td></tr>';
+    t += x[0] + '\t' + v + '\t' + (n || '') + '\n';
+  });
+  h += '</table>';
+
+  document.getElementById('bangXem').innerHTML = h;
+  document.getElementById('bangText').value = t;
+}
+
+/* --- Vẽ tổng quan ------------------------------------------------------ */
+function veTongQuan(){
+  var nang = G.loiBai.filter(function(l){ return l.muc === 'nang'; });
+  var nhe  = G.loiBai.filter(function(l){ return l.muc === 'nhe'; });
+  var taiDuoc = G.anh.filter(function(a){ return a.taiDuoc; }).length;
+  document.getElementById('tomTat').innerHTML =
+    o(G.anh.length,'ảnh trong bài','') +
+    o(taiDuoc,'ảnh xem được','') +
+    o(G.keys.length,'key cần rải','') +
+    o(nang.length,'lỗi nặng', nang.length ? 'xau' : '') +
+    o(nhe.length,'lỗi nhẹ', nhe.length ? 'canh' : '');
+  function o(so,ten,lop){ return '<div class="o"><div class="so ' + lop + '">' + so + '</div><div class="ten">' + ten + '</div></div>'; }
+
+  var h = '';
+  if(nang.length){
+    h += '<div class="canhbao do"><b>Lỗi nặng — nên sửa trước khi đăng</b><ul style="margin:6px 0 0;padding-left:18px">' +
+      nang.map(function(l){ return '<li>' + thoat(l.chu) + '</li>'; }).join('') + '</ul></div>';
+  }
+  if(nhe.length){
+    h += '<div class="canhbao"><b>Lỗi nhẹ</b><ul style="margin:6px 0 0;padding-left:18px">' +
+      nhe.map(function(l){ return '<li>' + thoat(l.chu) + '</li>'; }).join('') + '</ul></div>';
+  }
+  if(!G.loiBai.length) h = '<div class="canhbao xanh"><b>Không dò ra lỗi kỹ thuật nào trong bài.</b></div>';
+  document.getElementById('loiBai').innerHTML = h;
+}
+
+/* --- Nút bấm ----------------------------------------------------------- */
+document.getElementById('nutQuet').onclick = async function(){
+  var html = document.getElementById('htmlVao').value;
+  if(!html.trim()){ alert('Bạn chưa dán HTML bài viết ở mục 1.'); return; }
+
+  G.htmlGoc = html;
+  G.keys = docKey(document.getElementById('dsKey').value);
+  G.anh = quetAnh(html);
+  if(!G.anh.length){ alert('Không tìm thấy thẻ <img> nào trong HTML bạn dán.'); return; }
+
+  var urlThumb = document.getElementById('urlThumb').value.trim();
+  G.thumb = { src:urlThumb, wThat:null, hThat:null, keyGan:'', alt:'', title:'', caption:'', desc:'' };
+
+  this.textContent = 'Đang tải ảnh về đo…'; this.disabled = true;
+  await Promise.all(G.anh.map(doAnh));
+  if(urlThumb) await doAnh(G.thumb);
+  this.textContent = 'Quét bài'; this.disabled = false;
+
+  // gán key tự động: ảnh trong bài + 1 lượt cho thumb
+  var chia = chiaKey(G.anh.length + 1, G.keys);
+  G.anh.forEach(function(a, i){ a.keyGan = chia[i] || ''; });
+  G.thumb.keyGan = G.keys.length ? G.keys[0].key : '';
+
+  G.loiBai = doLoiBai(html, G.anh, document.getElementById('thuVien').value);
+
+  document.getElementById('buoc1').classList.add('an');
+  document.getElementById('buoc2').classList.remove('an');
+  veTongQuan(); veBangSoan();
+  window.scrollTo({top:0, behavior:'smooth'});
+};
+
+document.getElementById('nutQuayLai').onclick = function(){
+  document.getElementById('buoc2').classList.add('an');
+  document.getElementById('buoc1').classList.remove('an');
+  window.scrollTo({top:0});
+};
+document.getElementById('nutXoa').onclick = function(){
+  ['htmlVao','dsKey','thuVien'].forEach(function(id){ document.getElementById(id).value = ''; });
+  document.getElementById('urlThumb').value = '';
+};
+document.getElementById('nutGoiYCaBai').onclick = function(){
+  var dem = 0;
+  G.anh.forEach(function(a, i){
+    if(!a.altMoi.trim()){ var c = goiYChoAnh(a, i); if(c){ a.altMoi = c; dem++; } }
+  });
+  [['alt',0],['title',1],['desc',2],['caption',3]].forEach(function(x){
+    if(!(G.thumb[x[0]] || '').trim()){ var c = goiYChoThumb(x[1]); if(c){ G.thumb[x[0]] = c; dem++; } }
+  });
+  if(!dem){ alert('Không còn ô nào trống, hoặc bài không đủ chữ để dựng câu nháp.'); return; }
+  veBangSoan();
+  cacO.forEach(function(o){ if(o.oChu && o.oChu.value.trim()) o.laNhap = true; });
+  veLaiDem();
+  alert('Đã dựng ' + dem + ' câu nháp.\n\nĐây CHƯA phải alt dùng được: máy không nhìn được ảnh.\nBạn xem từng ảnh rồi sửa lại phần tả cho khớp.');
+};
+
+document.getElementById('nutTaoHtml').onclick = taoHtml;
+document.getElementById('nutTaoBang').onclick = taoBang;
+
+function copyO(idO, idBao){
+  var t = document.getElementById(idO);
+  t.select(); t.setSelectionRange(0, 999999);
+  try{ document.execCommand('copy'); }catch(e){}
+  if(navigator.clipboard) navigator.clipboard.writeText(t.value).catch(function(){});
+  var b = document.getElementById(idBao);
+  b.textContent = 'Đã copy.'; setTimeout(function(){ b.textContent = ''; }, 2500);
+}
+document.getElementById('nutCopyHtml').onclick = function(){ copyO('htmlRa','baoCopy'); };
+document.getElementById('nutCopyBang').onclick = function(){ copyO('bangText','baoCopy2'); };
+
+document.querySelectorAll('.tab').forEach(function(t){
+  t.onclick = function(){
+    document.querySelectorAll('.tab').forEach(function(x){ x.classList.remove('chon'); });
+    t.classList.add('chon');
+    ['soan','xuat','bang'].forEach(function(k){
+      document.getElementById('tab-' + k).classList.toggle('an', k !== t.dataset.tab);
+    });
+    if(t.dataset.tab === 'xuat') taoHtml();
+    if(t.dataset.tab === 'bang') taoBang();
+  };
+});
+</script>
+</body>
+</html>
