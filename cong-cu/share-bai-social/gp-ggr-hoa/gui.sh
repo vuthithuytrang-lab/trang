@@ -3,13 +3,13 @@
 set -e
 cd "$(dirname "$0")"; G=/home/user/trang/.claude/skills/share-bai-ggr; K=techcombankvn@googlegroups.com; R=$1
 grep -q "\"row\": $R," da-gui.jsonl 2>/dev/null && { echo "row $R da gui"; exit 0; }
-TITLE=$(python3 -c "import json;print([x['title'] for x in json.load(open('lich.json')) if x['row']==$R][0])")
+if [ -f $R.meta.json ]; then TITLE=$(python3 -c "import json;print(json.load(open('$R.meta.json'))['title'])"); IMG=$(python3 -c "import json;print(json.load(open('$R.meta.json')).get('img','$R.jpg'))"); MIME=$(python3 -c "import json;print(json.load(open('$R.meta.json')).get('mime','image/jpeg'))"); else TITLE=$(python3 -c "import json;print([x['title'] for x in json.load(open('lich.json')) if x['row']==$R][0])"); IMG=$R.jpg; MIME=image/jpeg; fi
 A="$G/ggr-accounts.local.json"; T=$(mktemp -d)
 CID=$(node $G/scripts/ggr-json.js get-account-field $A $K client_id); CS=$(node $G/scripts/ggr-json.js get-account-field $A $K client_secret); RT=$(node $G/scripts/ggr-json.js get-account-field $A $K refresh_token)
 bash $G/scripts/ggr-http.sh refresh-token "$CID" "$CS" "$RT" $T/tok.json >/dev/null
 node $G/scripts/ggr-json.js save-refreshed-access-token $A $K $T/tok.json >/dev/null
 AT=$(node $G/scripts/ggr-json.js get-account-field $A $K access_token)
-node $G/scripts/ggr-json.js build-mime-message $R.html "$TITLE" $K $T/payload.json $R.jpg image/jpeg >/dev/null
+node $G/scripts/ggr-json.js build-mime-message $R.html "$TITLE" $K $T/payload.json $IMG $MIME >/dev/null
 bash $G/scripts/ggr-http.sh gmail-send "$AT" $T/payload.json $T/send.json >/dev/null
 MID=$(python3 -c "import json;print(json.load(open('$T/send.json'))['id'])")
 bash $G/scripts/ggr-http.sh gmail-get-message "$AT" "$MID" $T/msg.json >/dev/null
