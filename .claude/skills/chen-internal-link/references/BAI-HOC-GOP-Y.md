@@ -8,6 +8,8 @@
 - Mọi chỗ chèn phải là **câu hoàn chỉnh, nối trực tiếp nội dung đoạn đang nói** (ý trước → vì sao người đọc cần trang đích lúc này), đọc như tác giả viết.
   Ưu tiên: viết lại nhẹ câu có sẵn > thêm 1 câu vào cuối đoạn đúng chủ đề > dòng ">>>" là **một câu đầy đủ** nối ý đoạn ngay trên.
 - Nếu buộc phải có dòng "Xem thêm:" thì **chữ đầu sau "Xem thêm:" viết hoa** (VD ">>> Xem thêm: Giải pháp…") — đây là ngoại lệ duy nhất cho quy tắc anchor nguyên văn hoa/thường.
+- Tránh giọng mời bấm link: "doanh nghiệp có thể xem/tham khảo/tham chiếu bài…", "được giới thiệu trong bài về…". Viết anchor như một phần của ý (chủ ngữ/tân ngữ thật), VD "ACC là nhà cung cấp hương liệu thực phẩm tại Việt Nam có nhóm hương cho ngành sữa".
+- Không gắn link tự trỏ về chính bài (anchor 01 có URL = trang đích của dòng) → bỏ qua, báo người dùng.
 - Mẫu đạt (đang có trên web AIG): ">>> Bên cạnh Glucose Syrup, AIG còn là công ty cung cấp nguyên liệu thực phẩm với danh mục … cho doanh nghiệp đồ uống." — có chủ ngữ, nối ý, nói rõ giá trị.
 
 ## Lỗi số 1 — Chèn vào đoạn đang nói chuyện khác (A, chiếm ~40%)
