@@ -70,6 +70,20 @@ min-height:110px;object-fit:contain;display:block}
 .dem.ok{color:var(--xanh-la)} .dem.loi{color:var(--do)} .dem.cho{color:var(--xam-chu)}
 select{border:1px solid var(--xam-vien);border-radius:7px;padding:5px 8px;font-family:inherit;
 font-size:12.5px;max-width:100%;background:var(--nen-nhap);color:var(--den)}
+.mini{background:var(--nen-the);color:var(--sg-xanh);border:1px solid var(--xam-vien);
+border-radius:7px;padding:6px 12px;font-family:inherit;font-size:12px;font-weight:600;
+cursor:pointer;line-height:1.3;white-space:nowrap}
+.mini:hover{background:var(--xanh-nhat);border-color:var(--sg-xanh)}
+.mini.canh{color:var(--do)}
+.mini.canh:hover{background:var(--do-nen);border-color:var(--do)}
+/* ô thư viện ảnh */
+.tv-o{background:var(--nen-nhap);border:1px solid var(--xam-vien);border-radius:9px;padding:12px 14px}
+.tv-dong{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.tv-so{font-size:26px;font-weight:800;color:var(--sg-xanh);line-height:1;font-variant-numeric:tabular-nums}
+.tv-chu{font-size:12px;color:var(--xam-chu);line-height:1.35}
+.tv-chu b{color:var(--den);font-weight:700}
+.tv-nut{display:flex;gap:7px;margin-left:auto;flex-wrap:wrap}
+@media(max-width:420px){.tv-nut{margin-left:0;width:100%}}
 .loi-list{margin:4px 0 0;padding-left:16px;font-size:11.5px;color:var(--do)}
 .loi-list li{margin:1px 0}
 table{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:8px}
@@ -126,13 +140,16 @@ border-bottom:2px solid var(--sg-mint);padding-bottom:5px}
       <div class="card">
         <h2>4. Thư viện ảnh <span style="font-weight:400;color:var(--xam-chu);font-size:12px">— app tự nhớ</span></h2>
         <p class="hint">Mỗi lần bạn quét một bài, app tự ghi nhớ đường dẫn ảnh của bài đó. Bài sau nó tự đối chiếu và báo nếu xài lại ảnh cũ. Bạn không phải dán gì.</p>
-        <div id="oThuVien" style="background:var(--xam-nen);border-radius:8px;padding:10px 12px;font-size:12.5px">
-          <span id="soThuVien">Đang nhớ 0 ảnh từ 0 bài</span>
-          <div class="hang-nut" style="margin:8px 0 0">
-            <button class="mini" id="nutXemTV">Xem danh sách</button>
-            <button class="mini" id="nutXoaTV">Xoá hết thư viện</button>
+        <div id="oThuVien" class="tv-o">
+          <div class="tv-dong">
+            <div class="tv-so" id="tvSoAnh">0</div>
+            <div class="tv-chu">ảnh đang nhớ<br>từ <b id="tvSoBai">0 bài</b></div>
+            <div class="tv-nut">
+              <button class="mini" id="nutXemTV">Xem danh sách</button>
+              <button class="mini canh" id="nutXoaTV">Xoá hết thư viện</button>
+            </div>
           </div>
-          <textarea id="thuVien" class="low an" style="margin-top:8px" readonly></textarea>
+          <textarea id="thuVien" class="low an" style="margin-top:10px" readonly></textarea>
         </div>
       </div>
     </div>
@@ -270,8 +287,11 @@ function capNhatOThuVien(){
   var url = Object.keys(tv);
   var bai = {};
   url.forEach(function(u){ bai[tv[u]] = 1; });
-  var el = document.getElementById('soThuVien');
-  if(el) el.textContent = 'Đang nhớ ' + url.length + ' ảnh từ ' + Object.keys(bai).length + ' bài';
+  var soBai = Object.keys(bai).length;
+  var e1 = document.getElementById('tvSoAnh');
+  if(e1) e1.textContent = String(url.length);
+  var e2 = document.getElementById('tvSoBai');
+  if(e2) e2.textContent = soBai + ' bài';
   var ta = document.getElementById('thuVien');
   if(ta) ta.value = url.map(function(u){ return tv[u] + '  ←  ' + u; }).join('\n');
 }
