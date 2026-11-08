@@ -104,6 +104,17 @@ Bạn không phải dán gì cả. Quét lại chính bài cũ thì app **không
 
 ---
 
+## Câu lệnh để dán cho AI viết hộ câu
+
+File **`cau-lenh-viet-alt.md`** ở cùng thư mục này chứa hai câu lệnh dán được ngay:
+
+- **Bản đầy đủ** — mở chat mới với Claude/ChatGPT, hoặc giao cho bạn thực tập đọc
+- **Bản rút gọn** — nhắc nhanh khi AI đang viết lệch luật giữa chừng
+
+App này soát luật và đếm ký tự; câu lệnh kia dùng khi cần người/AI **viết hộ câu chữ**.
+
+---
+
 ## Luật lấy từ đâu
 
 Toàn bộ luật trong app lấy từ `cong-cu/cong-cu-viet-alt-anh-chuan-seo.md`.
