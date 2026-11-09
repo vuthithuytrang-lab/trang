@@ -74,10 +74,10 @@
  "_yeu_cau": "tay-1794211465",
  "gia-ca-cao": {
   "ok": true,
-  "luc": "2026-11-07T08:31:35+00:00",
-  "ngay": "08/11/2026",
-  "ten": "Giá ca cao hôm nay: Biến động thị trường và góc nhìn cho nhà đầu tư – 08/11/2026",
-  "can_duyet": "Bảng trong nước, cột \"Thay đổi\" dòng \"Ca cao tươi\": nguồn ghi \"▲ +0 ~ 100\" (7.300 – 8.000 → 7.300 – 8.100), bài ghi \"0 VND/kg\" – không ghi được đúng dạng của bài, giữ nguyên.\nBảng New York: số lấy từ TradingView (cùng hợp đồng ICE; trang ICE và Barchart chặn máy chủ) – là giá khớp gần nhất (11/07/2026 01:21 AM GMT – 11/07/2026 01:22 AM GMT, trễ khoảng 10–15 phút), không phải giá chốt phiên; nếu sàn đang mở phiên thì số còn thay đổi.\nBảng London: số lấy từ TradingView (cùng hợp đồng ICE; trang ICE và Barchart chặn máy chủ) – là giá khớp gần nhất (11/06/2026 09:05 PM GMT, trễ khoảng 10–15 phút), không phải giá chốt phiên; nếu sàn đang mở phiên thì số còn thay đổi.",
+  "luc": "2026-11-09T08:05:30+00:00",
+  "ngay": "10/11/2026",
+  "ten": "Giá ca cao hôm nay: Biến động thị trường và góc nhìn cho nhà đầu tư – 10/11/2026",
+  "can_duyet": "Bảng trong nước, cột \"Thay đổi\" dòng \"Ca cao tươi\": nguồn ghi \"▲ +0 ~ 100\" (7.300 – 8.000 → 7.300 – 8.100), bài ghi \"0 VND/kg\" – không ghi được đúng dạng của bài, giữ nguyên.\nNew York CCZ26: trang ICE chưa có giá khớp cho hợp đồng này (KL 0) – giữ nguyên \"5,181\" / \"-275\".\nNew York CCH27: trang ICE chưa có giá khớp cho hợp đồng này (KL 0) – giữ nguyên \"5,290\" / \"-266\".\nNew York CCK27: trang ICE chưa có giá khớp cho hợp đồng này (KL 0) – giữ nguyên \"6,343\" / \"-259\".\nNew York CCN27: trang ICE chưa có giá khớp cho hợp đồng này (KL 0) – giữ nguyên \"6,380\" / \"-255\".\nNew York CCU27: trang ICE chưa có giá khớp cho hợp đồng này (KL 0) – giữ nguyên \"6,381\" / \"-249\".\nNew York CCZ27: trang ICE chưa có giá khớp cho hợp đồng này (KL 0) – giữ nguyên \"5,337\" / \"-237\".\nNew York CCH28: trang ICE chưa có giá khớp cho hợp đồng này (KL 0) – giữ nguyên \"5,300\" / \"-228\".\nNew York CCK28: trang ICE chưa có giá khớp cho hợp đồng này (KL 0) – giữ nguyên \"5,266\" / \"-221\".\nNew York CCN28: trang ICE chưa có giá khớp cho hợp đồng này (KL 0) – giữ nguyên \"5,238\" / \"-213\".\nNew York CCU28: trang ICE chưa có giá khớp cho hợp đồng này (KL 0) – giữ nguyên \"5,199\" / \"-213\".\nLondon CAZ26: trang ICE chưa có giá khớp cho hợp đồng này (KL 0) – giữ nguyên \"3,889\" / \"-198\".\nLondon CAH27: trang ICE chưa có giá khớp cho hợp đồng này (KL 0) – giữ nguyên \"4,015\" / \"-177\".\nLondon CAK27: trang ICE chưa có giá khớp cho hợp đồng này (KL 0) – giữ nguyên \"4,042\" / \"-172\".\nLondon CAN27: trang ICE chưa có giá khớp cho hợp đồng này",
   "loi": ""
  },
  "gia-ca-phe-dak-lak": {
