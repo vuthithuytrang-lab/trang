@@ -114,9 +114,9 @@
  },
  "gia-dong": {
   "ok": true,
-  "luc": "2026-11-07T08:30:53+00:00",
-  "ngay": "08/11/2026",
-  "ten": "Giá đồng hôm nay trực tuyến & các yếu tố tác động đến thị trường – 08/11/2026",
+  "luc": "2026-11-09T08:04:43+00:00",
+  "ngay": "10/11/2026",
+  "ten": "Giá đồng hôm nay trực tuyến & các yếu tố tác động đến thị trường – 10/11/2026",
   "can_duyet": "Bảng 1.1: dòng thứ 3 bài ghi \"Đồng cháy\" (trùng tên dòng khác), nguồn ở cùng vị trí ghi \"Đồng vàng\" – lấy giá dòng \"Đồng vàng\", giữ nguyên tên trong bài (không đổi tên riêng), nhờ biên tập xem lại tên.\nBảng 1.1: dòng thứ 4 bài ghi \"Đồng cháy\" (trùng tên dòng khác), nguồn ở cùng vị trí ghi \"Đồng dây điện cháy\" – lấy giá dòng \"Đồng dây điện cháy\", giữ nguyên tên trong bài (không đổi tên riêng), nhờ biên tập xem lại tên.\nBảng 1.2: bài ghi \"giá đồng thế giới\" nhưng mã hợp đồng là ALI (NHÔM COMEX, USD/tấn) – đã cập nhật đúng các hợp đồng ALI theo TradingView (giữ nội dung bài); cần Trang/biên tập chốt có đổi sang đồng HG (USD/pound) hay không.\nBảng 1.2: hợp đồng ALIV2026 đã đáo hạn → đã cuộn mã: bảng nay là 10 hợp đồng đầu tiên trên nguồn (ALIX2026 … ALIQ2027).\nCác số trong phần phân tích (thiếu khoảng 25% vào năm 2035; nhu cầu 26.7 triệu tấn năm 2024 → 34.1 triệu tấn năm 2040; năm 2025) không có trong nguồn được chọn nên giữ nguyên.",
   "loi": ""
  },
