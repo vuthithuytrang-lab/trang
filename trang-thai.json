@@ -202,10 +202,10 @@
  },
  "gia-bach-kim": {
   "ok": true,
-  "luc": "2026-11-09T08:04:35+00:00",
-  "ngay": "10/11/2026",
-  "ten": "Giá bạch kim hôm nay: Biến động thị trường và góc nhìn đầu tư – 10/11/2026",
-  "can_duyet": "Bảng giá theo ngày: 5 dòng = 5 phiên mới nhất của hợp đồng bạch kim NYMEX (09/11/2026, 06/11/2026, 05/11/2026, 04/11/2026, 03/11/2026); nguồn không có ngày nghỉ nên ngày có thể không liền nhau. Số của nguồn có thể lệch vài USD so với số bài cũ vì khác nguồn (bài cũ có thể lấy giá giao ngay).\nPhiên mới nhất (09/11/2026) đọc lúc 2026-11-09 07:54 UTC; nếu thị trường còn mở, giá là giá đang giao dịch, chưa phải giá chốt phiên.\nCâu giá: mức thay đổi trong câu là số nguyên làm tròn từ -4.50.",
+  "luc": "2026-11-10T06:54:58+00:00",
+  "ngay": "11/11/2026",
+  "ten": "Giá bạch kim hôm nay: Biến động thị trường và góc nhìn đầu tư – 11/11/2026",
+  "can_duyet": "Bảng giá theo ngày: 5 dòng = 5 phiên mới nhất của hợp đồng bạch kim NYMEX (10/11/2026, 09/11/2026, 06/11/2026, 05/11/2026, 04/11/2026); nguồn không có ngày nghỉ nên ngày có thể không liền nhau. Số của nguồn có thể lệch vài USD so với số bài cũ vì khác nguồn (bài cũ có thể lấy giá giao ngay).\nPhiên mới nhất (10/11/2026) đọc lúc 2026-11-10 06:44 UTC; nếu thị trường còn mở, giá là giá đang giao dịch, chưa phải giá chốt phiên.\nCâu giá: chữ chỉ chiều đổi \"giảm\" → \"tăng\" theo nguồn (+17.50 USD/oz so với phiên trước) – đọc lại câu.\nCâu giá: mức thay đổi trong câu là số nguyên làm tròn từ +17.50.",
   "loi": ""
  },
  "gia-vang-nhan": {
