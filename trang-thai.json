@@ -162,10 +162,10 @@
  },
  "gia-tieu": {
   "ok": true,
-  "luc": "2026-11-09T08:05:53+00:00",
-  "ngay": "10/11/2026",
-  "ten": "Giá tiêu hôm nay mới nhất – 10/11/2026",
-  "can_duyet": "Bảng giá hồ tiêu trong nước – Hồ Tiêu Đồng Nai (đ/kg): đã ghi theo banggianongsan (134,000 → 135,500, +1,500 đ); giatieu.com (Bình Phước, 09/11/2026) cùng Giá mới 135,500 nhưng thay đổi +0 → hai nguồn khác nhau ở Giá cũ / Thay đổi, cần người xem lại.\nBảng giá hồ tiêu trong nước – Hồ Tiêu TP. Hồ Chí Minh (đ/kg): đã ghi theo banggianongsan (134,500 → 136,000, +1,500 đ); giatieu.com (Bà Rịa - Vũng Tàu, 09/11/2026) cùng Giá mới 136,000 nhưng thay đổi +0 → hai nguồn khác nhau ở Giá cũ / Thay đổi, cần người xem lại.\nBảng giá hồ tiêu trong nước – Hồ Tiêu Lâm Đồng (Đắk Nông cũ sáp nhập) (đ/kg): đã ghi theo banggianongsan (135,500 → 136,500, +1,000 đ); giatieu.com (Đắk Nông, 09/11/2026) cùng Giá mới 136,500 nhưng thay đổi +0 → hai nguồn khác nhau ở Giá cũ / Thay đổi, cần người xem lại.\nBảng giá hồ tiêu trong nước – Hồ Tiêu Đắk Lắk (đ/kg): đã ghi theo banggianongsan (136,500 → 138,000, +1,500 đ); giatieu.com (Đắk Lắk, 09/11/2026) cùng Giá mới 138,000 nhưng thay đổi +0 → hai nguồn khác nhau ở Giá cũ / Thay đổi, cần người xem lại.\nGiá hồ tiêu nội địa Ấn Độ – Garbled: ghi theo banggianongsan (71,300); giatieu.com/gia-tieu-truc-tuyen ghi 71,400 (thay đổi 0) – lệch 100 Rupee → cần người chọn nguồn.\nGiá hồ tiêu nội địa Ấn Độ – Gram/lit: ghi theo banggianongsan (68,300); giatieu.com/gia-tieu-truc-tuyen ghi 68,400 (thay đổi 0) – lệch 100 Rupee → cần người chọn nguồn.\nGiá hồ tiêu nội địa Ấn Độ – Ungarbled: ghi theo banggianongsan (69,300); giatieu.com/gia-tieu-truc-tuyen ghi 69,400 (thay đổi 0)",
+  "luc": "2026-11-10T06:55:02+00:00",
+  "ngay": "11/11/2026",
+  "ten": "Giá tiêu hôm nay mới nhất – 11/11/2026",
+  "can_duyet": "Giá hồ tiêu nội địa Ấn Độ – Garbled: ghi theo banggianongsan (71,300); giatieu.com/gia-tieu-truc-tuyen ghi 71,400 (thay đổi 0) – lệch 100 Rupee → cần người chọn nguồn.\nGiá hồ tiêu nội địa Ấn Độ – Gram/lit: ghi theo banggianongsan (68,300); giatieu.com/gia-tieu-truc-tuyen ghi 68,400 (thay đổi 0) – lệch 100 Rupee → cần người chọn nguồn.\nGiá hồ tiêu nội địa Ấn Độ – Ungarbled: ghi theo banggianongsan (69,300); giatieu.com/gia-tieu-truc-tuyen ghi 69,400 (thay đổi 0) – lệch 100 Rupee → cần người chọn nguồn.\ngiatieu.com/gia-tieu-hom-nay ghi ngày 10/11/2026 khác ngày banggianongsan (08:46 09/11/2026) – không đối chiếu được giá trong nước, đã ghi theo banggianongsan.\ngiatieu.com/gia-tieu-truc-tuyen: bảng giá thế giới trống (\"Hệ thống đang bận\") hoặc không đọc được – bảng xuất khẩu chỉ có 1 nguồn (banggianongsan).\nMục 3: \"9 tháng đầu năm 2026, Việt Nam xuất khẩu 215,733 tấn, tăng 15.4% về lượng nhưng giá trị tăng 10.2%, cho thấy giá bình quân cũng ảnh hưởng đến kim ngạch\" – 3 nguồn không có số liệu xuất khẩu này, giữ nguyên.",
   "loi": ""
  },
  "lai-suat-1": {
