@@ -120,7 +120,20 @@ const wixTotal = async (c) => (await http('POST', 'https://www.wixapis.com/blog/
 export const PLATFORMS = {
   wix: {
     async test(c) {
-      const r = await http('POST', 'https://www.wixapis.com/blog/v3/posts/query', { headers: wixH(c), json: { paging: { limit: 1 } } });
+      let r = await http('POST', 'https://www.wixapis.com/blog/v3/posts/query', { headers: wixH(c), json: { paging: { limit: 1 } } });
+      if (r.code === 401 || r.code === 403 || r.code === 404) {
+        // Có thể Site ID chưa đúng → dùng chìa tự lấy danh sách trang của tài khoản (quyền "Lấy danh sách trang web")
+        const acc = c.data.account_id || c.data.member_id;
+        const s = acc ? await http('POST', 'https://www.wixapis.com/site-list/v2/sites/query', { headers: { Authorization: c.data.api_key, 'wix-account-id': acc }, json: { query: { cursorPaging: { limit: 50 } } } }) : { code: 0, data: {} };
+        const sites = s.data?.sites || [];
+        if (s.code === 401 || s.code === 403) throw new Error('Wix từ chối chìa (lỗi ' + r.code + '). Thường do chép thiếu chìa: chìa đầy đủ rất dài và bắt đầu bằng "IST." — tạo chìa mới, bấm Copy ngay khi hiện ra rồi dán lại.');
+        const pick = sites.find((x) => (c.data.url_prefix || '').includes(String(x.viewUrl || '').replace(/^https?:\/\//, '').replace(/\/$/, ''))) || (sites.length === 1 ? sites[0] : null);
+        if (pick && pick.id !== c.data.site_id) {
+          c.data.site_id = pick.id;
+          r = await http('POST', 'https://www.wixapis.com/blog/v3/posts/query', { headers: wixH(c), json: { paging: { limit: 1 } } });
+        }
+        if (r.code !== 200) throw new Error(`Wix lỗi ${r.code}. Chìa thấy ${sites.length} trang: ${sites.map((x) => x.displayName + ' = ' + x.id).join('; ') || '(không đọc được)'}. Kiểm tra chìa đã tích quyền "Wix Blog" và chọn đúng trang, rồi bấm Kiểm tra lại.`);
+      }
       if (r.code !== 200) fail('Wix', r);
       if (!c.data.member_id) {
         const m = await http('POST', 'https://www.wixapis.com/members/v1/members/query', { headers: wixH(c), json: { query: { paging: { limit: 1 } } } });
