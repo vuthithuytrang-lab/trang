@@ -189,6 +189,7 @@ async function boot() {
   if (!TOKEN) return showLogin();
   try { S = await api('state'); } catch (e) { return; }
   $('#nav').classList.remove('hide');
+  if (location.hash.startsWith('#nhanh')) { VIEW = 'ketnoi'; history.replaceState(null, '', '/'); }
   const h = location.hash.match(/ketnoi=([\w]+)/); if (h) { VIEW = 'ketnoi'; history.replaceState(null, '', '/'); const c = S.conns.find((x) => x.id === h[1]); if (c) setTimeout(() => toast((c.ok ? '✅ ' : '⚠️ ') + c.test, 7000), 300); }
   render();
 }
@@ -341,8 +342,39 @@ function wrap(g, t, w) { const out = []; let cur = ''; for (const word of String
 
 // ======================= KẾT NỐI =======================
 function vKetNoi() {
-  $('#app').innerHTML = `<div class="card"><h2>Kết nối nền tảng</h2>
-    <p class="mo">Chọn nền tảng → làm theo từng bước (mỗi bước có nút mở thẳng đúng trang) → dán chìa → Lưu & kiểm tra. Chìa được cất kín trên máy chủ, không hiện lại trên trang.</p>
+  const A = S.apps || {}, gOK = A.google?.client_id && A.google?.has_secret, wOK = A.wp?.client_id && A.wp?.has_secret;
+  $('#app').innerHTML = `${S.quick ? `<div class="card" style="border:2px solid var(--mint)"><h3>Kết quả đăng nhập</h3>${S.quick.out.map((x) => `<div>${/Lỗi|chưa|không/i.test(x) ? '⚠️' : '✅'} ${esc(x)}</div>`).join('')}<p><button class="b phu nho" onclick="api('quick/clear',{}).then(reload)">Đóng</button></p></div>` : ''}
+  <div class="card" style="border:2px solid var(--xanh)"><h2>⚡ Kết nối nhanh</h2>
+    <p class="mo">Đăng nhập 1 lần → dán link tài khoản → app tự kết nối. Mật khẩu của bạn chỉ gõ trên trang của Google/WordPress, app không bao giờ thấy.</p>
+    <div class="row" style="align-items:flex-start">
+      <div style="flex:1 1 300px"><h3>1. Đăng nhập</h3>
+        <p><button class="b" ${gOK ? '' : 'disabled'} onclick="location='/api/quick/start?kind=google&t='+encodeURIComponent(TOKEN)">🔵 Đăng nhập Google</button>
+        <span class="mo">→ tự nhận mọi blog <b>Blogger</b>, dùng được cho <b>Google Groups</b> và ghi <b>Google Sheet</b></span></p>
+        ${(S.gaccounts || []).length ? `<p class="ok">Gmail đã đăng nhập: ${S.gaccounts.map(esc).join(', ')}</p>` : ''}
+        <p><button class="b" ${wOK ? '' : 'disabled'} onclick="location='/api/quick/start?kind=wp&t='+encodeURIComponent(TOKEN)">🔵 Đăng nhập WordPress.com</button>
+        <span class="mo">→ chọn blog, app tự kết nối</span></p>
+        ${!gOK || !wOK ? `<p class="err" style="font-size:13px">Nút mờ = chưa làm phần "Cài đặt 1 lần" bên dưới.</p>` : ''}</div>
+      <div style="flex:1 1 360px"><h3>2. Dán link tài khoản social</h3>
+        <textarea id="qurls" style="min-height:90px" placeholder="Mỗi dòng 1 link, vd:&#10;https://groups.google.com/g/techcombank-viet-nam&#10;https://trangjena3.wixsite.com/techcombankvietnam&#10;https://tenblog.blogspot.com"></textarea>
+        ${(S.gaccounts || []).length > 1 ? `<label>Gmail dùng cho Google Groups</label><select id="qmail">${S.gaccounts.map((e) => `<option>${esc(e)}</option>`).join('')}</select>` : ''}
+        <p><button class="b" onclick="quickUrls(this)">Kết nối các link này</button></p><div id="qout"></div></div>
+    </div>
+    <details ${gOK && wOK ? '' : 'open'} style="margin-top:8px"><summary style="cursor:pointer;font-weight:700">Cài đặt 1 lần (chỉ làm lần đầu) ${gOK ? '· Google ✅' : '· Google chưa'} ${wOK ? '· WordPress ✅' : '· WordPress chưa'}</summary>
+      <div class="row" style="align-items:flex-start;margin-top:8px">
+        <div style="flex:1 1 360px" class="card"><h3>Google (cho Blogger + Google Groups + Sheet)</h3>
+          <label>Mã dự án Google Cloud (để các nút mở thẳng dự án — vd share-bai-blogger)</label><input id="gproj" oninput="drawGsteps()" placeholder="vd: share-bai-blogger">
+          <ol class="steps" id="gsteps"></ol>
+          <div class="row"><div><label>Client ID</label><input id="g_cid" value="${esc(A.google?.client_id || '')}" placeholder="vd: ….apps.googleusercontent.com"></div><div><label>Client Secret</label><input id="g_sec" type="password" placeholder="${A.google?.has_secret ? '•••••• (đã lưu)' : ''}"></div></div>
+          <p><button class="b nho" onclick="saveApp('google')">💾 Lưu chìa Google</button></p></div>
+        <div style="flex:1 1 360px" class="card"><h3>WordPress.com</h3>
+          <ol class="steps"><li>Bấm nút → đăng nhập WordPress → điền <b>Name</b> = app share bai, <b>Website URL</b> và <b>Redirect URLs</b> = 2 địa chỉ dưới (bấm Chép), <b>Type</b> = Web → tích ô đồng ý → <b>Create</b>.<div><a class="go" target="_blank" href="https://developer.wordpress.com/apps/new/">Tạo app WordPress</a></div><div class="mo">Website URL:</div>${copyBox(S.origin)}<div class="mo">Redirect URLs:</div>${copyBox(S.redirect)}</li>
+          <li>Trang hiện <b>Client ID</b> và <b>Client Secret</b> → dán vào 2 ô dưới → Lưu.</li></ol>
+          <div class="row"><div><label>Client ID</label><input id="w_cid" value="${esc(A.wp?.client_id || '')}"></div><div><label>Client Secret</label><input id="w_sec" type="password" placeholder="${A.wp?.has_secret ? '•••••• (đã lưu)' : ''}"></div></div>
+          <p><button class="b nho" onclick="saveApp('wp')">💾 Lưu chìa WordPress</button></p></div>
+      </div></details>
+  </div>
+  <div class="card"><h2>Kết nối thủ công (nâng cao)</h2>
+    <p class="mo">Dùng cho Wix, Webflow, Tumblr, Mastodon, Telegram (các nền tảng này không có đăng nhập chung) hoặc khi muốn tự điền.</p>
     <div class="plat">${Object.entries(P).map(([k, p]) => `<button onclick="formConn('${k}')">+ ${p.ten}</button>`).join('')}</div></div>
     <div id="form"></div>
     ${S.conns.map((c) => `<div class="card"><div class="conn-head"><div><h3 style="margin:0">${esc(c.name)}</h3><span class="mo">${P[c.type]?.ten}</span></div>
@@ -354,11 +386,36 @@ function vKetNoi() {
         <button class="b do nho" onclick="delConn('${c.id}')">Xóa</button></div></div>
       <p class="${c.ok ? 'ok' : 'err'}" style="margin:8px 0 0">${c.paused ? '⏸ ' + esc(c.pause_reason || 'Đang tạm dừng') + ' · ' : ''}${esc(c.test || 'Chưa kiểm tra')}</p>
       ${c.data.blogs?.length > 1 ? `<p class="mo">Blog đang dùng: ${esc((c.data.blogs.find((b) => b.id === c.data.blog_id) || {}).name || c.data.blog_id)} — muốn đổi, bấm Sửa và điền Blog ID: ${c.data.blogs.map((b) => esc(b.name) + ' = ' + b.id).join(' · ')}</p>` : ''}</div>`).join('')}`;
+  if ($('#gsteps')) drawGsteps();
 }
-function formConn(type, cid) {
+
+function drawGsteps() {
+  const pj = ($('#gproj')?.value || '').trim(), q = pj ? '?project=' + encodeURIComponent(pj) : '';
+  const L = (n, u) => `<a class="go" target="_blank" href="${u}${q}">${n}</a>`;
+  $('#gsteps').innerHTML = `<li>Mở danh sách dự án (đăng nhập Gmail sở hữu dự án) → chép cột <b>ID</b> của dự án vào ô trên. Chưa có thì tạo mới.<div><a class="go" target="_blank" href="https://console.cloud.google.com/cloud-resource-manager">Danh sách dự án</a><a class="go" target="_blank" href="https://console.cloud.google.com/projectcreate">Tạo dự án</a></div></li>
+    <li>Bật 3 dịch vụ (mỗi nút bấm <b>Enable</b>; thấy "Manage" là đã bật):<div>${L('Bật Blogger', 'https://console.cloud.google.com/apis/library/blogger.googleapis.com')}${L('Bật Gmail', 'https://console.cloud.google.com/apis/library/gmail.googleapis.com')}${L('Bật Google Sheets', 'https://console.cloud.google.com/apis/library/sheets.googleapis.com')}</div></li>
+    <li>Bấm nút → <b>Publish app</b> (để đăng nhập không hết hạn sau 7 ngày).<div>${L('Mở Audience', 'https://console.cloud.google.com/auth/audience')}</div></li>
+    <li>Bấm nút → <b>Application type: Web application</b> → mục <b>Authorized redirect URIs</b> bấm <b>+ Add URI</b> → dán địa chỉ dưới → <b>Create</b> → chép Client ID, Client Secret vào 2 ô dưới.<div>${L('Tạo chìa Web', 'https://console.cloud.google.com/auth/clients/create')}</div>${copyBox(S.redirect)}</li>`;
+}
+async function saveApp(kind) {
+  const k = kind === 'google' ? 'g' : 'w';
+  try { await api('apps', { kind, client_id: $('#' + k + '_cid').value, client_secret: $('#' + k + '_sec').value }); toast('Đã lưu. Giờ bấm nút Đăng nhập ở trên.'); await reload(); } catch (e) { toast(e.message); }
+}
+async function quickUrls(btn) {
+  const urls = $('#qurls').value.split('\n').map((x) => x.trim()).filter(Boolean); if (!urls.length) return;
+  btn.disabled = true; btn.textContent = 'Đang kết nối…';
+  try {
+    const d = await api('quick/url', { urls, email: $('#qmail')?.value });
+    window._qo = d.out;
+    const box = d.out.map((r, i) => `<div style="margin:6px 0">${r.ok ? '✅' : '⚠️'} <b>${esc(r.url)}</b><br><span class="mo">${esc(r.msg)}</span>${r.form ? ` <button class="b nho" onclick="formConn('${r.form}',null,window._qo[${i}].prefill)">Mở form</button>` : ''}</div>`).join('');
+    S = await api('state'); render(); $('#qout').innerHTML = box; $('#qurls').value = urls.join('\n');
+  } catch (e) { toast(e.message); }
+  btn.disabled = false; btn.textContent = 'Kết nối các link này';
+}
+function formConn(type, cid, prefill) {
   const p = P[type], c = cid ? S.conns.find((x) => x.id === cid) : null;
   const sub = (k) => k === 'R' ? `<div class="mo" style="margin-top:6px">Địa chỉ trả về (Redirect URL):</div>${copyBox(S.redirect)}` : `<div class="mo" style="margin-top:6px">Địa chỉ app (Website URL):</div>${copyBox(S.origin)}`;
-  const field = ([k, l, ph, sec]) => `<div><label>${l}</label><input data-k="${k}" ${sec ? 'type="password" autocomplete="off"' : ''} placeholder="${esc(sec && c ? '•••••• (để trống = giữ chìa cũ)' : ph ? 'vd: ' + ph : '')}" value="${esc(k === 'name' ? (c?.name || '') : sec ? '' : (c?.data[k] || ''))}"></div>`;
+  const field = ([k, l, ph, sec]) => `<div><label>${l}</label><input data-k="${k}" ${sec ? 'type="password" autocomplete="off"' : ''} placeholder="${esc(sec && c ? '•••••• (để trống = giữ chìa cũ)' : ph ? 'vd: ' + ph : '')}" value="${esc(k === 'name' ? (c?.name || '') : sec ? '' : (c?.data[k] || prefill?.[k] || ''))}"></div>`;
   const top = p.o.filter((f) => (p.top || []).includes(f[0])), rest = p.o.filter((f) => !(p.top || []).includes(f[0]));
   $('#form').innerHTML = `<div class="card" style="border:2px solid var(--xanh)"><h2>${c ? 'Sửa' : 'Kết nối'} ${p.ten}</h2>
     <div style="background:var(--xam);border-radius:10px;padding:10px 12px"><b>① Thông tin trang của bạn</b> <span class="mo">— điền trước, các nút ở bước dưới sẽ mở thẳng đúng trang của bạn</span><div class="row">${top.map(field).join('')}</div></div>

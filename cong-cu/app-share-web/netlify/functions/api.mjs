@@ -3,6 +3,7 @@ import crypto from 'node:crypto';
 import { db, getJSON, setJSON, settings, conns, saveConns, listItems, getItem, saveItem, delItem, log, id } from './lib/store.mjs';
 import { PLATFORMS, OAUTH } from './lib/platforms.mjs';
 import { runOnce } from './lib/runner.mjs';
+import { apps, saveApps, quickStart, quickCallback, addByUrl } from './lib/quick.mjs';
 
 const SECRET = new Set(['api_key', 'client_secret', 'access_token', 'refresh_token', 'token', 'bot_token']);
 const json = (d, s = 200) => new Response(JSON.stringify(d), { status: s, headers: { 'Content-Type': 'application/json' } });
@@ -38,6 +39,12 @@ export default async (req) => {
       if (!a || hash(body.password || '', a.salt) !== a.hash) return json({ error: 'Sai mật khẩu' }, 401);
       return json({ token: sign(a.secret, Date.now() + 30 * 864e5) });
     }
+    if (path === 'oauth/cb' && String(url.searchParams.get('state') || '').startsWith('q.')) {
+      if (url.searchParams.get('error')) return Response.redirect(origin + '/#nhanh=huy', 302);
+      try { await quickCallback(url.searchParams.get('state'), url.searchParams.get('code'), origin); }
+      catch (e) { await setJSON('quick_result', { t: Date.now(), out: ['Lỗi: ' + e.message] }); }
+      return Response.redirect(origin + '/#nhanh', 302);
+    }
     if (path === 'oauth/cb') {
       const [cid, nonce] = String(url.searchParams.get('state') || '').split('.');
       const C = await conns(), c = C[cid];
@@ -54,8 +61,19 @@ export default async (req) => {
 
     if (path === 'state') {
       const C = await conns();
-      return json({ settings: await settings(), conns: Object.values(C).map(mask), items: await listItems(), log: (await getJSON('log', [])).slice(0, 150), redirect: origin + '/api/oauth/cb', origin });
+      const A = await apps(), G = await getJSON('gacc', {});
+      const appsMask = Object.fromEntries(Object.entries(A).map(([k, v]) => [k, { client_id: v.client_id, has_secret: !!v.client_secret }]));
+      return json({ apps: appsMask, gaccounts: Object.keys(G), quick: await getJSON('quick_result', null), settings: await settings(), conns: Object.values(C).map(mask), items: await listItems(), log: (await getJSON('log', [])).slice(0, 150), redirect: origin + '/api/oauth/cb', origin });
     }
+    if (path === 'quick/start') return Response.redirect(await quickStart(url.searchParams.get('kind'), origin), 302);
+    if (path === 'apps') {
+      const A = await apps(), k = body.kind; A[k] = { ...(A[k] || {}) };
+      if (body.client_id) A[k].client_id = String(body.client_id).trim();
+      if (body.client_secret && body.client_secret !== '••••••') A[k].client_secret = String(body.client_secret).trim();
+      await saveApps(A); return json({ ok: true });
+    }
+    if (path === 'quick/url') { const out = []; for (const u of body.urls || []) { const r = await addByUrl(u, body.email); if (r) out.push(r); } return json({ out }); }
+    if (path === 'quick/clear') { await setJSON('quick_result', null); return json({ ok: true }); }
     if (path === 'oauth/start') {
       const C = await conns(), c = C[url.searchParams.get('id')];
       if (!c || !OAUTH[c.type]) return json({ error: 'Không có kết nối' }, 404);
