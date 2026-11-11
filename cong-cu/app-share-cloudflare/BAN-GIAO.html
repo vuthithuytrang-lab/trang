@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bàn giao: Kỹ thuật phụ trên Cloudflare</title>
+<style>body{font-family:Montserrat,Arial,sans-serif;max-width:860px;margin:24px auto;padding:0 16px;line-height:1.6;color:#151515;background:#fff}h1{color:#002992}h2{color:#004AEF;font-size:20px;margin-top:26px}code{background:#F3F3F6;padding:1px 5px;border-radius:4px}button{background:#004AEF;color:#fff;border:0;border-radius:8px;padding:9px 16px;font-weight:700;cursor:pointer}</style></head>
+<body><div id="doc">
+<h1>Bàn giao: Kỹ thuật phụ trên Cloudflare (có App share bài) — phiên bản 2026-11-11b</h1>
+
+<h2>1. Cách dùng tài liệu</h2>
+<p>Đọc hết trước khi sửa. Repo công khai: không ghi email, chìa, link sheet khách vào code hay tài liệu.</p>
+
+<h2>2. Người dùng</h2>
+<p>Vũ Thị Thùy Trang (gọi "bạn xinh đẹp"), Marketing/SEO ở SEONGON, Nontech. Nói lời thường, tự làm hết kỹ thuật, mỗi lần nhờ chỉ 1 bước. Đọc <code>CLAUDE.md</code> gốc repo.</p>
+
+<h2>3. Sản phẩm ở đâu</h2>
+<ul>
+<li>Link: <code>https://ky-thuat-phu.trangvtt.workers.dev</code> (trang chủ = Kỹ thuật phụ; <code>/share/</code> = App share bài; <code>/inlink/</code>; <code>/alt/</code>).</li>
+<li>Code: nhánh <code>claude/relaxed-turing-t34z57</code>, thư mục <code>cong-cu/app-share-cloudflare/</code>.</li>
+<li>Cloudflare Worker <code>ky-thuat-phu</code>, Workers Builds nối thẳng repo (root <code>cong-cu/app-share-cloudflare</code>, production branch <code>claude/relaxed-turing-t34z57</code>). Đẩy code lên nhánh là tự đăng lại — không cần token.</li>
+<li>Kỹ thuật phụ trên GitHub Pages (<code>gh-pages</code>) có thẻ "App share bài" trỏ sang link trên.</li>
+</ul>
+
+<h2>4. Quyết định đã chốt — đừng làm ngược</h2>
+<ol>
+<li>Không token: Trang không tạo/chép/dán token. Đưa app lên bằng Workers Builds.</li>
+<li>Gói Free Cloudflare, không nhập thẻ. KV gói Free: 1.000 lần ghi/ngày → tránh ghi thừa.</li>
+<li>Tên app <code>ky-thuat-phu</code> (một app chung chứa nhiều tính năng con).</li>
+<li>Đăng nhập: tài khoản riêng email + mật khẩu; người đầu tiên là quản trị; người sau chờ duyệt (tab Thành viên).</li>
+<li>Không nhận mật khẩu email/social của Trang; kết nối bằng "Cho phép" (OAuth) hoặc chìa của chính nền tảng.</li>
+<li>Luật an toàn đăng: 7h–23h, ≥ 2 tiếng/bài/tài khoản, tối đa 6 bài/ngày (sửa được trong Cài đặt), trang 410/404/451 tự dừng.</li>
+<li>Hạng mục Internal link trong Kỹ thuật phụ chỉ 2 thẻ: "Luồng inlink" và "Lập kế hoạch internal link".</li>
+<li>Tab "Hàng đợi" gọi là "Bài đợi".</li>
+</ol>
+
+<h2>5. Tính năng hiện có</h2>
+<ul>
+<li>App share bài: Báo cáo, Bài đợi, Thêm bài (1 bài / hàng loạt, tự vẽ ảnh đại diện), Kết nối (Kết nối nhanh + 8 nền tảng thủ công), Cài đặt, Nhật ký, Thành viên.</li>
+<li>Lịch Cron <code>*/10 * * * *</code>: mỗi người dùng đã duyệt, mỗi tài khoản tối đa 1 bài/lượt.</li>
+<li>Kết nối nhanh: quản trị khai 1 lần chìa ứng dụng Google + WordPress (Cài đặt 1 lần), sau đó ai cũng chỉ bấm "Đăng nhập Google/WordPress" → Cho phép; dán link nhóm/blog để tự kết nối.</li>
+<li>Kỹ thuật phụ, Luồng inlink, Soát alt: chép nguyên từ gh-pages (trang tĩnh).</li>
+</ul>
+
+<h2>6. Cấu trúc dữ liệu (Workers KV, binding KV)</h2>
+<ul>
+<li><code>sys:users</code> {email: {uid, name, salt, hash(PBKDF2), role, approved}} · <code>sys:secret</code> · <code>sys:apps</code> {google, wp: {client_id, client_secret}}.</li>
+<li><code>u:&lt;uid&gt;:conns</code>, <code>:settings</code>, <code>:items</code> (1 tài liệu chứa mọi bài + việc đăng), <code>:log</code>, <code>:gacc</code>, <code>:oauth_nonce</code>, <code>:quick_result</code>.</li>
+<li><code>img:&lt;mã&gt;</code> ảnh đại diện (công khai qua <code>/api/img/&lt;mã&gt;.png</code>).</li>
+</ul>
+
+<h2>7. Quy trình sửa và đưa lên</h2>
+<ol>
+<li>Sửa trong <code>cong-cu/app-share-cloudflare/</code>, tăng số phiên bản (worker.js + public/share/index.html).</li>
+<li>Chạy thử: <code>npm install && npx wrangler dev --test-scheduled</code>, kích lịch: <code>/cdn-cgi/handler/scheduled</code>.</li>
+<li>Soát rò rỉ: tìm email, chìa (IST., GOCSPX, ya29.), ID sheet khách → phải bằng 0.</li>
+<li>Commit + push nhánh → Cloudflare tự build (xem check "Workers Builds" trên commit GitHub).</li>
+</ol>
+
+<h2>8. Bẫy đã gặp</h2>
+<ul>
+<li>Netlify gói Free hết điểm sau ~15 lần đăng → chặn cập nhật (lý do chuyển sang Cloudflare).</li>
+<li>Không <code>export</code> gì ngoài <code>default</code> trong worker.js (workerd báo lỗi).</li>
+<li>wrangler ≥ 4.15x mới cho KV không cần id (tự tạo). Đường kích lịch khi chạy thử là <code>/cdn-cgi/handler/scheduled</code>.</li>
+<li><code>onkeydown = e =&gt; cond &amp;&amp; f()</code> trả false → chặn gõ phím. Luôn viết dạng khối <code>{ if (...) f(); }</code>.</li>
+<li>Wix 403: cần quyền "Wix Blog" + "Quản lý phương tiện" và chép đủ chìa (bắt đầu IST.).</li>
+<li>Phiên Claude ngủ thì vòng đăng chạy nền trong container chết — vì vậy việc đăng phải nằm trên Cron của Cloudflare.</li>
+</ul>
+
+<h2>9. Việc còn dở</h2>
+<ul>
+<li>Trang chưa tạo tài khoản quản trị trên app mới; chưa khai "Cài đặt 1 lần" (chìa ứng dụng Google/WordPress).</li>
+<li>Kết nối Wix trên bản Netlify cũ còn lỗi 403 — làm lại trên app mới.</li>
+<li>Chưa thử đăng thật 1 bài qua app mới (cần ít nhất 1 kết nối thật).</li>
+<li>Luồng inlink: các chặng chạy thẳng trên máy chủ (Google OAuth + cron) chưa làm; hiện vẫn là "Copy câu lệnh" cho Claude.</li>
+<li>Bản Netlify cũ (app-share-bai-trang.netlify.app) có thể xóa khi app mới chạy ổn.</li>
+</ul>
+
+<h2>10. Lời khuyên cho AI tiếp nhận</h2>
+<p>Hỏi 2–3 câu trắc nghiệm trước khi làm lớn; tự chạy thử + chụp màn hình rồi mới báo; báo thật cái chưa chạy; không bao giờ đề nghị Trang dán chìa/mật khẩu vào chat — dùng ô nhập trong app hoặc nút "Cho phép".</p>
+</div>
+<p><button onclick="navigator.clipboard.writeText(document.getElementById('doc').innerText);this.textContent='Đã chép'">📋 Copy toàn bộ để dán cho AI khác</button></p>
+</body></html>
