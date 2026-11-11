@@ -114,7 +114,7 @@ async function tumblrToken(c, save) {
 }
 // ---------- Wix ----------
 const wixH = (c) => ({ Authorization: c.data.api_key, 'wix-site-id': c.data.site_id });
-const wixTotal = async (c) => (await http('POST', 'https://www.wixapis.com/blog/v3/posts/query', { headers: wixH(c), json: { paging: { limit: 1 } } })).data?.metaData?.total;
+const wixTotal = async (c) => (await http('GET', 'https://www.wixapis.com/blog/v3/posts?paging.limit=1', { headers: wixH(c) })).data?.metaData?.total;
 
 // ================== ĐỊNH NGHĨA NỀN TẢNG ==================
 export const PLATFORMS = {
@@ -132,7 +132,14 @@ export const PLATFORMS = {
           c.data.site_id = pick.id;
           r = await http('POST', 'https://www.wixapis.com/blog/v3/posts/query', { headers: wixH(c), json: { paging: { limit: 1 } } });
         }
-        if (r.code !== 200) throw new Error(`Wix lỗi ${r.code}. Chìa thấy ${sites.length} trang: ${sites.map((x) => x.displayName + ' = ' + x.id).join('; ') || '(không đọc được)'}. Kiểm tra chìa đã tích quyền "Wix Blog" và chọn đúng trang, rồi bấm Kiểm tra lại.`);
+        if (r.code !== 200) {
+          const g = await http('GET', 'https://www.wixapis.com/blog/v3/posts?paging.limit=1', { headers: wixH(c) });
+          const d = await http('POST', 'https://www.wixapis.com/blog/v3/draft-posts/query', { headers: wixH(c), json: { paging: { limit: 1 } } });
+          const ct = await http('GET', 'https://www.wixapis.com/blog/v3/categories?paging.limit=1', { headers: wixH(c) });
+          c.data.diag = `posts.query ${r.code} · posts.list ${g.code} · drafts.query ${d.code} · categories ${ct.code}`;
+          if (g.code === 200 && d.code === 200) { c.data.list_ok = true; return `Kết nối được (đọc bằng danh sách). Trang đang có ${g.data?.metaData?.total ?? '?'} bài.`; }
+        }
+        if (r.code !== 200) throw new Error(`Wix lỗi ${r.code} [${c.data.diag || ''}]. Chìa thấy ${sites.length} trang: ${sites.map((x) => x.displayName + ' = ' + x.id).join('; ') || '(không đọc được)'}. Kiểm tra chìa đã tích quyền "Wix Blog" và chọn đúng trang, rồi bấm Kiểm tra lại.`);
       }
       if (r.code !== 200) fail('Wix', r);
       if (!c.data.member_id) {
