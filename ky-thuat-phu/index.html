@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="vi">
 <head>
-<!-- phien-ban: 202611111711 -->
+<!-- phien-ban: 202611111718 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Kỹ thuật phụ</title>
@@ -61,6 +61,7 @@ body{margin:0;background:var(--nen);color:var(--chu);font:14px/1.55 "Be Vietnam 
 :root[data-theme="dark"] .hanh-dong a,:root[data-theme="dark"] .hanh-dong button{color:#8FB2FF}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .hanh-dong a,:root:not([data-theme="light"]) .hanh-dong button{color:#8FB2FF}}
 .hanh-dong .phu{color:var(--mo);font-weight:600}
+.tinh{display:flex;flex-wrap:wrap;gap:5px;margin-top:2px}.tinh span{font-size:11.5px;border:1px solid var(--vien);border-radius:20px;padding:2px 8px;color:var(--mo)}
 .cau{display:none;background:var(--nen);border-radius:10px;padding:8px 10px;font-size:12.5px}
 .cau.mo{display:block}
 .mo-nhat{opacity:.65}
@@ -127,22 +128,12 @@ var LOAI = {
 };
 var APPS = [
   // ---- Internal link
-  {ten:'Chèn inlink', hang:'inlink', loai:'web', mo:'../inlink/',
-   mo_ta:'Dán bài + danh sách anchor → tự chèn link đúng luật (tối đa 5/bài, né đầu bài, né đoạn luật, không 2 link kề nhau). Xuất HTML sạch, bản duyệt tô vàng dán Google Docs, khối HTML từng đoạn; AI viết câu cho anchor chưa có.'},
+  {ten:'Luồng inlink', hang:'inlink', loai:'web', mo:'../inlink/',
+   tinh:['Tạo Docs từ URL + chèn anchor theo sheet','Gắn inlink vào Doc có sẵn','Sửa theo góp ý người duyệt','Xuất khối HTML dán CMS','Cài tự chạy mỗi giờ trong Sheet','Chèn nhanh 1 bài trên trình duyệt'],
+   mo_ta:'Gộp mọi việc chèn internal link vào 1 chỗ: tích chặng cần làm, app ráp thành 1 câu lệnh chạy trọn luồng đúng thứ tự — hoặc chèn nhanh 1 bài ngay trên trình duyệt (đúng luật 5 link/bài, né đoạn luật, xuất bản duyệt tô vàng + HTML).'},
   {ten:'Lập kế hoạch internal link', hang:'inlink', loai:'claude', cau:'Làm kế hoạch internal link cho dự án <tên dự án> — danh sách trang đích ở <link sheet>',
    nguon:GH + 'claude/hopeful-cray-qhwbns/.claude/skills/ke-hoach-internal-link',
    mo_ta:'Đọc bài trên website, chọn bài nguồn cùng chủ đề, anchor và câu chèn tự nhiên, dựng bộ tab Kế hoạch / Plan inlink / Link trỏ về / Còn thiếu cho mọi dự án.'},
-  {ten:'Chèn inlink vào Google Docs theo sheet', hang:'inlink', loai:'claude', cau:'Chèn inlink theo sheet này: <link sheet>, tab <tên tab>',
-   nguon:GH + 'claude/confident-hopper-wh5wrt/.claude/skills/chen-internal-link',
-   mo_ta:'Tải bài từ URL, tạo file Google Docs, chèn đủ anchor (tô vàng + ghi chú đỏ nội dung gốc), ghi link file vào sheet; sửa theo góp ý người duyệt.'},
-  {ten:'App Inlink trong Google Sheet', hang:'inlink', loai:'sheet', mo:GH + 'claude/confident-hopper-wh5wrt/cong-cu/app-inlink',
-   mo_ta:'Apps Script cài vào sheet kế hoạch: mỗi giờ tự tạo Docs + chèn anchor cho dòng còn trống, quét comment góp ý vào tab "Sổ góp ý". Không cần Claude, không tốn token.'},
-  {ten:'Tạo HTML inlink từ Docs đề xuất', hang:'inlink', loai:'claude', cau:'Tạo HTML chèn inlink cho các bài đã duyệt trong file inlink',
-   nguon:GH + 'claude/exciting-hopper-p4gh27/cong-cu/inlink-html',
-   mo_ta:'Đọc file Docs đã duyệt → ra khối HTML từng đoạn kèm ghi chú THAY / THÊM / KIỂM TRA để dán lên CMS.'},
-  {ten:'Gắn inlink vào Google Doc (bản gọn)', hang:'inlink', loai:'claude', cau:'Gắn inlink vào bài Google Doc này theo sheet kế hoạch',
-   nguon:GH + 'claude/new-session-8hxm31/.claude/skills/inlink-generator',
-   mo_ta:'Đọc anchor + URL từ sheet kế hoạch content, tìm đúng vị trí trong bài Doc (không phải heading) và gắn link.'},
 
   // ---- Onpage & nội dung
   {ten:'Soát & chèn alt ảnh', hang:'onpage', loai:'web', mo:'../alt/',
@@ -231,7 +222,7 @@ var BIEU = {
   'tai-lieu':'<svg viewBox="0 0 24 24"><path d="M6 3h9l3 3v15H6z"/><path d="M9 11h6M9 15h6"/></svg>'
 };
 var $ = function(id){ return document.getElementById(id); };
-$('ban').textContent = (document.documentElement.innerHTML.match(/phien-ban: 202611111711([0-9a-z-]+)/)||[])[1] || '';
+$('ban').textContent = (document.documentElement.innerHTML.match(/phien-ban: 202611111718([0-9a-z-]+)/)||[])[1] || '';
 function luu(k, v){ try{ localStorage.setItem(k, v); }catch(e){} }
 function doc(k){ try{ return localStorage.getItem(k) || ''; }catch(e){ return ''; } }
 function thoat(s){ return (s||'').replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
@@ -267,6 +258,7 @@ function ve(){
         if(a.nguon) nut += '<a class="phu" href="' + a.nguon + '" target="_blank" rel="noopener">Xem nguồn</a>';
         return '<div class="the' + (a.sap ? ' mo-nhat' : '') + '"><div class="tren"><span class="bieu">' + BIEU[a.loai] + '</span><h3>' + thoat(a.ten) +
           '</h3><span class="loai">' + LOAI[a.loai][0] + '</span></div><p>' + thoat(a.mo_ta) + '</p>' +
+          (a.tinh ? '<div class="tinh">' + a.tinh.map(function(t){ return '<span>✓ ' + thoat(t) + '</span>'; }).join('') + '</div>' : '') +
           (a.cau ? '<div class="cau" id="cau-' + id + '">Nói với Claude: <b>“' + thoat(a.cau) + '”</b> <button class="nut-nho" data-chep="' + thoat(a.cau) + '" style="margin-left:6px">Copy</button></div>' : '') +
           '<div class="hanh-dong">' + nut + '</div></div>';
       }).join('') + '</div></section>';
