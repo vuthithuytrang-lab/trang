@@ -184,7 +184,7 @@ async function showLogin() {
     <label>Mật khẩu</label><input id="pw" type="password" autocomplete="current-password">
     <p><button class="b" id="go">${st.setup ? 'Vào app' : 'Tạo mật khẩu & vào app'}</button></p></div>`;
   const go = async () => { try { const d = await api(st.setup ? 'login' : 'setup', { password: $('#pw').value }); TOKEN = d.token; try { localStorage.setItem('tok', TOKEN); } catch {} boot(); } catch (e) { toast(e.message); } };
-  $('#go').onclick = go; $('#pw').onkeydown = (e) => e.key === 'Enter' && go();
+  $('#go').onclick = go; $('#pw').onkeydown = (e) => { if (e.key === 'Enter') go(); };
 }
 async function boot() {
   if (!TOKEN) return showLogin();
