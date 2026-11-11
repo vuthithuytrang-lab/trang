@@ -25,9 +25,14 @@ Cần mạng để **tải ảnh về xem và đo kích thước** — phần so
 4. Dán **đường dẫn ảnh thumb** vào ô 3
 5. Ô 4 **không phải điền gì** — app tự nhớ ảnh của mọi bài bạn đã quét
 6. Bấm **Quét bài** — đợi app tải ảnh về
-7. Nhìn ảnh, viết alt vào từng ô. Đèn bên dưới tự báo đúng/sai luật ngay khi gõ
-8. Sang tab **HTML đã chèn** → bấm Copy → dán thẳng vào CMS
-9. Hoặc sang tab **Bảng để copy** nếu chỉ cần bảng text
+7. Mỗi ảnh hiện sẵn **câu đề xuất** trong khung xanh, và ô bên dưới đã điền sẵn câu đó
+8. Nhìn ảnh:
+   - **Ưng** → bấm **OK — chốt câu này** (hiện nhãn xanh ✓)
+   - **Chưa ưng** → sửa trong ô bên dưới rồi bấm OK. HTML tự khớp lại
+   - Muốn câu khác → bấm **Đề xuất câu khác**; lỡ sửa hỏng → bấm **Dùng câu này**
+9. Sang tab **HTML đã chèn** → bấm Copy → dán thẳng vào CMS.
+   Không bấm OK ô nào cũng copy được, nhưng app sẽ nhắc còn bao nhiêu ô chưa chốt
+10. Hoặc sang tab **Bảng để copy** nếu chỉ cần bảng text
 
 ---
 
@@ -62,13 +67,17 @@ Cần mạng để **tải ảnh về xem và đo kích thước** — phần so
 
 **Tự chia key** cho các ảnh (bạn đổi lại được bằng ô chọn ở từng ảnh).
 
-**Dựng câu nháp** — nút *"Gợi ý câu nháp"* ở từng ô, và nút *"Gợi ý câu nháp cho mọi ô còn trống"*.
+**Đề xuất sẵn câu cho mọi ô** — quét xong là mỗi ảnh đã có một câu trong khung xanh
+*"App đề xuất thay thành…"*, và ô sửa bên dưới điền sẵn câu đó. Ba nút đi kèm:
+*Dùng câu này* (trả lại câu đề xuất), *Đề xuất câu khác* (đổi mẫu câu),
+*OK — chốt câu này* (xác nhận bạn đã nhìn ảnh). Có nút *OK hết — chốt cả bài*.
 
 ⚠️ **Câu nháp KHÔNG phải alt dùng được.** Máy không nhìn hiểu được ảnh nên không tả được ảnh.
 Nó chỉ ghép lại chất liệu đã có sẵn trong bài — chú thích cũ, tên mục, alt cũ — rồi gắn key
 và canh cho dưới 120 ký tự. Bạn **nhìn ảnh rồi sửa lại phần tả** cho khớp với ảnh thật.
 
-Ô nào đang là câu nháp chưa sửa thì có nhãn vàng ⚠ nhắc. Gõ vào một chữ là nhãn tự mất.
+Ô nào còn là câu đề xuất chưa ai chốt thì có nhãn vàng ⚠. Bấm OK thì đổi thành nhãn xanh ✓.
+Tab **HTML đã chèn** đếm và nhắc còn bao nhiêu ô chưa chốt.
 
 Khi dựng, app tự bỏ dấu nguồn `(Nguồn: Internet)`, bỏ số thứ tự mục `2.3.`, bỏ từ cấm,
 và dùng **mẫu câu khác nhau cho từng ô** để bốn ô thumb không ra bốn câu giống hệt.
