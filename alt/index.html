@@ -85,11 +85,14 @@ cursor:pointer;line-height:1.3;white-space:nowrap}
 .tv-nut{display:flex;gap:7px;margin-left:auto;flex-wrap:wrap}
 @media(max-width:420px){.tv-nut{margin-left:0;width:100%}}
 /* ô đề xuất alt */
-.dx{background:var(--xanh-nhat);border:1px dashed var(--sg-xanh);border-radius:8px;padding:9px 11px;margin:5px 0 7px}
-.dx-nhan{font-size:10.5px;font-weight:800;color:var(--sg-xanh);letter-spacing:.4px;text-transform:uppercase;margin-bottom:3px}
+.dx{background:var(--xanh-nhat);border:1px dashed var(--sg-xanh);border-radius:8px;padding:8px 11px;margin:4px 0 6px}
 .dx-cau{font-size:13.5px;line-height:1.5;color:var(--den);font-weight:600}
-.dx-nut{display:flex;gap:6px;flex-wrap:wrap;margin-top:7px;align-items:center}
+.dx-nut{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px;align-items:center}
 .dx-dem{font-size:11px;color:var(--xam-chu);font-variant-numeric:tabular-nums;margin-left:auto}
+.dong-dem .mini.ok{margin-left:auto}
+.ct-mo{background:none;border:0;padding:4px 0;margin-top:6px;font-family:inherit;font-size:11.5px;
+font-weight:700;color:var(--sg-xanh);cursor:pointer;text-align:left}
+.ct-mo:hover{text-decoration:underline}
 .mini.ok{color:#fff;background:var(--sg-xanh);border-color:var(--sg-xanh)}
 .mini.ok:hover{background:var(--sg-xanh-sang);border-color:var(--sg-xanh-sang)}
 .mini.ok.xong{background:var(--xanh-la);border-color:var(--xanh-la);color:var(--chot-chu)}
@@ -187,19 +190,18 @@ border-bottom:2px solid var(--sg-mint);padding-bottom:5px}
   <div id="tab-soan">
     <div class="card">
       <h2>Ảnh trong bài</h2>
-      <p class="hint">Mỗi ảnh đã có sẵn <b>câu đề xuất</b> trong khung xanh. Ô bên dưới cho bạn sửa.</p>
-      <div class="canhbao xanh" style="margin:0 0 10px"><b>Làm thế nào</b><br>
-        1. Nhìn ảnh, đọc câu trong khung xanh <b>"App đề xuất thay thành"</b>.<br>
-        2. <b>Ưng rồi</b> → bấm <b>OK — chốt câu này</b>. <b>Chưa ưng</b> → sửa trong ô bên dưới rồi bấm OK.<br>
-        3. Xong hết thì sang tab <b>HTML đã chèn</b> → bấm <b>Copy</b>. HTML luôn khớp với ô bạn đang gõ,
-        không bấm OK cũng copy được.</div>
+      <p class="hint">Khung xanh = câu app đề xuất. Ô dưới = chỗ bạn sửa. Nút <b>Thay thế</b> = chốt.</p>
+      <div class="canhbao xanh" style="margin:0 0 10px"><b>Ba bước</b><br>
+        1. Nhìn ảnh, đọc câu trong khung xanh.<br>
+        2. Ưng thì bấm <b>Thay thế</b>. Chưa ưng thì sửa ô bên dưới rồi bấm <b>Thay thế</b>.<br>
+        3. Sang tab <b>HTML đã chèn</b> → bấm <b>Copy</b>.</div>
       <div class="canhbao" style="margin:0 0 14px"><b>Câu đề xuất CHƯA phải alt dùng được</b><br>
         Máy <b>không nhìn hiểu được ảnh</b> nên không tả được ảnh. Nó chỉ ghép lại chất liệu
         đã có sẵn trong bài — chú thích cũ, tên mục, alt cũ — rồi gắn key và canh cho dưới 120 ký tự.
         <b>Bạn nhìn ảnh rồi sửa lại phần tả</b> cho khớp với ảnh thật.</div>
       <div class="hang-nut" style="margin:0 0 12px">
-        <button class="btn phu" id="nutGoiYCaBai">Đề xuất lại cho mọi ô chưa chốt</button>
-        <button class="btn phu" id="nutChotHet">OK hết — chốt cả bài</button>
+        <button class="btn phu" id="nutGoiYCaBai">Đề xuất lại cả bài</button>
+        <button class="btn phu" id="nutChotHet">Thay thế hết</button>
         <span id="baoChot" style="font-size:12.5px;font-weight:700;color:var(--xanh-la)"></span>
       </div>
       <div id="dsAnh"></div>
@@ -606,43 +608,27 @@ function moiCau(){
 /* --- Vẽ một ô nhập ----------------------------------------------------- */
 function veONhap(nhan, giaTri, key, laDesc, khiDoi, taoNhap, tuDien){
   var box = document.createElement('div'); box.className = 'o-nhap';
-  var dongNhan = document.createElement('div');
-  dongNhan.style.cssText = 'display:flex;align-items:center;gap:8px;flex-wrap:wrap';
-  var lb = document.createElement('label'); lb.textContent = nhan; lb.style.flex = '1';
-  dongNhan.appendChild(lb);
-  box.appendChild(dongNhan);
+  var lb = document.createElement('label'); lb.textContent = nhan; box.appendChild(lb);
 
   var ta = document.createElement('textarea');
   var kieu = 0, dx = null, dxCau = null, dxDem = null;
-  box.deXuat = '';
-  box.laNhap = false;
-  box.daChot = false;
+  box.deXuat = ''; box.laNhap = false; box.daChot = false;
 
   if(taoNhap){
     box.deXuat = taoNhap(0) || '';
     dx = document.createElement('div'); dx.className = 'dx';
-    var nhan1 = document.createElement('div'); nhan1.className = 'dx-nhan';
-    nhan1.textContent = 'App đề xuất thay thành';
-    dx.appendChild(nhan1);
     dxCau = document.createElement('div'); dxCau.className = 'dx-cau'; dx.appendChild(dxCau);
     var hangDx = document.createElement('div'); hangDx.className = 'dx-nut';
-    var bDung = document.createElement('button'); bDung.className = 'mini';
-    bDung.textContent = 'Dùng câu này';
-    bDung.onclick = function(){
-      if(!box.deXuat) return;
-      ta.value = box.deXuat; box.laNhap = true; box.daChot = false;
-      khiDoi(ta.value); veLaiDem(); dongBoHtml();
-    };
     var bKhac = document.createElement('button'); bKhac.className = 'mini';
-    bKhac.textContent = 'Đề xuất câu khác';
+    bKhac.textContent = 'Đổi câu khác';
     bKhac.onclick = function(){
       var c = taoNhap(++kieu);
-      if(!c){ alert('Bài này không đủ chữ để dựng câu khác cho ô đó.'); return; }
+      if(!c){ alert('Bài này không đủ chữ để dựng câu khác.'); return; }
       box.deXuat = c; veDeXuat();
-      if(box.laNhap || !ta.value.trim()){ ta.value = c; box.laNhap = true; box.daChot = false; khiDoi(c); }
+      ta.value = c; box.laNhap = true; box.daChot = false; khiDoi(c);
       veLaiDem(); dongBoHtml();
     };
-    hangDx.appendChild(bDung); hangDx.appendChild(bKhac);
+    hangDx.appendChild(bKhac);
     dxDem = document.createElement('span'); dxDem.className = 'dx-dem';
     hangDx.appendChild(dxDem);
     dx.appendChild(hangDx);
@@ -663,18 +649,13 @@ function veONhap(nhan, giaTri, key, laDesc, khiDoi, taoNhap, tuDien){
   box.appendChild(ta);
 
   var dong = document.createElement('div'); dong.className = 'dong-dem'; box.appendChild(dong);
-  var ul = document.createElement('ul'); ul.className = 'loi-list'; box.appendChild(ul);
-
-  var hangOk = document.createElement('div'); hangOk.className = 'dong-dem';
   var bOk = document.createElement('button'); bOk.className = 'mini ok';
-  bOk.textContent = 'OK — chốt câu này';
   bOk.onclick = function(){
-    if(!ta.value.trim()){ alert('Ô này đang trống, chưa có gì để chốt.'); return; }
+    if(!ta.value.trim()){ alert('Ô này đang trống, chưa có gì để thay.'); return; }
     box.daChot = true; box.laNhap = false;
     khiDoi(ta.value); veLaiDem(); dongBoHtml();
   };
-  hangOk.appendChild(bOk);
-  box.appendChild(hangOk);
+  var ul = document.createElement('ul'); ul.className = 'loi-list'; box.appendChild(ul);
 
   function ve(){
     var r = kiem(ta.value, key(), laDesc, moiCau());
@@ -688,16 +669,15 @@ function veONhap(nhan, giaTri, key, laDesc, khiDoi, taoNhap, tuDien){
     n.textContent = r.trong ? 'chưa viết' : (r.loi.length ? 'còn ' + r.loi.length + ' lỗi' : 'đạt');
     dong.appendChild(n);
     if(box.daChot && !r.trong){
-      var c = document.createElement('span'); c.className = 'nhan chot';
-      c.textContent = '✓ bạn đã chốt';
+      var c = document.createElement('span'); c.className = 'nhan chot'; c.textContent = '✓ đã thay';
       dong.appendChild(c);
     }else if(box.laNhap && !r.trong){
-      var w = document.createElement('span'); w.className = 'nhan vang';
-      w.textContent = '⚠ câu đề xuất — nhìn ảnh rồi sửa lại';
+      var w = document.createElement('span'); w.className = 'nhan vang'; w.textContent = '⚠ nhìn ảnh rồi sửa';
       dong.appendChild(w);
     }
     bOk.classList.toggle('xong', !!box.daChot);
-    bOk.textContent = box.daChot ? '✓ đã chốt — bấm lại nếu sửa tiếp' : 'OK — chốt câu này';
+    bOk.textContent = box.daChot ? '✓ đã thay' : 'Thay thế';
+    dong.appendChild(bOk);
     ul.innerHTML = '';
     if(!r.trong) r.loi.forEach(function(x){ var li = document.createElement('li'); li.textContent = x; ul.appendChild(li); });
   }
@@ -766,9 +746,17 @@ function veBangSoan(){
 
     if(a.chuThichCu !== null){
       if(a.chuThichMoi === null) a.chuThichMoi = '';
-      var oCt = veONhap('Chú thích (giữ nguyên nếu để trống) — chú thích cũ: "' + a.chuThichCu.slice(0,60) + '"',
+      var oCt = veONhap('Chú thích mới (để trống = giữ nguyên chú thích cũ)',
         a.chuThichMoi, function(){ return ''; }, false, function(v){ a.chuThichMoi = v; },
         function(k){ return goiYChoAnh(a, k + 1); }, false);
+      oCt.classList.add('an');
+      var nutCt = document.createElement('button'); nutCt.className = 'ct-mo';
+      nutCt.textContent = '+ Sửa chú thích ảnh (đang giữ nguyên)';
+      nutCt.onclick = function(){
+        var an = oCt.classList.toggle('an');
+        nutCt.textContent = an ? '+ Sửa chú thích ảnh (đang giữ nguyên)' : '− Đóng chú thích';
+      };
+      phai.appendChild(nutCt);
       phai.appendChild(oCt); cacO.push(oCt);
     }
 
@@ -854,7 +842,7 @@ function taoHtml(){
   var nhacNho = chuaChot
     ? '<div class="canhbao" style="margin:0 0 10px"><b>Còn ' + chuaChot + ' ô đang là câu đề xuất của máy, bạn chưa chốt</b><br>' +
       'Máy không nhìn được ảnh nên những câu đó có thể tả sai. Quay lại tab <b>Soạn alt</b>, ' +
-      'xem từng ảnh rồi bấm <b>OK — chốt câu này</b>. Ô nào đã chốt sẽ có nhãn xanh ✓.</div>'
+      'xem từng ảnh rồi bấm <b>Thay thế</b>. Ô nào xong sẽ có nhãn xanh ✓.</div>'
     : '<div class="canhbao xanh" style="margin:0 0 10px"><b>Mọi ô đều đã được bạn chốt</b><br>' +
       'HTML dưới đây dán thẳng vào CMS được.</div>';
   document.getElementById('chungMinh').innerHTML = nhacNho + chungMinh(G.htmlGoc, out, canhBao);
@@ -1015,7 +1003,7 @@ document.getElementById('nutGoiYCaBai').onclick = function(){
   });
   dongBoTuOChu();
   veLaiDem(); dongBoHtml();
-  alert('Đã dựng lại câu đề xuất.\nNhững ô bạn đã bấm OK thì giữ nguyên.\n\nĐây CHƯA phải alt dùng được: máy không nhìn được ảnh.\nBạn xem từng ảnh rồi sửa lại phần tả, xong bấm OK từng ô.');
+  alert('Đã dựng lại câu đề xuất.\nNhững ô bạn đã bấm Thay thế thì giữ nguyên.\n\nĐây CHƯA phải alt dùng được: máy không nhìn được ảnh.\nBạn xem từng ảnh rồi sửa lại phần tả, xong bấm Thay thế từng ô.');
 };
 /* đẩy giá trị trong các ô nhập ngược về dữ liệu bài */
 function dongBoTuOChu(){
@@ -1031,12 +1019,12 @@ function dongBoTuOChu(){
 document.getElementById('nutChotHet').onclick = function(){
   if(!cacO.length){ alert('Chưa quét bài nào.'); return; }
   var con = demChuaChot();
-  if(!con){ alert('Mọi ô đã chốt rồi.'); return; }
-  if(!confirm('Chốt luôn ' + con + ' ô đang là câu đề xuất của máy?\n\nMáy KHÔNG nhìn được ảnh, nên những câu này có thể tả sai ảnh.\nChỉ bấm Đồng ý nếu bạn đã nhìn qua từng ảnh.')) return;
+  if(!con){ alert('Mọi ô đã thay rồi.'); return; }
+  if(!confirm('Thay luôn ' + con + ' ô đang là câu đề xuất của máy?\n\nMáy KHÔNG nhìn được ảnh, nên những câu này có thể tả sai ảnh.\nChỉ bấm Đồng ý nếu bạn đã nhìn qua từng ảnh.')) return;
   cacO.forEach(function(o){ if(o.oChu && o.oChu.value.trim()){ o.daChot = true; o.laNhap = false; } });
   veLaiDem(); dongBoHtml();
   var b = document.getElementById('baoChot');
-  b.textContent = '✓ đã chốt cả bài';
+  b.textContent = '✓ đã thay cả bài';
   setTimeout(function(){ b.textContent = ''; }, 3000);
 };
 
