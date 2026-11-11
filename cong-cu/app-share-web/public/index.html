@@ -69,7 +69,7 @@ canvas{max-width:100%;border-radius:10px;border:1px solid var(--vien)}
   <img src="/logo.webp" alt="SEONGON">
   <h1>App share bài</h1>
   <nav id="nav" class="hide">
-    <button data-v="baocao">Báo cáo</button><button data-v="hangdoi">Hàng đợi</button><button data-v="them">Thêm bài</button>
+    <button data-v="baocao">Báo cáo</button><button data-v="hangdoi">Bài đợi</button><button data-v="them">Thêm bài</button>
     <button data-v="ketnoi">Kết nối</button><button data-v="caidat">Cài đặt</button><button data-v="nhatky">Nhật ký</button>
   </nav>
 </div></header>
@@ -239,7 +239,7 @@ function exportCSV() {
 // ======================= HÀNG ĐỢI =======================
 function vHangDoi() {
   const items = [...S.items].reverse();
-  $('#app').innerHTML = `<div class="card"><h2>Hàng đợi</h2><p class="mo">Mỗi bài có thể đăng lên nhiều tài khoản. "Tạm giữ" = chưa cho app đăng. Bài lỗi: sửa xong bấm "Thử lại".</p>
+  $('#app').innerHTML = `<div class="card"><h2>Bài đợi</h2><p class="mo">Mỗi bài có thể đăng lên nhiều tài khoản. "Tạm giữ" = chưa cho app đăng. Bài lỗi: sửa xong bấm "Thử lại".</p>
   <div class="scroll"><table><tr><th>Bài</th><th>Đăng lên</th><th></th></tr>
   ${items.map((it) => `<tr><td style="min-width:220px"><b>${esc(it.title)}</b><br><a class="mo" href="${esc(it.source)}" target="_blank">${esc(it.source)}</a></td>
     <td>${(it.jobs || []).map((j) => `<div style="margin-bottom:6px">${tag(j.status)} <b>${esc(connName(j.conn))}</b> · <span class="mo">${j.status === 'da_dang' ? vn(j.when) : 'hẹn ' + vn(j.at)}</span>
@@ -251,7 +251,7 @@ function vHangDoi() {
   </table></div></div>`;
 }
 async function setJob(item, conn, status) { try { await api('job', { item, conn, status }); await reload(); } catch (e) { toast(e.message); } }
-async function delItem(id) { if (!confirm('Xóa bài này khỏi hàng đợi? (Bài đã đăng trên trang vẫn giữ nguyên)')) return; await api('item/delete', { id }); await reload(); }
+async function delItem(id) { if (!confirm('Xóa bài này khỏi danh sách bài đợi? (Bài đã đăng trên trang vẫn giữ nguyên)')) return; await api('item/delete', { id }); await reload(); }
 
 // ======================= THÊM / SỬA BÀI =======================
 function vThem() {
@@ -272,7 +272,7 @@ function vThem() {
      <div><label>Giờ hẹn (để trống = sớm nhất, app tự giãn)</label><input type="datetime-local" class="f_at" data-c="${c.id}" value="${j?.at ? toLocal(j.at) : ''}"></div>
      <div><label>Dòng trong sheet (ghi link về — không bắt buộc)</label><input class="f_row" data-c="${c.id}" value="${esc(j?.sheet_row || '')}" placeholder="vd 584"></div></div>`; }).join('') : '<p class="err">Chưa có kết nối nào. Vào tab Kết nối trước.</p>'}
   <label class="chk"><input type="checkbox" id="f_hold"> Lưu ở trạng thái <b>Tạm giữ</b> (chưa cho đăng)</label>
-  <p><button class="b" id="save">💾 Lưu vào hàng đợi</button> <button class="b phu" onclick="EDIT=null;VIEW='hangdoi';render()">Hủy</button></p></div>
+  <p><button class="b" id="save">💾 Lưu bài</button> <button class="b phu" onclick="EDIT=null;VIEW='hangdoi';render()">Hủy</button></p></div>
   ${it ? '' : `<div class="card"><h2>Thêm nhiều bài một lúc</h2>
   <p class="mo">Dán mỗi bài 1 dòng, các cột cách nhau bằng dấu <b>Tab</b> (chép thẳng từ Google Sheet được):<br>
   <code>Tiêu đề · URL bài gốc · Nội dung HTML hoặc link file .html · Tên kết nối (nhiều thì cách nhau dấu phẩy) · Giờ hẹn (HH:MM dd/mm/yyyy, trống = sớm nhất) · Dòng sheet</code><br>Hoặc dán dữ liệu JSON do Claude xuất ra.</p>
