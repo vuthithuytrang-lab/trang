@@ -1,5 +1,5 @@
-# App share bài — Cloudflare Workers (gói Free). Đưa lên bằng Workers Builds nối thẳng kho GitHub: không cần token.
-name = "share-bai"
+# Kỹ thuật phụ (gồm App share bài, Luồng inlink, …) — Cloudflare Workers (gói Free). Đưa lên bằng Workers Builds nối thẳng kho GitHub: không cần token.
+name = "ky-thuat-phu"
 main = "src/worker.js"
 compatibility_date = "2025-09-01"
 compatibility_flags = ["nodejs_compat"]
@@ -8,7 +8,7 @@ compatibility_flags = ["nodejs_compat"]
 [assets]
 directory = "./public"
 binding = "ASSETS"
-not_found_handling = "single-page-application"
+not_found_handling = "404-page"
 run_worker_first = ["/api/*"]
 
 # Kho dữ liệu (Cloudflare tự tạo khi đăng lần đầu — không cần điền mã)

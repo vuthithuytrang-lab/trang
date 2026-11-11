@@ -55,21 +55,21 @@ async function api(req, env, url, origin) {
     if (st.startsWith('q.')) {
       const uidQ = st.split('.')[2];
       return withCtx(env, uidQ, async () => {
-        if (url.searchParams.get('error')) return Response.redirect(origin + '/#nhanh=huy', 302);
+        if (url.searchParams.get('error')) return Response.redirect(origin + '/share/#nhanh=huy', 302);
         try { await quickCallback(st, url.searchParams.get('code'), origin); } catch (e) { await setJSON('quick_result', { t: Date.now(), out: ['Lỗi: ' + e.message] }); }
-        return Response.redirect(origin + '/#nhanh', 302);
+        return Response.redirect(origin + '/share/#nhanh', 302);
       });
     }
     const [, uidC, cid, nonce] = st.split('.');
     return withCtx(env, uidC, async () => {
       const C = await conns(), c = C[cid];
       if (!c || c.nonce !== nonce) return new Response('Liên kết hết hạn, quay lại app và bấm Kết nối lại.', { status: 400 });
-      if (url.searchParams.get('error')) return Response.redirect(origin + '/#ketnoi=huy', 302);
+      if (url.searchParams.get('error')) return Response.redirect(origin + '/share/#ketnoi=huy', 302);
       await OAUTH[c.type].exchange(c, url.searchParams.get('code'), origin + '/api/oauth/cb');
       delete c.nonce; c.ok = false;
       try { c.test = await PLATFORMS[c.type].test(c, () => saveConns(C)); c.ok = true; } catch (e) { c.test = e.message; }
       await saveConns(C); await log('KẾT NỐI ' + c.name, c.test);
-      return Response.redirect(origin + '/#ketnoi=' + cid, 302);
+      return Response.redirect(origin + '/share/#ketnoi=' + cid, 302);
     });
   }
 

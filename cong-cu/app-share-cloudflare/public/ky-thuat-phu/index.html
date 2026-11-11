@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<!-- phien-ban: 202611111718 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kỹ thuật phụ</title>
+<meta name="description" content="Kho app, tiện ích Chrome và quy trình AI cho công việc SEO hằng ngày — mở một chỗ, dùng mọi công cụ.">
+<meta property="og:title" content="Kỹ thuật phụ – kho app SEO">
+<meta property="og:description" content="Mọi app, tiện ích Chrome và quy trình AI của Trang gom về một chỗ.">
+<meta property="og:image" content="../logo.webp">
+<link rel="icon" href="../logo.webp" type="image/webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap">
+<style>
+:root{
+  --xanh:#004AEF; --xanh-sang:#0D53F0; --navy:#002992; --mint:#07EF9C; --cyan:#0DD1FF;
+  --nen:#F3F3F6; --the:#FFFFFF; --chu:#151515; --mo:#5A6B66; --vien:#E3E5EC; --nhat:#EEF3FF;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --nen:#0F1424; --the:#171D31; --chu:#EEF1F8; --mo:#A5AEC4; --vien:#2C3550; --nhat:#1E2A4C; }
+}
+:root[data-theme="dark"]{ --nen:#0F1424; --the:#171D31; --chu:#EEF1F8; --mo:#A5AEC4; --vien:#2C3550; --nhat:#1E2A4C; }
+*{box-sizing:border-box}
+body{margin:0;background:var(--nen);color:var(--chu);font:14px/1.55 "Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.dau{background:#fff;border-bottom:1px solid #E6E8EF}
+.dau-trong{max-width:1120px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;gap:12px}
+.dau img{height:36px;width:auto}
+.dau .phai{margin-left:auto;display:flex;gap:8px}
+.nut-nho{border:1px solid #D5DAE6;background:#fff;color:#002992;border-radius:9px;padding:7px 12px;font:inherit;font-size:13px;font-weight:600;cursor:pointer}
+.khung{max-width:1120px;margin:0 auto;padding:22px 16px 60px}
+.hero{background:linear-gradient(120deg,var(--xanh) 0%,var(--xanh-sang) 60%,#2E6BFF 100%);color:#fff;border-radius:22px;padding:28px 30px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-80px;top:-60px;width:320px;height:320px;border-radius:50%;border:38px solid rgba(255,255,255,.07)}
+.nhan-hero{display:inline-block;background:rgba(255,255,255,.14);border-radius:20px;padding:4px 12px;font-size:12px;font-weight:600}
+.nhan-hero b{color:var(--mint)}
+.hero h1{margin:12px 0 6px;font-size:34px;font-weight:800;letter-spacing:-.5px}
+.hero h1 b{color:var(--mint)}
+.hero p{margin:0;max-width:640px;opacity:.92}
+.thanh-tim{display:flex;gap:10px;margin:18px 0 6px;flex-wrap:wrap}
+.thanh-tim input{flex:1;min-width:220px;border:1px solid var(--vien);background:var(--the);color:var(--chu);border-radius:12px;padding:11px 14px;font:inherit}
+.loc{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 4px}
+.loc button{border:1px solid var(--vien);background:var(--the);color:var(--chu);border-radius:20px;padding:6px 12px;font:inherit;font-size:12.5px;cursor:pointer}
+.loc button.chon{background:var(--xanh);color:#fff;border-color:var(--xanh)}
+.hang-muc{margin-top:26px}
+.hang-muc h2{font-size:17px;font-weight:800;margin:0 0 12px;display:flex;align-items:center;gap:8px}
+.hang-muc h2 small{font-size:12px;color:var(--mo);font-weight:600}
+.luoi{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media(max-width:760px){.luoi{grid-template-columns:1fr}.hero h1{font-size:28px}.dai{display:none}.dau img{height:30px}}
+.the{background:var(--the);border:1px solid var(--vien);border-radius:16px;padding:18px 20px;display:flex;flex-direction:column;gap:6px}
+.the .tren{display:flex;align-items:center;gap:10px}
+.bieu{width:34px;height:34px;border-radius:50%;background:var(--xanh);display:grid;place-items:center;flex:none}
+.bieu svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.the h3{margin:0;font-size:15.5px;font-weight:700}
+.the p{margin:0;color:var(--mo);font-size:13px}
+.loai{font-size:11px;font-weight:700;border-radius:20px;padding:2px 9px;background:var(--nhat);color:var(--xanh);white-space:nowrap;margin-left:auto}
+:root[data-theme="dark"] .loai{color:#9DBBFF}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .loai{color:#9DBBFF}}
+.hanh-dong{display:flex;gap:14px;flex-wrap:wrap;margin-top:6px;align-items:center}
+.hanh-dong a,.hanh-dong button{color:var(--xanh);font-weight:700;font-size:13px;text-decoration:none;background:none;border:0;padding:0;cursor:pointer;font-family:inherit}
+:root[data-theme="dark"] .hanh-dong a,:root[data-theme="dark"] .hanh-dong button{color:#8FB2FF}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .hanh-dong a,:root:not([data-theme="light"]) .hanh-dong button{color:#8FB2FF}}
+.hanh-dong .phu{color:var(--mo);font-weight:600}
+.tinh{display:flex;flex-wrap:wrap;gap:5px;margin-top:2px}.tinh span{font-size:11.5px;border:1px solid var(--vien);border-radius:20px;padding:2px 8px;color:var(--mo)}
+.cau{display:none;background:var(--nen);border-radius:10px;padding:8px 10px;font-size:12.5px}
+.cau.mo{display:block}
+.mo-nhat{opacity:.65}
+.cai-dat{display:none;background:var(--the);border:1px solid var(--vien);border-radius:16px;padding:16px 18px;margin-top:16px}
+.cai-dat.mo{display:block}
+.cai-dat input{width:100%;border:1px solid var(--vien);background:var(--the);color:var(--chu);border-radius:10px;padding:9px 12px;font:inherit;margin:6px 0}
+.ghi{font-size:12.5px;color:var(--mo)}
+.trong{display:none;text-align:center;color:var(--mo);padding:30px}
+.chan{margin-top:34px;font-size:12.5px;color:var(--mo);text-align:center}
+</style>
+</head>
+<body>
+<div class="dau"><div class="dau-trong">
+  <img src="../logo.webp" alt="SEONGON – AI-First Search Marketing Growth Partner">
+  <div class="phai">
+    <button class="nut-nho" id="nutCaiDat">Khoá AI<span class="dai"> dùng chung</span></button>
+    <button class="nut-nho" id="nutNen" title="Đổi nền sáng / tối">Sáng/Tối</button>
+  </div>
+</div></div>
+
+<div class="khung">
+  <div class="hero">
+    <span class="nhan-hero"><b>AI-First</b> · Search Marketing Growth Partner</span>
+    <h1>KỸ THUẬT <b>PHỤ</b></h1>
+    <p>Mọi app, tiện ích Chrome và quy trình AI cho việc SEO hằng ngày gom về một chỗ. Mở 1 trang, dùng mọi công cụ — khoá AI nhập 1 lần, các app trong kho dùng chung.</p>
+  </div>
+
+  <div class="cai-dat" id="caiDat">
+    <b>Khoá Gemini dùng chung</b>
+    <p class="ghi">Các app có phần AI (vd Chèn inlink) sẽ tự dùng khoá này. Khoá chỉ lưu trong trình duyệt của máy này, không gửi lên kho, không ai khác thấy. Lấy khoá miễn phí tại aistudio.google.com/apikey.</p>
+    <input type="password" id="khoa" placeholder="AIza…">
+    <span class="ghi" id="baoKhoa"></span>
+  </div>
+
+  <div class="thanh-tim"><input type="search" id="tim" placeholder="Tìm công cụ… (vd: inlink, alt, index, share)"></div>
+  <div class="loc" id="loc"></div>
+
+  <div id="danhSach"></div>
+  <p class="trong" id="trong">Không thấy công cụ nào khớp.</p>
+  <p class="chan">Kỹ thuật phụ · bản <span id="ban"></span> · <span id="dem"></span></p>
+</div>
+
+<script>
+/* ============================================================================
+   KỸ THUẬT PHỤ — kho app của Trang.
+   Thêm app mới: thêm 1 dòng vào APPS (ten, hang, loai, mo_ta, mo / tai / cau / nguon).
+   loai: web | chrome | sheet | claude | tai-lieu
+   ========================================================================== */
+var GH = 'https://github.com/vuthithuytrang-lab/trang/tree/';
+var HANG = [
+  ['inlink', 'Internal link'],
+  ['onpage', 'Onpage & nội dung'],
+  ['cap-nhat', 'Cập nhật bài & số liệu'],
+  ['ky-thuat', 'Index, theo dõi & kỹ thuật'],
+  ['social', 'Social & web vệ tinh'],
+  ['quan-ly', 'Quản lý, báo cáo & thương hiệu']
+];
+var LOAI = {
+  'web':      ['Web app', 'Mở công cụ'],
+  'chrome':   ['Tiện ích Chrome', 'Tải về'],
+  'sheet':    ['Chạy trong Google Sheet', 'Xem cách cài'],
+  'claude':   ['Chạy cùng Claude', 'Câu gọi'],
+  'tai-lieu': ['Tài liệu', 'Mở tài liệu']
+};
+var APPS = [
+  // ---- Internal link
+  {ten:'Luồng inlink', hang:'inlink', loai:'web', mo:'../inlink/',
+   tinh:['Tạo Docs từ URL + chèn anchor theo sheet','Gắn inlink vào Doc có sẵn','Sửa theo góp ý người duyệt','Xuất khối HTML dán CMS','Cài tự chạy mỗi giờ trong Sheet','Chèn nhanh 1 bài trên trình duyệt'],
+   mo_ta:'Gộp mọi việc chèn internal link vào 1 chỗ: tích chặng cần làm, app ráp thành 1 câu lệnh chạy trọn luồng đúng thứ tự — hoặc chèn nhanh 1 bài ngay trên trình duyệt (đúng luật 5 link/bài, né đoạn luật, xuất bản duyệt tô vàng + HTML).'},
+  {ten:'Lập kế hoạch internal link', hang:'inlink', loai:'claude', cau:'Làm kế hoạch internal link cho dự án <tên dự án> — danh sách trang đích ở <link sheet>',
+   nguon:GH + 'claude/hopeful-cray-qhwbns/.claude/skills/ke-hoach-internal-link',
+   mo_ta:'Đọc bài trên website, chọn bài nguồn cùng chủ đề, anchor và câu chèn tự nhiên, dựng bộ tab Kế hoạch / Plan inlink / Link trỏ về / Còn thiếu cho mọi dự án.'},
+
+  // ---- Onpage & nội dung
+  {ten:'Soát & chèn alt ảnh', hang:'onpage', loai:'web', mo:'../alt/',
+   mo_ta:'Dán HTML bài → app liệt kê từng ảnh, gợi ý câu alt, bấm OK để chốt, xuất HTML đã có alt. Có thư viện ảnh tự nhớ.'},
+  {ten:'Viết alt ảnh & chú thích ảnh', hang:'onpage', loai:'claude', cau:'Viết alt ảnh cho bài này <dán HTML>',
+   nguon:GH + 'claude/cool-goodall-cpbekl/.claude/skills/viet-alt-anh',
+   mo_ta:'Alt, chú thích ảnh chuẩn SEO + 4 ô cho ảnh đại diện (Alt Text, Title, Caption, Description).'},
+  {ten:'Tối ưu mật độ từ khoá', hang:'onpage', loai:'claude', cau:'Tối ưu mật độ từ khoá theo sheet này: <link sheet>',
+   nguon:GH + 'claude/new-session-sgthhj/.claude/skills/toi-uu-mdtk',
+   mo_ta:'Đọc bài đã đăng, đếm từ khoá đang có, chèn thêm đủ số lần một cách tự nhiên (không sát nhau, không chèn chỗ gượng).'},
+  {ten:'Nghiên cứu & tối ưu content SEO', hang:'onpage', loai:'claude', cau:'Nghiên cứu và tối ưu content SEO cho từ khoá <từ khoá>',
+   nguon:GH + 'claude/serene-noether-tnjmy3/.claude/skills/toi-uu-content-seo',
+   mo_ta:'Một quy trình 10 chặng: nghiên cứu SERP, dàn ý, viết theo luật content, soát trước khi giao.'},
+  {ten:'Luật viết content SEO', hang:'onpage', loai:'tai-lieu', mo:'tai-lieu/luat-viet-content.html',
+   mo_ta:'Bộ luật viết content dùng chung khi viết và soát bài.'},
+  {ten:'Quy trình nghiên cứu content', hang:'onpage', loai:'tai-lieu', mo:'tai-lieu/quy-trinh-nghien-cuu-content.html',
+   mo_ta:'Các bước nghiên cứu trước khi viết: từ khoá, đối thủ, ý định tìm kiếm.'},
+  {ten:'Tối ưu Title & Meta', hang:'onpage', loai:'claude', cau:'Tối ưu title meta cho danh sách URL này',
+   nguon:GH + 'claude/hopeful-cray-qhwbns/cong-cu/cong-cu-toi-uu-title-meta-seo.md',
+   mo_ta:'Đề xuất Title, Meta description chuẩn độ dài, có từ khoá, đúng giọng thương hiệu.'},
+  {ten:'Chèn từ khoá onpage', hang:'onpage', loai:'claude', cau:'Chèn từ khoá onpage cho bài này',
+   nguon:GH + 'claude/hopeful-cray-qhwbns/cong-cu/cong-cu-chen-tu-khoa-onpage.md',
+   mo_ta:'Chèn từ khoá chính/phụ vào bài theo đúng vị trí onpage.'},
+
+  // ---- Cập nhật bài & số liệu
+  {ten:'Cập nhật bài Techcombank', hang:'cap-nhat', loai:'web', mo:'../',
+   mo_ta:'Danh sách bài cần cập nhật giá / lãi suất — bấm chạy là có bản mới, chép hoặc tải Word.'},
+  {ten:'Cập nhật lãi suất', hang:'cap-nhat', loai:'web', mo:'../lai-suat/',
+   mo_ta:'Bảng lãi suất mới nhất tự cập nhật hằng ngày cho bài lãi suất.'},
+  {ten:'Bảng điều khiển cập nhật bài (Sheet)', hang:'cap-nhat', loai:'sheet', mo:GH + 'claude/admiring-dijkstra-cih09v/cong-cu/skill-cap-nhat-bai-tcb',
+   mo_ta:'Google Sheet "Update": chọn bài, bấm nút, máy tự lấy số liệu mới và tạo bản cập nhật.'},
+  {ten:'Tạo Docs "Tối ưu nhanh" từ URL', hang:'cap-nhat', loai:'claude', cau:'Tạo file Docs tối ưu nhanh cho các URL trong sheet',
+   nguon:GH + 'claude/confident-hopper-wh5wrt/cong-cu/tao-docs-tu-url',
+   mo_ta:'Mỗi URL → 1 file Google Docs gồm URL, Title, Meta và toàn bộ bài; link điền ngược vào sheet.'},
+
+  // ---- Index & kỹ thuật
+  {ten:'Ép index Google Search Console', hang:'ky-thuat', loai:'chrome', tai:'tai/ep-index-chrome.zip', tai2:['Bản Windows', 'tai/ep-index-windows.zip'],
+   nguon:GH + 'claude/keen-hamilton-rq9uck/cong-cu/gsc-ep-index',
+   mo_ta:'Tự bấm "Request indexing" trong GSC cho cả danh sách URL, trên mọi property. Cài: giải nén → chrome://extensions → bật Developer mode → Load unpacked.'},
+  {ten:'Theo dõi publish Techcombank', hang:'ky-thuat', loai:'sheet', mo:GH + 'claude/dreamy-darwin-yckgjc/cong-cu/app-check-publish',
+   mo_ta:'Bảng theo dõi ngày publish: mỗi ngày tự kiểm lúc 19:00, ô chưa cập nhật tự tô hồng, báo tin về Lark.'},
+  {ten:'SEO audit dự án', hang:'ky-thuat', loai:'claude', cau:'Audit SEO dự án này từ file check top <link>',
+   nguon:GH + 'claude/new-session-1piav4/.claude/skills/seo-audit',
+   mo_ta:'Phân cụm từ khoá theo SERP, crawl đối thủ, bắt ăn thịt từ khoá bằng Search Console, kiểm lập chỉ mục.'},
+  {ten:'Phân tích traffic GA4 + GSC', hang:'ky-thuat', loai:'claude', cau:'Phân tích traffic tuần này của dự án <tên>',
+   nguon:GH + 'claude/new-session-nyc59u/.claude/skills/seo-analyst',
+   mo_ta:'Brief 5 câu hỏi cốt lõi: tăng giảm, trung bình/ngày, khoảng cách KPI, bất thường, URL nào tụt và vì sao.'},
+  {ten:'Nghiệm thu website', hang:'ky-thuat', loai:'tai-lieu', mo:'tai-lieu/nghiem-thu-website.html',
+   mo_ta:'Bảng kiểm chi tiết giao diện & chức năng trước khi bàn giao website.'},
+  {ten:'Theo dõi click hotline bằng GA4', hang:'ky-thuat', loai:'tai-lieu', mo:'tai-lieu/theo-doi-click-hotline.html',
+   mo_ta:'Hướng dẫn từng bước gắn sự kiện click hotline trong GA4 / GTM.'},
+  {ten:'Quy trình disavow liên kết xấu', hang:'ky-thuat', loai:'tai-lieu', mo:'tai-lieu/quy-trinh-disavow.html',
+   mo_ta:'Lọc backlink độc, lập file disavow, gửi Google đúng cách.'},
+
+  // ---- Social & vệ tinh
+  {ten:'Share bài đa nền tảng', hang:'social', loai:'claude', cau:'Chạy luồng share các bài có nhãn <nhãn> trong sheet <link>',
+   nguon:GH + 'claude/relaxed-turing-t34z57/.claude/skills/chay-luong-share',
+   mo_ta:'Đọc sheet, viết lại bài theo quy tắc, đăng WordPress, Blogger, Wix, Tumblr, Mastodon, Webflow, Google Groups, Pinterest; ghi link về sheet, giãn lịch để không bị khoá.'},
+  {ten:'App share bài', hang:'social', loai:'web', mo:'../share/',
+   nguon:GH + 'claude/relaxed-turing-t34z57/cong-cu/app-share-cloudflare',
+   mo_ta:'Kết nối nhiều nền tảng có hướng dẫn từng bước, xếp bài đợi, tự đăng 10 phút/lần, có báo cáo.'},
+  {ten:'Web vệ tinh WordPress', hang:'social', loai:'chrome', tai:'tai/tien-ich-web-ve-tinh.zip',
+   nguon:GH + 'claude/compassionate-meitner-x3ff2f/cong-cu/tien-ich-web-ve-tinh',
+   mo_ta:'Mở website mẫu, bấm 1 nút → ra mã HTML Trang chủ, Tin tức, Bài viết để dán vào WordPress.com. Logo, màu tự lấy từ trang mẫu.'},
+
+  // ---- Quản lý
+  {ten:'Lịch nội dung tuần', hang:'quan-ly', loai:'claude', cau:'Chạy lịch nội dung tuần này',
+   nguon:GH + 'claude/hopeful-cray-qhwbns/.claude/skills/lich-noi-dung-tuan',
+   mo_ta:'Đọc lịch đăng, bung brief gửi thiết kế, soạn email theo nhóm khách, chờ duyệt rồi mới gửi, xuất bảng cho sếp.'},
+  {ten:'Tổng hợp KLCV & tính lương TTS', hang:'quan-ly', loai:'claude', cau:'Tổng hợp KLCV tháng này cho bạn <tên> từ file <link>',
+   mo_ta:'Quy đổi task ra phút theo quy chuẩn SEONGON, nhân hệ số ngoài giờ, so KPI, ra lương thực tập sinh.'},
+  {ten:'Phân loại dự án (PLDA)', hang:'quan-ly', loai:'claude', cau:'Phân loại dự án này: <dán đề bài BD>',
+   mo_ta:'Đánh giá tín hiệu thương hiệu, SEO, đối thủ → kết luận làm được không, KPI, ngân sách, bản trả bài cho BD.'},
+  {ten:'Bản tin marketing buổi sáng', hang:'quan-ly', loai:'claude', cau:'Làm bản tin marketing sáng nay',
+   nguon:GH + 'claude/hopeful-cray-qhwbns/cong-cu/ban-tin-marketing-sang.md',
+   mo_ta:'Tóm tắt tin marketing & SEO đáng chú ý mỗi sáng.'},
+  {ten:'Cẩm nang thương hiệu SEONGON', hang:'quan-ly', loai:'tai-lieu', mo:'tai-lieu/cam-nang-thuong-hieu-seongon.html',
+   mo_ta:'Logo, bảng màu, kiểu chữ, quy tắc đặt logo — đọc trước khi thiết kế bất cứ ấn phẩm nào.'}
+];
+
+var BIEU = {
+  'web':'<svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg>',
+  'chrome':'<svg viewBox="0 0 24 24"><path d="M20 12h-2a2 2 0 0 0-4 0h-2V8a2 2 0 0 0-4 0v4H4v8h16z"/></svg>',
+  'sheet':'<svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M4 9h16M4 15h16M10 3v18"/></svg>',
+  'claude':'<svg viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg>',
+  'tai-lieu':'<svg viewBox="0 0 24 24"><path d="M6 3h9l3 3v15H6z"/><path d="M9 11h6M9 15h6"/></svg>'
+};
+var $ = function(id){ return document.getElementById(id); };
+$('ban').textContent = (document.documentElement.innerHTML.match(/phien-ban: 202611111718([0-9a-z-]+)/)||[])[1] || '';
+function luu(k, v){ try{ localStorage.setItem(k, v); }catch(e){} }
+function doc(k){ try{ return localStorage.getItem(k) || ''; }catch(e){ return ''; } }
+function thoat(s){ return (s||'').replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+
+var locLoai = '';
+function veLoc(){
+  var nut = [['', 'Tất cả']].concat(Object.keys(LOAI).map(function(k){ return [k, LOAI[k][0]]; }));
+  $('loc').innerHTML = nut.map(function(n){ return '<button data-loai="' + n[0] + '" class="' + (n[0] === locLoai ? 'chon' : '') + '">' + n[1] + '</button>'; }).join('');
+  $('loc').querySelectorAll('button').forEach(function(b){ b.onclick = function(){ locLoai = b.dataset.loai; luu('kho-app:loc', locLoai); veLoc(); ve(); }; });
+}
+function ve(){
+  var q = $('tim').value.trim().toLowerCase(), html = '', dem = 0;
+  HANG.forEach(function(h){
+    var ds = APPS.filter(function(a){
+      return a.hang === h[0] && (!locLoai || a.loai === locLoai) &&
+        (!q || (a.ten + ' ' + a.mo_ta + ' ' + LOAI[a.loai][0]).toLowerCase().indexOf(q) !== -1);
+    });
+    if(!ds.length) return;
+    dem += ds.length;
+    html += '<section class="hang-muc"><h2>' + h[1] + ' <small>' + ds.length + ' công cụ</small></h2><div class="luoi">' +
+      ds.map(function(a, i){
+        var id = h[0] + i, nut = '';
+        if(a.loai === 'claude'){
+          nut = '<button data-cau="' + id + '">Câu gọi Claude ↓</button>';
+        } else if(a.sap){
+          nut = '<span class="phu">' + thoat(a.sap) + '</span>';
+        } else if(a.tai){
+          nut = '<a href="' + a.tai + '" download>Tải về ↓</a>' + (a.tai2 ? '<a href="' + a.tai2[1] + '" download>' + a.tai2[0] + ' ↓</a>' : '');
+        } else {
+          var ngoai = /^https?:/.test(a.mo);
+          nut = '<a href="' + a.mo + '"' + (ngoai ? ' target="_blank" rel="noopener"' : '') + '>' + LOAI[a.loai][1] + ' →</a>';
+        }
+        if(a.nguon) nut += '<a class="phu" href="' + a.nguon + '" target="_blank" rel="noopener">Xem nguồn</a>';
+        return '<div class="the' + (a.sap ? ' mo-nhat' : '') + '"><div class="tren"><span class="bieu">' + BIEU[a.loai] + '</span><h3>' + thoat(a.ten) +
+          '</h3><span class="loai">' + LOAI[a.loai][0] + '</span></div><p>' + thoat(a.mo_ta) + '</p>' +
+          (a.tinh ? '<div class="tinh">' + a.tinh.map(function(t){ return '<span>✓ ' + thoat(t) + '</span>'; }).join('') + '</div>' : '') +
+          (a.cau ? '<div class="cau" id="cau-' + id + '">Nói với Claude: <b>“' + thoat(a.cau) + '”</b> <button class="nut-nho" data-chep="' + thoat(a.cau) + '" style="margin-left:6px">Copy</button></div>' : '') +
+          '<div class="hanh-dong">' + nut + '</div></div>';
+      }).join('') + '</div></section>';
+  });
+  $('danhSach').innerHTML = html;
+  $('trong').style.display = dem ? 'none' : 'block';
+  $('dem').textContent = APPS.length + ' công cụ';
+  document.querySelectorAll('[data-cau]').forEach(function(b){ b.onclick = function(){ $('cau-' + b.dataset.cau).classList.toggle('mo'); }; });
+  document.querySelectorAll('[data-chep]').forEach(function(b){ b.onclick = function(){ navigator.clipboard && navigator.clipboard.writeText(b.dataset.chep); b.textContent = 'Đã copy ✓'; }; });
+}
+$('tim').oninput = ve;
+locLoai = doc('kho-app:loc'); if(!LOAI[locLoai]) locLoai = '';
+veLoc(); ve();
+
+/* khoá AI dùng chung + nền sáng/tối */
+$('nutCaiDat').onclick = function(){ $('caiDat').classList.toggle('mo'); };
+$('khoa').value = doc('kho-app:gemini-key');
+$('khoa').onchange = function(){ luu('kho-app:gemini-key', this.value.trim()); $('baoKhoa').textContent = this.value.trim() ? 'Đã lưu trên máy này ✓' : 'Đã xoá khoá'; };
+var nen = doc('kho-app:nen'); if(nen) document.documentElement.setAttribute('data-theme', nen);
+$('nutNen').onclick = function(){
+  var toi = document.documentElement.getAttribute('data-theme') === 'dark' ||
+    (!document.documentElement.getAttribute('data-theme') && matchMedia('(prefers-color-scheme: dark)').matches);
+  var moi = toi ? 'light' : 'dark'; document.documentElement.setAttribute('data-theme', moi); luu('kho-app:nen', moi);
+};
+</script>
+</body>
+</html>

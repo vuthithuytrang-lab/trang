@@ -1,0 +1,623 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hướng dẫn check chi tiết — Giao diện &amp; Chức năng website</title>
+<style>
+:root{
+  --sg-xanh:#004AEF; --sg-xanh-sang:#0D53F0; --sg-navy:#002992;
+  --sg-mint:#07EF9C; --sg-ngoc:#00EFB0; --sg-cyan:#0DD1FF;
+  --sg-vang:#FFCE00; --sg-cam:#F68B1F;
+  --sg-den:#151515; --sg-xam-nen:#F3F3F6; --sg-xam-vien:#DCDCDC;
+  --sg-chu:Gilroy,"Montserrat",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;overflow-wrap:break-word;color:var(--sg-den);font:16px/1.7 var(--sg-chu);-webkit-text-size-adjust:100%}
+.wrap{max-width:1000px;margin:0 auto;padding:0 22px}
+
+/* ---- Đầu trang ---- */
+.hero{background:linear-gradient(135deg,#002992 0%,#004AEF 55%,#0DD1FF 100%);color:#fff;padding:44px 0 40px}
+.hero .logo{background:#fff;display:inline-block;padding:15px 20px;border-radius:12px}
+.hero img{display:block;width:260px;max-width:60vw}
+.hero h1{font-size:38px;margin:26px 0 10px;letter-spacing:-.8px;font-weight:800;line-height:1.25}
+.hero .lead{margin:0;opacity:.94;font-size:17px;max-width:720px}
+.hero .mint{color:var(--sg-mint);font-weight:800}
+.chip{display:inline-block;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.34);
+  border-radius:999px;padding:6px 14px;font-size:13.5px;font-weight:600;margin:16px 8px 0 0}
+
+/* ---- Khung chung ---- */
+section{padding:42px 0;border-bottom:1px solid var(--sg-xam-vien)}
+h2{font-size:26px;margin:0 0 6px;letter-spacing:-.4px;color:var(--sg-navy);line-height:1.3}
+h2 .so{color:var(--sg-mint);margin-right:10px;font-weight:800}
+h3{font-size:19px;margin:30px 0 8px;color:var(--sg-navy)}
+h4{font-size:16.5px;margin:20px 0 6px}
+.sub{color:#5A6B66;margin:0 0 20px;font-size:15.5px}
+p{margin:0 0 12px}
+ul,ol{margin:0 0 14px;padding-left:22px}
+li{margin:6px 0}
+code{background:var(--sg-xam-nen);border:1px solid var(--sg-xam-vien);border-radius:5px;
+  padding:1px 6px;font-size:14px;font-family:ui-monospace,Menlo,Consolas,monospace;
+  overflow-wrap:anywhere;word-break:break-word}
+kbd{background:#fff;border:1px solid #B9B9C4;border-bottom-width:2px;border-radius:6px;
+  padding:2px 7px;font-size:13.5px;font-weight:700;font-family:inherit;white-space:nowrap}
+b,strong{font-weight:700}
+
+/* ---- Mục lục ---- */
+.muc-luc{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+.ml{background:var(--sg-xam-nen);border:1px solid var(--sg-xam-vien);border-radius:14px;padding:18px 20px;
+  text-decoration:none;color:inherit;display:block}
+.ml .n{font-size:13px;font-weight:800;color:var(--sg-mint);letter-spacing:.6px}
+.ml .t{font-weight:700;font-size:17px;margin:4px 0 4px;color:var(--sg-navy)}
+.ml .d{font-size:13.5px;color:#5A6B66;line-height:1.55}
+
+/* ---- Bảng ---- */
+.bang{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:14px 0 18px;
+  border-radius:8px;border:0}
+table{width:100%;border-collapse:collapse;margin:0;font-size:14.5px}
+th{background:var(--sg-navy);color:#fff;text-align:left;padding:11px 13px;font-weight:700;font-size:14px}
+td{border:1px solid var(--sg-xam-vien);padding:10px 13px;vertical-align:top}
+tr:nth-child(even) td{background:#FAFAFC}
+td.mono{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13.5px;white-space:nowrap}
+
+/* ---- Khối bước ---- */
+.buoc{border-left:3px solid var(--sg-xanh);background:#F7F9FF;border-radius:0 12px 12px 0;
+  padding:16px 20px;margin:14px 0}
+.buoc .stt{display:inline-block;background:var(--sg-xanh);color:#fff;width:26px;height:26px;
+  border-radius:50%;text-align:center;line-height:26px;font-weight:800;font-size:14px;margin-right:9px}
+.buoc h4{margin:0 0 6px;display:flex;align-items:flex-start;gap:0;font-size:16.5px}
+.buoc p:last-child{margin-bottom:0}
+
+/* ---- Hộp nhấn ---- */
+.hop{border-radius:12px;padding:16px 20px;margin:18px 0;font-size:15px}
+.hop .tieu{font-weight:800;margin:0 0 6px;font-size:15.5px}
+.hop p:last-child{margin-bottom:0}
+.hop.dat{background:#EAFBF3;border:1px solid #9CE9C9}
+.hop.dat .tieu{color:#046B47}
+.hop.loi{background:#FFF4E7;border:1px solid #F8CE9C}
+.hop.loi .tieu{color:#A85A06}
+.hop.meo{background:var(--sg-xam-nen);border:1px solid var(--sg-xam-vien)}
+.hop.meo .tieu{color:var(--sg-navy)}
+
+/* ---- Danh sách tick ---- */
+.tick{list-style:none;padding:0;margin:12px 0 18px}
+.tick li{position:relative;padding:8px 0 8px 34px;border-bottom:1px dashed var(--sg-xam-vien);margin:0;font-size:15px}
+.tick li:before{content:"";position:absolute;left:2px;top:11px;width:17px;height:17px;
+  border:2px solid var(--sg-xanh);border-radius:4px}
+.tick li:last-child{border-bottom:0}
+.tick li b{color:var(--sg-navy)}
+
+/* ---- Mức độ lỗi ---- */
+.mucdo{display:inline-block;border-radius:6px;padding:1px 9px;font-size:12.5px;font-weight:800;color:#fff}
+.p1{background:#D9453B} .p2{background:var(--sg-cam)} .p3{background:#7A8794}
+
+/* ---- Mẫu câu báo lỗi ---- */
+.mau{background:#0E1B3D;color:#E7ECFA;border-radius:12px;padding:18px 20px;margin:14px 0;
+  font-size:14.5px;line-height:1.75}
+.mau .nhan{color:var(--sg-mint);font-weight:800;font-size:12.5px;letter-spacing:.7px;
+  text-transform:uppercase;display:block;margin-bottom:9px}
+.mau em{color:var(--sg-cyan);font-style:normal}
+
+/* ---- Chân trang ---- */
+footer{padding:30px 0 44px;font-size:13.5px;color:#5A6B66}
+footer b{color:var(--sg-navy)}
+
+@media (max-width:760px){
+  .hero h1{font-size:28px}
+  .muc-luc{grid-template-columns:1fr}
+  table{font-size:13.5px;min-width:540px}
+  .bang{box-shadow:inset -14px 0 12px -12px rgba(0,0,0,.28)}
+  th,td{padding:9px 10px}
+  td.mono{white-space:normal}
+  .mau,.buoc,.hop{overflow-wrap:anywhere}
+}
+@media print{
+  .hero{background:var(--sg-navy)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  section{page-break-inside:auto}
+  h2,h3{page-break-after:avoid}
+  table,.hop,.buoc,.mau{page-break-inside:avoid}
+  body{font-size:12.5px}
+}
+</style></head><body>
+
+<div class="hero"><div class="wrap">
+  <div class="logo"><img src="data:image/webp;base64,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" alt="SEONGON — AI-First Search Marketing Growth Partner"></div>
+  <h1>Hướng dẫn check chi tiết<br>Giao diện &amp; Chức năng website</h1>
+  <p class="lead">Bản hướng dẫn thao tác từng bước cho 3 mục trong bảng nghiệm thu:
+  <span class="mint">Responsive</span>, <span class="mint">Tương thích nhiều trình duyệt</span> và
+  <span class="mint">Search nội bộ</span>. Làm đúng theo thứ tự là ra kết quả ghi được vào biên bản,
+  không cần biết code.</p>
+  <span class="chip">⏱ Mất khoảng 60–90 phút cho 1 website</span>
+  <span class="chip">💻 Chỉ cần máy tính + 1 điện thoại</span>
+  <span class="chip">💸 Toàn bộ công cụ miễn phí</span>
+</div></div>
+
+<div class="wrap">
+
+<section id="chuanbi">
+  <h2><span class="so">00</span>Chuẩn bị 10 phút trước khi bắt đầu</h2>
+  <p class="sub">Làm một lần, dùng cho mọi lần nghiệm thu sau.</p>
+
+  <h3>Cần có sẵn trên máy</h3>
+  <div class="bang"><table>
+    <tr><th style="width:26%">Thứ cần</th><th style="width:34%">Lấy ở đâu</th><th>Dùng để làm gì</th></tr>
+    <tr><td><b>Chrome</b></td><td>google.com/chrome</td><td>Trình duyệt chính để chạy toàn bộ bài kiểm tra</td></tr>
+    <tr><td><b>Firefox</b></td><td>mozilla.org/firefox</td><td>Kiểm tra chéo — nhân dựng trang khác Chrome</td></tr>
+    <tr><td><b>Safari</b></td><td>Có sẵn trên máy Mac</td><td>Đại diện cho toàn bộ iPhone/iPad</td></tr>
+    <tr><td><b>Cốc Cốc</b></td><td>coccoc.com</td><td>Thị phần đáng kể ở Việt Nam, khách hàng hay dùng</td></tr>
+    <tr><td><b>Điện thoại thật</b></td><td>Máy của mình</td><td>Thứ duy nhất phản ánh đúng cảm giác chạm, bàn phím ảo, mạng 4G</td></tr>
+  </table></div>
+
+  <h3>Mở sẵn 2 thứ</h3>
+  <ol>
+    <li><b>Bảng ghi kết quả</b> — Google Sheet, mỗi dòng 1 mục kiểm tra, các cột:
+      <em>Mục · Thiết bị/Trình duyệt · Đạt/Không đạt · Ảnh chụp · Mô tả lỗi · Mức độ</em>.</li>
+    <li><b>Danh sách 6 trang đại diện</b> của website khách — chọn theo nguyên tắc
+      "mỗi kiểu bố cục lấy 1 trang", vì lỗi giao diện nằm ở <b>kiểu trang</b> chứ không nằm ở từng URL:
+      <ul>
+        <li>Trang chủ</li>
+        <li>Trang danh mục / danh sách sản phẩm</li>
+        <li>Trang chi tiết sản phẩm (hoặc chi tiết dịch vụ)</li>
+        <li>Trang bài viết blog (trang nhiều chữ nhất)</li>
+        <li>Trang liên hệ / trang có biểu mẫu điền thông tin</li>
+        <li>Trang kết quả tìm kiếm nội bộ</li>
+      </ul>
+    </li>
+  </ol>
+
+  <h3>Quy ước mức độ lỗi — thống nhất trước để khỏi tranh cãi lúc bàn giao</h3>
+  <div class="bang"><table>
+    <tr><th style="width:14%">Mức</th><th style="width:40%">Nghĩa là gì</th><th>Ví dụ</th></tr>
+    <tr><td><span class="mucdo p1">P1</span></td>
+        <td><b>Chặn nghiệm thu.</b> Khách không mua/không liên hệ được, hoặc không đọc được nội dung</td>
+        <td>Nút "Mua hàng" bị đè khuất trên điện thoại · biểu mẫu không gửi được trên Safari · tìm kiếm báo lỗi trang</td></tr>
+    <tr><td><span class="mucdo p2">P2</span></td>
+        <td><b>Phải sửa trước khi chạy quảng cáo.</b> Vẫn dùng được nhưng xấu, mất uy tín, rơi khách</td>
+        <td>Tràn ngang phải kéo màn hình · ảnh méo · chữ tràn ra khỏi khung · kết quả tìm kiếm không liên quan</td></tr>
+    <tr><td><span class="mucdo p3">P3</span></td>
+        <td><b>Ghi nhận, sửa sau.</b> Lệch nhỏ, chỉ người làm nghề mới nhận ra</td>
+        <td>Lệch 2–3 điểm ảnh giữa Chrome và Safari · bóng đổ nút khác nhau chút ít</td></tr>
+  </table></div>
+
+  <div class="hop meo">
+    <p class="tieu">📌 Nguyên tắc xuyên suốt</p>
+    <p>Mỗi lỗi ghi nhận <b>phải kèm 1 ảnh chụp màn hình</b>. Không có ảnh thì lúc cãi nhau với bên
+    lập trình sẽ thành "tôi thấy có, anh thấy không". Cách chụp nằm ở mục 1.7.</p>
+  </div>
+</section>
+
+<section id="mucluc" style="border-bottom:0;padding-bottom:10px">
+  <h2><span class="so">→</span>Ba mục sẽ kiểm tra</h2>
+  <div class="muc-luc">
+    <a class="ml" href="#m1"><div class="n">MỤC 01</div><div class="t">Responsive — không vỡ layout</div>
+      <div class="d">Giả lập kích thước trên máy tính + kiểm tra trên điện thoại thật. 6 kích thước bắt buộc, 14 điểm soi.</div></a>
+    <a class="ml" href="#m2"><div class="n">MỤC 02</div><div class="t">Tương thích nhiều trình duyệt</div>
+      <div class="d">5 trình duyệt bắt buộc, cách so ảnh, 12 lỗi hay gặp và dấu hiệu nhận ra.</div></a>
+    <a class="ml" href="#m3"><div class="n">MỤC 03</div><div class="t">Search nội bộ hoạt động ổn định</div>
+      <div class="d">Bộ 12 câu tìm kiếm mẫu, 9 điểm soi trang kết quả, 3 điểm về SEO hay bị bỏ quên.</div></a>
+  </div>
+</section>
+
+<section id="m1">
+  <h2><span class="so">01</span>Responsive — không bị vỡ layout</h2>
+  <p class="sub">Yêu cầu trong bảng: <em>"Check thực tế bằng thiết bị thật khi truy cập, hoặc bật tính
+  năng responsive khi kiểm tra nguồn trang (inspect)."</em> Dưới đây là cả hai cách, làm tuần tự.</p>
+
+  <h3>1.1 — "Vỡ layout" trông như thế nào</h3>
+  <p>Đây là 6 biểu hiện. Nhớ mặt 6 cái này là soi rất nhanh:</p>
+  <div class="bang"><table>
+    <tr><th style="width:30%">Biểu hiện</th><th>Nhận ra bằng cách nào</th></tr>
+    <tr><td><b>Tràn ngang</b></td><td>Phải vuốt sang phải mới thấy hết nội dung, xuất hiện khoảng trắng thừa bên phải. Đây là lỗi hay gặp nhất</td></tr>
+    <tr><td><b>Chữ tràn khỏi khung</b></td><td>Tiêu đề dài chạy ra ngoài viền ô, hoặc bị cắt cụt giữa chừng</td></tr>
+    <tr><td><b>Đè chồng lên nhau</b></td><td>Hai khối nằm lên nhau, chữ chồng chữ, nút bị ảnh đè</td></tr>
+    <tr><td><b>Ảnh méo / vỡ</b></td><td>Ảnh bị kéo giãn sai tỉ lệ, mặt người bị bè ngang, hoặc hiện ô trống có dấu X</td></tr>
+    <tr><td><b>Chữ quá nhỏ</b></td><td>Trên điện thoại phải chụm–kéo hai ngón mới đọc được</td></tr>
+    <tr><td><b>Nút bấm trượt tay</b></td><td>Nút quá nhỏ hoặc hai nút sát nhau, ngón tay bấm nhầm</td></tr>
+  </table></div>
+
+  <h3>1.2 — Cách 1: giả lập kích thước ngay trên máy tính</h3>
+  <p>Cách này nhanh, quét được nhiều kích thước trong vài phút. Làm trên Chrome:</p>
+
+  <div class="buoc"><h4><span class="stt">1</span>Mở trang cần kiểm tra</h4>
+  <p>Dán địa chỉ trang vào Chrome, chờ trang hiện đầy đủ.</p></div>
+
+  <div class="buoc"><h4><span class="stt">2</span>Mở cửa sổ kiểm tra nguồn trang</h4>
+  <p>Trên Mac bấm <kbd>Cmd</kbd> + <kbd>Option</kbd> + <kbd>I</kbd> — trên Windows bấm <kbd>F12</kbd>.
+  Một khung có nhiều chữ và số sẽ hiện ra ở cạnh phải hoặc dưới màn hình. Đó là khung "inspect"
+  mà bảng nghiệm thu nhắc tới. <b>Không cần hiểu gì trong đó</b>, mình chỉ mượn một nút của nó.</p></div>
+
+  <div class="buoc"><h4><span class="stt">3</span>Bật chế độ xem theo thiết bị</h4>
+  <p>Bấm <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>M</kbd> (Windows: <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>M</kbd>).
+  Hoặc bấm biểu tượng hình <b>điện thoại và máy tính bảng</b> nằm ở góc trên bên trái của khung vừa mở.
+  Trang web lập tức thu lại thành khung hẹp như màn hình điện thoại.</p></div>
+
+  <div class="buoc"><h4><span class="stt">4</span>Chọn kích thước cần xem</h4>
+  <p>Phía trên trang có một thanh ghi <b>"Dimensions"</b> hoặc tên máy (iPhone 14 Pro, iPad Air…).
+  Bấm vào đó chọn từng máy trong bảng 1.3 bên dưới. Muốn tự nhập số thì chọn <b>"Responsive"</b>
+  rồi gõ chiều rộng vào ô số đầu tiên.</p></div>
+
+  <div class="buoc"><h4><span class="stt">5</span>Tải lại trang sau mỗi lần đổi kích thước</h4>
+  <p>Bấm <kbd>Cmd</kbd> + <kbd>R</kbd>. <b>Bước này rất hay bị bỏ quên.</b> Nhiều website tính toán bố cục
+  ngay lúc mở trang, nếu không tải lại thì lỗi sẽ không lộ ra và mình nghiệm thu nhầm là "đạt".</p></div>
+
+  <div class="buoc"><h4><span class="stt">6</span>Kéo trang từ trên xuống hết đáy</h4>
+  <p>Vừa kéo vừa soi theo danh sách 14 điểm ở mục 1.4. Thấy lỗi thì chụp ngay, đừng để cuối buổi mới quay lại.</p></div>
+
+  <h3>1.3 — Sáu kích thước bắt buộc chạy qua</h3>
+  <p>Không cần thử 30 loại máy. Sáu mốc này phủ gần hết người dùng Việt Nam:</p>
+  <div class="bang"><table>
+    <tr><th style="width:15%">Chiều rộng</th><th style="width:27%">Đại diện cho</th><th>Soi kỹ chỗ nào</th></tr>
+    <tr><td class="mono">360</td><td>Điện thoại Android phổ thông — <b>màn hình hẹp nhất còn phổ biến</b></td><td>Đây là nơi lỗi lộ ra nhiều nhất. Bảng giá, bảng thông số, tiêu đề dài, giỏ hàng</td></tr>
+    <tr><td class="mono">390</td><td>iPhone đời gần đây</td><td>Menu thu gọn, thanh dính trên đầu trang, khung chat/popup</td></tr>
+    <tr><td class="mono">430</td><td>iPhone bản màn hình lớn</td><td>Ảnh bìa, khoảng cách các khối</td></tr>
+    <tr><td class="mono">768</td><td>Máy tính bảng dựng đứng — <b>mốc hay bị bỏ sót nhất</b></td><td>Bố cục thường nhảy từ 1 cột sang 2–3 cột ở đây, rất dễ vỡ</td></tr>
+    <tr><td class="mono">1024</td><td>Máy tính bảng nằm ngang / laptop nhỏ</td><td>Menu chuyển từ thu gọn sang đầy đủ, dễ chồng chữ</td></tr>
+    <tr><td class="mono">1440</td><td>Màn hình máy tính thông dụng</td><td>Nội dung có bị dàn quá thưa, chữ chạy quá dài một dòng không</td></tr>
+  </table></div>
+
+  <div class="hop meo">
+    <p class="tieu">🔎 Mẹo bắt lỗi nhanh gấp đôi</p>
+    <p>Chọn chế độ <b>"Responsive"</b> rồi <b>kéo chậm cạnh phải của khung trang</b> từ rộng về hẹp,
+    mắt nhìn liên tục. Bố cục sẽ "nhảy" ở vài điểm nhất định — chính những điểm nhảy đó là nơi
+    lập trình đặt mốc đổi bố cục, và cũng là nơi hay vỡ nhất. Thấy chỗ nào giật cục, chữ chồng,
+    ảnh nhảy lung tung thì dừng lại ghi đúng con số chiều rộng đang hiện.</p>
+  </div>
+
+  <h3>1.4 — Danh sách 14 điểm soi ở mỗi kích thước</h3>
+  <p>In ra hoặc mở bên cạnh, soi lần lượt. Mỗi điểm không đạt ghi 1 dòng vào bảng kết quả:</p>
+  <ul class="tick">
+    <li><b>Không phải vuốt ngang.</b> Vuốt sang phải mà trang nhúc nhích hoặc lòi mảng trắng là lỗi</li>
+    <li><b>Chữ nằm gọn trong khung.</b> Không tiêu đề nào chạy ra ngoài viền, không chữ nào bị cắt cụt</li>
+    <li><b>Không có khối nào đè lên khối nào.</b> Soi kỹ thanh menu trên đầu và nút quay lại đầu trang</li>
+    <li><b>Ảnh đúng tỉ lệ.</b> Mặt người không bè ngang, logo không dẹt, không ô trống có dấu X</li>
+    <li><b>Menu thu gọn mở được và đóng được.</b> Mở ra che hết màn hình cũng được, nhưng phải có nút đóng bấm trúng</li>
+    <li><b>Popup / thông báo cookie đóng được.</b> Nút ✕ phải nằm trong màn hình, không bị đẩy ra ngoài</li>
+    <li><b>Nút bấm đủ to.</b> Áng chừng bằng đầu ngón tay cái, hai nút cạnh nhau không dính sát</li>
+    <li><b>Số điện thoại và địa chỉ bấm được</b> và hiện đủ, không bị xuống dòng gãy giữa số</li>
+    <li><b>Bảng dữ liệu xử lý tử tế.</b> Bảng giá, bảng thông số phải tự cuộn ngang trong khung riêng, không đẩy cả trang tràn ra</li>
+    <li><b>Biểu mẫu điền được.</b> Ô nhập không tràn khỏi màn hình, nhãn không đè lên ô</li>
+    <li><b>Chữ nội dung đọc được ngay</b> mà không phải chụm–kéo phóng to</li>
+    <li><b>Thanh menu dính trên đầu không ăn quá nhiều màn hình</b> và không che mất tiêu đề khi kéo</li>
+    <li><b>Chân trang còn nguyên vẹn.</b> Đây là chỗ hay vỡ nhất vì ít người kéo xuống tới</li>
+    <li><b>Ảnh nền không bị cắt mất phần quan trọng</b> — chữ trên ảnh bìa vẫn đọc được</li>
+  </ul>
+
+  <h3>1.5 — Cách 2: kiểm tra trên điện thoại thật (không bỏ qua được)</h3>
+  <p>Giả lập trên máy tính rất tiện nhưng <b>không thay được máy thật</b>. Có 5 thứ chỉ máy thật mới lộ ra:</p>
+  <div class="bang"><table>
+    <tr><th style="width:32%">Chỉ máy thật mới thấy</th><th>Làm gì để kiểm</th></tr>
+    <tr><td><b>Bàn phím ảo che mất nút</b></td><td>Mở trang liên hệ, bấm vào ô "Số điện thoại". Bàn phím bật lên — nút "Gửi" có còn nhìn thấy và bấm được không?</td></tr>
+    <tr><td><b>Ngón tay bấm trượt</b></td><td>Bấm thật bằng ngón cái, không dùng chuột. Bấm 10 nút quan trọng nhất, đếm số lần bấm nhầm</td></tr>
+    <tr><td><b>Xoay ngang máy</b></td><td>Xoay điện thoại nằm ngang ở trang chủ và trang sản phẩm. Bố cục có vỡ không, có tràn ngang không</td></tr>
+    <tr><td><b>Tốc độ và mạng thật</b></td><td>Tắt wifi, chạy bằng 4G. Ảnh có hiện kịp không, có nhảy giật khi ảnh tải xong không</td></tr>
+    <tr><td><b>Trình duyệt trong ứng dụng</b></td><td>Tự gửi link vào Zalo/Messenger cho chính mình rồi bấm mở ngay trong đó — xem mục 2.5</td></tr>
+  </table></div>
+
+  <div class="hop loi">
+    <p class="tieu">⚠️ Một lỗi rất hay gặp mà giả lập không bắt được</p>
+    <p>Trang xem trên máy tính hoàn hảo, nhưng trên iPhone thật lại tràn ngang, vì Safari tính chiều
+    rộng ảnh khác Chrome. Vì vậy dù đã soi kỹ ở mục 1.2, <b>vẫn phải mở 6 trang đại diện trên
+    điện thoại thật một lượt</b> rồi mới kết luận đạt.</p>
+  </div>
+
+  <h3>1.6 — Mẹo tìm đúng thủ phạm gây tràn ngang</h3>
+  <p>Khi phát hiện trang bị tràn ngang, bên lập trình thường hỏi lại "tràn ở đâu?". Bốn bước sau
+  chỉ ra đúng chỗ, chỉ cần sao chép và dán:</p>
+  <div class="buoc"><h4><span class="stt">1</span>Mở khung kiểm tra nguồn trang</h4>
+  <p><kbd>Cmd</kbd> + <kbd>Option</kbd> + <kbd>I</kbd> (Windows: <kbd>F12</kbd>), chọn thẻ <b>Console</b> trên thanh ngang.</p></div>
+  <div class="buoc"><h4><span class="stt">2</span>Dán đoạn lệnh này vào rồi bấm Enter</h4>
+  <p><code>document.querySelectorAll('*').forEach(e=&gt;{if(e.getBoundingClientRect().right&gt;document.documentElement.clientWidth+1)console.log(e)})</code></p></div>
+  <div class="buoc"><h4><span class="stt">3</span>Rê chuột lên các dòng kết quả</h4>
+  <p>Mỗi dòng hiện ra là một khối đang thò ra ngoài màn hình. Rê chuột lên dòng nào thì khối tương ứng
+  trên trang <b>sáng lên màu xanh</b> — đó chính là thủ phạm.</p></div>
+  <div class="buoc"><h4><span class="stt">4</span>Chụp màn hình cả trang lẫn khung kết quả</h4>
+  <p>Gửi ảnh này cho bên lập trình là họ sửa được ngay, khỏi mất một vòng trao đổi qua lại.</p></div>
+
+  <h3>1.7 — Chụp bằng chứng đúng cách</h3>
+  <ul>
+    <li><b>Chụp cả trang dài (Mac/Windows, trong Chrome):</b> mở khung kiểm tra nguồn trang, bấm
+      <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>, gõ <code>screenshot</code>, chọn dòng
+      <b>"Capture full size screenshot"</b>. Ảnh toàn trang tự tải về máy.</li>
+    <li><b>Chụp một vùng trên Mac:</b> <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>4</kbd> rồi khoanh vùng lỗi.</li>
+    <li><b>Đặt tên ảnh theo mẫu</b> <code>trangchu-360px-tran-ngang.png</code> — sau này tìm lại đỡ mất công.</li>
+    <li><b>Chụp kèm thanh địa chỉ và con số kích thước</b> đang hiện, để ảnh tự chứng minh hoàn cảnh chụp.</li>
+  </ul>
+
+  <h3>1.8 — Câu mẫu để báo lỗi cho bên lập trình</h3>
+  <div class="mau"><span class="nhan">Sao chép, thay phần in màu</span>
+  <b>Lỗi:</b> Trang <em>[chi tiết sản phẩm]</em> bị tràn ngang ở chiều rộng <em>[360px]</em>.<br>
+  <b>Đường dẫn:</b> <em>[dán link trang]</em><br>
+  <b>Cách lặp lại:</b> Mở Chrome → bật chế độ xem theo thiết bị → chọn Responsive, đặt chiều rộng
+  <em>[360]</em> → tải lại trang → vuốt sang phải thấy lòi mảng trắng.<br>
+  <b>Khối gây lỗi:</b> <em>[dán tên khối tìm được ở mục 1.6, hoặc ghi "chưa xác định"]</em><br>
+  <b>Ảnh chụp:</b> <em>[đính kèm]</em><br>
+  <b>Mức độ:</b> <em>P2</em> — cần sửa trước khi chạy quảng cáo.</div>
+
+  <div class="hop dat">
+    <p class="tieu">✅ Kết luận "ĐẠT" cho mục Responsive khi</p>
+    <p>Cả 6 trang đại diện × 6 kích thước đều không có lỗi P1 và P2, <b>đồng thời</b> đã mở thực tế
+    trên ít nhất 1 điện thoại thật mà không phát hiện thêm lỗi mới. Lỗi P3 vẫn ghi vào biên bản
+    nhưng không chặn nghiệm thu.</p>
+  </div>
+</section>
+
+<section id="m2">
+  <h2><span class="so">02</span>Tương thích trên nhiều trình duyệt</h2>
+  <p class="sub">Yêu cầu trong bảng: <em>"Đảm bảo website hiển thị giống nhau trên mọi trình duyệt,
+  không bị cắt sai kích thước."</em></p>
+
+  <h3>2.1 — Vì sao cùng một trang lại hiện khác nhau</h3>
+  <p>Mỗi trình duyệt có một "cỗ máy dựng trang" riêng — nó đọc mã của website rồi vẽ ra màn hình.
+  Trên đời chỉ có <b>3 cỗ máy chính</b>, và đó là lý do không cần thử hết mọi trình duyệt:</p>
+  <div class="bang"><table>
+    <tr><th style="width:22%">Cỗ máy dựng trang</th><th style="width:38%">Trình duyệt nào dùng nó</th><th>Nghĩa là gì với mình</th></tr>
+    <tr><td><b>Blink</b></td><td>Chrome, Edge, Cốc Cốc, Opera, Samsung Internet</td><td>Thử 1 cái là gần như biết cả nhóm. Chọn <b>Chrome</b> làm đại diện</td></tr>
+    <tr><td><b>WebKit</b></td><td>Safari trên Mac, <b>và toàn bộ trình duyệt trên iPhone/iPad</b></td><td><b>Bắt buộc phải thử riêng.</b> Đây là nơi sinh ra nhiều lỗi nhất</td></tr>
+    <tr><td><b>Gecko</b></td><td>Firefox</td><td>Thử để chắc, thường ít lỗi nhưng hay lộ lỗi biểu mẫu và phông chữ</td></tr>
+  </table></div>
+  <div class="hop meo">
+    <p class="tieu">💡 Điều nhiều người không biết</p>
+    <p>Trên iPhone, <b>tải Chrome về cũng không thoát được WebKit</b> — Apple bắt mọi trình duyệt trên
+    iPhone phải dùng chung cỗ máy của Safari. Nên "Chrome trên iPhone" thực chất vẫn là Safari khoác
+    áo Chrome. Vì vậy thử Safari là đã phủ hết máy iPhone.</p>
+  </div>
+
+  <h3>2.2 — Năm trình duyệt bắt buộc, theo đúng thứ tự ưu tiên</h3>
+  <div class="bang"><table>
+    <tr><th style="width:8%">#</th><th style="width:26%">Trình duyệt</th><th style="width:20%">Trên thiết bị</th><th>Vì sao bắt buộc</th></tr>
+    <tr><td>1</td><td><b>Chrome</b></td><td>Máy tính</td><td>Trình duyệt phổ biến nhất — đây là mốc chuẩn để so sánh</td></tr>
+    <tr><td>2</td><td><b>Safari</b></td><td><b>iPhone thật</b></td><td>Khác cỗ máy dựng trang, lại là lượng khách rất lớn và thường là nhóm chịu chi</td></tr>
+    <tr><td>3</td><td><b>Chrome</b></td><td>Điện thoại Android</td><td>Chiếm phần lớn người dùng Việt Nam</td></tr>
+    <tr><td>4</td><td><b>Firefox</b></td><td>Máy tính</td><td>Cỗ máy thứ ba, hay lộ lỗi phông chữ và biểu mẫu</td></tr>
+    <tr><td>5</td><td><b>Cốc Cốc</b></td><td>Máy tính</td><td>Riêng thị trường Việt Nam, và hay bật sẵn chặn quảng cáo — dễ làm mất khối nội dung</td></tr>
+  </table></div>
+  <p>Xong 5 cái này thì coi như đã phủ. Thêm được Edge trên Windows và Samsung Internet thì tốt,
+  nhưng không có cũng không chặn nghiệm thu.</p>
+
+  <h3>2.3 — Quy trình so sánh: làm 1 lần, nhìn ra ngay chỗ lệch</h3>
+  <div class="buoc"><h4><span class="stt">1</span>Chuẩn hóa điều kiện trước khi so</h4>
+  <p>Cả 5 trình duyệt đều mở <b>cùng 6 trang đại diện</b>, cùng một kích thước cửa sổ trên máy tính
+  (phóng to hết cỡ), và <b>mức phóng để ở 100%</b>. Bấm <kbd>Cmd</kbd> + <kbd>0</kbd> để đưa về 100%.
+  Rất nhiều "lỗi hiển thị" hóa ra chỉ là do máy đang phóng to 110%.</p></div>
+  <div class="buoc"><h4><span class="stt">2</span>Chụp bộ ảnh mốc bằng Chrome</h4>
+  <p>Chụp toàn trang 6 trang bằng cách ở mục 1.7. Đặt tên <code>chrome-trangchu.png</code>…
+  Đây là bộ ảnh "chuẩn" để đối chiếu.</p></div>
+  <div class="buoc"><h4><span class="stt">3</span>Mở lần lượt 4 trình duyệt còn lại</h4>
+  <p>Mở cùng trang, đặt ảnh mốc bên cạnh màn hình. So theo 5 câu hỏi:
+  bố cục có đúng số cột không · phông chữ có đúng kiểu và <b>đủ dấu tiếng Việt</b> không ·
+  ảnh có hiện hết không · nút và biểu mẫu có còn đủ không · có khối nào biến mất không.</p></div>
+  <div class="buoc"><h4><span class="stt">4</span>Với mỗi trình duyệt, bấm thử 3 việc sinh tiền</h4>
+  <p>Không chỉ nhìn, phải bấm: <b>(a)</b> thêm vào giỏ / bấm nút kêu gọi chính · <b>(b)</b> điền và gửi
+  biểu mẫu liên hệ · <b>(c)</b> tìm kiếm nội bộ. Trang hiện đẹp mà không gửi được biểu mẫu thì vẫn là P1.</p></div>
+  <div class="buoc"><h4><span class="stt">5</span>Ghi kết quả theo từng trình duyệt</h4>
+  <p>Cột "Thiết bị/Trình duyệt" trong bảng kết quả phải ghi rõ, ví dụ
+  <code>Safari · iPhone 13 · iOS 17</code>. Không ghi chung chung "trên điện thoại".</p></div>
+
+  <h3>2.4 — Mười hai lỗi hay gặp và dấu hiệu nhận ra</h3>
+  <div class="bang"><table>
+    <tr><th style="width:30%">Biểu hiện nhìn thấy</th><th style="width:22%">Hay xảy ra ở</th><th>Ghi vào biên bản thế nào</th></tr>
+    <tr><td>Chữ tiếng Việt mất dấu, hiện ô vuông hoặc dấu hỏi</td><td>Mọi trình duyệt</td><td><span class="mucdo p1">P1</span> Phông chữ không hỗ trợ tiếng Việt</td></tr>
+    <tr><td>Ảnh không hiện, chỉ còn ô trống</td><td>Safari bản cũ</td><td><span class="mucdo p1">P1</span> Định dạng ảnh mới máy cũ chưa đọc được, cần bản ảnh dự phòng</td></tr>
+    <tr><td>Video tự chạy trên Chrome nhưng đứng im trên iPhone</td><td>Safari / iPhone</td><td><span class="mucdo p2">P2</span> Video tự chạy cần cấu hình riêng cho iPhone</td></tr>
+    <tr><td>Khoảng cách giữa các ô lệch hẳn, khối dính sát nhau</td><td>Safari bản cũ</td><td><span class="mucdo p2">P2</span> Cách chia lưới chưa hỗ trợ trên bản đó</td></tr>
+    <tr><td>Thanh menu dính trên đầu bị nhảy giật khi kéo</td><td>Safari / iPhone</td><td><span class="mucdo p2">P2</span></td></tr>
+    <tr><td>Ô chọn ngày sinh / ngày hẹn hiện khác hẳn</td><td>Firefox, Safari</td><td><span class="mucdo p3">P3</span> nếu vẫn chọn được ngày, <span class="mucdo p1">P1</span> nếu không chọn được</td></tr>
+    <tr><td>Cả một khối nội dung biến mất</td><td>Cốc Cốc, trình duyệt có chặn quảng cáo</td><td><span class="mucdo p1">P1</span> Khối bị nhầm là quảng cáo — thường do tên khối chứa chữ "ads", "banner"</td></tr>
+    <tr><td>Bấm nút không có phản ứng gì</td><td>Safari / iPhone</td><td><span class="mucdo p1">P1</span> Kiểm tra lại trên 2 máy trước khi kết luận</td></tr>
+    <tr><td>Biểu mẫu báo lỗi sai, hoặc không báo gì khi bỏ trống</td><td>Firefox, Safari</td><td><span class="mucdo p2">P2</span></td></tr>
+    <tr><td>Trang bị cắt sai kích thước, có viền trắng bên phải</td><td>iPhone khi xoay ngang</td><td><span class="mucdo p2">P2</span> Đúng ý "cắt sai kích thước" trong bảng nghiệm thu</td></tr>
+    <tr><td>Chữ trên nền ảnh bị lóa, đọc không ra</td><td>Máy có chế độ màu khác</td><td><span class="mucdo p3">P3</span></td></tr>
+    <tr><td>Trang hiện nền đen chữ đen</td><td>Máy bật chế độ tối</td><td><span class="mucdo p2">P2</span> Website chưa xử lý chế độ tối của máy</td></tr>
+  </table></div>
+
+  <h3>2.5 — Trình duyệt trong ứng dụng: chỗ hay bị bỏ quên nhất</h3>
+  <p>Khi khách bấm link từ <b>Facebook, Zalo, Messenger, TikTok</b>, trang <b>không</b> mở bằng Chrome hay
+  Safari mà mở bằng trình duyệt thu nhỏ nằm trong chính ứng dụng đó. Nó thiếu nhiều thứ, và đây lại
+  chính là đường vào của gần như toàn bộ khách đến từ quảng cáo — tức là <b>đường tiền về</b>.</p>
+  <p>Cách kiểm, mất 5 phút:</p>
+  <ol>
+    <li>Tự gửi link trang đích cho chính mình qua <b>Zalo</b> (chat với chính mình), bấm mở ngay trong Zalo.</li>
+    <li>Làm lại với <b>Messenger</b> và <b>Facebook</b> (đăng một bài chế độ "Chỉ mình tôi" rồi bấm link).</li>
+    <li>Soi 4 điểm: trang có hiện đủ không · <b>biểu mẫu gửi được không</b> · nút gọi điện bấm được không ·
+      có bị che mất phần trên cùng bởi thanh tiêu đề của ứng dụng không.</li>
+  </ol>
+  <div class="hop loi">
+    <p class="tieu">⚠️ Lỗi kinh điển</p>
+    <p>Biểu mẫu chạy tốt trên mọi trình duyệt nhưng <b>không gửi được khi mở trong ứng dụng</b> — tiền
+    quảng cáo vẫn chạy mà không có lấy một khách để lại số. Luôn kiểm mục này trước mỗi chiến dịch.</p>
+  </div>
+
+  <h3>2.6 — Khi trong tay không có đủ máy</h3>
+  <div class="bang"><table>
+    <tr><th style="width:30%">Thiếu gì</th><th>Làm cách nào</th></tr>
+    <tr><td>Không có iPhone</td><td>Mượn máy đồng nghiệp 10 phút — đây là mục <b>không có đường vòng nào thay thế đủ tốt</b>. Trên máy Mac, Safari có sẵn chế độ xem như iPhone, dùng tạm được nhưng vẫn phải xác nhận lại bằng máy thật trước khi ký nghiệm thu</td></tr>
+    <tr><td>Không có máy Windows</td><td>Edge và Chrome trên Windows dùng chung cỗ máy dựng trang với Chrome trên Mac, nên rủi ro thấp. Ghi rõ trong biên bản là "chưa kiểm trên Windows"</td></tr>
+    <tr><td>Muốn xem nhiều kích thước cùng lúc</td><td>Cài ứng dụng miễn phí <b>Responsively App</b> (responsively.app) — mở một lần thấy nhiều khung thiết bị cạnh nhau, cuộn đồng loạt. Lưu ý: nó vẫn dùng cỗ máy của Chrome, nên <b>không thay được Safari thật</b></td></tr>
+    <tr><td>Cần ảnh chụp trang trên máy di động để đưa vào báo cáo</td><td>Dùng công cụ miễn phí <b>PageSpeed Insights</b> của Google (pagespeed.web.dev) — dán link, nó trả về ảnh chụp trang ở chế độ di động kèm điểm tốc độ</td></tr>
+  </table></div>
+
+  <h3>2.7 — "Giống nhau" tới mức nào thì tính là đạt</h3>
+  <p>Không có website nào giống nhau tuyệt đối trên mọi trình duyệt, và cũng không cần thế.
+  Bốn tiêu chí dưới đây là chuẩn nghiệm thu hợp lý:</p>
+  <ul class="tick">
+    <li><b>Cùng bố cục:</b> số cột, thứ tự các khối, vị trí menu giống nhau</li>
+    <li><b>Cùng nội dung:</b> không khối nào biến mất, không ảnh nào thiếu, chữ đủ dấu tiếng Việt</li>
+    <li><b>Cùng chức năng:</b> mọi nút, biểu mẫu, tìm kiếm đều chạy được ở mọi trình duyệt</li>
+    <li><b>Không bị cắt:</b> không tràn ngang, không viền trắng thừa, không nội dung nào lọt ra ngoài màn hình</li>
+  </ul>
+  <p>Lệch vài điểm ảnh, bóng đổ hơi khác, độ đậm phông chữ chênh nhẹ — ghi <span class="mucdo p3">P3</span>,
+  không chặn nghiệm thu.</p>
+
+  <div class="mau"><span class="nhan">Câu mẫu báo lỗi trình duyệt</span>
+  <b>Lỗi:</b> <em>[Khối đánh giá khách hàng]</em> không hiện trên <em>[Safari · iPhone 13 · iOS 17]</em>,
+  trong khi vẫn hiện bình thường trên Chrome máy tính.<br>
+  <b>Đường dẫn:</b> <em>[dán link]</em><br>
+  <b>Cách lặp lại:</b> Mở link bằng Safari trên iPhone → kéo xuống quá phần <em>[bảng giá]</em> → khối trống hoàn toàn.<br>
+  <b>Đã kiểm chéo:</b> Chrome máy tính ✅ hiện · Firefox ✅ hiện · Safari iPhone ❌ không hiện.<br>
+  <b>Ảnh chụp:</b> <em>[2 ảnh — Chrome và Safari, chụp cùng vị trí]</em><br>
+  <b>Mức độ:</b> <em>P1</em>.</div>
+</section>
+
+<section id="m3">
+  <h2><span class="so">03</span>Search nội bộ — hoạt động ổn định</h2>
+  <p class="sub">Yêu cầu trong bảng: <em>"Check trực tiếp bằng cách search trên website của khách hàng."</em>
+  Gõ một chữ rồi thấy ra kết quả thì <b>chưa đủ để kết luận đạt</b> — cần soi đủ 3 tầng dưới đây.</p>
+
+  <h3>3.1 — Ba tầng phải kiểm</h3>
+  <div class="bang"><table>
+    <tr><th style="width:20%">Tầng</th><th style="width:34%">Câu hỏi cần trả lời</th><th>Không đạt thì hậu quả gì</th></tr>
+    <tr><td><b>1. Tìm được</b></td><td>Ô tìm kiếm có ở đúng chỗ, gõ vào có ra trang kết quả không</td><td>Khách không tìm nổi sản phẩm — thoát trang</td></tr>
+    <tr><td><b>2. Tìm đúng</b></td><td>Kết quả có liên quan tới thứ vừa gõ không, thứ tự có hợp lý không</td><td>Khách mất niềm tin vào website, coi như không có tìm kiếm</td></tr>
+    <tr><td><b>3. Không vỡ</b></td><td>Gõ linh tinh, gõ sai, gõ rỗng thì trang có báo lỗi, trắng trang, hay chạy mãi không</td><td>Lộ lỗi kỹ thuật ngay trước mặt khách</td></tr>
+  </table></div>
+
+  <h3>3.2 — Bộ 12 câu tìm kiếm mẫu</h3>
+  <p>Chạy đủ 12 dòng này trên website của khách, mỗi dòng ghi Đạt/Không đạt:</p>
+  <div class="bang"><table>
+    <tr><th style="width:6%">#</th><th style="width:28%">Gõ vào ô tìm kiếm</th><th style="width:33%">Kết quả đúng phải là</th><th>Đang bắt lỗi gì</th></tr>
+    <tr><td>1</td><td>Tên một sản phẩm <b>có thật</b>, gõ đủ dấu</td><td>Sản phẩm đó nằm ở kết quả đầu tiên</td><td>Chức năng cơ bản nhất</td></tr>
+    <tr><td>2</td><td>Chính tên đó nhưng <b>không dấu</b></td><td>Vẫn ra đúng sản phẩm</td><td>Người Việt gõ không dấu rất nhiều — lỗi này cực phổ biến</td></tr>
+    <tr><td>3</td><td>Chính tên đó <b>VIẾT HOA HẾT</b></td><td>Vẫn ra đúng sản phẩm</td><td>Tìm kiếm phân biệt hoa–thường sai cách</td></tr>
+    <tr><td>4</td><td>Một <b>từ khóa chung</b> của ngành (ví dụ "giày", "tour", "vay")</td><td>Nhiều kết quả, sắp xếp hợp lý, có phân trang</td><td>Khả năng xử lý danh sách dài</td></tr>
+    <tr><td>5</td><td>Từ khóa <b>gõ sai chính tả</b> (thiếu 1 chữ cái)</td><td>Lý tưởng: gợi ý "Có phải bạn tìm…". Chấp nhận được: ra trang không có kết quả nhưng tử tế</td><td>Mức độ chăm chút</td></tr>
+    <tr><td>6</td><td><b>Mã sản phẩm</b> (ví dụ SP-1234)</td><td>Ra đúng sản phẩm đó</td><td>Nhân viên bán hàng và khách quen tra bằng mã</td></tr>
+    <tr><td>7</td><td>Từ khóa <b>chắc chắn không tồn tại</b> ("xyzabc123")</td><td>Trang báo "Không tìm thấy kết quả" + gợi ý sản phẩm khác hoặc ô tìm lại. <b>Không được để trắng trơn</b></td><td>Trang rỗng bỏ mặc khách</td></tr>
+    <tr><td>8</td><td><b>Bấm tìm khi ô còn trống</b></td><td>Không đi đâu cả, hoặc ra trang nhắc "hãy nhập từ khóa"</td><td>Lỗi trang trắng hoặc trang lỗi</td></tr>
+    <tr><td>9</td><td>Chỉ gõ <b>dấu cách</b> rồi bấm tìm</td><td>Xử lý y như dòng 8</td><td>Lỗi hay bị bỏ sót</td></tr>
+    <tr><td>10</td><td>Một <b>câu dài</b> ("giày thể thao nam màu trắng size 42")</td><td>Vẫn ra kết quả liên quan, không báo lỗi</td><td>Cách khách thật sự gõ trên điện thoại</td></tr>
+    <tr><td>11</td><td>Ký tự đặc biệt: <code>&lt;b&gt;test&lt;/b&gt;</code> và <code>50% off</code></td><td>Trang hiện nguyên văn chữ vừa gõ, <b>không</b> in đậm, <b>không</b> báo lỗi trang</td><td>Lỗi kỹ thuật nghiêm trọng nếu trang biến chữ thành in đậm</td></tr>
+    <tr><td>12</td><td>Từ khóa ở dòng 1, nhưng <b>gõ trên điện thoại</b></td><td>Bàn phím không che ô tìm, gõ được, bấm tìm được</td><td>Tìm kiếm chạy trên máy tính mà hỏng trên điện thoại</td></tr>
+  </table></div>
+
+  <h3>3.3 — Chín điểm soi trên trang kết quả</h3>
+  <ul class="tick">
+    <li><b>Ra kết quả trong vòng 2–3 giây.</b> Lâu hơn thì ghi nhận kèm con số đo được</li>
+    <li><b>Có ghi rõ số lượng</b> — "Tìm thấy 24 kết quả cho…". Không có thì khách không biết nên kéo tiếp hay đổi từ khóa</li>
+    <li><b>Từ khóa vừa gõ còn nằm trong ô tìm kiếm</b>, để khách sửa lại chứ không phải gõ lại từ đầu</li>
+    <li><b>Kết quả có đủ ảnh, tên, giá</b> (với trang bán hàng) — danh sách chỉ toàn chữ rất khó bấm</li>
+    <li><b>Bấm vào một kết quả thì tới đúng trang</b> của sản phẩm đó, không tới trang 404</li>
+    <li><b>Có phân trang hoặc nút xem thêm</b> khi kết quả nhiều</li>
+    <li><b>Có bộ lọc / sắp xếp</b> nếu website là trang bán hàng nhiều sản phẩm</li>
+    <li><b>Trang kết quả cũng phải responsive</b> — kiểm lại trên chiều rộng 360 theo mục 1.2</li>
+    <li><b>Bấm nút quay lại</b> của trình duyệt thì về đúng chỗ cũ, không mất kết quả vừa tìm</li>
+  </ul>
+
+  <h3>3.4 — Ba điểm về SEO của tìm kiếm nội bộ, hay bị bỏ quên</h3>
+  <p>Phần này thuộc chuyên môn của mình, và thường không ai kiểm — nên đưa vào biên bản là một điểm cộng rõ:</p>
+  <div class="bang"><table>
+    <tr><th style="width:30%">Cần kiểm</th><th style="width:34%">Làm thế nào</th><th>Vì sao quan trọng</th></tr>
+    <tr><td><b>Trang kết quả tìm kiếm không được cho Google lập chỉ mục</b></td>
+        <td>Tìm thử một từ khóa, chép địa chỉ trang kết quả (thường có dạng <code>?s=</code> hoặc <code>?q=</code>).
+        Sau đó lên Google gõ <code>site:tencongty.com inurl:?s=</code> — nếu ra cả loạt trang kết quả thì đang bị lập chỉ mục sai</td>
+        <td>Google coi đây là nội dung mỏng, lặp lại. Để lọt hàng nghìn trang kiểu này sẽ làm loãng website và tốn ngân sách quét của Google</td></tr>
+    <tr><td><b>Tìm kiếm nội bộ có được ghi nhận vào Google Analytics 4 không</b></td>
+        <td>Mở GA4 → Báo cáo → Sự kiện, tìm sự kiện tên <code>view_search_results</code>. Chưa có thì nhờ bên kỹ thuật bật</td>
+        <td>Đây là <b>mỏ vàng</b>: biết chính xác khách đang tìm gì mà website chưa có. Dùng thẳng để chọn từ khóa và lên nội dung</td></tr>
+    <tr><td><b>Địa chỉ trang kết quả có sạch không</b></td>
+        <td>Nhìn thanh địa chỉ sau khi tìm — có dài loằng ngoằng, có lặp tham số, có kèm mã lạ không</td>
+        <td>Địa chỉ rác dễ sinh ra vô số bản sao của cùng một trang</td></tr>
+  </table></div>
+
+  <h3>3.5 — Ba dấu hiệu phải dừng lại và báo ngay</h3>
+  <div class="hop loi">
+    <p class="tieu">🚨 Gặp một trong ba thứ này thì ghi P1 và báo ngay trong ngày</p>
+    <ul style="margin-bottom:0">
+      <li><b>Trang báo lỗi máy chủ</b> (màn hình ghi "500", "Internal Server Error") khi tìm một từ khóa bất kỳ.</li>
+      <li><b>Trang trắng hoàn toàn</b>, không chữ không ảnh, sau khi bấm tìm.</li>
+      <li><b>Gõ <code>&lt;b&gt;test&lt;/b&gt;</code> mà trang hiện chữ <b>test</b> in đậm</b> — nghĩa là website
+        đang thực thi thẳng thứ khách gõ vào. Đây là lỗ hổng bảo mật, người xấu lợi dụng được. Báo cho
+        bên lập trình, không tự thử thêm.</li>
+    </ul>
+  </div>
+
+  <div class="mau"><span class="nhan">Câu mẫu báo lỗi tìm kiếm</span>
+  <b>Lỗi:</b> Tìm kiếm nội bộ không ra kết quả khi gõ <b>không dấu</b>.<br>
+  <b>Cách lặp lại:</b> Gõ "<em>áo sơ mi</em>" → ra <em>18</em> kết quả ✅ · Gõ "<em>ao so mi</em>" → ra
+  <b>0</b> kết quả ❌ (cùng một sản phẩm).<br>
+  <b>Ảnh hưởng:</b> Phần lớn người dùng điện thoại gõ không dấu — đang mất lượng lớn khách ngay tại bước tìm sản phẩm.<br>
+  <b>Đề xuất:</b> Bổ sung tìm kiếm bỏ dấu cho ô tìm kiếm nội bộ.<br>
+  <b>Ảnh chụp:</b> <em>[2 ảnh — có dấu và không dấu]</em><br>
+  <b>Mức độ:</b> <em>P1</em>.</div>
+
+  <div class="hop dat">
+    <p class="tieu">✅ Kết luận "ĐẠT" cho mục Search nội bộ khi</p>
+    <p>12/12 câu tìm kiếm mẫu không sinh lỗi P1, kết quả trả về đúng và trong vòng 3 giây, trang
+    "không có kết quả" được thiết kế tử tế, và trang kết quả hiển thị tốt trên điện thoại.</p>
+  </div>
+</section>
+
+<section id="ghi">
+  <h2><span class="so">04</span>Ghi kết quả và bàn giao</h2>
+  <p class="sub">Kiểm xong mà ghi lộn xộn thì bên lập trình sửa sai chỗ, mất thêm một vòng.</p>
+
+  <h3>Mẫu bảng ghi kết quả — tạo trên Google Sheet</h3>
+  <div class="bang"><table>
+    <tr><th>Mục</th><th>Trang</th><th>Thiết bị / Trình duyệt</th><th>Kết quả</th><th>Mô tả</th><th>Mức</th><th>Ảnh</th></tr>
+    <tr><td>Responsive</td><td>Chi tiết sản phẩm</td><td>Chrome · rộng 360</td><td>❌</td><td>Bảng thông số đẩy trang tràn ngang</td><td><span class="mucdo p2">P2</span></td><td>link</td></tr>
+    <tr><td>Responsive</td><td>Liên hệ</td><td>iPhone 13 thật</td><td>❌</td><td>Bàn phím ảo che mất nút Gửi</td><td><span class="mucdo p1">P1</span></td><td>link</td></tr>
+    <tr><td>Trình duyệt</td><td>Trang chủ</td><td>Safari · iPhone 13</td><td>❌</td><td>Khối đánh giá khách hàng không hiện</td><td><span class="mucdo p1">P1</span></td><td>link</td></tr>
+    <tr><td>Trình duyệt</td><td>Trang chủ</td><td>Firefox · máy tính</td><td>✅</td><td>—</td><td>—</td><td>—</td></tr>
+    <tr><td>Search nội bộ</td><td>Kết quả tìm kiếm</td><td>Chrome · máy tính</td><td>❌</td><td>Gõ không dấu ra 0 kết quả</td><td><span class="mucdo p1">P1</span></td><td>link</td></tr>
+  </table></div>
+
+  <h3>Câu kết luận đưa vào biên bản nghiệm thu</h3>
+  <div class="mau"><span class="nhan">Mẫu kết luận</span>
+  Đã kiểm <em>[6]</em> trang đại diện trên <em>[6]</em> kích thước màn hình và <em>[5]</em> trình duyệt,
+  kèm kiểm thực tế trên <em>[iPhone 13 và Samsung A54]</em>.<br>
+  Kết quả: <b><em>3</em> lỗi P1</b> · <b><em>5</em> lỗi P2</b> · <b><em>4</em> lỗi P3</b>.<br>
+  <b>Chưa đủ điều kiện nghiệm thu</b> do còn lỗi P1 ở mục <em>[biểu mẫu liên hệ trên iPhone]</em> và
+  <em>[tìm kiếm không dấu]</em>. Chi tiết và ảnh chụp trong bảng đính kèm.<br>
+  Đề nghị bên phát triển xử lý P1 và P2 trước ngày <em>[__/__]</em>, kiểm lại toàn bộ sau khi sửa.</div>
+
+  <div class="hop meo">
+    <p class="tieu">🔁 Đừng quên vòng kiểm lại</p>
+    <p>Sửa xong <b>phải chạy lại đúng những bước đã sinh ra lỗi</b>, chứ không chỉ tin lời báo "đã sửa rồi".
+    Và chạy lại nhanh 3 trang quan trọng nhất ở 360px, vì sửa chỗ này rất hay làm vỡ chỗ khác.</p>
+  </div>
+</section>
+
+<section id="nhanh">
+  <h2><span class="so">05</span>Bản rút gọn — in ra một trang, tick tay</h2>
+  <p class="sub">Dùng khi đã quen tay, không cần đọc lại phần hướng dẫn.</p>
+
+  <h4 style="color:var(--sg-navy)">A. Responsive</h4>
+  <ul class="tick">
+    <li>Chạy 6 trang đại diện qua 6 chiều rộng: <b>360 · 390 · 430 · 768 · 1024 · 1440</b> — tải lại trang sau mỗi lần đổi</li>
+    <li>Mỗi lần soi đủ 14 điểm ở mục 1.4, ưu tiên: không tràn ngang · không đè chồng · không chữ tràn khung</li>
+    <li>Mở 6 trang đó trên <b>điện thoại thật</b>, bấm bằng ngón tay, thử bàn phím ảo ở trang liên hệ</li>
+    <li>Xoay ngang máy kiểm lại trang chủ và trang sản phẩm</li>
+  </ul>
+
+  <h4 style="color:var(--sg-navy)">B. Tương thích trình duyệt</h4>
+  <ul class="tick">
+    <li>Chụp bộ ảnh mốc bằng Chrome, mức phóng để 100%</li>
+    <li>So lần lượt: <b>Safari trên iPhone thật</b> · Chrome Android · Firefox · Cốc Cốc</li>
+    <li>Mỗi trình duyệt bấm thử 3 việc sinh tiền: nút chính · gửi biểu mẫu · tìm kiếm</li>
+    <li>Mở link trong <b>Zalo và Messenger</b>, kiểm biểu mẫu gửi được không</li>
+    <li>Soi riêng: dấu tiếng Việt · ảnh có hiện đủ · có khối nào biến mất không</li>
+  </ul>
+
+  <h4 style="color:var(--sg-navy)">C. Search nội bộ</h4>
+  <ul class="tick">
+    <li>Chạy đủ 12 câu tìm kiếm mẫu ở mục 3.2 — nhớ nhất: <b>không dấu</b> · <b>viết hoa</b> · <b>ô trống</b> · <b>từ khóa không tồn tại</b></li>
+    <li>Soi 9 điểm trang kết quả, đo thời gian ra kết quả</li>
+    <li>Kiểm trang kết quả trên chiều rộng 360</li>
+    <li>Kiểm 3 điểm SEO: không bị lập chỉ mục · có ghi nhận vào GA4 · địa chỉ trang sạch</li>
+  </ul>
+
+  <h4 style="color:var(--sg-navy)">D. Trước khi gửi biên bản</h4>
+  <ul class="tick">
+    <li>Mỗi lỗi có <b>ít nhất 1 ảnh chụp</b> và ghi rõ thiết bị/trình duyệt</li>
+    <li>Mỗi lỗi có gắn mức <b>P1 / P2 / P3</b></li>
+    <li>Mỗi lỗi có <b>các bước lặp lại</b> để bên lập trình tự dựng lại được</li>
+    <li>Có câu kết luận rõ: đủ hay chưa đủ điều kiện nghiệm thu</li>
+  </ul>
+</section>
+
+<footer><div class="wrap" style="padding:0">
+  <p><b>Hướng dẫn check chi tiết — Giao diện &amp; Chức năng website</b><br>
+  Dựng ngày 17/09/2026 · Dùng cho quy trình nghiệm thu website khách hàng của SEONGON.</p>
+  <p>Phần thao tác trong hướng dẫn này viết theo Chrome và Safari trên máy Mac; phím tắt Windows ghi
+  trong ngoặc. Trình duyệt cập nhật thường xuyên nên vị trí một vài nút có thể xê dịch — khi đó tìm
+  theo tên nút ghi trong bài.</p>
+</div></footer>
+
+</div>
+</body></html>
