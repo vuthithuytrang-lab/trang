@@ -80,70 +80,69 @@ canvas{max-width:100%;border-radius:10px;border:1px solid var(--vien)}
 // ======================= HƯỚNG DẪN KẾT NỐI TỪNG NỀN TẢNG =======================
 // {R} = địa chỉ trả về (redirect) của app, {O} = địa chỉ app. Mỗi bước có nút mở thẳng đúng trang.
 const P = {
-  wix: { ten: 'Wix', oauth: false,
+  // top = ô điền trước (thông tin trang của bạn) → các nút ở bước sau tự mở thẳng đúng trang. {k} = giá trị ô k; {?project} = ?project=… nếu có
+  wix: { ten: 'Wix', oauth: false, top: ['name', 'site_id', 'url_prefix'],
     buoc: [
-      ['Mở trang tạo chìa API của Wix, bấm <b>Generate API Key</b>. Đặt tên "app share bai".', [['Mở trang tạo chìa Wix', 'https://manage.wix.com/account/api-keys']]],
-      ['Ở mục quyền: chọn <b>All site permissions</b> → tích <b>Wix Blog</b> (đăng bài) và <b>Media Manager</b> (tải ảnh). Bấm <b>Generate Key</b> → <b>Copy</b> → dán vào ô "Chìa API" bên dưới.'],
-      ['Lấy <b>Site ID</b>: mở danh sách trang → bấm vào trang cần đăng → nhìn thanh địa chỉ, đoạn chữ số sau <code>/dashboard/</code> chính là Site ID.', [['Mở danh sách trang Wix', 'https://manage.wix.com/account/sites']]],
-      ['Bấm <b>Lưu & kiểm tra</b>. App tự tìm tác giả bài viết. (Trang phải cài sẵn ứng dụng Blog của Wix.)'],
+      ['Lấy <b>Site ID</b>: mở danh sách trang → bấm vào trang cần đăng → trên thanh địa chỉ, đoạn sau <code>/dashboard/</code> là Site ID → dán vào ô Site ID ở trên. Điền xong, các nút bên dưới sẽ mở thẳng trang của bạn.', [['Mở danh sách trang Wix', 'https://manage.wix.com/account/sites']]],
+      ['Kiểm tra trang đã cài ứng dụng <b>Blog</b> (chưa có thì bấm Thêm ứng dụng Blog).', [['Mở mục Blog của trang này', 'https://manage.wix.com/dashboard/{site_id}/blog'], ['Bảng điều khiển trang', 'https://manage.wix.com/dashboard/{site_id}/home']]],
+      ['Tạo chìa: bấm <b>Generate API Key</b> → tên "app share bai" → <b>Sites: Specific sites</b> chọn đúng trang → quyền tích <b>Wix Blog</b> và <b>Quản lý phương tiện trang web</b> (Media Manager) → <b>Generate Key</b> → bấm <b>Copy</b> NGAY (Wix chỉ hiện 1 lần, dãy bắt đầu bằng <code>IST.</code>) → dán vào ô Chìa API bên dưới.', [['Mở trang tạo chìa Wix', 'https://manage.wix.com/account/api-keys']]],
+      ['Bấm <b>Lưu & kiểm tra</b>. App tự tìm tác giả bài viết và tự sửa Site ID nếu điền nhầm.'],
     ],
-    o: [['name', 'Tên gợi nhớ', 'Wix - trangjena3'], ['api_key', 'Chìa API (bắt đầu bằng IST.)', '', 1], ['site_id', 'Site ID', 'a11ce1ee-…'], ['url_prefix', 'Link đầu bài (không bắt buộc)', 'https://tenban.wixsite.com/trang/post/'], ['member_id', 'Member ID tác giả (để trống — app tự tìm)', '']] },
-  wordpress: { ten: 'WordPress.com', oauth: true,
+    o: [['name', 'Tên gợi nhớ', 'Wix - trangjena3'], ['site_id', 'Site ID', 'a11ce1ee-…'], ['url_prefix', 'Link đầu bài (không bắt buộc)', 'https://tenban.wixsite.com/trang/post/'], ['api_key', 'Chìa API (bắt đầu bằng IST.)', '', 1], ['member_id', 'Member ID tác giả (để trống — app tự tìm)', '']] },
+  wordpress: { ten: 'WordPress.com', oauth: true, top: ['name', 'site_id'],
     buoc: [
+      ['Kiểm tra blog đúng tài khoản: điền <b>địa chỉ blog</b> ở trên rồi bấm mở thử.', [['Mở blog của bạn', 'https://{site_id}'], ['Cài đặt blog', 'https://wordpress.com/settings/general/{site_id}']]],
       ['Mở trang tạo ứng dụng WordPress.com (đăng nhập đúng tài khoản sở hữu blog).', [['Tạo app WordPress.com', 'https://developer.wordpress.com/apps/new/'], ['Danh sách app của bạn', 'https://developer.wordpress.com/apps/']]],
-      ['Điền: <b>Name</b> = app share bai · <b>Website URL</b> = địa chỉ app · <b>Redirect URLs</b> = địa chỉ trả về · <b>Type</b> = Web. Tích ô xác nhận rồi bấm <b>Create</b>.', null, ['O', 'R']],
-      ['Trang hiện <b>Client ID</b> và <b>Client Secret</b> → dán vào 2 ô bên dưới. Ô "Địa chỉ blog" điền dạng <code>tenblog.wordpress.com</code>.'],
-      ['Bấm <b>Lưu</b> rồi <b>Đăng nhập & cấp quyền</b> → chọn blog → <b>Approve</b>. App tự quay lại và kiểm tra.'],
+      ['Điền: <b>Name</b> = app share bai · <b>Website URL</b> = địa chỉ app · <b>Redirect URLs</b> = địa chỉ trả về (bấm Chép rồi dán) · <b>Type</b> = Web. Tích ô xác nhận rồi bấm <b>Create</b>.', null, ['O', 'R']],
+      ['Trang hiện <b>Client ID</b> và <b>Client Secret</b> → dán vào 2 ô bên dưới → <b>Lưu</b> → <b>Đăng nhập & cấp quyền</b> → chọn blog → <b>Approve</b>. App tự quay lại và kiểm tra.'],
     ],
-    o: [['name', 'Tên gợi nhớ', 'WordPress - tenblog'], ['client_id', 'Client ID', ''], ['client_secret', 'Client Secret', '', 1], ['site_id', 'Địa chỉ blog', 'tenblog.wordpress.com']] },
-  blogger: { ten: 'Blogger (Google)', oauth: true,
+    o: [['name', 'Tên gợi nhớ', 'WordPress - tenblog'], ['site_id', 'Địa chỉ blog', 'tenblog.wordpress.com'], ['client_id', 'Client ID', ''], ['client_secret', 'Client Secret', '', 1]] },
+  blogger: { ten: 'Blogger (Google)', oauth: true, top: ['name', 'project', 'blog_id'],
     buoc: [
-      ['Tạo một dự án Google Cloud (đặt tên "app share bai") → <b>Create</b>.', [['Tạo dự án Google Cloud', 'https://console.cloud.google.com/projectcreate']]],
-      ['Bật 2 dịch vụ: Blogger (đăng bài) và Google Sheets (ghi link về sheet). Mỗi trang bấm <b>Enable</b>.', [['Bật Blogger API', 'https://console.cloud.google.com/apis/library/blogger.googleapis.com'], ['Bật Google Sheets API', 'https://console.cloud.google.com/apis/library/sheets.googleapis.com']]],
-      ['Khai màn hình đồng ý: điền tên app + email → <b>Audience: External</b> → thêm email của bạn vào <b>Test users</b>. Sau đó vào mục Audience bấm <b>Publish app</b> để chìa <b>không hết hạn sau 7 ngày</b>.', [['Màn hình đồng ý (Branding)', 'https://console.cloud.google.com/auth/branding'], ['Mục Audience (Publish app)', 'https://console.cloud.google.com/auth/audience']]],
-      ['Tạo chìa: <b>Application type = Web application</b> → mục <b>Authorized redirect URIs</b> bấm Add URI, dán địa chỉ trả về → <b>Create</b> → chép Client ID và Client Secret vào 2 ô dưới.', [['Tạo chìa OAuth', 'https://console.cloud.google.com/auth/clients/create']], ['R']],
-      ['Bấm <b>Lưu</b> rồi <b>Đăng nhập & cấp quyền</b> → chọn tài khoản Google sở hữu blog → nếu báo "chưa xác minh" bấm <b>Nâng cao → Đi tới…</b> → <b>Cho phép</b>. App tự lấy blog đầu tiên; muốn blog khác thì điền Blog ID.'],
+      ['Tạo một dự án Google Cloud (đặt tên "app share bai") → <b>Create</b>. Chép <b>Project ID</b> (mã dự án) vào ô ở trên — các nút sau sẽ mở thẳng đúng dự án. Đã có dự án thì mở danh sách để chép mã.', [['Tạo dự án Google Cloud', 'https://console.cloud.google.com/projectcreate'], ['Danh sách dự án', 'https://console.cloud.google.com/cloud-resource-manager']]],
+      ['Bật 2 dịch vụ: Blogger (đăng bài) và Google Sheets (ghi link về sheet). Mỗi trang bấm <b>Enable</b>.', [['Bật Blogger API', 'https://console.cloud.google.com/apis/library/blogger.googleapis.com{?project}'], ['Bật Google Sheets API', 'https://console.cloud.google.com/apis/library/sheets.googleapis.com{?project}']]],
+      ['Màn hình đồng ý: điền tên app + email → <b>Audience: External</b> → thêm email của bạn vào <b>Test users</b> → bấm <b>Publish app</b> để chìa <b>không hết hạn sau 7 ngày</b>.', [['Màn hình đồng ý (Branding)', 'https://console.cloud.google.com/auth/branding{?project}'], ['Audience (Publish app)', 'https://console.cloud.google.com/auth/audience{?project}']]],
+      ['Tạo chìa: <b>Web application</b> → <b>Authorized redirect URIs</b> → Add URI, dán địa chỉ trả về → <b>Create</b> → chép Client ID / Client Secret vào 2 ô dưới.', [['Tạo chìa OAuth', 'https://console.cloud.google.com/auth/clients/create{?project}'], ['Chìa đã có', 'https://console.cloud.google.com/auth/clients{?project}']], ['R']],
+      ['Bấm <b>Lưu</b> → <b>Đăng nhập & cấp quyền</b> → chọn tài khoản Google sở hữu blog → nếu báo "chưa xác minh" bấm <b>Nâng cao → Đi tới…</b> → <b>Cho phép</b>.', [['Mở cài đặt blog (khi đã có Blog ID)', 'https://www.blogger.com/blog/settings/{blog_id}']]],
     ],
-    o: [['name', 'Tên gợi nhớ', 'Blogger - tenblog'], ['client_id', 'Client ID', '….apps.googleusercontent.com'], ['client_secret', 'Client Secret', '', 1], ['blog_id', 'Blog ID (để trống — app tự lấy)', '']] },
-  ggroups: { ten: 'Google Groups', oauth: true,
+    o: [['name', 'Tên gợi nhớ', 'Blogger - tenblog'], ['project', 'Mã dự án Google Cloud (Project ID)', 'app-share-bai-12345'], ['blog_id', 'Blog ID (để trống — app tự lấy)', ''], ['client_id', 'Client ID', '….apps.googleusercontent.com'], ['client_secret', 'Client Secret', '', 1]] },
+  ggroups: { ten: 'Google Groups', oauth: true, top: ['name', 'group_email', 'project'],
     buoc: [
-      ['Tài khoản Gmail dùng để đăng phải <b>là thành viên của nhóm</b> và được phép đăng bài không cần duyệt. Mở trang nhóm kiểm tra (chưa tham gia thì bấm <b>Tham gia nhóm</b>).', [['Mở nhóm techcombank-viet-nam', 'https://groups.google.com/g/techcombank-viet-nam']]],
-      ['Dùng lại dự án Google Cloud của Blogger (hoặc tạo mới), bật <b>Gmail API</b> → <b>Enable</b>.', [['Bật Gmail API', 'https://console.cloud.google.com/apis/library/gmail.googleapis.com'], ['Tạo dự án mới (nếu chưa có)', 'https://console.cloud.google.com/projectcreate']]],
-      ['Màn hình đồng ý: thêm email của bạn vào <b>Test users</b>, rồi <b>Publish app</b> để chìa không hết hạn sau 7 ngày.', [['Màn hình đồng ý', 'https://console.cloud.google.com/auth/branding'], ['Mục Audience (Publish app)', 'https://console.cloud.google.com/auth/audience']]],
-      ['Tạo chìa (hoặc dùng lại chìa Web của Blogger): <b>Web application</b> → <b>Authorized redirect URIs</b> dán địa chỉ trả về → <b>Create</b> → chép Client ID / Client Secret vào ô dưới.', [['Tạo chìa OAuth', 'https://console.cloud.google.com/auth/clients/create'], ['Danh sách chìa đã có', 'https://console.cloud.google.com/auth/clients']], ['R']],
-      ['Ô "Địa chỉ đăng bài của nhóm" điền <code>tennhom@googlegroups.com</code>. Bấm <b>Lưu</b> → <b>Đăng nhập & cấp quyền</b> → chọn đúng Gmail thành viên nhóm → <b>Cho phép</b>.'],
+      ['Điền địa chỉ nhóm ở trên, rồi mở nhóm kiểm tra: Gmail dùng để đăng phải <b>là thành viên</b> (chưa thì bấm <b>Tham gia nhóm</b>) và được đăng không cần duyệt.', [['Mở nhóm', 'https://groups.google.com/g/{group}'], ['Thành viên nhóm', 'https://groups.google.com/g/{group}/members'], ['Cài đặt nhóm', 'https://groups.google.com/g/{group}/settings']]],
+      ['Dùng lại dự án Google Cloud của Blogger (điền mã dự án ở trên) hoặc tạo mới, rồi bật <b>Gmail API</b> → <b>Enable</b>.', [['Bật Gmail API', 'https://console.cloud.google.com/apis/library/gmail.googleapis.com{?project}'], ['Tạo dự án mới', 'https://console.cloud.google.com/projectcreate']]],
+      ['Màn hình đồng ý: thêm Gmail vào <b>Test users</b> → <b>Publish app</b> để chìa không hết hạn sau 7 ngày.', [['Màn hình đồng ý', 'https://console.cloud.google.com/auth/branding{?project}'], ['Audience (Publish app)', 'https://console.cloud.google.com/auth/audience{?project}']]],
+      ['Tạo chìa (hoặc dùng lại chìa Web của Blogger): <b>Web application</b> → <b>Authorized redirect URIs</b> dán địa chỉ trả về → <b>Create</b> → chép Client ID / Secret vào ô dưới → <b>Lưu</b> → <b>Đăng nhập & cấp quyền</b> → chọn Gmail thành viên nhóm → <b>Cho phép</b>.', [['Tạo chìa OAuth', 'https://console.cloud.google.com/auth/clients/create{?project}'], ['Chìa đã có', 'https://console.cloud.google.com/auth/clients{?project}']], ['R']],
     ],
-    o: [['name', 'Tên gợi nhớ', 'GG Group - techcombank-viet-nam'], ['client_id', 'Client ID', '….apps.googleusercontent.com'], ['client_secret', 'Client Secret', '', 1], ['group_email', 'Địa chỉ đăng bài của nhóm', 'techcombank-viet-nam@googlegroups.com']] },
-  webflow: { ten: 'Webflow', oauth: false,
+    o: [['name', 'Tên gợi nhớ', 'GG Group - techcombank-viet-nam'], ['group_email', 'Địa chỉ đăng bài của nhóm', 'techcombank-viet-nam@googlegroups.com'], ['project', 'Mã dự án Google Cloud (không bắt buộc)', ''], ['client_id', 'Client ID', '….apps.googleusercontent.com'], ['client_secret', 'Client Secret', '', 1]] },
+  webflow: { ten: 'Webflow', oauth: false, top: ['name', 'url_prefix'],
     buoc: [
-      ['Mở bảng điều khiển Webflow → di chuột vào trang → ⚙ <b>Settings</b> → <b>Apps & integrations</b> → kéo xuống <b>API access</b> → <b>Generate API token</b>. Tích <b>CMS: Read and write</b> và <b>Sites: Read</b> → chép token.', [['Mở Webflow Dashboard', 'https://webflow.com/dashboard']]],
-      ['Lấy <b>Collection ID</b>: mở Designer → biểu tượng CMS → bộ sưu tập bài viết (vd Blog Posts) → ⚙ Settings → chép <b>Collection ID</b>.'],
-      ['<b>Link đầu bài</b>: mở 1 bài bất kỳ trên trang, chép phần trước tên bài, vd <code>https://tenban.webflow.io/blog-posts/</code>.'],
+      ['Điền <b>Link đầu bài</b> ở trên (mở 1 bài bất kỳ, chép phần trước tên bài, vd <code>https://tenban.webflow.io/blog-posts/</code>). Các nút sau sẽ mở thẳng trang của bạn.', [['Mở trang của bạn', 'https://{wf}.webflow.io']]],
+      ['Tạo token: <b>API access</b> → <b>Generate API token</b> → tích <b>CMS: Read and write</b> và <b>Sites: Read</b> → chép token vào ô dưới.', [['Mở Apps & integrations của trang', 'https://webflow.com/dashboard/sites/{wf}/integrations'], ['Webflow Dashboard', 'https://webflow.com/dashboard']]],
+      ['Lấy <b>Collection ID</b>: mở Designer → biểu tượng CMS → bộ sưu tập bài viết → ⚙ Settings → chép <b>Collection ID</b>.', [['Mở Designer của trang', 'https://{wf}.design.webflow.com']]],
       ['Bấm <b>Lưu & kiểm tra</b>. Lưu ý gói miễn phí chỉ chứa tối đa 50 bài.'],
     ],
-    o: [['name', 'Tên gợi nhớ', 'Webflow - tenban'], ['token', 'API token', '', 1], ['collection_id', 'Collection ID', ''], ['url_prefix', 'Link đầu bài', 'https://tenban.webflow.io/blog-posts/']] },
-  tumblr: { ten: 'Tumblr', oauth: true,
+    o: [['name', 'Tên gợi nhớ', 'Webflow - tenban'], ['url_prefix', 'Link đầu bài', 'https://tenban.webflow.io/blog-posts/'], ['token', 'API token', '', 1], ['collection_id', 'Collection ID', '']] },
+  tumblr: { ten: 'Tumblr', oauth: true, top: ['name', 'blog'],
     buoc: [
-      ['Mở trang đăng ký ứng dụng Tumblr → <b>Register application</b>.', [['Đăng ký app Tumblr', 'https://www.tumblr.com/oauth/register']]],
-      ['Điền: Application name = app share bai · <b>Application website</b> = địa chỉ app · <b>Default callback URL</b> và <b>OAuth2 redirect URLs</b> = địa chỉ trả về · email của bạn → <b>Register</b>.', null, ['O', 'R']],
-      ['Chép <b>OAuth Consumer Key</b> vào ô Client ID, <b>Secret Key</b> vào ô Client Secret.', [['Danh sách app Tumblr', 'https://www.tumblr.com/oauth/apps']]],
-      ['Bấm <b>Lưu</b> rồi <b>Đăng nhập & cấp quyền</b> → <b>Allow</b>.'],
+      ['Điền tên blog ở trên rồi mở thử để chắc đúng tài khoản.', [['Mở blog của bạn', 'https://www.tumblr.com/{blog}']]],
+      ['Đăng ký ứng dụng: Application name = app share bai · <b>Application website</b> = địa chỉ app · <b>Default callback URL</b> và <b>OAuth2 redirect URLs</b> = địa chỉ trả về · email → <b>Register</b>.', [['Đăng ký app Tumblr', 'https://www.tumblr.com/oauth/register']], ['O', 'R']],
+      ['Chép <b>OAuth Consumer Key</b> vào ô Client ID, <b>Secret Key</b> vào ô Client Secret → <b>Lưu</b> → <b>Đăng nhập & cấp quyền</b> → <b>Allow</b>.', [['Danh sách app Tumblr', 'https://www.tumblr.com/oauth/apps']]],
     ],
-    o: [['name', 'Tên gợi nhớ', 'Tumblr - tenblog'], ['client_id', 'Client ID (OAuth Consumer Key)', ''], ['client_secret', 'Client Secret', '', 1], ['blog', 'Tên blog (để trống — app tự lấy)', 'tenblog']] },
-  mastodon: { ten: 'Mastodon', oauth: false,
+    o: [['name', 'Tên gợi nhớ', 'Tumblr - tenblog'], ['blog', 'Tên blog', 'tenblog'], ['client_id', 'Client ID (OAuth Consumer Key)', ''], ['client_secret', 'Client Secret', '', 1]] },
+  mastodon: { ten: 'Mastodon', oauth: false, top: ['name', 'instance'],
     buoc: [
-      ['Điền <b>máy chủ</b> của bạn (vd mastodon.social) vào ô bên dưới, rồi bấm nút để mở trang tạo ứng dụng.', [['Tạo app trên mastodon.social', 'https://mastodon.social/settings/applications/new']]],
-      ['Application name = app share bai · chỉ cần tích <b>read:accounts</b> và <b>write:statuses</b> → <b>Submit</b>.'],
-      ['Bấm vào app vừa tạo → chép <b>Your access token</b> → dán vào ô dưới → <b>Lưu & kiểm tra</b>. Mastodon đăng tút ngắn (tiêu đề + tóm tắt + link bài gốc).'],
+      ['Điền <b>máy chủ</b> ở trên (vd mastodon.social) → bấm nút để mở thẳng trang tạo ứng dụng trên máy chủ của bạn.', [['Tạo app trên máy chủ của bạn', 'https://{instance}/settings/applications/new']]],
+      ['Application name = app share bai · chỉ tích <b>read:accounts</b> và <b>write:statuses</b> → <b>Submit</b>.'],
+      ['Bấm vào app vừa tạo → chép <b>Your access token</b> → dán vào ô dưới → <b>Lưu & kiểm tra</b>.', [['Danh sách app của bạn', 'https://{instance}/settings/applications']]],
     ],
     o: [['name', 'Tên gợi nhớ', 'Mastodon - @ten'], ['instance', 'Máy chủ', 'mastodon.social'], ['token', 'Access token', '', 1]] },
-  telegram: { ten: 'Telegram', oauth: false,
+  telegram: { ten: 'Telegram', oauth: false, top: ['name', 'chat_id'],
     buoc: [
       ['Mở BotFather → gõ <code>/newbot</code> → đặt tên → BotFather gửi <b>token</b> → chép vào ô dưới.', [['Mở BotFather', 'https://t.me/BotFather']]],
-      ['Thêm bot vào kênh của bạn với vai trò <b>Quản trị viên</b>, bật quyền <b>Đăng tin</b>.'],
-      ['Ô Chat ID điền <code>@tenkenh</code> (kênh công khai) → <b>Lưu & kiểm tra</b>. Telegram đăng tin ngắn có link bài gốc.'],
+      ['Thêm bot vào kênh (điền <code>@tenkenh</code> ở trên) với vai trò <b>Quản trị viên</b>, bật quyền <b>Đăng tin</b>.', [['Mở kênh của bạn', 'https://t.me/{chat}']]],
+      ['Bấm <b>Lưu & kiểm tra</b>. Telegram đăng tin ngắn có link bài gốc.'],
     ],
-    o: [['name', 'Tên gợi nhớ', 'Telegram - kênh'], ['bot_token', 'Bot token', '', 1], ['chat_id', 'Chat ID', '@tenkenh']] },
+    o: [['name', 'Tên gợi nhớ', 'Telegram - kênh'], ['chat_id', 'Chat ID', '@tenkenh'], ['bot_token', 'Bot token', '', 1]] },
 };
 
 // ======================= TIỆN ÍCH =======================
@@ -359,11 +358,25 @@ function vKetNoi() {
 function formConn(type, cid) {
   const p = P[type], c = cid ? S.conns.find((x) => x.id === cid) : null;
   const sub = (k) => k === 'R' ? `<div class="mo" style="margin-top:6px">Địa chỉ trả về (Redirect URL):</div>${copyBox(S.redirect)}` : `<div class="mo" style="margin-top:6px">Địa chỉ app (Website URL):</div>${copyBox(S.origin)}`;
+  const field = ([k, l, ph, sec]) => `<div><label>${l}</label><input data-k="${k}" ${sec ? 'type="password" autocomplete="off"' : ''} placeholder="${esc(sec && c ? '•••••• (để trống = giữ chìa cũ)' : ph)}" value="${esc(k === 'name' ? (c?.name || '') : sec ? '' : (c?.data[k] || ''))}"></div>`;
+  const top = p.o.filter((f) => (p.top || []).includes(f[0])), rest = p.o.filter((f) => !(p.top || []).includes(f[0]));
   $('#form').innerHTML = `<div class="card" style="border:2px solid var(--xanh)"><h2>${c ? 'Sửa' : 'Kết nối'} ${p.ten}</h2>
-    <ol class="steps">${p.buoc.map(([t, links, subs]) => `<li>${t}<div>${(links || []).map(([n, u]) => `<a class="go" target="_blank" href="${u}">${n}</a>`).join('')}</div>${(subs || []).map(sub).join('')}</li>`).join('')}</ol>
-    <div class="row">${p.o.map(([k, l, ph, sec]) => `<div><label>${l}</label><input data-k="${k}" ${sec ? 'type="password" autocomplete="off"' : ''} placeholder="${esc(sec && c ? '•••••• (để trống = giữ chìa cũ)' : ph)}" value="${esc(k === 'name' ? (c?.name || '') : sec ? '' : (c?.data[k] || ''))}"></div>`).join('')}</div>
+    <div style="background:var(--xam);border-radius:10px;padding:10px 12px"><b>① Thông tin trang của bạn</b> <span class="mo">— điền trước, các nút ở bước dưới sẽ mở thẳng đúng trang của bạn</span><div class="row">${top.map(field).join('')}</div></div>
+    <ol class="steps" id="steps"></ol>
+    <div class="row">${rest.map(field).join('')}</div>
     <p><button class="b" id="savec">${p.oauth ? '💾 Lưu' : '💾 Lưu & kiểm tra'}</button> <button class="b phu" onclick="$('#form').innerHTML=''">Đóng</button></p>
     ${p.oauth ? '<p class="mo">Sau khi Lưu, bấm nút <b>Đăng nhập & cấp quyền</b> ở thẻ kết nối bên dưới.</p>' : ''}</div>`;
+  const vals = () => { const v = {}; $$('#form input[data-k]').forEach((i) => v[i.dataset.k] = i.value.trim()); v.site_id = (v.site_id || '').replace(/^https?:\/\//, '').replace(/\/.*$/, '') || v.site_id;
+    if (type === 'wix') v.site_id = $('#form input[data-k="site_id"]').value.trim();
+    v.group = (v.group_email || '').split('@')[0]; v.chat = (v.chat_id || '').replace(/^@/, ''); v.instance = (v.instance || '').replace(/^https?:\/\//, '').replace(/\/.*$/, '');
+    v.wf = ((v.url_prefix || '').match(/^https?:\/\/([^./]+)\.webflow\.io/) || [])[1] || ''; return v; };
+  const drawSteps = () => { const v = vals();
+    $('#steps').innerHTML = p.buoc.map(([t, links, subs]) => `<li>${t}<div>${(links || []).map(([n, u]) => {
+      const url = u.replace('{?project}', v.project ? '?project=' + encodeURIComponent(v.project) : '');
+      const miss = (url.match(/\{(\w+)\}/g) || []).filter((m) => !v[m.slice(1, -1)]);
+      if (miss.length) return `<span class="go" style="opacity:.5;cursor:not-allowed" title="Điền ô ở phần ① trước">${n} (điền ô ở phần ① trước)</span>`;
+      return `<a class="go" target="_blank" href="${esc(url.replace(/\{(\w+)\}/g, (m, k) => encodeURIComponent(v[k]).replace(/%2F/g, '/')))}">${n}</a>`; }).join('')}</div>${(subs || []).map(sub).join('')}</li>`).join(''); };
+  drawSteps(); $$('#form input[data-k]').forEach((i) => i.addEventListener('input', drawSteps));
   $('#form').scrollIntoView({ behavior: 'smooth' });
   $('#savec').onclick = async () => {
     const data = {}; $$('#form input[data-k]').forEach((i) => { if (i.dataset.k !== 'name') data[i.dataset.k] = i.value; });
