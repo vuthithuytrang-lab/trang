@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="vi">
 <head>
-<!-- phien-ban: 202611111706 -->
+<!-- phien-ban: 202611111711 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Kỹ thuật phụ</title>
@@ -46,7 +46,7 @@ body{margin:0;background:var(--nen);color:var(--chu);font:14px/1.55 "Be Vietnam 
 .hang-muc h2{font-size:17px;font-weight:800;margin:0 0 12px;display:flex;align-items:center;gap:8px}
 .hang-muc h2 small{font-size:12px;color:var(--mo);font-weight:600}
 .luoi{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-@media(max-width:760px){.luoi{grid-template-columns:1fr}.hero h1{font-size:28px}}
+@media(max-width:760px){.luoi{grid-template-columns:1fr}.hero h1{font-size:28px}.dai{display:none}.dau img{height:30px}}
 .the{background:var(--the);border:1px solid var(--vien);border-radius:16px;padding:18px 20px;display:flex;flex-direction:column;gap:6px}
 .the .tren{display:flex;align-items:center;gap:10px}
 .bieu{width:34px;height:34px;border-radius:50%;background:var(--xanh);display:grid;place-items:center;flex:none}
@@ -76,8 +76,8 @@ body{margin:0;background:var(--nen);color:var(--chu);font:14px/1.55 "Be Vietnam 
 <div class="dau"><div class="dau-trong">
   <img src="../logo.webp" alt="SEONGON – AI-First Search Marketing Growth Partner">
   <div class="phai">
-    <button class="nut-nho" id="nutCaiDat">⚙ Khoá AI dùng chung</button>
-    <button class="nut-nho" id="nutNen" title="Đổi nền sáng / tối">◐</button>
+    <button class="nut-nho" id="nutCaiDat">Khoá AI<span class="dai"> dùng chung</span></button>
+    <button class="nut-nho" id="nutNen" title="Đổi nền sáng / tối">Sáng/Tối</button>
   </div>
 </div></div>
 
@@ -231,7 +231,7 @@ var BIEU = {
   'tai-lieu':'<svg viewBox="0 0 24 24"><path d="M6 3h9l3 3v15H6z"/><path d="M9 11h6M9 15h6"/></svg>'
 };
 var $ = function(id){ return document.getElementById(id); };
-$('ban').textContent = (document.documentElement.innerHTML.match(/phien-ban: 202611111706([0-9a-z-]+)/)||[])[1] || '';
+$('ban').textContent = (document.documentElement.innerHTML.match(/phien-ban: 202611111711([0-9a-z-]+)/)||[])[1] || '';
 function luu(k, v){ try{ localStorage.setItem(k, v); }catch(e){} }
 function doc(k){ try{ return localStorage.getItem(k) || ''; }catch(e){ return ''; } }
 function thoat(s){ return (s||'').replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
