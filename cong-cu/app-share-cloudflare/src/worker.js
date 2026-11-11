@@ -6,7 +6,7 @@ import { runOnce } from './runner.js';
 import { apps, saveApps, quickStart, quickCallback, addByUrl } from './quick.js';
 import { rnd, hashPw, hmac, safeEq, b64ToBytes } from './util.js';
 
-const VERSION = '2026-11-11a';
+const VERSION = '2026-11-11b';
 const SECRET = new Set(['api_key', 'client_secret', 'access_token', 'refresh_token', 'token', 'bot_token']);
 const json = (d, s = 200) => new Response(JSON.stringify(d), { status: s, headers: { 'Content-Type': 'application/json' } });
 const mask = (c) => ({ ...c, data: Object.fromEntries(Object.entries(c.data || {}).map(([k, v]) => [k, SECRET.has(k) && v ? '••••••' : v])) });
