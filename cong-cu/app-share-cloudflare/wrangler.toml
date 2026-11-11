@@ -1,0 +1,20 @@
+# App share bài — Cloudflare Workers (gói Free). Đưa lên bằng Workers Builds nối thẳng kho GitHub: không cần token.
+name = "share-bai"
+main = "src/worker.js"
+compatibility_date = "2025-09-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Giao diện tĩnh; /api/* do Worker xử lý
+[assets]
+directory = "./public"
+binding = "ASSETS"
+not_found_handling = "single-page-application"
+run_worker_first = ["/api/*"]
+
+# Kho dữ liệu (Cloudflare tự tạo khi đăng lần đầu — không cần điền mã)
+[[kv_namespaces]]
+binding = "KV"
+
+# Tự đăng 10 phút/lần
+[triggers]
+crons = ["*/10 * * * *"]
