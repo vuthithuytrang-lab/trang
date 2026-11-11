@@ -41,6 +41,21 @@ của công ty: mở link là dùng, đăng nhập 1 lần, mỗi người giữ
   lưu trong KV của Cloudflare theo từng người dùng — tuyệt đối không ghi vào repo (repo công khai), không bắt mình
   dán token vào chat. Nền tảng nào bắt buộc phải có chìa riêng thì báo thật, đề xuất đường vòng, đừng âm thầm bỏ qua.
 
+## Bổ sung: hạng mục Internal link trong Kỹ thuật phụ (giữ đúng khi dựng nền tảng trên Cloudflare)
+- Hạng mục Internal link chỉ còn 2 thẻ:
+  1. "Lập kế hoạch internal link" — để RIÊNG (chạy cùng Claude, skill ke-hoach-internal-link).
+  2. "Luồng inlink" — GỘP 5 công cụ cũ thành 1 task nhiều tính năng: Chèn inlink trên trình duyệt; Chèn inlink vào
+     Google Docs theo sheet (skill chen-internal-link luồng A); App Inlink trong Google Sheet (Apps Script, tự chạy mỗi giờ);
+     Tạo HTML inlink từ Docs đề xuất (cong-cu/inlink-html); Gắn inlink vào Google Doc có sẵn (skill inlink-generator);
+     cộng thêm "Sửa theo góp ý người duyệt" (chen-internal-link luồng B).
+- Cách dùng mình muốn: TÍCH TỪNG HẠNG MỤC (chặng) nào thì LUỒNG CHẠY THEO chặng đó, đúng thứ tự trên xuống;
+  điền thông tin dự án 1 lần (tên dự án, link sheet, tab, thư mục Drive, phạm vi, ghi chú) và app nhớ lại.
+- Bản hiện có (đang chạy, dùng làm gốc): https://vuthithuytrang-lab.github.io/trang/inlink/ — nguồn
+  cong-cu/kho-app/inlink/index.html trên nhánh claude/hopeful-cray-qhwbns. Hiện tích chặng → app ráp 1 câu lệnh để dán
+  vào Claude Code. Khi lên Cloudflare: giữ giao diện tích chặng; chặng nào chạy được thẳng trên máy chủ Cloudflare
+  (cron + đăng nhập Google bằng OAuth, không token) thì cho bấm "Chạy" ngay trong app và hiện tiến độ từng chặng;
+  chặng nào bắt buộc cần Claude thì giữ nút "Copy câu lệnh". Nói rõ chặng nào chạy thẳng được, chặng nào chưa, vì sao.
+
 ## Các bước bạn làm
 1. Đọc các file nguồn ở trên, tóm tắt cho mình 3–5 dòng: app hiện làm được gì, chuyển sang Cloudflare cần đổi gì.
 2. Hỏi mình tối đa 3 câu trắc nghiệm (có phương án "Nên chọn") về: tên app trên link, cách đăng nhập, ai được dùng.
@@ -49,7 +64,7 @@ của công ty: mở link là dùng, đăng nhập 1 lần, mỗi người giữ
 4. Hướng dẫn mình tạo tài khoản Cloudflare + nối repo, TỪNG BƯỚC MỘT, kèm đúng link cần bấm.
 5. Khi web chạy: tự mở link thật, chụp màn hình bản máy tính + điện thoại, thử kết nối 1 nền tảng và xếp 1 bài đợi.
 6. Thêm/cập nhật thẻ app trong Kỹ thuật phụ (thẻ "App share web": đổi loai/link sang địa chỉ workers.dev, bỏ "sap"),
-   đăng lại Kỹ thuật phụ, kiểm tra link mở được.
+   giữ hạng mục Internal link đúng 2 thẻ như mục Bổ sung ở trên, đăng lại Kỹ thuật phụ, kiểm tra link mở được.
 7. Soát rò rỉ trước mỗi lần đẩy lên repo công khai: không email, không token, không tên/link sheet khách.
 8. Commit + push lên nhánh làm việc của luồng này. Viết trang bàn giao 10 mục (theo CACH-DONG-GOI-APP.md).
 
