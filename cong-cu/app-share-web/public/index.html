@@ -358,7 +358,7 @@ function vKetNoi() {
 function formConn(type, cid) {
   const p = P[type], c = cid ? S.conns.find((x) => x.id === cid) : null;
   const sub = (k) => k === 'R' ? `<div class="mo" style="margin-top:6px">Địa chỉ trả về (Redirect URL):</div>${copyBox(S.redirect)}` : `<div class="mo" style="margin-top:6px">Địa chỉ app (Website URL):</div>${copyBox(S.origin)}`;
-  const field = ([k, l, ph, sec]) => `<div><label>${l}</label><input data-k="${k}" ${sec ? 'type="password" autocomplete="off"' : ''} placeholder="${esc(sec && c ? '•••••• (để trống = giữ chìa cũ)' : ph)}" value="${esc(k === 'name' ? (c?.name || '') : sec ? '' : (c?.data[k] || ''))}"></div>`;
+  const field = ([k, l, ph, sec]) => `<div><label>${l}</label><input data-k="${k}" ${sec ? 'type="password" autocomplete="off"' : ''} placeholder="${esc(sec && c ? '•••••• (để trống = giữ chìa cũ)' : ph ? 'vd: ' + ph : '')}" value="${esc(k === 'name' ? (c?.name || '') : sec ? '' : (c?.data[k] || ''))}"></div>`;
   const top = p.o.filter((f) => (p.top || []).includes(f[0])), rest = p.o.filter((f) => !(p.top || []).includes(f[0]));
   $('#form').innerHTML = `<div class="card" style="border:2px solid var(--xanh)"><h2>${c ? 'Sửa' : 'Kết nối'} ${p.ten}</h2>
     <div style="background:var(--xam);border-radius:10px;padding:10px 12px"><b>① Thông tin trang của bạn</b> <span class="mo">— điền trước, các nút ở bước dưới sẽ mở thẳng đúng trang của bạn</span><div class="row">${top.map(field).join('')}</div></div>
