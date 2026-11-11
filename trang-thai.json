@@ -194,10 +194,10 @@
  },
  "gia-vang-sjc": {
   "ok": true,
-  "luc": "2026-11-10T06:55:04+00:00",
-  "ngay": "11/11/2026",
-  "ten": "Giá vàng SJC hôm nay: Bảng giá cập nhật và lưu ý khi mua bán – 11/11/2026",
-  "can_duyet": "SỐ GIÁ CHƯA CẬP NHẬT (công thức không có quy tắc/nguồn để tính lại, giữ nguyên): \"190\" trong \"á bán vàng miếng SJC từng ở vùng khoảng 190 triệu VND/lượng h\"",
+  "luc": "2026-11-11T02:30:03+00:00",
+  "ngay": "12/11/2026",
+  "ten": "Giá vàng SJC hôm nay: Bảng giá cập nhật và lưu ý khi mua bán – 12/11/2026",
+  "can_duyet": "Đoạn \"hơn 140 triệu VND/lượng\": mốc \"hơn\" tính ra từ giá bán 139.5 → \"130\" (không có sẵn trên nguồn) – đọc lại câu.\nSỐ GIÁ CHƯA CẬP NHẬT (công thức không có quy tắc/nguồn để tính lại, giữ nguyên): \"190\" trong \"á bán vàng miếng SJC từng ở vùng khoảng 190 triệu VND/lượng h\"",
   "loi": ""
  },
  "gia-bach-kim": {
