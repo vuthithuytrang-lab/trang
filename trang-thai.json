@@ -82,10 +82,10 @@
  },
  "gia-ca-phe-dak-lak": {
   "ok": true,
-  "luc": "2026-11-11T02:55:29+00:00",
-  "ngay": "12/11/2026",
-  "ten": "Giá cà phê Đắk Lắk hôm nay – 12/11/2026",
-  "can_duyet": "Bảng giá theo ngày: 5 dòng = 5 ngày mới nhất trên giacaphe.com (10/11/2026, 09/11/2026, 07/11/2026, 06/11/2026, 05/11/2026); nguồn không ghi ngày nghỉ (chủ nhật, ngày không giao dịch) nên các ngày có thể không liền nhau.\nCâu \"giá Đắk Lắk đang ở mức tương đối cao\" giữ nguyên, nhưng với số mới Đắk Lắk 84,800 thấp hơn Đắk Nông 85,000, bằng Gia Lai → câu có thể không còn đúng, cần duyệt.\nNgày trong bài ghi 12/11/2026 (quy tắc ngày hôm sau) nhưng số mới nhất trên nguồn là ngày 10/11/2026 → mọi số giá trong bài là số ngày 10/11/2026.",
+  "luc": "2026-11-12T06:55:15+00:00",
+  "ngay": "13/11/2026",
+  "ten": "Giá cà phê Đắk Lắk hôm nay – 13/11/2026",
+  "can_duyet": "Bảng giá theo ngày: 5 dòng = 5 ngày mới nhất trên giacaphe.com (12/11/2026, 11/11/2026, 10/11/2026, 09/11/2026, 07/11/2026); nguồn không ghi ngày nghỉ (chủ nhật, ngày không giao dịch) nên các ngày có thể không liền nhau.\nCâu \"giá Đắk Lắk đang ở mức tương đối cao\" giữ nguyên, nhưng với số mới Đắk Lắk 83,700 thấp hơn Đắk Nông 83,800, bằng Gia Lai → câu có thể không còn đúng, cần duyệt.\nNgày trong bài ghi 13/11/2026 (quy tắc ngày hôm sau) nhưng số mới nhất trên nguồn là ngày 12/11/2026 → mọi số giá trong bài là số ngày 12/11/2026.",
   "loi": ""
  },
  "gia-ca-phe-luan-don": {
