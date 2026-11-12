@@ -114,6 +114,11 @@ function traVe_(o) {
   return ContentService.createTextOutput(JSON.stringify(o)).setMimeType(ContentService.MimeType.JSON);
 }
 
+/** Không bao giờ được gọi – chỉ để Google xin đúng quyền SỬA file trên Drive (Google đoán quyền theo mã). */
+function canQuyenSua_() {
+  DriveApp.createFile('x', '').setTrashed(true);
+}
+
 /** Chạy thử trong trình soạn mã (chọn hàm "thu" → Chạy): Google hỏi quyền Drive + mạng, rồi đồng bộ bài cà phê. */
 function thu() {
   DriveApp.getFolderById(DB.THU_MUC_ID);
