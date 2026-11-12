@@ -44,7 +44,7 @@ https://docs.google.com/document/d/1ho6aEZqDzEESNSN3ygDi-hSOE6P3RhJ6ZxDVzXSoIi8/
 8. Commit + push file bản dịch, báo Trang: link từng doc (kèm `?tab=TAB`), điểm cần chú ý, hỏi 2 câu chốt.
 
 ## Không còn Claude?
-Dùng bản chạy trong Google Sheet: `cong-cu/dich-bai-okamura/apps-script/` (xem HUONG-DAN-CAI.html).
+Dùng bản chạy trong Google Sheet: `cong-cu/dich-bai-okamura/apps-script/` (file DichBaiTuDong.gs, xem HUONG-DAN-CAI.html).
 
 ## Đã biết
 - Chèn ảnh bằng `contentUri` của ảnh trong bài gốc: chạy được, NHƯNG link chỉ sống ~15-20 phút.

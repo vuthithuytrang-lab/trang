@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cài nút Dịch bài Okamura</title>
+<title>Cài Trung tâm dịch bài</title>
 <style>
   :root { --xanh:#004AEF; --mint:#07EF9C; --chu:#14213d; --nhat:#eef3ff; --vien:#d6e0fb; }
   * { box-sizing:border-box; }
@@ -24,50 +24,66 @@
 </head>
 <body>
 <div class="khung">
-  <h1>Cài nút "Dịch bài Okamura" vào Google Sheet</h1>
-  <p class="phu">Cài 1 lần (~10 phút). Sau đó: chọn dòng bài → bấm menu → 1–3 phút có tab "Bản dịch EN". Không cần Claude, miễn phí.</p>
+  <h1>Cài "Trung tâm dịch bài" Việt → Anh</h1>
+  <p class="phu">Cài 1 lần (~10 phút), dùng cho nhiều dự án. Công cụ tự tìm bài đã duyệt, tự dịch, tự ghi link bản dịch về Sheet. Không cần Claude, miễn phí.</p>
 
   <div class="the buoc"><div class="so">1</div><div>
-    <h2>Mở chỗ viết mã của Sheet</h2>
-    <p>Mở file Sheet danh sách bài SEO Okamura → menu <span class="nut">Tiện ích mở rộng</span> → <span class="nut">Apps Script</span>. Một thẻ mới mở ra.</p>
+    <h2>Tạo 1 file Sheet trống làm "Trung tâm dịch bài"</h2>
+    <p>Vào Google Drive → <span class="nut">Mới</span> → <span class="nut">Google Trang tính</span>. Đặt tên "Trung tâm dịch bài". Trong file đó: <span class="nut">Tiện ích mở rộng</span> → <span class="nut">Apps Script</span>.</p>
   </div></div>
 
   <div class="the buoc"><div class="so">2</div><div>
     <h2>Dán đoạn mã</h2>
-    <p>Xoá hết chữ có sẵn trong ô soạn thảo, dán toàn bộ nội dung file <code>DichBaiOkamura.gs</code> vào, bấm biểu tượng 💾 Lưu. Đặt tên dự án tuỳ ý (ví dụ "Dịch bài").</p>
+    <p>Xoá hết chữ có sẵn, dán toàn bộ nội dung file <code>DichBaiTuDong.gs</code>, bấm 💾 Lưu.</p>
   </div></div>
 
   <div class="the buoc"><div class="so">3</div><div>
     <h2>Bật 2 dịch vụ của Google</h2>
-    <p>Cột bên trái, mục <span class="nut">Dịch vụ</span> → bấm dấu <b>+</b> → chọn <b>Google Docs API</b> → <span class="nut">Thêm</span>. Làm lại lần nữa với <b>Google Sheets API</b>.</p>
+    <p>Cột trái, mục <span class="nut">Dịch vụ</span> → dấu <b>+</b> → <b>Google Docs API</b> → <span class="nut">Thêm</span>. Làm lại với <b>Google Sheets API</b>.</p>
   </div></div>
 
   <div class="the buoc"><div class="so">4</div><div>
     <h2>Lấy chìa Gemini (miễn phí)</h2>
-    <p>Vào <code>aistudio.google.com/apikey</code> → đăng nhập Gmail → <span class="nut">Create API key</span> → copy chìa. <b>Không dán chìa vào chat hay gửi cho ai.</b></p>
+    <p>Vào <code>aistudio.google.com/apikey</code> → <span class="nut">Create API key</span> → copy. <b>Không dán chìa vào chat hay gửi cho ai.</b></p>
   </div></div>
 
   <div class="the buoc"><div class="so">5</div><div>
-    <h2>Mở lại Sheet và cấp quyền</h2>
-    <p>Quay lại thẻ Sheet, tải lại trang (Cmd + R). Trên thanh menu xuất hiện <span class="nut">🌐 Dịch bài Okamura</span>.</p>
-    <p>Bấm <span class="nut">Cài khóa Gemini</span> → dán chìa → OK. Lần đầu Google hỏi quyền: chọn tài khoản → <span class="nut">Nâng cao</span> → <span class="nut">Đi tới… (không an toàn)</span> → <span class="nut">Cho phép</span>. (Cảnh báo này hiện với mọi mã tự viết, không sao.)</p>
+    <h2>Tạo bảng cài đặt và cấp quyền</h2>
+    <p>Quay lại file "Trung tâm dịch bài", tải lại trang (Cmd + R). Menu <span class="nut">🌐 Dịch bài</span> xuất hiện.</p>
+    <p>Bấm <span class="nut">① Tạo bảng cài đặt dự án</span>. Lần đầu Google hỏi quyền: chọn tài khoản → <span class="nut">Nâng cao</span> → <span class="nut">Đi tới… (không an toàn)</span> → <span class="nut">Cho phép</span> (cảnh báo này hiện với mọi mã tự viết). Rồi bấm <span class="nut">② Cài khóa Gemini</span> → dán chìa.</p>
   </div></div>
 
   <div class="the nhan">
+    <h3>Bảng "Cài đặt dự án" — mỗi dự án 1 dòng</h3>
+    <ul>
+      <li><b>Link file Sheet danh sách bài</b> + <b>Tên tab</b>: nơi có danh sách bài.</li>
+      <li><b>Cột link Doc</b>: cột chứa link bài tiếng Việt (Okamura: W).</li>
+      <li><b>Cột duyệt</b> + <b>Giá trị được coi là duyệt</b>: chỉ dịch dòng đã duyệt (Okamura: cột Z = "Duyệt"). Để trống = có link là dịch.</li>
+      <li><b>Cột từ khóa</b>: để máy dịch dùng từ khóa nhất quán (Okamura: B).</li>
+      <li><b>Cột ghi link bản dịch</b>: một cột trống, công cụ ghi link "Bản dịch EN" vào đây. Dòng nào đã có chữ ở cột này sẽ không dịch lại (Okamura: AP — nên đặt tiêu đề cột "Link bản dịch EN").</li>
+      <li><b>Bỏ qua nếu cột này đã có chữ</b>: tránh dịch lại bài cũ đã có bản Anh (Okamura: AG "Link bài đăng tiếng anh").</li>
+      <li><b>Đổi link: tìm / thay bằng</b>: đổi link bản Việt sang bản Anh (Okamura: <code>okamura.com.vn/vi/</code> → <code>okamura.com.vn/</code>).</li>
+      <li><b>Giới thiệu thương hiệu</b>: 1 câu tiếng Anh mô tả thương hiệu, giúp máy dịch đúng ngữ cảnh.</li>
+      <li>Thêm dự án mới: điền 1 dòng mới và tích ô <b>Bật</b>. Dòng 2 có sẵn mẫu Okamura.</li>
+    </ul>
+  </div>
+
+  <div class="the">
     <h3>Dùng hằng ngày</h3>
     <ul>
-      <li>Bấm vào dòng bài trong tab "2. Danh sách bài SEO | 2026" → menu <span class="nut">Dịch bài ở dòng đang chọn</span>.</li>
-      <li>Hoặc <span class="nut">Dịch bài theo link Doc…</span> → dán link.</li>
-      <li>Xong sẽ hiện link tab "Bản dịch EN". Luôn đọc soát bản Anh trước khi gửi khách.</li>
-      <li>Dịch lại bài đã có bản dịch: công cụ tạo tab mới "Bản dịch EN (2)", không ghi đè tab cũ.</li>
+      <li><span class="nut">Dịch tất cả bài chờ dịch</span>: quét mọi dự án đang bật và dịch hết bài đã duyệt mà chưa có bản dịch. Mỗi lượt Google cho chạy khoảng 5 phút (~2–3 bài), phần còn lại công cụ tự chạy tiếp sau 1 phút.</li>
+      <li><span class="nut">Bật tự chạy mỗi tối (22h)</span>: không cần bấm gì, sáng ra chỉ việc soát.</li>
+      <li><span class="nut">Dịch 1 bài theo link Doc…</span>: khi cần gấp một bài.</li>
+      <li>Kết quả và lỗi ghi ở tab <b>Nhật ký dịch</b>. Ô kết quả báo "Lỗi: …" thì xoá ô đó để lần sau dịch lại.</li>
+      <li>Bản dịch máy — luôn đọc soát bản Anh trước khi gửi khách.</li>
     </ul>
   </div>
 
   <div class="the">
     <h3>Công cụ tự làm theo checklist</h3>
     <ul>
-      <li>Bảng 2 cột trang ngang: trái bản Việt (chép nguyên, kèm ảnh), phải bản Anh.</li>
-      <li>Link okamura.com.vn/vi/… → bản tiếng Anh. Giữ in đậm, in nghiêng, link đúng chỗ.</li>
+      <li>Tab "Bản dịch EN" trang ngang, bảng 2 cột: trái bản Việt (chép nguyên, kèm ảnh), phải bản Anh. Tab Việt gốc không bị sửa.</li>
+      <li>Giữ in đậm, in nghiêng, link đúng chỗ; đổi link theo bảng cài đặt.</li>
       <li>Heading không in đậm; chú thích ảnh in nghiêng, căn giữa, có dấu chấm, bỏ link Drive.</li>
       <li>"etc" → "..."; giãn dòng 1.5, cách đoạn 10pt; bỏ dòng trống thừa.</li>
       <li>Gemini lỗi hoặc hết lượt miễn phí → tự chuyển sang Google Dịch và ghi chú lại.</li>
