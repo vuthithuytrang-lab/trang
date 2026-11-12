@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="vi">
 <head>
-<!-- phien-ban: 202611121756 -->
+<!-- phien-ban: 202611121803 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Luồng inlink</title>
@@ -105,6 +105,25 @@ th{background:var(--nen);font-size:12px}
 .minh{display:none;padding:0 12px 12px}
 .minh.mo{display:block}
 .o-chang.rong{grid-column:1/-1}
+.thanh-du-an{background:var(--the);border:1px solid var(--vien);border-left:4px solid var(--xanh);border-radius:14px;padding:12px 16px;margin-bottom:16px}
+.hang-du-an{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.chon-ai{width:100%;font:inherit;padding:8px 10px;border-radius:9px;border:1px solid var(--vien);background:var(--the);color:var(--chu);margin-top:4px}
+.nhan-du-an{font-weight:700;color:var(--xanh)}
+#chonDuAn{width:auto;flex:0 1 340px;min-width:200px;max-width:100%;font:inherit;font-weight:700;padding:7px 10px;border-radius:9px;border:1.5px solid var(--xanh);background:var(--the);color:var(--chu)}
+.nut-xoa{color:var(--do)!important;border-color:var(--do)!important}
+.kho-file{margin-top:12px;padding-top:12px;border-top:1px dashed var(--vien)}
+.kho-file h3{margin:0 0 4px;font-size:14px}
+.dong-file{display:flex;gap:8px;align-items:center;padding:7px 0;border-bottom:1px solid var(--vien);font-size:13px}
+.dong-file a{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--xanh);font-weight:600}
+.dong-file .loai{font-size:11px;color:var(--mo);white-space:nowrap}
+.dong-file button{background:none;border:0;color:var(--do);cursor:pointer;font:inherit;font-size:12px}
+.them-file{display:grid;grid-template-columns:1fr 1.4fr auto;gap:8px;margin-top:10px}
+@media(max-width:700px){.them-file{grid-template-columns:1fr}}
+.xem-them2{float:right;background:none;border:0;color:var(--xanh);font:inherit;font-size:12.5px;font-weight:700;cursor:pointer;padding:0}
+.giai-thich{display:none;margin:8px 0 10px}.giai-thich.mo{display:block}
+.giai-thich .chu-thich{display:block;flex-basis:100%;font-size:12px;color:#3A4560;line-height:1.55}
+.giai-thich ul.gt{margin:6px 0 0;padding-left:18px;font-size:12px;color:#3A4560;flex-basis:100%}
+.giai-thich ul.gt li{margin:3px 0}
 .luat-rieng{margin-top:12px;padding-top:12px;border-top:1px dashed var(--vien)}
 .luat-rieng h3{font-size:14px;margin:0 0 8px}.luat-rieng h3 span{font-weight:500;font-size:12px;color:var(--mo)}
 .luat-rieng input[type=text]{width:100%}
@@ -183,12 +202,37 @@ label.o-nhap input,label.o-nhap select,label.o-nhap textarea{margin-top:4px;colo
   <button data-phan="chen">Chèn nhanh 1 bài (không cần sheet)</button>
 </div>
 
+<div class="thanh-du-an" id="thanhDuAn">
+  <div class="hang-du-an">
+    <span class="nhan-du-an">📁 Dự án đang làm</span>
+    <select id="chonDuAn" aria-label="Chọn dự án"></select>
+    <button class="nut phu nho" id="nutDuAnMoi">+ Dự án mới</button>
+    <button class="nut phu nho" id="nutDoiTen">Đổi tên</button>
+    <button class="nut phu nho" id="nutKhoFile">Kho file</button>
+    <button class="nut phu nho" id="nutSaoLuu">Sao lưu</button>
+    <button class="nut phu nho nut-xoa" id="nutXoaDuAn">Xoá dự án</button>
+    <span class="bao" id="baoDuAn"></span>
+  </div>
+  <p class="goi-y nho-hon" style="margin:6px 0 0">Mỗi dự án tự lưu riêng: bảng kế hoạch, luật riêng, việc đã chọn, mã HTML gốc, luật chèn và kho file. Đổi dự án là mọi ô đổi theo, không phải nhập lại.</p>
+  <div id="khoFile" class="kho-file an">
+    <h3>Kho file của dự án <span id="tenKho"></span></h3>
+    <p class="goi-y nho-hon">Lưu link file Sheet kết quả, thư mục Drive, file Docs, brief… mà Claude gửi lại, để lần sau mở là có.</p>
+    <div id="dsFile"></div>
+    <div class="them-file"><input type="text" id="tenFile" placeholder="Tên file (vd: Sheet kết quả đợt 1)"><input type="text" id="linkFile" placeholder="Dán link (https://…)"><button class="nut nho" id="nutThemFile">Lưu vào kho</button></div>
+  </div>
+  <div id="saoLuu" class="kho-file an">
+    <h3>Sao lưu / chuyển sang máy khác</h3>
+    <p class="goi-y nho-hon">Dự án lưu trong trình duyệt của máy này. Muốn dùng ở máy khác hoặc phòng khi xoá lịch sử duyệt web: bấm <b>Tải file sao lưu</b>, sang máy kia bấm <b>Nạp file sao lưu</b>.</p>
+    <div class="hang"><button class="nut phu nho" id="nutXuat">⬇ Tải file sao lưu</button><label class="nut phu nho nhap-file">⬆ Nạp file sao lưu<input type="file" id="nhapSaoLuu" accept=".json" hidden></label><span class="bao" id="baoSaoLuu"></span></div>
+  </div>
+</div>
+
 <div id="phanLuong" class="cac-buoc">
   <div class="buoc">
     <div class="so-buoc">1</div>
     <div class="noi-dung">
       <h2>Nhập kế hoạch</h2>
-      <label class="o-nhap" style="margin-top:0">Tên dự án<input type="text" id="lDuAn" placeholder="vd: Techcombank"></label>
+      <input type="hidden" id="lDuAn">
       <p class="goi-y">Mỗi dòng = 1 bài sẽ chèn link: dán <b>URL bài</b>, rồi các cặp <b>Anchor</b> (chữ gắn link) + <b>Link chèn</b> (trang đích). Gõ trực tiếp, hoặc copy nhiều ô từ Excel/Google Sheet rồi bấm vào 1 ô và <b>Ctrl+V</b> — app tự trải ra đúng ô.</p>
       <div class="hang thanh-cong-cu">
         <button class="nut phu nho" id="nutTaiMau">⬇ Tải file mẫu Excel</button>
@@ -288,10 +332,25 @@ lãi suất tiết kiệm | https://ten-mien.vn/lai-suat-tiet-kiem"></textarea>
 
   <div class="the">
     <h2>5. AI viết câu cho anchor chưa có sẵn (tuỳ chọn)</h2>
-    <p class="goi-y">Anchor không có nguyên văn trong bài sẽ được Gemini viết 1 câu hoàn chỉnh, nối đúng nội dung đoạn — không chèn kiểu câu cụt “Xem thêm: …”. Không có khoá thì app chỉ liệt kê để bạn tự viết. Khoá lưu trong trình duyệt này, dùng chung cho mọi app trong Kỹ thuật phụ.</p>
+    <p class="goi-y">Anchor không có nguyên văn trong bài sẽ được AI viết 1 câu hoàn chỉnh, nối đúng nội dung đoạn — không chèn kiểu câu cụt “Xem thêm: …”. Không bật thì app chỉ liệt kê để bạn tự viết.</p>
     <label class="tich"><input type="checkbox" id="dungAI"><span>Dùng AI cho anchor chưa có sẵn</span></label>
-    <input type="password" id="khoaAI" placeholder="Khoá Gemini (AIza…) — lấy miễn phí tại aistudio.google.com/apikey">
-    <label class="dong" style="margin-top:8px"><span>Mô hình</span><input type="text" id="moHinh" value="gemini-2.5-flash" style="width:170px"></label>
+    <label class="o-nhap">Chọn AI
+      <select id="nhaAI" class="chon-ai">
+        <optgroup label="Miễn phí (có giới hạn lượt mỗi ngày)">
+          <option value="gemini">Gemini — Google (miễn phí, nên chọn)</option>
+          <option value="groq">Groq — Llama (miễn phí, rất nhanh)</option>
+          <option value="openrouter">OpenRouter — các mô hình miễn phí</option>
+        </optgroup>
+        <optgroup label="Trả phí (viết hay hơn, tính tiền theo lượt dùng)">
+          <option value="claude">Claude — Anthropic</option>
+          <option value="openai">ChatGPT — OpenAI</option>
+        </optgroup>
+      </select></label>
+    <p class="goi-y nho-hon" id="huongDanAI" style="margin:6px 0"></p>
+    <input type="password" id="khoaAI" autocomplete="off">
+    <label class="dong" style="margin-top:8px"><span>Mô hình</span><input type="text" id="moHinh" list="dsMoHinh" style="width:230px"></label>
+    <datalist id="dsMoHinh"></datalist>
+    <p class="goi-y nho-hon" style="margin:6px 0 0">Khoá chỉ lưu trong trình duyệt máy này (mỗi AI một khoá riêng), app gửi thẳng tới nhà cung cấp, không đi qua đâu khác. Đừng dán khoá vào chat.</p>
   </div>
 
   <div class="hang">
@@ -334,7 +393,7 @@ lãi suất tiết kiệm | https://ten-mien.vn/lai-suat-tiet-kiem"></textarea>
    (khối THAY/THÊM từng đoạn, link target=_blank rel=noopener noreferrer)
    + luật của skill chen-internal-link (đúng nguyên văn, né 25% đầu, né bước/luật,
    không 2 link kề nhau, bản duyệt tô vàng + ghi chú đỏ nội dung gốc).
-   Mọi xử lý chạy trong trình duyệt; chỉ gọi ra ngoài khi bạn bật AI (Gemini).
+   Mọi xử lý chạy trong trình duyệt; chỉ gọi ra ngoài khi bạn bật AI (nhà cung cấp bạn chọn ở mục 5).
    ========================================================================== */
 var PHIEN_BAN = (document.documentElement.innerHTML.match(new RegExp('phien'+'-ban: ([0-9a-z-]+)'))||[])[1] || '';
 document.getElementById('banApp').textContent = PHIEN_BAN;
@@ -342,10 +401,32 @@ var KHOA_LUU = 'kho-app:gemini-key', KHOA_MH = 'kho-app:gemini-model';
 function luu(k, v){ try{ localStorage.setItem(k, v); }catch(e){} }
 function doc(k){ try{ return localStorage.getItem(k) || ''; }catch(e){ return ''; } }
 var $ = function(id){ return document.getElementById(id); };
-$('khoaAI').value = doc(KHOA_LUU); if(doc(KHOA_MH)) $('moHinh').value = doc(KHOA_MH);
-$('dungAI').checked = !!doc(KHOA_LUU);
-$('khoaAI').addEventListener('change', function(){ luu(KHOA_LUU, this.value.trim()); });
-$('moHinh').addEventListener('change', function(){ luu(KHOA_MH, this.value.trim()); });
+var NHA_AI = {
+  gemini:{khoa:KHOA_LUU, mh:KHOA_MH, md:'gemini-2.5-flash', ds:['gemini-2.5-flash','gemini-2.5-flash-lite','gemini-2.5-pro'], goiY:'Khoá Gemini (AIza…)',
+    hd:'Miễn phí: vào <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">aistudio.google.com/apikey</a> → đăng nhập Google → <b>Create API key</b> → copy dán vào ô dưới. Khoá này dùng chung cho mọi app trong Kỹ thuật phụ.'},
+  groq:{md:'llama-3.3-70b-versatile', ds:['llama-3.3-70b-versatile','llama-3.1-8b-instant'], goiY:'Khoá Groq (gsk_…)',
+    hd:'Miễn phí: vào <a href="https://console.groq.com/keys" target="_blank" rel="noopener">console.groq.com/keys</a> → đăng nhập Google → <b>Create API Key</b> → copy dán vào ô dưới. Tiếng Việt kém Gemini một chút.'},
+  openrouter:{md:'meta-llama/llama-3.3-70b-instruct:free', ds:['meta-llama/llama-3.3-70b-instruct:free','deepseek/deepseek-chat-v3-0324:free','google/gemma-3-27b-it:free'], goiY:'Khoá OpenRouter (sk-or-…)',
+    hd:'Miễn phí với mô hình có đuôi <b>:free</b>: vào <a href="https://openrouter.ai/keys" target="_blank" rel="noopener">openrouter.ai/keys</a> → đăng nhập → <b>Create Key</b> → copy dán vào ô dưới. Mô hình free đôi khi bận, thử lại sau ít phút.'},
+  claude:{md:'claude-opus-5-5', ds:['claude-opus-5-5','claude-sonnet-5-5','claude-haiku-5-5'], goiY:'Khoá Claude API (sk-ant-…)',
+    hd:'Trả phí: vào <a href="https://console.anthropic.com/settings/keys" target="_blank" rel="noopener">console.anthropic.com</a> → nạp tiền (Billing) → <b>Create Key</b> → copy dán vào ô dưới. Đây là tài khoản API riêng, không phải gói Claude bạn đang chat. Mỗi câu chỉ tốn vài chục đồng; muốn rẻ hơn nữa thì chọn mô hình <b>claude-haiku-5-5</b>.'},
+  openai:{md:'gpt-4.1-mini', ds:['gpt-4.1-mini','gpt-4.1','gpt-4o-mini'], goiY:'Khoá OpenAI (sk-…)',
+    hd:'Trả phí: vào <a href="https://platform.openai.com/api-keys" target="_blank" rel="noopener">platform.openai.com/api-keys</a> → nạp tiền (Billing) → <b>Create new secret key</b> → copy dán vào ô dưới. Đây là tài khoản API riêng, không phải gói ChatGPT Plus.'}
+};
+function nhaDang(){ return NHA_AI[$('nhaAI').value] ? $('nhaAI').value : 'gemini'; }
+function khoaCua(n){ return NHA_AI[n].khoa || ('kho-app:ai-key:' + n); }
+function mhCua(n){ return NHA_AI[n].mh || ('kho-app:ai-model:' + n); }
+function veNhaAI(){
+  var n = nhaDang(), c = NHA_AI[n];
+  $('huongDanAI').innerHTML = c.hd; $('khoaAI').placeholder = c.goiY;
+  $('khoaAI').value = doc(khoaCua(n)); $('moHinh').value = doc(mhCua(n)) || c.md;
+  $('dsMoHinh').innerHTML = c.ds.map(function(x){ return '<option value="' + x + '">'; }).join('');
+}
+$('nhaAI').value = doc('kho-app:ai-nha') || 'gemini'; veNhaAI();
+$('dungAI').checked = !!$('khoaAI').value;
+$('nhaAI').addEventListener('change', function(){ luu('kho-app:ai-nha', nhaDang()); veNhaAI(); });
+$('khoaAI').addEventListener('change', function(){ luu(khoaCua(nhaDang()), this.value.trim()); if(this.value.trim()) $('dungAI').checked = true; });
+$('moHinh').addEventListener('change', function(){ luu(mhCua(nhaDang()), this.value.trim()); });
 
 /* ---------- chế độ dán ---------- */
 var CHE = 'dan';
@@ -562,7 +643,7 @@ async function chay(){
       if(!duoc.length) break;
       $('trangThai').textContent = 'AI đang viết câu cho «' + cv.l.anchor + '»…';
       try{
-        var kq = await hoiAI(khoa, $('moHinh').value.trim() || 'gemini-2.5-flash', cv.l, duoc);
+        var kq = await hoiAI(khoa, $('moHinh').value.trim() || NHA_AI[nhaDang()].md, cv.l, duoc, nhaDang());
         if(kq && kq.cau && kq.cau.indexOf(cv.l.anchor) !== -1 && duoc.some(function(o){ return o.i === kq.doan; })){
           deXuat.push({k:kq.doan, cau:kq.cau, l:cv.l}); khoiDung[kq.doan] = 1; demUrl[u2] = (demUrl[u2]||0) + 1; conCho--;
           cv.daViet = 1;
@@ -629,7 +710,7 @@ async function chay(){
 var LUAT_RIENG = [], KHOA_LUAT_RIENG = 'kho-app:inlink-luat-rieng';
 (function(){ var cu = {}; try{ cu = JSON.parse(doc(KHOA_LUAT_RIENG) || '{}'); }catch(e){}
   ['cumNe','luatKhac'].forEach(function(id){ if(cu[id]) $(id).value = cu[id]; $(id).addEventListener('input', function(){ luu(KHOA_LUAT_RIENG, JSON.stringify({cumNe:$('cumNe').value, luatKhac:$('luatKhac').value})); }); }); })();
-async function hoiAI(khoa, moHinh, l, ds){
+async function hoiAI(khoa, moHinh, l, ds, nha){
   var doan = ds.slice(0, 40).map(function(o){ return '[' + o.i + '] ' + o.x.slice(0, 600); }).join('\n');
   var yeuCau = 'Bạn là biên tập viên SEO tiếng Việt. Cần chèn internal link với anchor text «' + l.anchor + '» trỏ về ' + l.url +
     '.\nDưới đây là các đoạn trong bài (số trong ngoặc là mã đoạn):\n' + doan +
@@ -637,18 +718,40 @@ async function hoiAI(khoa, moHinh, l, ds){
     'chứa NGUYÊN VĂN cụm «' + l.anchor + '» (đúng chữ, đúng dấu, đúng hoa/thường). Không bịa số liệu, không ghi năm, không viết kiểu "Xem thêm:", "click vào đây", không quảng cáo lố. ' +
     (LUAT_RIENG.length ? 'Luật riêng của dự án, BẮT BUỘC tuân theo (vi phạm thì trả boQua):\n- ' + LUAT_RIENG.join('\n- ') + '\n' : '') +
     'Nếu không có đoạn nào hợp thì trả boQua kèm lý do ngắn.\nChỉ trả JSON: {"doan": số, "cau": "…"} hoặc {"boQua": "lý do"}';
-  var r = await fetch('https://generativelanguage.googleapis.com/v1beta/models/' + encodeURIComponent(moHinh) + ':generateContent', {
-    method:'POST', headers:{'Content-Type':'application/json', 'x-goog-api-key':khoa},
-    body:JSON.stringify({contents:[{parts:[{text:yeuCau}]}], generationConfig:{temperature:0.4, responseMimeType:'application/json'}})
-  });
-  if(!r.ok) throw new Error('Gemini báo ' + r.status + (r.status === 400 || r.status === 403 ? ' (khoá sai hoặc hết hạn?)' : ''));
-  var j = await r.json();
-  var t = (((j.candidates||[])[0]||{}).content||{}).parts; t = t && t[0] && t[0].text || '';
+  var t = await goiAI(nha || 'gemini', khoa, moHinh, yeuCau);
   var m = t.match(/\{[\s\S]*\}/); if(!m) return null;
   var o = JSON.parse(m[0]); if(o.cau) o.cau = o.cau.trim().normalize('NFC'); if(o.doan !== undefined) o.doan = +o.doan;
   return o;
 }
 
+async function goiAI(nha, khoa, moHinh, yeuCau){
+  var TEN = {gemini:'Gemini', groq:'Groq', openrouter:'OpenRouter', claude:'Claude', openai:'OpenAI'}[nha];
+  var r, j;
+  if(nha === 'gemini'){
+    r = await fetch('https://generativelanguage.googleapis.com/v1beta/models/' + encodeURIComponent(moHinh) + ':generateContent', {
+      method:'POST', headers:{'Content-Type':'application/json', 'x-goog-api-key':khoa},
+      body:JSON.stringify({contents:[{parts:[{text:yeuCau}]}], generationConfig:{temperature:0.4, responseMimeType:'application/json'}})});
+  } else if(nha === 'claude'){
+    r = await fetch('https://api.anthropic.com/v1/messages', {
+      method:'POST', headers:{'Content-Type':'application/json', 'x-api-key':khoa, 'anthropic-version':'2026-10-21', 'anthropic-dangerous-direct-browser-access':'true'},
+      body:JSON.stringify({model:moHinh, max_tokens:2048, messages:[{role:'user', content:yeuCau}]})});
+  } else {
+    var url = {groq:'https://api.groq.com/openai/v1/chat/completions', openrouter:'https://openrouter.ai/api/v1/chat/completions', openai:'https://api.openai.com/v1/chat/completions'}[nha];
+    r = await fetch(url, {method:'POST', headers:{'Content-Type':'application/json', 'Authorization':'Bearer ' + khoa},
+      body:JSON.stringify({model:moHinh, messages:[{role:'user', content:yeuCau}]})});
+  }
+  if(!r.ok){
+    var vi = r.status === 401 || r.status === 403 ? ' (khoá sai hoặc hết hạn?)' : r.status === 402 ? ' (tài khoản hết tiền — nạp thêm)' : r.status === 429 ? ' (hết lượt miễn phí / gọi quá nhanh — thử lại sau)' : r.status === 404 ? ' (tên mô hình sai?)' : r.status === 400 ? ' (khoá hoặc mô hình chưa đúng?)' : '';
+    throw new Error(TEN + ' báo ' + r.status + vi);
+  }
+  j = await r.json();
+  if(nha === 'gemini'){ var p = (((j.candidates||[])[0]||{}).content||{}).parts; return p && p[0] && p[0].text || ''; }
+  if(nha === 'claude'){
+    if(j.stop_reason === 'refusal') throw new Error('Claude từ chối viết câu này');
+    return (j.content || []).filter(function(b){ return b.type === 'text'; }).map(function(b){ return b.text; }).join('');
+  }
+  return ((((j.choices||[])[0]||{}).message)||{}).content || '';
+}
 function thoat(s){ return (s||'').replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
 function rut(s, n){ s = (s||'').replace(/\s+/g, ' ').trim(); return s.length > n ? s.slice(0, n) + '…' : s; }
 function hien(daChen, deXuat, chuaChen, cacKhoi, loiBang, urlBai){
@@ -967,6 +1070,176 @@ document.querySelectorAll('#cheDoApp button').forEach(function(b){
 });
 veChang();
 if(location.hash === '#chen' || doc('kho-app:inlink-phan') === 'chen') document.querySelector('#cheDoApp [data-phan="chen"]').click();
+</script>
+
+<script>
+/* ===== DỰ ÁN: mỗi dự án lưu riêng bảng, luật, việc đã chọn, kho file ===== */
+(function(){
+  var KHOA_DA = 'kho-app:inlink-du-an';
+  var O_CHU = ['lDrive','lSheet','lGhiChu','lHtml','keHoach','bangLink','urlBaiNay','maxTong','maxUrl','boDau','cumNe','luatKhac'];
+  var O_TICH = ['phanBietHoa','khongKe','neLuat','tabMoi','canDeu','dungAI'];
+  var MAC_DINH = {maxTong:'5', maxUrl:'1', boDau:'25', phanBietHoa:true, khongKe:true, neLuat:true, tabMoi:true, canDeu:false, dungAI:false};
+  function docKho(){ try{ return JSON.parse(doc(KHOA_DA) || 'null'); }catch(e){ return null; } }
+  function ghiKho(){ luu(KHOA_DA, JSON.stringify(KHO)); }
+  function maMoi(){ return 'da' + Date.now().toString(36) + Math.random().toString(36).slice(2, 5); }
+  function thoatH(s){ return String(s||'').replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function chupLai(){
+    var d = {};
+    O_CHU.forEach(function(id){ var e = $(id); if(e) d[id] = e.value; });
+    O_TICH.forEach(function(id){ var e = $(id); if(e) d[id] = e.checked; });
+    d.BANG = JSON.parse(JSON.stringify(BANG));
+    d.tich = Array.prototype.map.call($('dsChang').querySelectorAll('input:checked'), function(x){ return x.dataset.ma; });
+    return d;
+  }
+  function duAnDang(){ return KHO.ds.filter(function(x){ return x.id === KHO.hien; })[0]; }
+  var hen = null, dangNap = false;
+  function henLuu(){
+    if(dangNap) return; clearTimeout(hen);
+    hen = setTimeout(function(){ var da = duAnDang(); if(!da) return; da.data = chupLai(); da.sua = Date.now(); ghiKho(); $('baoDuAn').textContent = '✓ Đã tự lưu vào dự án «' + da.ten + '»'; }, 400);
+  }
+  function napDuAn(da){
+    dangNap = true;
+    var d = da.data || {};
+    O_CHU.forEach(function(id){ var e = $(id); if(e) e.value = (d[id] !== undefined ? d[id] : (MAC_DINH[id] || '')); });
+    O_TICH.forEach(function(id){ var e = $(id); if(e) e.checked = (d[id] !== undefined ? d[id] : !!MAC_DINH[id]); });
+    $('lDuAn').value = da.ten;
+    BANG = (d.BANG && d.BANG.length) ? JSON.parse(JSON.stringify(d.BANG)) : dongTrong(8);
+    var tich = d.tich || ['docs'];
+    $('dsChang').querySelectorAll('input[data-ma]').forEach(function(x){ x.checked = tich.indexOf(x.dataset.ma) !== -1; x.closest('.o-chang').classList.toggle('chon', x.checked); });
+    veBang(); luuBang(); luuLuong(); kiemSheet();
+    if($('lHtml')) $('lHtml').dispatchEvent(new Event('input'));
+    luu('kho-app:inlink-luat-rieng', JSON.stringify({cumNe:$('cumNe').value, luatKhac:$('luatKhac').value}));
+    $('ketQua').classList.add('an'); $('cauLenh').value = ''; $('trangThai').textContent = '';
+    dangNap = false;
+    veKhoFile();
+  }
+  function veChon(){
+    $('chonDuAn').innerHTML = KHO.ds.map(function(x){ return '<option value="' + x.id + '"' + (x.id === KHO.hien ? ' selected' : '') + '>' + thoatH(x.ten) + '</option>'; }).join('');
+    $('nutKhoFile').textContent = 'Kho file (' + ((duAnDang() || {}).file || []).length + ')';
+  }
+  function veKhoFile(){
+    var da = duAnDang(); if(!da) return; da.file = da.file || [];
+    $('tenKho').textContent = '— ' + da.ten;
+    var tuDong = [];
+    if($('lSheet').value.trim()) tuDong.push({ten:'File Google Sheet kế hoạch', url:$('lSheet').value.trim(), co:1});
+    if(/^https?:\/\//.test($('lDrive').value.trim())) tuDong.push({ten:'Thư mục Drive lưu file Docs', url:$('lDrive').value.trim(), co:1});
+    var ds = tuDong.concat(da.file);
+    $('dsFile').innerHTML = ds.length ? ds.map(function(f, i){
+      var loai = /spreadsheets/.test(f.url) ? 'Sheet' : /document/.test(f.url) ? 'Docs' : /drive\.google|folders/.test(f.url) ? 'Drive' : 'Link';
+      return '<div class="dong-file"><span class="loai">' + loai + '</span><a href="' + thoatH(f.url) + '" target="_blank" rel="noopener" title="' + thoatH(f.url) + '">' + thoatH(f.ten || f.url) + '</a>' +
+        (f.co ? '<span class="loai">tự lấy từ ô nhập</span>' : '<button data-xoa="' + (i - tuDong.length) + '">Xoá</button>') + '</div>';
+    }).join('') : '<p class="goi-y nho-hon">Chưa có file nào.</p>';
+    $('dsFile').querySelectorAll('[data-xoa]').forEach(function(b){ b.onclick = function(){ da.file.splice(+b.dataset.xoa, 1); ghiKho(); veKhoFile(); veChon(); }; });
+    veChon();
+  }
+
+  // khởi tạo: lần đầu thì gom dữ liệu đang có thành dự án đầu tiên
+  var KHO = docKho();
+  if(!KHO || !KHO.ds || !KHO.ds.length){
+    var ten = (docLuong().lDuAn || '').trim() || 'Dự án đầu tiên';
+    KHO = {hien:null, ds:[]}; var da0 = {id:maMoi(), ten:ten, data:chupLai(), file:[], sua:Date.now()};
+    KHO.ds.push(da0); KHO.hien = da0.id; ghiKho();
+  }
+  if(!duAnDang()) KHO.hien = KHO.ds[0].id;
+  veChon(); napDuAn(duAnDang());
+
+  $('chonDuAn').onchange = function(){
+    var cu = duAnDang(); if(cu){ cu.data = chupLai(); }
+    KHO.hien = this.value; ghiKho(); napDuAn(duAnDang()); veChon();
+    $('baoDuAn').textContent = 'Đã mở dự án «' + duAnDang().ten + '»';
+  };
+  $('nutDuAnMoi').onclick = function(){
+    var ten = (prompt('Tên dự án mới (vd: Techcombank, Vinamilk…):') || '').trim(); if(!ten) return;
+    var cu = duAnDang(); if(cu) cu.data = chupLai();
+    var giuLuat = cu && confirm('Dùng lại luật chèn của dự án «' + cu.ten + '» cho dự án mới?\n\nOK = dùng lại luật · Hủy = bắt đầu trống');
+    var d = {};
+    if(giuLuat){ ['maxTong','maxUrl','boDau','cumNe','luatKhac','lGhiChu'].concat(O_TICH).forEach(function(k){ d[k] = cu.data[k]; }); d.tich = cu.data.tich; }
+    var da = {id:maMoi(), ten:ten, data:d, file:[], sua:Date.now()};
+    KHO.ds.push(da); KHO.hien = da.id; ghiKho(); veChon(); napDuAn(da); henLuu();
+    $('baoDuAn').textContent = '✓ Đã tạo dự án «' + ten + '»';
+  };
+  $('nutDoiTen').onclick = function(){
+    var da = duAnDang(); var ten = (prompt('Đổi tên dự án:', da.ten) || '').trim(); if(!ten) return;
+    da.ten = ten; $('lDuAn').value = ten; luuLuong(); ghiKho(); veChon(); veKhoFile();
+  };
+  $('nutXoaDuAn').onclick = function(){
+    var da = duAnDang();
+    if(KHO.ds.length === 1) return alert('Đây là dự án duy nhất — tạo dự án khác trước rồi mới xoá được.');
+    if(!confirm('Xoá hẳn dự án «' + da.ten + '» (bảng, luật, kho file)? Không lấy lại được trừ khi bạn đã tải file sao lưu.')) return;
+    KHO.ds = KHO.ds.filter(function(x){ return x.id !== da.id; }); KHO.hien = KHO.ds[0].id; ghiKho(); veChon(); napDuAn(duAnDang());
+  };
+  $('nutKhoFile').onclick = function(){ $('saoLuu').classList.add('an'); $('khoFile').classList.toggle('an'); veKhoFile(); };
+  $('nutSaoLuu').onclick = function(){ $('khoFile').classList.add('an'); $('saoLuu').classList.toggle('an'); };
+  $('nutThemFile').onclick = function(){
+    var url = $('linkFile').value.trim(); if(!/^https?:\/\//.test(url)) return alert('Link cần bắt đầu bằng https://');
+    var da = duAnDang(); da.file = da.file || []; da.file.push({ten:$('tenFile').value.trim() || url, url:url, luc:Date.now()});
+    $('tenFile').value = ''; $('linkFile').value = ''; ghiKho(); veKhoFile();
+  };
+  $('nutXuat').onclick = function(){
+    var cu = duAnDang(); if(cu) cu.data = chupLai(); ghiKho();
+    var a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([JSON.stringify(KHO, null, 1)], {type:'application/json'}));
+    a.download = 'du-an-inlink-' + new Date().toISOString().slice(0, 10) + '.json'; a.click();
+    $('baoSaoLuu').textContent = '✓ Đã tải ' + KHO.ds.length + ' dự án';
+  };
+  $('nhapSaoLuu').onchange = function(){
+    var f = this.files[0]; if(!f) return; var r = new FileReader();
+    r.onload = function(){
+      try{ var moi = JSON.parse(r.result); if(!moi.ds) throw 0;
+        var n = 0; moi.ds.forEach(function(x){ var trung = KHO.ds.filter(function(y){ return y.id === x.id; })[0];
+          if(trung){ if((x.sua||0) > (trung.sua||0)){ KHO.ds[KHO.ds.indexOf(trung)] = x; n++; } } else { KHO.ds.push(x); n++; } });
+        ghiKho(); veChon(); napDuAn(duAnDang()); $('baoSaoLuu').textContent = '✓ Đã nạp ' + n + ' dự án';
+      }catch(e){ $('baoSaoLuu').textContent = 'File này không phải file sao lưu dự án.'; }
+    }; r.readAsText(f, 'utf-8'); this.value = '';
+  };
+  // tự lưu khi có thay đổi
+  ['phanLuong','phanChen'].forEach(function(id){ $(id).addEventListener('input', henLuu, true); $(id).addEventListener('change', henLuu, true); });
+  var gocLuuBang = luuBang; luuBang = function(){ gocLuuBang.apply(this, arguments); henLuu(); };
+  ['lSheet','lDrive'].forEach(function(id){ $(id).addEventListener('change', function(){ setTimeout(veKhoFile, 450); }); });
+})();
+
+/* ===== XEM THÊM cho tab Chèn nhanh ===== */
+(function(){
+  var GT = {
+    '1.':'<div class="mh"><div class="khoi-mh"><div class="tieu-mh">Bạn copy từ sheet kế hoạch</div><div class="o-sheet"><span class="h">URL bài</span><span class="h">Anchor</span><span class="h">Link chèn</span><span>…/ty-gia-la-gi</span><span>tỷ giá USD</span><span>…/ty-gia-usd</span><span>…/ty-gia-la-gi</span><span>lãi suất</span><span>…/lai-suat</span></div></div><span class="mui">→</span>' +
+      '<div class="khoi-mh"><div class="tieu-mh">App gom theo từng bài</div>Chọn bài: <b>…/ty-gia-la-gi (2 anchor)</b> ▾<br>→ mục 3 tự điền:<br><code>tỷ giá USD | …/ty-gia-usd</code><br><code>lãi suất | …/lai-suat</code></div>' +
+      '<span class="chu-thich"><b>Không bắt buộc.</b> Có sẵn sheet kế hoạch nhiều bài thì dán vào đây cho đỡ gõ lại: chọn bài nào, app tự điền anchor của bài đó. Chỉ chèn 1 bài lẻ thì bỏ qua mục này, gõ thẳng ở mục 3.</span></div>',
+    '2.':'<div class="mh"><div class="khoi-mh"><div class="tieu-mh">Cách 1 — Dán từ trang web</div>Mở bài trên web → bôi đen từ tiêu đề đầu thân bài đến hết → Ctrl+C → bấm vào ô → Ctrl+V. App giữ tiêu đề, đoạn, danh sách, link cũ.</div>' +
+      '<div class="khoi-mh"><div class="tieu-mh">Cách 2 — Dán mã HTML</div>Vào trang quản trị web (WordPress…) → chế độ <b>Văn bản / HTML</b> → copy hết → dán. <b>Nên dùng cách này</b> nếu muốn mã trả về khớp đúng web.</div>' +
+      '<span class="chu-thich">Đây là bài sẽ được gắn link. Không cần dán menu, chân trang hay phần bình luận — chỉ phần thân bài.</span></div>',
+    '3.':'<div class="mh"><div class="khoi-mh"><div class="tieu-mh">Mỗi dòng 1 link</div><code>tỷ giá USD | https://web.vn/ty-gia-usd</code><br><code>chuyển tiền quốc tế | https://web.vn/chuyen-tien</code></div><span class="mui">→</span>' +
+      '<div class="khoi-mh"><div class="tieu-mh">App tìm trong bài</div>…bạn nên so sánh <span class="lk">tỷ giá USD</span> giữa các ngân hàng…</div>' +
+      '<span class="chu-thich"><b>Anchor</b> = chữ sẽ gắn link; <b>URL đích</b> = trang link trỏ tới. Dòng trên được ưu tiên chèn trước. Ô "URL của chính bài này" giúp app không gắn link trỏ về chính bài đang sửa.</span></div>',
+    '4.':'<div class="mh"><ul class="gt">' +
+      '<li><b>Tối đa link mỗi bài</b>: chèn đủ số này thì dừng (sếp yêu cầu 5).</li>' +
+      '<li><b>Tối đa link về cùng một URL</b>: 1 = mỗi trang đích chỉ được link 1 lần trong bài.</li>' +
+      '<li><b>Không chèn trong phần đầu bài</b>: 25 = bỏ qua ¼ đầu bài (mở bài, định nghĩa) vì chèn ở đó dễ bị coi là spam.</li>' +
+      '<li><b>Khớp đúng nguyên văn</b>: anchor «tỷ giá USD» chỉ gắn vào đúng cụm «tỷ giá USD», không gắn vào «Tỷ giá usd».</li>' +
+      '<li><b>Không đặt 2 link ở 2 đoạn liền nhau</b>: link được rải đều trong bài, đọc không bị dày đặc.</li>' +
+      '<li><b>Né đoạn trích luật / các bước / bảng</b>: không sửa câu luật, nghị định, các bước 1-2-3 hay bảng số liệu.</li>' +
+      '<li><b>Link mở tab mới</b>: bấm link thì mở tab mới, người đọc không rời bài đang đọc.</li>' +
+      '<li><b>Đoạn có link mới dùng căn đều</b>: chỉ tích nếu web của dự án quy định đoạn văn phải căn đều 2 bên.</li>' +
+      '<li><b>Luật riêng của dự án</b>: ô "cụm cần né" app tự áp dụng (vd: gõ «biểu phí» thì mọi đoạn có chữ biểu phí đều không bị chèn). Ô "Luật khác" gửi cho AI và hiện thành danh sách để người duyệt soát.</li></ul>' +
+      '<span class="chu-thich">Luật được lưu theo <b>dự án</b> đang chọn ở thanh trên cùng — mỗi dự án một bộ luật riêng.</span></div>',
+    '5.':'<div class="mh"><div class="khoi-mh"><div class="tieu-mh">Anchor không có sẵn trong bài</div>«chuyển tiền quốc tế» — bài không có cụm này</div><span class="mui">→</span>' +
+      '<div class="khoi-mh"><div class="tieu-mh">AI viết thêm 1 câu nối tiếp đoạn</div>…chọn nơi có giá tốt nhất. <mark>Nếu cần gửi tiền cho người thân ở nước ngoài, bạn có thể tham khảo dịch vụ <span class="lk">chuyển tiền quốc tế</span> trực tuyến.</mark></div>' +
+      '<span class="chu-thich"><b>Tuỳ chọn.</b> Không bật thì app chỉ báo "chưa chèn" để bạn tự viết câu. Bật thì chọn 1 AI: <b>miễn phí</b> (Gemini, Groq, OpenRouter — giới hạn lượt mỗi ngày, đủ dùng cho vài chục bài) hoặc <b>trả phí</b> (Claude, ChatGPT — viết tự nhiên hơn, tính tiền theo lượt, mỗi câu vài chục đồng). Chọn xong, app hiện đúng link lấy khoá và từng bước ngay dưới ô chọn. Câu AI viết luôn được tô vàng để bạn duyệt lại.</span></div>',
+    'Kết quả':'<div class="mh"><ul class="gt">' +
+      '<li><b>Bản duyệt</b>: cả bài, chỗ chèn tô vàng + ghi chú đỏ câu gốc → bấm Copy rồi dán vào Google Docs gửi người duyệt.</li>' +
+      '<li><b>Khối HTML từng đoạn</b>: chỉ những đoạn có thay đổi, kèm ghi chú THAY / THÊM → mở trang quản trị web, tìm đúng đoạn và dán đè. Nhanh nhất khi sửa bài đã đăng.</li>' +
+      '<li><b>HTML sạch cả bài</b>: mã của cả bài đã chèn link → dán thay toàn bộ nội dung bài (dùng khi đăng bài mới).</li>' +
+      '<li><b>Báo cáo</b>: anchor nào đã chèn, chèn ở đâu; anchor nào chưa chèn và vì sao (vd: nằm ở phần đầu bài, đoạn có cụm cần né…).</li></ul></div>'
+  };
+  document.querySelectorAll('#phanChen .the > h2').forEach(function(h){
+    var k = Object.keys(GT).filter(function(x){ return h.textContent.trim().indexOf(x) === 0; })[0]; if(!k) return;
+    var b = document.createElement('button'); b.type = 'button'; b.className = 'xem-them2'; b.textContent = 'Xem thêm ▾';
+    var g = document.createElement('div'); g.className = 'giai-thich'; g.innerHTML = GT[k];
+    h.appendChild(b); h.insertAdjacentElement('afterend', g);
+    b.onclick = function(){ var mo = g.classList.toggle('mo'); b.textContent = mo ? 'Thu gọn ▴' : 'Xem thêm ▾'; };
+  });
+  var p = document.createElement('p'); p.className = 'goi-y'; p.style.cssText = 'margin:0 0 12px;text-align:center';
+  p.innerHTML = 'Lần đầu dùng? Bấm <b>Ví dụ mẫu</b> rồi <b>Chèn link</b> để xem app chạy thử với bài mẫu. Mục nào chưa rõ → bấm <b>Xem thêm</b> ở góc phải mục đó.';
+  $('phanChen').insertBefore(p, $('phanChen').firstChild);
+})();
 </script>
 
 <script>
