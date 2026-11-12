@@ -25,9 +25,19 @@ async function saveResult(u, kq, note) {
   await chrome.storage.local.set({ results });
   showCount();
 }
+const listUrls = () => [...new Set($('urls').value.split(/\s+/).filter((x) => /^https?:\/\//.test(x)))];
+// Kết quả của danh sách đang nhập, cùng mốc giờ đang nhập
+function current() {
+  const moc = $('moc').value;
+  return listUrls().filter((u) => results[u] && results[u].moc === moc).map((u) => [u, results[u]]);
+}
+const isFailed = (r) => r.kq === 'FAIL' || (r.kq === 'SKIP' && /hết lượt/.test(r.note));
 function showCount() {
-  const v = Object.values(results), c = (k) => v.filter((x) => x.kq === k).length;
-  $('dem').textContent = `Đã đọc: ${c('DA-DOC')} · Ép OK: ${c('OK')} · Chưa được: ${c('FAIL')} · Bỏ qua: ${c('SKIP')}`;
+  const v = current().map(([, r]) => r), c = (k) => v.filter((x) => x.kq === k).length;
+  $('dem').textContent = `Đã đọc: ${c('DA-DOC')} · Ép OK: ${c('OK')} · Chưa được: ${v.filter(isFailed).length} · Bỏ qua: ${c('SKIP') - v.filter((x) => x.kq === 'SKIP' && isFailed(x)).length}`;
+  const loi = current().filter(([, r]) => isFailed(r)).map(([u]) => u);
+  $('loi').value = loi.join('\n');
+  $('soloi').textContent = loi.length;
 }
 
 // ---------- Các hàm chạy bên trong tab GSC ----------
@@ -117,10 +127,14 @@ let tabId = null, rid = '', lastErr = '';
 async function findTab(domain) {
   // phóng to cửa sổ GSC để ô "Kiểm tra URL" hiện đầy đủ
   const tabs = await chrome.tabs.query({ url: BASE + '/search-console*' });
-  const t = tabs.find((x) => x.url.includes(domain) && /[?&]resource_id=/.test(x.url));
-  if (!t) throw new Error(`Không thấy tab Search Console của ${domain}. Hãy mở trang Tổng quan của ${domain} trong Chrome này.`);
+  const withRid = tabs.filter((x) => /[?&]resource_id=/.test(x.url));
+  const t = domain ? withRid.find((x) => x.url.includes(domain)) : (withRid.find((x) => x.active) || withRid[0]);
+  if (!t) throw new Error(domain
+    ? `Không thấy tab Search Console của ${domain}. Hãy mở trang Tổng quan (Overview) của ${domain} trong Chrome này.`
+    : 'Không thấy tab Search Console nào. Hãy mở trang Tổng quan (Overview) của website trong Chrome này.');
   tabId = t.id;
   rid = t.url.match(/[?&]resource_id=([^&#]*)/)[1];
+  log(`Website: ${decodeURIComponent(rid).replace(/^sc-domain:/, '')}`);
   await chrome.tabs.update(tabId, { active: true });
   await chrome.windows.update(t.windowId, { state: 'maximized' }).catch(() => {});
 }
@@ -235,7 +249,8 @@ async function main() {
   const domain = $('domain').value.trim();
   const cut = new Date($('moc').value);
   if (isNaN(cut)) throw new Error('Chưa nhập giờ publish.');
-  const urls = [...new Set($('urls').value.split(/\s+/).filter((x) => /^https?:\/\//.test(x)))];
+  const urls = listUrls();
+  if (!urls.length) throw new Error('Chưa có link nào trong danh sách.');
   await findTab(domain);
   log(`Bắt đầu: ${urls.length} link, mốc ${fmt(cut)}`);
 
@@ -295,10 +310,25 @@ $('xoa').onclick = async () => {
   results = {}; await chrome.storage.local.set({ results }); showCount();
 };
 $('saochep').onclick = async () => {
-  const rows = Object.entries(results).map(([u, r]) => `${u}\t${r.kq}\t${r.note}`);
+  const rows = current().map(([u, r]) => `${u}\t${r.kq}\t${r.note}`);
   await navigator.clipboard.writeText(['URL\tKết quả\tGhi chú', ...rows].join('\n'));
-  status(`Đã sao chép ${rows.length} dòng — dán vào chat cho Claude.`);
+  status(`Đã sao chép ${rows.length} dòng.`);
 };
+$('saochep-loi').onclick = async () => {
+  if (!$('loi').value) { status('Chưa có link lỗi để sao chép.'); return; }
+  await navigator.clipboard.writeText($('loi').value);
+  status(`Đã sao chép ${$('soloi').textContent} link lỗi.`);
+};
+$('ep-lai').onclick = () => {
+  if (!$('loi').value) { status('Chưa có link lỗi để ép lại.'); return; }
+  // bỏ kết quả cũ của các link lỗi để lần chạy sau ép lại từ đầu
+  $('loi').value.split('\n').forEach((u) => delete results[u]);
+  chrome.storage.local.set({ results });
+  $('urls').value = $('loi').value;
+  showCount();
+  status('Đã đưa link lỗi vào danh sách — bấm Bắt đầu để ép lại.');
+};
+['urls', 'moc'].forEach((id) => $(id).addEventListener('input', showCount));
 document.title += ' ' + chrome.runtime.getManifest().version;
 log('Phiên bản tiện ích: ' + chrome.runtime.getManifest().version);
 chrome.storage.local.get('results').then((s) => { results = s.results || {}; showCount(); });

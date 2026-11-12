@@ -45,6 +45,9 @@ Không cần đăng nhập lại, không cần PowerShell. File: `ep-index-chrom
 2. Trong Chrome, vào `chrome://extensions`, bật **Developer mode** (Chế độ dành cho nhà phát triển) ở góc phải.
 3. Bấm **Load unpacked** (Tải tiện ích đã giải nén), rồi chọn thư mục `ep-index-gsc-extension`.
 4. Mở trang Tổng quan GSC của website. Bấm biểu tượng tiện ích (hình mảnh ghép → **Ép index GSC**).
-5. Kiểm tra giờ publish và danh sách link, rồi bấm **Bắt đầu**. Chạy xong, bấm **Sao chép kết quả** và dán vào chat.
+5. Tiện ích mở ra trống. Nhập giờ publish, dán danh sách link, rồi bấm **Bắt đầu**.
+   Ô Website để trống thì tiện ích tự lấy website đang mở trong Search Console.
+6. Link ép 20 lần vẫn chưa được sẽ tự hiện ở ô **Link chưa ép được**. Bấm **Sao chép link lỗi**,
+   hoặc bấm **Đưa link lỗi vào danh sách để ép lại** rồi bấm Bắt đầu.
 
 Kết quả được lưu lại. Nếu bấm Dừng hoặc tắt máy, lần sau bấm Bắt đầu thì link đã xong sẽ không làm lại.

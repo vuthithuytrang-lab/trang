@@ -119,6 +119,8 @@ Mỗi lần Trang báo **giờ publish** và gửi danh sách URL, thì xử lý
 1. Kiểm tra **Last crawl**. Google đã đọc **sau** giờ publish → `DA-DOC`, không ép.
 2. Chưa đọc lại → **ép ngay**. Không được thì thử lại tối đa **20 lần** (cách nhau 60s; bị rejected thì 15s).
    Chỉ tính OK khi thấy hộp thoại "Indexing requested" **mới**. Thử 20 lần vẫn hết quota → các link cần ép còn lại ghi SKIP, chạy lại hôm sau.
+   Tiện ích mở ra **trống** (không điền sẵn website/giờ/link của khách nào — Trang yêu cầu 12/11/2026).
+   Link ép không được tự gom vào ô "Link chưa ép được", có nút sao chép và nút đưa vào danh sách để ép lại.
 3. Trang bấm "Sao chép kết quả" và dán vào chat. Claude tích vào sheet *Đề xuất tối ưu URL | Techcombank*
    (ID `13ugpyw2dsxLx90XyZ0kSD9Ci8v2u7flOTmyLLqsGDAQ`), tab **Daily**: URL ở cột D, hàng 2 là tiêu đề ngày.
    Tích vào **cột của ngày publish**, chỉ tích URL có kết quả `DA-DOC` hoặc `OK`.
