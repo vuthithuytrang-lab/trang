@@ -43,7 +43,12 @@ https://docs.google.com/document/d/1ho6aEZqDzEESNSN3ygDi-hSOE6P3RhJ6ZxDVzXSoIi8/
    (Xuất PDF thường bị Google từ chối vì file lớn — không cần thử.)
 8. Commit + push file bản dịch, báo Trang: link từng doc (kèm `?tab=TAB`), điểm cần chú ý, hỏi 2 câu chốt.
 
+## Không còn Claude?
+Dùng bản chạy trong Google Sheet: `cong-cu/dich-bai-okamura/apps-script/` (xem HUONG-DAN-CAI.html).
+
 ## Đã biết
-- Chèn ảnh bằng `contentUri` của ảnh trong bài gốc: chạy được (Google tự lấy ảnh).
+- Chèn ảnh bằng `contentUri` của ảnh trong bài gốc: chạy được, NHƯNG link chỉ sống ~15-20 phút.
+  Phải `read_doc` bài gốc ngay trước bước 5 rồi gửi ngay. Nếu lỗi "Access to the provided image was forbidden":
+  đọc lại bài gốc, chạy lại bước 5 (vị trí không đổi), gửi tiếp từ lô bị lỗi — các lô trước giữ nguyên.
 - Ảnh tự thu về rộng tối đa 330pt cho vừa nửa trang ngang (giống bài mẫu 338pt).
 - Không có cách gọi Google Docs trực tiếp từ dòng lệnh (không có tài khoản gcloud) → bắt buộc đi qua connector.
