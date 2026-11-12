@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="vi">
 <head>
-<!-- phien-ban: 202611121841 -->
+<!-- phien-ban: 202611121844 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Luồng inlink</title>
@@ -142,6 +142,8 @@ th{background:var(--nen);font-size:12px}
 .mau-luat button.da{border-style:solid;background:var(--xanh);color:#fff}.mau-luat button.da::before{content:'✓ '}
 .vi-du-luat{margin-top:10px;padding:10px 12px;border-radius:10px;background:rgba(0,74,239,.06);border:1px solid var(--vien);font-size:12.5px;line-height:1.6}
 .vi-du-luat.an{display:none}
+.nhan-luat{display:inline-block;font-size:11px;font-weight:700;padding:1px 7px;border-radius:9px;margin-right:6px;white-space:nowrap}
+.nhan-luat.chan{background:rgba(7,239,156,.18);color:var(--ok-chu)}.nhan-luat.dan{background:rgba(0,74,239,.12);color:var(--xanh)}
 .tieu-luat{font-size:12.5px;font-weight:700;margin:10px 0 4px}.tieu-luat span{font-weight:500;color:var(--mo)}
 .nhap-luat{display:flex;gap:8px}.nhap-luat input{flex:1;min-width:0}
 .bao-luat{min-height:4px;font-size:12px;margin:3px 0 0}
@@ -360,24 +362,17 @@ lãi suất tiết kiệm | https://ten-mien.vn/lai-suat-tiet-kiem"></textarea>
     <label class="tich"><input type="checkbox" id="tabMoi" checked><span>Link mở tab mới (<code>target="_blank" rel="noopener noreferrer"</code>)</span></label>
     <label class="tich"><input type="checkbox" id="canDeu"><span>Đoạn có link mới dùng <code>&lt;p style="text-align: justify;"&gt;</code></span></label>
     <div class="luat-rieng">
-      <h3>Luật riêng của dự án <span>(tuỳ dự án — app nhớ lại cho lần sau)</span></h3>
+      <h3>Luật riêng của dự án <span>(viết bằng lời thường — app tự nhận luật nào chặn được)</span></h3>
       <input type="hidden" id="cumNe"><textarea id="luatKhac" class="an" aria-hidden="true"></textarea>
-      <div class="tieu-luat">① Từ cấm <span>— đoạn nào có từ này, app <b>tự động không chèn</b> link (chặn chắc chắn)</span></div>
-      <div class="ds-luat" data-o="cumNe" data-kieu="phay" data-goi-y="Gõ 1 từ / cụm từ rồi bấm Thêm, vd: biểu phí" data-nut="+ Thêm từ cấm" data-ten="Từ cấm đã lưu"></div>
-      <div class="tieu-luat">② Lời dặn thêm <span>— app <b>không tự kiểm được</b>; chỉ dặn AI khi viết câu và hiện ô ☐ để người duyệt soát lại</span></div>
-      <div class="ds-luat" data-o="luatKhac" data-kieu="dong" data-goi-y="Gõ 1 lời dặn rồi bấm Thêm, vd: Câu chèn xưng &quot;bạn&quot;" data-nut="+ Thêm lời dặn" data-ten="Lời dặn đã lưu"></div>
+      <div class="ds-luat" data-o="luatKhac" data-kieu="dong" data-nhan="1" data-goi-y="Gõ 1 luật rồi bấm Thêm, vd: Không chèn vào đoạn có &quot;biểu phí&quot;" data-nut="+ Thêm luật" data-ten="Luật đã lưu"></div>
       <div class="hang-thu"><button type="button" class="xem-them2 nut-gt" data-gt="gtLuat" style="float:none;margin:0"><span class="i-gt">?</span> Giải thích</button></div>
       <div class="vi-du-luat an" id="gtLuat">
-        <b>Khác nhau thế nào?</b> ① <b>Từ cấm</b> là luật app kiểm bằng máy, chặn 100%: chỉ cần đoạn văn có đúng từ đó là bỏ qua. ② <b>Lời dặn thêm</b> là luật viết bằng lời (giọng văn, cách xưng hô, chỗ không nên chèn…), máy không tự kiểm được nên chỉ dặn AI và nhắc người duyệt. Luật nào viết được thành 1 từ khoá thì nên đưa vào ① cho chắc.<br><br><b>Ví dụ dễ hiểu</b>
-        <ol>
-          <li><b>Ô "Từ cấm"</b> — gõ <b>«biểu phí»</b>. Bài có đoạn <i>"Biểu phí chuyển tiền quốc tế là 0,03%…"</i> → app <b>tự bỏ qua đoạn này</b>, chèn link sang đoạn khác hợp hơn. Phần Báo cáo ghi rõ lý do "đoạn có cụm «biểu phí» (luật riêng)".</li>
-          <li><b>Ô "Lời dặn thêm"</b> — mỗi dòng 1 luật, viết như dặn người thật. Vd: <b>«Câu chèn xưng "bạn"»</b> → khi AI viết câu mới (mục 5) sẽ xưng "bạn"; phần Kết quả hiện ô ☐ để người duyệt tích soát lại.</li>
-          <li>Không có luật riêng thì <b>để trống cả hai ô</b> — app vẫn chạy theo luật chung ở trên.</li>
-        </ol>
-        <b>Mẫu hay dùng</b> (chép vào ô cho nhanh):
-        <ul><li>Cụm cần né: biểu phí, lãi suất cố định, khuyến mãi, điều khoản, câu hỏi thường gặp</li>
-        <li>Luật khác: Không chèn link trong đoạn kết bài · Câu chèn xưng "bạn", không dùng "quý khách" · Câu chèn ngắn gọn, dưới 30 chữ · Không nhắc tên đối thủ trong câu chèn</li></ul>
-        <b>Thêm / sửa / xoá thế nào?</b> Gõ vào ô → bấm <b>+ Thêm</b> (hoặc Enter) → hiện trong danh sách "đã lưu" là xong. Sai thì bấm <b>✎ Sửa</b>, sửa xong bấm <b>Lưu</b>; không cần nữa thì bấm <b>✕ Xoá</b>.
+        <b>Viết luật thế nào?</b> Cứ viết bằng lời thường, mỗi lần 1 luật. App tự đọc và gắn nhãn cho từng luật:
+        <ul><li><span class="nhan-luat chan">🔒 App tự chặn</span> — luật có <b>từ cụ thể trong ngoặc kép</b>, hoặc chỉ là 1 cụm từ ngắn. Vd: <b>Không chèn vào đoạn có "biểu phí", "khuyến mãi"</b> hoặc chỉ gõ <b>biểu phí</b> → đoạn nào có từ đó là app không chèn link, chặn chắc chắn.</li>
+        <li><span class="nhan-luat dan">💬 Dặn AI + người duyệt</span> — luật kiểu giọng văn, cách xưng hô, vị trí… Vd: <b>Câu chèn xưng "bạn"</b> → AI làm theo khi viết câu (mục 5), phần Kết quả hiện ô ☐ để người duyệt soát lại.</li></ul>
+        <b>Mẹo:</b> muốn app chặn chắc chắn thì đặt từ cần né trong ngoặc kép "…".<br>
+        <b>Mẫu hay dùng:</b> Không chèn vào đoạn có "biểu phí", "điều khoản" · Không chèn link trong đoạn kết bài · Câu chèn xưng "bạn", không dùng "quý khách" · Không nhắc tên đối thủ trong câu chèn<br>
+        <b>Thêm / sửa / xoá:</b> gõ vào ô → <b>+ Thêm luật</b> (hoặc Enter) → hiện trong "Luật đã lưu" là xong. Sai thì <b>✎ Sửa</b> → <b>Lưu</b>; bỏ thì <b>✕ Xoá</b>. Không có luật riêng thì để trống — app chạy theo luật chung ở trên.<br>
         <span class="goi-y nho-hon">Luật lưu theo dự án đang chọn ở thanh trên cùng, lần sau mở dự án là có sẵn.</span>
       </div>
     </div>
@@ -635,7 +630,9 @@ async function chay(){
     phanBiet:$('phanBietHoa').checked, khongKe:$('khongKe').checked, neLuat:$('neLuat').checked,
     tabMoi:$('tabMoi').checked, canDeu:$('canDeu').checked,
     cumNe:$('cumNe').value.split(/[,;\n]/).map(function(x){ return x.trim().toLowerCase(); }).filter(Boolean),
-    luatKhac:$('luatKhac').value.split('\n').map(function(x){ return x.trim(); }).filter(Boolean) };
+    luatKhac:[] };
+  $('luatKhac').value.split('\n').map(function(x){ return x.trim(); }).filter(Boolean).forEach(function(x){
+    var pl = phanLoaiLuat(x); pl.cam.forEach(function(c){ if(LUATCHEN.cumNe.indexOf(c) === -1) LUATCHEN.cumNe.push(c); }); if(pl.dan) LUATCHEN.luatKhac.push(x); });
   LUAT_RIENG = LUATCHEN.luatKhac;
   var trungCum = function(t){ t = (t||'').toLowerCase(); for(var q = 0; q < LUATCHEN.cumNe.length; q++) if(t.indexOf(LUATCHEN.cumNe[q]) !== -1) return LUATCHEN.cumNe[q]; return ''; };
   var urlBai = $('urlBaiNay').value.trim();
@@ -779,6 +776,17 @@ async function chay(){
   hien(daChen, deXuat, chuaChen, cacKhoi, bang.loi, urlBai);
 }
 
+function phanLoaiLuat(x){
+  var t = x.trim(), cam = [], m, re = /["“«']([^"”»']{2,60})["”»']/g;
+  var phuDinh = /^(không|đừng|tránh|né|cấm|bỏ qua)(?=\s|$)/i.test(t);
+  while((m = re.exec(t))) cam.push(m[1].trim().toLowerCase());
+  if(cam.length && !phuDinh) cam = []; // vd: Câu chèn xưng "bạn" → không phải từ cấm
+  if(!cam.length && phuDinh){ var m2 = t.match(/đoạn\s+(?:có|chứa|nói về|về)\s+(?:chữ|từ|cụm|cụm từ)?\s*(.+)$/i); if(m2) cam = m2[1].split(/,|;|\s+(?:và|hoặc|hay)\s+/).map(function(c){ return c.replace(/[."“”«»']/g, '').trim().toLowerCase(); }).filter(function(c){ return c && c.split(/\s+/).length <= 5; }); }
+  var ngan = !cam.length && !phuDinh && t.split(/\s+/).length <= 4 && !/^(câu|tối đa|tối thiểu|chỉ|luôn|ưu tiên|viết|dùng|giữ|người)(?=\s|$)/i.test(t);
+  if(ngan) cam = [t.replace(/["“”«»']/g, '').toLowerCase()];
+  var chiCam = ngan || (cam.length && /^(không|đừng|tránh|né|cấm)\s+(chèn|đặt|gắn)?\s*(link\s+)?(vào|trong|ở)?\s*(các\s+|những\s+)?đoạn\s+(có|chứa)(?=\s|$)/i.test(t));
+  return {cam:cam, dan:!chiCam};
+}
 var LUAT_RIENG = [], KHOA_LUAT_RIENG = 'kho-app:inlink-luat-rieng';
 (function(){ var cu = {}; try{ cu = JSON.parse(doc(KHOA_LUAT_RIENG) || '{}'); }catch(e){}
   ['cumNe','luatKhac'].forEach(function(id){ if(cu[id]) $(id).value = cu[id]; $(id).addEventListener('input', function(){ luu(KHOA_LUAT_RIENG, JSON.stringify({cumNe:$('cumNe').value, luatKhac:$('luatKhac').value})); }); }); })();
@@ -1320,6 +1328,10 @@ if(location.hash === '#chen' || doc('kho-app:inlink-phan') === 'chen') document.
   document.querySelectorAll('.nut-gt').forEach(function(b){ b.onclick = function(){ var g = $(b.dataset.gt); var mo = g.classList.toggle('an') === false; b.innerHTML = mo ? '✕ Đóng giải thích' : '<span class="i-gt">?</span> Giải thích'; }; });
   function tach(v, kieu){ return (kieu === 'phay' ? v.split(/[,;\n]/) : v.split('\n')).map(function(x){ return x.trim(); }).filter(Boolean); }
   function th(x){ return String(x).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function nhan(x){ var p = phanLoaiLuat(x); return (p.cam.length ? '<span class="nhan-luat chan" title="Đoạn nào có từ này, app không chèn link">🔒 tự chặn: ' + th(p.cam.join(', ')) + '</span>' : '') + (p.dan ? '<span class="nhan-luat dan" title="App dặn AI khi viết câu và hiện ô soát cho người duyệt">💬 dặn AI + người duyệt</span>' : ''); }
+  function gopCu(){ var c = $('cumNe').value.trim(); if(!c) return; var d = tach($('luatKhac').value, 'dong'); c.split(/[,;\n]/).map(function(x){ return x.trim(); }).filter(Boolean).forEach(function(x){ if(d.map(function(y){ return y.toLowerCase(); }).indexOf(x.toLowerCase()) === -1) d.unshift(x); });
+    $('luatKhac').value = d.join('\n'); $('cumNe').value = ''; $('luatKhac').dispatchEvent(new Event('input', {bubbles:true})); $('cumNe').dispatchEvent(new Event('input', {bubbles:true})); }
+  gopCu(); setInterval(gopCu, 700);
   document.querySelectorAll('.ds-luat').forEach(function(box){
     var o = $(box.dataset.o), kieu = box.dataset.kieu, sua = -1, cuoi = null, baoTam = '';
     box.innerHTML = '<div class="nhap-luat"><input type="text" placeholder="' + box.dataset.goiY + '"><button type="button" class="nut nho">' + box.dataset.nut + '</button></div><div class="bao-luat"></div><div class="luat-da-luu"></div>';
@@ -1330,7 +1342,7 @@ if(location.hash === '#chen' || doc('kho-app:inlink-phan') === 'chen') document.
       baoEl.innerHTML = baoTam ? '<span class="bao">' + baoTam + '</span>' : ''; baoTam = '';
       dsEl.innerHTML = '<div class="dau-ds">' + box.dataset.ten + ' (' + ds.length + ')</div>' + (ds.length ? '<ol>' + ds.map(function(x, i){
         return i === sua ? '<li class="dang-sua"><input type="text" value="' + th(x) + '"><button type="button" class="nut nho" data-luu="' + i + '">Lưu</button><button type="button" class="nut phu nho" data-huy>Huỷ</button></li>'
-          : '<li><span class="chu-luat">' + th(x) + '</span><button type="button" class="nho-nut" data-sua="' + i + '">✎ Sửa</button><button type="button" class="nho-nut xoa" data-xoa="' + i + '">✕ Xoá</button></li>';
+          : '<li><span class="chu-luat">' + th(x) + '</span>' + (box.dataset.nhan ? nhan(x) : '') + '<button type="button" class="nho-nut" data-sua="' + i + '">✎ Sửa</button><button type="button" class="nho-nut xoa" data-xoa="' + i + '">✕ Xoá</button></li>';
       }).join('') + '</ol>' : '<p class="trong-luat">Chưa có — gõ vào ô trên rồi bấm <b>' + box.dataset.nut + '</b>.</p>');
       dsEl.querySelectorAll('[data-sua]').forEach(function(b){ b.onclick = function(){ sua = +b.dataset.sua; ve(); var i = dsEl.querySelector('.dang-sua input'); i.focus(); i.select(); }; });
       dsEl.querySelectorAll('[data-huy]').forEach(function(b){ b.onclick = function(){ sua = -1; ve(); }; });
