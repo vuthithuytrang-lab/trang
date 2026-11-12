@@ -154,10 +154,10 @@
  },
  "gia-thep": {
   "ok": true,
-  "luc": "2026-11-12T08:22:36+00:00",
+  "luc": "2026-11-12T08:58:04+00:00",
   "ngay": "13/11/2026",
   "ten": "Giá thép trong nước và thế giới hôm nay – 13/11/2026",
-  "can_duyet": "barchart KHÔNG ĐỌC ĐƯỢC (HTTP 202, 0 byte – trang kiểm tra chống máy, không vượt)\nBảng giá thép thế giới: Barchart chặn máy chủ nên lấy từ TradingView (cùng hợp đồng LME Steel HRC FOB China, mã HC… = V7…), giá trễ ~30 phút, cập nhật 06:30 12/11/2026, 23:34 11/11/2026 (giờ VN); mức thay đổi so với phiên trước của TradingView – có thể lệch nhẹ với Barchart. Chạy lúc 15:22 12/11/2026.\nBảng giá thép trong nước: dùng bảng steelonline.vn ngày 12-11-2026 (trang mới nhất có số); khoảng giá = thấp nhất – cao nhất mọi ô VNĐ/kg và VNĐ/cây ở tab đầu tiên của mỗi hãng.",
+  "can_duyet": "barchart KHÔNG ĐỌC ĐƯỢC (HTTP 202, 0 byte – trang kiểm tra chống máy, không vượt)\nBảng giá thép thế giới: Barchart chặn máy chủ nên lấy từ TradingView (cùng hợp đồng LME Steel HRC FOB China, mã HC… = V7…), giá trễ ~30 phút, cập nhật 15:09 12/11/2026, 15:10 12/11/2026, 15:12 12/11/2026 (giờ VN); mức thay đổi so với phiên trước của TradingView – có thể lệch nhẹ với Barchart. Chạy lúc 15:57 12/11/2026.\nBảng giá thép trong nước: dùng bảng steelonline.vn ngày 12-11-2026 (trang mới nhất có số); khoảng giá = thấp nhất – cao nhất mọi ô VNĐ/kg và VNĐ/cây ở tab đầu tiên của mỗi hãng.",
   "loi": ""
  },
  "gia-tieu": {
