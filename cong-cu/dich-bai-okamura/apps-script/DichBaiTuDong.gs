@@ -31,7 +31,7 @@ var HUONG_DAN_CHIA =
   '1. Mở tab mới, vào: aistudio.google.com/apikey\n' +
   '2. Đăng nhập Gmail (dùng chính Gmail đang mở file này). Lần đầu: tích đồng ý điều khoản → Continue.\n' +
   '3. Bấm nút xanh "Create API key" (Tạo khoá API). Nếu được hỏi dự án: chọn dự án có sẵn hoặc "Create project".\n' +
-  '4. Hiện ra dãy chữ bắt đầu bằng "AIza…" → bấm biểu tượng copy bên cạnh.\n' +
+  '4. Chìa hiện trong danh sách (bắt đầu bằng "AQ." hoặc "AIza…", đều đúng) → bấm biểu tượng copy (hình 2 tờ giấy) cạnh chìa.\n' +
   '5. Quay lại đây, dán vào ô dưới → OK.\n\n' +
   'Lưu ý: không gửi chìa cho ai, không dán vào chat. Để trống rồi OK = xoá chìa, dùng Google Dịch.';
 
@@ -86,9 +86,8 @@ function menuCaiKhoaGemini() {
   if (r.getSelectedButton() !== ui.Button.OK) return;
   var k = r.getResponseText().trim(), p = PropertiesService.getUserProperties();
   if (!k) { p.deleteProperty('GEMINI_KEY'); ui.alert('Đã xoá chìa. Dùng Google Dịch.'); return; }
-  if (!/^AIza[0-9A-Za-z_\-]{20,}$/.test(k)) {
-    ui.alert('Chìa có vẻ chưa đúng: chìa Gemini bắt đầu bằng "AIza" và không có dấu cách. Bạn copy lại nhé.'); return;
-  }
+  k = k.replace(/\s+/g, '');
+  if (k.length < 20) { ui.alert('Chìa có vẻ bị thiếu — bạn bấm biểu tượng copy cạnh chìa rồi dán lại nhé.'); return; }
   p.setProperty('GEMINI_KEY', k);
   var thu = thuChiaGemini_(k);
   ui.alert(thu === true ? 'Đã lưu chìa và thử thành công. Từ giờ dùng Gemini để dịch.' :
