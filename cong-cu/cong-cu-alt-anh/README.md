@@ -15,6 +15,13 @@ File: **`soat-alt-anh.html`**
 Mở bằng Chrome là chạy. Không cần cài gì, không cần đăng nhập, không tốn token.
 Cần mạng để **tải ảnh về xem và đo kích thước** — phần soát luật thì chạy offline.
 
+### Xem ảnh cho rõ rồi mới viết
+
+- Ảnh hiện **to 320px** ngay cạnh ô gõ, và **dính lại** khi bạn cuộn xuống
+- **Bấm vào ảnh** → mở toàn màn hình, kèm alt cũ + chú thích + câu bạn đang viết ở dưới
+- **Esc** hoặc bấm ra ngoài để đóng · nút **Mở tab mới** để xem ảnh gốc
+- Ảnh nào máy chủ khách chặn, app **tự thử tải lại** một lần theo cách khác
+
 ---
 
 ## Dùng thế nào
@@ -25,12 +32,14 @@ Cần mạng để **tải ảnh về xem và đo kích thước** — phần so
 4. Dán **đường dẫn ảnh thumb** vào ô 3
 5. Ô 4 **không phải điền gì** — app tự nhớ ảnh của mọi bài bạn đã quét
 6. Bấm **Quét bài** — đợi app tải ảnh về
-7. Mỗi ảnh hiện **một khung xanh** (câu app đề xuất) và **một ô** bên dưới đã điền sẵn câu đó
-8. Nhìn ảnh → ưng thì bấm **Thay thế**; chưa ưng thì sửa trong ô rồi bấm **Thay thế**.
+7. Ảnh hiện **to 320px**, bấm vào ảnh (hoặc nút **🔍 Xem ảnh to**) để xem **toàn màn hình**.
+   Cuộn xuống gõ thì ảnh vẫn **dính lại** bên trái cho bạn nhìn. Bấm **Esc** để đóng
+8. Mỗi ảnh hiện **một khung xanh** (câu app đề xuất) và **một ô** bên dưới đã điền sẵn câu đó
+9. Nhìn ảnh → ưng thì bấm **Thay thế**; chưa ưng thì sửa trong ô rồi bấm **Thay thế**.
    Muốn câu khác thì bấm **Đổi câu khác**
-9. Sang tab **HTML đã chèn** → bấm Copy → dán thẳng vào CMS.
+10. Sang tab **HTML đã chèn** → bấm Copy → dán thẳng vào CMS.
    Không bấm nút nào cũng copy được, nhưng app sẽ nhắc còn bao nhiêu ô chưa duyệt
-10. Hoặc sang tab **Bảng để copy** nếu chỉ cần bảng text
+11. Hoặc sang tab **Bảng để copy** nếu chỉ cần bảng text
 
 Chú thích ảnh nằm gọn sau dòng **"+ Sửa chú thích ảnh"** — không bấm vào thì giữ nguyên chú thích cũ.
 
