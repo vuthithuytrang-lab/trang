@@ -25,39 +25,27 @@
 <body>
 <div class="khung">
   <h1>Cài "Trung tâm dịch bài" Việt → Anh</h1>
-  <p class="phu">Cài 1 lần (~10 phút), dùng cho nhiều dự án. Công cụ tự tìm bài đã duyệt, tự dịch, tự ghi link bản dịch về Sheet. Không cần Claude, miễn phí.</p>
+  <p class="phu">Cài 1 lần (~5 phút), dùng cho mọi dự án. Không cần Claude, miễn phí.</p>
+
+  <div class="the nhan">
+    <h3>Cách nhanh nhất: đã có người cài sẵn</h3>
+    <p>Mở file "Trung tâm dịch bài" đã cài → <span class="nut">Tệp</span> → <span class="nut">Tạo bản sao</span>. Mã và dịch vụ đi theo bản sao. Mở bản sao → menu <span class="nut">🌐 Dịch bài</span> → <span class="nut">⚙️ Cài đặt (làm 1 lần)</span> → Cho phép → xong.</p>
+  </div>
 
   <div class="the buoc"><div class="so">1</div><div>
-    <h2>Tạo 1 file Sheet trống làm "Trung tâm dịch bài"</h2>
-    <p>Vào Google Drive → <span class="nut">Mới</span> → <span class="nut">Google Trang tính</span>. Đặt tên "Trung tâm dịch bài". Trong file đó: <span class="nut">Tiện ích mở rộng</span> → <span class="nut">Apps Script</span>.</p>
+    <h2>Dán mã</h2>
+    <p>Tạo file Google Trang tính mới, đặt tên "Trung tâm dịch bài" → <span class="nut">Tiện ích mở rộng</span> → <span class="nut">Apps Script</span> → xoá chữ có sẵn, dán file <code>DichBaiTuDong.gs</code> → 💾 Lưu.</p>
   </div></div>
 
   <div class="the buoc"><div class="so">2</div><div>
-    <h2>Dán đoạn mã</h2>
-    <p>Xoá hết chữ có sẵn, dán toàn bộ nội dung file <code>DichBaiTuDong.gs</code>, bấm 💾 Lưu.</p>
+    <h2>Bật 2 dịch vụ</h2>
+    <p>Cột trái, <span class="nut">Dịch vụ</span> → <b>+</b> → <b>Google Docs API</b> → <span class="nut">Thêm</span>. Làm lại với <b>Google Sheets API</b>.</p>
   </div></div>
 
   <div class="the buoc"><div class="so">3</div><div>
-    <h2>Bật 2 dịch vụ của Google</h2>
-    <p>Cột trái, mục <span class="nut">Dịch vụ</span> → dấu <b>+</b> → <b>Google Docs API</b> → <span class="nut">Thêm</span>. Làm lại với <b>Google Sheets API</b>.</p>
-  </div></div>
-
-  <div class="the buoc"><div class="so">4</div><div>
-    <h2>Lấy chìa Gemini (miễn phí, 2 phút)</h2>
-    <ol>
-      <li>Mở tab mới, vào <code>aistudio.google.com/apikey</code>.</li>
-      <li>Đăng nhập bằng chính Gmail đang mở file Sheet. Lần đầu: tích đồng ý điều khoản → <span class="nut">Continue</span>.</li>
-      <li>Bấm nút xanh <span class="nut">Create API key</span> (Tạo khoá API). Nếu được hỏi dự án: chọn dự án có sẵn hoặc <span class="nut">Create project</span>.</li>
-      <li>Chìa hiện trong danh sách — bắt đầu bằng <b>AQ.</b> hoặc <b>AIza…</b> đều đúng → bấm biểu tượng copy (hình 2 tờ giấy) cạnh chìa.</li>
-    </ol>
-    <p><b>Không dán chìa vào chat hay gửi cho ai.</b> Chìa chỉ dán vào hộp của công cụ ở bước 5.</p>
-  </div></div>
-
-  <div class="the buoc"><div class="so">5</div><div>
-    <h2>Bật công cụ</h2>
-    <p>Quay lại file Sheet, tải lại trang (Cmd + R). Menu <span class="nut">🌐 Dịch bài</span> xuất hiện. (Nút "Chạy" trong trang mã <b>không</b> dùng để dịch — chỉ dùng menu này.)</p>
-    <p>Bấm <span class="nut">① Tạo bảng cài đặt + bật tự chạy khi tích</span>. Lần đầu Google hỏi quyền: chọn tài khoản → <span class="nut">Nâng cao</span> → <span class="nut">Đi tới… (không an toàn)</span> → <span class="nut">Cho phép</span> (cảnh báo này hiện với mọi mã tự viết).</p>
-    <p>Bấm <span class="nut">② Cài chìa Gemini</span> → dán chìa → OK. Công cụ tự thử chìa và báo kết quả.</p>
+    <h2>Bấm 1 nút cài đặt</h2>
+    <p>Về file Sheet, tải lại trang (Cmd + R) → menu <span class="nut">🌐 Dịch bài</span> → <span class="nut">⚙️ Cài đặt (làm 1 lần)</span> → Google hỏi quyền: <span class="nut">Nâng cao</span> → <span class="nut">Đi tới…</span> → <span class="nut">Cho phép</span>.</p>
+    <p>Công cụ hỏi chìa Gemini: có thì dán (cách lấy ghi ngay trong hộp, chìa bắt đầu bằng <b>AQ.</b> hoặc <b>AIza</b> đều đúng), chưa có thì bấm <span class="nut">Huỷ</span> — vẫn dịch bằng Google Dịch.</p>
   </div></div>
 
   <div class="the nhan">

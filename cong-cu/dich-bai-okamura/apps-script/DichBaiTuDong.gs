@@ -37,8 +37,8 @@ var HUONG_DAN_CHIA =
 
 function onOpen() {
   SpreadsheetApp.getUi().createMenu('🌐 Dịch bài')
-    .addItem('① Tạo bảng cài đặt + bật tự chạy khi tích', 'menuTaoBangCaiDat')
-    .addItem('② Cài chìa Gemini (có hướng dẫn)', 'menuCaiKhoaGemini')
+    .addItem('⚙️ Cài đặt (làm 1 lần)', 'menuCaiDat')
+    .addItem('Đổi chìa Gemini', 'menuCaiKhoaGemini')
     .addSeparator()
     .addItem('Chạy ngay các dòng đang tích "Bật"', 'menuDichTatCa')
     .addSeparator()
@@ -48,7 +48,17 @@ function onOpen() {
 }
 
 // ---------------- CÀI ĐẶT ----------------
-function menuTaoBangCaiDat() {
+// Một nút làm hết: tạo bảng + bật "tích là chạy" + hỏi chìa Gemini (bỏ qua được)
+function menuCaiDat() {
+  menuTaoBangCaiDat(true);
+  var co = PropertiesService.getUserProperties().getProperty('GEMINI_KEY');
+  if (!co) menuCaiKhoaGemini(true);
+  SpreadsheetApp.getUi().alert('✅ Cài xong!\n\nCÁCH DÙNG: dán link Google Doc vào cột C, cột B ghi tên dự án, rồi tích ô "Bật" ở cột A ' +
+    '→ 1-3 phút sau cột O hiện "✅ Bản dịch EN".\n\nMáy dịch: ' +
+    (PropertiesService.getUserProperties().getProperty('GEMINI_KEY') ? 'Gemini.' : 'Google Dịch (có thể thêm chìa Gemini sau ở menu "Đổi chìa Gemini").'));
+}
+
+function menuTaoBangCaiDat(imLang) {
   var ss = SpreadsheetApp.getActive(), sh = ss.getSheetByName(TAB_CAI_DAT);
   if (!sh) {
     sh = ss.insertSheet(TAB_CAI_DAT);
@@ -66,6 +76,7 @@ function menuTaoBangCaiDat() {
   }
   batTichLaChay_();
   ss.setActiveSheet(sh);
+  if (imLang === true) return;
   SpreadsheetApp.getUi().alert('Đã sẵn sàng!\n\n' +
     'CÁCH DÙNG: dán link vào cột C rồi tích ô "Bật" ở cột A → công cụ tự chạy (1-3 phút/bài).\n' +
     '- Link Google Doc: dịch ngay bài đó.\n' +
@@ -80,9 +91,10 @@ function batTichLaChay_() {
   ScriptApp.newTrigger('khiSua').forSpreadsheet(ss).onEdit().create();
 }
 
-function menuCaiKhoaGemini() {
+function menuCaiKhoaGemini(trongCaiDat) {
   var ui = SpreadsheetApp.getUi();
-  var r = ui.prompt('Chìa Gemini (miễn phí)', HUONG_DAN_CHIA, ui.ButtonSet.OK_CANCEL);
+  var r = ui.prompt('Chìa Gemini (miễn phí, KHÔNG bắt buộc)', HUONG_DAN_CHIA +
+    (trongCaiDat === true ? '\n\nChưa muốn lấy chìa? Bấm Huỷ — công cụ dùng Google Dịch, thêm chìa sau cũng được.' : ''), ui.ButtonSet.OK_CANCEL);
   if (r.getSelectedButton() !== ui.Button.OK) return;
   var k = r.getResponseText().trim(), p = PropertiesService.getUserProperties();
   if (!k) { p.deleteProperty('GEMINI_KEY'); ui.alert('Đã xoá chìa. Dùng Google Dịch.'); return; }
