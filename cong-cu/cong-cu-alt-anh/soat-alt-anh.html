@@ -112,6 +112,13 @@ font-weight:700;color:var(--sg-xanh);cursor:pointer;text-align:left}
 .mini.ok:hover{background:var(--sg-xanh-sang);border-color:var(--sg-xanh-sang)}
 .mini.ok.xong{background:var(--xanh-la);border-color:var(--xanh-la);color:var(--chot-chu)}
 .nhan.chot{background:var(--la-nen);color:var(--xanh-la)}
+.nhan.may{background:var(--xanh-nhat);color:var(--sg-xanh)}
+.mini.may{color:var(--sg-xanh);border-color:var(--sg-xanh)}
+.mini:disabled{opacity:.5;cursor:wait}
+.chia-o{display:flex;gap:7px;flex-wrap:wrap;align-items:center}
+.chia-o input{flex:1;min-width:150px}
+#chiaBao{font-size:11.5px;line-height:1.4;margin-top:7px;font-weight:600}
+#chiaBao.ok{color:var(--xanh-la)} #chiaBao.loi{color:var(--do)} #chiaBao.cho{color:var(--xam-chu)}
 .loi-list{margin:4px 0 0;padding-left:16px;font-size:11.5px;color:var(--do)}
 .loi-list li{margin:1px 0}
 table{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:8px}
@@ -180,6 +187,18 @@ border-bottom:2px solid var(--sg-mint);padding-bottom:5px}
           <textarea id="thuVien" class="low an" style="margin-top:10px" readonly></textarea>
         </div>
       </div>
+      <div class="card">
+        <h2>5. Chìa Gemini <span style="font-weight:400;color:var(--xam-chu);font-size:12px">— để máy nhìn ảnh hộ</span></h2>
+        <p class="hint">Dán chìa vào đây một lần, app nhớ luôn trong máy bạn. Có chìa thì mỗi ảnh hiện thêm
+          nút <b>🤖 Máy nhìn ảnh</b>. Không có chìa app vẫn chạy bình thường, chỉ là không có nút đó.<br>
+          Lấy chìa miễn phí tại <code class="k">aistudio.google.com/apikey</code> — không cần thẻ ngân hàng.</p>
+        <div class="chia-o">
+          <input type="password" id="chiaGemini" placeholder="Dán chìa vào đây" autocomplete="off">
+          <button class="mini" id="nutLuuChia">Lưu &amp; kiểm tra</button>
+          <button class="mini canh" id="nutXoaChia">Xoá chìa</button>
+        </div>
+        <div id="chiaBao" class="cho">Chưa có chìa — app vẫn soát lỗi và dựng câu ghép bình thường.</div>
+      </div>
     </div>
   </div>
   <div class="hang-nut">
@@ -210,13 +229,16 @@ border-bottom:2px solid var(--sg-mint);padding-bottom:5px}
         1. Nhìn ảnh, đọc câu trong khung xanh.<br>
         2. Ưng thì bấm <b>Thay thế</b>. Chưa ưng thì sửa ô bên dưới rồi bấm <b>Thay thế</b>.<br>
         3. Sang tab <b>HTML đã chèn</b> → bấm <b>Copy</b>.</div>
-      <div class="canhbao" style="margin:0 0 14px"><b>Câu đề xuất CHƯA phải alt dùng được</b><br>
-        Máy <b>không nhìn hiểu được ảnh</b> nên không tả được ảnh. Nó chỉ ghép lại chất liệu
-        đã có sẵn trong bài — chú thích cũ, tên mục, alt cũ — rồi gắn key và canh cho dưới 120 ký tự.
-        <b>Bạn nhìn ảnh rồi sửa lại phần tả</b> cho khớp với ảnh thật.</div>
+      <div class="canhbao" style="margin:0 0 14px"><b>Hai loại câu, khác nhau hẳn</b><br>
+        ⚠ <b>Câu ghép máy móc</b> (có sẵn khi quét) — máy <b>không nhìn được ảnh</b>, chỉ ghép lại
+        chú thích cũ và tên mục rồi gắn key. Hay tả sai ảnh.<br>
+        🤖 <b>Câu máy nhìn ảnh</b> (bấm nút 🤖, cần chìa Gemini ở ô 5) — máy <b>thật sự xem tấm ảnh</b>
+        rồi tả. Đúng hơn nhiều, nhưng vẫn có thể nhầm: nó không biết bài bạn đang nói về công ty nào.<br>
+        <b>Cả hai loại đều phải bạn đọc lại rồi bấm Thay thế.</b></div>
       <div class="hang-nut" style="margin:0 0 12px">
         <button class="btn phu" id="nutGoiYCaBai">Đề xuất lại cả bài</button>
         <button class="btn phu" id="nutChotHet">Thay thế hết</button>
+        <button class="btn phu an" id="nutMayCaBai">🤖 Máy nhìn hết ảnh và viết alt</button>
         <span id="baoChot" style="font-size:12.5px;font-weight:700;color:var(--xanh-la)"></span>
       </div>
       <div id="dsAnh"></div>
@@ -629,14 +651,152 @@ function moiCau(){
   return ra;
 }
 
+/* =======================================================================
+   MÁY NHÌN ẢNH — gọi Gemini bằng chìa của chính Trang
+   Chìa lưu trong localStorage của máy này. Không gửi đi đâu ngoài Google.
+   Không ghi ra màn hình, không đưa lên GitHub.
+   ======================================================================= */
+var KHOA_CHIA = 'soat-alt-chia-gemini-v1';
+var KHOA_MODEL = 'soat-alt-model-gemini-v1';
+
+function docChia(){ try{ return localStorage.getItem(KHOA_CHIA) || ''; }catch(e){ return ''; } }
+function ghiChia(v){ try{ v ? localStorage.setItem(KHOA_CHIA, v) : localStorage.removeItem(KHOA_CHIA); }catch(e){} }
+function docModel(){ try{ return localStorage.getItem(KHOA_MODEL) || ''; }catch(e){ return ''; } }
+function ghiModel(v){ try{ localStorage.setItem(KHOA_MODEL, v); }catch(e){} }
+
+function baoChia(chu, lop){
+  var e = document.getElementById('chiaBao');
+  if(e){ e.textContent = chu; e.className = lop || 'cho'; }
+}
+/* có chìa thì hiện nút máy, không thì ẩn */
+function capNhatNutMay(){
+  var co = !!docChia();
+  var n = document.getElementById('nutMayCaBai');
+  if(n) n.classList.toggle('an', !co);
+  document.querySelectorAll('.mini.may').forEach(function(b){ b.classList.toggle('an', !co); });
+}
+
+/* hỏi Google xem chìa này dùng được model nhìn ảnh nào */
+async function timModel(chia){
+  var r = await fetch('https://generativelanguage.googleapis.com/v1beta/models?key=' + encodeURIComponent(chia));
+  if(!r.ok){
+    if(r.status === 400 || r.status === 403) throw new Error('Chìa không đúng hoặc chưa được bật. Lấy lại chìa ở aistudio.google.com/apikey.');
+    throw new Error('Google trả lỗi ' + r.status + '. Thử lại sau vài phút.');
+  }
+  var d = await r.json();
+  var ds = (d.models || []).filter(function(m){
+    var t = (m.name || '').toLowerCase();
+    return (m.supportedGenerationMethods || []).indexOf('generateContent') !== -1 &&
+      t.indexOf('flash') !== -1 &&
+      t.indexOf('image') === -1 && t.indexOf('tts') === -1 &&
+      t.indexOf('embedding') === -1 && t.indexOf('live') === -1 && t.indexOf('audio') === -1;
+  });
+  // ưu tiên bản mới nhất, không phải "lite"
+  ds.sort(function(a, b){
+    var la = a.name.indexOf('lite') !== -1 ? 1 : 0, lb = b.name.indexOf('lite') !== -1 ? 1 : 0;
+    if(la !== lb) return la - lb;
+    return b.name.localeCompare(a.name);
+  });
+  if(!ds.length) throw new Error('Chìa dùng được nhưng không thấy model nhìn ảnh nào. Có thể gói miễn phí của bạn chưa mở phần này.');
+  return ds[0].name.replace(/^models\//, '');
+}
+
+/* tải ảnh về dạng base64 — đi qua proxy ảnh vì máy chủ khách không cho trình duyệt đọc byte */
+async function anhSangBase64(src){
+  var qua = 'https://images.weserv.nl/?url=' + encodeURIComponent(src.replace(/^https?:\/\//,'')) +
+            '&w=1024&output=jpg&q=80';
+  var r;
+  try{ r = await fetch(qua); }
+  catch(e){ throw new Error('Không tải được ảnh về để gửi đi. Kiểm tra mạng.'); }
+  if(!r.ok) throw new Error('Không tải được ảnh (mã ' + r.status + '). Ảnh có thể đã bị xoá hoặc máy chủ khách chặn.');
+  var b = await r.blob();
+  if(b.size > 4000000) throw new Error('Ảnh quá nặng để gửi đi.');
+  return await new Promise(function(xong, hong){
+    var fr = new FileReader();
+    fr.onload = function(){ xong(String(fr.result).split(',')[1]); };
+    fr.onerror = function(){ hong(new Error('Không đọc được dữ liệu ảnh.')); };
+    fr.readAsDataURL(b);
+  });
+}
+
+/* dựng lệnh gửi cho máy — nhét nguyên luật của Trang vào */
+function lenhChoMay(key, kieuO, muc, chuThichCu){
+  var L = [];
+  L.push('Bạn là người viết alt ảnh chuẩn SEO tiếng Việt cho website doanh nghiệp.');
+  if(kieuO === 'caption') L.push('Nhìn kỹ tấm ảnh rồi viết MỘT câu CHÚ THÍCH tiếng Việt cho ảnh.');
+  else L.push('Nhìn kỹ tấm ảnh rồi viết MỘT câu tiếng Việt tả đúng những gì BẠN NHÌN THẤY trong ảnh.');
+  L.push('');
+  L.push('LUẬT BẮT BUỘC:');
+  L.push('- Một câu có nghĩa, KHÔNG liệt kê từ khoá, KHÔNG dùng dấu ngoặc kép, KHÔNG xuống dòng.');
+  L.push('- DƯỚI ' + GIOI_HAN + ' ký tự.');
+  L.push('- Tả ĐÚNG ảnh thật: thấy gì tả nấy. KHÔNG suy diễn, KHÔNG khẳng định đây là nhà máy hay sản phẩm của công ty nào nếu trong ảnh không ghi rõ tên.');
+  if(key) L.push('- Câu PHẢI chứa nguyên văn cụm từ này: "' + key + '"');
+  else L.push('- Không cần chèn từ khoá nào, chỉ tả ảnh.');
+  L.push('- CẤM TUYỆT ĐỐI các từ: ' + TU_CAM.join(', ') + '.');
+  L.push('- CẤM tả cách dàn trang của ảnh (ghép mấy khung, hình tròn, nền gì, bố cục ra sao). Chỉ nói TRONG ẢNH CÓ GÌ.');
+  if(kieuO === 'desc'){
+    L.push('- Đây là ô Description: CẤM tóm tắt bài viết. CẤM mở đầu bằng: ' + MO_DAU_CAM.join(', ') + '.');
+    L.push('- Tả ảnh theo một GÓC KHÁC với câu alt, đổi cấu trúc câu.');
+  }
+  if(kieuO === 'title') L.push('- Đây là ô Title: viết như alt nhưng đổi cách mở đầu, không viết cụt vài chữ.');
+  if(kieuO === 'caption') L.push('- Chú thích bám ngữ cảnh đoạn văn hơn alt một chút, nhưng vẫn phải tả đúng ảnh.');
+  L.push('');
+  if(muc || chuThichCu){
+    L.push('Bối cảnh trong bài (CHỈ để tham khảo, TUYỆT ĐỐI không chép lại nguyên văn):');
+    if(muc) L.push('- Mục chứa ảnh: ' + muc);
+    if(chuThichCu) L.push('- Chú thích cũ: ' + String(chuThichCu).replace(/<[^>]+>/g,' ').slice(0, 200));
+    L.push('');
+  }
+  L.push('CHỈ TRẢ VỀ ĐÚNG MỘT CÂU TIẾNG VIỆT, không thêm lời giải thích nào khác.');
+  return L.join('\n');
+}
+
+function donCauMay(t){
+  var c = String(t || '').trim().split(/\r?\n/)[0].trim();
+  c = c.replace(/^["\u201C\u2018']+|["\u201D\u2019']+$/g, '').trim();
+  c = c.replace(/^(alt|chú thích|caption|title|description)\s*[:：-]\s*/i, '').trim();
+  c = c.replace(/\s+/g, ' ');
+  if(demKyTu(c) >= GIOI_HAN) c = catTheoTu(c, GIOI_HAN - 1);
+  return c;
+}
+
+/* gọi Gemini cho MỘT ảnh, trả về câu */
+async function mayNhinAnh(src, key, kieuO, muc, chuThichCu){
+  var chia = docChia();
+  if(!chia) throw new Error('Chưa có chìa Gemini. Quay lại ô 5 ở màn hình đầu để dán chìa.');
+  var model = docModel();
+  if(!model){ model = await timModel(chia); ghiModel(model); }
+  var anh64 = await anhSangBase64(src);
+  var than = {
+    contents: [{ parts: [
+      { inline_data: { mime_type: 'image/jpeg', data: anh64 } },
+      { text: lenhChoMay(key, kieuO, muc, chuThichCu) }
+    ]}],
+    generationConfig: { temperature: 0.7, maxOutputTokens: 300 }
+  };
+  var r = await fetch('https://generativelanguage.googleapis.com/v1beta/models/' + model +
+      ':generateContent?key=' + encodeURIComponent(chia),
+    { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(than) });
+  if(r.status === 429) throw new Error('Hết lượt miễn phí của Google cho hôm nay (hoặc bạn bấm quá nhanh). Chờ một lát rồi thử lại.');
+  if(r.status === 400 || r.status === 403) throw new Error('Chìa không đúng hoặc chưa được bật quyền. Vào ô 5 kiểm tra lại chìa.');
+  if(!r.ok) throw new Error('Google trả lỗi ' + r.status + '. Thử lại sau.');
+  var d = await r.json();
+  var txt = (((d.candidates || [])[0] || {}).content || {}).parts;
+  txt = txt && txt.length ? txt.map(function(x){ return x.text || ''; }).join(' ') : '';
+  if(!txt.trim()) throw new Error('Máy không trả về câu nào. Có thể ảnh bị Google từ chối xử lý.');
+  var cau = donCauMay(txt);
+  if(!cau) throw new Error('Máy trả về câu rỗng.');
+  return cau;
+}
+
 /* --- Vẽ một ô nhập ----------------------------------------------------- */
-function veONhap(nhan, giaTri, key, laDesc, khiDoi, taoNhap, tuDien){
+function veONhap(nhan, giaTri, key, laDesc, khiDoi, taoNhap, tuDien, may){
   var box = document.createElement('div'); box.className = 'o-nhap';
   var lb = document.createElement('label'); lb.textContent = nhan; box.appendChild(lb);
 
   var ta = document.createElement('textarea');
   var kieu = 0, dx = null, dxCau = null, dxDem = null;
-  box.deXuat = ''; box.laNhap = false; box.daChot = false;
+  box.deXuat = ''; box.laNhap = false; box.daChot = false; box.laMay = false;
 
   if(taoNhap){
     box.deXuat = taoNhap(0) || '';
@@ -649,10 +809,28 @@ function veONhap(nhan, giaTri, key, laDesc, khiDoi, taoNhap, tuDien){
       var c = taoNhap(++kieu);
       if(!c){ alert('Bài này không đủ chữ để dựng câu khác.'); return; }
       box.deXuat = c; veDeXuat();
-      ta.value = c; box.laNhap = true; box.daChot = false; khiDoi(c);
+      ta.value = c; box.laNhap = true; box.daChot = false; box.laMay = false; khiDoi(c);
       veLaiDem(); dongBoHtml();
     };
     hangDx.appendChild(bKhac);
+    if(may && may.src){
+      var bMay = document.createElement('button'); bMay.className = 'mini may';
+      bMay.textContent = '🤖 Máy nhìn ảnh';
+      box.chayMay = async function(tuDong){
+        bMay.disabled = true; var cu = bMay.textContent; bMay.textContent = '⏳ đang nhìn…';
+        try{
+          var c = await mayNhinAnh(may.src, key(), may.kieuO, may.muc, may.chuThichCu);
+          ta.value = c; box.laMay = true; box.laNhap = false; box.daChot = false;
+          box.deXuat = c; veDeXuat(); khiDoi(c); veLaiDem(); dongBoHtml();
+          return true;
+        }catch(e){
+          if(!tuDong) alert('Máy chưa nhìn được ảnh này.\n\n' + e.message);
+          throw e;
+        }finally{ bMay.disabled = false; bMay.textContent = cu; }
+      };
+      bMay.onclick = function(){ box.chayMay(false).catch(function(){}); };
+      hangDx.appendChild(bMay);
+    }
     dxDem = document.createElement('span'); dxDem.className = 'dx-dem';
     hangDx.appendChild(dxDem);
     dx.appendChild(hangDx);
@@ -695,8 +873,13 @@ function veONhap(nhan, giaTri, key, laDesc, khiDoi, taoNhap, tuDien){
     if(box.daChot && !r.trong){
       var c = document.createElement('span'); c.className = 'nhan chot'; c.textContent = '✓ đã thay';
       dong.appendChild(c);
+    }else if(box.laMay && !r.trong){
+      var m = document.createElement('span'); m.className = 'nhan may';
+      m.textContent = '🤖 máy đã nhìn ảnh — đọc lại rồi bấm Thay thế';
+      dong.appendChild(m);
     }else if(box.laNhap && !r.trong){
-      var w = document.createElement('span'); w.className = 'nhan vang'; w.textContent = '⚠ nhìn ảnh rồi sửa';
+      var w = document.createElement('span'); w.className = 'nhan vang';
+      w.textContent = '⚠ câu ghép máy móc — nhìn ảnh rồi sửa';
       dong.appendChild(w);
     }
     bOk.classList.toggle('xong', !!box.daChot);
@@ -706,7 +889,7 @@ function veONhap(nhan, giaTri, key, laDesc, khiDoi, taoNhap, tuDien){
     if(!r.trong) r.loi.forEach(function(x){ var li = document.createElement('li'); li.textContent = x; ul.appendChild(li); });
   }
   ta.addEventListener('input', function(){
-    box.laNhap = false; box.daChot = false; khiDoi(ta.value); veLaiDem();
+    box.laNhap = false; box.daChot = false; box.laMay = false; khiDoi(ta.value); veLaiDem();
   });
   ta.addEventListener('change', dongBoHtml);
   box.veLai = ve;
@@ -720,7 +903,7 @@ function dongBoHtml(){ if(G.anh && G.anh.length) try{ taoHtml(); }catch(e){} }
 /* đếm ô còn là câu đề xuất mà chưa ai chốt */
 function demChuaChot(){
   var n = 0;
-  cacO.forEach(function(o){ if(o.oChu && o.oChu.value.trim() && o.laNhap && !o.daChot) n++; });
+  cacO.forEach(function(o){ if(o.oChu && o.oChu.value.trim() && (o.laNhap || o.laMay) && !o.daChot) n++; });
   return n;
 }
 
@@ -783,14 +966,16 @@ function veBangSoan(){
     phai.appendChild(chon);
 
     var oAlt = veONhap('Alt cho ảnh ' + a.stt, a.altMoi, function(){ return a.keyGan; }, false,
-      function(v){ a.altMoi = v; }, function(k){ return goiYChoAnh(a, k); }, true);
+      function(v){ a.altMoi = v; }, function(k){ return goiYChoAnh(a, k); }, true,
+      { src:a.src, kieuO:'alt', muc:a.muc, chuThichCu:a.chuThichCu });
     phai.appendChild(oAlt); cacO.push(oAlt);
 
     if(a.chuThichCu !== null){
       if(a.chuThichMoi === null) a.chuThichMoi = '';
       var oCt = veONhap('Chú thích mới (để trống = giữ nguyên chú thích cũ)',
         a.chuThichMoi, function(){ return ''; }, false, function(v){ a.chuThichMoi = v; },
-        function(k){ return goiYChoAnh(a, k + 1); }, false);
+        function(k){ return goiYChoAnh(a, k + 1); }, false,
+        { src:a.src, kieuO:'caption', muc:a.muc, chuThichCu:a.chuThichCu });
       oCt.classList.add('an');
       var nutCt = document.createElement('button'); nutCt.className = 'ct-mo';
       nutCt.textContent = '+ Sửa chú thích ảnh (đang giữ nguyên)';
@@ -840,7 +1025,8 @@ function veBangSoan(){
    ['caption','Image Caption',false,3],['desc','Description',true,2]].forEach(function(x){
     var o = veONhap(x[1], G.thumb[x[0]], function(){ return G.thumb.keyGan || ''; }, x[2],
       function(v){ G.thumb[x[0]] = v; },
-      function(k){ return goiYChoThumb(x[3] + k * 4); }, true);
+      function(k){ return goiYChoThumb(x[3] + k * 4); }, true,
+      G.thumb.src ? { src:G.thumb.src, kieuO:x[0], muc:'', chuThichCu:'' } : null);
     phai.appendChild(o); cacO.push(o);
   });
   hang.appendChild(phai);
@@ -848,6 +1034,7 @@ function veBangSoan(){
 
   veLaiDem();
   dongBoHtml();
+  capNhatNutMay();
 }
 
 /* --- Lớp phủ xem ảnh to ------------------------------------------------ */
@@ -1103,6 +1290,60 @@ document.getElementById('nutChotHet').onclick = function(){
   var b = document.getElementById('baoChot');
   b.textContent = '✓ đã thay cả bài';
   setTimeout(function(){ b.textContent = ''; }, 3000);
+};
+
+/* ---- Ô chìa Gemini ---- */
+(function(){
+  var o = document.getElementById('chiaGemini');
+  var co = docChia();
+  if(co){
+    o.value = co;
+    var m = docModel();
+    baoChia('✓ Đã có chìa trong máy này' + (m ? ' — đang dùng model ' + m : '') + '. Mỗi ảnh sẽ có nút 🤖 Máy nhìn ảnh.', 'ok');
+  }
+  document.getElementById('nutLuuChia').onclick = async function(){
+    var v = o.value.trim();
+    if(!v){ baoChia('Bạn chưa dán chìa vào ô.', 'loi'); return; }
+    this.disabled = true; baoChia('Đang hỏi Google xem chìa có dùng được không…', 'cho');
+    try{
+      var model = await timModel(v);
+      ghiChia(v); ghiModel(model);
+      baoChia('✓ Chìa dùng được — đang dùng model ' + model + '. Giờ mỗi ảnh có nút 🤖 Máy nhìn ảnh.', 'ok');
+      capNhatNutMay();
+    }catch(e){
+      baoChia('✗ ' + e.message, 'loi');
+    }finally{ this.disabled = false; }
+  };
+  document.getElementById('nutXoaChia').onclick = function(){
+    if(!docChia()){ baoChia('Đang không có chìa nào.', 'cho'); return; }
+    if(!confirm('Xoá chìa Gemini khỏi máy này?')) return;
+    ghiChia(''); try{ localStorage.removeItem(KHOA_MODEL); }catch(e){}
+    o.value = '';
+    baoChia('Đã xoá chìa. App vẫn soát lỗi và dựng câu ghép bình thường.', 'cho');
+    capNhatNutMay();
+  };
+})();
+
+/* ---- Máy nhìn hết ảnh trong bài ---- */
+document.getElementById('nutMayCaBai').onclick = async function(){
+  if(!docChia()){ alert('Chưa có chìa Gemini. Quay lại màn hình đầu, ô 5.'); return; }
+  var ds = cacO.filter(function(o){ return o.chayMay && !o.daChot; });
+  if(!ds.length){ alert('Không còn ô nào cần máy nhìn — bạn đã chốt hết rồi.'); return; }
+  if(!confirm('Cho máy nhìn ' + ds.length + ' ô?\n\nMáy gửi ảnh sang Google rồi nhận câu tả về. Mỗi ô mất vài giây.\nCâu máy viết vẫn phải bạn đọc lại rồi bấm Thay thế.')) return;
+  this.disabled = true;
+  var xong = 0, hong = 0, loiDau = '';
+  var b = document.getElementById('baoChot');
+  for(var i = 0; i < ds.length; i++){
+    b.textContent = 'Đang nhìn ô ' + (i + 1) + '/' + ds.length + '…';
+    try{ await ds[i].chayMay(true); xong++; }
+    catch(e){ hong++; if(!loiDau) loiDau = e.message;
+      if(/[Hh]ết lượt|429/.test(e.message)) break; }
+    await new Promise(function(r){ setTimeout(r, 1200); });   // đi chậm cho khỏi quá hạn mức
+  }
+  this.disabled = false;
+  b.textContent = '';
+  alert('Máy đã nhìn xong ' + xong + ' ô' + (hong ? ', ' + hong + ' ô lỗi.\n\nLỗi đầu tiên: ' + loiDau : '.') +
+    '\n\nGiờ bạn đọc lại từng câu, đối chiếu với ảnh rồi bấm Thay thế.');
 };
 
 document.getElementById('nutXemTV').onclick = function(){

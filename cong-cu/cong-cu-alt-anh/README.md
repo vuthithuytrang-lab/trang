@@ -96,12 +96,46 @@ Kèm bảng chứng minh: đếm lại `<img`, `<h2`, `<h3`, `<table`, `<tr`, `<
 
 ---
 
+## 🤖 Máy nhìn ảnh — cần chìa Gemini (miễn phí)
+
+Dán **chìa Gemini** vào ô 5 ở màn hình đầu thì mỗi ảnh hiện thêm nút **🤖 Máy nhìn ảnh**,
+và đầu tab Soạn alt có nút **🤖 Máy nhìn hết ảnh và viết alt**.
+
+Lấy chìa: vào `aistudio.google.com/apikey` → đăng nhập Gmail → **Create API key** → Copy.
+**Miễn phí, không cần thẻ ngân hàng.**
+
+Khi bấm, app tải ảnh về, gửi sang Google kèm **nguyên bộ luật** (dưới 120 ký tự, phải có key,
+cấm từ dàn trang, Description không tóm tắt bài…) rồi nhận câu tiếng Việt về.
+
+**Hai loại câu, app gắn nhãn khác nhau:**
+
+| Nhãn | Nghĩa |
+|---|---|
+| ⚠ **câu ghép máy móc** | Máy KHÔNG nhìn ảnh, chỉ ghép chú thích cũ + tên mục + key. Hay sai |
+| 🤖 **máy đã nhìn ảnh** | Máy thật sự xem tấm ảnh rồi tả. Đúng hơn nhiều |
+
+⚠️ **Cả hai loại vẫn phải bạn đọc lại rồi bấm Thay thế.** Máy nhìn được ảnh nhưng
+không biết bài đang nói về công ty nào, nên vẫn nhầm được.
+
+### Chìa khoá được giữ thế nào
+
+- Lưu trong **trình duyệt máy này**, không bao giờ đưa lên GitHub
+- Không in ra màn hình (ô nhập là dạng chấm tròn)
+- Chỉ gửi tới Google, không gửi đi đâu khác
+- Có nút **Xoá chìa** bất cứ lúc nào
+- ⛔ **Đừng dán chìa vào khung chat với AI** — lịch sử chat lưu nhiều nơi
+
+### Không có chìa thì sao
+
+App vẫn chạy đủ: soát lỗi, đếm ký tự, dựng câu ghép, xuất HTML. Chỉ là không có nút 🤖.
+
+---
+
 ## App KHÔNG làm được gì
 
-**Không viết hộ câu alt.** Nó không nhìn hiểu được tấm ảnh.
-
-App hiện ảnh lên cho bạn nhìn, gán sẵn key, đếm ký tự và soát luật — nhưng **câu chữ vẫn do
-người viết**. Phần đó nếu cần người viết hộ thì mới dùng tới Claude.
+**Không thay bạn quyết định.** Kể cả khi máy nhìn được ảnh, nó không biết bài bạn
+đang viết cho khách nào, không biết ảnh stock hay ảnh thật của công ty đó.
+Câu cuối cùng vẫn do **bạn duyệt**.
 
 ### Thư viện ảnh — app tự nhớ
 
