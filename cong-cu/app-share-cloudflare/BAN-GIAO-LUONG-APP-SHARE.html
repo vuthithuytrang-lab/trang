@@ -48,7 +48,7 @@ th{font-family:var(--f-dau);font-size:13px;color:var(--navy);background:var(--ne
 <div class="wrap" id="doc">
   <div class="eyebrow">Bàn giao · cập nhật 12/11/2026 · phiên bản app 2026-11-12a</div>
   <h1>Bàn giao App share bài (Kỹ thuật phụ trên Cloudflare)</h1>
-  <p class="lead">Tài liệu cho người hoặc AI tiếp nhận luồng "tạo app share bài social" của Trang (SEONGON). Đọc hết trước khi sửa. Cuối trang có câu lệnh dán thẳng cho AI để làm tiếp.</p>
+  <p class="lead">Tài liệu cho người hoặc AI tiếp nhận luồng "tạo app share bài social" của Trang (SEONGON). Đọc hết trước khi sửa. Giao việc: chỉ cần gửi link trang này.</p>
 
   <div class="status" aria-label="Tình trạng nhanh">
     <div class="st"><b><span class="dot d-ok"></span>App đang chạy</b><span>ky-thuat-phu.trangvtt.workers.dev</span></div>
@@ -158,26 +158,15 @@ th{font-family:var(--f-dau);font-size:13px;color:var(--navy);background:var(--ne
     <li>Sau khi giao, luôn hỏi 2 câu: nhìn có lỗi hiển thị không, có ưng không.</li>
   </ul>
 
-  <h2><span class="so">→</span>Câu lệnh giao việc cho AI tiếp nhận</h2>
-  <p class="mo">Dán nguyên khung dưới vào một phiên Claude Code mở trên kho <code>vuthithuytrang-lab/trang</code>.</p>
-  <div class="prompt">
-<pre id="cau">Chào bạn, mình là Trang (gọi mình là "bạn xinh đẹp"). Mình Nontech: nói dễ hiểu, tự làm hết phần kỹ thuật,
-chỉ nhờ mình khi chắc chắn bạn không làm được (bấm nút, cấp quyền), mỗi lần 1 bước. Đọc CLAUDE.md của repo trước.
-
-Bạn tiếp nhận và phát triển tiếp "App share bài" trong app Kỹ thuật phụ trên Cloudflare:
-- Link: https://ky-thuat-phu.trangvtt.workers.dev (share bài ở /share/)
-- Code: nhánh claude/relaxed-turing-t34z57, thư mục cong-cu/app-share-cloudflare/
-- Đọc trước: cong-cu/app-share-cloudflare/BAN-GIAO-LUONG-APP-SHARE.html và BAN-GIAO.html (cùng thư mục)
-- Cloudflare tự đăng lại mỗi lần push lên nhánh trên (Workers Builds) — không cần token.
-
-Giữ đúng các quyết định ở mục 04 của tài liệu bàn giao (không token, miễn phí, tài khoản riêng,
-không nhận mật khẩu, luật an toàn đăng 7h–23h / ≥2 tiếng / ≤6 bài/ngày, soát rò rỉ trước khi push).
-
-Làm tiếp theo thứ tự mục 09: hướng dẫn mình "Cài đặt 1 lần" Google (mình đang ở bước lấy Project ID),
-kết nối Blogger + Google Groups, xếp 1 bài đợi thử và xác nhận Cron đăng được, rồi các việc còn lại.
-Xong mỗi phần: tự mở link thật, chụp màn hình máy tính + điện thoại, commit + push, báo bằng lời thường.</pre>
-  </div>
-  <p><button class="btn" id="copy" type="button">📋 Chép câu lệnh</button> <button class="btn" id="copyall" type="button" style="background:var(--navy)">📋 Chép toàn bộ tài liệu</button></p>
+  <h2><span class="so">→</span>Giao việc cho người tiếp nhận</h2>
+  <p>Chỉ cần gửi 2 link:</p>
+  <ul>
+    <li>Tài liệu này: <a href="https://claude.ai/artifact/4F58xpLKmY31H7NbgMasGA" target="_blank" rel="noopener">claude.ai/artifact/4F58xpLKmY31H7NbgMasGA</a></li>
+    <li>App: <a href="https://ky-thuat-phu.trangvtt.workers.dev/share/" target="_blank" rel="noopener">ky-thuat-phu.trangvtt.workers.dev/share/</a></li>
+  </ul>
+  <p>Nếu giao cho Claude Code, chỉ dán 1 dòng:</p>
+  <div class="prompt"><pre id="cau">Đọc cong-cu/app-share-cloudflare/BAN-GIAO-LUONG-APP-SHARE.html (nhánh claude/relaxed-turing-t34z57) và làm tiếp mục 09.</pre></div>
+  <p><button class="btn" id="copy" type="button">📋 Chép</button></p>
 </div>
 <script>
 function chep(text, btn, label){
@@ -185,6 +174,5 @@ function chep(text, btn, label){
   try{navigator.clipboard.writeText(text).then(done,()=>{sel(btn)})}catch(e){sel(btn)}
 }
 function sel(btn){const r=document.createRange();r.selectNodeContents(document.getElementById('cau'));const s=getSelection();s.removeAllRanges();s.addRange(r);btn.textContent='Đã chọn sẵn — bấm Cmd/Ctrl + C'}
-document.getElementById('copy').addEventListener('click',e=>chep(document.getElementById('cau').innerText,e.currentTarget,'📋 Chép câu lệnh'));
-document.getElementById('copyall').addEventListener('click',e=>chep(document.getElementById('doc').innerText,e.currentTarget,'📋 Chép toàn bộ tài liệu'));
+document.getElementById('copy').addEventListener('click',e=>chep(document.getElementById('cau').innerText,e.currentTarget,'📋 Chép'));
 </script>
