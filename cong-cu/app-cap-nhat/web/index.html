@@ -289,7 +289,7 @@ $("#run").addEventListener("click", function(e){
 var HAM_THEM = HAM.replace(/chay$/, "them");
 // Mở file Docs = bản mới nhất (12/11/2026): trang web nhỏ chạy trên tài khoản Google của Trang (Apps Script
 // cong-cu/tu-dong/google-apps-script/DongBoDocs.gs) chép bản máy vừa chạy vào file Docs cố định của bài rồi trả link.
-var DONG_BO = "";
+var DONG_BO = "https://script.google.com/macros/s/AKfycbw7gSYVHzpMkw4WnWOWNI6ksKSc00X3KvM5qI2Wy9eum4UPvvacsLpXn4mcWB-UsyIF/exec";
 function moDocs(id){
   var b = du.bai.filter(function(x){ return x.id === id; })[0] || {}, w = window.open("", "_blank");
   if (w) { try { w.document.write('<meta charset="utf-8"><p style="font:16px Arial;padding:24px">Đang chép bản mới nhất vào Google Docs…</p>'); } catch (e) {} }
