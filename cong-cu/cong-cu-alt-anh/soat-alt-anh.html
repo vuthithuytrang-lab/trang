@@ -37,7 +37,9 @@ header p{margin:4px 0 0;font-size:13px;opacity:.85}
 .card h2{margin:0 0 4px;font-size:15px;font-weight:700;color:var(--sg-navy)}
 .card .hint{margin:0 0 10px;font-size:12px;color:var(--xam-chu)}
 .grid2{display:grid;grid-template-columns:2fr 1fr;gap:16px}
-@media(max-width:1000px){.grid2{grid-template-columns:1fr}}
+.grid-deu{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:1000px){.grid2,.grid-deu{grid-template-columns:1fr}}
+#htmlVao{min-height:470px}
 textarea{width:100%;border:1px solid var(--xam-vien);border-radius:8px;padding:10px;
 font-family:ui-monospace,"SF Mono",Consolas,monospace;font-size:12.5px;line-height:1.5;resize:vertical;
 background:var(--nen-nhap);color:var(--den)}
@@ -194,7 +196,11 @@ border-bottom:2px solid var(--sg-mint);padding-bottom:5px}
           <textarea id="thuVien" class="low an" style="margin-top:10px" readonly></textarea>
         </div>
       </div>
-      <div class="card">
+          </div>
+  </div>
+  <div class="grid-deu">
+    <div>
+<div class="card">
         <h2>5. Chìa Gemini <span style="font-weight:400;color:var(--xam-chu);font-size:12px">— để máy nhìn ảnh hộ</span></h2>
         <p class="hint">Dán một lần, app nhớ trong máy bạn. Có chìa thì mỗi ảnh hiện thêm nút <b>🤖 Máy nhìn ảnh</b>.</p>
         <div class="tv-o">
@@ -209,6 +215,8 @@ border-bottom:2px solid var(--sg-mint);padding-bottom:5px}
           → đăng nhập Gmail → bấm <b>Create API key</b> → Copy. Không cần thẻ ngân hàng.<br>
           🔒 Chìa chỉ nằm trong trình duyệt máy này, không gửi đi đâu ngoài Google.</p>
       </div>
+    </div>
+    <div>
       <div class="card">
         <h2>6. Câu lệnh gửi cho máy <span style="font-weight:400;color:var(--xam-chu);font-size:12px">— sửa được</span></h2>
         <p class="hint">Đây là nguyên văn lời dặn app gửi kèm mỗi tấm ảnh. Muốn máy viết khác đi thì sửa thẳng ở đây.</p>
@@ -760,15 +768,22 @@ var MAU_LENH_MAC_DINH = [
   'Bạn là người viết alt ảnh chuẩn SEO tiếng Việt cho website doanh nghiệp.',
   '{VIEC}',
   '',
+  'CÁCH NHÌN ẢNH:',
+  '- Kể ra thứ NHÌN THẤY ĐƯỢC: vật chính, màu sắc, chất liệu, nơi chốn, người đang làm gì.',
+  '- Ưu tiên cái chiếm nhiều diện tích nhất và cái nằm giữa ảnh.',
+  '- Ảnh có chữ in trên đó thì đọc và dùng, nhưng đừng chép nguyên cả câu dài.',
+  '',
   'LUẬT BẮT BUỘC:',
   '- Một câu có nghĩa, KHÔNG liệt kê từ khoá, KHÔNG dùng dấu ngoặc kép, KHÔNG xuống dòng.',
   '- DƯỚI {GIOI_HAN} ký tự.',
-  '- Tả ĐÚNG ảnh thật: thấy gì tả nấy. KHÔNG suy diễn, KHÔNG khẳng định đây là nhà máy',
-  '  hay sản phẩm của công ty nào nếu trong ảnh không ghi rõ tên.',
   '- {LUAT_KEY}',
+  '- Tả ĐÚNG ảnh thật, thấy gì tả nấy. KHÔNG suy diễn: không khẳng định đây là nhà máy,',
+  '  sản phẩm hay nhân sự của công ty nào nếu trong ảnh không ghi rõ tên.',
   '- CẤM TUYỆT ĐỐI các từ: {TU_CAM}.',
   '- CẤM tả cách dàn trang của ảnh (ghép mấy khung, hình tròn, nền gì, bố cục ra sao).',
   '  Chỉ nói TRONG ẢNH CÓ GÌ.',
+  '- CẤM mấy chữ chung chung rỗng nghĩa: hình ảnh minh họa, chất lượng cao, hiện đại,',
+  '  chuyên nghiệp, uy tín, đa dạng phong phú, tiên tiến.',
   '{LUAT_RIENG}',
   '{BOI_CANH}',
   'CHỈ TRẢ VỀ ĐÚNG MỘT CÂU TIẾNG VIỆT, không thêm lời giải thích nào khác.'
