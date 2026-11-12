@@ -102,7 +102,7 @@
    "ghi_chu": ""
   },
   {
-   "id": "lai-suat-tiet-kiem",
+   "id": "lai-suat-1",
    "thu_tu": 10,
    "ten": "Lãi suất tiết kiệm (Bài 1)",
    "nhom": "Lãi suất",
@@ -113,7 +113,7 @@
    "ghi_chu": ""
   },
   {
-   "id": "cach-tinh-lai-suat",
+   "id": "lai-suat-2",
    "thu_tu": 11,
    "ten": "Cách tính lãi suất (Bài 2)",
    "nhom": "Lãi suất",
