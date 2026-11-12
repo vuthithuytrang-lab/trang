@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="vi">
 <head>
-<!-- phien-ban: 2026-11-13f -->
+<!-- phien-ban: 2026-11-13g -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Luồng inlink</title>
@@ -362,16 +362,16 @@ lãi suất tiết kiệm | https://ten-mien.vn/lai-suat-tiet-kiem"></textarea>
     <div class="luat-rieng">
       <h3>Luật riêng của dự án <span>(tuỳ dự án — app nhớ lại cho lần sau)</span></h3>
       <input type="hidden" id="cumNe"><textarea id="luatKhac" class="an" aria-hidden="true"></textarea>
-      <div class="tieu-luat">Không chèn vào đoạn có chứa cụm từ <span>(app tự né)</span></div>
-      <div class="ds-luat" data-o="cumNe" data-kieu="phay" data-goi-y="Gõ 1 cụm rồi bấm Thêm, vd: biểu phí" data-nut="+ Thêm cụm" data-ten="Cụm đã lưu"></div>
-      <div class="tieu-luat">Luật khác <span>(gửi cho AI + hiện ô soát cho người duyệt)</span></div>
-      <div class="ds-luat" data-o="luatKhac" data-kieu="dong" data-goi-y="Gõ 1 luật rồi bấm Thêm, vd: Không chèn link trong đoạn kết bài" data-nut="+ Thêm luật" data-ten="Luật đã lưu"></div>
+      <div class="tieu-luat">① Từ cấm <span>— đoạn nào có từ này, app <b>tự động không chèn</b> link (chặn chắc chắn)</span></div>
+      <div class="ds-luat" data-o="cumNe" data-kieu="phay" data-goi-y="Gõ 1 từ / cụm từ rồi bấm Thêm, vd: biểu phí" data-nut="+ Thêm từ cấm" data-ten="Từ cấm đã lưu"></div>
+      <div class="tieu-luat">② Lời dặn thêm <span>— app <b>không tự kiểm được</b>; chỉ dặn AI khi viết câu và hiện ô ☐ để người duyệt soát lại</span></div>
+      <div class="ds-luat" data-o="luatKhac" data-kieu="dong" data-goi-y="Gõ 1 lời dặn rồi bấm Thêm, vd: Câu chèn xưng &quot;bạn&quot;" data-nut="+ Thêm lời dặn" data-ten="Lời dặn đã lưu"></div>
       <div class="hang-thu"><button type="button" class="xem-them2 nut-gt" data-gt="gtLuat" style="float:none;margin:0"><span class="i-gt">?</span> Giải thích</button></div>
       <div class="vi-du-luat an" id="gtLuat">
-        <b>Ví dụ dễ hiểu</b>
+        <b>Khác nhau thế nào?</b> ① <b>Từ cấm</b> là luật app kiểm bằng máy, chặn 100%: chỉ cần đoạn văn có đúng từ đó là bỏ qua. ② <b>Lời dặn thêm</b> là luật viết bằng lời (giọng văn, cách xưng hô, chỗ không nên chèn…), máy không tự kiểm được nên chỉ dặn AI và nhắc người duyệt. Luật nào viết được thành 1 từ khoá thì nên đưa vào ① cho chắc.<br><br><b>Ví dụ dễ hiểu</b>
         <ol>
-          <li><b>Ô "Không chèn vào đoạn có cụm"</b> — gõ <b>«biểu phí»</b>. Bài có đoạn <i>"Biểu phí chuyển tiền quốc tế là 0,03%…"</i> → app <b>tự bỏ qua đoạn này</b>, chèn link sang đoạn khác hợp hơn. Phần Báo cáo ghi rõ lý do "đoạn có cụm «biểu phí» (luật riêng)".</li>
-          <li><b>Ô "Luật khác"</b> — mỗi dòng 1 luật, viết như dặn người thật. Vd: <b>«Câu chèn xưng "bạn"»</b> → khi AI viết câu mới (mục 5) sẽ xưng "bạn"; phần Kết quả hiện ô ☐ để người duyệt tích soát lại.</li>
+          <li><b>Ô "Từ cấm"</b> — gõ <b>«biểu phí»</b>. Bài có đoạn <i>"Biểu phí chuyển tiền quốc tế là 0,03%…"</i> → app <b>tự bỏ qua đoạn này</b>, chèn link sang đoạn khác hợp hơn. Phần Báo cáo ghi rõ lý do "đoạn có cụm «biểu phí» (luật riêng)".</li>
+          <li><b>Ô "Lời dặn thêm"</b> — mỗi dòng 1 luật, viết như dặn người thật. Vd: <b>«Câu chèn xưng "bạn"»</b> → khi AI viết câu mới (mục 5) sẽ xưng "bạn"; phần Kết quả hiện ô ☐ để người duyệt tích soát lại.</li>
           <li>Không có luật riêng thì <b>để trống cả hai ô</b> — app vẫn chạy theo luật chung ở trên.</li>
         </ol>
         <b>Mẫu hay dùng</b> (chép vào ô cho nhanh):
@@ -831,7 +831,7 @@ function hien(daChen, deXuat, chuaChen, cacKhoi, loiBang, urlBai){
   var tong = daChen.length + deXuat.length + chuaChen.length;
   $('tomTat').innerHTML = [[daChen.length, 'Chèn vào cụm có sẵn'], [deXuat.length, 'Chèn bằng câu AI viết'], [chuaChen.length, 'Chưa chèn'], [cacKhoi.length, 'Đoạn cần sửa trên CMS']]
     .map(function(x){ return '<div class="o-so"><div class="so">' + x[0] + '</div><div class="ten">' + x[1] + '</div></div>'; }).join('') +
-    (LUAT_RIENG.length ? '<div class="soat-luat" style="grid-column:1/-1"><b>Soát theo luật riêng của dự án</b> (app không tự kiểm được — người duyệt đọc lại từng link):<ul>' + LUAT_RIENG.map(function(x){ return '<li>☐ ' + thoat(x) + '</li>'; }).join('') + '</ul></div>' : '');
+    (LUAT_RIENG.length ? '<div class="soat-luat" style="grid-column:1/-1"><b>Soát theo lời dặn của dự án</b> (app không tự kiểm được — người duyệt đọc lại từng link):<ul>' + LUAT_RIENG.map(function(x){ return '<li>☐ ' + thoat(x) + '</li>'; }).join('') + '</ul></div>' : '');
   $('banDuyet').innerHTML = KQ.duyet;
   $('htmlSach').value = KQ.sach;
   $('dsKhoi').innerHTML = cacKhoi.length ? cacKhoi.map(function(k){
