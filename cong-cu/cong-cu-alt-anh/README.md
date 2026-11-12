@@ -117,6 +117,22 @@ cấm từ dàn trang, Description không tóm tắt bài…) rồi nhận câu 
 ⚠️ **Cả hai loại vẫn phải bạn đọc lại rồi bấm Thay thế.** Máy nhìn được ảnh nhưng
 không biết bài đang nói về công ty nào, nên vẫn nhầm được.
 
+### Câu lệnh gửi cho máy — sửa được ở thẻ 6
+
+Thẻ **6. Câu lệnh gửi cho máy** cho xem và sửa **nguyên văn** lời dặn app gửi kèm mỗi ảnh.
+
+| Nút | Việc |
+|---|---|
+| **Lưu câu lệnh** | Nhớ trong trình duyệt, từ đó app gửi bản này |
+| **Copy** | Lấy ra dán sang ChatGPT / Gemini |
+| **Xem thử bản đầy đủ** | Xem bản thật đã điền key, tên mục, chú thích của ảnh 1 |
+| **Trả về mặc định** | Bỏ bản đã sửa |
+
+Mấy cụm `{VIEC}` `{GIOI_HAN}` `{LUAT_KEY}` `{TU_CAM}` `{LUAT_RIENG}` `{BOI_CANH}`
+là chỗ app tự điền theo từng ảnh — **giữ nguyên, đừng xoá**. Xoá thì app hỏi lại trước khi lưu.
+
+Sửa luật trong `cong-cu-viet-alt-anh-chuan-seo.md` thì nhớ sửa cả câu lệnh ở đây.
+
 ### Chìa khoá được giữ thế nào
 
 - Lưu trong **trình duyệt máy này**, không bao giờ đưa lên GitHub
