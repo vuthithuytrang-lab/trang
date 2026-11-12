@@ -119,6 +119,12 @@ font-weight:700;color:var(--sg-xanh);cursor:pointer;text-align:left}
 .chia-nut{display:flex;gap:7px;flex-wrap:wrap;margin-top:8px}
 #chiaBao{font-size:11.5px;line-height:1.45;margin-top:9px;padding-top:9px;font-weight:600;
 border-top:1px solid var(--xam-vien)}
+#lenhBao{font-size:11.5px;line-height:1.45;margin-top:8px;font-weight:600}
+#lenhBao.ok{color:var(--xanh-la)} #lenhBao.loi{color:var(--do)} #lenhBao.cho{color:var(--xam-chu)}
+.lenh-ma{background:var(--xam-nen);border-radius:7px;padding:8px 10px;font-size:11.5px;
+line-height:1.9;color:var(--xam-chu);margin-bottom:8px}
+.lenh-ma b{color:var(--den);display:block;margin-bottom:3px;font-size:11px}
+#mauLenh{min-height:300px}
 #chiaBao.ok{color:var(--xanh-la)} #chiaBao.loi{color:var(--do)} #chiaBao.cho{color:var(--xam-chu)}
 .loi-list{margin:4px 0 0;padding-left:16px;font-size:11.5px;color:var(--do)}
 .loi-list li{margin:1px 0}
@@ -202,6 +208,28 @@ border-bottom:2px solid var(--sg-mint);padding-bottom:5px}
         <p class="hint" style="margin:8px 0 0">Lấy chìa miễn phí: mở <code class="k">aistudio.google.com/apikey</code>
           → đăng nhập Gmail → bấm <b>Create API key</b> → Copy. Không cần thẻ ngân hàng.<br>
           🔒 Chìa chỉ nằm trong trình duyệt máy này, không gửi đi đâu ngoài Google.</p>
+      </div>
+      <div class="card">
+        <h2>6. Câu lệnh gửi cho máy <span style="font-weight:400;color:var(--xam-chu);font-size:12px">— sửa được</span></h2>
+        <p class="hint">Đây là nguyên văn lời dặn app gửi kèm mỗi tấm ảnh. Muốn máy viết khác đi thì sửa thẳng ở đây.</p>
+        <button class="ct-mo" id="nutMoLenh" style="margin-top:0">+ Mở câu lệnh ra xem / sửa</button>
+        <div id="oLenh" class="an">
+          <div class="lenh-ma">
+            <b>Chỗ app tự điền:</b>
+            <code class="k">{VIEC}</code> <code class="k">{GIOI_HAN}</code> <code class="k">{LUAT_KEY}</code>
+            <code class="k">{TU_CAM}</code> <code class="k">{LUAT_RIENG}</code> <code class="k">{BOI_CANH}</code>
+            — giữ nguyên mấy cụm này, đừng xoá.
+          </div>
+          <textarea id="mauLenh" class="tall" spellcheck="false"></textarea>
+          <div class="chia-nut">
+            <button class="mini ok" id="nutLuuLenh">Lưu câu lệnh</button>
+            <button class="mini" id="nutCopyLenh">Copy</button>
+            <button class="mini" id="nutThuLenh">Xem thử bản đầy đủ</button>
+            <button class="mini canh" id="nutMacDinhLenh">Trả về mặc định</button>
+          </div>
+          <div id="lenhBao" class="cho"></div>
+          <textarea id="lenhThu" class="mid an" readonly style="margin-top:9px"></textarea>
+        </div>
       </div>
     </div>
   </div>
@@ -723,36 +751,74 @@ async function anhSangBase64(src){
   });
 }
 
-/* dựng lệnh gửi cho máy — nhét nguyên luật của Trang vào */
+/* ---------------------------------------------------------------------
+   CÂU LỆNH GỬI CHO MÁY — Trang sửa được ở thẻ 6, lưu trong trình duyệt
+   --------------------------------------------------------------------- */
+var KHOA_LENH = 'soat-alt-mau-lenh-v1';
+
+var MAU_LENH_MAC_DINH = [
+  'Bạn là người viết alt ảnh chuẩn SEO tiếng Việt cho website doanh nghiệp.',
+  '{VIEC}',
+  '',
+  'LUẬT BẮT BUỘC:',
+  '- Một câu có nghĩa, KHÔNG liệt kê từ khoá, KHÔNG dùng dấu ngoặc kép, KHÔNG xuống dòng.',
+  '- DƯỚI {GIOI_HAN} ký tự.',
+  '- Tả ĐÚNG ảnh thật: thấy gì tả nấy. KHÔNG suy diễn, KHÔNG khẳng định đây là nhà máy',
+  '  hay sản phẩm của công ty nào nếu trong ảnh không ghi rõ tên.',
+  '- {LUAT_KEY}',
+  '- CẤM TUYỆT ĐỐI các từ: {TU_CAM}.',
+  '- CẤM tả cách dàn trang của ảnh (ghép mấy khung, hình tròn, nền gì, bố cục ra sao).',
+  '  Chỉ nói TRONG ẢNH CÓ GÌ.',
+  '{LUAT_RIENG}',
+  '{BOI_CANH}',
+  'CHỈ TRẢ VỀ ĐÚNG MỘT CÂU TIẾNG VIỆT, không thêm lời giải thích nào khác.'
+].join('\n');
+
+function docMauLenh(){
+  try{ return localStorage.getItem(KHOA_LENH) || MAU_LENH_MAC_DINH; }
+  catch(e){ return MAU_LENH_MAC_DINH; }
+}
+function ghiMauLenh(v){
+  try{ v ? localStorage.setItem(KHOA_LENH, v) : localStorage.removeItem(KHOA_LENH); }catch(e){}
+}
+
+/* dựng lệnh thật: thay các chỗ {…} bằng nội dung của ảnh đang làm */
 function lenhChoMay(key, kieuO, muc, chuThichCu){
-  var L = [];
-  L.push('Bạn là người viết alt ảnh chuẩn SEO tiếng Việt cho website doanh nghiệp.');
-  if(kieuO === 'caption') L.push('Nhìn kỹ tấm ảnh rồi viết MỘT câu CHÚ THÍCH tiếng Việt cho ảnh.');
-  else L.push('Nhìn kỹ tấm ảnh rồi viết MỘT câu tiếng Việt tả đúng những gì BẠN NHÌN THẤY trong ảnh.');
-  L.push('');
-  L.push('LUẬT BẮT BUỘC:');
-  L.push('- Một câu có nghĩa, KHÔNG liệt kê từ khoá, KHÔNG dùng dấu ngoặc kép, KHÔNG xuống dòng.');
-  L.push('- DƯỚI ' + GIOI_HAN + ' ký tự.');
-  L.push('- Tả ĐÚNG ảnh thật: thấy gì tả nấy. KHÔNG suy diễn, KHÔNG khẳng định đây là nhà máy hay sản phẩm của công ty nào nếu trong ảnh không ghi rõ tên.');
-  if(key) L.push('- Câu PHẢI chứa nguyên văn cụm từ này: "' + key + '"');
-  else L.push('- Không cần chèn từ khoá nào, chỉ tả ảnh.');
-  L.push('- CẤM TUYỆT ĐỐI các từ: ' + TU_CAM.join(', ') + '.');
-  L.push('- CẤM tả cách dàn trang của ảnh (ghép mấy khung, hình tròn, nền gì, bố cục ra sao). Chỉ nói TRONG ẢNH CÓ GÌ.');
+  var viec = (kieuO === 'caption')
+    ? 'Nhìn kỹ tấm ảnh rồi viết MỘT câu CHÚ THÍCH tiếng Việt cho ảnh.'
+    : 'Nhìn kỹ tấm ảnh rồi viết MỘT câu tiếng Việt tả đúng những gì BẠN NHÌN THẤY trong ảnh.';
+
+  var luatKey = key
+    ? 'Câu PHẢI chứa nguyên văn cụm từ này: "' + key + '"'
+    : 'Không cần chèn từ khoá nào, chỉ tả ảnh.';
+
+  var rieng = [];
   if(kieuO === 'desc'){
-    L.push('- Đây là ô Description: CẤM tóm tắt bài viết. CẤM mở đầu bằng: ' + MO_DAU_CAM.join(', ') + '.');
-    L.push('- Tả ảnh theo một GÓC KHÁC với câu alt, đổi cấu trúc câu.');
+    rieng.push('- Đây là ô Description: CẤM tóm tắt bài viết. CẤM mở đầu bằng: ' + MO_DAU_CAM.join(', ') + '.');
+    rieng.push('- Tả ảnh theo một GÓC KHÁC với câu alt, đổi cấu trúc câu.');
   }
-  if(kieuO === 'title') L.push('- Đây là ô Title: viết như alt nhưng đổi cách mở đầu, không viết cụt vài chữ.');
-  if(kieuO === 'caption') L.push('- Chú thích bám ngữ cảnh đoạn văn hơn alt một chút, nhưng vẫn phải tả đúng ảnh.');
-  L.push('');
+  if(kieuO === 'title') rieng.push('- Đây là ô Title: viết như alt nhưng đổi cách mở đầu, không viết cụt vài chữ.');
+  if(kieuO === 'caption') rieng.push('- Chú thích bám ngữ cảnh đoạn văn hơn alt một chút, nhưng vẫn phải tả đúng ảnh.');
+
+  var boiCanh = [];
   if(muc || chuThichCu){
-    L.push('Bối cảnh trong bài (CHỈ để tham khảo, TUYỆT ĐỐI không chép lại nguyên văn):');
-    if(muc) L.push('- Mục chứa ảnh: ' + muc);
-    if(chuThichCu) L.push('- Chú thích cũ: ' + String(chuThichCu).replace(/<[^>]+>/g,' ').slice(0, 200));
-    L.push('');
+    boiCanh.push('');
+    boiCanh.push('Bối cảnh trong bài (CHỈ để tham khảo, TUYỆT ĐỐI không chép lại nguyên văn):');
+    if(muc) boiCanh.push('- Mục chứa ảnh: ' + muc);
+    if(chuThichCu) boiCanh.push('- Chú thích cũ: ' + String(chuThichCu).replace(/<[^>]+>/g,' ').slice(0, 200));
+    boiCanh.push('');
   }
-  L.push('CHỈ TRẢ VỀ ĐÚNG MỘT CÂU TIẾNG VIỆT, không thêm lời giải thích nào khác.');
-  return L.join('\n');
+
+  return docMauLenh()
+    .replace(/\{VIEC\}/g, viec)
+    .replace(/\{GIOI_HAN\}/g, String(GIOI_HAN))
+    .replace(/\{LUAT_KEY\}/g, luatKey)
+    .replace(/\{TU_CAM\}/g, TU_CAM.join(', '))
+    .replace(/\{MO_DAU_CAM\}/g, MO_DAU_CAM.join(', '))
+    .replace(/\{LUAT_RIENG\}/g, rieng.join('\n'))
+    .replace(/\{BOI_CANH\}/g, boiCanh.join('\n'))
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
 }
 
 function donCauMay(t){
@@ -1325,6 +1391,64 @@ document.getElementById('nutChotHet').onclick = function(){
     o.value = '';
     baoChia('Đã xoá chìa. App vẫn soát lỗi và dựng câu ghép bình thường.', 'cho');
     capNhatNutMay();
+  };
+})();
+
+/* ---- Thẻ 6: câu lệnh gửi cho máy ---- */
+(function(){
+  var ta = document.getElementById('mauLenh');
+  var bao = document.getElementById('lenhBao');
+  var thu = document.getElementById('lenhThu');
+  ta.value = docMauLenh();
+  function noi(c, l){ bao.textContent = c; bao.className = l || 'cho'; }
+  var nutMo = document.getElementById('nutMoLenh');
+  function chuNutMo(){
+    var daSua = (function(){ try{ return !!localStorage.getItem(KHOA_LENH); }catch(e){ return false; } })();
+    return '+ Mở câu lệnh ra xem / sửa' + (daSua ? '  ·  đang dùng bản bạn sửa' : '');
+  }
+  function capNhatBao(){
+    var daSua = (function(){ try{ return !!localStorage.getItem(KHOA_LENH); }catch(e){ return false; } })();
+    noi(daSua ? '✓ Đang dùng câu lệnh bạn đã sửa.' : 'Đang dùng câu lệnh mặc định.', daSua ? 'ok' : 'cho');
+    nutMo.textContent = document.getElementById('oLenh').classList.contains('an') ? chuNutMo() : '− Đóng câu lệnh';
+  }
+  capNhatBao();
+
+  nutMo.onclick = function(){
+    var an = document.getElementById('oLenh').classList.toggle('an');
+    this.textContent = an ? chuNutMo() : '− Đóng câu lệnh';
+  };
+  document.getElementById('nutLuuLenh').onclick = function(){
+    var v = ta.value.trim();
+    if(!v){ noi('✗ Câu lệnh đang trống.', 'loi'); return; }
+    var thieu = ['{VIEC}','{GIOI_HAN}','{LUAT_KEY}','{TU_CAM}'].filter(function(k){ return v.indexOf(k) === -1; });
+    if(thieu.length && !confirm('Câu lệnh đang thiếu: ' + thieu.join(' ') +
+      '\n\nThiếu mấy chỗ này thì máy sẽ không biết giới hạn ký tự, key hay từ cấm.\nVẫn lưu chứ?')) return;
+    ghiMauLenh(v === MAU_LENH_MAC_DINH ? '' : v);
+    capNhatBao();
+    if(v !== MAU_LENH_MAC_DINH) noi('✓ Đã lưu. Từ giờ app gửi câu lệnh này.', 'ok');
+  };
+  document.getElementById('nutMacDinhLenh').onclick = function(){
+    if(!confirm('Bỏ câu lệnh bạn đã sửa, quay về bản mặc định?')) return;
+    ghiMauLenh(''); ta.value = MAU_LENH_MAC_DINH;
+    capNhatBao(); noi('Đã trả về câu lệnh mặc định.', 'cho');
+  };
+  document.getElementById('nutCopyLenh').onclick = function(){
+    var t = ta.value;
+    (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject())
+      .then(function(){ noi('✓ Đã copy câu lệnh.', 'ok'); })
+      .catch(function(){ ta.select(); document.execCommand('copy'); noi('✓ Đã copy câu lệnh.', 'ok'); });
+  };
+  document.getElementById('nutThuLenh').onclick = function(){
+    var mau = (G.anh && G.anh.length) ? G.anh[0] : null;
+    var t = lenhChoMay(
+      mau ? (mau.keyGan || 'nguyên liệu thực phẩm') : 'nguyên liệu thực phẩm',
+      'alt',
+      mau ? mau.muc : '1. Vitamin và khoáng chất',
+      mau ? mau.chuThichCu : 'Vitamin và khoáng chất đa dạng (Nguồn: Internet)');
+    thu.value = t;
+    var an = thu.classList.toggle('an');
+    this.textContent = an ? 'Xem thử bản đầy đủ' : 'Ẩn bản đầy đủ';
+    noi(an ? '' : 'Đây là bản app gửi thật, đã điền đủ cho ảnh 1' + (mau ? '' : ' (ví dụ, vì bạn chưa quét bài)') + '.', 'cho');
   };
 })();
 
