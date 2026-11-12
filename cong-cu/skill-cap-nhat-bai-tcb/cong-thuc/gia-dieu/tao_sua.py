@@ -129,15 +129,21 @@ def main():
                 continue
             da_ghep.add(d['ten'])
             ly0 = f'banggianongsan.com, dòng "{d["ten"]}" (cập nhật {g["cap_nhat"]}): ' + ' | '.join(d['chu_goc'])
+            hong_gia_moi = False
             for k, ds in ((0, d['cu']), (1, d['moi'])):
                 o_cu, vt = cells[k][:2]
                 moi = viet_o(ds, usd, o_cu) if ds else None
                 if moi is None:
                     can.append(f'Dòng "{ten}", cột {"Giá cũ" if k == 0 else "Giá mới"}: nguồn ghi "{d["chu_goc"][k]}" '
                                f'không cùng dạng với bài ("{o_cu}") – giữ nguyên.')
+                    hong_gia_moi = hong_gia_moi or k == 1
                     continue
                 them(o_cu, vt, moi, g['nguon'], ('Giá cũ' if k == 0 else 'Giá mới') + ' theo ' + ly0)
             o_cu, vt = cells[2][:2]
+            if hong_gia_moi:          # 12/11/2026: giá mới giữ nguyên thì cột Thay đổi cũng giữ, tránh bài tự mâu thuẫn
+                can.append(f'Dòng "{ten}", cột Thay đổi: giữ nguyên "{o_cu}" vì giá mới không ghi được '
+                           f'(nguồn: "{d["thay_doi"]}") – cần người sửa tay cả dòng.')
+                continue
             moi = viet_thay_doi(d['thay_doi'], usd, o_cu)
             if not moi:
                 can.append(f'Dòng "{ten}", cột Thay đổi: nguồn để trống – giữ nguyên.')

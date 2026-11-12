@@ -24,10 +24,10 @@ def chu(x):
     return re.sub(r'\s+', ' ', html.unescape(re.sub(r'<[^>]+>', ' ', x))).strip()
 
 
-def doc_gia(o):
+def doc_gia(o, usd=None):
     """'25.000 – 30.000 vnđ/kg' -> ['25000', '30000']; '10.5 – 12.8 USD/kg' -> ['10.5', '12.8'].
     Giữ nguyên chữ số của nguồn (chuỗi), không làm tròn, không đổi kiểu số."""
-    usd = 'usd' in o.lower()
+    usd = usd if usd is not None else 'usd' in o.lower()   # 12/11/2026: ô USD không ghi "USD" → lấy theo tên dòng
     so = re.findall(r'\d[\d.,]*\d|\d', o)
     if not so:
         return None
@@ -50,11 +50,11 @@ def doc_trang(s):
     for r in bang[1:]:
         if len(r) < 4 or 'điều' not in r[0].lower():
             continue
-        cu, moi = doc_gia(r[1]), doc_gia(r[2])
+        usd = 'usd' in (r[0] + r[2]).lower()
+        cu, moi = doc_gia(r[1], usd), doc_gia(r[2], usd)
         if not moi:
             continue
-        dong.append({'ten': r[0], 'cu': cu, 'moi': moi,
-                     'usd': 'usd' in (r[0] + r[2]).lower(), 'thay_doi': r[3], 'chu_goc': r[1:4]})
+        dong.append({'ten': r[0], 'cu': cu, 'moi': moi, 'usd': usd, 'thay_doi': r[3], 'chu_goc': r[1:4]})
     if not dong:
         raise RuntimeError('bảng không có dòng giá điều nào')
     m = re.search(r'"dateModified"\s*:\s*"(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})[^"]*\+07:00"', s)

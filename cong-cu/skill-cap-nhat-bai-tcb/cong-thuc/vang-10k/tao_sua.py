@@ -15,6 +15,12 @@ def ngay_bai_dt():
     return datetime.datetime.now(tz) + datetime.timedelta(days=1)
 
 
+def kieu_ngay(cu, moi):
+    """Viết ngày mới theo đúng kiểu ngày cũ trong bài (có / không số 0 đầu) – 12/11/2026."""
+    a, b = cu.split('/'), moi.split('/')
+    return '/'.join(('%02d' % int(y)) if len(x) == 2 else str(int(y)) for x, y in zip(a[:2], b[:2])) + '/' + b[2]
+
+
 
 def doc_xem(path):
     dong, van = [], ''
@@ -73,7 +79,7 @@ def main():
             can.append('Không thấy đủ 2 dòng "Giá mua vào:" / "Giá bán ra:" trong bài.')
         for chu, vt in dong:
             for m in re.finditer(r'(cập nhật đến ngày )(\d{1,2}/\d{1,2}/\d{4})', chu):
-                them(m.group(0), vt + m.start(), m.group(1) + ngay, '', 'ngày cập nhật giá = hôm nay')
+                them(m.group(0), vt + m.start(), m.group(1) + kieu_ngay(m.group(2), ngay), '', 'ngày cập nhật giá = hôm nay')
 
     if a.kiem:
         print('Soát:', 'khớp hết' if not lech else f'{len(lech)} chỗ lệch: ' + '; '.join(lech))
