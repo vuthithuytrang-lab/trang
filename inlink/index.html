@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="vi">
 <head>
-<!-- phien-ban: 202611121817 -->
+<!-- phien-ban: 202611121823 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Luồng inlink</title>
@@ -141,6 +141,8 @@ th{background:var(--nen);font-size:12px}
 .mau-luat button:hover{background:rgba(0,74,239,.1)}
 .mau-luat button.da{border-style:solid;background:var(--xanh);color:#fff}.mau-luat button.da::before{content:'✓ '}
 .vi-du-luat{margin-top:10px;padding:10px 12px;border-radius:10px;background:rgba(0,74,239,.06);border:1px solid var(--vien);font-size:12.5px;line-height:1.6}
+.vi-du-luat.an{display:none}
+.vi-du-luat ul{margin:4px 0 6px;padding-left:20px}
 .vi-du-luat ol{margin:4px 0 6px;padding-left:20px}.vi-du-luat li{margin:3px 0}
 #luatKhac,#lGhiChu{font-family:inherit;font-size:13px}
 .soat-luat{border:1px solid var(--vien);border-left:4px solid var(--xanh);border-radius:10px;padding:10px 14px;margin:10px 0;font-size:13px}.soat-luat ul{margin:6px 0 0;padding-left:20px}
@@ -258,8 +260,15 @@ label.o-nhap input,label.o-nhap select,label.o-nhap textarea{margin-top:4px;colo
       </div>
       <div class="khung-bang"><table class="bang-nhap" id="bangNhap"></table></div>
       <label class="o-nhap" style="margin-top:12px">Luật riêng của dự án <span style="font-weight:500;color:var(--mo)">(tuỳ chọn, mỗi dòng 1 luật — app nhớ cho lần sau)</span><textarea id="lGhiChu" class="vua" style="min-height:90px" placeholder="vd: Không chèn link tỷ giá vào bài tiết kiệm&#10;Không chèn vào đoạn có &quot;biểu phí&quot;, &quot;khuyến mãi&quot;&#10;Câu chèn xưng &quot;bạn&quot;; người duyệt là chị Lộc"></textarea></label>
-      <div class="mau-luat" data-o="lGhiChu" data-kieu="dong"><span>Bấm để thêm mẫu:</span><button type="button">Tối đa 3 link mỗi bài</button><button type="button">Không chèn vào đoạn có "biểu phí", "khuyến mãi"</button><button type="button">Câu chèn xưng "bạn", không dùng "quý khách"</button><button type="button">Không chèn link trong đoạn mở bài và kết bài</button><button type="button">Không nhắc tên đối thủ trong câu chèn</button></div>
-      <p class="goi-y nho-hon" style="margin:4px 0 0">Ví dụ: viết <b>«Tối đa 3 link mỗi bài»</b> thì Claude chỉ chèn 3 link dù bảng có 5 anchor, anchor còn lại ghi "thiếu – theo luật riêng". Không có luật riêng thì để trống.</p>
+      <div class="hang-thu" style="margin-top:6px"><button type="button" class="nut nho" id="nutLuuLuat2">✓ Lưu luật</button><button type="button" class="xem-them2 nut-gt" data-gt="gtLuat2" style="float:none;margin:0"><span class="i-gt">?</span> Giải thích</button><span class="bao" id="baoLuuLuat2"></span></div>
+      <div class="vi-du-luat an" id="gtLuat2">
+        <b>Ví dụ dễ hiểu</b>
+        <ol><li>Viết <b>«Tối đa 3 link mỗi bài»</b> → Claude chỉ chèn 3 link dù bảng có 5 anchor, anchor còn lại ghi "thiếu – theo luật riêng".</li>
+        <li>Viết <b>«Không chèn vào đoạn có "biểu phí", "khuyến mãi"»</b> → Claude bỏ qua các đoạn đó, tìm chỗ khác.</li>
+        <li>Không có luật riêng thì để trống — Claude chạy theo luật chung.</li></ol>
+        <b>Mẫu hay dùng:</b> Tối đa 3 link mỗi bài · Câu chèn xưng "bạn", không dùng "quý khách" · Không chèn link trong đoạn mở bài và kết bài · Không nhắc tên đối thủ trong câu chèn<br>
+        <b>Lưu thế nào?</b> Gõ xong là app tự lưu vào dự án đang chọn; bấm <b>✓ Lưu luật</b> để chắc chắn. Khi bấm "Gửi cho Claude chạy", luật được gửi kèm.
+      </div>
       <details class="xem-lenh"><summary>Tuỳ chọn thêm: thư mục Drive, dùng file Google Sheet có sẵn</summary>
         <label class="o-nhap">Thư mục Google Drive để lưu file Docs<input type="text" id="lDrive" placeholder="Để trống: Claude tự tạo thư mục mới"></label>
         <label class="o-nhap" style="margin-bottom:0">Đã có file Google Sheet kế hoạch? Dán link (thay cho bảng)</label>
@@ -341,17 +350,20 @@ lãi suất tiết kiệm | https://ten-mien.vn/lai-suat-tiet-kiem"></textarea>
       <h3>Luật riêng của dự án <span>(tuỳ dự án — app nhớ lại cho lần sau)</span></h3>
       <label class="o-nhap">Không chèn vào đoạn có chứa các cụm (cách nhau bằng dấu phẩy)
         <input type="text" id="cumNe" placeholder="vd: lãi suất cố định, biểu phí, khuyến mãi"></label>
-      <div class="mau-luat" data-o="cumNe" data-kieu="phay"><span>Bấm để thêm mẫu:</span><button type="button">biểu phí</button><button type="button">lãi suất cố định</button><button type="button">khuyến mãi</button><button type="button">điều khoản</button><button type="button">câu hỏi thường gặp</button></div>
       <label class="o-nhap">Luật khác (mỗi dòng 1 luật)
         <textarea id="luatKhac" class="vua" style="min-height:90px" placeholder="vd: Không chèn link sản phẩm thẻ vào bài về vay&#10;Câu chèn xưng &quot;bạn&quot;, không dùng &quot;quý khách&quot;&#10;Không chèn link trong đoạn kết bài"></textarea></label>
-      <div class="mau-luat" data-o="luatKhac" data-kieu="dong"><span>Bấm để thêm mẫu:</span><button type="button">Không chèn link trong đoạn kết bài</button><button type="button">Câu chèn xưng "bạn", không dùng "quý khách"</button><button type="button">Câu chèn ngắn gọn, dưới 30 chữ</button><button type="button">Không chèn link sản phẩm vào đoạn nói về rủi ro, phí phạt</button><button type="button">Không nhắc tên ngân hàng / công ty đối thủ trong câu chèn</button></div>
-      <div class="vi-du-luat">
+      <div class="hang-thu"><button type="button" class="nut nho" id="nutLuuLuat">✓ Lưu luật</button><button type="button" class="xem-them2 nut-gt" data-gt="gtLuat" style="float:none;margin:0"><span class="i-gt">?</span> Giải thích</button><span class="bao" id="baoLuuLuat"></span></div>
+      <div class="vi-du-luat an" id="gtLuat">
         <b>Ví dụ dễ hiểu</b>
         <ol>
           <li><b>Ô "Không chèn vào đoạn có cụm"</b> — gõ <b>«biểu phí»</b>. Bài có đoạn <i>"Biểu phí chuyển tiền quốc tế là 0,03%…"</i> → app <b>tự bỏ qua đoạn này</b>, chèn link sang đoạn khác hợp hơn. Phần Báo cáo ghi rõ lý do "đoạn có cụm «biểu phí» (luật riêng)".</li>
           <li><b>Ô "Luật khác"</b> — mỗi dòng 1 luật, viết như dặn người thật. Vd: <b>«Câu chèn xưng "bạn"»</b> → khi AI viết câu mới (mục 5) sẽ xưng "bạn"; phần Kết quả hiện ô ☐ để người duyệt tích soát lại.</li>
           <li>Không có luật riêng thì <b>để trống cả hai ô</b> — app vẫn chạy theo luật chung ở trên.</li>
         </ol>
+        <b>Mẫu hay dùng</b> (chép vào ô cho nhanh):
+        <ul><li>Cụm cần né: biểu phí, lãi suất cố định, khuyến mãi, điều khoản, câu hỏi thường gặp</li>
+        <li>Luật khác: Không chèn link trong đoạn kết bài · Câu chèn xưng "bạn", không dùng "quý khách" · Câu chèn ngắn gọn, dưới 30 chữ · Không nhắc tên đối thủ trong câu chèn</li></ul>
+        <b>Lưu thế nào?</b> Gõ xong là app <b>tự lưu</b> vào dự án đang chọn. Bấm <b>✓ Lưu luật</b> để chắc chắn — hiện dòng xanh "Đã lưu" là được, không cần bấm thêm gì.
         <span class="goi-y nho-hon">Luật lưu theo dự án đang chọn ở thanh trên cùng, lần sau mở dự án là có sẵn.</span>
       </div>
     </div>
@@ -1289,21 +1301,15 @@ if(location.hash === '#chen' || doc('kho-app:inlink-phan') === 'chen') document.
 </script>
 
 <script>
-/* Mẫu luật: bấm để thêm vào ô */
+/* Lưu luật + nút Giải thích của phần luật */
 (function(){
-  function coSan(o, kieu, t){ return (kieu === 'phay' ? o.value.split(',') : o.value.split('\n')).some(function(x){ return x.trim().toLowerCase() === t.toLowerCase(); }); }
-  function ve(){ document.querySelectorAll('.mau-luat').forEach(function(m){ var o = $(m.dataset.o); m.querySelectorAll('button').forEach(function(b){ b.classList.toggle('da', coSan(o, m.dataset.kieu, b.textContent)); }); }); }
-  document.querySelectorAll('.mau-luat').forEach(function(m){
-    var o = $(m.dataset.o), kieu = m.dataset.kieu;
-    m.querySelectorAll('button').forEach(function(b){ b.onclick = function(){
-      var t = b.textContent;
-      if(coSan(o, kieu, t)){ o.value = (kieu === 'phay' ? o.value.split(',') : o.value.split('\n')).filter(function(x){ return x.trim().toLowerCase() !== t.toLowerCase(); }).map(function(x){ return x.trim(); }).filter(Boolean).join(kieu === 'phay' ? ', ' : '\n'); }
-      else { var v = o.value.trim(); o.value = v ? v + (kieu === 'phay' ? ', ' : '\n') + t : t; }
-      o.dispatchEvent(new Event('input', {bubbles:true})); o.dispatchEvent(new Event('change', {bubbles:true})); ve();
-    }; });
-    o.addEventListener('input', ve);
-  });
-  ve(); var g = window.napDuAnXong; document.addEventListener('change', function(e){ if(e.target && e.target.id === 'chonDuAn') setTimeout(ve, 50); });
+  document.querySelectorAll('.nut-gt').forEach(function(b){ b.onclick = function(){ var g = $(b.dataset.gt); var mo = g.classList.toggle('an') === false; b.innerHTML = mo ? '✕ Đóng giải thích' : '<span class="i-gt">?</span> Giải thích'; }; });
+  function bao(id){ var ten = $('lDuAn').value || 'đang chọn'; $(id).textContent = '✓ Đã lưu vào dự án «' + ten + '» — lần sau mở dự án là có sẵn.'; }
+  $('nutLuuLuat').onclick = function(){ $('cumNe').dispatchEvent(new Event('input', {bubbles:true})); $('luatKhac').dispatchEvent(new Event('input', {bubbles:true})); bao('baoLuuLuat'); };
+  $('nutLuuLuat2').onclick = function(){ $('lGhiChu').dispatchEvent(new Event('input', {bubbles:true})); $('lGhiChu').dispatchEvent(new Event('change', {bubbles:true})); bao('baoLuuLuat2'); };
+  ['cumNe','luatKhac'].forEach(function(id){ $(id).addEventListener('input', function(e){ if(e.isTrusted) $('baoLuuLuat').textContent = '✓ Đã tự lưu'; }); });
+  $('lGhiChu').addEventListener('input', function(e){ if(e.isTrusted) $('baoLuuLuat2').textContent = '✓ Đã tự lưu'; });
+  $('lGhiChu').addEventListener('input', function(){ luuLuong(); });
 })();
 </script>
 
