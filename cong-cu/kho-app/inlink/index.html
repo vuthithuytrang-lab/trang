@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="vi">
 <head>
-<!-- phien-ban: 2026-11-13e -->
+<!-- phien-ban: 2026-11-13f -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Luồng inlink</title>
@@ -142,6 +142,17 @@ th{background:var(--nen);font-size:12px}
 .mau-luat button.da{border-style:solid;background:var(--xanh);color:#fff}.mau-luat button.da::before{content:'✓ '}
 .vi-du-luat{margin-top:10px;padding:10px 12px;border-radius:10px;background:rgba(0,74,239,.06);border:1px solid var(--vien);font-size:12.5px;line-height:1.6}
 .vi-du-luat.an{display:none}
+.tieu-luat{font-size:12.5px;font-weight:700;margin:10px 0 4px}.tieu-luat span{font-weight:500;color:var(--mo)}
+.nhap-luat{display:flex;gap:8px}.nhap-luat input{flex:1;min-width:0}
+.bao-luat{min-height:4px;font-size:12px;margin:3px 0 0}
+.luat-da-luu{margin-top:6px;border:1px solid var(--vien);border-radius:10px;padding:8px 10px}
+.dau-ds{font-size:11.5px;font-weight:800;color:var(--mo);text-transform:uppercase;letter-spacing:.3px}
+.luat-da-luu ol{margin:4px 0 0;padding-left:22px}.luat-da-luu li{padding:4px 0;border-bottom:1px dashed var(--vien);font-size:13px}
+.luat-da-luu li:last-child{border-bottom:0}
+.luat-da-luu li .chu-luat{margin-right:8px}
+.nho-nut{background:none;border:0;color:var(--xanh);font:inherit;font-size:12px;font-weight:700;cursor:pointer;padding:0 6px}.nho-nut.xoa{color:var(--do)}
+.dang-sua{display:flex;gap:6px;align-items:center}.dang-sua input{flex:1;min-width:0}
+.trong-luat{margin:4px 0 0;font-size:12px;color:var(--mo)}
 .vi-du-luat ul{margin:4px 0 6px;padding-left:20px}
 .vi-du-luat ol{margin:4px 0 6px;padding-left:20px}.vi-du-luat li{margin:3px 0}
 #luatKhac,#lGhiChu{font-family:inherit;font-size:13px}
@@ -259,15 +270,17 @@ label.o-nhap input,label.o-nhap select,label.o-nhap textarea{margin-top:4px;colo
         <span class="goi-y nho-hon" id="baoBang" style="margin:0"></span>
       </div>
       <div class="khung-bang"><table class="bang-nhap" id="bangNhap"></table></div>
-      <label class="o-nhap" style="margin-top:12px">Luật riêng của dự án <span style="font-weight:500;color:var(--mo)">(tuỳ chọn, mỗi dòng 1 luật — app nhớ cho lần sau)</span><textarea id="lGhiChu" class="vua" style="min-height:90px" placeholder="vd: Không chèn link tỷ giá vào bài tiết kiệm&#10;Không chèn vào đoạn có &quot;biểu phí&quot;, &quot;khuyến mãi&quot;&#10;Câu chèn xưng &quot;bạn&quot;; người duyệt là chị Lộc"></textarea></label>
-      <div class="hang-thu" style="margin-top:6px"><button type="button" class="nut nho" id="nutLuuLuat2">✓ Lưu luật</button><button type="button" class="xem-them2 nut-gt" data-gt="gtLuat2" style="float:none;margin:0"><span class="i-gt">?</span> Giải thích</button><span class="bao" id="baoLuuLuat2"></span></div>
+      <textarea id="lGhiChu" class="an" aria-hidden="true"></textarea>
+      <div class="tieu-luat" style="margin-top:14px;font-size:13.5px">Luật riêng của dự án <span>(tuỳ chọn — Claude làm theo khi chạy, app nhớ cho lần sau)</span></div>
+      <div class="ds-luat" data-o="lGhiChu" data-kieu="dong" data-goi-y="Gõ 1 luật rồi bấm Thêm, vd: Tối đa 3 link mỗi bài" data-nut="+ Thêm luật" data-ten="Luật đã lưu"></div>
+      <div class="hang-thu" style="margin-top:6px"><button type="button" class="xem-them2 nut-gt" data-gt="gtLuat2" style="float:none;margin:0"><span class="i-gt">?</span> Giải thích</button></div>
       <div class="vi-du-luat an" id="gtLuat2">
         <b>Ví dụ dễ hiểu</b>
         <ol><li>Viết <b>«Tối đa 3 link mỗi bài»</b> → Claude chỉ chèn 3 link dù bảng có 5 anchor, anchor còn lại ghi "thiếu – theo luật riêng".</li>
         <li>Viết <b>«Không chèn vào đoạn có "biểu phí", "khuyến mãi"»</b> → Claude bỏ qua các đoạn đó, tìm chỗ khác.</li>
         <li>Không có luật riêng thì để trống — Claude chạy theo luật chung.</li></ol>
         <b>Mẫu hay dùng:</b> Tối đa 3 link mỗi bài · Câu chèn xưng "bạn", không dùng "quý khách" · Không chèn link trong đoạn mở bài và kết bài · Không nhắc tên đối thủ trong câu chèn<br>
-        <b>Lưu thế nào?</b> Gõ xong là app tự lưu vào dự án đang chọn; bấm <b>✓ Lưu luật</b> để chắc chắn. Khi bấm "Gửi cho Claude chạy", luật được gửi kèm.
+        <b>Thêm / sửa / xoá thế nào?</b> Gõ 1 luật vào ô → bấm <b>+ Thêm luật</b> (hoặc Enter) → luật hiện trong danh sách "Luật đã lưu" bên dưới là đã lưu. Sai thì bấm <b>✎ Sửa</b> cạnh luật đó, sửa xong bấm <b>Lưu</b>; không cần nữa thì bấm <b>✕ Xoá</b>. Khi bấm "Gửi cho Claude chạy", các luật được gửi kèm.
       </div>
       <details class="xem-lenh"><summary>Tuỳ chọn thêm: thư mục Drive, dùng file Google Sheet có sẵn</summary>
         <label class="o-nhap">Thư mục Google Drive để lưu file Docs<input type="text" id="lDrive" placeholder="Để trống: Claude tự tạo thư mục mới"></label>
@@ -348,11 +361,12 @@ lãi suất tiết kiệm | https://ten-mien.vn/lai-suat-tiet-kiem"></textarea>
     <label class="tich"><input type="checkbox" id="canDeu"><span>Đoạn có link mới dùng <code>&lt;p style="text-align: justify;"&gt;</code></span></label>
     <div class="luat-rieng">
       <h3>Luật riêng của dự án <span>(tuỳ dự án — app nhớ lại cho lần sau)</span></h3>
-      <label class="o-nhap">Không chèn vào đoạn có chứa các cụm (cách nhau bằng dấu phẩy)
-        <input type="text" id="cumNe" placeholder="vd: lãi suất cố định, biểu phí, khuyến mãi"></label>
-      <label class="o-nhap">Luật khác (mỗi dòng 1 luật)
-        <textarea id="luatKhac" class="vua" style="min-height:90px" placeholder="vd: Không chèn link sản phẩm thẻ vào bài về vay&#10;Câu chèn xưng &quot;bạn&quot;, không dùng &quot;quý khách&quot;&#10;Không chèn link trong đoạn kết bài"></textarea></label>
-      <div class="hang-thu"><button type="button" class="nut nho" id="nutLuuLuat">✓ Lưu luật</button><button type="button" class="xem-them2 nut-gt" data-gt="gtLuat" style="float:none;margin:0"><span class="i-gt">?</span> Giải thích</button><span class="bao" id="baoLuuLuat"></span></div>
+      <input type="hidden" id="cumNe"><textarea id="luatKhac" class="an" aria-hidden="true"></textarea>
+      <div class="tieu-luat">Không chèn vào đoạn có chứa cụm từ <span>(app tự né)</span></div>
+      <div class="ds-luat" data-o="cumNe" data-kieu="phay" data-goi-y="Gõ 1 cụm rồi bấm Thêm, vd: biểu phí" data-nut="+ Thêm cụm" data-ten="Cụm đã lưu"></div>
+      <div class="tieu-luat">Luật khác <span>(gửi cho AI + hiện ô soát cho người duyệt)</span></div>
+      <div class="ds-luat" data-o="luatKhac" data-kieu="dong" data-goi-y="Gõ 1 luật rồi bấm Thêm, vd: Không chèn link trong đoạn kết bài" data-nut="+ Thêm luật" data-ten="Luật đã lưu"></div>
+      <div class="hang-thu"><button type="button" class="xem-them2 nut-gt" data-gt="gtLuat" style="float:none;margin:0"><span class="i-gt">?</span> Giải thích</button></div>
       <div class="vi-du-luat an" id="gtLuat">
         <b>Ví dụ dễ hiểu</b>
         <ol>
@@ -363,7 +377,7 @@ lãi suất tiết kiệm | https://ten-mien.vn/lai-suat-tiet-kiem"></textarea>
         <b>Mẫu hay dùng</b> (chép vào ô cho nhanh):
         <ul><li>Cụm cần né: biểu phí, lãi suất cố định, khuyến mãi, điều khoản, câu hỏi thường gặp</li>
         <li>Luật khác: Không chèn link trong đoạn kết bài · Câu chèn xưng "bạn", không dùng "quý khách" · Câu chèn ngắn gọn, dưới 30 chữ · Không nhắc tên đối thủ trong câu chèn</li></ul>
-        <b>Lưu thế nào?</b> Gõ xong là app <b>tự lưu</b> vào dự án đang chọn. Bấm <b>✓ Lưu luật</b> để chắc chắn — hiện dòng xanh "Đã lưu" là được, không cần bấm thêm gì.
+        <b>Thêm / sửa / xoá thế nào?</b> Gõ vào ô → bấm <b>+ Thêm</b> (hoặc Enter) → hiện trong danh sách "đã lưu" là xong. Sai thì bấm <b>✎ Sửa</b>, sửa xong bấm <b>Lưu</b>; không cần nữa thì bấm <b>✕ Xoá</b>.
         <span class="goi-y nho-hon">Luật lưu theo dự án đang chọn ở thanh trên cùng, lần sau mở dự án là có sẵn.</span>
       </div>
     </div>
@@ -1304,11 +1318,30 @@ if(location.hash === '#chen' || doc('kho-app:inlink-phan') === 'chen') document.
 /* Lưu luật + nút Giải thích của phần luật */
 (function(){
   document.querySelectorAll('.nut-gt').forEach(function(b){ b.onclick = function(){ var g = $(b.dataset.gt); var mo = g.classList.toggle('an') === false; b.innerHTML = mo ? '✕ Đóng giải thích' : '<span class="i-gt">?</span> Giải thích'; }; });
-  function bao(id){ var ten = $('lDuAn').value || 'đang chọn'; $(id).textContent = '✓ Đã lưu vào dự án «' + ten + '» — lần sau mở dự án là có sẵn.'; }
-  $('nutLuuLuat').onclick = function(){ $('cumNe').dispatchEvent(new Event('input', {bubbles:true})); $('luatKhac').dispatchEvent(new Event('input', {bubbles:true})); bao('baoLuuLuat'); };
-  $('nutLuuLuat2').onclick = function(){ $('lGhiChu').dispatchEvent(new Event('input', {bubbles:true})); $('lGhiChu').dispatchEvent(new Event('change', {bubbles:true})); bao('baoLuuLuat2'); };
-  ['cumNe','luatKhac'].forEach(function(id){ $(id).addEventListener('input', function(e){ if(e.isTrusted) $('baoLuuLuat').textContent = '✓ Đã tự lưu'; }); });
-  $('lGhiChu').addEventListener('input', function(e){ if(e.isTrusted) $('baoLuuLuat2').textContent = '✓ Đã tự lưu'; });
+  function tach(v, kieu){ return (kieu === 'phay' ? v.split(/[,;\n]/) : v.split('\n')).map(function(x){ return x.trim(); }).filter(Boolean); }
+  function th(x){ return String(x).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  document.querySelectorAll('.ds-luat').forEach(function(box){
+    var o = $(box.dataset.o), kieu = box.dataset.kieu, sua = -1, cuoi = null, baoTam = '';
+    box.innerHTML = '<div class="nhap-luat"><input type="text" placeholder="' + box.dataset.goiY + '"><button type="button" class="nut nho">' + box.dataset.nut + '</button></div><div class="bao-luat"></div><div class="luat-da-luu"></div>';
+    var oNhap = box.querySelector('input'), nut = box.querySelector('button'), dsEl = box.querySelector('.luat-da-luu'), baoEl = box.querySelector('.bao-luat');
+    function ghi(ds, tin){ o.value = ds.join(kieu === 'phay' ? ', ' : '\n'); o.dispatchEvent(new Event('input', {bubbles:true})); o.dispatchEvent(new Event('change', {bubbles:true})); if(box.dataset.o === 'lGhiChu') luuLuong(); baoTam = tin; ve(); }
+    function ve(){
+      cuoi = o.value; var ds = tach(o.value, kieu);
+      baoEl.innerHTML = baoTam ? '<span class="bao">' + baoTam + '</span>' : ''; baoTam = '';
+      dsEl.innerHTML = '<div class="dau-ds">' + box.dataset.ten + ' (' + ds.length + ')</div>' + (ds.length ? '<ol>' + ds.map(function(x, i){
+        return i === sua ? '<li class="dang-sua"><input type="text" value="' + th(x) + '"><button type="button" class="nut nho" data-luu="' + i + '">Lưu</button><button type="button" class="nut phu nho" data-huy>Huỷ</button></li>'
+          : '<li><span class="chu-luat">' + th(x) + '</span><button type="button" class="nho-nut" data-sua="' + i + '">✎ Sửa</button><button type="button" class="nho-nut xoa" data-xoa="' + i + '">✕ Xoá</button></li>';
+      }).join('') + '</ol>' : '<p class="trong-luat">Chưa có — gõ vào ô trên rồi bấm <b>' + box.dataset.nut + '</b>.</p>');
+      dsEl.querySelectorAll('[data-sua]').forEach(function(b){ b.onclick = function(){ sua = +b.dataset.sua; ve(); var i = dsEl.querySelector('.dang-sua input'); i.focus(); i.select(); }; });
+      dsEl.querySelectorAll('[data-huy]').forEach(function(b){ b.onclick = function(){ sua = -1; ve(); }; });
+      dsEl.querySelectorAll('[data-luu]').forEach(function(b){ var luuSua = function(){ var d = tach(o.value, kieu), v = b.parentNode.querySelector('input').value.trim(); if(v) d[+b.dataset.luu] = v; else d.splice(+b.dataset.luu, 1); sua = -1; ghi(d, '✓ Đã sửa và lưu'); }; b.onclick = luuSua; b.parentNode.querySelector('input').onkeydown = function(e){ if(e.key === 'Enter'){ e.preventDefault(); luuSua(); } if(e.key === 'Escape'){ sua = -1; ve(); } }; });
+      dsEl.querySelectorAll('[data-xoa]').forEach(function(b){ b.onclick = function(){ var d = tach(o.value, kieu), x = d[+b.dataset.xoa]; if(!confirm('Xoá «' + x + '»?')) return; d.splice(+b.dataset.xoa, 1); sua = -1; ghi(d, '✓ Đã xoá «' + th(x) + '»'); }; });
+    }
+    function them(){ var v = oNhap.value.trim(); if(!v){ oNhap.focus(); return; } var d = tach(o.value, kieu), moi = tach(v, kieu).filter(function(x){ return d.map(function(y){ return y.toLowerCase(); }).indexOf(x.toLowerCase()) === -1; });
+      oNhap.value = ''; oNhap.focus(); if(!moi.length){ baoTam = 'Đã có trong danh sách rồi.'; ve(); return; } ghi(d.concat(moi), '✓ Đã lưu vào dự án «' + ($('lDuAn').value || 'đang chọn') + '»'); }
+    nut.onclick = them; oNhap.onkeydown = function(e){ if(e.key === 'Enter'){ e.preventDefault(); them(); } };
+    ve(); setInterval(function(){ if(o.value !== cuoi && sua === -1) ve(); }, 500);
+  });
   $('lGhiChu').addEventListener('input', function(){ luuLuong(); });
 })();
 </script>
