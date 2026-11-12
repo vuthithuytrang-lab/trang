@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="vi">
 <head>
-<!-- phien-ban: 202611121720 -->
+<!-- phien-ban: 202611121730 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Kỹ thuật phụ</title>
@@ -222,7 +222,7 @@ var BIEU = {
   'tai-lieu':'<svg viewBox="0 0 24 24"><path d="M6 3h9l3 3v15H6z"/><path d="M9 11h6M9 15h6"/></svg>'
 };
 var $ = function(id){ return document.getElementById(id); };
-$('ban').textContent = (document.documentElement.innerHTML.match(/phien-ban: 202611121720([0-9a-z-]+)/)||[])[1] || '';
+$('ban').textContent = (document.documentElement.innerHTML.match(/phien-ban: 202611121730([0-9a-z-]+)/)||[])[1] || '';
 function luu(k, v){ try{ localStorage.setItem(k, v); }catch(e){} }
 function doc(k){ try{ return localStorage.getItem(k) || ''; }catch(e){ return ''; } }
 function thoat(s){ return (s||'').replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
@@ -283,6 +283,23 @@ $('nutNen').onclick = function(){
     (!document.documentElement.getAttribute('data-theme') && matchMedia('(prefers-color-scheme: dark)').matches);
   var moi = toi ? 'light' : 'dark'; document.documentElement.setAttribute('data-theme', moi); luu('kho-app:nen', moi);
 };
+</script>
+
+<script>
+/* Tự báo khi có bản mới (tránh trình duyệt giữ bản cũ) */
+(function(){
+  var hienTai = (document.documentElement.innerHTML.match(/phien-ban: 202611121730([0-9a-z-]+)/)||[])[1];
+  if(!hienTai || location.protocol === 'file:') return;
+  fetch(location.pathname + '?kiem=' + Date.now(), {cache:'no-store'}).then(function(r){ return r.text(); }).then(function(t){
+    var moi = (t.match(/phien-ban: 202611121730([0-9a-z-]+)/)||[])[1];
+    if(!moi || moi === hienTai) return;
+    var d = document.createElement('div');
+    d.style.cssText = 'position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:99;background:#002992;color:#fff;padding:10px 14px;border-radius:12px;box-shadow:0 6px 24px rgba(0,0,0,.25);font:600 13.5px "Be Vietnam Pro",system-ui,sans-serif;display:flex;gap:12px;align-items:center';
+    d.innerHTML = 'Có bản mới của trang này <button style="background:#07EF9C;color:#002992;border:0;border-radius:8px;padding:7px 12px;font:inherit;font-weight:800;cursor:pointer">Cập nhật ngay</button>';
+    d.querySelector('button').onclick = function(){ location.replace(location.pathname + '?v=' + moi + location.hash); };
+    document.body.appendChild(d);
+  }).catch(function(){});
+})();
 </script>
 </body>
 </html>
