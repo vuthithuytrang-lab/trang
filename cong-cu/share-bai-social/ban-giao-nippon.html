@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bàn giao Nippon Paint</title>
+<style>
+  :root{--xanh:#004AEF;--navy:#002992;--mint:#07EF9C;--cam:#F68B1F;--chu:#151515;--nen:#F3F3F6;--vien:#DCDCDC}
+  *{box-sizing:border-box}
+  body{margin:0;background:#fff;color:var(--chu);font-family:Gilroy,"Montserrat",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.6;font-size:16px}
+  header{background:var(--navy);color:#fff;padding:36px 20px 30px}
+  .wrap{max-width:860px;margin:0 auto;padding:0 16px}
+  header .wrap{padding:0}
+  h1{margin:0 0 6px;font-size:28px;line-height:1.25}
+  header p{margin:0;opacity:.9}
+  .tag{display:inline-block;background:var(--mint);color:var(--navy);font-weight:700;font-size:13px;padding:3px 10px;border-radius:20px;margin-bottom:12px}
+  h2{color:var(--xanh);font-size:21px;margin:34px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--nen)}
+  .card{background:var(--nen);border-radius:12px;padding:16px 18px;margin:12px 0}
+  .card.canh-bao{background:#FFF4E8;border-left:5px solid var(--cam)}
+  .card.tot{border-left:5px solid var(--xanh)}
+  ol,ul{padding-left:22px;margin:8px 0}
+  li{margin:5px 0}
+  .say{background:#fff;border:1px dashed var(--xanh);border-radius:8px;padding:10px 12px;margin:8px 0;font-style:italic}
+  table{width:100%;border-collapse:collapse;font-size:15px;margin:10px 0}
+  th,td{border:1px solid var(--vien);padding:8px 10px;overflow-wrap:anywhere;text-align:left;vertical-align:top}
+  td:first-child,th{overflow-wrap:normal}
+  th{background:var(--xanh);color:#fff;font-weight:600}
+  tr:nth-child(even) td{background:#FAFAFC}
+  .scroll{overflow-x:auto}
+  .ok{color:#0a7a4f;font-weight:700}.wait{color:#b25e00;font-weight:700}.stop{color:#b3261e;font-weight:700}
+  code{background:#fff;border:1px solid var(--vien);border-radius:4px;padding:1px 5px;font-size:14px;word-break:break-all}
+  footer{color:#666;font-size:14px;padding:30px 0 40px}
+  @media (max-width:600px){h1{font-size:23px}th,td{padding:6px}table{font-size:14px}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <span class="tag">Bàn giao · 12/11/2026</span>
+  <h1>Đăng bài tự động Nippon Paint: chuyển sang tài khoản mới</h1>
+  <p>Mọi thứ cần có để làm tiếp ở tài khoản Claude khác mà không phải dựng lại từ đầu.</p>
+</div></header>
+
+<main class="wrap">
+
+<h2>1. Tóm tắt trong 30 giây</h2>
+<div class="card tot">
+  <ul>
+    <li><b>Đã lưu sẵn trên kho GitHub, tài khoản mới tự có:</b> trợ lý đăng bài, công cụ cho từng nền tảng, checklist nội dung, cấu trúc bài, khối liên hệ Nippon Paint, cách đọc sheet, quy tắc đăng giãn cách, các bài học cũ.</li>
+    <li><b>Không lưu trên GitHub:</b> các "chìa kết nối" (mã cho phép đăng bài). Kho của bạn để công khai, ai cũng xem được, nên chìa tuyệt đối không được để ở đó.</li>
+    <li><b>Từ nay chìa được gom vào 1 file gọi là "gói chìa".</b> Bạn tự cất file này trên máy. Sang tài khoản mới, bạn chỉ cần đính kèm file đó vào khung chat.</li>
+  </ul>
+</div>
+
+<div class="card canh-bao">
+  <b>Tin cần biết (nói thật):</b> máy ảo mình dùng hồi 29/09–02/10 đã bị hệ thống thu hồi, nên các chìa kết nối Google Sheet và Blogger của đợt đó <b>đã mất</b>. Hôm nay mình kiểm tra thì không còn chìa nào.<br><br>
+  Tin tốt là phía Google vẫn còn nguyên: dự án Google Cloud, 2 mã kết nối riêng (Sheet và Blogger), trạng thái "In production", và blog. Vì vậy lần kết nối lại tới đây <b>chỉ mất khoảng 10 phút</b>: bạn bấm "Cho phép" 2 lần và gửi mình 1 file. Không phải tạo lại gì cả. Kết nối xong, mình gửi bạn gói chìa ngay để chuyện này không lặp lại.
+</div>
+
+<h2>2. Sang tài khoản mới: bạn làm 4 bước</h2>
+<ol>
+  <li>Đăng nhập Claude bằng tài khoản mới, vào <b>Claude Code</b> và kết nối <b>GitHub</b> của bạn (cùng tài khoản GitHub đang chứa kho <code>vuthithuytrang-lab/trang</code>).</li>
+  <li>Mở phiên làm việc mới, chọn kho <code>trang</code>.</li>
+  <li>Bấm biểu tượng kẹp giấy, <b>đính kèm file gói chìa</b> (<code>goi-chia-nippon.local.json</code>) mà bạn đã cất trên máy.</li>
+  <li>Gõ đúng câu này:
+    <div class="say">Đọc file cong-cu/share-bai-social/BAN-GIAO.md, mở gói chìa tôi gửi kèm và làm tiếp dự án Nippon Paint.</div>
+  </li>
+</ol>
+<p>Nếu bạn <b>không có</b> gói chìa (bị mất, hoặc chìa đã hết hạn), thì gõ câu này. Trợ lý sẽ dẫn bạn bấm "Cho phép" từng bước, khoảng 10 phút:</p>
+<div class="say">Đọc file cong-cu/share-bai-social/BAN-GIAO.md và kết nối lại Nippon Paint theo mục 4.</div>
+
+<h2>3. Cất gói chìa thế nào cho an toàn</h2>
+<div class="card">
+  <ul>
+    <li>Lưu vào một thư mục riêng trên máy, ví dụ <code>Tài liệu / Nippon / goi-chia</code>.</li>
+    <li><b>Không</b> gửi qua Zalo hay email cho ai, <b>không</b> để ở thư mục Drive có chia sẻ, <b>không</b> mở ra rồi dán chữ vào chat.</li>
+    <li>Mỗi lần mình gửi gói mới (sau khi kết nối thêm nền tảng), bạn xóa bản cũ và giữ bản mới.</li>
+    <li>Gói chìa sẽ hết tác dụng khi: bạn đổi mật khẩu Google <code>nipponpaint.seo2026@gmail.com</code>, gỡ quyền ứng dụng, hoặc 6 tháng không dùng. Khi đó chỉ cần kết nối lại 10 phút như trên.</li>
+  </ul>
+</div>
+
+<h2>4. Tình trạng từng nền tảng</h2>
+<p>Tài khoản Google dùng chung cho dự án: <code>nipponpaint.seo2026@gmail.com</code>. Mỗi nền tảng có mã kết nối riêng, không dùng chung với dự án nào khác.</p>
+<div class="scroll">
+<table>
+  <tr><th>Nền tảng</th><th>Tài khoản</th><th>Tình trạng</th><th>Cần làm</th></tr>
+  <tr><td>Google Sheet</td><td>TTS - Nippon, tab "Share social"</td><td class="wait">Mất chìa</td><td>Kết nối lại (bấm Cho phép 1 lần)</td></tr>
+  <tr><td>Blogger</td><td>nipponpaint-vietnam.blogspot.com</td><td class="wait">Mất chìa · đã đăng 21 bài (dòng 5–25)</td><td>Kết nối lại (bấm Cho phép 1 lần)</td></tr>
+  <tr><td>WordPress</td><td>nipponpaintvietnam0.wordpress.com</td><td class="stop">Bị tạm ngưng 30/09</td><td>Chờ mail trả lời khiếu nại</td></tr>
+  <tr><td>Tumblr</td><td>nipponpaint-vn.tumblr.com</td><td class="stop">Tài khoản bị hủy</td><td>Bỏ</td></tr>
+  <tr><td>Pinterest</td><td>pinterest.com/nipponpaintvn</td><td class="wait">Chờ Pinterest duyệt ứng dụng</td><td>Có mail duyệt thì báo trợ lý</td></tr>
+  <tr><td>Google Site</td><td>nipponpaintvn</td><td class="wait">Tạm dừng</td><td>Bạn chọn 1 trong 3 hướng (gợi ý: Google Groups)</td></tr>
+  <tr><td>X</td><td>nipponpaint_vn</td><td class="wait">Tạm dừng</td><td>X thu phí, chưa làm</td></tr>
+  <tr><td>Threads</td><td>@nipponpaintvn</td><td class="wait">Chưa bắt đầu</td><td>Chờ bạn mượn tài khoản Facebook</td></tr>
+</table>
+</div>
+
+<h2>5. Những điều trợ lý mới bắt buộc giữ</h2>
+<div class="card">
+  <ul>
+    <li><b>Mỗi nền tảng tối đa 2 bài/ngày, cách nhau ít nhất 2 tiếng.</b> Đợt đăng dồn ngày 30/09 đã làm WordPress và Tumblr bị khóa.</li>
+    <li>Chỉ đăng các dòng đã tích ô "Duyệt share", rồi ghi link vào đúng cột của từng nền tảng.</li>
+    <li>Nội dung theo checklist: tối thiểu 3 ảnh thật, không có mục "Kết luận", không dùng chữ "nhất / số 1 / hàng đầu", không bịa thông tin, ghi đúng tên <b>Nippon Paint</b>, cuối bài có hashtag, khối liên hệ và link mạng xã hội.</li>
+    <li>Chìa chỉ nhận qua file đính kèm, không bao giờ dán chữ vào chat.</li>
+  </ul>
+</div>
+
+<h2>6. Việc đang treo</h2>
+<ol>
+  <li>WordPress: chờ mail trả lời khiếu nại.</li>
+  <li>Pinterest: chờ duyệt ứng dụng (mã ứng dụng 1617333).</li>
+  <li>Threads: chờ tài khoản Facebook.</li>
+  <li>Google Site: chờ bạn chọn hướng làm.</li>
+  <li>Link chết trên sheet: ô O6–O8 (Tumblr) và H6–H12 (WordPress). Bạn muốn xóa hay để lại?</li>
+  <li>Báo bên Nippon Paint: trên web gốc, nút "THAM KHẢO SẢN PHẨM" ở vài bài đang dẫn sang địa chỉ thử nghiệm nội bộ.</li>
+</ol>
+
+<footer>Bản chi tiết cho trợ lý: <code>cong-cu/share-bai-social/BAN-GIAO.md</code> · Hồ sơ dự án: <code>cong-cu/share-bai-social/du-an/nippon-paint.md</code></footer>
+</main>
+</body>
+</html>

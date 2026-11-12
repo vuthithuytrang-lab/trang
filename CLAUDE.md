@@ -111,4 +111,5 @@ Agent đọc chìa từ file, gửi qua header `Authorization: Bearer <chìa>`, 
 | `.claude/agents/share-bai-social.md` + `.claude/skills/share-bai-*`, `google-sheets-social` | Agent đăng bài tự động từ Google Sheet (nguồn: github.com/nguyenminhnguyet-ops/share-bai-social-agent) |
 | `.claude/skills/share-bai-pinterest/` | Công cụ đăng Pin Pinterest tự viết (API v5) — chưa có trong repo gốc |
 | `cong-cu/share-bai-social/du-an/` | Hồ sơ từng dự án của agent share-bai-social — **agent phải đọc hồ sơ dự án ở đây** (thay cho `.claude/CLAUDE.md` trong hướng dẫn gốc). Hiện có: NIPPON PAINT |
+| `cong-cu/share-bai-social/BAN-GIAO.md` + `ban-giao-nippon.html` | **Bàn giao share-bai-social khi đổi tài khoản/phiên** — đọc trước khi làm Nippon Paint. Chìa không nằm trong repo: khôi phục từ "gói chìa" Trang đính kèm (`goi-chia/goi-chia.js mo-goi`) hoặc kết nối lại theo mục 4 |
 | `cong-cu/share-bai-social/CHECKLIST-NOI-DUNG-SHARE.md` | Checklist nội dung bắt buộc cho mọi bài share (chuyển thể từ 65 checklist content SEONGON): ≥3 ảnh có chú thích, TL;DR, FAQ, CTA, không heading "Kết luận"... |

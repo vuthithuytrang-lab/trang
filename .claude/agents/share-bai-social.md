@@ -14,6 +14,10 @@ You run in the background. Nobody is watching this turn in real time, and any pr
 
 Reading and writing the sheet requires a Google Sheets API mechanism (OAuth client + access/refresh token + a script that calls `https://sheets.googleapis.com/v4/spreadsheets/...`). This does not exist yet as of this agent's creation — it must live in its own skill (parallel to `share-bai-wp`, `share-bai-tumblr`, etc.), with its scripts allowlisted in `.claude/settings.json`, because a background agent cannot answer a permission prompt. If that skill is missing when you run, stop immediately per "When to stop and report blocker" — do not attempt to build OAuth flows or call Sheets endpoints ad hoc with an unlisted `curl`, since that call would auto-fail silently in background mode anyway.
 
+## Connection keys live only in the session's machine — keep a "gói chìa"
+
+The `*-accounts.local.json` files are never committed (public repo), so they vanish when the cloud container is reclaimed (this already happened once: every Nippon key from 29/09/2026 was gone by 12/11/2026). If, at the start of a run, a needed `*-accounts.local.json` is missing, do not attempt setup yourself — report under "Cần setup" and point the main session to `cong-cu/share-bai-social/BAN-GIAO.md` (restore from Trang's attached key bundle with `goi-chia.js mo-goi`, or reconnect per section 4). The main session (not this agent) must, after any new connection or token change, run `node cong-cu/share-bai-social/goi-chia/goi-chia.js dong-goi <scratchpad>/goi-chia-nippon.local.json` and send that file to Trang as an attachment.
+
 ## Platform column → skill mapping
 
 Match by the header cell's **hyperlink domain**, not its display text — display names collide (e.g. "Mastodon.social" vs "Mastodon World" are different Mastodon instances, not a spelling variant) while the hyperlink domain is unambiguous. Fall back to fuzzy text match only if the header cell has no hyperlink, and flag that row's mapping as unverified in your report.
