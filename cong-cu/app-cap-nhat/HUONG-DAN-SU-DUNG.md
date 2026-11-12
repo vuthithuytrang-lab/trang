@@ -3,12 +3,20 @@
 Từ 06/11/2026 app chạy hoàn toàn bằng dịch vụ miễn phí, **không cần tài khoản Claude, không tốn token**.
 
 ## Dùng hằng ngày
-1. Mở **https://vttt-sn.netlify.app/** (hoặc https://vuthithuytrang-lab.github.io/trang/).
+1. Mở **https://vuthithuytrang-lab.github.io/trang/** (Netlify https://vttt-sn.netlify.app/ hết lượt đăng miễn phí tháng 11 → đứng ở bản 7/11 tới tháng sau).
 2. Tìm bài → bấm **"↻ Chạy bài này"** (hoặc tích nhiều bài rồi bấm chạy chung).
 3. Chờ khoảng 1–1,5 phút, app tự hiện bản mới (app tự kiểm tra 10 giây/lần). Bấm **"Chép để dán vào Docs"** (giữ tô vàng) hoặc **"Tải Word"**.
 4. Đọc mục **"Cần xem lại"** dưới mỗi bài trước khi gửi đăng.
 
 Trước khi bấm chạy, chọn ngày ở ô **"Ngày ghi trong bài"** (hôm nay / ngày mai / ngày kia; mặc định ngày mai). Hai bài lãi suất máy tự lo, luôn ghi ngày mai. Chỗ nào đổi đều được tô vàng.
+
+## Mở file Docs (từ 12/11/2026)
+Bấm **"Mở file Docs"** ở bài nào → máy tự chép bản mới nhất (giống hệt nút "Chép") vào file Docs cố định của bài rồi mở ra.
+Link Docs mỗi bài không đổi; bản cũ xem ở Docs → Tệp → Lịch sử phiên bản.
+
+## Cập nhật số vào HTML của bạn (từ 12/11/2026)
+Mục cuối app: chọn bài → dán HTML của bài → bấm **"Cập nhật số vào HTML"** → ~1–2 phút có HTML mới, chỉ khác số / ngày
+(thẻ, định dạng giữ nguyên, không tô vàng) + danh sách chỗ đã đổi. Chỗ máy "không đổi (cần xem)" thì tự sửa tay.
 
 ## Mọi thứ nằm ở đâu (đều là của Trang)
 | Phần | Ở đâu |
@@ -17,6 +25,7 @@ Trước khi bấm chạy, chọn ngày ở ô **"Ngày ghi trong bài"** (hôm 
 | Nút chạy | Hàm Netlify `chay` dùng chìa GitHub (biến `GITHUB_TOKEN` trong Netlify) |
 | Máy chạy bài | GitHub Actions `tu-dong-cap-nhat.yml` (miễn phí) |
 | Công thức 27 bài | `cong-cu/skill-cap-nhat-bai-tcb/cong-thuc/<mã>/` |
+| Mở file Docs + hộp thư HTML | Apps Script "Dự án không có tiêu đề" trên tài khoản vuthithuytrang@seongon.com (mã: `cong-cu/tu-dong/google-apps-script/DongBoDocs.gs`, link: `cong-cu/tu-dong/dong-bo-url.txt`) |
 | Kết quả | nhánh `tu-dong-ket-qua` (app đọc ngay qua hàm Netlify `kq`) |
 
 ## Khi có sự cố
