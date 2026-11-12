@@ -43,18 +43,37 @@
   </div></div>
 
   <div class="the buoc"><div class="so">4</div><div>
-    <h2>Lấy chìa Gemini (miễn phí)</h2>
-    <p>Vào <code>aistudio.google.com/apikey</code> → <span class="nut">Create API key</span> → copy. <b>Không dán chìa vào chat hay gửi cho ai.</b></p>
+    <h2>Lấy chìa Gemini (miễn phí, 2 phút)</h2>
+    <ol>
+      <li>Mở tab mới, vào <code>aistudio.google.com/apikey</code>.</li>
+      <li>Đăng nhập bằng chính Gmail đang mở file Sheet. Lần đầu: tích đồng ý điều khoản → <span class="nut">Continue</span>.</li>
+      <li>Bấm nút xanh <span class="nut">Create API key</span> (Tạo khoá API). Nếu được hỏi dự án: chọn dự án có sẵn hoặc <span class="nut">Create project</span>.</li>
+      <li>Hiện ra dãy chữ bắt đầu bằng <b>AIza…</b> → bấm biểu tượng copy bên cạnh.</li>
+    </ol>
+    <p><b>Không dán chìa vào chat hay gửi cho ai.</b> Chìa chỉ dán vào hộp của công cụ ở bước 5.</p>
   </div></div>
 
   <div class="the buoc"><div class="so">5</div><div>
-    <h2>Tạo bảng cài đặt và cấp quyền</h2>
-    <p>Quay lại file "Trung tâm dịch bài", tải lại trang (Cmd + R). Menu <span class="nut">🌐 Dịch bài</span> xuất hiện.</p>
-    <p>Bấm <span class="nut">① Tạo bảng cài đặt dự án</span>. Lần đầu Google hỏi quyền: chọn tài khoản → <span class="nut">Nâng cao</span> → <span class="nut">Đi tới… (không an toàn)</span> → <span class="nut">Cho phép</span> (cảnh báo này hiện với mọi mã tự viết). Rồi bấm <span class="nut">② Cài khóa Gemini</span> → dán chìa.</p>
+    <h2>Bật công cụ</h2>
+    <p>Quay lại file Sheet, tải lại trang (Cmd + R). Menu <span class="nut">🌐 Dịch bài</span> xuất hiện. (Nút "Chạy" trong trang mã <b>không</b> dùng để dịch — chỉ dùng menu này.)</p>
+    <p>Bấm <span class="nut">① Tạo bảng cài đặt + bật tự chạy khi tích</span>. Lần đầu Google hỏi quyền: chọn tài khoản → <span class="nut">Nâng cao</span> → <span class="nut">Đi tới… (không an toàn)</span> → <span class="nut">Cho phép</span> (cảnh báo này hiện với mọi mã tự viết).</p>
+    <p>Bấm <span class="nut">② Cài chìa Gemini</span> → dán chìa → OK. Công cụ tự thử chìa và báo kết quả.</p>
   </div></div>
 
   <div class="the nhan">
-    <h3>Bảng "Cài đặt dự án" — mỗi dự án 1 dòng</h3>
+    <h3>Dùng hằng ngày: dán link → tích "Bật" → tự chạy</h3>
+    <ul>
+      <li><b>Dịch 1 bài:</b> dòng mới → cột B ghi tên dự án (ví dụ "Okamura") → cột C dán <b>link Google Doc</b> → tích ô <b>Bật</b>. Sau 1–3 phút, cột O "Kết quả" hiện <b>✅ Bản dịch EN</b> (bấm vào để mở).</li>
+      <li>Ghi cùng tên dự án với dòng dự án → công cụ tự mượn cách đổi link và giới thiệu thương hiệu của dự án đó.</li>
+      <li><b>Cả dự án:</b> cột C dán <b>link Google Sheet</b> danh sách bài và điền các cột D → N (xem bảng dưới) → tích <b>Bật</b>: công cụ dịch mọi bài đã duyệt chưa có bản dịch.</li>
+      <li>Muốn dịch lại: xoá ô "Kết quả" rồi bỏ tích → tích lại.</li>
+      <li>Ô "Kết quả" báo ❌ thì đọc lý do ngay trong ô; chi tiết ở tab <b>Nhật ký dịch</b>.</li>
+      <li>Bản dịch máy — luôn đọc soát bản Anh trước khi gửi khách.</li>
+    </ul>
+  </div>
+
+  <div class="the">
+    <h3>Các cột khi dán link Google Sheet (cả dự án)</h3>
     <ul>
       <li><b>Link file Sheet danh sách bài</b> + <b>Tên tab</b>: nơi có danh sách bài.</li>
       <li><b>Cột link Doc</b>: cột chứa link bài tiếng Việt (Okamura: W).</li>
@@ -64,19 +83,13 @@
       <li><b>Bỏ qua nếu cột này đã có chữ</b>: tránh dịch lại bài cũ đã có bản Anh (Okamura: AG "Link bài đăng tiếng anh").</li>
       <li><b>Đổi link: tìm / thay bằng</b>: đổi link bản Việt sang bản Anh (Okamura: <code>okamura.com.vn/vi/</code> → <code>okamura.com.vn/</code>).</li>
       <li><b>Giới thiệu thương hiệu</b>: 1 câu tiếng Anh mô tả thương hiệu, giúp máy dịch đúng ngữ cảnh.</li>
-      <li>Thêm dự án mới: điền 1 dòng mới và tích ô <b>Bật</b>. Dòng 2 có sẵn mẫu Okamura.</li>
+      <li>Dòng 2 có sẵn mẫu dự án Okamura.</li>
     </ul>
   </div>
 
   <div class="the">
-    <h3>Dùng hằng ngày</h3>
-    <ul>
-      <li><span class="nut">Dịch tất cả bài chờ dịch</span>: quét mọi dự án đang bật và dịch hết bài đã duyệt mà chưa có bản dịch. Mỗi lượt Google cho chạy khoảng 5 phút (~2–3 bài), phần còn lại công cụ tự chạy tiếp sau 1 phút.</li>
-      <li><span class="nut">Bật tự chạy mỗi tối (22h)</span>: không cần bấm gì, sáng ra chỉ việc soát.</li>
-      <li><span class="nut">Dịch 1 bài theo link Doc…</span>: khi cần gấp một bài.</li>
-      <li>Kết quả và lỗi ghi ở tab <b>Nhật ký dịch</b>. Ô kết quả báo "Lỗi: …" thì xoá ô đó để lần sau dịch lại.</li>
-      <li>Bản dịch máy — luôn đọc soát bản Anh trước khi gửi khách.</li>
-    </ul>
+    <h3>Tự quét mỗi tối (tuỳ chọn)</h3>
+    <ul><li>Menu <span class="nut">Bật tự quét mỗi tối (22h)</span>: các dòng dự án (link Sheet) đang tích "Bật" tự được quét lại mỗi tối, sáng ra chỉ việc soát.</li></ul>
   </div>
 
   <div class="the">

@@ -1,12 +1,13 @@
 /**
  * TRUNG TÂM DỊCH BÀI VIỆT → ANH — chạy trong Google Sheet, dùng cho nhiều dự án, không cần Claude.
  *
- * Bảng "Cài đặt dự án": mỗi dòng 1 dự án — file Sheet danh sách bài, tab, cột link Doc, cột duyệt,
- * cột ghi link bản dịch... Công cụ tự quét: dòng nào có link Doc + đã duyệt + cột kết quả còn trống
- * → dịch, tạo tab "Bản dịch EN" (trang ngang, bảng 2 cột Việt | Anh) trong chính Doc đó, rồi ghi link vào cột kết quả.
- * Tab tiếng Việt gốc KHÔNG bị sửa.
+ * Bảng "Cài đặt dự án", mỗi dòng 1 việc. Dán link vào cột C rồi tích ô "Bật" → công cụ TỰ CHẠY:
+ *   - Link Google Doc  → dịch ngay bài đó.
+ *   - Link Google Sheet (danh sách bài) → quét, dịch mọi bài đã duyệt chưa có bản dịch, ghi link về Sheet đó.
+ * Mỗi bài dịch xong có thêm tab "Bản dịch EN" (trang ngang, bảng 2 cột Việt | Anh). Tab tiếng Việt gốc KHÔNG bị sửa.
+ * Kết quả / lỗi ghi ở cột "Kết quả" (cột O) và tab "Nhật ký dịch".
  *
- * Máy dịch: Gemini (miễn phí, chìa ở aistudio.google.com/apikey) — lỗi/hết lượt thì tự chuyển Google Dịch.
+ * Máy dịch: Gemini (miễn phí) — lỗi/hết lượt thì tự chuyển Google Dịch.
  * Cần bật 2 dịch vụ trong trình sửa Apps Script: "Google Docs API" và "Google Sheets API".
  */
 
@@ -16,23 +17,33 @@ var TAB_NHAT_KY = 'Nhật ký dịch';
 var GEMINI_MODELS = ['gemini-flash-latest', 'gemini-2.5-flash', 'gemini-2.0-flash']; // thử lần lượt
 var GIOI_HAN_GIAY = 270; // Google cho chạy tối đa 6 phút/lượt — dừng sớm để an toàn, phần còn lại chạy lượt sau
 
-var COT_CAI_DAT = ['Bật', 'Tên dự án', 'Link file Sheet danh sách bài', 'Tên tab', 'Dòng tiêu đề (số)',
+var COT_CAI_DAT = ['Bật', 'Tên dự án', 'Link (Google Doc 1 bài, hoặc Sheet danh sách bài)', 'Tên tab', 'Dòng tiêu đề (số)',
   'Cột link Doc', 'Cột duyệt', 'Giá trị được coi là duyệt', 'Cột từ khóa', 'Cột ghi link bản dịch',
-  'Đổi link: tìm', 'Đổi link: thay bằng', 'Giới thiệu thương hiệu (cho máy dịch)', 'Bỏ qua nếu cột này đã có chữ'];
-var MAU_OKAMURA = [true, 'Okamura', 'https://docs.google.com/spreadsheets/d/1ednWlho_Iw1ANJdwf6wD6ed_JhZpwt68f-worBBc0So/edit',
+  'Đổi link: tìm', 'Đổi link: thay bằng', 'Giới thiệu thương hiệu (cho máy dịch)', 'Bỏ qua nếu cột này đã có chữ',
+  'Kết quả (công cụ tự ghi)'];
+var COT_KET_QUA = 15; // cột O
+var MAU_OKAMURA = [false, 'Okamura', 'https://docs.google.com/spreadsheets/d/1ednWlho_Iw1ANJdwf6wD6ed_JhZpwt68f-worBBc0So/edit',
   '2. Danh sách bài SEO | 2026', 1, 'W', 'Z', 'Duyệt', 'B', 'AP', 'okamura.com.vn/vi/', 'okamura.com.vn/',
-  'Okamura — Japanese premium office furniture brand (office chairs, desks, storage) in Vietnam', 'AG'];
+  'Okamura — Japanese premium office furniture brand (office chairs, desks, storage) in Vietnam', 'AG', ''];
+
+var HUONG_DAN_CHIA =
+  'CÁCH LẤY CHÌA (miễn phí, 2 phút):\n' +
+  '1. Mở tab mới, vào: aistudio.google.com/apikey\n' +
+  '2. Đăng nhập Gmail (dùng chính Gmail đang mở file này). Lần đầu: tích đồng ý điều khoản → Continue.\n' +
+  '3. Bấm nút xanh "Create API key" (Tạo khoá API). Nếu được hỏi dự án: chọn dự án có sẵn hoặc "Create project".\n' +
+  '4. Hiện ra dãy chữ bắt đầu bằng "AIza…" → bấm biểu tượng copy bên cạnh.\n' +
+  '5. Quay lại đây, dán vào ô dưới → OK.\n\n' +
+  'Lưu ý: không gửi chìa cho ai, không dán vào chat. Để trống rồi OK = xoá chìa, dùng Google Dịch.';
 
 function onOpen() {
   SpreadsheetApp.getUi().createMenu('🌐 Dịch bài')
-    .addItem('① Tạo bảng cài đặt dự án', 'menuTaoBangCaiDat')
-    .addItem('② Cài khóa Gemini', 'menuCaiKhoaGemini')
+    .addItem('① Tạo bảng cài đặt + bật tự chạy khi tích', 'menuTaoBangCaiDat')
+    .addItem('② Cài chìa Gemini (có hướng dẫn)', 'menuCaiKhoaGemini')
     .addSeparator()
-    .addItem('Dịch tất cả bài chờ dịch', 'menuDichTatCa')
-    .addItem('Dịch 1 bài theo link Doc…', 'menuDichTheoLink')
+    .addItem('Chạy ngay các dòng đang tích "Bật"', 'menuDichTatCa')
     .addSeparator()
-    .addItem('Bật tự chạy mỗi tối (22h)', 'menuBatTuChay')
-    .addItem('Tắt tự chạy', 'menuTatTuChay')
+    .addItem('Bật tự quét mỗi tối (22h)', 'menuBatTuChay')
+    .addItem('Tắt tự quét mỗi tối', 'menuTatTuChay')
     .addToUi();
 }
 
@@ -41,46 +52,79 @@ function menuTaoBangCaiDat() {
   var ss = SpreadsheetApp.getActive(), sh = ss.getSheetByName(TAB_CAI_DAT);
   if (!sh) {
     sh = ss.insertSheet(TAB_CAI_DAT);
-    sh.getRange(1, 1, 1, COT_CAI_DAT.length).setValues([COT_CAI_DAT]).setFontWeight('bold')
-      .setBackground('#004AEF').setFontColor('#ffffff').setWrap(true);
     sh.getRange(2, 1, 1, MAU_OKAMURA.length).setValues([MAU_OKAMURA]);
-    sh.getRange('A2:A50').insertCheckboxes();
+    sh.getRange('A2:A100').insertCheckboxes();
     sh.setFrozenRows(1); sh.setColumnWidths(1, COT_CAI_DAT.length, 150); sh.setColumnWidth(1, 50);
-    sh.getRange(4, 2).setValue('Ghi chú: Cột = chữ cái cột (W, Z, AP...). "Cột duyệt" để trống = chỉ cần có link là dịch. ' +
-      '"Cột ghi link bản dịch" phải là cột trống — dòng nào đã có chữ ở cột này sẽ được bỏ qua (không dịch trùng). ' +
-      '"Bỏ qua nếu cột này đã có chữ": ví dụ cột link bài đăng tiếng Anh — bài đã đăng bản Anh thì không dịch lại. ' +
-      'Thêm dự án mới: điền 1 dòng mới, tích ô "Bật".').setFontColor('#666666');
+    sh.setColumnWidth(3, 260); sh.setColumnWidth(COT_KET_QUA, 320);
   }
+  // luôn cập nhật dòng tiêu đề (bảng tạo từ bản cũ sẽ được thêm cột "Kết quả")
+  sh.getRange(1, 1, 1, COT_CAI_DAT.length).setValues([COT_CAI_DAT]).setFontWeight('bold')
+    .setBackground('#004AEF').setFontColor('#ffffff').setWrap(true);
   if (!ss.getSheetByName(TAB_NHAT_KY)) {
     ss.insertSheet(TAB_NHAT_KY).getRange(1, 1, 1, 5).setValues([['Thời gian', 'Dự án', 'Dòng', 'Kết quả', 'Ghi chú']])
       .setFontWeight('bold');
   }
+  batTichLaChay_();
   ss.setActiveSheet(sh);
-  SpreadsheetApp.getUi().alert('Đã tạo bảng "' + TAB_CAI_DAT + '". Dòng 2 là mẫu dự án Okamura — kiểm tra lại từng ô rồi điền thêm dự án khác nếu cần.');
+  SpreadsheetApp.getUi().alert('Đã sẵn sàng!\n\n' +
+    'CÁCH DÙNG: dán link vào cột C rồi tích ô "Bật" ở cột A → công cụ tự chạy (1-3 phút/bài).\n' +
+    '- Link Google Doc: dịch ngay bài đó.\n' +
+    '- Link Google Sheet danh sách bài: điền thêm các cột D → N (xem dòng mẫu Okamura).\n\n' +
+    'Mẹo: dòng bài lẻ nên điền cùng "Tên dự án" với dòng dự án (ví dụ Okamura) — công cụ tự mượn cách đổi link, ' +
+    'giới thiệu thương hiệu của dự án đó.\n\nNhớ bấm "② Cài chìa Gemini" nếu chưa cài.');
+}
+
+function batTichLaChay_() {
+  var ss = SpreadsheetApp.getActive();
+  ScriptApp.getProjectTriggers().forEach(function (t) { if (t.getHandlerFunction() === 'khiSua') ScriptApp.deleteTrigger(t); });
+  ScriptApp.newTrigger('khiSua').forSpreadsheet(ss).onEdit().create();
 }
 
 function menuCaiKhoaGemini() {
   var ui = SpreadsheetApp.getUi();
-  var r = ui.prompt('Khóa Gemini (miễn phí)',
-    'Dán khóa lấy ở aistudio.google.com/apikey. Để trống rồi OK = xoá khóa, dùng Google Dịch.', ui.ButtonSet.OK_CANCEL);
+  var r = ui.prompt('Chìa Gemini (miễn phí)', HUONG_DAN_CHIA, ui.ButtonSet.OK_CANCEL);
   if (r.getSelectedButton() !== ui.Button.OK) return;
   var k = r.getResponseText().trim(), p = PropertiesService.getUserProperties();
-  if (k) { p.setProperty('GEMINI_KEY', k); ui.alert('Đã lưu khóa. Từ giờ dùng Gemini để dịch.'); }
-  else { p.deleteProperty('GEMINI_KEY'); ui.alert('Đã xoá khóa. Dùng Google Dịch.'); }
+  if (!k) { p.deleteProperty('GEMINI_KEY'); ui.alert('Đã xoá chìa. Dùng Google Dịch.'); return; }
+  if (!/^AIza[0-9A-Za-z_\-]{20,}$/.test(k)) {
+    ui.alert('Chìa có vẻ chưa đúng: chìa Gemini bắt đầu bằng "AIza" và không có dấu cách. Bạn copy lại nhé.'); return;
+  }
+  p.setProperty('GEMINI_KEY', k);
+  var thu = thuChiaGemini_(k);
+  ui.alert(thu === true ? 'Đã lưu chìa và thử thành công. Từ giờ dùng Gemini để dịch.' :
+    'Đã lưu chìa nhưng thử gọi Gemini bị lỗi:\n' + thu + '\n\nCông cụ vẫn chạy được bằng Google Dịch. ' +
+    'Nếu vừa tạo chìa, đợi 1-2 phút rồi cài lại.');
+}
+
+function thuChiaGemini_(k) {
+  try { dichGemini_(['<b>Xin chào</b>'], k, { tieuDe: 'Thử', tuKhoa: '', thuongHieu: '' }); return true; }
+  catch (e) { return String(e.message || e).slice(0, 200); }
 }
 
 function docCaiDat_() {
   var sh = SpreadsheetApp.getActive().getSheetByName(TAB_CAI_DAT);
-  if (!sh) throw new Error('Chưa có bảng cài đặt — bấm menu "① Tạo bảng cài đặt dự án".');
-  var v = sh.getDataRange().getValues(), out = [];
+  if (!sh) throw new Error('Chưa có bảng cài đặt — bấm menu "① Tạo bảng cài đặt".');
+  var v = sh.getRange(1, 1, Math.max(sh.getLastRow(), 2), COT_CAI_DAT.length).getValues(), out = [];
   for (var i = 1; i < v.length; i++) {
-    var r = v[i];
-    if (r[0] !== true || !r[2]) continue;
-    out.push({ ten: String(r[1]), sheetUrl: String(r[2]), tab: String(r[3]), dongTieuDe: Number(r[4]) || 1,
+    var r = v[i], link = String(r[2]).trim();
+    if (!link) continue;
+    out.push({ dong: i + 1, bat: r[0] === true, ten: String(r[1]).trim(), link: link,
+      loai: /\/document\/d\//.test(link) ? 'doc' : (/\/spreadsheets\/d\//.test(link) ? 'sheet' : 'sai'),
+      tab: String(r[3]), dongTieuDe: Number(r[4]) || 1,
       cotLink: String(r[5]).trim(), cotDuyet: String(r[6]).trim(), giaTriDuyet: String(r[7]).trim(),
       cotTuKhoa: String(r[8]).trim(), cotKetQua: String(r[9]).trim(),
-      doiLink: [{ tim: String(r[10]).trim(), thay: String(r[11]).trim() }], thuongHieu: String(r[12]), cotBoQua: String(r[13] || '').trim() });
+      tim: String(r[10]).trim(), thay: String(r[11]).trim(), thuongHieu: String(r[12]).trim(),
+      cotBoQua: String(r[13] || '').trim(), ketQua: String(r[14] || '') });
   }
+  // dòng thiếu "đổi link"/"thương hiệu" thì mượn của dòng cùng tên dự án
+  out.forEach(function (c) {
+    out.forEach(function (d) {
+      if (d === c || !c.ten || d.ten.toLowerCase() !== c.ten.toLowerCase()) return;
+      if (!c.tim && d.tim) { c.tim = d.tim; c.thay = d.thay; }
+      if (!c.thuongHieu && d.thuongHieu) c.thuongHieu = d.thuongHieu;
+    });
+    c.doiLink = [{ tim: c.tim, thay: c.thay }];
+  });
   return out;
 }
 
@@ -90,58 +134,138 @@ function soCot_(chu) { // "AP" -> 42
   return n;
 }
 
-// ---------------- QUÉT & DỊCH ----------------
-function menuDichTatCa() {
-  var kq = dichTatCa_();
-  SpreadsheetApp.getUi().alert(kq);
+function ghiKetQua_(dong, chu, url) {
+  var c = SpreadsheetApp.getActive().getSheetByName(TAB_CAI_DAT).getRange(dong, COT_KET_QUA);
+  if (url) c.setRichTextValue(SpreadsheetApp.newRichTextValue().setText(chu).setLinkUrl(0, chu.length, url).build());
+  else c.setValue(chu);
+  SpreadsheetApp.flush();
 }
 
-function chayTuDong() { dichTatCa_(); } // hàm cho hẹn giờ
+function gio_() { return Utilities.formatDate(new Date(), Session.getScriptTimeZone(), 'dd/MM HH:mm'); }
 
-function dichTatCa_() {
-  var batDau = Date.now(), daDich = 0, loi = 0, conLai = 0;
-  docCaiDat_().forEach(function (cf) {
-    var ss = SpreadsheetApp.openByUrl(cf.sheetUrl), sh = ss.getSheetByName(cf.tab);
-    if (!sh) { nhatKy_(cf.ten, '', 'Lỗi', 'Không thấy tab "' + cf.tab + '"'); loi++; return; }
-    var cLink = soCot_(cf.cotLink), cKq = soCot_(cf.cotKetQua), cDuyet = cf.cotDuyet ? soCot_(cf.cotDuyet) : 0,
-        cTk = cf.cotTuKhoa ? soCot_(cf.cotTuKhoa) : 0, cBq = cf.cotBoQua ? soCot_(cf.cotBoQua) : 0;
-    var last = sh.getLastRow(); if (last <= cf.dongTieuDe) return;
-    var n = last - cf.dongTieuDe, maxC = Math.max(cLink, cKq, cDuyet, cTk, cBq);
-    var vals = sh.getRange(cf.dongTieuDe + 1, 1, n, maxC).getDisplayValues();
-    for (var i = 0; i < n; i++) {
-      var row = cf.dongTieuDe + 1 + i, r = vals[i];
-      if (String(r[cKq - 1]).trim()) continue;                       // đã có bản dịch / đang có ghi chú
-      if (!String(r[cLink - 1]).trim()) continue;                    // chưa có link Doc
-      if (cBq && String(r[cBq - 1]).trim()) continue;                // ví dụ: đã đăng bản tiếng Anh rồi
-      if (cDuyet && String(r[cDuyet - 1]).trim().toLowerCase() !== cf.giaTriDuyet.toLowerCase()) continue; // chưa duyệt
-      if ((Date.now() - batDau) / 1000 > GIOI_HAN_GIAY) { conLai++; continue; }
-      var link = layLinkDoc_(ss, sh, row, cLink);
-      if (!link) { sh.getRange(row, cKq).setValue('Lỗi: không đọc được link Doc'); loi++; continue; }
-      try {
-        var kq = dichBai(link.match(/\/d\/([a-zA-Z0-9_-]{20,})/)[1],
-          { tuKhoa: cTk ? r[cTk - 1] : '', thuongHieu: cf.thuongHieu, doiLink: cf.doiLink });
-        sh.getRange(row, cKq).setRichTextValue(SpreadsheetApp.newRichTextValue()
-          .setText('Bản dịch EN').setLinkUrl(kq.url).build());
-        nhatKy_(cf.ten, row, 'Xong (' + kq.may + ')', kq.url + (kq.ghiChu.length ? ' | ' + kq.ghiChu.join('; ') : ''));
-        daDich++;
-      } catch (e) {
-        sh.getRange(row, cKq).setValue('Lỗi: ' + String(e.message || e).slice(0, 150));
-        nhatKy_(cf.ten, row, 'Lỗi', String(e.stack || e).slice(0, 500)); loi++;
+function loiDeHieu_(e) {
+  var m = String(e && e.message || e);
+  if (/Docs is not defined|Sheets is not defined|Google Docs API|Google Sheets API/.test(m))
+    return 'Chưa bật dịch vụ Google Docs API / Google Sheets API trong Apps Script (mục Dịch vụ +).';
+  if (/Illegal spreadsheet id|Unexpected error while getting the method or property openByUrl/.test(m))
+    return 'Link ở cột C không phải link Google Sheet/Doc hợp lệ.';
+  if (/permission|quyền|Access denied|not have permission/i.test(m))
+    return 'Không có quyền mở/sửa file này — cần quyền Chỉnh sửa với file đó.';
+  if (/Requested entity was not found|not found/i.test(m)) return 'Không tìm thấy file — kiểm tra lại link.';
+  return m.slice(0, 200);
+}
+
+// ---------------- TỰ CHẠY KHI TÍCH / DÁN LINK ----------------
+function khiSua(e) {
+  try {
+    var r = e.range, sh = r.getSheet();
+    if (sh.getName() !== TAB_CAI_DAT || r.getRow() < 2) return;
+    var c1 = r.getColumn(), c2 = r.getLastColumn();
+    if (c2 < 1 || c1 > 3) return; // chỉ quan tâm khi sửa cột A (Bật) hoặc C (Link)
+    var lock = LockService.getScriptLock();
+    if (!lock.tryLock(5000)) return;
+    try {
+      var batDau = Date.now();
+      for (var row = r.getRow(); row <= r.getLastRow(); row++) {
+        var cf = docCaiDat_().filter(function (x) { return x.dong === row; })[0];
+        if (!cf || !cf.bat) continue;
+        xuLyDong_(cf, batDau, false);
       }
-      SpreadsheetApp.flush();
-    }
-  });
-  if (conLai) { // hết giờ lượt này: hẹn chạy tiếp sau 1 phút
-    ScriptApp.getProjectTriggers().forEach(function (t) { if (t.getHandlerFunction() === 'chayTiep') ScriptApp.deleteTrigger(t); });
-    ScriptApp.newTrigger('chayTiep').timeBased().after(60 * 1000).create();
-  }
-  return 'Đã dịch: ' + daDich + ' bài. Lỗi: ' + loi + '.' + (conLai ? '\nCòn ' + conLai + ' bài — công cụ tự chạy tiếp sau 1 phút.' : '') +
-    '\nXem chi tiết ở tab "' + TAB_NHAT_KY + '".';
+    } finally { lock.releaseLock(); }
+  } catch (err) { Logger.log(err); }
 }
+
+function xuLyDong_(cf, batDau, quetLai) {
+  try {
+    if (cf.loai === 'sai') { ghiKetQua_(cf.dong, '⚠️ Link ở cột C không phải Google Doc / Google Sheet'); return 0; }
+    if (cf.loai === 'doc') {
+      if (/^✅/.test(cf.ketQua) && !quetLai) return 0; // đã dịch rồi — muốn dịch lại thì xoá ô Kết quả
+      ghiKetQua_(cf.dong, '⏳ Đang dịch… (1-3 phút) — ' + gio_());
+      var kq = dichBai(cf.link.match(/\/d\/([a-zA-Z0-9_-]{20,})/)[1],
+        { tuKhoa: '', thuongHieu: cf.thuongHieu, doiLink: cf.doiLink });
+      ghiKetQua_(cf.dong, '✅ Bản dịch EN (' + kq.may + ', ' + gio_() + ')' + (kq.ghiChu.length ? ' — ' + kq.ghiChu.join('; ') : ''), kq.url);
+      nhatKy_(cf.ten, cf.dong, 'Xong (' + kq.may + ')', kq.url);
+      return 1;
+    }
+    ghiKetQua_(cf.dong, '⏳ Đang quét danh sách… — ' + gio_());
+    var t = quetDuAn_(cf, batDau);
+    ghiKetQua_(cf.dong, (t.loi ? '⚠️ ' : '✅ ') + gio_() + ': dịch ' + t.daDich + ' bài' + (t.loi ? ', lỗi ' + t.loi + ' (xem Nhật ký dịch)' : '') +
+      (t.conLai ? ', còn ' + t.conLai + ' bài — tự chạy tiếp sau 1 phút' : '') + (t.daDich + t.loi + t.conLai === 0 ? ' — không có bài nào chờ dịch' : ''));
+    return t.conLai;
+  } catch (e) {
+    ghiKetQua_(cf.dong, '❌ Lỗi: ' + loiDeHieu_(e));
+    nhatKy_(cf.ten, cf.dong, 'Lỗi', String(e && e.stack || e).slice(0, 500));
+    return 0;
+  }
+}
+
+function quetDuAn_(cf, batDau) {
+  var daDich = 0, loi = 0, conLai = 0;
+  var ss = SpreadsheetApp.openByUrl(cf.link), sh = ss.getSheetByName(cf.tab);
+  if (!sh) throw new Error('Không thấy tab "' + cf.tab + '" trong file Sheet (cột D phải đúng tên tab).');
+  if (!cf.cotLink || !cf.cotKetQua) throw new Error('Thiếu "Cột link Doc" (F) hoặc "Cột ghi link bản dịch" (J).');
+  var cLink = soCot_(cf.cotLink), cKq = soCot_(cf.cotKetQua), cDuyet = cf.cotDuyet ? soCot_(cf.cotDuyet) : 0,
+      cTk = cf.cotTuKhoa ? soCot_(cf.cotTuKhoa) : 0, cBq = cf.cotBoQua ? soCot_(cf.cotBoQua) : 0;
+  var last = sh.getLastRow(); if (last <= cf.dongTieuDe) return { daDich: 0, loi: 0, conLai: 0 };
+  var n = last - cf.dongTieuDe, maxC = Math.max(cLink, cKq, cDuyet, cTk, cBq);
+  var vals = sh.getRange(cf.dongTieuDe + 1, 1, n, maxC).getDisplayValues();
+  for (var i = 0; i < n; i++) {
+    var row = cf.dongTieuDe + 1 + i, r = vals[i];
+    if (String(r[cKq - 1]).trim()) continue;                       // đã có bản dịch / đang có ghi chú
+    if (!String(r[cLink - 1]).trim()) continue;                    // chưa có link Doc
+    if (cBq && String(r[cBq - 1]).trim()) continue;                // ví dụ: đã đăng bản tiếng Anh rồi
+    if (cDuyet && String(r[cDuyet - 1]).trim().toLowerCase() !== cf.giaTriDuyet.toLowerCase()) continue; // chưa duyệt
+    if ((Date.now() - batDau) / 1000 > GIOI_HAN_GIAY) { conLai++; continue; }
+    var link = layLinkDoc_(ss, sh, row, cLink);
+    if (!link) { sh.getRange(row, cKq).setValue('Lỗi: không đọc được link Doc'); loi++; continue; }
+    try {
+      var kq = dichBai(link.match(/\/d\/([a-zA-Z0-9_-]{20,})/)[1],
+        { tuKhoa: cTk ? r[cTk - 1] : '', thuongHieu: cf.thuongHieu, doiLink: cf.doiLink });
+      sh.getRange(row, cKq).setRichTextValue(SpreadsheetApp.newRichTextValue().setText('Bản dịch EN').setLinkUrl(kq.url).build());
+      nhatKy_(cf.ten, cf.tab + ' dòng ' + row, 'Xong (' + kq.may + ')', kq.url + (kq.ghiChu.length ? ' | ' + kq.ghiChu.join('; ') : ''));
+      daDich++;
+    } catch (e) {
+      sh.getRange(row, cKq).setValue('Lỗi: ' + loiDeHieu_(e));
+      nhatKy_(cf.ten, cf.tab + ' dòng ' + row, 'Lỗi', String(e && e.stack || e).slice(0, 500)); loi++;
+    }
+    SpreadsheetApp.flush();
+  }
+  if (conLai) henChayTiep_();
+  return { daDich: daDich, loi: loi, conLai: conLai };
+}
+
+function henChayTiep_() {
+  ScriptApp.getProjectTriggers().forEach(function (t) { if (t.getHandlerFunction() === 'chayTiep') ScriptApp.deleteTrigger(t); });
+  ScriptApp.newTrigger('chayTiep').timeBased().after(60 * 1000).create();
+}
+
+// ---------------- CHẠY TẤT CẢ / HẸN GIỜ ----------------
+function menuDichTatCa() {
+  var ui = SpreadsheetApp.getUi();
+  var ds = docCaiDat_().filter(function (c) { return c.bat; });
+  if (!ds.length) { ui.alert('Chưa có dòng nào tích "Bật" và có link ở cột C.'); return; }
+  SpreadsheetApp.getActive().toast('Đang chạy ' + ds.length + ' dòng… xem cột "Kết quả".', 'Dịch bài', 10);
+  chayCacDong_(ds, true);
+  ui.alert('Xong lượt chạy. Xem cột "Kết quả" (cột O) và tab "' + TAB_NHAT_KY + '".');
+}
+
+function chayTuDong() { chayCacDong_(docCaiDat_().filter(function (c) { return c.bat && c.loai === 'sheet'; }), false); }
 
 function chayTiep() {
   ScriptApp.getProjectTriggers().forEach(function (t) { if (t.getHandlerFunction() === 'chayTiep') ScriptApp.deleteTrigger(t); });
-  dichTatCa_();
+  chayCacDong_(docCaiDat_().filter(function (c) { return c.bat && c.loai === 'sheet'; }), false);
+}
+
+function chayCacDong_(ds, tuMenu) {
+  var lock = LockService.getScriptLock();
+  if (!lock.tryLock(10000)) return;
+  try {
+    var batDau = Date.now();
+    ds.forEach(function (cf) {
+      if ((Date.now() - batDau) / 1000 > GIOI_HAN_GIAY) { henChayTiep_(); return; }
+      xuLyDong_(cf, batDau, false);
+    });
+  } finally { lock.releaseLock(); }
 }
 
 function layLinkDoc_(ss, sh, row, col) {
@@ -171,37 +295,23 @@ function nhatKy_(duAn, dong, kq, ghiChu) {
   if (sh) sh.appendRow([new Date(), duAn, dong, kq, ghiChu]);
 }
 
-function menuDichTheoLink() {
-  var ui = SpreadsheetApp.getUi();
-  var r = ui.prompt('Dịch 1 bài', 'Dán link Google Doc bài tiếng Việt:', ui.ButtonSet.OK_CANCEL);
-  if (r.getSelectedButton() !== ui.Button.OK) return;
-  var m = r.getResponseText().match(/\/d\/([a-zA-Z0-9_-]{20,})/);
-  if (!m) { ui.alert('Link không đúng dạng Google Doc.'); return; }
-  var cfs = []; try { cfs = docCaiDat_(); } catch (e) {}
-  var cf = cfs[0] || { thuongHieu: '', doiLink: [] }; // dùng cài đặt của dự án đầu tiên đang bật
-  var kq = dichBai(m[1], { tuKhoa: '', thuongHieu: cf.thuongHieu, doiLink: cf.doiLink });
-  nhatKy_('(theo link)', '', 'Xong (' + kq.may + ')', kq.url);
-  ui.alert('Xong bản dịch (' + kq.may + '):\n' + kq.url + (kq.ghiChu.length ? '\n\nLưu ý:\n- ' + kq.ghiChu.join('\n- ') : '') +
-    '\n\nNhớ đọc soát bản Anh trước khi gửi khách.');
-}
-
 function menuBatTuChay() {
   menuTatTuChay(true);
   ScriptApp.newTrigger('chayTuDong').timeBased().everyDays(1).atHour(22).create();
-  SpreadsheetApp.getUi().alert('Đã bật: mỗi tối khoảng 22h công cụ tự quét và dịch các bài chờ dịch.');
+  SpreadsheetApp.getUi().alert('Đã bật: mỗi tối khoảng 22h công cụ tự quét các dòng dự án (link Sheet) đang tích "Bật".');
 }
 
 function menuTatTuChay(imLang) {
   ScriptApp.getProjectTriggers().forEach(function (t) {
     if (t.getHandlerFunction() === 'chayTuDong') ScriptApp.deleteTrigger(t);
   });
-  if (imLang !== true) SpreadsheetApp.getUi().alert('Đã tắt tự chạy.');
+  if (imLang !== true) SpreadsheetApp.getUi().alert('Đã tắt tự quét mỗi tối.');
 }
 
 // ---------------- DỊCH 1 BÀI ----------------
 function dichBai(docId, opt) {
   var ghiChu = [];
-  if (typeof Docs === 'undefined') throw new Error('Chưa bật dịch vụ "Google Docs API" trong Apps Script.');
+  if (typeof Docs === 'undefined') throw new Error('Chưa bật dịch vụ Google Docs API');
   var doc = DocumentApp.openById(docId);
   var tabs = doc.getTabs();
   var nguon = tabs[0].asDocumentTab().getBody();
