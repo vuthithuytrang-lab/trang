@@ -1,0 +1,190 @@
+<title>Bàn giao App share bài</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Be+Vietnam+Pro:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Bố cục: một cột đọc ~70 ký tự, thanh tóm tắt trạng thái trên cùng, các mục đánh số theo đúng khung bàn giao 10 mục SEONGON */
+:root{
+  --bg:#FFFFFF; --nen:#F3F3F6; --chu:#151515; --phu:#5A6B66; --vien:#DCDCDC;
+  --xanh:#004AEF; --navy:#002992; --mint:#07EF9C; --cam:#F68B1F; --do:#C62828; --ok:#05734A;
+  --f-dau:"Montserrat",Gilroy,-apple-system,"Segoe UI",Arial,sans-serif;
+  --f-chu:"Be Vietnam Pro",-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --f-ma:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0E1424;--nen:#182038;--chu:#E8ECF5;--phu:#9AA6BF;--vien:#2A3452;--xanh:#6E9BFF;--navy:#B8CBFF;--ok:#3DDC97;--do:#FF8A80;--cam:#FFB067;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0E1424;--nen:#182038;--chu:#E8ECF5;--phu:#9AA6BF;--vien:#2A3452;--xanh:#6E9BFF;--navy:#B8CBFF;--ok:#3DDC97;--do:#FF8A80;--cam:#FFB067;color-scheme:dark}
+body{background:var(--bg);color:var(--chu);font-family:var(--f-chu);font-size:16px;line-height:1.65}
+.wrap{max-width:860px;margin:0 auto;padding-block:28px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--f-dau);color:var(--navy);text-wrap:balance;line-height:1.25}
+h1{font-size:clamp(26px,4.5vw,36px);font-weight:800;margin:6px 0 8px}
+h2{font-size:21px;font-weight:700;margin:34px 0 10px;display:flex;gap:10px;align-items:baseline}
+h2 .so{font-family:var(--f-ma);font-size:13px;color:var(--xanh);font-weight:500}
+h3{font-size:16px;margin:18px 0 6px}
+.eyebrow{font-family:var(--f-dau);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--xanh)}
+.lead{color:var(--phu);max-width:68ch}
+p,li{max-width:70ch}
+ul,ol{padding-left:22px;margin:6px 0}
+li{margin:3px 0}
+code{font-family:var(--f-ma);font-size:13.5px;background:var(--nen);border:1px solid var(--vien);border-radius:5px;padding:0 5px;overflow-wrap:anywhere}
+a{color:var(--xanh)}
+.status{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin:18px 0 6px}
+.st{border:1px solid var(--vien);border-radius:10px;padding:10px 12px;background:var(--nen);min-width:0}
+.st b{display:block;font-family:var(--f-dau);font-size:14px}
+.st span{font-size:13px;color:var(--phu)}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px;vertical-align:1px}
+.d-ok{background:var(--ok)}.d-cho{background:var(--cam)}.d-chua{background:var(--do)}
+.scroll{overflow-x:auto;margin:8px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:560px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--vien);vertical-align:top}
+th{font-family:var(--f-dau);font-size:13px;color:var(--navy);background:var(--nen)}
+.prompt{position:relative;border:2px solid var(--xanh);border-radius:12px;padding:14px 14px 10px;margin:10px 0}
+.prompt pre{font-family:var(--f-ma);font-size:13px;white-space:pre-wrap;margin:0;max-height:420px;overflow:auto;color:var(--chu)}
+.btn{font-family:var(--f-dau);font-weight:700;font-size:14px;background:var(--xanh);color:#fff;border:0;border-radius:8px;padding:9px 16px;cursor:pointer}
+.btn:focus-visible{outline:3px solid var(--mint);outline-offset:2px}
+.note{border-left:4px solid var(--cam);background:var(--nen);padding:8px 12px;border-radius:0 8px 8px 0;margin:10px 0;font-size:15px}
+.mo{color:var(--phu);font-size:13.5px}
+</style>
+
+<div class="wrap" id="doc">
+  <div class="eyebrow">Bàn giao · cập nhật 12/11/2026 · phiên bản app 2026-11-11b</div>
+  <h1>Bàn giao App share bài (Kỹ thuật phụ trên Cloudflare)</h1>
+  <p class="lead">Tài liệu cho người hoặc AI tiếp nhận luồng "tạo app share bài social" của Trang (SEONGON). Đọc hết trước khi sửa. Cuối trang có câu lệnh dán thẳng cho AI để làm tiếp.</p>
+
+  <div class="status" aria-label="Tình trạng nhanh">
+    <div class="st"><b><span class="dot d-ok"></span>App đang chạy</b><span>ky-thuat-phu.trangvtt.workers.dev</span></div>
+    <div class="st"><b><span class="dot d-ok"></span>Tự cập nhật từ GitHub</b><span>Workers Builds, không cần token</span></div>
+    <div class="st"><b><span class="dot d-ok"></span>Quản trị đã tạo</b><span>Trang là tài khoản đầu tiên</span></div>
+    <div class="st"><b><span class="dot d-cho"></span>Chưa kết nối nền tảng</b><span>Đang dừng ở "Cài đặt 1 lần" Google</span></div>
+    <div class="st"><b><span class="dot d-chua"></span>Chưa đăng thử bài thật</b><span>Cần ít nhất 1 kết nối</span></div>
+  </div>
+
+  <h2><span class="so">01</span>Cách dùng tài liệu</h2>
+  <ul>
+    <li>Kho code <b>công khai</b>: tuyệt đối không ghi email, chìa, token, link Google Sheet của khách vào code hay tài liệu.</li>
+    <li>Mục 04 là các quyết định Trang đã chốt — không làm ngược.</li>
+    <li>Bản chi tiết kỹ thuật nằm cạnh file này: <code>cong-cu/app-share-cloudflare/BAN-GIAO.html</code>.</li>
+  </ul>
+
+  <h2><span class="so">02</span>Người dùng</h2>
+  <ul>
+    <li><b>Vũ Thị Thùy Trang</b>, Marketing/Kỹ thuật SEO ở SEONGON. Gọi là <b>"bạn xinh đẹp"</b>.</li>
+    <li><b>Nontech</b>: nói lời thường, tự làm hết phần kỹ thuật; chỉ nhờ Trang việc chắc chắn không làm thay được (tạo tài khoản, bấm "Cho phép"), <b>mỗi lần 1 bước</b>, đợi xong mới sang bước tiếp.</li>
+    <li>Trang muốn tự động tối đa, ít phải làm theo hướng dẫn. Đọc <code>CLAUDE.md</code> ở gốc kho trước khi làm.</li>
+  </ul>
+
+  <h2><span class="so">03</span>Sản phẩm nằm ở đâu</h2>
+  <div class="scroll"><table>
+    <tr><th>Thứ</th><th>Ở đâu</th></tr>
+    <tr><td>App (trang chủ Kỹ thuật phụ)</td><td><a href="https://ky-thuat-phu.trangvtt.workers.dev" target="_blank" rel="noopener">ky-thuat-phu.trangvtt.workers.dev</a></td></tr>
+    <tr><td>App share bài</td><td><a href="https://ky-thuat-phu.trangvtt.workers.dev/share/" target="_blank" rel="noopener">…/share/</a> · Luồng inlink <code>/inlink/</code> · Soát alt <code>/alt/</code></td></tr>
+    <tr><td>Code</td><td>Kho <code>vuthithuytrang-lab/trang</code>, nhánh <code>claude/relaxed-turing-t34z57</code>, thư mục <code>cong-cu/app-share-cloudflare/</code></td></tr>
+    <tr><td>Cloudflare</td><td>Worker <code>ky-thuat-phu</code> (tài khoản Cloudflare của Trang). Root <code>cong-cu/app-share-cloudflare</code>, production branch <code>claude/relaxed-turing-t34z57</code>, deploy <code>npx wrangler deploy</code></td></tr>
+    <tr><td>Kỹ thuật phụ bản cũ</td><td>GitHub Pages <code>gh-pages</code> → <code>vuthithuytrang-lab.github.io/trang/ky-thuat-phu/</code> (thẻ "App share bài" trỏ sang app mới); nguồn kho app ở nhánh <code>claude/hopeful-cray-qhwbns</code></td></tr>
+    <tr><td>Bản cũ (bỏ)</td><td>Netlify <code>cong-cu/app-share-web/</code> — gói Free hết điểm, chặn cập nhật đến 29/11; Apps Script <code>cong-cu/app-share-bai/</code></td></tr>
+    <tr><td>Quy tắc viết bài + luồng share</td><td><code>.claude/skills/chay-luong-share/</code>, các skill <code>share-bai-*</code>, agent <code>.claude/agents/share-bai-social.md</code></td></tr>
+  </table></div>
+
+  <h2><span class="so">04</span>Quyết định đã chốt — đừng làm ngược</h2>
+  <ol>
+    <li><b>Không token</b>: Trang không tạo/chép/dán token. Đưa app lên bằng Workers Builds nối thẳng GitHub.</li>
+    <li><b>Miễn phí</b>: gói Free Cloudflare, không nhập thẻ. KV Free chỉ 1.000 lần ghi/ngày — không ghi thừa.</li>
+    <li>Một app chung tên <code>ky-thuat-phu</code> chứa nhiều tính năng con (share bài, inlink, alt…).</li>
+    <li>Đăng nhập: <b>tài khoản riêng</b> email + mật khẩu; người đầu tiên là quản trị; người sau chờ duyệt ở tab Thành viên; dùng cho cả team.</li>
+    <li><b>Không nhận mật khẩu</b> email/social của Trang, không tự đăng nhập hộ. Kết nối bằng nút "Cho phép" (OAuth) hoặc chìa của chính nền tảng, nhập trong app, không qua chat.</li>
+    <li>Luật an toàn đăng: chỉ 7h–23h, mỗi tài khoản ≥ 2 tiếng/bài, tối đa 6 bài/ngày (chỉnh trong Cài đặt); trang trả 410/404/451 thì tự dừng. Lý do: đã mất 2 trang WordPress vì đăng dày.</li>
+    <li>Đăng thẳng (publish), không tạo nháp trước.</li>
+    <li>Tab "Hàng đợi" gọi là <b>"Bài đợi"</b>.</li>
+    <li>Hạng mục Internal link trong Kỹ thuật phụ chỉ 2 thẻ: "Luồng inlink" và "Lập kế hoạch internal link".</li>
+    <li>Giao diện theo cẩm nang SEONGON (<code>cong-cu/nhan-dien-thuong-hieu/CAM-NANG-THUONG-HIEU.md</code>), có dòng phiên bản cuối trang.</li>
+  </ol>
+
+  <h2><span class="so">05</span>Tính năng hiện có</h2>
+  <ul>
+    <li><b>Báo cáo</b>: tổng link đã đăng, hôm nay, đang chờ, lỗi; bảng từng tài khoản theo 7 ngày; danh sách link; tải CSV.</li>
+    <li><b>Bài đợi</b>: mỗi bài đăng lên nhiều tài khoản; trạng thái Chờ / Tạm giữ / Đang đăng / Đã đăng / Lỗi; nút Thử lại.</li>
+    <li><b>Thêm bài</b>: 1 bài hoặc hàng loạt (dán từ Google Sheet hoặc JSON); tự vẽ ảnh đại diện 1200×630; ghi link về dòng sheet.</li>
+    <li><b>Kết nối</b>: "Kết nối nhanh" (đăng nhập Google / WordPress 1 lần, dán link tài khoản để tự nhận) + kết nối thủ công 8 nền tảng: Wix, WordPress.com, Blogger, Google Groups, Webflow, Tumblr, Mastodon, Telegram — mỗi bước có nút mở thẳng đúng trang.</li>
+    <li><b>Tự đăng</b>: Cron Cloudflare 10 phút/lần cho mọi người dùng đã duyệt.</li>
+    <li><b>Cài đặt</b> (nhịp an toàn, ghi Google Sheet, đổi mật khẩu), <b>Nhật ký</b>, <b>Thành viên</b> (quản trị duyệt/gỡ).</li>
+  </ul>
+
+  <h2><span class="so">06</span>Cấu trúc dữ liệu</h2>
+  <p>Workers KV, binding <code>KV</code> (Cloudflare tự tạo khi đăng). Mỗi người một vùng riêng.</p>
+  <ul>
+    <li><code>sys:users</code> — danh sách tài khoản (mật khẩu băm PBKDF2), <code>sys:secret</code>, <code>sys:apps</code> — chìa ứng dụng Google/WordPress dùng chung cả team.</li>
+    <li><code>u:&lt;mã người dùng&gt;:conns | settings | items | log | gacc | oauth_nonce | quick_result</code>. Bài đợi gom trong 1 khóa <code>items</code> để tiết kiệm lượt liệt kê của gói Free.</li>
+    <li><code>img:&lt;mã&gt;</code> — ảnh đại diện, mở công khai ở <code>/api/img/&lt;mã&gt;.png</code> để nền tảng tải về.</li>
+  </ul>
+
+  <h2><span class="so">07</span>Quy trình sửa và đưa lên</h2>
+  <ol>
+    <li>Sửa trong <code>cong-cu/app-share-cloudflare/</code> (<code>src/</code> máy chủ, <code>public/share/index.html</code> giao diện). Tăng số phiên bản ở <code>src/worker.js</code> và <code>public/share/index.html</code>.</li>
+    <li>Chạy thử tại máy: <code>npm install</code> rồi <code>npx wrangler dev --test-scheduled</code>; kích lịch thử bằng <code>/cdn-cgi/handler/scheduled</code>.</li>
+    <li><b>Soát rò rỉ</b> trước khi đẩy: tìm email, chìa (IST., GOCSPX, ya29.), ID sheet khách — phải bằng 0.</li>
+    <li>Commit + push lên nhánh <code>claude/relaxed-turing-t34z57</code> → Cloudflare tự build (xem dấu kiểm "Workers Builds" trên commit GitHub), sau ~1 phút <code>/api/status</code> trả phiên bản mới.</li>
+    <li>Tự mở link thật, chụp màn hình máy tính + điện thoại rồi mới báo xong.</li>
+  </ol>
+
+  <h2><span class="so">08</span>Bẫy đã gặp</h2>
+  <ul>
+    <li>Phiên Claude ngủ là vòng đăng chạy nền trong máy ảo chết theo (lỡ 2 bài, rồi dừng hẳn đợt GP 08/11). Việc đăng phải nằm trên Cron Cloudflare.</li>
+    <li>Netlify Free hết điểm sau ~15 lần đăng → chặn cập nhật.</li>
+    <li><code>src/worker.js</code> chỉ được <code>export default</code>; export thêm biến là workerd báo lỗi.</li>
+    <li>KV không cần id chỉ chạy với wrangler đời mới (đang ghim 4.151.3).</li>
+    <li><code>onkeydown = e =&gt; cond &amp;&amp; f()</code> trả false → chặn gõ phím. Luôn viết dạng khối.</li>
+    <li>Wix 403: chìa phải có quyền "Wix Blog" + "Quản lý phương tiện" và chép đủ (bắt đầu IST., chỉ hiện 1 lần lúc tạo).</li>
+    <li>Người khác hay chèn/xóa dòng trong sheet share → luôn tìm lại dòng theo URL bài gốc trước khi ghi.</li>
+    <li>Google/WordPress không có cách "không chìa": quản trị phải khai chìa ứng dụng (Client ID) 1 lần. Wix/Webflow bắt buộc chìa của trang.</li>
+  </ul>
+
+  <h2><span class="so">09</span>Việc còn dở — thứ tự nên làm</h2>
+  <div class="scroll"><table>
+    <tr><th>#</th><th>Việc</th><th>Ai</th></tr>
+    <tr><td>1</td><td>"Cài đặt 1 lần" Google: lấy Project ID dự án <code>share-bai-blogger</code> → bật Blogger/Gmail/Sheets API → Publish app → tạo chìa Web (redirect <code>…/api/oauth/cb</code>) → dán Client ID/Secret vào tab Kết nối</td><td>Trang bấm, AI dẫn từng bước</td></tr>
+    <tr><td>2</td><td>Bấm "Đăng nhập Google" (Gmail sở hữu blog), dán link nhóm Google Groups → kiểm tra Blogger + Groups kết nối được</td><td>Trang 2 cú bấm</td></tr>
+    <tr><td>3</td><td>Xếp 1 bài đợi thử, chờ Cron đăng, kiểm tra link + báo cáo</td><td>AI</td></tr>
+    <tr><td>4</td><td>Kết nối Wix trangjena3 (chìa mới, 2 quyền) — lỗi 403 cũ chưa giải xong</td><td>Trang tạo chìa, AI soát</td></tr>
+    <tr><td>5</td><td>Đưa bài viết sẵn của đợt GP còn thiếu vào Bài đợi (bài ở <code>cong-cu/share-bai-social/gp-share-social/bai/</code>)</td><td>AI</td></tr>
+    <tr><td>6</td><td>Luồng inlink: chặng nào chạy thẳng trên Cloudflare (Google OAuth + Cron) thì thêm nút "Chạy" + tiến độ; còn lại giữ "Copy câu lệnh"</td><td>AI</td></tr>
+    <tr><td>7</td><td>Xóa bản Netlify cũ khi app mới chạy ổn</td><td>Trang đồng ý</td></tr>
+  </table></div>
+  <div class="note">Hiện Trang đang ở bước 1 (mới được hướng dẫn mở "Danh sách dự án" để chép Project ID). Mỗi lần chỉ nhờ 1 bước.</div>
+
+  <h2><span class="so">10</span>Lời khuyên cho người tiếp nhận</h2>
+  <ul>
+    <li>Hỏi 2–3 câu trắc nghiệm có phương án "Nên chọn" trước việc lớn, rồi làm một mạch.</li>
+    <li>Tự chạy thử + chụp màn hình rồi mới báo; nói thật cái chưa chạy, đã thử mấy cách.</li>
+    <li>Không bao giờ đề nghị Trang dán chìa/mật khẩu vào chat — chỉ nhập trong app hoặc bấm "Cho phép".</li>
+    <li>Sau khi giao, luôn hỏi 2 câu: nhìn có lỗi hiển thị không, có ưng không.</li>
+  </ul>
+
+  <h2><span class="so">→</span>Câu lệnh giao việc cho AI tiếp nhận</h2>
+  <p class="mo">Dán nguyên khung dưới vào một phiên Claude Code mở trên kho <code>vuthithuytrang-lab/trang</code>.</p>
+  <div class="prompt">
+<pre id="cau">Chào bạn, mình là Trang (gọi mình là "bạn xinh đẹp"). Mình Nontech: nói dễ hiểu, tự làm hết phần kỹ thuật,
+chỉ nhờ mình khi chắc chắn bạn không làm được (bấm nút, cấp quyền), mỗi lần 1 bước. Đọc CLAUDE.md của repo trước.
+
+Bạn tiếp nhận và phát triển tiếp "App share bài" trong app Kỹ thuật phụ trên Cloudflare:
+- Link: https://ky-thuat-phu.trangvtt.workers.dev (share bài ở /share/)
+- Code: nhánh claude/relaxed-turing-t34z57, thư mục cong-cu/app-share-cloudflare/
+- Đọc trước: cong-cu/app-share-cloudflare/BAN-GIAO-LUONG-APP-SHARE.html và BAN-GIAO.html (cùng thư mục)
+- Cloudflare tự đăng lại mỗi lần push lên nhánh trên (Workers Builds) — không cần token.
+
+Giữ đúng các quyết định ở mục 04 của tài liệu bàn giao (không token, miễn phí, tài khoản riêng,
+không nhận mật khẩu, luật an toàn đăng 7h–23h / ≥2 tiếng / ≤6 bài/ngày, soát rò rỉ trước khi push).
+
+Làm tiếp theo thứ tự mục 09: hướng dẫn mình "Cài đặt 1 lần" Google (mình đang ở bước lấy Project ID),
+kết nối Blogger + Google Groups, xếp 1 bài đợi thử và xác nhận Cron đăng được, rồi các việc còn lại.
+Xong mỗi phần: tự mở link thật, chụp màn hình máy tính + điện thoại, commit + push, báo bằng lời thường.</pre>
+  </div>
+  <p><button class="btn" id="copy" type="button">📋 Chép câu lệnh</button> <button class="btn" id="copyall" type="button" style="background:var(--navy)">📋 Chép toàn bộ tài liệu</button></p>
+</div>
+<script>
+function chep(text, btn, label){
+  const done=()=>{btn.textContent='Đã chép';setTimeout(()=>btn.textContent=label,1800)};
+  try{navigator.clipboard.writeText(text).then(done,()=>{sel(btn)})}catch(e){sel(btn)}
+}
+function sel(btn){const r=document.createRange();r.selectNodeContents(document.getElementById('cau'));const s=getSelection();s.removeAllRanges();s.addRange(r);btn.textContent='Đã chọn sẵn — bấm Cmd/Ctrl + C'}
+document.getElementById('copy').addEventListener('click',e=>chep(document.getElementById('cau').innerText,e.currentTarget,'📋 Chép câu lệnh'));
+document.getElementById('copyall').addEventListener('click',e=>chep(document.getElementById('doc').innerText,e.currentTarget,'📋 Chép toàn bộ tài liệu'));
+</script>
