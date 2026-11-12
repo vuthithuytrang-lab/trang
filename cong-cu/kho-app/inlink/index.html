@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="vi">
 <head>
-<!-- phien-ban: 2026-11-12e -->
+<!-- phien-ban: 2026-11-12g -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Luồng inlink</title>
@@ -105,6 +105,16 @@ th{background:var(--nen);font-size:12px}
 .minh{display:none;padding:0 12px 12px}
 .minh.mo{display:block}
 .o-chang.rong{grid-column:1/-1}
+.luat-rieng{margin-top:12px;padding-top:12px;border-top:1px dashed var(--vien)}
+.luat-rieng h3{font-size:14px;margin:0 0 8px}.luat-rieng h3 span{font-weight:500;font-size:12px;color:var(--mo)}
+.luat-rieng input[type=text]{width:100%}
+#luatKhac,#lGhiChu{font-family:inherit;font-size:13px}
+.soat-luat{border:1px solid var(--vien);border-left:4px solid var(--xanh);border-radius:10px;padding:10px 14px;margin:10px 0;font-size:13px}.soat-luat ul{margin:6px 0 0;padding-left:20px}
+.them-html{display:none;padding:0 12px 12px 38px}
+.o-chang.chon .them-html{display:block}
+.o-chang.chon:has(.them-html){grid-column:1/-1}
+.them-html textarea{width:100%;min-height:110px;font:12px/1.5 ui-monospace,Consolas,monospace}
+.them-html .goi-y{margin:4px 0 6px;font-size:12px}
 .mh{display:flex;align-items:center;gap:8px;flex-wrap:wrap;background:#fff;color:#151515;border:1px solid #E3E5EC;border-radius:10px;padding:10px}
 .mh .khoi-mh{flex:1;min-width:150px;border:1px solid #E3E5EC;border-radius:8px;padding:8px;font-size:11.5px;line-height:1.5;background:#FAFBFD}
 .mh .tieu-mh{font-size:10.5px;font-weight:700;color:#5A6B66;text-transform:uppercase;letter-spacing:.3px;margin-bottom:4px}
@@ -188,9 +198,9 @@ label.o-nhap input,label.o-nhap select,label.o-nhap textarea{margin-top:4px;colo
         <span class="goi-y nho-hon" id="baoBang" style="margin:0"></span>
       </div>
       <div class="khung-bang"><table class="bang-nhap" id="bangNhap"></table></div>
-      <details class="xem-lenh"><summary>Tuỳ chọn thêm: thư mục Drive, quy tắc riêng, dùng file Google Sheet có sẵn</summary>
+      <label class="o-nhap" style="margin-top:12px">Luật riêng của dự án <span style="font-weight:500;color:var(--mo)">(tuỳ chọn, mỗi dòng 1 luật — app nhớ cho lần sau)</span><textarea id="lGhiChu" class="vua" style="min-height:90px" placeholder="vd: Không chèn link tỷ giá vào bài tiết kiệm&#10;Không chèn vào đoạn có &quot;biểu phí&quot;, &quot;khuyến mãi&quot;&#10;Câu chèn xưng &quot;bạn&quot;; người duyệt là chị Lộc"></textarea></label>
+      <details class="xem-lenh"><summary>Tuỳ chọn thêm: thư mục Drive, dùng file Google Sheet có sẵn</summary>
         <label class="o-nhap">Thư mục Google Drive để lưu file Docs<input type="text" id="lDrive" placeholder="Để trống: Claude tự tạo thư mục mới"></label>
-        <label class="o-nhap">Quy tắc riêng<textarea id="lGhiChu" class="vua" placeholder="vd: người duyệt là chị Lộc; giọng văn gần gũi; không chèn link tỷ giá vào bài tiết kiệm…"></textarea></label>
         <label class="o-nhap" style="margin-bottom:0">Đã có file Google Sheet kế hoạch? Dán link (thay cho bảng)</label>
         <input type="text" id="lSheet" placeholder="https://docs.google.com/spreadsheets/d/…" style="margin-top:8px">
         <p class="goi-y nho-hon" id="baoSheet">Có link thì luồng đọc thẳng từ sheet (bảng ở trên có thể để trống). Cần file Google mẫu: <a href="https://docs.google.com/spreadsheets/d/12YoeM9VuWI-JevLLdDiVqkRtDJzNIDRv79s8kVD3tL0/copy" target="_blank" rel="noopener">tạo bản sao</a>.</p>
@@ -266,6 +276,14 @@ lãi suất tiết kiệm | https://ten-mien.vn/lai-suat-tiet-kiem"></textarea>
     <label class="tich"><input type="checkbox" id="neLuat" checked><span>Né đoạn trích luật / nghị định / thông tư, các bước thao tác, bảng</span></label>
     <label class="tich"><input type="checkbox" id="tabMoi" checked><span>Link mở tab mới (<code>target="_blank" rel="noopener noreferrer"</code>)</span></label>
     <label class="tich"><input type="checkbox" id="canDeu"><span>Đoạn có link mới dùng <code>&lt;p style="text-align: justify;"&gt;</code></span></label>
+    <div class="luat-rieng">
+      <h3>Luật riêng của dự án <span>(tuỳ dự án — app nhớ lại cho lần sau)</span></h3>
+      <label class="o-nhap">Không chèn vào đoạn có chứa các cụm (cách nhau bằng dấu phẩy)
+        <input type="text" id="cumNe" placeholder="vd: lãi suất cố định, biểu phí, khuyến mãi"></label>
+      <label class="o-nhap">Luật khác (mỗi dòng 1 luật)
+        <textarea id="luatKhac" class="vua" style="min-height:90px" placeholder="vd: Không chèn link sản phẩm thẻ vào bài về vay&#10;Câu chèn xưng &quot;bạn&quot;, không dùng &quot;quý khách&quot;&#10;Không chèn link trong đoạn kết bài"></textarea></label>
+      <p class="goi-y nho-hon" style="margin:4px 0 0">Ô "không chèn vào đoạn có cụm" được app áp dụng tự động. Ô "Luật khác" được gửi cho AI khi viết câu (mục 5) và hiện thành danh sách soát ở phần kết quả để người duyệt kiểm tra.</p>
+    </div>
   </div>
 
   <div class="the">
@@ -462,7 +480,11 @@ async function chay(){
   if(!bang.ds.length){ alert('Bảng anchor ở mục 3 đang trống hoặc viết sai.'); return; }
   var LUATCHEN = { maxTong:+$('maxTong').value||5, maxUrl:+$('maxUrl').value||1, boDau:(+$('boDau').value||0)/100,
     phanBiet:$('phanBietHoa').checked, khongKe:$('khongKe').checked, neLuat:$('neLuat').checked,
-    tabMoi:$('tabMoi').checked, canDeu:$('canDeu').checked };
+    tabMoi:$('tabMoi').checked, canDeu:$('canDeu').checked,
+    cumNe:$('cumNe').value.split(/[,;\n]/).map(function(x){ return x.trim().toLowerCase(); }).filter(Boolean),
+    luatKhac:$('luatKhac').value.split('\n').map(function(x){ return x.trim(); }).filter(Boolean) };
+  LUAT_RIENG = LUATCHEN.luatKhac;
+  var trungCum = function(t){ t = (t||'').toLowerCase(); for(var q = 0; q < LUATCHEN.cumNe.length; q++) if(t.indexOf(LUATCHEN.cumNe[q]) !== -1) return LUATCHEN.cumNe[q]; return ''; };
   var urlBai = $('urlBaiNay').value.trim();
 
   var html = lamSach(vao).normalize('NFC');
@@ -495,6 +517,7 @@ async function chay(){
       else if(LUAT.test(k.textContent)) cam = 'đoạn trích luật';
     }
     if(!cam && viTriKhoi[iK] < tongChu * LUATCHEN.boDau) cam = 'phần đầu bài';
+    if(!cam && trungCum(k.textContent)) cam = 'đoạn có cụm «' + trungCum(k.textContent) + '» (luật riêng)';
     nutChu.push({nut:n, k:iK, cam:cam});
   }
 
@@ -531,7 +554,7 @@ async function chay(){
   if($('dungAI').checked && khoa && canViet.length){
     var conCho = LUATCHEN.maxTong - daChen.length;
     var dsDoan = khoi.map(function(k, i){ return {i:i, t:k.tagName, x:gocText[i]}; })
-      .filter(function(o){ return o.t === 'P' && o.x.length > 60 && viTriKhoi[o.i] >= tongChu * LUATCHEN.boDau && !(LUATCHEN.neLuat && LUAT.test(o.x)); });
+      .filter(function(o){ return o.t === 'P' && o.x.length > 60 && viTriKhoi[o.i] >= tongChu * LUATCHEN.boDau && !(LUATCHEN.neLuat && LUAT.test(o.x)) && !trungCum(o.x); });
     for(var j = 0; j < canViet.length && conCho > 0; j++){
       var cv = canViet[j]; var u2 = chuanUrl(cv.l.url);
       if((demUrl[u2]||0) >= LUATCHEN.maxUrl) continue;
@@ -603,12 +626,16 @@ async function chay(){
   hien(daChen, deXuat, chuaChen, cacKhoi, bang.loi, urlBai);
 }
 
+var LUAT_RIENG = [], KHOA_LUAT_RIENG = 'kho-app:inlink-luat-rieng';
+(function(){ var cu = {}; try{ cu = JSON.parse(doc(KHOA_LUAT_RIENG) || '{}'); }catch(e){}
+  ['cumNe','luatKhac'].forEach(function(id){ if(cu[id]) $(id).value = cu[id]; $(id).addEventListener('input', function(){ luu(KHOA_LUAT_RIENG, JSON.stringify({cumNe:$('cumNe').value, luatKhac:$('luatKhac').value})); }); }); })();
 async function hoiAI(khoa, moHinh, l, ds){
   var doan = ds.slice(0, 40).map(function(o){ return '[' + o.i + '] ' + o.x.slice(0, 600); }).join('\n');
   var yeuCau = 'Bạn là biên tập viên SEO tiếng Việt. Cần chèn internal link với anchor text «' + l.anchor + '» trỏ về ' + l.url +
     '.\nDưới đây là các đoạn trong bài (số trong ngoặc là mã đoạn):\n' + doan +
     '\n\nChọn MỘT đoạn mà link về chủ đề «' + l.anchor + '» hợp mạch ý nhất, rồi viết 1 câu tiếng Việt hoàn chỉnh, tự nhiên, nối tiếp đúng nội dung đoạn đó, ' +
     'chứa NGUYÊN VĂN cụm «' + l.anchor + '» (đúng chữ, đúng dấu, đúng hoa/thường). Không bịa số liệu, không ghi năm, không viết kiểu "Xem thêm:", "click vào đây", không quảng cáo lố. ' +
+    (LUAT_RIENG.length ? 'Luật riêng của dự án, BẮT BUỘC tuân theo (vi phạm thì trả boQua):\n- ' + LUAT_RIENG.join('\n- ') + '\n' : '') +
     'Nếu không có đoạn nào hợp thì trả boQua kèm lý do ngắn.\nChỉ trả JSON: {"doan": số, "cau": "…"} hoặc {"boQua": "lý do"}';
   var r = await fetch('https://generativelanguage.googleapis.com/v1beta/models/' + encodeURIComponent(moHinh) + ':generateContent', {
     method:'POST', headers:{'Content-Type':'application/json', 'x-goog-api-key':khoa},
@@ -628,7 +655,8 @@ function hien(daChen, deXuat, chuaChen, cacKhoi, loiBang, urlBai){
   $('ketQua').classList.remove('an');
   var tong = daChen.length + deXuat.length + chuaChen.length;
   $('tomTat').innerHTML = [[daChen.length, 'Chèn vào cụm có sẵn'], [deXuat.length, 'Chèn bằng câu AI viết'], [chuaChen.length, 'Chưa chèn'], [cacKhoi.length, 'Đoạn cần sửa trên CMS']]
-    .map(function(x){ return '<div class="o-so"><div class="so">' + x[0] + '</div><div class="ten">' + x[1] + '</div></div>'; }).join('');
+    .map(function(x){ return '<div class="o-so"><div class="so">' + x[0] + '</div><div class="ten">' + x[1] + '</div></div>'; }).join('') +
+    (LUAT_RIENG.length ? '<div class="soat-luat" style="grid-column:1/-1"><b>Soát theo luật riêng của dự án</b> (app không tự kiểm được — người duyệt đọc lại từng link):<ul>' + LUAT_RIENG.map(function(x){ return '<li>☐ ' + thoat(x) + '</li>'; }).join('') + '</ul></div>' : '');
   $('banDuyet').innerHTML = KQ.duyet;
   $('htmlSach').value = KQ.sach;
   $('dsKhoi').innerHTML = cacKhoi.length ? cacKhoi.map(function(k){
@@ -709,12 +737,14 @@ var MINH = {
   gopy:'<div class="mh"><div class="khoi-mh"><div class="tieu-mh">Người duyệt comment</div>…so sánh <mark>tỷ giá USD</mark> giữa…<div class="bl">💬 Chị Lộc: "Câu này hơi cứng, viết lại giúp em"</div></div><span class="mui">→</span>' +
     '<div class="khoi-mh"><div class="tieu-mh">Luồng sửa + trả lời</div>…bạn nên tham khảo <mark>tỷ giá USD</mark> mới nhất tại…<div class="bl">💬 "Em đã viết lại câu cho tự nhiên hơn"</div><div class="o-sheet" style="grid-template-columns:1fr;margin-top:4px"><span class="ok">Duyệt: đã sửa</span></div></div>' +
     '<span class="chu-thich">Đọc comment trong file Docs, sửa thẳng file cũ, trả lời "Em đã…", đổi cột Duyệt thành "đã sửa".</span></div>',
-  html:'<div class="mh"><div class="khoi-mh"><div class="tieu-mh">Bài đã duyệt "ok"</div>…so sánh <mark><span class="lk">tỷ giá USD</span></mark> giữa các ngân hàng…</div><span class="mui">→</span>' +
-    '<div class="khoi-mh"><div class="tieu-mh">Mã HTML để dán lên web</div><code>&lt;p style="text-align: justify;"&gt;…so sánh &lt;a href="…/ty-gia-usd" target="_blank"&gt;tỷ giá USD&lt;/a&gt; giữa…&lt;/p&gt;</code><div class="bl">THAY đoạn "Trước khi đổi tiền…"</div></div>' +
-    '<span class="chu-thich">Ra mã HTML từng đoạn kèm ghi chú THAY / THÊM — mở trang quản trị web, tìm đúng đoạn và dán đè.</span></div>',
+  html:'<div class="mh"><div class="khoi-mh"><div class="tieu-mh">Bài đã duyệt "ok"</div>…so sánh <mark><span class="lk">tỷ giá USD</span></mark> giữa các ngân hàng…</div><span class="mui">+</span>' +
+    '<div class="khoi-mh"><div class="tieu-mh">Mã HTML gốc của web (bạn dán)</div><code>&lt;p class="noi-dung"&gt;…so sánh tỷ giá USD giữa…&lt;/p&gt;</code></div><span class="mui">→</span>' +
+    '<div class="khoi-mh"><div class="tieu-mh">Mã HTML để dán lên web</div><code>&lt;p class="noi-dung"&gt;…so sánh &lt;a href="…/ty-gia-usd"&gt;tỷ giá USD&lt;/a&gt; giữa…&lt;/p&gt;</code><div class="bl">THAY đoạn "Trước khi đổi tiền…"</div></div>' +
+    '<span class="chu-thich">Ra mã HTML từng đoạn, giữ đúng thẻ và định dạng của web (nhờ mã gốc bạn dán), kèm ghi chú THAY / THÊM — mở trang quản trị web, tìm đúng đoạn và dán đè.</span></div>',
   appscript:'<div class="mh"><div class="khoi-mh"><div class="tieu-mh">⏰ Mỗi giờ, tự chạy trong Google Sheet</div><div class="o-sheet"><span class="h">URL bài</span><span class="h">File Docs</span><span class="h">Đủ anchor</span><span>…/bai-1</span><span class="ok">Đã tạo ✓</span><span>5/5</span><span>…/bai-2</span><span class="ok">Đã tạo ✓</span><span>3/3</span><span>…/bai-moi</span><span class="x">đang làm…</span><span class="x"></span></div></div>' +
     '<span class="chu-thich">Cài 1 lần vào file sheet: thêm dòng mới là tự có file Docs, không cần mở Claude, không tốn lượt dùng.</span></div>'
 };
+var KHOA_HTML = 'kho-app:inlink-html-goc';
 var SO_CAP = 5, KHOA_LUONG = 'kho-app:luong-inlink', KHOA_BANG = 'kho-app:bang-inlink';
 var COT = ['URL bài viết (bài sẽ chèn anchor)'];
 for(var c = 1; c <= SO_CAP; c++){ COT.push('Anchor ' + c); COT.push('Link chèn ' + c); }
@@ -855,10 +885,17 @@ function veChang(){
   $('dsChang').innerHTML = CHANG.map(function(c){
     var co = tich.indexOf(c.ma) !== -1;
     return '<div class="o-chang' + (co ? ' chon' : '') + '"><label class="chang"><input type="checkbox" data-ma="' + c.ma + '"' + (co ? ' checked' : '') + '><div><b>' + c.ten + '</b><span>' + c.ta + '</span></div></label>' +
+      (c.ma === 'html' ? '<div class="them-html"><label style="font-size:12.5px;font-weight:700">Mã HTML gốc của bài trên web <span style="font-weight:500;color:var(--mo)">(nên có — để mã trả về khớp đúng web)</span></label>' +
+        '<p class="goi-y">Mở bài trong trang quản trị web → chuyển sang chế độ <b>Văn bản / HTML</b> (hoặc nút <b>&lt;/&gt;</b>) → Ctrl+A, Ctrl+C → dán vào ô dưới. Nhiều bài: dán lần lượt, <b>trước mỗi bài ghi 1 dòng URL bài</b>. Để trống thì Claude tự lấy mã HTML từ trang web đang chạy.</p>' +
+        '<textarea id="lHtml" spellcheck="false" placeholder="https://website.vn/bai-1\n&lt;h2&gt;...&lt;/h2&gt;\n&lt;p style=&quot;text-align: justify;&quot;&gt;...&lt;/p&gt;\n\nhttps://website.vn/bai-2\n..."></textarea><span class="goi-y" id="baoHtml"></span></div>' : '') +
       '<button type="button" class="xem-them" data-xem="' + c.ma + '">Xem thêm ▾</button><div class="minh" id="minh-' + c.ma + '">' + (MINH[c.ma] || '') + '</div></div>';
   }).join('');
   $('dsChang').querySelectorAll('input').forEach(function(x){ x.onchange = function(){ x.closest('.o-chang').classList.toggle('chon', x.checked); luuLuong(); }; });
   $('dsChang').querySelectorAll('[data-xem]').forEach(function(b){ b.onclick = function(){ var m = $('minh-' + b.dataset.xem); var mo = m.classList.toggle('mo'); b.closest('.o-chang').classList.toggle('rong', mo); b.textContent = mo ? 'Thu gọn ▴' : 'Xem thêm ▾'; }; });
+  var oh = $('lHtml');
+  if(oh){ oh.value = doc(KHOA_HTML); var bh = function(){ var n = (oh.value.match(/<p[\s>]/gi) || []).length, u = (oh.value.match(/^\s*https?:\/\/\S+\s*$/gm) || []).length;
+      $('baoHtml').textContent = oh.value.trim() ? '✓ Đã nhận ' + Math.round(oh.value.length / 1024 * 10) / 10 + ' KB mã HTML (' + n + ' đoạn' + (u ? ', ' + u + ' bài' : '') + ').' : ''; };
+    bh(); oh.addEventListener('input', function(){ luu(KHOA_HTML, oh.value); bh(); }); }
   veBang(); kiemSheet();
 }
 function kiemSheet(){
@@ -875,7 +912,7 @@ function rapLenh(o, chon, dong){
   L.push('');
   L.push('Chạy LUỒNG INLINK cho dự án: ' + (o.lDuAn || '(chưa đặt tên — tự đặt theo tên miền trong bảng)'));
   if(o.lDrive) L.push('- Thư mục Google Drive lưu file Docs: ' + o.lDrive);
-  if(o.lGhiChu) L.push('- Quy tắc riêng: ' + o.lGhiChu.replace(/\n+/g, '; '));
+  if(o.lGhiChu){ L.push('- LUẬT RIÊNG CỦA DỰ ÁN (bắt buộc, ưu tiên hơn luật chung; dòng nào vi phạm thì để thiếu và ghi lý do):'); o.lGhiChu.split(/\n+/).forEach(function(x){ if(x.trim()) L.push('   • ' + x.trim()); }); }
   if(dong.length){
     L.push('- Kế hoạch mình nhập trên app (mỗi dòng 1 bài; các cột cách nhau bằng dấu TAB) ở cuối tin nhắn này.');
     L.push('- Bước 0: tạo 1 file Google Sheet tên "Inlink – ' + (o.lDuAn || 'dự án') + '" trong Drive của mình, tab "Kế hoạch inlink" gồm đúng các cột của bảng + các cột kết quả: File Google Docs | Đủ anchor | Duyệt (ok / cần sửa) | Phản hồi KT | HTML dán CMS | Tình trạng. Dán dữ liệu vào, gửi mình link file trước khi chạy tiếp. Từ đó mọi kết quả ghi vào file này.');
@@ -884,7 +921,13 @@ function rapLenh(o, chon, dong){
   L.push('- Luôn đọc lại hàng 1 trước mỗi đợt; khớp dòng theo URL; chỉ ghi ô trống, không xoá ô.');
   L.push('');
   L.push('Làm lần lượt ' + chon.length + ' việc, xong việc này mới sang việc sau:');
-  chon.forEach(function(c, i){ L.push((i + 1) + '. ' + c.lenh); });
+  var htmlGoc = ($('lHtml') && chon.some(function(c){ return c.ma === 'html'; })) ? $('lHtml').value.trim() : '';
+  chon.forEach(function(c, i){
+    L.push((i + 1) + '. ' + c.lenh);
+    if(c.ma === 'html') L.push(htmlGoc
+      ? '   + Dùng MÃ HTML GỐC CỦA WEB mình dán ở cuối tin nhắn (giữa "===== HTML GỐC" và "===== HẾT HTML GỐC"; dòng URL đứng trước mã của bài đó) làm chuẩn: mỗi khối trả về phải lấy NGUYÊN đoạn <p>/<li> gốc (giữ đúng thẻ, class, style, <strong>, link cũ, khoảng trắng), chỉ thêm thẻ <a>; định dạng link mới (target, rel, có/không dấu / cuối URL) bắt chước link nội bộ sẵn có trong mã gốc; ghi chú THAY chép đúng đoạn HTML gốc để mình Ctrl+F tìm được trong trang quản trị. Bài nào không có trong phần dán thì tự tải mã HTML từ URL (phần thân bài) và báo rõ bài nào dùng mã tự tải.'
+      : '   + Mình chưa dán mã HTML gốc: tự tải mã HTML phần thân bài từ URL trên web, lấy NGUYÊN đoạn <p>/<li> gốc (giữ thẻ, class, style, link cũ) rồi chỉ thêm thẻ <a>; định dạng link mới bắt chước link nội bộ sẵn có của web; báo rõ là dùng mã tự tải (có thể lệch với trình soạn thảo).');
+  });
   L.push('');
   L.push('Luật chèn: anchor đúng nguyên văn; tối đa 5 link/bài; không chèn trong 25% đầu bài, tiêu đề, các bước, đoạn định nghĩa; hạn chế đoạn trích luật; không 2 link ở 2 đoạn liền nhau; giữ link cũ; câu chèn là câu hoàn chỉnh, không câu cụt "Xem thêm: …", không bịa số liệu; không có chỗ hợp thì để thiếu và ghi lý do. Không dán chìa khoá/token vào chat hay repo.');
   L.push('');
@@ -895,6 +938,12 @@ function rapLenh(o, chon, dong){
     L.push(COT.join('\t'));
     dong.forEach(function(d){ L.push(d.map(function(v){ return v.replace(/[\t\n]/g, ' '); }).join('\t').replace(/\t+$/, '')); });
     L.push('===== HẾT KẾ HOẠCH =====');
+  }
+  if(htmlGoc){
+    L.push('');
+    L.push('===== HTML GỐC CỦA WEB =====');
+    L.push(htmlGoc);
+    L.push('===== HẾT HTML GỐC =====');
   }
   return L.join('\n');
 }
