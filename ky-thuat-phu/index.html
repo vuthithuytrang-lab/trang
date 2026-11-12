@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="vi">
 <head>
-<!-- phien-ban: 202611111718 -->
+<!-- phien-ban: 202611121720 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Kỹ thuật phụ</title>
@@ -129,8 +129,8 @@ var LOAI = {
 var APPS = [
   // ---- Internal link
   {ten:'Luồng inlink', hang:'inlink', loai:'web', mo:'../inlink/',
-   tinh:['Tạo Docs từ URL + chèn anchor theo sheet','Gắn inlink vào Doc có sẵn','Sửa theo góp ý người duyệt','Xuất khối HTML dán CMS','Cài tự chạy mỗi giờ trong Sheet','Chèn nhanh 1 bài trên trình duyệt'],
-   mo_ta:'Gộp mọi việc chèn internal link vào 1 chỗ: tích chặng cần làm, app ráp thành 1 câu lệnh chạy trọn luồng đúng thứ tự — hoặc chèn nhanh 1 bài ngay trên trình duyệt (đúng luật 5 link/bài, né đoạn luật, xuất bản duyệt tô vàng + HTML).'},
+   tinh:['Tạo file Docs có chèn link','Chèn link vào Docs có sẵn','Sửa theo góp ý','Lấy mã HTML dán web','Chạy tự động mỗi giờ','Chèn nhanh 1 bài'],
+   mo_ta:'Điền 1 file sheet mẫu → dán link → chọn việc cần làm → bấm chạy. Hoặc chèn nhanh 1 bài ngay trên trình duyệt (đúng luật 5 link/bài, né đoạn luật, xuất bản duyệt tô vàng + HTML).'},
   {ten:'Lập kế hoạch internal link', hang:'inlink', loai:'claude', cau:'Làm kế hoạch internal link cho dự án <tên dự án> — danh sách trang đích ở <link sheet>',
    nguon:GH + 'claude/hopeful-cray-qhwbns/.claude/skills/ke-hoach-internal-link',
    mo_ta:'Đọc bài trên website, chọn bài nguồn cùng chủ đề, anchor và câu chèn tự nhiên, dựng bộ tab Kế hoạch / Plan inlink / Link trỏ về / Còn thiếu cho mọi dự án.'},
@@ -192,8 +192,8 @@ var APPS = [
   {ten:'Share bài đa nền tảng', hang:'social', loai:'claude', cau:'Chạy luồng share các bài có nhãn <nhãn> trong sheet <link>',
    nguon:GH + 'claude/relaxed-turing-t34z57/.claude/skills/chay-luong-share',
    mo_ta:'Đọc sheet, viết lại bài theo quy tắc, đăng WordPress, Blogger, Wix, Tumblr, Mastodon, Webflow, Google Groups, Pinterest; ghi link về sheet, giãn lịch để không bị khoá.'},
-  {ten:'App share bài', hang:'social', loai:'web', mo:'https://ky-thuat-phu.trangvtt.workers.dev/share/',
-   nguon:GH + 'claude/relaxed-turing-t34z57/cong-cu/app-share-cloudflare',
+  {ten:'App share web (Netlify)', hang:'social', loai:'web', mo:'', sap:'Đang chờ cài lên Netlify',
+   nguon:GH + 'claude/relaxed-turing-t34z57/cong-cu/app-share-web',
    mo_ta:'Kết nối nhiều nền tảng có hướng dẫn từng bước, xếp bài đợi, tự đăng 10 phút/lần, có báo cáo.'},
   {ten:'Web vệ tinh WordPress', hang:'social', loai:'chrome', tai:'tai/tien-ich-web-ve-tinh.zip',
    nguon:GH + 'claude/compassionate-meitner-x3ff2f/cong-cu/tien-ich-web-ve-tinh',
@@ -222,7 +222,7 @@ var BIEU = {
   'tai-lieu':'<svg viewBox="0 0 24 24"><path d="M6 3h9l3 3v15H6z"/><path d="M9 11h6M9 15h6"/></svg>'
 };
 var $ = function(id){ return document.getElementById(id); };
-$('ban').textContent = (document.documentElement.innerHTML.match(/phien-ban: 202611111718([0-9a-z-]+)/)||[])[1] || '';
+$('ban').textContent = (document.documentElement.innerHTML.match(/phien-ban: 202611121720([0-9a-z-]+)/)||[])[1] || '';
 function luu(k, v){ try{ localStorage.setItem(k, v); }catch(e){} }
 function doc(k){ try{ return localStorage.getItem(k) || ''; }catch(e){ return ''; } }
 function thoat(s){ return (s||'').replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }

@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="vi">
 <head>
-<!-- phien-ban: 202611111718 -->
+<!-- phien-ban: 202611121720 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Luồng inlink</title>
@@ -95,11 +95,23 @@ th{background:var(--nen);font-size:12px}
 .chon-bai select{flex:1}
 .bao{font-size:12.5px;font-weight:600;color:var(--ok-chu)}
 .chan{font-size:12px;color:var(--mo);text-align:center;margin-top:24px}
-.the-chon.lon{margin:0 0 16px;flex-wrap:wrap}
+.the-chon.lon{margin:0 auto 16px;flex-wrap:wrap;max-width:860px}
 .the-chon.lon button{padding:9px 16px;font-size:13.5px;font-weight:700}
+.cac-buoc{max-width:860px;margin:0 auto}
+.buoc{display:flex;gap:14px;background:var(--the);border:1px solid var(--vien);border-radius:16px;padding:18px;margin-bottom:12px}
+.so-buoc{flex:none;width:34px;height:34px;border-radius:50%;background:var(--xanh);color:#fff;font-weight:800;display:grid;place-items:center;font-size:16px}
+.noi-dung{flex:1;min-width:0}
+.noi-dung h2{margin:4px 0 6px;font-size:16px;font-weight:800;color:var(--chu)}
+.nho-hon{font-size:12px;margin-top:8px}
+.luoi-chang{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:700px){.luoi-chang{grid-template-columns:1fr}.buoc{padding:14px}}
+.lon-nut{font-size:16px;padding:14px 28px}
+.xem-lenh{margin-top:10px;font-size:12.5px;color:var(--mo)}
+.xem-lenh textarea{margin-top:8px}
+a.nut{display:inline-block;text-decoration:none}
 label.o-nhap{display:block;font-size:12.5px;font-weight:600;margin:9px 0;color:var(--mo)}
 label.o-nhap input,label.o-nhap select,label.o-nhap textarea{margin-top:4px;color:var(--chu)}
-.chang{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--vien);border-radius:12px;padding:10px 12px;margin-bottom:8px;cursor:pointer}
+.chang{display:flex;gap:10px;align-items:flex-start;border:1.5px solid var(--vien);border-radius:12px;padding:12px;cursor:pointer;margin:0}
 .chang.chon{border-color:var(--xanh);background:rgba(0,74,239,.06)}
 .chang input{margin-top:4px}
 .chang b{display:block;font-size:13.5px}
@@ -115,53 +127,54 @@ label.o-nhap input,label.o-nhap select,label.o-nhap textarea{margin-top:4px;colo
 
 <div class="bang-ten"><div class="trong">
   <h1>Luồng <b>inlink</b></h1>
-  <p>Một nơi cho mọi việc chèn internal link: tích chặng cần làm, app ráp thành một câu lệnh chạy trọn luồng theo đúng thứ tự — hoặc chèn nhanh một bài ngay trên trình duyệt.</p>
+  <p>Điền 1 file sheet mẫu → dán link → chọn việc cần làm → bấm chạy. Hoặc chèn nhanh 1 bài ngay trên trình duyệt.</p>
 </div></div>
 
 <div class="khung">
 <div class="the-chon lon" id="cheDoApp">
-  <button class="chon" data-phan="luong">① Chạy luồng theo sheet (tích chặng)</button>
-  <button data-phan="chen">② Chèn nhanh 1 bài trên trình duyệt</button>
+  <button class="chon" data-phan="luong">Chạy theo file sheet</button>
+  <button data-phan="chen">Chèn nhanh 1 bài (không cần sheet)</button>
 </div>
 
-<div id="phanLuong">
-<div class="luoi">
-<div>
-  <div class="the">
-    <h2>1. Thông tin dự án</h2>
-    <p class="goi-y">Điền 1 lần, app nhớ trên máy này. Ô nào không biết thì để trống — luồng sẽ tự đọc từ sheet hoặc hỏi lại bạn một lần.</p>
-    <label class="o-nhap">Tên dự án<input type="text" id="lDuAn" placeholder="vd: Techcombank, Okamura…"></label>
-    <label class="o-nhap">Link Google Sheet kế hoạch<input type="text" id="lSheet" placeholder="https://docs.google.com/spreadsheets/d/…"></label>
-    <label class="o-nhap">Tên tab<input type="text" id="lTab" placeholder="vd: Plan internal links - Tổng"></label>
-    <label class="o-nhap">Thư mục Google Drive chứa file Docs (nếu tạo file)<input type="text" id="lDrive" placeholder="https://drive.google.com/drive/folders/…"></label>
-    <label class="o-nhap">Phạm vi<select id="lPhamVi">
-      <option value="mọi dòng có URL mà cột file còn trống">Mọi dòng còn trống (chạy nốt)</option>
-      <option value="chỉ các dòng tôi ghi ở ô Ghi chú bên dưới">Chỉ các dòng tôi ghi ở Ghi chú</option>
-      <option value="toàn bộ các dòng trong tab">Toàn bộ tab</option>
-    </select></label>
-    <label class="o-nhap">Ghi chú / quy tắc riêng của dự án<textarea id="lGhiChu" class="vua" placeholder="vd: chỉ làm dòng 20–45; bỏ dòng Tình trạng 'Đã done'; người duyệt là chị Lộc…"></textarea></label>
+<div id="phanLuong" class="cac-buoc">
+  <div class="buoc">
+    <div class="so-buoc">1</div>
+    <div class="noi-dung">
+      <h2>Lấy file mẫu và điền</h2>
+      <p class="goi-y">Bấm nút dưới → Google hỏi "Tạo bản sao" → bấm <b>Tạo bản sao</b>. Điền 2 tab có nền màu: <b>Thông tin dự án</b> và <b>Kế hoạch inlink</b> (mỗi dòng 1 bài: URL bài + các cặp anchor / link chèn). Các cột xám để trống.</p>
+      <div class="hang"><a class="nut" href="https://docs.google.com/spreadsheets/d/12YoeM9VuWI-JevLLdDiVqkRtDJzNIDRv79s8kVD3tL0/copy" target="_blank" rel="noopener">Tạo bản sao file mẫu</a>
+      <a class="nut phu nho" href="https://docs.google.com/spreadsheets/d/12YoeM9VuWI-JevLLdDiVqkRtDJzNIDRv79s8kVD3tL0/edit" target="_blank" rel="noopener">Xem file mẫu</a></div>
+      <p class="goi-y nho-hon">Đã có sheet kế hoạch cũ (vd tab "Plan internal links")? Dùng luôn file đó, bỏ qua bước này.</p>
+    </div>
   </div>
-</div>
-<div>
-  <div class="the">
-    <h2>2. Tích các chặng cần chạy</h2>
-    <p class="goi-y">Chặng chạy theo thứ tự từ trên xuống. Tích 1 chặng hay nhiều chặng đều được.</p>
-    <div id="dsChang"></div>
-  </div>
-  <div class="hang">
-    <button class="nut" id="nutRap">Tạo câu lệnh chạy luồng</button>
-    <button class="nut phu" id="nutChonHet">Tích tất cả</button>
-    <button class="nut phu" id="nutBoHet">Bỏ tích</button>
-  </div>
-</div>
-</div>
 
-<div class="the an" id="khungLenh">
-  <h2>3. Câu lệnh chạy luồng</h2>
-  <p class="goi-y">Bấm Copy rồi dán vào Claude Code (luồng làm inlink). Claude sẽ chạy lần lượt đúng các chặng bạn tích và báo lại từng chặng.</p>
-  <div class="hang" style="margin-bottom:8px"><button class="nut" id="nutChepLenh">Copy câu lệnh</button><a class="nut phu" href="https://claude.ai/code" target="_blank" rel="noopener">Mở Claude Code</a><span class="bao" id="baoLenh"></span></div>
-  <textarea id="cauLenh" class="cao" readonly></textarea>
-</div>
+  <div class="buoc">
+    <div class="so-buoc">2</div>
+    <div class="noi-dung">
+      <h2>Dán link file đã điền</h2>
+      <input type="text" id="lSheet" placeholder="https://docs.google.com/spreadsheets/d/…">
+      <p class="goi-y nho-hon" id="baoSheet">Mở file → bấm thanh địa chỉ → Ctrl+C → dán vào đây.</p>
+    </div>
+  </div>
+
+  <div class="buoc">
+    <div class="so-buoc">3</div>
+    <div class="noi-dung">
+      <h2>Chọn việc cần làm</h2>
+      <p class="goi-y">Bấm vào ô để chọn. Chọn nhiều việc thì luồng làm lần lượt từ trên xuống.</p>
+      <div id="dsChang" class="luoi-chang"></div>
+    </div>
+  </div>
+
+  <div class="buoc cuoi">
+    <div class="so-buoc">4</div>
+    <div class="noi-dung">
+      <h2>Bấm chạy</h2>
+      <button class="nut lon-nut" id="nutRap">Gửi cho Claude chạy</button>
+      <p class="goi-y" id="baoLenh">App sẽ copy sẵn yêu cầu và mở Claude. Bạn chỉ cần bấm vào ô chat, <b>Ctrl+V</b> rồi <b>Enter</b>.</p>
+      <details class="xem-lenh"><summary>Xem nội dung sẽ gửi</summary><textarea id="cauLenh" class="cao" readonly></textarea></details>
+    </div>
+  </div>
 </div>
 
 <div id="phanChen" class="an">
@@ -264,7 +277,7 @@ lãi suất tiết kiệm | https://ten-mien.vn/lai-suat-tiet-kiem"></textarea>
    không 2 link kề nhau, bản duyệt tô vàng + ghi chú đỏ nội dung gốc).
    Mọi xử lý chạy trong trình duyệt; chỉ gọi ra ngoài khi bạn bật AI (Gemini).
    ========================================================================== */
-var PHIEN_BAN = (document.documentElement.innerHTML.match(/phien-ban: 202611111718([0-9a-z-]+)/)||[])[1] || '';
+var PHIEN_BAN = (document.documentElement.innerHTML.match(/phien-ban: 202611121720([0-9a-z-]+)/)||[])[1] || '';
 document.getElementById('banApp').textContent = PHIEN_BAN;
 var KHOA_LUU = 'kho-app:gemini-key', KHOA_MH = 'kho-app:gemini-model';
 function luu(k, v){ try{ localStorage.setItem(k, v); }catch(e){} }
@@ -628,84 +641,69 @@ $('nutViDu').onclick = function(){
 };
 
 /* ============================================================================
-   ① CHẠY LUỒNG THEO SHEET — gộp: chèn inlink vào Docs theo sheet (chen-internal-link),
-   gắn inlink vào Doc có sẵn (inlink-generator), sửa theo góp ý, xuất HTML từ Docs đã duyệt
-   (inlink-html), App Inlink tự chạy trong Google Sheet (Apps Script). Tích chặng → ráp câu lệnh.
+   CHẠY THEO FILE SHEET — người dùng chỉ: lấy file mẫu → dán link → chọn việc → bấm chạy.
+   Phần kỹ thuật (skill nào, nhánh nào) nằm trong yêu cầu gửi Claude, không hiện ra giao diện.
    ========================================================================== */
-var NGUON = 'repo vuthithuytrang-lab/trang';
 var CHANG = [
-  {ma:'docs', ten:'Tạo file Google Docs từ URL + chèn đủ anchor', nhan:'chen-internal-link · luồng A',
-   ta:'Tải bài từ URL ở sheet, tạo file Docs, chèn đủ anchor (tô vàng + ghi chú đỏ nội dung gốc), soát chữ, ghi link file vào sheet ngay sau mỗi lô.',
-   lenh:'Chạy luồng A của skill chen-internal-link (nguồn: nhánh claude/confident-hopper-wh5wrt, thư mục .claude/skills/chen-internal-link — nếu chưa có trong phiên thì lấy về bằng git rồi đọc SKILL.md và references/BAI-HOC-GOP-Y.md trước). Với mỗi dòng trong phạm vi: tải bài từ URL, tạo file Google Docs trong thư mục Drive đã cho, chèn đủ anchor đúng nguyên văn (tô vàng + ghi chú đỏ [Nội dung gốc trước khi chèn: …]), soát lại từng chữ sau khi tải lên, ghi link file vào cột FILE của đúng dòng (khớp theo URL) ngay sau mỗi lô.'},
-  {ma:'docco', ten:'Gắn inlink vào file Google Doc có sẵn', nhan:'inlink-generator',
-   ta:'Dành cho bài viết mới đã có file Doc (chưa đăng): đọc anchor + URL từ sheet, tìm đúng chỗ trong Doc rồi gắn link.',
-   lenh:'Với các dòng đã có sẵn link file Google Doc (bài viết mới chưa đăng), chạy theo skill inlink-generator (nguồn: nhánh claude/new-session-8hxm31, .claude/skills/inlink-generator): đọc anchor + URL đích của dòng, tìm đúng vị trí trong Doc (không phải heading, không chèn nhầm cụm), gắn link thẳng vào file, không tạo file mới.'},
-  {ma:'gopy', ten:'Sửa theo góp ý người duyệt', nhan:'chen-internal-link · luồng B',
-   ta:'Đọc comment còn mở trong các file Docs, sửa thẳng file cũ, phản hồi bằng comment "Em đã …", đổi ô duyệt thành "đã sửa".',
-   lenh:'Chạy luồng B của skill chen-internal-link: quét comment còn mở của các file Docs trong phạm vi, ô duyệt bắt đầu bằng "c …" là người duyệt đã tự sửa thì không đụng; sửa thẳng file cũ (không tạo file mới), phản hồi bằng comment "Em đã …" gắn vào câu đã sửa, đổi ô duyệt thành "đã sửa". Làm 1 bài mẫu cho tôi duyệt trước khi chạy hàng loạt.'},
-  {ma:'html', ten:'Xuất khối HTML từng đoạn để dán CMS', nhan:'inlink-html',
-   ta:'Với bài đã được duyệt "ok": đọc file Docs, ra khối HTML từng đoạn kèm ghi chú THAY / THÊM / KIỂM TRA / CHƯA TÌM THẤY.',
-   lenh:'Với các dòng đã được duyệt "ok" và chưa hoàn thành: chạy theo cong-cu/inlink-html (nhánh claude/exciting-hopper-p4gh27: loc_bai.py, tao_html.py, kiem_tra.py) — mở file Docs, mỗi đoạn có link mới thành 1 khối HTML <p style="text-align: justify;">, link target="_blank" rel="noopener noreferrer", kèm ghi chú THAY / THÊM / KIỂM TRA / CHƯA TÌM THẤY; ghi vào cột HTML của đúng dòng rồi đối chiếu lại bằng kiem_tra.py.'},
-  {ma:'appscript', ten:'Cài tự chạy mỗi giờ trong Google Sheet', nhan:'App Inlink · Apps Script',
-   ta:'Cài App Inlink vào sheet: mỗi giờ tự tạo Docs + chèn anchor cho dòng còn trống, quét góp ý vào tab "Sổ góp ý". Không cần Claude, không tốn token.',
-   lenh:'Cài App Inlink (Google Apps Script) vào sheet này theo cong-cu/app-inlink/README.md (nhánh claude/confident-hopper-wh5wrt): gộp các file .gs, hướng dẫn tôi dán vào Tiện ích mở rộng → Apps Script TỪNG BƯỚC MỘT, bật trình kích hoạt mỗi giờ, chạy thử 1 dòng và kiểm tra kết quả. Khoá Gemini (nếu cần) tôi tự dán vào Thuộc tính tập lệnh — không dán vào chat.'}
+  {ma:'docs', ten:'Tạo file Google Docs có chèn link', ta:'Mỗi bài trong sheet → 1 file Docs, chữ chèn tô vàng để duyệt. Link file tự điền vào sheet.',
+   lenh:'TẠO FILE GOOGLE DOCS CÓ CHÈN LINK — chạy luồng A của skill chen-internal-link (nguồn: nhánh claude/confident-hopper-wh5wrt, .claude/skills/chen-internal-link; lấy về bằng git nếu phiên chưa có, đọc SKILL.md + references/BAI-HOC-GOP-Y.md trước). Mỗi dòng còn trống cột "File Google Docs": tải bài từ URL, tạo file Docs trong thư mục Drive ở tab "Thông tin dự án", chèn đủ anchor đúng nguyên văn (tô vàng + ghi chú đỏ [Nội dung gốc trước khi chèn: …]), soát lại từng chữ sau khi tải lên, ghi link file vào cột "File Google Docs" và "Đủ x/N anchor" vào cột "Đủ anchor" ngay sau mỗi lô.'},
+  {ma:'docco', ten:'Chèn link vào file Docs có sẵn', ta:'Bài viết mới đã có file Docs (chưa đăng): chèn link thẳng vào file đó.',
+   lenh:'CHÈN LINK VÀO FILE DOCS CÓ SẴN — với dòng đã có link file Docs ở cột "File Google Docs" nhưng chưa chèn: theo skill inlink-generator (nhánh claude/new-session-8hxm31, .claude/skills/inlink-generator), tìm đúng vị trí (không phải heading, không chèn nhầm cụm) và gắn link thẳng vào file, không tạo file mới; ghi "Đủ x/N anchor".'},
+  {ma:'gopy', ten:'Sửa theo góp ý người duyệt', ta:'Đọc comment trong file Docs, sửa thẳng file, trả lời "Em đã…", đổi cột Duyệt thành "đã sửa".',
+   lenh:'SỬA THEO GÓP Ý NGƯỜI DUYỆT — chạy luồng B của skill chen-internal-link cho các dòng cột "Duyệt" = "cần sửa" hoặc file còn comment mở: sửa thẳng file cũ, trả lời bằng comment "Em đã …" gắn vào câu đã sửa, tóm tắt vào cột "Phản hồi KT", đổi cột "Duyệt" thành "đã sửa". Làm 1 bài mẫu cho tôi duyệt trước khi chạy hàng loạt.'},
+  {ma:'html', ten:'Lấy mã HTML để dán lên web', ta:'Bài đã duyệt "ok" → mã HTML từng đoạn đã chèn link, dán thẳng lên trang quản trị web.',
+   lenh:'LẤY MÃ HTML ĐỂ DÁN LÊN WEB — với dòng cột "Duyệt" = "ok": theo cong-cu/inlink-html (nhánh claude/exciting-hopper-p4gh27: loc_bai.py, tao_html.py, kiem_tra.py) đọc file Docs, mỗi đoạn có link mới thành 1 khối <p style="text-align: justify;"> (link target="_blank" rel="noopener noreferrer") kèm ghi chú THAY / THÊM / KIỂM TRA, ghi vào cột "HTML dán CMS", đối chiếu lại rồi đổi "Tình trạng" thành "Đã xong".'},
+  {ma:'appscript', ten:'Cho chạy tự động mỗi giờ', ta:'Cài vào chính file sheet: mỗi giờ tự làm dòng mới, không cần mở Claude.',
+   lenh:'CHO CHẠY TỰ ĐỘNG MỖI GIỜ — cài App Inlink (Google Apps Script, cong-cu/app-inlink trên nhánh claude/confident-hopper-wh5wrt) vào chính file sheet này: chỉnh cấu hình đúng cột của file mẫu, hướng dẫn tôi dán vào Tiện ích mở rộng → Apps Script TỪNG BƯỚC MỘT, bật chạy mỗi giờ, chạy thử 1 dòng. Khoá Gemini (nếu cần) tôi tự dán vào Thuộc tính tập lệnh — không dán vào chat.'}
 ];
 var KHOA_LUONG = 'kho-app:luong-inlink';
-function veChang(){
-  var luuCu = {}; try{ luuCu = JSON.parse(doc(KHOA_LUONG) || '{}'); }catch(e){}
-  ['lDuAn','lSheet','lTab','lDrive','lPhamVi','lGhiChu'].forEach(function(id){ if(luuCu[id] !== undefined) $(id).value = luuCu[id]; });
-  var tich = luuCu.tich || ['docs'];
-  $('dsChang').innerHTML = CHANG.map(function(c, i){
-    var co = tich.indexOf(c.ma) !== -1;
-    return '<label class="chang' + (co ? ' chon' : '') + '"><input type="checkbox" data-ma="' + c.ma + '"' + (co ? ' checked' : '') + '><div><b>' + (i + 1) + '. ' + c.ten + '<em>' + c.nhan + '</em></b><span>' + c.ta + '</span></div></label>';
-  }).join('') + '<label class="chang" id="changNhanh"><input type="checkbox" disabled><div><b>Chèn nhanh 1 bài, không qua sheet</b><span>Chạy ngay trên trình duyệt, không cần Claude → bấm tab ② ở trên.</span></div></label>';
-  $('dsChang').querySelectorAll('input[data-ma]').forEach(function(x){ x.onchange = function(){ x.closest('.chang').classList.toggle('chon', x.checked); luuLuong(); }; });
-  $('changNhanh').onclick = function(){ document.querySelector('#cheDoApp [data-phan="chen"]').click(); };
-}
+function docLuong(){ try{ return JSON.parse(doc(KHOA_LUONG) || '{}'); }catch(e){ return {}; } }
 function luuLuong(){
-  var o = {}; ['lDuAn','lSheet','lTab','lDrive','lPhamVi','lGhiChu'].forEach(function(id){ o[id] = $(id).value; });
-  o.tich = Array.prototype.map.call($('dsChang').querySelectorAll('input[data-ma]:checked'), function(x){ return x.dataset.ma; });
+  var o = {lSheet:$('lSheet').value.trim(), tich:Array.prototype.map.call($('dsChang').querySelectorAll('input:checked'), function(x){ return x.dataset.ma; })};
   luu(KHOA_LUONG, JSON.stringify(o)); return o;
 }
-['lDuAn','lSheet','lTab','lDrive','lPhamVi','lGhiChu'].forEach(function(id){ $(id).addEventListener('change', luuLuong); });
-$('nutChonHet').onclick = function(){ $('dsChang').querySelectorAll('input[data-ma]').forEach(function(x){ x.checked = true; x.closest('.chang').classList.add('chon'); }); luuLuong(); };
-$('nutBoHet').onclick = function(){ $('dsChang').querySelectorAll('input[data-ma]').forEach(function(x){ x.checked = false; x.closest('.chang').classList.remove('chon'); }); luuLuong(); };
+function veChang(){
+  var cu = docLuong(); if(cu.lSheet) $('lSheet').value = cu.lSheet;
+  var tich = cu.tich || ['docs'];
+  $('dsChang').innerHTML = CHANG.map(function(c){
+    var co = tich.indexOf(c.ma) !== -1;
+    return '<label class="chang' + (co ? ' chon' : '') + '"><input type="checkbox" data-ma="' + c.ma + '"' + (co ? ' checked' : '') + '><div><b>' + c.ten + '</b><span>' + c.ta + '</span></div></label>';
+  }).join('');
+  $('dsChang').querySelectorAll('input').forEach(function(x){ x.onchange = function(){ x.closest('.chang').classList.toggle('chon', x.checked); luuLuong(); }; });
+  kiemSheet();
+}
+function kiemSheet(){
+  var v = $('lSheet').value.trim(), ok = /docs\.google\.com\/spreadsheets\/d\/[A-Za-z0-9_-]{20,}/.test(v);
+  $('baoSheet').innerHTML = !v ? 'Mở file → bấm thanh địa chỉ → Ctrl+C → dán vào đây.' : (ok ? '<span style="color:var(--ok-chu);font-weight:700">✓ Link hợp lệ</span>' : '<span style="color:var(--loi-chu);font-weight:700">Link này chưa phải file Google Sheet — kiểm tra lại giúp mình.</span>');
+  return ok;
+}
+$('lSheet').addEventListener('input', function(){ kiemSheet(); luuLuong(); });
+function rapLenh(o, chon){
+  var L = [];
+  L.push('Chào bạn, mình là Trang (gọi mình là "bạn xinh đẹp"), Nontech: nói dễ hiểu, tự làm hết phần kỹ thuật, chỉ nhờ mình 1 bước mỗi lần khi chắc chắn bạn không làm được. Đọc CLAUDE.md trước.');
+  L.push('');
+  L.push('Chạy LUỒNG INLINK cho file sheet này: ' + o.lSheet);
+  L.push('- Thông tin dự án (tên, website, thư mục Drive, người duyệt, quy tắc riêng, giọng văn, tối đa anchor/bài) đọc ở tab "Thông tin dự án". Kế hoạch ở tab "Kế hoạch inlink": mỗi dòng 1 bài, cột B = URL bài, các cặp Anchor / Link chèn 1–5, cột xám là chỗ luồng ghi kết quả.');
+  L.push('- Nếu file không theo mẫu (vd tab "Plan internal links" cũ): tự đọc hàng tiêu đề để hiểu cột, báo mình bản đồ cột trong 2–3 dòng rồi làm tiếp.');
+  L.push('- Luôn đọc lại hàng 1 trước mỗi đợt; khớp dòng theo URL; chỉ ghi ô trống, không xoá ô.');
+  L.push('');
+  L.push('Làm lần lượt ' + chon.length + ' việc, xong việc này mới sang việc sau:');
+  chon.forEach(function(c, i){ L.push((i + 1) + '. ' + c.lenh); });
+  L.push('');
+  L.push('Luật chèn: anchor đúng nguyên văn; tối đa 5 link/bài (hoặc số ở tab Thông tin dự án); không chèn trong 25% đầu bài, tiêu đề, các bước, đoạn định nghĩa; hạn chế đoạn trích luật; không 2 link ở 2 đoạn liền nhau; giữ link cũ; câu chèn là câu hoàn chỉnh, không câu cụt "Xem thêm: …", không bịa số liệu; không có chỗ hợp thì để thiếu và ghi lý do. Không dán chìa khoá/token vào chat hay repo.');
+  L.push('');
+  L.push('Báo lại: sau mỗi việc 1–3 dòng lời thường; cuối cùng tóm tắt đánh số, cái gì chưa làm được và vì sao; hỏi mình (a) có lỗi hiển thị gì không, (b) có ưng không, muốn chỉnh gì.');
+  return L.join('\n');
+}
 $('nutRap').onclick = function(){
   var o = luuLuong();
   var chon = CHANG.filter(function(c){ return o.tich.indexOf(c.ma) !== -1; });
-  if(!chon.length){ alert('Bạn chưa tích chặng nào ở mục 2.'); return; }
-  if(!o.lSheet.trim() && chon.some(function(c){ return c.ma !== 'appscript'; })){ if(!confirm('Chưa có link Google Sheet — vẫn tạo câu lệnh (Claude sẽ hỏi lại)?')) return; }
-  var L = [];
-  L.push('Chào bạn, mình là Trang (gọi mình là "bạn xinh đẹp"). Mình Nontech: nói dễ hiểu, tự làm hết phần kỹ thuật, chỉ nhờ mình khi chắc chắn bạn không làm được (bấm nút, cấp quyền), mỗi lần nhờ 1 bước. Đọc CLAUDE.md của repo trước khi làm.');
-  L.push('');
-  L.push('## Việc cần làm: chạy LUỒNG INLINK gồm ' + chon.length + ' chặng dưới đây, đúng thứ tự, xong chặng này mới sang chặng sau.');
-  L.push('');
-  L.push('## Thông tin dự án');
-  L.push('- Dự án: ' + (o.lDuAn.trim() || '(chưa ghi — đọc từ sheet)'));
-  L.push('- Sheet kế hoạch: ' + (o.lSheet.trim() || '(chưa có — hỏi mình 1 lần)') + (o.lTab.trim() ? '  · tab "' + o.lTab.trim() + '"' : ''));
-  if(o.lDrive.trim()) L.push('- Thư mục Drive chứa file Docs: ' + o.lDrive.trim());
-  L.push('- Phạm vi: ' + o.lPhamVi);
-  if(o.lGhiChu.trim()) L.push('- Ghi chú / quy tắc riêng: ' + o.lGhiChu.trim().replace(/\n+/g, '; '));
-  L.push('- Luôn đọc hàng 1 của tab trước mỗi đợt để biết bản đồ cột (cột hay bị đổi chỗ); khớp dòng theo URL, không theo số dòng; chỉ ghi ô trống, không xoá ô.');
-  L.push('');
-  L.push('## Các chặng đã tích');
-  chon.forEach(function(c, i){ L.push((i + 1) + '. ' + c.ten.toUpperCase() + ' — ' + c.lenh); });
-  L.push('');
-  L.push('## Luật chèn bắt buộc (mọi chặng)');
-  L.push('- Anchor đúng nguyên văn sheet, phân biệt hoa/thường; tối đa 5 anchor mỗi bài; không chèn trong 25% đầu thân bài, tiêu đề, các bước hướng dẫn, đoạn định nghĩa.');
-  L.push('- Hạn chế chèn vào đoạn trích luật / nghị định / thông tư; không đặt 2 link ở 2 đoạn liền nhau nếu tránh được; giữ mọi link cũ.');
-  L.push('- Mọi chỗ chèn là câu hoàn chỉnh nối đúng nội dung — không chèn câu cụt kiểu "Xem thêm: <cụm>". Không bịa số liệu, tính năng sản phẩm.');
-  L.push('- Không có chỗ hợp ngữ cảnh thì để thiếu và ghi lý do ("Đủ x/N anchor…") — thà bỏ link còn hơn câu gượng.');
-  L.push('- Không bao giờ dán chìa khoá / token vào chat hay vào repo (repo công khai).');
-  L.push('');
-  L.push('## Báo lại cho mình');
-  L.push('- Sau mỗi chặng: 1–3 dòng lời thường (làm được bao nhiêu dòng, dòng nào bỏ và vì sao).');
-  L.push('- Cuối cùng: tóm tắt đánh số, link file/sheet đã ghi, cái gì chưa làm được và vì sao; hỏi mình (a) có lỗi hiển thị gì không, (b) có ưng không, muốn chỉnh gì.');
-  $('cauLenh').value = L.join('\n');
-  $('khungLenh').classList.remove('an'); $('baoLenh').textContent = '';
-  $('khungLenh').scrollIntoView({behavior:'smooth'});
+  if(!kiemSheet()){ $('lSheet').focus(); $('baoLenh').innerHTML = '<span style="color:var(--loi-chu);font-weight:700">Bạn dán link file sheet ở bước 2 trước nhé.</span>'; return; }
+  if(!chon.length){ $('baoLenh').innerHTML = '<span style="color:var(--loi-chu);font-weight:700">Bạn chọn ít nhất 1 việc ở bước 3 nhé.</span>'; return; }
+  var lenh = rapLenh(o, chon); $('cauLenh').value = lenh; chepChu(lenh);
+  window.open('https://claude.ai/code', '_blank', 'noopener');
+  $('baoLenh').innerHTML = '<span style="color:var(--ok-chu);font-weight:700">✓ Đã copy yêu cầu (' + chon.length + ' việc).</span> Ở tab Claude vừa mở: bấm vào ô chat → <b>Ctrl+V</b> → <b>Enter</b>. Không thấy tab mới? <a href="https://claude.ai/code" target="_blank" rel="noopener">Mở Claude</a>.';
 };
-$('nutChepLenh').onclick = function(){ chepChu($('cauLenh').value); $('baoLenh').textContent = 'Đã copy — dán vào Claude Code là chạy.'; };
 document.querySelectorAll('#cheDoApp button').forEach(function(b){
   b.onclick = function(){
     document.querySelectorAll('#cheDoApp button').forEach(function(x){ x.classList.toggle('chon', x === b); });
