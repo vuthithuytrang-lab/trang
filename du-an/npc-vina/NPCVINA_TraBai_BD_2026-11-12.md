@@ -48,11 +48,56 @@ TÓM TẮT TRẢ LỜI BD
 6. CHỦ ĐỀ SEO
 - Không phải YMYL (B2B sản xuất công nghiệp).
 
-Pallet / pallet nhựa: nhu cầu lớn. pallet 22.200, pallet nhựa 12.100, pallet plastic 720, kích thước pallet nhựa 590, kích thước pallet 480, kích thước pallet tiêu chuẩn 390, giá pallet nhựa 170, pallet nhựa 1200x1000x150 70, pallet 2 mặt 70 (Keyword Tool, TB 12 tháng). Soi Google: key "pallet" đang ra toàn bài "pallet là gì" của trang tin / logistics nên là key thông tin, không phải key mua hàng. "Giá pallet nhựa" và "pallet nhựa 1200x1000x150" ra trang bảng giá / trang SP của nhà sản xuất; "kích thước pallet nhựa" ra bài blog nhà sản xuất; cả 5 key soi đều có AI Overview. Đối thủ trong top có DR từ 11 đến 52, nhiều web DR 11 - 29 vẫn vào top (giapalletnhua.vn DR 11 đứng top 4 "1200x1000x150"), nên DR 28 của NPC không phải rào cản; yếu tố quyết định là có đúng loại trang. Nhóm dẫn đầu Duy Tân (57.490 traffic), Phát Thành (11.447), Việt Tiến (6.966), ICD (5.199) khó vượt ở hotkey trong 6 tháng đầu. Hình mẫu gần vị thế NPC nhất là Promat (DR 29, ~2.100 traffic) và Duy Thái (DR 13, ~2.900 traffic). Làm được: top 5 cho key dài theo kích thước, loại, địa điểm; top 10 cho hotkey; key "pallet" không cam kết. Trang đích: trang SP theo kích thước, danh mục theo loại, trang bảng giá, blog.
+6.1. PALLET / PALLET NHỰA: nhu cầu lớn
 
-Cho thuê pallet: nhu cầu rất nhỏ. cho thuê pallet nhựa 30, cho thuê pallet 20, cho thue pallet 10, còn lại gần như 0, tổng ~60 lượt/tháng. Top là trang dịch vụ của web nhỏ (UPR, Duy Thái, Long Thành, ILOG...) kèm Google Map, nên lên top dễ nhưng mang về rất ít traffic. Khách thuê pallet chủ yếu là doanh nghiệp, tìm qua sale B2B / giới thiệu. Làm phụ: 1 trang dịch vụ + 3 - 5 bài + Google Map.
+Lượt tìm/tháng (Keyword Tool, TB 12 tháng):
+- pallet: 22.200
+- pallet nhựa: 12.100
+- pallet plastic: 720
+- kích thước pallet nhựa: 590
+- kích thước pallet: 480
+- kích thước pallet tiêu chuẩn: 390
+- giá pallet nhựa: 170
+- pallet nhựa 1200x1000x150: 70
+- pallet 2 mặt: 70
 
-Loại khỏi bộ từ khóa: pallet gỗ, pallet sắt / giấy, pallet cũ / thanh lý, giường pallet, palette (bảng màu), kệ pallet / racking (khách không kinh doanh).
+Google đang cho loại trang nào lên top:
+- "pallet": toàn bài "pallet là gì" của trang tin / logistics => key thông tin, không phải key mua hàng.
+- "giá pallet nhựa", "pallet nhựa 1200x1000x150": trang bảng giá / trang SP của nhà sản xuất.
+- "kích thước pallet nhựa": bài blog của nhà sản xuất.
+- Cả 5 key soi đều có AI Overview.
+
+Đối thủ:
+- DR trong top từ 11 đến 52, nhiều web DR 11 - 29 vẫn vào top (giapalletnhua.vn DR 11 đứng top 4 "1200x1000x150").
+=> DR 28 của NPC không phải rào cản, yếu tố quyết định là có đúng loại trang.
+- Nhóm dẫn đầu khó vượt ở hotkey trong 6 tháng đầu: Duy Tân (57.490 traffic), Phát Thành (11.447), Việt Tiến (6.966), ICD (5.199).
+- Hình mẫu gần vị thế NPC nhất: Promat (DR 29, ~2.100 traffic) và Duy Thái (DR 13, ~2.900 traffic).
+
+Khả năng:
+- Top 5: key dài theo kích thước, loại, địa điểm.
+- Top 10: hotkey (pallet nhựa, giá pallet nhựa, kích thước pallet nhựa).
+- Không cam kết: key "pallet".
+- Trang đích: trang SP theo kích thước, danh mục theo loại, trang bảng giá, blog.
+
+6.2. CHO THUÊ PALLET: nhu cầu rất nhỏ
+
+Lượt tìm/tháng:
+- cho thuê pallet nhựa: 30
+- cho thuê pallet: 20
+- cho thue pallet: 10
+- các key còn lại: gần như 0
+=> Tổng cả chủ đề ~60 lượt/tháng.
+
+Đánh giá:
+- Top là trang dịch vụ của web nhỏ (UPR, Duy Thái, Long Thành, ILOG...) kèm Google Map => lên top dễ nhưng mang về rất ít traffic.
+- Khách thuê pallet chủ yếu là doanh nghiệp, tìm qua sale B2B / giới thiệu.
+- Làm phụ: 1 trang dịch vụ + 3 - 5 bài + Google Map.
+
+6.3. LOẠI KHỎI BỘ TỪ KHÓA
+- pallet gỗ, pallet sắt / giấy
+- pallet cũ / thanh lý
+- giường pallet, palette (bảng màu)
+- kệ pallet / racking (khách không kinh doanh)
 
 7. KẾT LUẬN
 - Làm được không: Có.
