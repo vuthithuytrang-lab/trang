@@ -14,3 +14,7 @@ trái là bản Việt (giữ nguyên), phải là bản Anh đã trình bày th
 | `ban-dich/` | Bản dịch đã làm (mỗi bài 1 file) |
 
 Quy trình chi tiết cho Claude: `.claude/skills/dich-bai-okamura/SKILL.md`.
+
+## Không có Claude? Dùng nút bấm trong Google Sheet
+`apps-script/DichBaiOkamura.gs` + hướng dẫn cài `apps-script/HUONG-DAN-CAI.html`.
+Dịch bằng Gemini (miễn phí, cần chìa ở aistudio.google.com) hoặc Google Dịch. Bản dịch máy — luôn soát trước khi gửi.

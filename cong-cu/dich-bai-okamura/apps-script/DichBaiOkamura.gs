@@ -10,11 +10,11 @@
  *  - Tốt hơn (vẫn miễn phí): Gemini. Vào menu "Cài khóa Gemini (tuỳ chọn)" và dán khóa lấy ở
  *    https://aistudio.google.com/apikey . Gemini dịch tự nhiên hơn, theo checklist SEO.
  *
- * Cần bật 1 dịch vụ: trong trình sửa Apps Script → "Dịch vụ" (Services) → thêm "Google Docs API".
+ * Cần bật 2 dịch vụ: trong trình sửa Apps Script → "Dịch vụ" (+) → thêm "Google Docs API" và "Google Sheets API".
  */
 
 var TEN_TAB = 'Bản dịch EN';
-var GEMINI_MODEL_MAC_DINH = 'gemini-2.5-flash';
+var GEMINI_MODELS = ['gemini-flash-latest', 'gemini-2.5-flash', 'gemini-2.0-flash']; // thử lần lượt
 
 function onOpen() {
   SpreadsheetApp.getUi().createMenu('🌐 Dịch bài Okamura')
@@ -30,13 +30,14 @@ function menuDichTheoLink() {
   var ui = SpreadsheetApp.getUi();
   var r = ui.prompt('Dịch bài Okamura', 'Dán link Google Doc bài tiếng Việt:', ui.ButtonSet.OK_CANCEL);
   if (r.getSelectedButton() !== ui.Button.OK) return;
-  chayDich_(r.getResponseText());
+  chayDich_(r.getResponseText(), '');
 }
 
 function menuDichDongDangChon() {
-  var sh = SpreadsheetApp.getActiveSheet();
+  var ss = SpreadsheetApp.getActive(), sh = ss.getActiveSheet();
   var row = sh.getActiveRange().getRow();
-  var cell = sh.getRange(row, 23); // cột W
+  var cell = sh.getRange(row, 23); // cột W - Link docs
+  var tuKhoa = String(sh.getRange(row, 2).getDisplayValue() || ''); // cột B - Từ khóa chính
   var link = null;
   var rt = cell.getRichTextValue();
   if (rt) {
@@ -44,15 +45,31 @@ function menuDichDongDangChon() {
     if (!link) rt.getRuns().forEach(function (x) { if (!link && x.getLinkUrl()) link = x.getLinkUrl(); });
   }
   if (!link && /docs\.google\.com/.test(cell.getDisplayValue())) link = cell.getDisplayValue();
+  if (!link) link = linkTrongChip_(ss.getId(), sh.getName(), row);
   if (!link) {
-    // ô dạng "chip" — Apps Script không đọc được link trong chip, nhờ dán tay
     var ui = SpreadsheetApp.getUi();
     var r = ui.prompt('Không đọc được link trong ô W' + row,
       'Bấm vào ô đó, copy link Doc rồi dán vào đây:', ui.ButtonSet.OK_CANCEL);
     if (r.getSelectedButton() !== ui.Button.OK) return;
     link = r.getResponseText();
   }
-  chayDich_(link);
+  chayDich_(link, tuKhoa);
+}
+
+// Ô dạng "chip" (link Doc hiện thành nút) — đọc qua Google Sheets API
+function linkTrongChip_(ssId, tenSheet, row) {
+  try {
+    var r = Sheets.Spreadsheets.get(ssId, { ranges: ["'" + tenSheet + "'!W" + row], includeGridData: true,
+      fields: 'sheets.data.rowData.values.chipRuns,sheets.data.rowData.values.hyperlink' });
+    var v = r.sheets[0].data[0].rowData[0].values[0];
+    if (v.hyperlink) return v.hyperlink;
+    var runs = v.chipRuns || [];
+    for (var i = 0; i < runs.length; i++) {
+      var c = runs[i].chip;
+      if (c && c.richLinkProperties && c.richLinkProperties.uri) return c.richLinkProperties.uri;
+    }
+  } catch (e) { Logger.log(e); }
+  return null;
 }
 
 function menuCaiKhoaGemini() {
@@ -68,7 +85,7 @@ function menuCaiKhoaGemini() {
 }
 
 // ---------------- CHÍNH ----------------
-function chayDich_(link) {
+function chayDich_(link, tuKhoa) {
   var ui = SpreadsheetApp.getUi();
   var m = String(link).match(/\/d\/([a-zA-Z0-9_-]{20,})/);
   if (!m) { ui.alert('Link không đúng dạng Google Doc.'); return; }
@@ -78,13 +95,13 @@ function chayDich_(link) {
     return;
   }
   SpreadsheetApp.getActive().toast('Đang dịch… (1-3 phút)', 'Dịch bài Okamura', 300);
-  var kq = dichBai(docId);
+  var kq = dichBai(docId, tuKhoa);
   SpreadsheetApp.getActive().toast('Xong!', 'Dịch bài Okamura', 5);
   ui.alert('Xong bản dịch (' + kq.may + ')\n\n' + kq.url + '\n\n' + (kq.ghiChu.length ? 'Lưu ý:\n- ' + kq.ghiChu.join('\n- ') : '') +
     '\n\nNhớ đọc soát lại bản Anh trước khi gửi khách.');
 }
 
-function dichBai(docId) {
+function dichBai(docId, tuKhoa) {
   var ghiChu = [];
   var doc = DocumentApp.openById(docId);
   var tabs = doc.getTabs();
@@ -118,7 +135,8 @@ function dichBai(docId) {
   var viec = [];
   thuThapText_(oPhai, viec);
   var html = viec.map(function (v) { return v.html; });
-  var dich = dichNhieu_(html, ghiChu);
+  var tieuDe = nguon.getParagraphs().map(function (x) { return x.getText().trim(); }).filter(String)[0] || '';
+  var dich = dichNhieu_(html, ghiChu, { tieuDe: tieuDe, tuKhoa: tuKhoa || '' });
   for (var i = 0; i < viec.length; i++) ghiLai_(viec[i], dich[i]);
 
   // 4) Luật checklist
@@ -133,14 +151,27 @@ function dichBai(docId) {
 function saoChep_(nguon, o) {
   for (var i = 0; i < nguon.getNumChildren(); i++) {
     var el = nguon.getChild(i), t = el.getType();
-    if (t === DocumentApp.ElementType.PARAGRAPH) o.appendParagraph(el.copy());
-    else if (t === DocumentApp.ElementType.LIST_ITEM) o.appendListItem(el.copy());
-    else if (t === DocumentApp.ElementType.TABLE) o.appendTable(el.copy());
+    if (t === DocumentApp.ElementType.PARAGRAPH) o.appendParagraph(el.asParagraph().copy());
+    else if (t === DocumentApp.ElementType.LIST_ITEM) o.appendListItem(el.asListItem().copy());
+    else if (t === DocumentApp.ElementType.TABLE) o.appendTable(el.asTable().copy());
   }
   // bỏ đoạn trống có sẵn đầu ô
   var dau = o.getChild(0);
   if (o.getNumChildren() > 1 && dau.getType() === DocumentApp.ElementType.PARAGRAPH && dau.asParagraph().getText() === '' &&
-      dau.asParagraph().getNumChildren() === 0) dau.removeFromParent();
+      dau.asParagraph().getNumChildren() === 0) dau.asParagraph().removeFromParent();
+}
+
+// Đổi phần tử chung thành đúng kiểu để gọi được hàm riêng của nó
+function kieu_(el) {
+  var T = DocumentApp.ElementType, t = el.getType();
+  if (t === T.PARAGRAPH) return el.asParagraph();
+  if (t === T.LIST_ITEM) return el.asListItem();
+  if (t === T.TABLE) return el.asTable();
+  if (t === T.TABLE_ROW) return el.asTableRow();
+  if (t === T.TABLE_CELL) return el.asTableCell();
+  if (t === T.TEXT) return el.asText();
+  if (t === T.BODY_SECTION) return el.asBody();
+  return null;
 }
 
 // ---------------- CHUYỂN ĐỊNH DẠNG <-> HTML ----------------
@@ -169,7 +200,8 @@ function thuThapText_(el, out) {
     out.push({ el: txt, html: h, links: links });
     return;
   }
-  if (el.getNumChildren) for (var i = 0; i < el.getNumChildren(); i++) thuThapText_(el.getChild(i), out);
+  var c = kieu_(el);
+  if (c && c.getNumChildren) for (var i = 0; i < c.getNumChildren(); i++) thuThapText_(c.getChild(i), out);
 }
 
 function ghiLai_(v, html) {
@@ -205,10 +237,10 @@ function kieuTrang_() {
 }
 
 // ---------------- MÁY DỊCH ----------------
-function dichNhieu_(arr, ghiChu) {
+function dichNhieu_(arr, ghiChu, ngucanh) {
   var key = PropertiesService.getUserProperties().getProperty('GEMINI_KEY');
   if (key) {
-    try { return dichGemini_(arr, key); }
+    try { return dichGemini_(arr, key, ngucanh); }
     catch (e) { ghiChu.push('Gemini lỗi (' + String(e).slice(0, 120) + ') → đã chuyển sang Google Dịch.'); }
   }
   return arr.map(function (h) {
@@ -228,25 +260,37 @@ var LUAT_DICH =
   '- Use one consistent English keyword for the article topic. "Tóm tắt nội dung chính bài viết:" = "Key takeaways:".\n' +
   '- Translate faithfully, do not add or drop information.';
 
-function dichGemini_(arr, key) {
-  var model = PropertiesService.getUserProperties().getProperty('GEMINI_MODEL') || GEMINI_MODEL_MAC_DINH;
+function dichGemini_(arr, key, ngucanh) {
+  var p = PropertiesService.getUserProperties();
+  var models = (p.getProperty('GEMINI_MODEL') ? [p.getProperty('GEMINI_MODEL')] : []).concat(GEMINI_MODELS);
+  var boiCanh = 'Article title (Vietnamese): ' + ngucanh.tieuDe +
+    (ngucanh.tuKhoa ? '\nMain keyword (Vietnamese or English): ' + ngucanh.tuKhoa +
+      ' — choose ONE natural English keyword for it and use it consistently; if it is already English keep it exactly.' : '');
   var out = [], CHUNK = 40;
   for (var s = 0; s < arr.length; s += CHUNK) {
-    var phan = arr.slice(s, s + CHUNK);
-    var resp = UrlFetchApp.fetch('https://generativelanguage.googleapis.com/v1beta/models/' + model + ':generateContent', {
-      method: 'post', contentType: 'application/json', muteHttpExceptions: true,
-      headers: { 'x-goog-api-key': key },
-      payload: JSON.stringify({
-        systemInstruction: { parts: [{ text: LUAT_DICH }] },
-        contents: [{ role: 'user', parts: [{ text: JSON.stringify(phan) }] }],
-        generationConfig: { temperature: 0.2, responseMimeType: 'application/json' }
-      })
-    });
-    if (resp.getResponseCode() !== 200) throw new Error('HTTP ' + resp.getResponseCode() + ' ' + resp.getContentText().slice(0, 200));
-    var txt = JSON.parse(resp.getContentText()).candidates[0].content.parts.map(function (p) { return p.text || ''; }).join('');
-    var mang = JSON.parse(txt.replace(/^```(json)?|```$/g, '').trim());
-    if (!Array.isArray(mang) || mang.length !== phan.length) throw new Error('Gemini trả về sai số đoạn');
-    out = out.concat(mang.map(String));
+    var phan = arr.slice(s, s + CHUNK), loi = '', lanThu = 0;
+    for (var mi = 0; mi < models.length; mi++) {
+      var resp = UrlFetchApp.fetch('https://generativelanguage.googleapis.com/v1beta/models/' + models[mi] + ':generateContent', {
+        method: 'post', contentType: 'application/json', muteHttpExceptions: true,
+        headers: { 'x-goog-api-key': key },
+        payload: JSON.stringify({
+          systemInstruction: { parts: [{ text: LUAT_DICH + '\n\n' + boiCanh }] },
+          contents: [{ role: 'user', parts: [{ text: JSON.stringify(phan) }] }],
+          generationConfig: { temperature: 0.2, responseMimeType: 'application/json' }
+        })
+      });
+      var code = resp.getResponseCode();
+      if (code === 404 || code === 400 && /not found|not supported/i.test(resp.getContentText())) { loi = models[mi] + ' không còn'; continue; }
+      if (code === 429 && (lanThu = (lanThu || 0) + 1) <= 3) { Utilities.sleep(20000); mi--; continue; } // chờ rồi thử lại
+      if (code !== 200) throw new Error('HTTP ' + code + ' ' + resp.getContentText().slice(0, 200));
+      var parts = JSON.parse(resp.getContentText()).candidates[0].content.parts;
+      var txt = parts.filter(function (x) { return !x.thought; }).map(function (x) { return x.text || ''; }).join('');
+      var mang = JSON.parse(txt.replace(/^\s*```(json)?/, '').replace(/```\s*$/, '').trim());
+      if (!Array.isArray(mang) || mang.length !== phan.length) throw new Error('Gemini trả về sai số đoạn');
+      out = out.concat(mang.map(String));
+      loi = null; break;
+    }
+    if (loi) throw new Error(loi);
   }
   return out;
 }
@@ -290,8 +334,8 @@ function apChecklist_(o, ghiChu) {
   });
   // xoá dòng trống thừa (không chữ, không ảnh)
   for (var i = o.getNumChildren() - 2; i >= 0; i--) {
-    var el = o.getChild(i);
-    if ((el.getType() === C.PARAGRAPH || el.getType() === C.LIST_ITEM) && !el.asText().getText().trim() &&
+    var el = kieu_(o.getChild(i));
+    if (el && (o.getChild(i).getType() === C.PARAGRAPH || o.getChild(i).getType() === C.LIST_ITEM) && !el.getText().trim() &&
         !el.findElement(C.INLINE_IMAGE) && (i + 1 < o.getNumChildren() && o.getChild(i + 1).getType() !== C.TABLE)) {
       try { el.removeFromParent(); } catch (e) {}
     }
@@ -300,6 +344,7 @@ function apChecklist_(o, ghiChu) {
 
 function duyetDoan_(el, fn) {
   var t = el.getType();
-  if (t === DocumentApp.ElementType.PARAGRAPH || t === DocumentApp.ElementType.LIST_ITEM) { fn(el); return; }
-  if (el.getNumChildren) for (var i = 0; i < el.getNumChildren(); i++) duyetDoan_(el.getChild(i), fn);
+  if (t === DocumentApp.ElementType.PARAGRAPH || t === DocumentApp.ElementType.LIST_ITEM) { fn(kieu_(el)); return; }
+  var c = kieu_(el);
+  if (c && c.getNumChildren) for (var i = 0; i < c.getNumChildren(); i++) duyetDoan_(c.getChild(i), fn);
 }
