@@ -90,14 +90,17 @@ function menuCaiKhoaGemini() {
   if (k.length < 20) { ui.alert('Chìa có vẻ bị thiếu — bạn bấm biểu tượng copy cạnh chìa rồi dán lại nhé.'); return; }
   p.setProperty('GEMINI_KEY', k);
   var thu = thuChiaGemini_(k);
-  ui.alert(thu === true ? 'Đã lưu chìa và thử thành công. Từ giờ dùng Gemini để dịch.' :
-    'Đã lưu chìa nhưng thử gọi Gemini bị lỗi:\n' + thu + '\n\nCông cụ vẫn chạy được bằng Google Dịch. ' +
-    'Nếu vừa tạo chìa, đợi 1-2 phút rồi cài lại.');
+  ui.alert(thu === true ? 'Đã lưu chìa và thử thành công. Từ giờ dùng Gemini để dịch.' : 'Đã lưu chìa.\n\n' + thu);
 }
 
 function thuChiaGemini_(k) {
   try { dichGemini_(['<b>Xin chào</b>'], k, { tieuDe: 'Thử', tuKhoa: '', thuongHieu: '' }); return true; }
-  catch (e) { return String(e.message || e).slice(0, 200); }
+  catch (e) {
+    var m = String(e.message || e);
+    if (/quá tải|503|500|UNAVAILABLE/.test(m)) return 'Chìa ĐÚNG, nhưng máy chủ Gemini đang quá tải tạm thời. Lúc dịch công cụ sẽ tự chờ và thử lại; nếu vẫn quá tải sẽ dùng Google Dịch.';
+    if (/API_KEY_INVALID|API key not valid|400|403/.test(m)) return 'Chìa KHÔNG đúng hoặc chưa kích hoạt — copy lại chìa (biểu tượng 2 tờ giấy) rồi cài lại.';
+    return m.slice(0, 200);
+  }
 }
 
 function docCaiDat_() {
@@ -479,7 +482,10 @@ function dichGemini_(arr, key, ngucanh) {
       });
       var code = resp.getResponseCode();
       if (code === 404 || code === 400 && /not found|not supported/i.test(resp.getContentText())) { loi = models[mi] + ' không còn'; continue; }
-      if (code === 429 && (lanThu = (lanThu || 0) + 1) <= 3) { Utilities.sleep(20000); mi--; continue; } // chờ rồi thử lại
+      if ((code === 429 || code >= 500) && (lanThu = (lanThu || 0) + 1) <= 2) { // quá tải: chờ rồi thử lại
+        Utilities.sleep(code === 429 ? 20000 : 5000); mi--; continue;
+      }
+      if (code === 429 || code >= 500) { loi = models[mi] + ' đang quá tải (HTTP ' + code + ')'; lanThu = 0; continue; } // sang bản khác
       if (code !== 200) throw new Error('HTTP ' + code + ' ' + resp.getContentText().slice(0, 200));
       var parts = JSON.parse(resp.getContentText()).candidates[0].content.parts;
       var txt = parts.filter(function (x) { return !x.thought; }).map(function (x) { return x.text || ''; }).join('');
