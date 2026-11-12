@@ -42,8 +42,9 @@ textarea{width:100%;border:1px solid var(--xam-vien);border-radius:8px;padding:1
 font-family:ui-monospace,"SF Mono",Consolas,monospace;font-size:12.5px;line-height:1.5;resize:vertical;
 background:var(--nen-nhap);color:var(--den)}
 textarea.tall{min-height:260px} textarea.mid{min-height:150px} textarea.low{min-height:88px}
-input[type=text]{width:100%;border:1px solid var(--xam-vien);border-radius:8px;padding:7px 9px;
-font-family:inherit;font-size:13px;background:var(--nen-nhap);color:var(--den)}
+input[type=text],input[type=password]{width:100%;border:1px solid var(--xam-vien);border-radius:8px;
+padding:8px 10px;font-family:inherit;font-size:13px;background:var(--nen-nhap);color:var(--den)}
+input[type=text]:focus,input[type=password]:focus{outline:none;border-color:var(--sg-xanh)}
 .btn{background:var(--sg-xanh);color:#fff;border:0;border-radius:8px;padding:12px 22px;
 font-family:inherit;font-size:14px;font-weight:700;cursor:pointer}
 .btn:hover{background:var(--sg-xanh-sang)}
@@ -115,9 +116,9 @@ font-weight:700;color:var(--sg-xanh);cursor:pointer;text-align:left}
 .nhan.may{background:var(--xanh-nhat);color:var(--sg-xanh)}
 .mini.may{color:var(--sg-xanh);border-color:var(--sg-xanh)}
 .mini:disabled{opacity:.5;cursor:wait}
-.chia-o{display:flex;gap:7px;flex-wrap:wrap;align-items:center}
-.chia-o input{flex:1;min-width:150px}
-#chiaBao{font-size:11.5px;line-height:1.4;margin-top:7px;font-weight:600}
+.chia-nut{display:flex;gap:7px;flex-wrap:wrap;margin-top:8px}
+#chiaBao{font-size:11.5px;line-height:1.45;margin-top:9px;padding-top:9px;font-weight:600;
+border-top:1px solid var(--xam-vien)}
 #chiaBao.ok{color:var(--xanh-la)} #chiaBao.loi{color:var(--do)} #chiaBao.cho{color:var(--xam-chu)}
 .loi-list{margin:4px 0 0;padding-left:16px;font-size:11.5px;color:var(--do)}
 .loi-list li{margin:1px 0}
@@ -189,15 +190,18 @@ border-bottom:2px solid var(--sg-mint);padding-bottom:5px}
       </div>
       <div class="card">
         <h2>5. Chìa Gemini <span style="font-weight:400;color:var(--xam-chu);font-size:12px">— để máy nhìn ảnh hộ</span></h2>
-        <p class="hint">Dán chìa vào đây một lần, app nhớ luôn trong máy bạn. Có chìa thì mỗi ảnh hiện thêm
-          nút <b>🤖 Máy nhìn ảnh</b>. Không có chìa app vẫn chạy bình thường, chỉ là không có nút đó.<br>
-          Lấy chìa miễn phí tại <code class="k">aistudio.google.com/apikey</code> — không cần thẻ ngân hàng.</p>
-        <div class="chia-o">
+        <p class="hint">Dán một lần, app nhớ trong máy bạn. Có chìa thì mỗi ảnh hiện thêm nút <b>🤖 Máy nhìn ảnh</b>.</p>
+        <div class="tv-o">
           <input type="password" id="chiaGemini" placeholder="Dán chìa vào đây" autocomplete="off">
-          <button class="mini" id="nutLuuChia">Lưu &amp; kiểm tra</button>
-          <button class="mini canh" id="nutXoaChia">Xoá chìa</button>
+          <div class="chia-nut">
+            <button class="mini ok" id="nutLuuChia">Lưu &amp; kiểm tra</button>
+            <button class="mini canh" id="nutXoaChia">Xoá chìa</button>
+          </div>
+          <div id="chiaBao" class="cho">Chưa có chìa — app vẫn soát lỗi và dựng câu ghép bình thường.</div>
         </div>
-        <div id="chiaBao" class="cho">Chưa có chìa — app vẫn soát lỗi và dựng câu ghép bình thường.</div>
+        <p class="hint" style="margin:8px 0 0">Lấy chìa miễn phí: mở <code class="k">aistudio.google.com/apikey</code>
+          → đăng nhập Gmail → bấm <b>Create API key</b> → Copy. Không cần thẻ ngân hàng.<br>
+          🔒 Chìa chỉ nằm trong trình duyệt máy này, không gửi đi đâu ngoài Google.</p>
       </div>
     </div>
   </div>
