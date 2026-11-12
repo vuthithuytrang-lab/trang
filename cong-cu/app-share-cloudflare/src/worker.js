@@ -6,7 +6,7 @@ import { runOnce } from './runner.js';
 import { apps, saveApps, quickStart, quickCallback, addByUrl } from './quick.js';
 import { rnd, hashPw, hmac, safeEq, b64ToBytes } from './util.js';
 
-const VERSION = '2026-11-11b';
+const VERSION = '2026-11-12a';
 const SECRET = new Set(['api_key', 'client_secret', 'access_token', 'refresh_token', 'token', 'bot_token']);
 const json = (d, s = 200) => new Response(JSON.stringify(d), { status: s, headers: { 'Content-Type': 'application/json' } });
 const mask = (c) => ({ ...c, data: Object.fromEntries(Object.entries(c.data || {}).map(([k, v]) => [k, SECRET.has(k) && v ? '••••••' : v])) });
@@ -22,6 +22,8 @@ async function readToken(env, tok) {
 }
 const users = (env) => env.KV.get('sys:users', 'json').then((v) => v || {});      // email -> {uid,name,salt,hash,role,approved,created}
 const saveUsers = (env, u) => env.KV.put('sys:users', JSON.stringify(u));
+// Mở công khai: ai đăng ký cũng dùng được ngay (Trang yêu cầu 12/11). Quản trị bật/tắt ở tab Thành viên.
+const isOpen = async (env) => (await env.KV.get('sys:open')) !== '0';
 
 async function api(req, env, url, origin) {
   const path = url.pathname.replace(/^\/api\/?/, '');
@@ -32,16 +34,16 @@ async function api(req, env, url, origin) {
     const b = await getImg(env, path.slice(4).replace(/\.png$/, ''));
     return b ? new Response(b, { headers: { 'Content-Type': 'image/png', 'Cache-Control': 'public, max-age=31536000' } }) : new Response('not found', { status: 404 });
   }
-  if (path === 'status') { const U = await users(env); return json({ users: Object.keys(U).length, version: VERSION }); }
+  if (path === 'status') { const U = await users(env); return json({ users: Object.keys(U).length, open: await isOpen(env), version: VERSION }); }
   if (path === 'register') {
     const U = await users(env), email = normEmail(body.email), first = !Object.keys(U).length;
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return json({ error: 'Email chưa đúng' }, 400);
     if (String(body.password || '').length < 6) return json({ error: 'Mật khẩu ít nhất 6 ký tự' }, 400);
     if (U[email]) return json({ error: 'Email này đã có tài khoản — bấm Đăng nhập' }, 400);
     const salt = rnd(8);
-    U[email] = { uid: rnd(6), name: String(body.name || email.split('@')[0]).slice(0, 60), salt, hash: await hashPw(body.password, salt), role: first ? 'admin' : 'member', approved: first, created: new Date().toISOString() };
+    U[email] = { uid: rnd(6), name: String(body.name || email.split('@')[0]).slice(0, 60), salt, hash: await hashPw(body.password, salt), role: first ? 'admin' : 'member', approved: first || await isOpen(env), created: new Date().toISOString() };
     await saveUsers(env, U);
-    if (!first) return json({ pending: true, msg: 'Đã tạo tài khoản. Chờ quản trị duyệt rồi đăng nhập lại.' });
+    if (!U[email].approved) return json({ pending: true, msg: 'Đã tạo tài khoản. Chờ quản trị duyệt rồi đăng nhập lại.' });
     return json({ token: await makeToken(env, U[email].uid) });
   }
   if (path === 'login') {
@@ -86,8 +88,9 @@ async function api(req, env, url, origin) {
       const appsMask = Object.fromEntries(Object.entries(A).map(([k, v]) => [k, { client_id: v.client_id, has_secret: !!v.client_secret }]));
       return json({ me: { email: me[0], name: me[1].name, admin: isAdmin }, version: VERSION, apps: appsMask, gaccounts: Object.keys(G), quick: await getJSON('quick_result', null),
         settings: await settings(), conns: Object.values(C).map(mask), items: await listItems(), log: (await getJSON('log', [])).slice(0, 150), redirect: origin + '/api/oauth/cb', origin,
-        members: isAdmin ? Object.entries(U).map(([e, v]) => ({ email: e, name: v.name, role: v.role, approved: v.approved, created: v.created })) : undefined });
+        open: await isOpen(env), members: isAdmin ? Object.entries(U).map(([e, v]) => ({ email: e, name: v.name, role: v.role, approved: v.approved, created: v.created })) : undefined });
     }
+    if (path === 'members/open' && isAdmin) { await env.KV.put('sys:open', body.open ? '1' : '0'); return json({ ok: true }); }
     if (path === 'members' && isAdmin) {      // duyệt / gỡ thành viên
       const t = U[normEmail(body.email)]; if (!t) return json({ error: 'Không thấy' }, 404);
       if (body.action === 'approve') t.approved = true;

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>App share bài</title>
-<!-- phiên bản 2026-11-11b (Cloudflare Workers) -->
+<!-- phiên bản 2026-11-12a (Cloudflare Workers) -->
 <link rel="icon" href="/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -183,7 +183,7 @@ async function showLogin(mode) {
   const st = await fetch('/api/status').then((r) => r.json()).catch(() => ({ users: 1 }));
   const reg = mode === 'reg' || !st.users;
   $('#app').innerHTML = `<div class="card login"><h2>${reg ? (st.users ? 'Tạo tài khoản' : 'Tạo tài khoản quản trị') : 'Đăng nhập'}</h2>
-    <p class="mo">${reg ? (st.users ? 'Tạo tài khoản riêng — quản trị duyệt xong là dùng được. Mỗi người có kết nối và bài đợi riêng.' : 'Bạn là người đầu tiên: tài khoản này sẽ là quản trị (duyệt thành viên trong team).') : 'Đăng nhập bằng email và mật khẩu bạn đã tạo.'}</p>
+    <p class="mo">${reg ? (st.users ? (st.open ? 'Tạo tài khoản riêng là dùng được ngay. ' : 'Tạo tài khoản riêng — quản trị duyệt xong là dùng được. ') + 'Mỗi người có kết nối và bài đợi riêng.' : 'Bạn là người đầu tiên: tài khoản này sẽ là quản trị (duyệt thành viên trong team).') : 'Đăng nhập bằng email và mật khẩu bạn đã tạo.'}</p>
     ${reg ? '<label>Tên hiển thị</label><input id="nm" autocomplete="name">' : ''}
     <label>Email</label><input id="em" type="email" autocomplete="email">
     <label>Mật khẩu ${reg ? '(ít nhất 6 ký tự)' : ''}</label><input id="pw" type="password" autocomplete="${reg ? 'new-password' : 'current-password'}">
@@ -494,11 +494,12 @@ function vCaiDat() {
 }
 function vThanhVien() {
   const M = S.members || [];
-  $('#app').innerHTML = `<div class="card"><h2>Thành viên</h2><p class="mo">Ai có link đều tạo được tài khoản, nhưng chỉ dùng được sau khi bạn bấm <b>Duyệt</b>. Mỗi người có kết nối, bài đợi, báo cáo riêng.</p>
+  $('#app').innerHTML = `<div class="card"><h2>Thành viên</h2><label class="chk"><input type="checkbox" id="openreg" ${S.open ? 'checked' : ''} onchange="api('members/open',{open:this.checked}).then(()=>{toast(this.checked?'Đã mở công khai: ai có link tạo tài khoản là dùng được ngay':'Đã chuyển về chế độ duyệt');reload()})"> <b>Mở công khai</b> — ai có link tạo tài khoản là dùng được ngay, không cần duyệt</label>
+  <p class="mo">Mỗi người có kết nối, bài đợi, báo cáo riêng; không ai xem được dữ liệu của người khác. Tắt ô trên nếu muốn duyệt từng người.</p>
   <div class="scroll"><table><tr><th>Tên</th><th>Email</th><th>Vai trò</th><th>Tình trạng</th><th></th></tr>
   ${M.map((m) => `<tr><td>${esc(m.name)}</td><td>${esc(m.email)}</td><td>${m.role === 'admin' ? 'Quản trị' : 'Thành viên'}</td><td>${m.approved ? '<span class="ok">Đang dùng</span>' : '<span class="err">Chờ duyệt</span>'}</td>
     <td>${!m.approved ? `<button class="b nho" onclick="mem('${esc(m.email)}','approve')">Duyệt</button> ` : ''}${m.role !== 'admin' ? `<button class="b do nho" onclick="mem('${esc(m.email)}','remove')">Gỡ</button>` : ''}</td></tr>`).join('')}</table></div>
-  <p class="mo">Gửi link app cho đồng nghiệp: <b>${esc(S.origin)}</b> → họ bấm "Tạo tài khoản" → bạn vào đây bấm Duyệt.</p></div>`;
+  <p class="mo">Gửi link cho đồng nghiệp: <b>${esc(S.origin)}/share/</b> → họ bấm "Tạo tài khoản"${S.open ? ' là dùng được ngay' : ' → bạn vào đây bấm Duyệt'}.</p></div>`;
 }
 async function mem(email, action) { if (action === 'remove' && !confirm('Gỡ tài khoản ' + email + '?')) return; await api('members', { email, action }); await reload(); }
 function vNhatKy() {
