@@ -52,11 +52,26 @@ font-family:inherit;font-size:14px;font-weight:700;cursor:pointer}
 .hang-nut{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:14px 0 2px}
 .an{display:none}
 /* --- the anh --- */
-.anh-hang{display:grid;grid-template-columns:190px 1fr;gap:14px;border:1px solid var(--xam-vien);
+.anh-hang{display:grid;grid-template-columns:320px 1fr;gap:16px;border:1px solid var(--xam-vien);
 border-radius:10px;padding:12px;margin-bottom:12px;background:var(--nen-the)}
-@media(max-width:760px){.anh-hang{grid-template-columns:1fr}}
+@media(max-width:900px){.anh-hang{grid-template-columns:1fr}}
+.anh-trai{position:sticky;top:12px;align-self:start}
+@media(max-width:900px){.anh-trai{position:static}}
 .anh-hinh{width:100%;border-radius:8px;border:1px solid var(--xam-vien);background:var(--xam-nen);
-min-height:110px;object-fit:contain;display:block}
+min-height:150px;object-fit:contain;display:block;cursor:zoom-in}
+.anh-hinh:hover{border-color:var(--sg-xanh)}
+.anh-nut{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+/* lớp phủ xem ảnh to */
+#phu{position:fixed;inset:0;background:rgba(8,10,14,.93);z-index:99;display:none;
+flex-direction:column;padding:14px;gap:10px}
+#phu.hien{display:flex}
+#phuAnh{flex:1;min-height:0;width:100%;object-fit:contain}
+#phuChu{color:#E8EAED;font-size:13px;line-height:1.5;max-width:1000px;margin:0 auto;text-align:center}
+#phuChu b{color:#7AA3FF}
+#phuDau{display:flex;align-items:center;gap:10px;color:#E8EAED;font-size:13px;font-weight:700}
+#phuDong{margin-left:auto;background:#1E2127;color:#E8EAED;border:1px solid #343841;border-radius:7px;
+padding:7px 14px;font-family:inherit;font-size:13px;font-weight:700;cursor:pointer}
+#phuDong:hover{background:#2A2E36}
 .anh-meta{font-size:11.5px;color:var(--xam-chu);margin-top:6px;word-break:break-all;line-height:1.45}
 .anh-meta b{color:var(--den)}
 .nhan{display:inline-block;padding:1px 7px;border-radius:5px;font-size:10.5px;font-weight:700;margin-right:4px}
@@ -242,6 +257,15 @@ border-bottom:2px solid var(--sg-mint);padding-bottom:5px}
   </div>
 </div>
 
+</div>
+
+<div id="phu">
+  <div id="phuDau">
+    <span id="phuTen"></span>
+    <button id="phuDong">Đóng (Esc)</button>
+  </div>
+  <img id="phuAnh" alt="">
+  <div id="phuChu"></div>
 </div>
 
 <script>
@@ -711,11 +735,29 @@ function veBangSoan(){
   G.anh.forEach(function(a){
     var hang = document.createElement('div'); hang.className = 'anh-hang';
 
-    var trai = document.createElement('div');
+    var trai = document.createElement('div'); trai.className = 'anh-trai';
     var im = document.createElement('img'); im.className = 'anh-hinh';
-    im.referrerPolicy = 'no-referrer'; im.loading = 'lazy'; im.src = a.src;
+    im.referrerPolicy = 'no-referrer'; im.src = a.src;
     im.alt = 'Ảnh ' + a.stt;
+    im.title = 'Bấm để xem ảnh to';
+    im.onclick = function(){ moPhu(a); };
+    // ảnh không hiện (máy chủ chặn) → thử lại một lần theo cách thường
+    im.onerror = function(){
+      if(im.dataset.thu) return;
+      im.dataset.thu = '1';
+      im.removeAttribute('referrerpolicy');
+      im.src = a.src + (a.src.indexOf('?') === -1 ? '?' : '&') + '_r=' + Date.now();
+    };
     trai.appendChild(im);
+    var hangN = document.createElement('div'); hangN.className = 'anh-nut';
+    var bTo = document.createElement('button'); bTo.className = 'mini';
+    bTo.textContent = '🔍 Xem ảnh to';
+    bTo.onclick = function(){ moPhu(a); };
+    var bTab = document.createElement('button'); bTab.className = 'mini';
+    bTab.textContent = 'Mở tab mới';
+    bTab.onclick = function(){ window.open(a.src, '_blank', 'noopener'); };
+    hangN.appendChild(bTo); hangN.appendChild(bTab);
+    trai.appendChild(hangN);
     var meta = document.createElement('div'); meta.className = 'anh-meta';
     var kt = a.taiDuoc ? (a.wThat + ' × ' + a.hThat) : 'không tải được';
     var khai = (a.wKhai || '?') + ' × ' + (a.hKhai || '?');
@@ -767,10 +809,16 @@ function veBangSoan(){
   // 4 ô thumb
   var kt = document.getElementById('khungThumb'); kt.innerHTML = '';
   var hang = document.createElement('div'); hang.className = 'anh-hang';
-  var trai = document.createElement('div');
+  var trai = document.createElement('div'); trai.className = 'anh-trai';
   if(G.thumb.src){
     var im = document.createElement('img'); im.className = 'anh-hinh';
     im.referrerPolicy = 'no-referrer'; im.src = G.thumb.src; im.alt = 'Ảnh thumb';
+    im.title = 'Bấm để xem ảnh to';
+    im.onclick = function(){
+      moPhu({ stt:'thumb', ten:G.thumb.src.split('/').pop(), src:G.thumb.src,
+        taiDuoc:!!G.thumb.wThat, wThat:G.thumb.wThat, hThat:G.thumb.hThat,
+        altCu:null, chuThichCu:null, altMoi:G.thumb.alt });
+    };
     trai.appendChild(im);
   }
   var meta = document.createElement('div'); meta.className = 'anh-meta';
@@ -801,6 +849,35 @@ function veBangSoan(){
   veLaiDem();
   dongBoHtml();
 }
+
+/* --- Lớp phủ xem ảnh to ------------------------------------------------ */
+var phuDangXem = null;
+function moPhu(a){
+  phuDangXem = a;
+  var im = document.getElementById('phuAnh');
+  im.referrerPolicy = 'no-referrer';
+  im.src = a.src;
+  im.alt = 'Ảnh ' + a.stt;
+  document.getElementById('phuTen').textContent =
+    'Ảnh ' + a.stt + ' — ' + a.ten + (a.taiDuoc ? '  ·  ' + a.wThat + ' × ' + a.hThat + ' px' : '');
+  var cu = a.altCu ? 'Alt cũ: ' + a.altCu : 'Ảnh này chưa có alt';
+  var ct = a.chuThichCu ? '<br>Chú thích: ' + thoat(a.chuThichCu) : '';
+  var dx = a.altMoi ? '<br><b>Đang viết: ' + thoat(a.altMoi) + '</b>' : '';
+  document.getElementById('phuChu').innerHTML = thoat(cu) + ct + dx;
+  document.getElementById('phu').classList.add('hien');
+}
+function dongPhu(){
+  document.getElementById('phu').classList.remove('hien');
+  document.getElementById('phuAnh').src = '';
+  phuDangXem = null;
+}
+document.getElementById('phuDong').onclick = dongPhu;
+document.getElementById('phu').onclick = function(e){
+  if(e.target.id !== 'phuAnh') dongPhu();
+};
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape') dongPhu();
+});
 
 function thoat(s){
   return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;')
