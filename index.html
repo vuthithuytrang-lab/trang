@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Cập nhật bài Techcombank</title>
 <meta name="description" content="Danh sách bài blog Techcombank cần cập nhật giá / lãi suất – bấm chạy là có bản mới, miễn phí.">
-<!-- phien-ban: 202611121749 -->
+<!-- phien-ban: 202611122333 -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Cập nhật bài Techcombank">
 <meta property="og:description" content="Danh sách bài blog Techcombank cần cập nhật giá / lãi suất – ai có link cũng dùng được.">
@@ -289,7 +289,7 @@ $("#run").addEventListener("click", function(e){
 var HAM_THEM = HAM.replace(/chay$/, "them");
 // Mở file Docs = bản mới nhất (12/11/2026): trang web nhỏ chạy trên tài khoản Google của Trang (Apps Script
 // cong-cu/tu-dong/google-apps-script/DongBoDocs.gs) chép bản máy vừa chạy vào file Docs cố định của bài rồi trả link.
-var DONG_BO = "";
+var DONG_BO = "https://script.google.com/macros/s/AKfycbw7gSYVHzpMkw4WnWOWNI6ksKSc00X3KvM5qI2Wy9eum4UPvvacsLpXn4mcWB-UsyIF/exec";
 function moDocs(id){
   var b = du.bai.filter(function(x){ return x.id === id; })[0] || {}, w = window.open("", "_blank");
   if (w) { try { w.document.write('<meta charset="utf-8"><p style="font:16px Arial;padding:24px">Đang chép bản mới nhất vào Google Docs…</p>'); } catch (e) {} }
@@ -342,10 +342,14 @@ $("#hGui").onclick = function(){
   $("#hGui").disabled = true; $("#hKq").hidden = true; clearTimeout(hHen);
   var ma = Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
   hBao("Đang gửi…");
+  var traLoi = function(r){ return r.json().catch(function(){ return {}; }).then(function(j){ if (!r.ok || !j.ok) throw (j.loi || ("lỗi " + r.status)); }); };
   nenB64(h).then(function(b64){
     if (b64.length > 60000) throw "HTML quá dài";
+    // Đường miễn phí của Google (Apps Script DongBoDocs.gs): gửi HTML vào hộp thư, rồi bấm chạy bài như thường
+    if (DONG_BO) return fetch(DONG_BO, {method: "POST", headers: {"content-type": "text/plain;charset=utf-8"}, body: JSON.stringify({ma: id, id: ma, html: b64})})
+      .then(traLoi).then(function(){ return fetch(HAM, {method: "POST", headers: {"content-type": "application/json"}, body: JSON.stringify({bai: [id], ngay: ngayBai()})}); });
     return fetch(HAM, {method: "POST", headers: {"content-type": "application/json"}, body: JSON.stringify({bai: [id], ngay: ngayBai(), html: b64, ma_html: ma})});
-  }).then(function(r){ return r.json().catch(function(){ return {}; }).then(function(j){ if (!r.ok || !j.ok) throw (j.loi || ("lỗi " + r.status)); }); })
+  }).then(traLoi)
   .then(function(){ hYc = ma; hBao("Đã gửi – máy đang lấy giá mới và ghép vào HTML (khoảng 1–2 phút)…"); hHen = setTimeout(function(){ hDoi(ma, 0); }, 30000); })
   .catch(function(l){ $("#hGui").disabled = false; hBao("Chưa gửi được: " + (typeof l === "string" ? l : "lỗi mạng")); });
 };
