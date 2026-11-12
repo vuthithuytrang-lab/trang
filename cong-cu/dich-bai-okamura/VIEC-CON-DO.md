@@ -15,3 +15,5 @@ Phiên Claude mới: đọc skill `.claude/skills/dich-bai-okamura/SKILL.md` r�
 ## BV40 — tủ tài liệu
 - Doc: https://docs.google.com/document/d/1FtxPeSpZ4T4a56StG7p2jErjprY2q59w8doPO3mhQdQ — tab `t.8atlqcdeyxfd`
 - Trạng thái: xem dòng cập nhật cuối file này.
+
+**Cập nhật:** BV40 XONG cả 2 cột, verify khớp 100% (95 đoạn, 8 ảnh). BV9 XONG. Chỉ còn BV15 lô 5-6 (cột trái).
