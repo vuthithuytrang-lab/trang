@@ -130,33 +130,8 @@ jobs:
               rm -rf ket-qua/$MA; mv lai/$MA ket-qua/$MA; mv lai.log ket-qua/$MA.log
             fi
           fi
-          # Ghép số mới vào ĐÚNG HTML người dùng gửi (12/11/2026): giữ nguyên cấu trúc, chỉ đổi số / ngày
-          if [ -n "$HTML_B64" ] && [[ $MA_HTML =~ ^[a-z0-9]{8,20}$ ]]; then
-            printf '%s' "$HTML_B64" | base64 -d 2>/dev/null | gunzip 2>/dev/null | head -c 3000000 > dau-vao.html || true
-            python3 -I - "$MA" "$MA_HTML" "${NGAY_BAI:-}" <<'PY'
-          import json, os, re, subprocess, sys, datetime
-          ma, id_, ngay = sys.argv[1:4]
-          kq = {'ma': ma, 'luc': datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='seconds'), 'ok': False}
-          log = open(f'ket-qua/{ma}.log', encoding='utf-8', errors='replace').read()
-          m = re.search(r'^XONG \S+ ngày (\S+)', log, re.M)
-          kq['ngay'] = m.group(1) if m else ''
-          kq['can_duyet'] = '\n'.join(dict.fromkeys(re.sub(r'^\s*cần duyệt:\s*', '', l).strip() for l in log.splitlines()
-                                       if re.search(r'cần duyệt:|LỖI:|KHÔNG ĐỌC ĐƯỢC', l)))[:3000]
-          if os.path.getsize('dau-vao.html') < 50:
-              kq['loi'] = 'Không đọc được HTML gửi lên (rỗng hoặc hỏng).'
-          elif not m or not os.path.exists(f'ket-qua/{ma}/bai.html'):
-              kq['loi'] = 'Công thức chưa chạy xong: ' + ((log.strip().splitlines() or ['?'])[-1][:200])
-          else:
-              r = subprocess.run(['python3', '-I', 'cong-cu/tu-dong/ghep_html.py', 'dau-vao.html', f'ket-qua/{ma}/bai.html',
-                                  f'ket-qua/h-{id_}.html', 'ghep.json'], capture_output=True, text=True)
-              print(r.stdout, r.stderr)
-              if r.returncode == 0:
-                  kq.update(json.load(open('ghep.json', encoding='utf-8')), ok=True)
-              else:
-                  kq['loi'] = 'Lỗi khi ghép số vào HTML: ' + r.stderr.strip()[-200:]
-          json.dump(kq, open(f'ket-qua/h-{id_}.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
-          PY
-          fi
+          # Ghép số mới vào ĐÚNG HTML người dùng gửi (12/11/2026) – kèm lệnh chạy hoặc từ hộp thư Apps Script
+          bash cong-cu/tu-dong/sau_chay.sh "$MA" || true
           find ket-qua -mindepth 2 ! -name bai.html -type f -delete   # chỉ giữ bai.html + log
       - name: Đăng kết quả bài này lên nhánh tu-dong-ket-qua
         env: { MA: '${{ needs.kiem.outputs.ma }}', NGAY_BAI: '${{ inputs.ngay }}' }

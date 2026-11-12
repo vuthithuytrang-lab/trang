@@ -342,10 +342,14 @@ $("#hGui").onclick = function(){
   $("#hGui").disabled = true; $("#hKq").hidden = true; clearTimeout(hHen);
   var ma = Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
   hBao("Đang gửi…");
+  var traLoi = function(r){ return r.json().catch(function(){ return {}; }).then(function(j){ if (!r.ok || !j.ok) throw (j.loi || ("lỗi " + r.status)); }); };
   nenB64(h).then(function(b64){
     if (b64.length > 60000) throw "HTML quá dài";
+    // Đường miễn phí của Google (Apps Script DongBoDocs.gs): gửi HTML vào hộp thư, rồi bấm chạy bài như thường
+    if (DONG_BO) return fetch(DONG_BO, {method: "POST", headers: {"content-type": "text/plain;charset=utf-8"}, body: JSON.stringify({ma: id, id: ma, html: b64})})
+      .then(traLoi).then(function(){ return fetch(HAM, {method: "POST", headers: {"content-type": "application/json"}, body: JSON.stringify({bai: [id], ngay: ngayBai()})}); });
     return fetch(HAM, {method: "POST", headers: {"content-type": "application/json"}, body: JSON.stringify({bai: [id], ngay: ngayBai(), html: b64, ma_html: ma})});
-  }).then(function(r){ return r.json().catch(function(){ return {}; }).then(function(j){ if (!r.ok || !j.ok) throw (j.loi || ("lỗi " + r.status)); }); })
+  }).then(traLoi)
   .then(function(){ hYc = ma; hBao("Đã gửi – máy đang lấy giá mới và ghép vào HTML (khoảng 1–2 phút)…"); hHen = setTimeout(function(){ hDoi(ma, 0); }, 30000); })
   .catch(function(l){ $("#hGui").disabled = false; hBao("Chưa gửi được: " + (typeof l === "string" ? l : "lỗi mạng")); });
 };

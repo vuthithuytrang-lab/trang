@@ -7,6 +7,8 @@
  * được ở Tệp → Lịch sử phiên bản), rồi trả link để app mở. Bản mới đã chép rồi thì không chép lại (giữ chỗ người
  * dùng đã sửa tay trong Docs cho tới lần chạy mới).
  *
+ * Kiêm HỘP THƯ HTML cho tính năng "Cập nhật số vào HTML của bạn" (doPost / ?hop=), thay hàm Netlify khi Netlify hết lượt.
+ *
  * Cài 1 lần (Claude hướng dẫn từng bước): script.google.com → Dự án mới → dán file này → Lưu → Triển khai →
  * Tùy chọn triển khai mới → Loại: Ứng dụng web → Thực thi với tư cách: Tôi; Ai có quyền truy cập: Bất kỳ ai →
  * Triển khai → Cho phép quyền → chép "URL ứng dụng web" gửi Claude (dán vào app).
@@ -18,7 +20,38 @@ const DB = {
   FILE_CO_DINH: 'https://raw.githubusercontent.com/vuthithuytrang-lab/trang/claude/vibrant-keller-rk0i98/cong-cu/tu-dong/file-co-dinh.json',
 };
 
+/* ---------- Hộp thư HTML (12/11/2026): app gửi HTML cần ghép số vào đây; máy GitHub lấy về khi chạy bài ---------- */
+function doPost(e) {
+  try {
+    const d = JSON.parse((e && e.postData && e.postData.contents) || '{}');
+    const ma = String(d.ma || ''), id = String(d.id || ''), html = String(d.html || '');
+    if (!/^[a-z0-9-]{2,40}$/.test(ma) || !/^[a-z0-9]{8,20}$/.test(id)) return traVe_({loi: 'Mã không hợp lệ'});
+    if (!/^[A-Za-z0-9+/]+=*$/.test(html) || html.length > 90000) return traVe_({loi: 'HTML quá dài hoặc hỏng'});
+    const khoa = LockService.getScriptLock(); khoa.waitLock(20000);
+    try {
+      const c = CacheService.getScriptCache();
+      c.put('h_' + id, html, 21600);                                        // giữ 6 tiếng
+      const ds = JSON.parse(c.get('ds_' + ma) || '[]').filter(x => x !== id).concat([id]).slice(-20);
+      c.put('ds_' + ma, JSON.stringify(ds), 21600);
+    } finally { khoa.releaseLock(); }
+    return traVe_({ok: true});
+  } catch (err) {
+    return traVe_({loi: String(err && err.message || err).slice(0, 200)});
+  }
+}
+
+/** Máy GitHub gọi ?hop=<mã bài>: trả các HTML đang chờ của bài đó rồi xóa khỏi hộp thư. */
+function layHop_(ma) {
+  const c = CacheService.getScriptCache();
+  const ds = JSON.parse(c.get('ds_' + ma) || '[]');
+  const ra = ds.map(id => ({id: id, html: c.get('h_' + id) || ''})).filter(x => x.html);
+  c.remove('ds_' + ma);
+  return {ds: ra};
+}
+
 function doGet(e) {
+  const hop = String((e && e.parameter && e.parameter.hop) || '');
+  if (hop) return traVe_(/^[a-z0-9-]{2,40}$/.test(hop) ? layHop_(hop) : {loi: 'Mã bài không hợp lệ'});
   const ma = String((e && e.parameter && e.parameter.ma) || '');
   if (!/^[a-z0-9-]{2,40}$/.test(ma)) return traVe_({loi: 'Mã bài không hợp lệ'});
   const khoa = LockService.getScriptLock();
