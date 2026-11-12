@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="vi">
 <head>
-<!-- phien-ban: 202611121803 -->
+<!-- phien-ban: 202611121813 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Luồng inlink</title>
@@ -101,7 +101,7 @@ th{background:var(--nen);font-size:12px}
 .o-chang{border:1.5px solid var(--vien);border-radius:12px;overflow:hidden}
 .o-chang.chon{border-color:var(--xanh);background:rgba(0,74,239,.05)}
 .o-chang .chang{border:0;border-radius:0}
-.xem-them{background:none;border:0;color:var(--xanh);font:inherit;font-size:12.5px;font-weight:700;cursor:pointer;padding:0 12px 10px 38px}
+.xem-them{display:inline-flex;align-items:center;gap:6px;margin:0 12px 10px 38px;background:rgba(0,74,239,.08);border:1px dashed var(--xanh);border-radius:20px;color:var(--xanh);font:inherit;font-size:12px;font-weight:700;cursor:pointer;padding:3px 10px 3px 4px}
 .minh{display:none;padding:0 12px 12px}
 .minh.mo{display:block}
 .o-chang.rong{grid-column:1/-1}
@@ -119,7 +119,14 @@ th{background:var(--nen);font-size:12px}
 .dong-file button{background:none;border:0;color:var(--do);cursor:pointer;font:inherit;font-size:12px}
 .them-file{display:grid;grid-template-columns:1fr 1.4fr auto;gap:8px;margin-top:10px}
 @media(max-width:700px){.them-file{grid-template-columns:1fr}}
-.xem-them2{float:right;background:none;border:0;color:var(--xanh);font:inherit;font-size:12.5px;font-weight:700;cursor:pointer;padding:0}
+.xem-them2{float:right;display:inline-flex;align-items:center;gap:6px;background:rgba(0,74,239,.08);border:1px dashed var(--xanh);border-radius:20px;color:var(--xanh);font:inherit;font-size:12px;font-weight:700;cursor:pointer;padding:3px 10px 3px 4px;margin-left:8px}
+.i-gt{display:inline-grid;place-items:center;width:18px;height:18px;border-radius:50%;background:var(--xanh);color:#fff;font-size:11.5px;font-weight:800;line-height:1}
+.xem-them:hover,.xem-them2:hover{background:rgba(0,74,239,.16)}
+.buoc-ai{margin:6px 0 8px;padding:10px 12px 10px 30px;border:1px solid var(--vien);border-radius:10px;font-size:12.5px;line-height:1.6}
+.buoc-ai li{margin:2px 0}.buoc-ai .lk-nut{display:inline-block;margin:2px 0;padding:2px 9px;border-radius:7px;background:var(--xanh);color:#fff!important;text-decoration:none;font-weight:700}
+.nhan-phi{display:inline-block;font-size:11px;font-weight:800;padding:1px 8px;border-radius:10px;margin-bottom:4px}
+.nhan-phi.free{background:#07EF9C;color:#002992}.nhan-phi.tien{background:#FFE7A3;color:#5A3E00}
+.hang-thu{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:8px}
 .giai-thich{display:none;margin:8px 0 10px}.giai-thich.mo{display:block}
 .giai-thich .chu-thich{display:block;flex-basis:100%;font-size:12px;color:#3A4560;line-height:1.55}
 .giai-thich ul.gt{margin:6px 0 0;padding-left:18px;font-size:12px;color:#3A4560;flex-basis:100%}
@@ -256,7 +263,7 @@ label.o-nhap input,label.o-nhap select,label.o-nhap textarea{margin-top:4px;colo
     <div class="so-buoc">2</div>
     <div class="noi-dung">
       <h2>Chọn việc cần làm</h2>
-      <p class="goi-y">Bấm vào ô để chọn (chọn nhiều thì làm lần lượt từ trên xuống). Chưa rõ tính năng nào làm gì → bấm <b>Xem thêm</b>.</p>
+      <p class="goi-y">Bấm vào ô để chọn (chọn nhiều thì làm lần lượt từ trên xuống). Chưa rõ tính năng nào làm gì → bấm nút <b><span class="i-gt">?</span> Giải thích tính năng</b> trong ô đó.</p>
       <div id="dsChang" class="luoi-chang"></div>
     </div>
   </div>
@@ -348,6 +355,7 @@ lãi suất tiết kiệm | https://ten-mien.vn/lai-suat-tiet-kiem"></textarea>
       </select></label>
     <p class="goi-y nho-hon" id="huongDanAI" style="margin:6px 0"></p>
     <input type="password" id="khoaAI" autocomplete="off">
+    <div class="hang-thu"><button type="button" class="nut phu nho" id="nutThuAI">Thử kết nối</button><span class="goi-y nho-hon" id="baoThuAI" style="margin:0"></span></div>
     <label class="dong" style="margin-top:8px"><span>Mô hình</span><input type="text" id="moHinh" list="dsMoHinh" style="width:230px"></label>
     <datalist id="dsMoHinh"></datalist>
     <p class="goi-y nho-hon" style="margin:6px 0 0">Khoá chỉ lưu trong trình duyệt máy này (mỗi AI một khoá riêng), app gửi thẳng tới nhà cung cấp, không đi qua đâu khác. Đừng dán khoá vào chat.</p>
@@ -416,9 +424,18 @@ var NHA_AI = {
 function nhaDang(){ return NHA_AI[$('nhaAI').value] ? $('nhaAI').value : 'gemini'; }
 function khoaCua(n){ return NHA_AI[n].khoa || ('kho-app:ai-key:' + n); }
 function mhCua(n){ return NHA_AI[n].mh || ('kho-app:ai-model:' + n); }
+var HD_AI = {
+  gemini:{free:1, link:'https://aistudio.google.com/apikey', b:['Bấm nút xanh <a class="lk-nut" href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">Mở trang lấy khoá Gemini ↗</a>','Đăng nhập bằng tài khoản Gmail của bạn (nếu được hỏi thì tích đồng ý điều khoản).','Bấm nút <b>Create API key</b> (Tạo khoá). Nếu hỏi chọn dự án, chọn dự án có sẵn trong danh sách.','Khoá hiện ra (bắt đầu bằng <b>AIza</b>) → bấm biểu tượng <b>copy</b> bên cạnh.','Quay lại đây, dán vào ô <b>Khoá</b> bên dưới → bấm <b>Thử kết nối</b>. Hiện ✓ là xong.']},
+  groq:{free:1, link:'https://console.groq.com/keys', b:['Bấm nút xanh <a class="lk-nut" href="https://console.groq.com/keys" target="_blank" rel="noopener">Mở trang lấy khoá Groq ↗</a>','Bấm <b>Sign in with Google</b> → chọn Gmail của bạn.','Bấm <b>Create API Key</b> → ô tên gõ gì cũng được (vd: inlink) → bấm <b>Submit</b>.','Khoá hiện ra (bắt đầu bằng <b>gsk_</b>) → bấm <b>Copy</b>. Khoá chỉ hiện 1 lần, nên dán ngay.','Quay lại đây, dán vào ô <b>Khoá</b> bên dưới → bấm <b>Thử kết nối</b>.']},
+  openrouter:{free:1, link:'https://openrouter.ai/keys', b:['Bấm nút xanh <a class="lk-nut" href="https://openrouter.ai/keys" target="_blank" rel="noopener">Mở trang lấy khoá OpenRouter ↗</a>','Bấm <b>Sign in</b> → <b>Continue with Google</b>.','Bấm <b>Create Key</b> (hoặc Create API Key) → gõ tên bất kỳ → bấm <b>Create</b>.','Khoá hiện ra (bắt đầu bằng <b>sk-or-</b>) → bấm copy. Khoá chỉ hiện 1 lần.','Quay lại đây, dán vào ô <b>Khoá</b> → bấm <b>Thử kết nối</b>. Giữ mô hình có đuôi <b>:free</b> để không mất tiền.']},
+  claude:{free:0, link:'https://console.anthropic.com/settings/keys', b:['Bấm nút xanh <a class="lk-nut" href="https://console.anthropic.com/settings/billing" target="_blank" rel="noopener">Mở trang nạp tiền Claude ↗</a> → đăng nhập bằng email hoặc Google.','Nạp tiền: bấm <b>Buy credits</b> → nhập số tiền (tối thiểu 5 USD) → thanh toán bằng thẻ Visa/Mastercard.','Bấm <a class="lk-nut" href="https://console.anthropic.com/settings/keys" target="_blank" rel="noopener">Mở trang tạo khoá ↗</a> → <b>Create Key</b> → gõ tên bất kỳ → <b>Add</b>.','Khoá hiện ra (bắt đầu bằng <b>sk-ant-</b>) → bấm <b>Copy</b>. Khoá chỉ hiện 1 lần.','Quay lại đây, dán vào ô <b>Khoá</b> → bấm <b>Thử kết nối</b>. Muốn rẻ hơn thì đổi mô hình thành <b>claude-haiku-5-5</b>.'], ghi:'Đây là tài khoản API riêng, khác với gói Claude bạn đang chat (gói chat không dùng được ở đây).'},
+  openai:{free:0, link:'https://platform.openai.com/api-keys', b:['Bấm nút xanh <a class="lk-nut" href="https://platform.openai.com/settings/organization/billing/overview" target="_blank" rel="noopener">Mở trang nạp tiền OpenAI ↗</a> → đăng nhập (dùng được tài khoản ChatGPT).','Nạp tiền: bấm <b>Add to credit balance</b> → nhập số tiền (tối thiểu 5 USD) → thanh toán bằng thẻ Visa/Mastercard.','Bấm <a class="lk-nut" href="https://platform.openai.com/api-keys" target="_blank" rel="noopener">Mở trang tạo khoá ↗</a> → <b>Create new secret key</b> → <b>Create secret key</b>.','Khoá hiện ra (bắt đầu bằng <b>sk-</b>) → bấm <b>Copy</b>. Khoá chỉ hiện 1 lần.','Quay lại đây, dán vào ô <b>Khoá</b> → bấm <b>Thử kết nối</b>.'], ghi:'Đây là tài khoản API riêng, khác với gói ChatGPT Plus (gói Plus không dùng được ở đây).'}
+};
 function veNhaAI(){
-  var n = nhaDang(), c = NHA_AI[n];
-  $('huongDanAI').innerHTML = c.hd; $('khoaAI').placeholder = c.goiY;
+  var n = nhaDang(), c = NHA_AI[n], h = HD_AI[n];
+  $('huongDanAI').innerHTML = '<span class="nhan-phi ' + (h.free ? 'free">MIỄN PHÍ' : 'tien">TRẢ PHÍ') + '</span> Cách kết nối (làm 1 lần, app nhớ cho lần sau):' +
+    '<ol class="buoc-ai">' + h.b.map(function(x){ return '<li>' + x + '</li>'; }).join('') + '</ol>' + (h.ghi ? '<span>⚠ ' + h.ghi + '</span>' : '');
+  $('baoThuAI').textContent = ''; $('khoaAI').placeholder = c.goiY;
   $('khoaAI').value = doc(khoaCua(n)); $('moHinh').value = doc(mhCua(n)) || c.md;
   $('dsMoHinh').innerHTML = c.ds.map(function(x){ return '<option value="' + x + '">'; }).join('');
 }
@@ -427,6 +444,15 @@ $('dungAI').checked = !!$('khoaAI').value;
 $('nhaAI').addEventListener('change', function(){ luu('kho-app:ai-nha', nhaDang()); veNhaAI(); });
 $('khoaAI').addEventListener('change', function(){ luu(khoaCua(nhaDang()), this.value.trim()); if(this.value.trim()) $('dungAI').checked = true; });
 $('moHinh').addEventListener('change', function(){ luu(mhCua(nhaDang()), this.value.trim()); });
+$('nutThuAI').onclick = async function(){
+  var k = $('khoaAI').value.trim(), n = nhaDang(), bao = $('baoThuAI');
+  if(!k){ bao.innerHTML = '<span style="color:var(--loi-chu);font-weight:700">Bạn dán khoá vào ô trên trước nhé.</span>'; return; }
+  luu(khoaCua(n), k); bao.textContent = 'Đang thử…'; this.disabled = true;
+  try{ var t = await goiAI(n, k, $('moHinh').value.trim() || NHA_AI[n].md, 'Chỉ trả lời đúng một chữ: OK');
+    bao.innerHTML = '<span style="color:var(--ok-chu);font-weight:700">✓ Kết nối được! AI trả lời: «' + thoat(rut(t, 40)) + '». Từ giờ app tự dùng AI này.</span>'; $('dungAI').checked = true;
+  }catch(e){ bao.innerHTML = '<span style="color:var(--loi-chu);font-weight:700">✗ Chưa được: ' + thoat(e.message) + '</span>' + (/Failed to fetch|NetworkError/i.test(e.message) ? ' — kiểm tra mạng, hoặc tắt tiện ích chặn quảng cáo rồi thử lại.' : ''); }
+  this.disabled = false;
+};
 
 /* ---------- chế độ dán ---------- */
 var CHE = 'dan';
@@ -991,10 +1017,10 @@ function veChang(){
       (c.ma === 'html' ? '<div class="them-html"><label style="font-size:12.5px;font-weight:700">Mã HTML gốc của bài trên web <span style="font-weight:500;color:var(--mo)">(nên có — để mã trả về khớp đúng web)</span></label>' +
         '<p class="goi-y">Mở bài trong trang quản trị web → chuyển sang chế độ <b>Văn bản / HTML</b> (hoặc nút <b>&lt;/&gt;</b>) → Ctrl+A, Ctrl+C → dán vào ô dưới. Nhiều bài: dán lần lượt, <b>trước mỗi bài ghi 1 dòng URL bài</b>. Để trống thì Claude tự lấy mã HTML từ trang web đang chạy.</p>' +
         '<textarea id="lHtml" spellcheck="false" placeholder="https://website.vn/bai-1\n&lt;h2&gt;...&lt;/h2&gt;\n&lt;p style=&quot;text-align: justify;&quot;&gt;...&lt;/p&gt;\n\nhttps://website.vn/bai-2\n..."></textarea><span class="goi-y" id="baoHtml"></span></div>' : '') +
-      '<button type="button" class="xem-them" data-xem="' + c.ma + '">Xem thêm ▾</button><div class="minh" id="minh-' + c.ma + '">' + (MINH[c.ma] || '') + '</div></div>';
+      '<button type="button" class="xem-them" data-xem="' + c.ma + '"><span class="i-gt">?</span> Giải thích tính năng</button><div class="minh" id="minh-' + c.ma + '">' + (MINH[c.ma] || '') + '</div></div>';
   }).join('');
   $('dsChang').querySelectorAll('input').forEach(function(x){ x.onchange = function(){ x.closest('.o-chang').classList.toggle('chon', x.checked); luuLuong(); }; });
-  $('dsChang').querySelectorAll('[data-xem]').forEach(function(b){ b.onclick = function(){ var m = $('minh-' + b.dataset.xem); var mo = m.classList.toggle('mo'); b.closest('.o-chang').classList.toggle('rong', mo); b.textContent = mo ? 'Thu gọn ▴' : 'Xem thêm ▾'; }; });
+  $('dsChang').querySelectorAll('[data-xem]').forEach(function(b){ b.onclick = function(){ var m = $('minh-' + b.dataset.xem); var mo = m.classList.toggle('mo'); b.closest('.o-chang').classList.toggle('rong', mo); b.innerHTML = mo ? '✕ Đóng giải thích' : '<span class="i-gt">?</span> Giải thích tính năng'; }; });
   var oh = $('lHtml');
   if(oh){ oh.value = doc(KHOA_HTML); var bh = function(){ var n = (oh.value.match(/<p[\s>]/gi) || []).length, u = (oh.value.match(/^\s*https?:\/\/\S+\s*$/gm) || []).length;
       $('baoHtml').textContent = oh.value.trim() ? '✓ Đã nhận ' + Math.round(oh.value.length / 1024 * 10) / 10 + ' KB mã HTML (' + n + ' đoạn' + (u ? ', ' + u + ' bài' : '') + ').' : ''; };
@@ -1231,13 +1257,13 @@ if(location.hash === '#chen' || doc('kho-app:inlink-phan') === 'chen') document.
   };
   document.querySelectorAll('#phanChen .the > h2').forEach(function(h){
     var k = Object.keys(GT).filter(function(x){ return h.textContent.trim().indexOf(x) === 0; })[0]; if(!k) return;
-    var b = document.createElement('button'); b.type = 'button'; b.className = 'xem-them2'; b.textContent = 'Xem thêm ▾';
+    var b = document.createElement('button'); b.type = 'button'; b.className = 'xem-them2'; b.innerHTML = '<span class="i-gt">?</span> Giải thích'; b.title = 'Bấm để xem mục này dùng để làm gì';
     var g = document.createElement('div'); g.className = 'giai-thich'; g.innerHTML = GT[k];
     h.appendChild(b); h.insertAdjacentElement('afterend', g);
-    b.onclick = function(){ var mo = g.classList.toggle('mo'); b.textContent = mo ? 'Thu gọn ▴' : 'Xem thêm ▾'; };
+    b.onclick = function(){ var mo = g.classList.toggle('mo'); b.innerHTML = mo ? '✕ Đóng giải thích' : '<span class="i-gt">?</span> Giải thích'; };
   });
   var p = document.createElement('p'); p.className = 'goi-y'; p.style.cssText = 'margin:0 0 12px;text-align:center';
-  p.innerHTML = 'Lần đầu dùng? Bấm <b>Ví dụ mẫu</b> rồi <b>Chèn link</b> để xem app chạy thử với bài mẫu. Mục nào chưa rõ → bấm <b>Xem thêm</b> ở góc phải mục đó.';
+  p.innerHTML = 'Lần đầu dùng? Bấm <b>Ví dụ mẫu</b> rồi <b>Chèn link</b> để xem app chạy thử với bài mẫu. Mục nào chưa rõ → bấm nút <b><span class="i-gt">?</span> Giải thích</b> ở góc phải mục đó.';
   $('phanChen').insertBefore(p, $('phanChen').firstChild);
 })();
 </script>
