@@ -9,10 +9,10 @@
  },
  "gia-ca-phe": {
   "ok": true,
-  "luc": "2026-11-13T02:38:49+00:00",
-  "ngay": "13/11/2026",
-  "ten": "Giá cà phê hôm nay trực tuyến – 13/11/2026",
-  "can_duyet": "",
+  "luc": "2026-11-13T09:00:28+00:00",
+  "ngay": "14/11/2026",
+  "ten": "Giá cà phê hôm nay trực tuyến – 14/11/2026",
+  "can_duyet": "Lúc chạy (16:00 13/11/2026) sàn London/New York đang giao dịch: giá thế giới là giá trực tuyến, chưa phải giá chốt phiên, nên KHÔNG ghi ký tự \"s\" sau giá. Muốn có giá chốt phiên thì chạy lại trước 15:00.\nBài gốc trên web có lỗi chính tả \"Tây Nuy\" (đúng: \"Tây Nguyên\") – theo quy tắc không sửa câu chữ, chỉ báo lại.",
   "loi": ""
  },
  "gia-xang-dau": {
