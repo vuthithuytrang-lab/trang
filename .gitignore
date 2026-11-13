@@ -4,3 +4,6 @@ cong-cu/telegram.env
 *.key
 *.token
 chia-agent-boss.txt
+
+# File tải về cho Trang (tài liệu khách hàng) — không đưa lên repo public
+tai-ve/
