@@ -210,10 +210,10 @@
  },
  "gia-vang-nhan": {
   "ok": true,
-  "luc": "2026-11-13T02:11:20+00:00",
+  "luc": "2026-11-13T09:01:03+00:00",
   "ngay": "14/11/2026",
   "ten": "Giá vàng nhẫn hôm nay: Bảng giá các thương hiệu – 14/11/2026",
-  "can_duyet": "Câu \"Trong phiên 23/10, một số thương hiệu điều chỉnh giảm so với phiên trước, mức giảm phổ biến vài trăm nghìn VND/lượng.\" (diễn biến phiên, mức giảm \"vài trăm nghìn\") không có nguồn để tính lại – giữ nguyên, cần người viết lại.\nMục 3: bài ghi nguồn \"Kitco\" nhưng số lấy từ giavang.org (XAU/USD); mốc \"so với đầu giờ sáng hôm trước\" được thay bằng biến động 24 giờ của nguồn – xem lại.",
+  "can_duyet": "Câu \"Trong phiên 23/10, một số thương hiệu điều chỉnh giảm so với phiên trước, mức giảm phổ biến vài trăm nghìn VND/lượng.\" (diễn biến phiên, mức giảm \"vài trăm nghìn\") không có nguồn để tính lại – giữ nguyên, cần người viết lại.\nMục 3: bài ghi \"giảm khoảng 27 USD/ounce\" nhưng nguồn cho biến động 24 giờ = 14.8 USD – chỉ đổi giá, giữ nguyên mức biến động, cần viết lại câu.\nMục 3: bài ghi nguồn \"Kitco\" nhưng số lấy từ giavang.org (XAU/USD); mốc \"so với đầu giờ sáng hôm trước\" được thay bằng biến động 24 giờ của nguồn – xem lại.",
   "loi": ""
  }
 }
