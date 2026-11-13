@@ -186,10 +186,10 @@
  },
  "gia-niken": {
   "ok": true,
-  "luc": "2026-11-13T02:10:11+00:00",
+  "luc": "2026-11-13T09:00:07+00:00",
   "ngay": "14/11/2026",
   "ten": "Giá Niken hôm nay: Biến động thị trường và góc nhìn đầu tư – 14/11/2026",
-  "can_duyet": "Bảng giá: 5 dòng = 5 phiên mới nhất trên Westmetall (12/11/2026, 11/11/2026, 10/11/2026, 09/11/2026, 06/11/2026); giá là LME Nickel 3-month (giá chính thức LME, USD/tấn), có thể khác chuỗi \"giá đóng cửa hợp đồng tương lai\" mà bài ghi trước đó (số cũ có lẻ .25/.75) – cần duyệt xem Trang có muốn dùng chuỗi này; phiên mới nhất trên nguồn có thể cũ hơn ngày ghi trong tiêu đề (quy tắc ngày hôm sau).\nCâu giá mới nhất: chữ chỉ chiều đổi \"giảm\" → \"tăng\" theo dấu của mức thay đổi trên nguồn (+75.00) – đọc lại câu.\nCâu giá mới nhất (\"đóng cửa ở mức …\"): giá 16,215 và mức thay đổi 75.00 lấy từ phiên 12/11/2026; tỷ lệ 0.46% là số tính ra (mức thay đổi / giá phiên trước) – nguồn không có sẵn con số %.\nTỷ lệ phần trăm trong bài giữ nguyên (không phải giá, nguồn Westmetall không có): \" Theo USGS, Indonesia chiếm khoảng 67%\" (vd Indonesia ~67% sản lượng theo USGS năm 2025) – cần duyệt nếu Trang muốn đối chiếu lại số năm.",
+  "can_duyet": "Bảng giá: 5 dòng = 5 phiên mới nhất trên Westmetall (12/11/2026, 11/11/2026, 10/11/2026, 09/11/2026, 06/11/2026); giá là LME Nickel 3-month (giá chính thức LME, USD/tấn), có thể khác chuỗi \"giá đóng cửa hợp đồng tương lai\" mà bài ghi trước đó (số cũ có lẻ .25/.75) – cần duyệt xem Trang có muốn dùng chuỗi này; phiên mới nhất trên nguồn có thể cũ hơn ngày ghi trong tiêu đề (quy tắc ngày hôm sau).\nCâu giá mới nhất (\"đóng cửa ở mức …\"): giá 16,215 và mức thay đổi 75.00 lấy từ phiên 12/11/2026; tỷ lệ 0.46% là số tính ra (mức thay đổi / giá phiên trước) – nguồn không có sẵn con số %.\nTỷ lệ phần trăm trong bài giữ nguyên (không phải giá, nguồn Westmetall không có): \" Theo USGS, Indonesia chiếm khoảng 67%\" (vd Indonesia ~67% sản lượng theo USGS năm 2025) – cần duyệt nếu Trang muốn đối chiếu lại số năm.",
   "loi": ""
  },
  "gia-vang-sjc": {
