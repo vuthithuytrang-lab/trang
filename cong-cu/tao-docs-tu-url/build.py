@@ -84,7 +84,13 @@ def product(s):
         if tag=='li': tag='p'; x='• '+x
         out.append(f'<{tag} style="{J}">{html.escape(x)}</{tag}>')
     return '\n'.join(out)
-rows=[l.split() for l in open(SP+'urls.txt')]
+# urls.txt: mỗi dòng "ID URL [Key tối ưu]" — cột thứ 3 (tuỳ chọn) in vào docs dưới dòng URL
+rows=[]; KEYTU={}
+for l in open(SP+'urls.txt',encoding='utf-8'):
+    parts=l.strip().split(None,2)
+    if len(parts)<2: continue
+    rows.append(parts[:2])
+    if len(parts)==3: KEYTU[parts[0]]=parts[2].strip()
 res=[]
 for id,url in rows:
     BASE='/'.join(url.split('/')[:3])  # link/ảnh tương đối theo đúng trang nguồn
@@ -104,8 +110,9 @@ for id,url in rows:
     kw=keyword(slug,[h1,title,md,BeautifulSoup(body,'lxml').get_text(' ')])
     # Google Docs không đọc được ảnh webp -> đổi sang jpg qua wsrv.nl (miễn phí, Google tải được)
     body=re.sub(r'src="https?://([^"]+?\.webp)"', lambda m: 'src="https://wsrv.nl/?url='+m.group(1)+'&amp;output=jpg&amp;q=85"', body)
+    keyline=f'<p style="font-size:9pt">Keyword tối ưu: {html.escape(KEYTU[id])}</p>' if id in KEYTU else ''
     doc=f'''<html><head><meta charset="utf-8"></head><body style="font-family:Arial">
-<p>URL: <a href="{url}">{url}</a></p><p></p>
+<p>URL: <a href="{url}">{url}</a></p>{keyline}<p></p>
 <p style="text-align:center"><b>{html.escape(title)}</b></p><p></p>
 <p style="text-align:center;color:#888888">{html.escape(md)}</p><p></p>
 {body}

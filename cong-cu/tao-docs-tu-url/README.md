@@ -76,3 +76,14 @@ vuthithuytrang@seongon.com). Ngày 01/11 connector từng bị nối nhầm tuan
 - **Ảnh webp không hiện trong Google Docs** → script tự đổi link ảnh webp sang `https://wsrv.nl/?url=...&output=jpg`.
   Đã thử: bản không đổi → 0 ảnh; bản đổi → đủ ảnh.
 - Trang nguồn mới khác: kiểm tra khung bài bằng H2 đầu tiên rồi thêm selector vào `article()`.
+
+## ⚠️ Cập nhật 13/11/2026 — tab "3. Tối ưu nhanh" ĐỔI CỘT
+Sheet đã chèn cột "Key tối ưu" → bố cục mới:
+B ID · C Topic · **D Từ khóa chính (đặt tên file)** · **E Key tối ưu (in vào docs)** · **F URL** · G Loại TU ·
+**J Link docs** · K Tình trạng · O PIC. (Các mục trên ghi "cột I / cột N" là bố cục CŨ.)
+- Trang chỉ định dòng bắt đầu ("tạo từ dòng 894") — làm các dòng có URL ở F và J trống từ dòng đó.
+  Các dòng này có thể chưa điền PIC → làm theo dòng Trang chỉ, không lọc PIC.
+- Docs có thêm dòng **"Keyword tối ưu: <cột E>"** (chữ nhỏ 9pt) ngay dưới dòng URL.
+  `urls.txt` nhận cột thứ 3 tuỳ chọn: `ID URL Key tối ưu`.
+- Tải lên Drive: dùng `create_file` với `base64Content = sha256:<hash>:<đường dẫn tuyệt đối>` (app tự đọc file),
+  KHÔNG cần agent con chép tay nội dung nữa.
