@@ -170,7 +170,7 @@
  },
  "lai-suat-1": {
   "ok": true,
-  "luc": "2026-11-13T02:10:21+00:00",
+  "luc": "2026-11-13T09:00:21+00:00",
   "ngay": "14/11/2026",
   "ten": "Lãi suất tiết kiệm Techcombank – 14/11/2026",
   "can_duyet": "Bảng Tại quầy – VPBank: 36 tháng (5.8, Topi) thấp hơn hẳn 24 tháng (6.9, Topi) – số bất thường trên nguồn, vẫn điền theo nguồn.\nBảng Tại quầy – VIB: 18 tháng (5.2, Topi) thấp hơn hẳn 12 tháng (6.5, VnExpress) – số bất thường trên nguồn, vẫn điền theo nguồn.\nBảng Tại quầy – SCB: 18 tháng (0.6, Topi) thấp hơn hẳn 12 tháng (3.7, VnExpress) – số bất thường trên nguồn, vẫn điền theo nguồn.\nBảng Tại quầy – SCB – 1 tháng: nguồn ghi 0.1, thấp bất thường.\nBảng Tại quầy – SCB – 3 tháng: nguồn ghi 0.1, thấp bất thường.\nBảng Tại quầy – SCB – 6 tháng: nguồn ghi 0.5, thấp bất thường.\nBảng Tại quầy – SCB – 18 tháng: nguồn ghi 0.6, thấp bất thường.\nBảng Tại quầy – SCB – 24 tháng: nguồn ghi 0.7, thấp bất thường.\nBảng Tại quầy – SCB – 36 tháng: nguồn ghi 0.7, thấp bất thường.\nBảng Online – VPBank: 36 tháng (6, Topi) thấp hơn hẳn 24 tháng (7.1, Topi) – số bất thường trên nguồn, vẫn điền theo nguồn.\nBảng Online – SeABank: Topi không có ngân hàng này ở bảng online → kỳ hạn 18, 24, 36 tháng lấy theo kỳ hạn gần nhất.\nBảng Online – VIB: 18 tháng (5.9, Topi) thấp hơn hẳn 12 tháng (7, VnExpress) – số bất thường trên nguồn, vẫn điền theo nguồn.\nBảng Online – VietinBank: 18 tháng (5.4, Topi) thấp hơn hẳn 12 tháng (6.8, VnExpress) – số bất thường trên nguồn, vẫn điền theo nguồn.\nBảng Online – Agribank: Topi không có ngân hàng này ở bảng online → kỳ hạn 18, 24, 36 tháng lấy theo kỳ hạn gần nhất.\nBảng Online – LPBank: 36 tháng (5.6, Topi) thấp hơn hẳn 24 tháng (6.7, Topi) – số bất thường trên nguồn, vẫn đi",
