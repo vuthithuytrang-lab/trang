@@ -269,7 +269,20 @@ label.o-nhap input,label.o-nhap select,label.o-nhap textarea{margin-top:4px;colo
         <label class="nut phu nho nhap-file">⬆ Nạp file đã điền<input type="file" id="nhapFile" accept=".xlsx,.xls,.csv,.tsv" hidden></label>
         <button class="nut phu nho" id="nutThemDong">+ Thêm 5 dòng</button>
         <button class="nut phu nho" id="nutXoaBang">Xoá bảng</button>
+        <button class="nut phu nho" id="nutMo33">🔗 Lập theo mô hình 3 đến 3 đi</button>
         <span class="goi-y nho-hon" id="baoBang" style="margin:0"></span>
+      </div>
+      <div id="khung33" class="an" style="border:1px solid var(--vien,#d9dde3);border-radius:10px;padding:12px 14px;margin:10px 0;background:var(--nen-phu,#f7f9fb)">
+        <b style="font-size:14px">Mô hình 3 đến 3 đi</b>
+        <p class="goi-y" style="margin:6px 0">Trong mỗi chủ đề, bài thứ <b>i</b> đặt 3 link: tới bài <b>i+1</b> (anchor = từ khoá chính), bài <b>i+2</b> (anchor = key phụ chưa TOP), bài <b>i+3</b> (anchor = tiêu đề bài); cuối chủ đề thì quay vòng về đầu. Mỗi bài nhận đúng 3 link về với 3 kiểu anchor.</p>
+        <p class="goi-y" style="margin:6px 0">Copy từ Google Sheet <b>có dòng tiêu đề</b> rồi dán vào ô dưới. App tự nhận các cột: <b>Chủ đề</b> (hoặc Nhóm), <b>Từ khoá chính</b>, <b>URL</b>, <b>Key phụ</b>, <b>Title</b> (hoặc Tiêu đề). Bài chưa có URL (chưa đăng) vẫn giữ chỗ trong chuỗi: làm đích thì để trống link, làm nguồn thì chưa chèn. <b>Các bài cùng chủ đề phải nằm liền nhau.</b></p>
+        <textarea id="dl33" spellcheck="false" style="width:100%;min-height:110px;font-family:monospace;font-size:12px" placeholder="STT&#9;Chủ đề&#9;Từ khoá chính&#9;URL&#9;Key phụ&#9;Title&#10;1&#9;Phạt nguội&#9;camera phạt nguội bình dương&#9;https://...&#9;...&#9;..."></textarea>
+        <div class="hang" style="margin-top:8px;gap:8px;flex-wrap:wrap">
+          <button class="nut phu nho" id="nutLap33">Lập mô hình</button>
+          <button class="nut nho" id="nutDua33" disabled>Đưa vào bảng kế hoạch</button>
+          <span class="goi-y nho-hon" id="bao33" style="margin:0"></span>
+        </div>
+        <div id="kq33" style="margin-top:8px;max-height:320px;overflow:auto;font-size:12.5px"></div>
       </div>
       <div class="khung-bang"><table class="bang-nhap" id="bangNhap"></table></div>
       <textarea id="lGhiChu" class="an" aria-hidden="true"></textarea>
@@ -905,6 +918,12 @@ var CHANG = [
    lenh:'SỬA THEO GÓP Ý NGƯỜI DUYỆT — chạy luồng B của skill chen-internal-link cho các dòng cột "Duyệt" = "cần sửa" hoặc file còn comment mở: sửa thẳng file cũ, trả lời bằng comment "Em đã …" gắn vào câu đã sửa, tóm tắt vào cột "Phản hồi KT", đổi cột "Duyệt" thành "đã sửa". Làm 1 bài mẫu cho tôi duyệt trước khi chạy hàng loạt.'},
   {ma:'html', ten:'Lấy mã HTML để dán lên web', ta:'Bài đã duyệt "ok" → mã HTML từng đoạn đã chèn link, dán thẳng lên trang quản trị web.',
    lenh:'LẤY MÃ HTML ĐỂ DÁN LÊN WEB — với dòng cột "Duyệt" = "ok": theo cong-cu/inlink-html (nhánh claude/exciting-hopper-p4gh27: loc_bai.py, tao_html.py, kiem_tra.py) đọc file Docs, mỗi đoạn có link mới thành 1 khối <p style="text-align: justify;"> (link target="_blank" rel="noopener noreferrer") kèm ghi chú THAY / THÊM / KIỂM TRA, ghi vào cột "HTML dán CMS", đối chiếu lại rồi đổi "Tình trạng" thành "Đã xong".'},
+  {ma:'saoluu', ten:'Sao lưu bản gốc từng bài', ta:'Trước khi sửa gì: lưu mã HTML hiện tại của từng bài, để lỡ dán sai còn trả lại được.',
+   lenh:'SAO LƯU BẢN GỐC TỪNG BÀI — làm TRƯỚC mọi việc sửa bài khác: với mỗi URL bài trong kế hoạch, lấy mã HTML thân bài hiện tại (có quyền WordPress thì đọc bản gốc qua REST context=edit; không thì tải trang công khai, chỉ phần thân bài), lưu thành 1 file .html/bài trong thư mục Drive "Sao lưu – <tên dự án> – <ngày>" (không có Drive thì để trong thư mục sao lưu trên máy), ghi đường dẫn file vào cột "Sao lưu" của sheet kết quả. Báo số bài đã lưu, bài nào không lấy được và vì sao.'},
+  {ma:'wp', ten:'Chèn thẳng lên WordPress + kiểm tra lại', ta:'Web WordPress có mật khẩu ứng dụng: chèn đoạn đã duyệt "ok" thẳng lên web, đọc lại trang công khai để xác nhận, hoàn tác được.',
+   lenh:'CHÈN THẲNG LÊN WORDPRESS + KIỂM TRA LẠI — theo skill chen-wordpress (github.com/nguyennhunn/internal-link (repo công khai; lấy về bằng git nếu phiên chưa có), .claude/skills/chen-wordpress/SKILL.md + scripts/chen_wp.py). Chỉ dùng cho đoạn đã duyệt "ok". Kết nối: mình tạo Application Password (Người dùng → Hồ sơ; nếu Wordfence chặn thì mình tự bật lại, bạn chỉ hướng dẫn), mình lưu vào 1 file trên máy và báo bạn — TUYỆT ĐỐI không dán mật khẩu vào chat; bạn chuyển vào wp-accounts.local.json, xoá file gốc, chạy kiem-quyen. Thứ tự bắt buộc: (1) lệnh thu — định vị chỗ chèn, không ghi, báo mình số đoạn định vị được và lý do vướng; (2) chèn thử 1 bài, gửi link để mình xem; (3) mình đồng ý mới chạy hết — sao lưu từng bài trước khi ghi, bài vừa có người sửa hoặc đã có link tới đích thì bỏ qua và ghi lý do; (4) kiem-lai trên trang công khai: mỗi đoạn đúng 1 lần, đúng anchor + URL, URL đích 200 thẳng; ghi kết quả vào cột "Tình trạng" (Đã chèn / Cần dán tay: lý do / Lỗi). Xong việc nhắc mình thu hồi mật khẩu ứng dụng.'},
+  {ma:'kiemlink', ten:'Dò link 404 / 301 trong bài', ta:'Quét thân bài: link hỏng 404, link đi vòng qua 301, link tự trỏ về chính bài, 1 trang bị trỏ quá nhiều lần.',
+   lenh:'DÒ LINK 404 / 301 TRONG BÀI — theo skill kiem-link (github.com/nguyennhunn/internal-link (repo công khai; lấy về bằng git nếu phiên chưa có), .claude/skills/kiem-link): chạy quet trên danh sách URL bài trong kế hoạch (hoặc sitemap nếu mình đưa), chỉ tính link trong thân bài (bỏ menu, footer). Ghi ra tab mới "Link lỗi" trong sheet kết quả: Bài chứa link | Link | Mã (404/301) | Chuyển tới | Ghi chú; liệt kê riêng link tự trỏ về chính bài và trang bị 1 bài trỏ tới từ 3 lần trở lên. Với link 404: tìm URL thay thế đang chạy (khớp slug, tiêu đề, anchor), ghi độ khớp Cao/Trung bình/Thấp/Không có — mình chốt rồi mới thay. Với link 301: nếu có quyền WordPress thì chạy doi-301 --thu trước, báo số bài/số lượt, mình đồng ý mới đổi (sao lưu từng bài, chỉ đổi href).'},
   {ma:'appscript', ten:'Cho chạy tự động mỗi giờ', ta:'Cài vào chính file sheet: mỗi giờ tự làm dòng mới, không cần mở Claude.',
    lenh:'CHO CHẠY TỰ ĐỘNG MỖI GIỜ — cài App Inlink (Google Apps Script, cong-cu/app-inlink trên nhánh claude/confident-hopper-wh5wrt) vào chính file sheet này: chỉnh cấu hình đúng cột của file mẫu, hướng dẫn tôi dán vào Tiện ích mở rộng → Apps Script TỪNG BƯỚC MỘT, bật chạy mỗi giờ, chạy thử 1 dòng. Khoá Gemini (nếu cần) tôi tự dán vào Thuộc tính tập lệnh — không dán vào chat.'}
 ];
@@ -924,6 +943,16 @@ var MINH = {
     '<div class="khoi-mh"><div class="tieu-mh">Mã HTML gốc của web (bạn dán)</div><code>&lt;p class="noi-dung"&gt;…so sánh tỷ giá USD giữa…&lt;/p&gt;</code></div><span class="mui">→</span>' +
     '<div class="khoi-mh"><div class="tieu-mh">Mã HTML để dán lên web</div><code>&lt;p class="noi-dung"&gt;…so sánh &lt;a href="…/ty-gia-usd"&gt;tỷ giá USD&lt;/a&gt; giữa…&lt;/p&gt;</code><div class="bl">THAY đoạn "Trước khi đổi tiền…"</div></div>' +
     '<span class="chu-thich">Ra mã HTML từng đoạn, giữ đúng thẻ và định dạng của web (nhờ mã gốc bạn dán), kèm ghi chú THAY / THÊM — mở trang quản trị web, tìm đúng đoạn và dán đè.</span></div>',
+  saoluu:'<div class="mh"><div class="khoi-mh"><div class="tieu-mh">Trước khi sửa</div><code>&lt;p&gt;…so sánh tỷ giá giữa các ngân hàng…&lt;/p&gt;</code></div><span class="mui">→</span>' +
+    '<div class="khoi-mh"><div class="tieu-mh">Thư mục Drive "Sao lưu – dự án – ngày"</div><div class="o-sheet"><span class="h">URL bài</span><span class="h">Sao lưu</span><span>…/ty-gia-la-gi</span><span class="ok">ty-gia-la-gi.html ✓</span></div></div>' +
+    '<span class="chu-thich">Lưu nguyên mã HTML từng bài trước khi dán hay chèn. Lỡ dán sai, lỡ mất đoạn — mở file sao lưu là trả lại được.</span></div>',
+  wp:'<div class="mh"><div class="khoi-mh"><div class="tieu-mh">Đoạn đã duyệt "ok"</div>…so sánh <mark><span class="lk">tỷ giá USD</span></mark> giữa các ngân hàng…</div><span class="mui">→</span>' +
+    '<div class="khoi-mh"><div class="tieu-mh">Chèn thẳng lên web</div>① Chạy thử định vị (không ghi)<br>② Chèn 1 bài cho bạn xem<br>③ Bạn đồng ý → chạy hết, sao lưu từng bài<br>④ Mở trang thật kiểm lại</div><span class="mui">→</span>' +
+    '<div class="khoi-mh"><div class="tieu-mh">Sheet kết quả</div><div class="o-sheet"><span class="h">URL bài</span><span class="h">Tình trạng</span><span>…/bai-1</span><span class="ok">Đã chèn ✓</span><span>…/bai-2</span><span class="x">Cần dán tay: vị trí nằm trong bảng</span></div></div>' +
+    '<span class="chu-thich">Không phải dán tay từng bài. Bài vừa có người sửa, chỗ chèn rơi vào bảng/danh sách, hoặc bài đã có link tới đích thì tự bỏ qua và ghi lý do. Hoàn tác được từ bản sao lưu.</span></div>',
+  kiemlink:'<div class="mh"><div class="khoi-mh"><div class="tieu-mh">Thân bài</div>…xem <span class="lk">xe Xmen mini</span>… <span class="lk">xe tốt nhất</span>…</div><span class="mui">→</span>' +
+    '<div class="khoi-mh"><div class="tieu-mh">Tab "Link lỗi"</div><div class="o-sheet"><span class="h">Link</span><span class="h">Kết quả</span><span>/xmen-mini</span><span class="x">404 → gợi ý URL mới</span><span>/xe-tot-nhat</span><span class="x">301 → /nen-mua-hang-nao/</span></div></div>' +
+    '<span class="chu-thich">Bắt link hỏng, link đi vòng qua chuyển hướng, link tự trỏ về chính bài. Có quyền WordPress thì đổi hàng loạt link 301 sang URL mới (chạy thử trước, sao lưu từng bài).</span></div>',
   appscript:'<div class="mh"><div class="khoi-mh"><div class="tieu-mh">⏰ Mỗi giờ, tự chạy trong Google Sheet</div><div class="o-sheet"><span class="h">URL bài</span><span class="h">File Docs</span><span class="h">Đủ anchor</span><span>…/bai-1</span><span class="ok">Đã tạo ✓</span><span>5/5</span><span>…/bai-2</span><span class="ok">Đã tạo ✓</span><span>3/3</span><span>…/bai-moi</span><span class="x">đang làm…</span><span class="x"></span></div></div>' +
     '<span class="chu-thich">Cài 1 lần vào file sheet: thêm dòng mới là tự có file Docs, không cần mở Claude, không tốn lượt dùng.</span></div>'
 };
@@ -1148,6 +1177,76 @@ document.querySelectorAll('#cheDoApp button').forEach(function(b){
     luu('kho-app:inlink-phan', b.dataset.phan);
   };
 });
+
+/* ===== MÔ HÌNH 3 ĐẾN 3 ĐI: bài i → i+1 (key chính), i+2 (key phụ), i+3 (title), quay vòng trong chủ đề ===== */
+var KQ33 = [];
+function cot33(dau, mau){ for(var i = 0; i < dau.length; i++){ if(mau.test(dau[i])) return i; } return -1; }
+function lap33(txt){
+  var hang = txt.replace(/\r/g, '').split('\n').filter(function(x){ return x.trim(); }).map(function(x){ return x.split('\t').map(function(v){ return v.trim(); }); });
+  if(hang.length < 2) return {loi:'Cần ít nhất dòng tiêu đề + 2 bài.'};
+  var dau = hang[0].map(function(x){ return x.toLowerCase(); });
+  var c = {cd:cot33(dau, /chủ đề|chu de|nhóm|nhom|cụm|cum/), key:cot33(dau, /từ kho[aá] chính|tu khoa chinh|key chính|key chinh|keyword chính/),
+           url:cot33(dau, /^url|link bài|link bai|đường dẫn/), phu:cot33(dau, /key phụ|key phu|từ kho[aá] phụ|tu khoa phu/), ti:cot33(dau, /title|tiêu đề|tieu de/)};
+  if(c.cd < 0 || c.key < 0 || c.url < 0) return {loi:'Không thấy đủ cột Chủ đề, Từ khoá chính, URL ở dòng tiêu đề (đang thấy: ' + hang[0].join(' | ') + ').'};
+  var bai = hang.slice(1).map(function(r, i){ return {so:i + 1, cd:r[c.cd] || '', key:r[c.key] || '', url:laUrl(r[c.url]) ? r[c.url].trim() : '', phu:c.phu >= 0 ? (r[c.phu] || '') : '', ti:c.ti >= 0 ? (r[c.ti] || '') : ''}; })
+    .filter(function(b){ return b.cd && b.key; });
+  var nhom = [], vt = {}, lien = true, truoc = null;
+  bai.forEach(function(b){ if(vt[b.cd] === undefined){ vt[b.cd] = nhom.length; nhom.push({ten:b.cd, ds:[]}); } else if(truoc !== b.cd) lien = false; nhom[vt[b.cd]].ds.push(b); truoc = b.cd; });
+  var ra = [], canh = [];
+  if(!lien) canh.push('Có chủ đề bị tách rời (không nằm liền nhau) — app đã gom lại theo thứ tự xuất hiện, nên kiểm tra lại sheet.');
+  nhom.forEach(function(g){
+    var n = g.ds.length;
+    if(n < 4) canh.push('Chủ đề "' + g.ten + '" chỉ có ' + n + ' bài — mô hình cần ít nhất 4 bài, sẽ có link trùng hoặc thiếu.');
+    g.ds.forEach(function(b, i){
+      var link = [], ghi = [], daDung = [];
+      [1, 2, 3].forEach(function(k){
+        var d = g.ds[(i + k) % n];
+        if(d === b || n < 2 || daDung.indexOf(d) !== -1){ ghi.push('[' + k + '] chủ đề quá ít bài (trùng đích)'); link.push(['', '']); return; }
+        daDung.push(d);
+        if(!d.url){ ghi.push('[' + k + '] bài đích chưa đăng'); link.push(['', '']); return; }
+        var a = k === 1 ? d.key : k === 2 ? (d.phu || d.key) : (d.ti || d.key);
+        if(k === 2 && !d.phu) ghi.push('[2] chưa có key phụ, tạm dùng key chính');
+        if(k === 3 && !d.ti) ghi.push('[3] chưa có title, tạm dùng key chính');
+        link.push([a, d.url]);
+      });
+      var mh = b.so + ' - (' + [1, 2, 3].map(function(k){ return g.ds[(i + k) % n].so; }).join('-') + ')';
+      ra.push({cd:g.ten, b:b, link:link, ghi:ghi, mh:mh});
+    });
+  });
+  return {ra:ra, canh:canh, nhom:nhom.length};
+}
+function ve33(kq){
+  if(kq.loi){ $('bao33').innerHTML = '<span style="color:var(--loi-chu);font-weight:700">' + thoat(kq.loi) + '</span>'; $('kq33').innerHTML = ''; $('nutDua33').disabled = true; return; }
+  KQ33 = kq.ra;
+  var co = kq.ra.filter(function(r){ return r.b.url; }), so = 0;
+  co.forEach(function(r){ r.link.forEach(function(l){ if(l[1]) so++; }); });
+  $('bao33').innerHTML = '✓ ' + kq.nhom + ' chủ đề · ' + kq.ra.length + ' bài · <b>' + co.length + ' bài đã đăng sẽ chèn ' + so + ' link</b>' +
+    (kq.ra.length - co.length ? ' · ' + (kq.ra.length - co.length) + ' bài chưa đăng giữ chỗ' : '') +
+    (kq.canh.length ? '<br><span style="color:var(--loi-chu)">⚠ ' + kq.canh.map(thoat).join('<br>⚠ ') + '</span>' : '');
+  var h = '<table class="bang-nhap"><tr><th>Chủ đề</th><th>Mô hình</th><th>Bài nguồn</th><th>Inlink 1 (key chính)</th><th>Inlink 2 (key phụ)</th><th>Inlink 3 (title)</th><th>Ghi chú</th></tr>';
+  kq.ra.forEach(function(r){
+    h += '<tr' + (r.b.url ? '' : ' style="opacity:.55"') + '><td>' + thoat(r.cd) + '</td><td>' + r.mh + '</td><td>' + thoat(r.b.key) + (r.b.url ? '' : ' <i>(chưa đăng)</i>') + '</td>' +
+      r.link.map(function(l){ return '<td>' + (l[1] ? '<a href="' + thoat(l[1]) + '" target="_blank" rel="noopener">' + thoat(l[0]) + '</a>' : '') + '</td>'; }).join('') +
+      '<td>' + thoat(r.ghi.join('; ')) + '</td></tr>';
+  });
+  $('kq33').innerHTML = h + '</table>'; $('nutDua33').disabled = !co.length;
+}
+$('nutMo33').onclick = function(){ $('khung33').classList.toggle('an'); };
+$('nutLap33').onclick = function(){ ve33(lap33($('dl33').value)); if(typeof luu === 'function') luu('kho-app:inlink-33', $('dl33').value); };
+$('nutDua33').onclick = function(){
+  var moi = KQ33.filter(function(r){ return r.b.url && r.link.some(function(l){ return l[1]; }); }).map(function(r){
+    var d = COT.map(function(){ return ''; }); d[0] = r.b.url;
+    r.link.forEach(function(l, k){ d[1 + k * 2] = l[0]; d[2 + k * 2] = l[1]; });
+    d[COT.length - 1] = 'Mô hình 3-3: ' + r.mh + (r.ghi.length ? ' · ' + r.ghi.join('; ') : '');
+    return d;
+  });
+  var cu = bangDaNhap();
+  if(cu.length && !confirm('Bảng kế hoạch đang có ' + cu.length + ' bài. Thay bằng ' + moi.length + ' bài theo mô hình 3 đến 3 đi?')) return;
+  BANG = moi.concat(dongTrong(3)); veBang(); luuBang();
+  $('baoBang').innerHTML = '✓ Đã đưa ' + moi.length + ' bài theo mô hình 3 đến 3 đi · ' + $('baoBang').innerHTML;
+  $('khung33').classList.add('an');
+};
+(function(){ var cu = doc('kho-app:inlink-33'); if(cu) $('dl33').value = cu; })();
 veChang();
 if(location.hash === '#chen' || doc('kho-app:inlink-phan') === 'chen') document.querySelector('#cheDoApp [data-phan="chen"]').click();
 </script>
@@ -1156,7 +1255,7 @@ if(location.hash === '#chen' || doc('kho-app:inlink-phan') === 'chen') document.
 /* ===== DỰ ÁN: mỗi dự án lưu riêng bảng, luật, việc đã chọn, kho file ===== */
 (function(){
   var KHOA_DA = 'kho-app:inlink-du-an';
-  var O_CHU = ['lDrive','lSheet','lGhiChu','lHtml','keHoach','bangLink','urlBaiNay','maxTong','maxUrl','boDau','cumNe','luatKhac'];
+  var O_CHU = ['lDrive','lSheet','lGhiChu','lHtml','keHoach','bangLink','urlBaiNay','maxTong','maxUrl','boDau','cumNe','luatKhac','dl33'];
   var O_TICH = ['phanBietHoa','khongKe','neLuat','tabMoi','canDeu','dungAI'];
   var MAC_DINH = {maxTong:'5', maxUrl:'1', boDau:'25', phanBietHoa:true, khongKe:true, neLuat:true, tabMoi:true, canDeu:false, dungAI:false};
   function docKho(){ try{ return JSON.parse(doc(KHOA_DA) || 'null'); }catch(e){ return null; } }
