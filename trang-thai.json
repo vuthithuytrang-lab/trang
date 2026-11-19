@@ -138,10 +138,10 @@
  },
  "gia-lua-gao": {
   "ok": true,
-  "luc": "2026-11-18T07:15:47+00:00",
-  "ngay": "19/11/2026",
-  "ten": "Giá lúa gạo hôm nay cập nhật – 19/11/2026",
-  "can_duyet": "Giá trong nước lấy từ bảng mới nhất của banggianongsan.com: 'Bảng giá lúa gạo mới nhất - 18/11/2026' (đăng 08:59 18/11/2026); bài ghi ngày hôm sau theo quy tắc.\nDòng \"Lúa Nàng Hoa 9\": nguồn không có dòng này → giữ nguyên.\nNguồn có thêm Lúa tươi DS1 (7.600 – 7.700 | 7.600 – 7.700 | ➖ Không đổi); Tấm thơm (11.200 – 11.300 | 11.200 – 11.300 | ➖ Không đổi); Cám (8.250 – 8.350 | 8.250 – 8.350 | ➖ Không đổi) nhưng bài không có các dòng này → không thêm (quy tắc không thay đổi nội dung).\nMục 2 – Bảng giá lúa gạo thế giới: các bài vietbao.vn 3 ngày gần nhất không có bảng giá gạo thế giới; bản tin VFA mới nhất đã cũ (12/11/2026) → giữ nguyên số, ngày ở tiêu đề mục 2 giữ như bài gốc.",
+  "luc": "2026-11-19T08:22:27+00:00",
+  "ngay": "20/11/2026",
+  "ten": "Giá lúa gạo hôm nay cập nhật – 20/11/2026",
+  "can_duyet": "Giá trong nước lấy từ bảng mới nhất của banggianongsan.com: 'Bảng giá lúa gạo mới nhất - 19/11/2026' (đăng 12:07 19/11/2026); bài ghi ngày hôm sau theo quy tắc.\nDòng \"Lúa Nàng Hoa 9\": nguồn không có dòng này → giữ nguyên.\nNguồn có thêm Lúa tươi DS1 (7.600 – 7.700 | 7.700 – 7.800 | ▲ +100 – 100); Tấm thơm (11.200 – 11.300 | 11.100 – 11.300 | ▼ -100 – 0); Cám (8.250 – 8.350 | 7.800 | ▼ -450 đến -550) nhưng bài không có các dòng này → không thêm (quy tắc không thay đổi nội dung).\nMục 2 – Bảng giá lúa gạo thế giới: các bài vietbao.vn 3 ngày gần nhất không có bảng giá gạo thế giới; bản tin VFA mới nhất đã cũ (12/11/2026) → giữ nguyên số, ngày ở tiêu đề mục 2 giữ như bài gốc.",
   "loi": ""
  },
  "gia-nhom": {
