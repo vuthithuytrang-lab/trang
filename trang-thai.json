@@ -154,10 +154,10 @@
  },
  "gia-thep": {
   "ok": true,
-  "luc": "2026-11-18T07:15:36+00:00",
-  "ngay": "19/11/2026",
-  "ten": "Giá thép trong nước và thế giới hôm nay – 19/11/2026",
-  "can_duyet": "barchart KHÔNG ĐỌC ĐƯỢC (HTTP 202, 0 byte – trang kiểm tra chống máy, không vượt)\nsteelonline KHÔNG ĐỌC ĐƯỢC (không có trang ngày nào trong 10 ngày gần đây có bảng giá)\nBảng giá thép thế giới: Barchart chặn máy chủ nên lấy từ TradingView (cùng hợp đồng LME Steel HRC FOB China, mã HC… = V7…), giá trễ ~30 phút, cập nhật 13:14 18/11/2026, 13:18 18/11/2026, 13:19 18/11/2026, 13:20 18/11/2026 (giờ VN); mức thay đổi so với phiên trước của TradingView – có thể lệch nhẹ với Barchart. Chạy lúc 14:15 18/11/2026.\nBảng giá thép trong nước: steelonline.vn không đọc được – giữ nguyên các khoảng giá cũ, giữ ngày cũ ở tiêu đề mục 2. Nhờ người cập nhật tay.",
+  "luc": "2026-11-19T08:22:45+00:00",
+  "ngay": "20/11/2026",
+  "ten": "Giá thép trong nước và thế giới hôm nay – 20/11/2026",
+  "can_duyet": "barchart KHÔNG ĐỌC ĐƯỢC (HTTP 202, 0 byte – trang kiểm tra chống máy, không vượt)\nsteelonline KHÔNG ĐỌC ĐƯỢC (không có trang ngày nào trong 10 ngày gần đây có bảng giá)\nBảng giá thép thế giới: Barchart chặn máy chủ nên lấy từ TradingView (cùng hợp đồng LME Steel HRC FOB China, mã HC… = V7…), giá trễ ~30 phút, cập nhật 06:30 19/11/2026, 23:31 18/11/2026 (giờ VN); mức thay đổi so với phiên trước của TradingView – có thể lệch nhẹ với Barchart. Chạy lúc 15:22 19/11/2026.\nBảng giá thép trong nước: steelonline.vn không đọc được – giữ nguyên các khoảng giá cũ, giữ ngày cũ ở tiêu đề mục 2. Nhờ người cập nhật tay.",
   "loi": ""
  },
  "gia-tieu": {
