@@ -162,10 +162,10 @@
  },
  "gia-tieu": {
   "ok": true,
-  "luc": "2026-11-18T07:15:51+00:00",
-  "ngay": "19/11/2026",
-  "ten": "Giá tiêu hôm nay mới nhất – 19/11/2026",
-  "can_duyet": "banggianongsan KHÔNG ĐỌC ĐƯỢC: không thấy bảng giá trong nước\nbanggianongsan KHÔNG ĐỌC ĐƯỢC – mọi bảng giá sẽ giữ nguyên\nbanggianongsan.com KHÔNG ĐỌC ĐƯỢC – mọi bảng giá giữ nguyên số cũ; ngày ở câu \"cập nhật giá … trong nước ngày …\" và tiêu đề \"Bảng giá tiêu thế giới …\" giữ ngày gốc của bài.\ngiatieu.com/gia-tieu-truc-tuyen: bảng giá thế giới trống (\"Hệ thống đang bận\") hoặc không đọc được – bảng xuất khẩu chỉ có 1 nguồn (banggianongsan).\nMục 3: \"9 tháng đầu năm 2026, Việt Nam xuất khẩu 215,733 tấn, tăng 15.4% về lượng nhưng giá trị tăng 10.2%, cho thấy giá bình quân cũng ảnh hưởng đến kim ngạch\" – 3 nguồn không có số liệu xuất khẩu này, giữ nguyên.",
+  "luc": "2026-11-19T08:22:49+00:00",
+  "ngay": "20/11/2026",
+  "ten": "Giá tiêu hôm nay mới nhất – 20/11/2026",
+  "can_duyet": "Giá hồ tiêu nội địa Ấn Độ – Garbled: ghi theo banggianongsan (71,300); giatieu.com/gia-tieu-truc-tuyen ghi 71,400 (thay đổi 0) – lệch 100 Rupee → cần người chọn nguồn.\nGiá hồ tiêu nội địa Ấn Độ – Gram/lit: ghi theo banggianongsan (68,300); giatieu.com/gia-tieu-truc-tuyen ghi 68,400 (thay đổi 0) – lệch 100 Rupee → cần người chọn nguồn.\nGiá hồ tiêu nội địa Ấn Độ – Ungarbled: ghi theo banggianongsan (69,300); giatieu.com/gia-tieu-truc-tuyen ghi 69,400 (thay đổi 0) – lệch 100 Rupee → cần người chọn nguồn.\nBảng giá hồ tiêu trong nước – Hồ Tiêu Đồng Nai (đ/kg): 2 nguồn cùng ngày lệch Giá mới – banggianongsan 133,000, giatieu.com (Bình Phước) 130,500 → giữ nguyên cả dòng, cần người chọn nguồn.\nBảng giá hồ tiêu trong nước – Hồ Tiêu TP. Hồ Chí Minh (đ/kg): 2 nguồn cùng ngày lệch Giá mới – banggianongsan 134,500, giatieu.com (Bà Rịa - Vũng Tàu) 131,000 → giữ nguyên cả dòng, cần người chọn nguồn.\nBảng giá hồ tiêu trong nước – Hồ Tiêu Lâm Đồng (Đắk Nông cũ sáp nhập) (đ/kg): 2 nguồn cùng ngày lệch Giá mới – banggianongsan 133,000, giatieu.com (Đắk Nông) 131,000 → giữ nguyên cả dòng, cần người chọn nguồn.\nBảng giá hồ tiêu trong nước – Hồ Tiêu Đắk Lắk (đ/kg): 2 nguồn cùng ngày lệch Giá mới – banggianongsan 135,000, giatieu.com (Đắk Lắk) 132,000 → giữ nguyên cả dòng, cần người chọn nguồn.\ngiatieu.com/gia-tieu-truc-tuyen: bảng giá thế giới trống (\"Hệ thống đang bận\") hoặc không đọc được – bảng xuất khẩu chỉ có 1 nguồn (banggianongsan).\nMục 3: \"9 tháng đầu năm 2026, Việt Nam xuất khẩu 215,733 ",
   "loi": ""
  },
  "lai-suat-1": {
