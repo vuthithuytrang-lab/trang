@@ -138,10 +138,10 @@
  },
  "gia-lua-gao": {
   "ok": true,
-  "luc": "2026-11-26T08:55:04+00:00",
-  "ngay": "27/11/2026",
-  "ten": "Giá lúa gạo hôm nay cập nhật – 27/11/2026",
-  "can_duyet": "Giá trong nước lấy từ bảng mới nhất của banggianongsan.com: 'Bảng giá lúa gạo mới nhất - 26/11/2026' (đăng 09:11 26/11/2026); bài ghi ngày hôm sau theo quy tắc.\nNguồn có thêm Lúa tươi DS1 (7.700 – 7.800 | 7.700 – 7.800 | ➖ Không đổi); Lúa OM 380 (7.100 – 7.400 | 7.100 – 7.400 | ➖ Không đổi); Lúa OM 4218 (6.000 – 6.200 | 6.000 – 6.200 | ➖ Không đổi); Lúa OM 504 (5.100 – 5.300 | 5.100 – 5.300 | ➖ Không đổi); Lúa Jasmine (7.700 – 8.000 | 7.700 – 8.000 | ➖ Không đổi); Lúa Nhật (8.300 – 8.600 | 8.300 – 8.600 | ➖ Không đổi); Lúa ST24 – ST25 thường (11.000 – 11.200 | 11.000 – 11.200 | ➖ Không đổi); Lúa RVT (7.700 – 8.000 | 7.700 – 8.000 | ➖ Không đổi); Lúa Japonica (8.000 – 8.300 | 8.000 – 8.300 | ➖ Không đổi); Lúa Hàm Châu 105 (7.700 – 8.000 | 7.700 – 8.000 | ➖ Không đổi); Gạo NL Đài Thơm 8 (9.200 – 9.400 | 9.200 – 9.400 | ➖ Không đổi); Gạo Sóc Dẻo (9.700 – 9.900 | 9.700 – 9.900 | Chưa cập nhật); Gạo Trắng (16.000 – 17.000 | 16.000 – 17.000 | ➖ Không đổi); Gạo Thường (14.000 – 15.000 | 14.000 – 15.000 | ➖ Không đổi); Gạo Thơm Đài Loan (20.000 | 20.000 | ➖ Không đổi); Gạo Nhật (22.000 | 22.000 | ➖ Không đổi); Gạo Sóc Thái (20.000 | 20.000 | ➖ Không đổi); Gạo OM 18 (15.000 – 16.000 | 15.000 – 16.000 | ➖ Không đổi); Tấm thơm (11.100 – 11.300 | 11.100 – 11.300 | ➖ Không đổi); Cám (7.800 | 7.800 | ➖ Không đổi); Nếp IR 4625 (tươi) (7.300 – 7.500 | 7.300 – 7.500 | ➖ Không đổi); Nếp 3 tháng (tươi) (7.300 – 7.500 | 7.300 – 7.500 | ➖ Không đổi); Nếp Long An (6.700 – 7.000 | 6.700 – 7.000 | ➖",
+  "luc": "2026-11-27T07:00:33+00:00",
+  "ngay": "28/11/2026",
+  "ten": "Giá lúa gạo hôm nay cập nhật – 28/11/2026",
+  "can_duyet": "bgns KHÔNG ĐỌC ĐƯỢC – không thấy tiêu đề \"Bảng giá lúa gạo mới nhất - dd/mm/yyyy\"\nvfa KHÔNG ĐỌC ĐƯỢC – không thấy bản tin giá gạo xuất khẩu nào\nbanggianongsan.com không đọc được → giữ nguyên mọi giá gạo, nếp, lúa trong nước; ngày trong bài trả lại như bài gốc.\nMục 2 – Bảng giá lúa gạo thế giới: các bài vietbao.vn 3 ngày gần nhất không có bảng giá gạo thế giới; VFA không đọc được → giữ nguyên số, ngày ở tiêu đề mục 2 giữ như bài gốc.",
   "loi": ""
  },
  "gia-nhom": {
