@@ -186,10 +186,10 @@
  },
  "gia-niken": {
   "ok": true,
-  "luc": "2026-11-26T08:55:31+00:00",
-  "ngay": "27/11/2026",
-  "ten": "Giá Niken hôm nay: Biến động thị trường và góc nhìn đầu tư – 27/11/2026",
-  "can_duyet": "Bảng giá: 6 dòng = 6 phiên mới nhất trên Westmetall (25/11/2026, 24/11/2026, 23/11/2026, 20/11/2026, 19/11/2026, 18/11/2026); giá là LME Nickel 3-month (giá chính thức LME, USD/tấn), có thể khác chuỗi \"giá đóng cửa hợp đồng tương lai\" mà bài ghi trước đó (số cũ có lẻ .25/.75) – cần duyệt xem Trang có muốn dùng chuỗi này; phiên mới nhất trên nguồn có thể cũ hơn ngày ghi trong tiêu đề (quy tắc ngày hôm sau).\nCâu giá mới nhất (\"đóng cửa ở mức …\"): giá 15,210 và mức thay đổi 85.00 lấy từ phiên 25/11/2026; tỷ lệ 0.56% là số tính ra (mức thay đổi / giá phiên trước) – nguồn không có sẵn con số %.\nTỷ lệ phần trăm trong bài giữ nguyên (không phải giá, nguồn Westmetall không có): \" Theo USGS, Indonesia chiếm khoảng 67%\" (vd Indonesia ~67% sản lượng theo USGS năm 2025) – cần duyệt nếu Trang muốn đối chiếu lại số năm.",
+  "luc": "2026-11-27T07:00:39+00:00",
+  "ngay": "28/11/2026",
+  "ten": "Giá Niken hôm nay: Biến động thị trường và góc nhìn đầu tư – 28/11/2026",
+  "can_duyet": "Bảng giá: 6 dòng = 6 phiên mới nhất trên Westmetall (26/11/2026, 25/11/2026, 24/11/2026, 23/11/2026, 20/11/2026, 19/11/2026); giá là LME Nickel 3-month (giá chính thức LME, USD/tấn), có thể khác chuỗi \"giá đóng cửa hợp đồng tương lai\" mà bài ghi trước đó (số cũ có lẻ .25/.75) – cần duyệt xem Trang có muốn dùng chuỗi này; phiên mới nhất trên nguồn có thể cũ hơn ngày ghi trong tiêu đề (quy tắc ngày hôm sau).\nCâu giá mới nhất: chữ chỉ chiều đổi \"giảm\" → \"tăng\" theo dấu của mức thay đổi trên nguồn (+560.00) – đọc lại câu.\nCâu giá mới nhất (\"đóng cửa ở mức …\"): giá 15,770 và mức thay đổi 560.00 lấy từ phiên 26/11/2026; tỷ lệ 3.68% là số tính ra (mức thay đổi / giá phiên trước) – nguồn không có sẵn con số %.\nTỷ lệ phần trăm trong bài giữ nguyên (không phải giá, nguồn Westmetall không có): \" Theo USGS, Indonesia chiếm khoảng 67%\" (vd Indonesia ~67% sản lượng theo USGS năm 2025) – cần duyệt nếu Trang muốn đối chiếu lại số năm.",
   "loi": ""
  },
  "gia-vang-sjc": {
